@@ -266,16 +266,35 @@ mjx-container[display]{margin:0!important}
     </div>
   </details>
 
-  <div class="riga">
-    <div class="fissa">
+  <details class="riga">
+    <summary>
       <div class="n">5</div>
       <div class="cont">
-        <div class="nota">Chiudo la quadra.</div>
+        <div class="nota">Chiudo la quadra: tutto il suo valore va moltiplicato per $3$.</div>
         <div class="f sx">$\displaystyle =\left\{26\cdot 3-70\right\}\cdot 3=$</div>
       </div>
-      <div></div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">Dentro la quadra viene $26$, e il $\cdot 3$ che segue moltiplica quel risultato: tutti e tre i pezzi che stavano dentro, non solo il $6$.</p>
+      <div class="teoria">
+        <div class="nome">Una parentesi seguita da una moltiplicazione</div>
+        <div class="frase">Quando dopo una parentesi c'è una moltiplicazione, si moltiplica il <strong>risultato dell'intera parentesi</strong>. Ogni termine che stava dentro viene moltiplicato, non solo l'ultimo.</div>
+        <div class="f sx">$\displaystyle \left(a+b\right)\cdot c=a\cdot c+b\cdot c$</div>
+        <div class="ex">esempio: $\left(2+3\right)\cdot 4=8+12=20$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Moltiplicare solo l'ultimo termine della parentesi</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \left(a+b\right)\cdot c=a+b\cdot c$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \left(a+b\right)\cdot c=a\cdot c+b\cdot c$</div></div>
+        </div>
+        <div class="why-txt">Il prodotto riguarda tutta la parentesi.</div>
+      </div>
     </div>
-  </div>
+  </details>
 
   <div class="check">
     <span>🚩 <b>Fermata di controllo.</b> Se qui hai</span>
@@ -283,35 +302,16 @@ mjx-container[display]{margin:0!important}
     <span>la quadra è chiusa: restano due prodotti e una sottrazione.</span>
   </div>
 
-  <details class="riga">
-    <summary>
+  <div class="riga">
+    <div class="fissa">
       <div class="n">6</div>
       <div class="cont">
-        <div class="nota">Graffe: prima il prodotto, poi la sottrazione.</div>
+        <div class="nota">Graffe: prima il prodotto, poi la sottrazione, come al passaggio 4.</div>
         <div class="f sx">$\displaystyle =\left\{78-70\right\}\cdot 3=$</div>
       </div>
-      <span class="tab">Regola <span class="chev">▼</span></span>
-    </summary>
-    <div class="pannello">
-      <p class="mossa">Dentro le graffe c'è $26\cdot 3-70$: si chiude il prodotto, $26\cdot 3=78$, e solo dopo si toglie $70$.</p>
-      <div class="teoria">
-        <div class="nome">Priorità delle operazioni</div>
-        <div class="frase">In una parentesi che contiene un prodotto e una sottrazione, il prodotto si esegue per primo. La sottrazione lavora sul risultato del prodotto, non su uno dei suoi fattori.</div>
-        <div class="f sx">$\displaystyle a\cdot b-c=(a\cdot b)-c$</div>
-        <div class="ex">esempio: $5\cdot 4-3=20-3=17$</div>
-      </div>
-      <div class="errore">
-        <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Sottrarre prima di chiudere il prodotto</div>
-        <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a\cdot b-c=a\cdot(b-c)$</div></div>
-          <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a\cdot b-c=(a\cdot b)-c$</div></div>
-        </div>
-        <div class="why-txt">Il prodotto si chiude per primo.</div>
-      </div>
+      <div></div>
     </div>
-  </details>
+  </div>
 
   <div class="riga">
     <div class="fissa">

@@ -247,16 +247,35 @@ mjx-container[display]{margin:0!important}
     </div>
   </div>
 
-  <div class="riga">
-    <div class="fissa">
+  <details class="riga">
+    <summary>
       <div class="n">5</div>
       <div class="cont">
-        <div class="nota">Chiudo le graffe, da sinistra a destra.</div>
+        <div class="nota">Chiudo le graffe: tutto il loro valore va diviso per $4$.</div>
         <div class="f sx">$\displaystyle =160:4+50-81=$</div>
       </div>
-      <div></div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">Dentro le graffe viene $160$, e il $:4$ che segue riguarda quel risultato, non il $155$ da cui si parte. Ecco perché la parentesi si chiude prima.</p>
+      <div class="teoria">
+        <div class="nome">Una parentesi seguita da una divisione</div>
+        <div class="frase">Quando dopo una parentesi c'è una divisione, si divide il <strong>risultato dell'intera parentesi</strong>, non il suo primo numero. Chiuderla prima è il modo più sicuro per non sbagliare.</div>
+        <div class="f sx">$\displaystyle \left(a+b\right):c=a:c+b:c$</div>
+        <div class="ex">esempio: $\left(6+4\right):2=3+2=5$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Dividere solo l'ultimo termine della parentesi</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \left(a+b\right):c=a+b:c$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \left(a+b\right):c=a:c+b:c$</div></div>
+        </div>
+        <div class="why-txt">La divisione riguarda tutta la parentesi.</div>
+      </div>
     </div>
-  </div>
+  </details>
 
   <div class="check">
     <span>🚩 <b>Fermata di controllo.</b> Se qui hai</span>
@@ -264,35 +283,16 @@ mjx-container[display]{margin:0!important}
     <span>le parentesi sono finite: restano una divisione, una somma e una sottrazione.</span>
   </div>
 
-  <details class="riga">
-    <summary>
+  <div class="riga">
+    <div class="fissa">
       <div class="n">6</div>
       <div class="cont">
-        <div class="nota">Eseguo la divisione prima della somma.</div>
+        <div class="nota">Eseguo la divisione prima della somma, come al passaggio 3.</div>
         <div class="f sx">$\displaystyle =40+50-81=$</div>
       </div>
-      <span class="tab">Regola <span class="chev">▼</span></span>
-    </summary>
-    <div class="pannello">
-      <p class="mossa">Le parentesi sono sparite e resta $160:4+50-81$. La divisione va chiusa per prima, anche se sommare sembrerebbe più comodo.</p>
-      <div class="teoria">
-        <div class="nome">Priorità delle operazioni</div>
-        <div class="frase">La divisione si esegue prima dell'addizione e della sottrazione, in qualunque punto dell'espressione sia scritta. Solo dopo si procede da sinistra a destra con i termini rimasti.</div>
-        <div class="f sx">$\displaystyle a:b+c=(a:b)+c$</div>
-        <div class="ex">esempio: $20:4+3=5+3=8$</div>
-      </div>
-      <div class="errore">
-        <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Eseguire l'addizione prima della divisione</div>
-        <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a:b+c=a:(b+c)$</div></div>
-          <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a:b+c=(a:b)+c$</div></div>
-        </div>
-        <div class="why-txt">La divisione si chiude per prima.</div>
-      </div>
+      <div></div>
     </div>
-  </details>
+  </div>
 
   <div class="riga">
     <div class="fissa">
