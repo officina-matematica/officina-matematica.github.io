@@ -1,0 +1,19 @@
+# sul sito vanno solo le pagine delle guide: tutto il resto resta locale
+node_modules/
+package.json
+package-lock.json
+build/
+esercizi/
+guide/
+screenshot/
+.DS_Store
+
+CLAUDE.md
+tassonomia.yaml
+validatore.md
+system_prompt_guide_v3.md
+verifica.py
+genera_guide.py
+genera_qr.py
+costruisci_documento.py
+rendi_formule.js
