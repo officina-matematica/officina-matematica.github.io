@@ -176,16 +176,35 @@ mjx-container[display]{margin:0!important}
     </div>
   </div>
 
-  <div class="riga">
-    <div class="fissa">
+  <details class="riga">
+    <summary>
       <div class="n">2</div>
       <div class="cont">
         <div class="nota">Svolgo la potenza nella tonda e la divisione nella quadra.</div>
         <div class="f sx">$\displaystyle =\left(3\cdot 2-4:2\cdot 3\right)^{4}+5^{9}\cdot 5^{12}:\left[5^{4}\right]^{5}-2+2^{3}:2\cdot 2^{2}=$</div>
       </div>
-      <div></div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">In $2^{2}:2\cdot 3$ la potenza si svolge per prima: $2^{2}=4$. Nella quadra la tonda $\left(15:3\right)$ vale $5$.</p>
+      <div class="teoria">
+        <div class="nome">Priorità: prima le potenze</div>
+        <div class="frase">Le potenze si svolgono per prime, prima ancora delle moltiplicazioni e delle divisioni. L'esponente riguarda <strong>soltanto</strong> il numero su cui è scritto.</div>
+        <div class="f sx">$\displaystyle a\cdot b^{n}=a\cdot\left(b^{n}\right)$</div>
+        <div class="ex">esempio: $2\cdot 3^{2}=2\cdot 9=18$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Elevare anche il fattore accanto</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a\cdot b^{n}=\left(a\cdot b\right)^{n}$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a\cdot b^{n}=a\cdot\left(b^{n}\right)$</div></div>
+        </div>
+        <div class="why-txt">L'esponente riguarda un numero solo.</div>
+      </div>
     </div>
-  </div>
+  </details>
 
   <details class="riga">
     <summary>
@@ -345,7 +364,7 @@ mjx-container[display]{margin:0!important}
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">$5^{21}:5^{20}=5^{1}$. In fondo si va da sinistra: $2^{3}:2=2^{3-1}=2^{2}$.</p>
+      <p class="mossa">$5^{21}:5^{20}=5^{1}$. In fondo si va da sinistra: $2^{3}:2=2^{3-1}=2^{2}$, perché il $2$ da solo è $2^{1}$.</p>
       <div class="teoria">
         <div class="nome">Divisione di potenze con la stessa base</div>
         <div class="frase">Quando due potenze hanno la <strong>stessa base</strong>, per dividerle si sottraggono gli esponenti: quello del divisore si toglie a quello del dividendo. La base resta la stessa.</div>
@@ -365,46 +384,46 @@ mjx-container[display]{margin:0!important}
     </div>
   </details>
 
-  <details class="riga">
-    <summary>
-      <div class="n">10</div>
-      <div class="cont">
-        <div class="nota">Prodotto con la stessa base.</div>
-        <div class="f sx">$\displaystyle =0+5^{1}-2+2^{4}=$</div>
-      </div>
-      <span class="tab">Regola <span class="chev">▼</span></span>
-    </summary>
-    <div class="pannello">
-      <p class="mossa">$2^{2}\cdot 2^{2}=2^{2+2}=2^{4}$: si sommano gli esponenti e la base resta $2$.</p>
-      <div class="teoria">
-        <div class="nome">Prodotto di potenze con la stessa base</div>
-        <div class="frase">Quando due potenze hanno la <strong>stessa base</strong>, per moltiplicarle si sommano gli esponenti. La base resta quella di partenza e non si tocca mai.</div>
-        <div class="f sx">$\displaystyle a^{m}\cdot a^{n}=a^{m+n}$</div>
-        <div class="ex">esempio: $2^{3}\cdot 2^{4}=2^{7}$</div>
-      </div>
-      <div class="errore">
-        <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Moltiplicare anche le basi fra loro</div>
-        <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a^{m}\cdot a^{n}=\left(a\cdot a\right)^{m+n}$</div></div>
-          <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a^{m}\cdot a^{n}=a^{m+n}$</div></div>
-        </div>
-        <div class="why-txt">La base non si tocca: cambiano solo gli esponenti.</div>
-      </div>
-    </div>
-  </details>
-
   <div class="riga">
     <div class="fissa">
-      <div class="n">11</div>
+      <div class="n">10</div>
       <div class="cont">
-        <div class="nota">Svolgo le potenze.</div>
-        <div class="f sx">$\displaystyle =0+5-2+16=$</div>
+        <div class="nota">Prodotto con la stessa base, come al passaggio 7.</div>
+        <div class="f sx">$\displaystyle =0+5^{1}-2+2^{4}=$</div>
       </div>
       <div></div>
     </div>
   </div>
+
+  <details class="riga">
+    <summary>
+      <div class="n">11</div>
+      <div class="cont">
+        <div class="nota">Svolgo le potenze: $5^{1}$ è $5$.</div>
+        <div class="f sx">$\displaystyle =0+5-2+16=$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">$5^{1}=5$ e $2^{4}=16$. L'esponente $1$ lascia il numero com'è.</p>
+      <div class="teoria">
+        <div class="nome">Potenza con esponente uno</div>
+        <div class="frase">Un numero elevato a <strong>uno</strong> è il numero stesso: l'esponente $1$ dice "preso una volta sola". Per questo di solito non lo si scrive nemmeno.</div>
+        <div class="f sx">$\displaystyle a^{1}=a$</div>
+        <div class="ex">esempio: $7^{1}=7$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Confondere l'esponente uno con il risultato uno</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a^{1}=1$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a^{1}=a$</div></div>
+        </div>
+        <div class="why-txt">Esponente uno: resta la base.</div>
+      </div>
+    </div>
+  </details>
 
   <div class="riga">
     <div class="fissa">

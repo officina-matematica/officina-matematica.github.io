@@ -266,35 +266,16 @@ mjx-container[display]{margin:0!important}
     </div>
   </details>
 
-  <details class="riga">
-    <summary>
+  <div class="riga">
+    <div class="fissa">
       <div class="n">5</div>
       <div class="cont">
-        <div class="nota">Divisione con la stessa base.</div>
+        <div class="nota">Divisione con la stessa base, come al passaggio 3.</div>
         <div class="f sx">$\displaystyle =\left\{8^{1}\right\}^{0}+\left\{2^{6}\right\}^{3}:4^{9}=$</div>
       </div>
-      <span class="tab">Regola <span class="chev">▼</span></span>
-    </summary>
-    <div class="pannello">
-      <p class="mossa">$2^{102}:2^{96}=2^{102-96}=2^{6}$.</p>
-      <div class="teoria">
-        <div class="nome">Divisione di potenze con la stessa base</div>
-        <div class="frase">Quando due potenze hanno la <strong>stessa base</strong>, per dividerle si sottraggono gli esponenti: quello del divisore si toglie a quello del dividendo. La base resta la stessa.</div>
-        <div class="f sx">$\displaystyle a^{m}:a^{n}=a^{m-n}$</div>
-        <div class="ex">esempio: $5^{7}:5^{4}=5^{3}$</div>
-      </div>
-      <div class="errore">
-        <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Dividere gli esponenti invece di sottrarli</div>
-        <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a^{m}:a^{n}=a^{m:n}$</div></div>
-          <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a^{m}:a^{n}=a^{m-n}$</div></div>
-        </div>
-        <div class="why-txt">Divisione di potenze, sottrazione di esponenti.</div>
-      </div>
+      <div></div>
     </div>
-  </details>
+  </div>
 
   <details class="riga">
     <summary>
@@ -306,7 +287,7 @@ mjx-container[display]{margin:0!important}
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">Dentro la graffa è rimasto $8^{1}$, cioè $8$. Elevato a zero dà $1$, qualunque cosa ci fosse dentro, purché non fosse zero.</p>
+      <p class="mossa">La graffa contiene $8^{1}$, un numero diverso da zero: elevato a zero dà $1$, qualunque cosa ci fosse dentro.</p>
       <div class="teoria">
         <div class="nome">Potenza con esponente zero</div>
         <div class="frase">Qualsiasi numero diverso da zero, elevato a <strong>zero</strong>, dà come risultato uno. Non zero: uno.</div>
@@ -332,35 +313,16 @@ mjx-container[display]{margin:0!important}
     <span>la prima graffa vale uno: resta solo la seconda.</span>
   </div>
 
-  <details class="riga">
-    <summary>
+  <div class="riga">
+    <div class="fissa">
       <div class="n">7</div>
       <div class="cont">
-        <div class="nota">Potenza di potenza.</div>
+        <div class="nota">Potenza di potenza, come al passaggio 2.</div>
         <div class="f sx">$\displaystyle =1+2^{18}:4^{9}=$</div>
       </div>
-      <span class="tab">Regola <span class="chev">▼</span></span>
-    </summary>
-    <div class="pannello">
-      <p class="mossa">$\left\{2^{6}\right\}^{3}=2^{6\cdot 3}=2^{18}$.</p>
-      <div class="teoria">
-        <div class="nome">Potenza di potenza</div>
-        <div class="frase">Quando una potenza è a sua volta elevata a un esponente, i due esponenti si <strong>moltiplicano</strong> fra loro. È l'unico caso in cui gli esponenti si moltiplicano.</div>
-        <div class="f sx">$\displaystyle \left(a^{m}\right)^{n}=a^{m\cdot n}$</div>
-        <div class="ex">esempio: $\left(3^{2}\right)^{4}=3^{8}$</div>
-      </div>
-      <div class="errore">
-        <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Sommare gli esponenti nella potenza di potenza</div>
-        <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \left(a^{m}\right)^{n}=a^{m+n}$</div></div>
-          <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \left(a^{m}\right)^{n}=a^{m\cdot n}$</div></div>
-        </div>
-        <div class="why-txt">Somma per il prodotto, prodotto per la potenza.</div>
-      </div>
+      <div></div>
     </div>
-  </details>
+  </div>
 
   <details class="riga">
     <summary>
@@ -372,7 +334,7 @@ mjx-container[display]{margin:0!important}
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">$2^{18}$ e $4^{9}$ hanno basi diverse. Ma $4=2^{2}$: riscritto così, le basi diventano uguali.</p>
+      <p class="mossa">$2^{18}$ e $4^{9}$ hanno basi diverse. Ma $4=2^{2}$: riscritto così, le basi diventano uguali e la divisione si può fare con la proprietà.</p>
       <div class="teoria">
         <div class="nome">Portare le potenze alla stessa base</div>
         <div class="frase">Le proprietà delle potenze funzionano solo se le basi sono <strong>uguali</strong>. Spesso un numero è già una potenza travestita: basta riscriverlo per far comparire la stessa base.</div>
@@ -396,48 +358,29 @@ mjx-container[display]{margin:0!important}
     <div class="fissa">
       <div class="n">9</div>
       <div class="cont">
-        <div class="nota">Potenza di potenza.</div>
+        <div class="nota">Potenza di potenza, come al passaggio 2.</div>
         <div class="f sx">$\displaystyle =1+2^{18}:2^{18}=$</div>
       </div>
       <div></div>
     </div>
   </div>
 
-  <details class="riga">
-    <summary>
+  <div class="riga">
+    <div class="fissa">
       <div class="n">10</div>
       <div class="cont">
-        <div class="nota">Stessa base: sottraggo gli esponenti.</div>
+        <div class="nota">Stessa base: sottraggo gli esponenti, come al passaggio 3.</div>
         <div class="f sx">$\displaystyle =1+2^{0}=$</div>
       </div>
-      <span class="tab">Regola <span class="chev">▼</span></span>
-    </summary>
-    <div class="pannello">
-      <p class="mossa">$2^{18}:2^{18}=2^{18-18}=2^{0}$.</p>
-      <div class="teoria">
-        <div class="nome">Divisione di potenze con la stessa base</div>
-        <div class="frase">Quando due potenze hanno la <strong>stessa base</strong>, per dividerle si sottraggono gli esponenti: quello del divisore si toglie a quello del dividendo. La base resta la stessa.</div>
-        <div class="f sx">$\displaystyle a^{m}:a^{n}=a^{m-n}$</div>
-        <div class="ex">esempio: $5^{7}:5^{4}=5^{3}$</div>
-      </div>
-      <div class="errore">
-        <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Dividere gli esponenti invece di sottrarli</div>
-        <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a^{m}:a^{n}=a^{m:n}$</div></div>
-          <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a^{m}:a^{n}=a^{m-n}$</div></div>
-        </div>
-        <div class="why-txt">Divisione di potenze, sottrazione di esponenti.</div>
-      </div>
+      <div></div>
     </div>
-  </details>
+  </div>
 
   <div class="riga">
     <div class="fissa">
       <div class="n">11</div>
       <div class="cont">
-        <div class="nota">Esponente zero: vale $1$.</div>
+        <div class="nota">Esponente zero: vale $1$, come al passaggio 6.</div>
         <div class="f sx">$\displaystyle =1+1=$</div>
       </div>
       <div></div>

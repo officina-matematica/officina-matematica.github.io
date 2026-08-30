@@ -302,16 +302,35 @@ mjx-container[display]{margin:0!important}
     <span>la parte con le potenze di $2$ è finita: restano le due quadre.</span>
   </div>
 
-  <div class="riga">
-    <div class="fissa">
+  <details class="riga">
+    <summary>
       <div class="n">6</div>
       <div class="cont">
         <div class="nota">Svolgo le potenze $2^{2}$ dentro le quadre.</div>
         <div class="f sx">$\displaystyle =2+1-\left[5\cdot\left(12-2\cdot 8:4\right):4\right]^{2}:\left[\left(2\cdot 3\right)^{2}+\left(4+6:3\cdot 2\right)^{2}\right]=$</div>
       </div>
-      <div></div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">$2^{2}=4$ in tutte e due le quadre: la potenza si svolge prima della divisione che la segue e prima della somma che la precede.</p>
+      <div class="teoria">
+        <div class="nome">Priorità: prima le potenze</div>
+        <div class="frase">Le potenze si svolgono per prime, prima ancora delle moltiplicazioni e delle divisioni. L'esponente riguarda <strong>soltanto</strong> il numero su cui è scritto.</div>
+        <div class="f sx">$\displaystyle a\cdot b^{n}=a\cdot\left(b^{n}\right)$</div>
+        <div class="ex">esempio: $2\cdot 3^{2}=2\cdot 9=18$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Elevare anche il fattore accanto</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a\cdot b^{n}=\left(a\cdot b\right)^{n}$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a\cdot b^{n}=a\cdot\left(b^{n}\right)$</div></div>
+        </div>
+        <div class="why-txt">L'esponente riguarda un numero solo.</div>
+      </div>
     </div>
-  </div>
+  </details>
 
   <details class="riga">
     <summary>

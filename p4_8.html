@@ -240,13 +240,13 @@ mjx-container[display]{margin:0!important}
     <summary>
       <div class="n">4</div>
       <div class="cont">
-        <div class="nota">Divisioni con la stessa base, da sinistra.</div>
+        <div class="nota">Divisioni con la stessa base.</div>
         <div class="f sx">$\displaystyle =\left\{3^{5}:3^{2}-3\cdot 6\right\}:\left(3^{4}:3^{2}\right)+\left\{\left[\left(5^{2}\cdot 2-5\cdot 4\right):10\right]^{2}+1\right\}:5=$</div>
       </div>
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">$3^{8}:3^{3}=3^{5}$ nella quadra, e $3^{10}:3^{6}=3^{4}$ nella tonda: si parte sempre dalla divisione più a sinistra.</p>
+      <p class="mossa">$3^{8}:3^{3}=3^{5}$ nella quadra, e $3^{10}:3^{6}=3^{4}$ nella tonda.</p>
       <div class="teoria">
         <div class="nome">Divisione di potenze con la stessa base</div>
         <div class="frase">Quando due potenze hanno la <strong>stessa base</strong>, per dividerle si sottraggono gli esponenti: quello del divisore si toglie a quello del dividendo. La base resta la stessa.</div>
@@ -266,16 +266,35 @@ mjx-container[display]{margin:0!important}
     </div>
   </details>
 
-  <div class="riga">
-    <div class="fissa">
+  <details class="riga">
+    <summary>
       <div class="n">5</div>
       <div class="cont">
-        <div class="nota">Ancora divisioni con la stessa base.</div>
+        <div class="nota">Ancora divisioni, sempre da sinistra.</div>
         <div class="f sx">$\displaystyle =\left\{3^{3}-3\cdot 6\right\}:3^{2}+\left\{\left[\left(5^{2}\cdot 2-5\cdot 4\right):10\right]^{2}+1\right\}:5=$</div>
       </div>
-      <div></div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">$3^{5}:3^{2}=3^{3}$ e $3^{4}:3^{2}=3^{2}$. Nella tonda c'erano tre potenze di fila: si dividono a due a due partendo da sinistra, non si salta al fondo.</p>
+      <div class="teoria">
+        <div class="nome">Divisione e moltiplicazione: stessa priorità</div>
+        <div class="frase">Divisione e moltiplicazione contano allo stesso modo: quando si susseguono si eseguono nell'ordine in cui sono scritte, da sinistra a destra. Solo una parentesi può cambiare quest'ordine.</div>
+        <div class="f sx">$\displaystyle a:b\cdot c=\left(a:b\right)\cdot c$</div>
+        <div class="ex">esempio: $20:5\cdot 2=4\cdot 2=8$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Eseguire la moltiplicazione prima della divisione</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a:b\cdot c=a:\left(b\cdot c\right)$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a:b\cdot c=\left(a:b\right)\cdot c$</div></div>
+        </div>
+        <div class="why-txt">Senza parentesi si va da sinistra.</div>
+      </div>
     </div>
-  </div>
+  </details>
 
   <details class="riga">
     <summary>
@@ -413,28 +432,28 @@ mjx-container[display]{margin:0!important}
     <summary>
       <div class="n">14</div>
       <div class="cont">
-        <div class="nota">Prima le due divisioni.</div>
+        <div class="nota">Prima le divisioni: $9:9=1$.</div>
         <div class="f sx">$\displaystyle =1+2=$</div>
       </div>
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">Resta $9:9+10:5$: ogni divisione si chiude per conto suo, prima della somma.</p>
+      <p class="mossa">$9:9$ è un numero diviso sé stesso e fa $1$. Poi $10:5=2$: le divisioni si chiudono prima della somma, come sempre.</p>
       <div class="teoria">
-        <div class="nome">Priorità delle operazioni</div>
-        <div class="frase">Prima le potenze, poi le moltiplicazioni e le divisioni, e solo alla fine le addizioni e le sottrazioni.</div>
-        <div class="f sx">$\displaystyle a+b:c=a+\left(b:c\right)$</div>
-        <div class="ex">esempio: $2+12:4=2+3=5$</div>
+        <div class="nome">Un numero diviso sé stesso</div>
+        <div class="frase">Qualsiasi numero diverso da zero diviso per sé stesso dà <strong>uno</strong>: quante volte un numero ci sta dentro sé stesso? Una volta sola.</div>
+        <div class="f sx">$\displaystyle a:a=1$</div>
+        <div class="ex">esempio: $37:37=1$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Eseguire l'addizione prima della divisione</div>
+        <div class="nome">Scrivere zero invece di uno</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a+b:c=\left(a+b\right):c$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a:a=0$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a+b:c=a+\left(b:c\right)$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a:a=1$</div></div>
         </div>
-        <div class="why-txt">La divisione si chiude per prima.</div>
+        <div class="why-txt">Ci sta una volta: fa uno.</div>
       </div>
     </div>
   </details>

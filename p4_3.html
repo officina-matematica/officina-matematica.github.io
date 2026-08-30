@@ -206,16 +206,35 @@ mjx-container[display]{margin:0!important}
     </div>
   </details>
 
-  <div class="riga">
-    <div class="fissa">
+  <details class="riga">
+    <summary>
       <div class="n">3</div>
       <div class="cont">
         <div class="nota">Tonda: da sinistra, prima il prodotto.</div>
         <div class="f sx">$\displaystyle =\left[40-40:5-\left(12:6\right)^{5}\right]^{2}+\left(5^{2}\right)^{4}\cdot\left(5^{4}\right)^{2}:\left(5^{2}\cdot 5^{3}\right)^{3}+\left(7^{3}\right)^{3}:49^{4}=$</div>
       </div>
-      <div></div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">Dentro la tonda resta $4\cdot 3:6$: prodotto e divisione hanno la stessa priorità, quindi si parte dal primo a sinistra, $4\cdot 3=12$.</p>
+      <div class="teoria">
+        <div class="nome">Divisione e moltiplicazione: stessa priorità</div>
+        <div class="frase">Divisione e moltiplicazione contano allo stesso modo: quando si susseguono si eseguono nell'ordine in cui sono scritte, da sinistra a destra. Solo una parentesi può cambiare quest'ordine.</div>
+        <div class="f sx">$\displaystyle a:b\cdot c=\left(a:b\right)\cdot c$</div>
+        <div class="ex">esempio: $20:5\cdot 2=4\cdot 2=8$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Eseguire la moltiplicazione prima della divisione</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a:b\cdot c=a:\left(b\cdot c\right)$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a:b\cdot c=\left(a:b\right)\cdot c$</div></div>
+        </div>
+        <div class="why-txt">Senza parentesi si va da sinistra.</div>
+      </div>
     </div>
-  </div>
+  </details>
 
   <div class="riga">
     <div class="fissa">
@@ -399,7 +418,7 @@ mjx-container[display]{margin:0!important}
     <div class="fissa">
       <div class="n">11</div>
       <div class="cont">
-        <div class="nota">Potenza di potenza.</div>
+        <div class="nota">Potenza di potenza, come al passaggio 9.</div>
         <div class="f sx">$\displaystyle =0+5^{8}\cdot 5^{8}:5^{15}+7^{9}:7^{8}=$</div>
       </div>
       <div></div>
@@ -410,7 +429,7 @@ mjx-container[display]{margin:0!important}
     <div class="fissa">
       <div class="n">12</div>
       <div class="cont">
-        <div class="nota">Prodotto con la stessa base.</div>
+        <div class="nota">Prodotto con la stessa base, come al passaggio 8.</div>
         <div class="f sx">$\displaystyle =0+5^{16}:5^{15}+7^{9}:7^{8}=$</div>
       </div>
       <div></div>
@@ -447,16 +466,35 @@ mjx-container[display]{margin:0!important}
     </div>
   </details>
 
-  <div class="riga">
-    <div class="fissa">
+  <details class="riga">
+    <summary>
       <div class="n">14</div>
       <div class="cont">
-        <div class="nota">Una potenza con esponente $1$ è la base stessa.</div>
+        <div class="nota">Esponente uno: restano le basi.</div>
         <div class="f sx">$\displaystyle =0+5+7=$</div>
       </div>
-      <div></div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">$5^{1}=5$ e $7^{1}=7$. L'esponente $1$ vuol dire \"preso una volta sola\": il numero non cambia.</p>
+      <div class="teoria">
+        <div class="nome">Potenza con esponente uno</div>
+        <div class="frase">Un numero elevato a <strong>uno</strong> è il numero stesso: l'esponente $1$ dice "preso una volta sola". Per questo di solito non lo si scrive nemmeno.</div>
+        <div class="f sx">$\displaystyle a^{1}=a$</div>
+        <div class="ex">esempio: $7^{1}=7$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Confondere l'esponente uno con il risultato uno</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a^{1}=1$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a^{1}=a$</div></div>
+        </div>
+        <div class="why-txt">Esponente uno: resta la base.</div>
+      </div>
     </div>
-  </div>
+  </details>
 
   <div class="riga res">
     <div class="fissa">

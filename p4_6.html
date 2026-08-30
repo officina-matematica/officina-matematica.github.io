@@ -266,35 +266,16 @@ mjx-container[display]{margin:0!important}
     </div>
   </details>
 
-  <details class="riga">
-    <summary>
+  <div class="riga">
+    <div class="fissa">
       <div class="n">5</div>
       <div class="cont">
-        <div class="nota">Divisioni con la stessa base.</div>
+        <div class="nota">Divisioni con la stessa base, come al passaggio 2.</div>
         <div class="f sx">$\displaystyle =\left[5^{3}-\left(2^{2}\right)^{2}+11^{1}\right]:\left(2^{3}\cdot 5\right)+\left(3^{2}\right)^{6}:\left(3^{3}\right)^{3}:3=$</div>
       </div>
-      <span class="tab">Regola <span class="chev">▼</span></span>
-    </summary>
-    <div class="pannello">
-      <p class="mossa">$2^{5}:2^{3}=2^{2}$ e $11^{3}:11^{2}=11^{1}$: in entrambe si sottraggono gli esponenti.</p>
-      <div class="teoria">
-        <div class="nome">Divisione di potenze con la stessa base</div>
-        <div class="frase">Quando due potenze hanno la <strong>stessa base</strong>, per dividerle si sottraggono gli esponenti: quello del divisore si toglie a quello del dividendo. La base resta la stessa.</div>
-        <div class="f sx">$\displaystyle a^{m}:a^{n}=a^{m-n}$</div>
-        <div class="ex">esempio: $5^{7}:5^{4}=5^{3}$</div>
-      </div>
-      <div class="errore">
-        <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Dividere gli esponenti invece di sottrarli</div>
-        <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a^{m}:a^{n}=a^{m:n}$</div></div>
-          <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a^{m}:a^{n}=a^{m-n}$</div></div>
-        </div>
-        <div class="why-txt">Divisione di potenze, sottrazione di esponenti.</div>
-      </div>
+      <div></div>
     </div>
-  </details>
+  </div>
 
   <details class="riga">
     <summary>
@@ -330,42 +311,61 @@ mjx-container[display]{margin:0!important}
     <summary>
       <div class="n">7</div>
       <div class="cont">
-        <div class="nota">Divisione con la stessa base; l'esponente $1$ sparisce.</div>
+        <div class="nota">Divisione come sopra; e $11^{1}$ è $11$.</div>
         <div class="f sx">$\displaystyle =\left[5^{3}-2^{4}+11\right]:\left(2^{3}\cdot 5\right)+3^{3}:3=$</div>
       </div>
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">$3^{12}:3^{9}=3^{3}$. E $11^{1}$ è semplicemente $11$: l'esponente $1$ non cambia il numero.</p>
+      <p class="mossa">$3^{12}:3^{9}=3^{3}$, come al passaggio 2. E $11^{1}=11$: l'esponente $1$ non cambia il numero, per questo di solito non si scrive.</p>
       <div class="teoria">
-        <div class="nome">Divisione di potenze con la stessa base</div>
-        <div class="frase">Quando due potenze hanno la <strong>stessa base</strong>, per dividerle si sottraggono gli esponenti: quello del divisore si toglie a quello del dividendo. La base resta la stessa.</div>
-        <div class="f sx">$\displaystyle a^{m}:a^{n}=a^{m-n}$</div>
-        <div class="ex">esempio: $5^{7}:5^{4}=5^{3}$</div>
+        <div class="nome">Potenza con esponente uno</div>
+        <div class="frase">Un numero elevato a <strong>uno</strong> è il numero stesso: l'esponente $1$ dice "preso una volta sola". Per questo di solito non lo si scrive nemmeno.</div>
+        <div class="f sx">$\displaystyle a^{1}=a$</div>
+        <div class="ex">esempio: $7^{1}=7$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Dividere gli esponenti invece di sottrarli</div>
+        <div class="nome">Confondere l'esponente uno con il risultato uno</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a^{m}:a^{n}=a^{m:n}$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a^{1}=1$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a^{m}:a^{n}=a^{m-n}$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a^{1}=a$</div></div>
         </div>
-        <div class="why-txt">Divisione di potenze, sottrazione di esponenti.</div>
+        <div class="why-txt">Esponente uno: resta la base.</div>
       </div>
     </div>
   </details>
 
-  <div class="riga">
-    <div class="fissa">
+  <details class="riga">
+    <summary>
       <div class="n">8</div>
       <div class="cont">
         <div class="nota">Svolgo tutte le potenze.</div>
         <div class="f sx">$\displaystyle =\left[125-16+11\right]:\left(8\cdot 5\right)+27:3=$</div>
       </div>
-      <div></div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">$5^{3}=125$, $2^{4}=16$, $2^{3}=8$, $3^{3}=27$: le potenze si chiudono prima delle sottrazioni, dei prodotti e delle divisioni che le circondano.</p>
+      <div class="teoria">
+        <div class="nome">Priorità: prima le potenze</div>
+        <div class="frase">Le potenze si svolgono per prime, prima ancora delle moltiplicazioni e delle divisioni. L'esponente riguarda <strong>soltanto</strong> il numero su cui è scritto.</div>
+        <div class="f sx">$\displaystyle a\cdot b^{n}=a\cdot\left(b^{n}\right)$</div>
+        <div class="ex">esempio: $2\cdot 3^{2}=2\cdot 9=18$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Elevare anche il fattore accanto</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a\cdot b^{n}=\left(a\cdot b\right)^{n}$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a\cdot b^{n}=a\cdot\left(b^{n}\right)$</div></div>
+        </div>
+        <div class="why-txt">L'esponente riguarda un numero solo.</div>
+      </div>
     </div>
-  </div>
+  </details>
 
   <div class="check">
     <span>🚩 <b>Fermata di controllo.</b> Se qui hai</span>
