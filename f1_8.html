@@ -13,7 +13,7 @@
   "consegna_label": "Risolvi il problema",
   "consegna_tex": "Ho acquistato un lettore di compact disc ed ho versato € 60 di anticipo, che corrispondono ai $\\displaystyle\\frac{2}{5}$ dell'intero costo. Dopo due mesi verso i $\\displaystyle\\frac{2}{3}$ della rimanenza. Quanto mi rimane ancora da pagare?",
   "consegna_sympy": "(60/Rational(2,5) - 60) - Rational(2,3)*(60/Rational(2,5) - 60)",
-  "risultato_tex": "\\text{Debito residuo}=90-60=30\\ \\text{€}",
+  "risultato_tex": "\\text{Rimangono da pagare } 30\\ \\text{€}",
   "risultato_sympy": "Integer(30)"
 }
 </script>
@@ -172,13 +172,13 @@ mjx-container[display]{margin:0!important}
     <summary>
       <div class="n">1</div>
       <div class="cont">
-        <div class="nota">$60$ € sono i $\frac{2}{5}$: per l'intero si divide.</div>
+        <div class="nota">Partiamo dall'anticipo. Il testo dice che i $60$ € versati sono i $\frac{2}{5}$ del costo: è una parte, quindi dividiamo.</div>
         <div class="f sx">$\displaystyle \text{Costo}=60:\frac{2}{5}$</div>
       </div>
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">L'anticipo è una parte, e il problema dice che è i $\frac{2}{5}$ del costo. Per risalire al costo intero si divide per la frazione.</p>
+      <p class="mossa">I $\frac{2}{5}$ del costo sono $60$ €: il costo intero è più di due volte tanto. Dividere per una frazione minore di $1$ fa crescere il numero.</p>
       <div class="teoria">
         <div class="nome">Dalla parte all'intero: si divide</div>
         <div class="frase">Quando il problema dà una <strong>parte</strong> e dice a quale frazione corrisponde, per risalire all'intero si divide la parte per quella frazione. È il contrario di quando si cerca la parte, dove invece si moltiplica.</div>
@@ -192,7 +192,7 @@ mjx-container[display]{margin:0!important}
     <summary>
       <div class="n">2</div>
       <div class="cont">
-        <div class="nota">Divido per una frazione: moltiplico per la capovolta.</div>
+        <div class="nota">Svolgiamo il conto e troviamo il prezzo intero del lettore, anticipo compreso.</div>
         <div class="f sx">$\displaystyle \text{Costo}=60\cdot\frac{5}{2}=\frac{300}{2}=150\ \text{€}$</div>
       </div>
       <span class="tab">Regola <span class="chev">▼</span></span>
@@ -228,7 +228,7 @@ mjx-container[display]{margin:0!important}
     <div class="fissa">
       <div class="n">3</div>
       <div class="cont">
-        <div class="nota">Quanto resta da pagare dopo l'anticipo.</div>
+        <div class="nota">Dal costo togliamo l'anticipo già versato: questo è quanto restava da pagare dopo il primo mese.</div>
         <div class="f sx">$\displaystyle \text{Rimanenza}=150-60=90\ \text{€}$</div>
       </div>
       <div></div>
@@ -239,13 +239,13 @@ mjx-container[display]{margin:0!important}
     <summary>
       <div class="n">4</div>
       <div class="cont">
-        <div class="nota">«Della rimanenza»: la frazione si applica a $90$, non a $150$.</div>
+        <div class="nota">Occhio al testo: dice «della <strong>rimanenza</strong>». I $\frac{2}{3}$ si prendono sui $90$ € che restavano, non sui $150$ del costo.</div>
         <div class="f sx">$\displaystyle \text{Secondo versamento}=\frac{2}{3}\cdot 90=\frac{180}{3}=60\ \text{€}$</div>
       </div>
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">È la trappola del problema: i $\frac{2}{3}$ non si prendono sul costo intero, ma su quello che restava da pagare dopo l'anticipo.</p>
+      <p class="mossa">Il costo intero, $150$ €, qui non serve più: da questo punto in avanti tutti i conti si fanno sui $90$ € che restavano da pagare.</p>
       <div class="teoria">
         <div class="nome">«Della rimanenza», non del totale</div>
         <div class="frase">Quando il testo dice «della rimanenza», la frazione si applica a quello che è <strong>rimasto</strong> dopo la prima parte, non alla quantità di partenza. Prima si calcola quanto resta, e solo dopo si prende la frazione di quel numero.</div>
@@ -255,12 +255,23 @@ mjx-container[display]{margin:0!important}
     </div>
   </details>
 
-  <div class="riga res">
+  <div class="riga">
     <div class="fissa">
       <div class="n">5</div>
       <div class="cont">
-        <div class="nota">La rimanenza meno il secondo versamento.</div>
+        <div class="nota">Togliamo anche il secondo versamento da quello che restava.</div>
         <div class="f sx">$\displaystyle \text{Debito residuo}=90-60=30\ \text{€}$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="riga res">
+    <div class="fissa">
+      <div class="n">6</div>
+      <div class="cont">
+        <div class="nota">La domanda era quanto resta da pagare, non quanto è stato versato: rispondiamo a quella, con l'unità.</div>
+        <div class="f sx">$\displaystyle \text{Rimangono da pagare } 30\ \text{€}$</div>
       </div>
       <div></div>
     </div>

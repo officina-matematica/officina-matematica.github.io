@@ -13,7 +13,7 @@
   "consegna_label": "Risolvi il problema",
   "consegna_tex": "Il signor Rossi ha acquistato una automobile a rate. Se finora ha pagato i $\\displaystyle\\frac{3}{4}$ dell'importo, corrispondenti a 15 rate di € 1000 ciascuna, qual è il costo della macchina e quante rate deve ancora versare per estinguere il suo debito?",
   "consegna_sympy": "(15*1000/Rational(3,4) - 15*1000)/1000",
-  "risultato_tex": "\\text{Rate mancanti}=5000:1000=5\\ \\text{rate}",
+  "risultato_tex": "\\text{La macchina costa } 20000\\ \\text{€ e mancano } 5 \\text{ rate}",
   "risultato_sympy": "Integer(5)"
 }
 </script>
@@ -172,7 +172,7 @@ mjx-container[display]{margin:0!important}
     <div class="fissa">
       <div class="n">1</div>
       <div class="cont">
-        <div class="nota">$15$ rate da $1000$ € ciascuna.</div>
+        <div class="nota">Partiamo da quanto ha già versato: $15$ rate da $1000$ € ciascuna, quindi una moltiplicazione.</div>
         <div class="f sx">$\displaystyle \text{Già pagato}=15\cdot 1000=15000\ \text{€}$</div>
       </div>
       <div></div>
@@ -183,13 +183,13 @@ mjx-container[display]{margin:0!important}
     <summary>
       <div class="n">2</div>
       <div class="cont">
-        <div class="nota">$15000$ € sono i $\frac{3}{4}$: per l'intero si divide.</div>
+        <div class="nota">Il testo dice che quei $15000$ € sono i $\frac{3}{4}$ dell'importo: è una parte, e per il costo intero dividiamo.</div>
         <div class="f sx">$\displaystyle \text{Costo}=15000:\frac{3}{4}$</div>
       </div>
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">Il problema dà quanto è già stato pagato e dice che è i $\frac{3}{4}$ dell'importo. Il costo intero è più grande, quindi si divide per la frazione.</p>
+      <p class="mossa">Il costo intero deve venire più grande dei $15000$ € già versati: se il conto dà un numero più piccolo, la divisione è stata fatta al contrario.</p>
       <div class="teoria">
         <div class="nome">Dalla parte all'intero: si divide</div>
         <div class="frase">Quando il problema dà una <strong>parte</strong> e dice a quale frazione corrisponde, per risalire all'intero si divide la parte per quella frazione. È il contrario di quando si cerca la parte, dove invece si moltiplica.</div>
@@ -203,13 +203,13 @@ mjx-container[display]{margin:0!important}
     <summary>
       <div class="n">3</div>
       <div class="cont">
-        <div class="nota">Divido per una frazione: moltiplico per la capovolta.</div>
+        <div class="nota">Facciamo il conto: qui esce la prima delle due risposte, il costo della macchina.</div>
         <div class="f sx">$\displaystyle \text{Costo}=15000\cdot\frac{4}{3}=\frac{60000}{3}=20000\ \text{€}$</div>
       </div>
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">$15000:\frac{3}{4}$ diventa $15000\cdot\frac{4}{3}$. Questa è la prima risposta: la macchina costa $20000$ €.</p>
+      <p class="mossa">$15000:\frac{3}{4}$ diventa $15000\cdot\frac{4}{3}$: la frazione che divide si capovolge.</p>
       <div class="teoria">
         <div class="nome">Dividere per una frazione</div>
         <div class="frase">Per dividere un numero per una frazione si moltiplica il numero per la frazione <strong>capovolta</strong>: numeratore e denominatore si scambiano di posto.</div>
@@ -239,13 +239,13 @@ mjx-container[display]{margin:0!important}
     <summary>
       <div class="n">4</div>
       <div class="cont">
-        <div class="nota">Quanto deve ancora versare.</div>
+        <div class="nota">Passiamo alla seconda domanda. Dal costo intero togliamo quello che ha già pagato: è il debito che gli resta.</div>
         <div class="f sx">$\displaystyle \text{Debito}=20000-15000=5000\ \text{€}$</div>
       </div>
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">Il costo intero meno quello che ha già pagato. È su questa cifra che si contano le rate che mancano.</p>
+      <p class="mossa">Le rate che mancano non si contano sul costo della macchina, ma solo su questi $5000$ € ancora scoperti.</p>
       <div class="teoria">
         <div class="nome">Il resto è il totale meno tutte le parti</div>
         <div class="frase">Quando il problema chiede quanto rimane, conviene sommare tutte le parti che se ne vanno e togliere il risultato dal totale, in una sola sottrazione.</div>
@@ -265,12 +265,23 @@ mjx-container[display]{margin:0!important}
     </div>
   </details>
 
-  <div class="riga res">
+  <div class="riga">
     <div class="fissa">
       <div class="n">5</div>
       <div class="cont">
-        <div class="nota">Quante rate da $1000$ € stanno in $5000$ €.</div>
+        <div class="nota">Ogni rata vale $1000$ €, quindi contiamo quante ne stanno in $5000$.</div>
         <div class="f sx">$\displaystyle \text{Rate mancanti}=5000:1000=5\ \text{rate}$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="riga res">
+    <div class="fissa">
+      <div class="n">6</div>
+      <div class="cont">
+        <div class="nota">Le domande del testo erano due: la risposta finale le tiene insieme tutte e due, ciascuna con la sua unità.</div>
+        <div class="f sx">$\displaystyle \text{La macchina costa } 20000\ \text{€ e mancano } 5 \text{ rate}$</div>
       </div>
       <div></div>
     </div>

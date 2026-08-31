@@ -13,7 +13,7 @@
   "consegna_label": "Risolvi il problema",
   "consegna_tex": "Nella classe di Matteo ci sono 24 alunni. I $\\displaystyle\\frac{2}{3}$ di questi tifano per la Roma, $\\displaystyle\\frac{1}{6}$ tifano per il Milan e il resto degli alunni non tifa per alcuna squadra. Quanti sono i romanisti, i milanisti e i non tifosi?",
   "consegna_sympy": "24 - Rational(2,3)*24 - Rational(1,6)*24",
-  "risultato_tex": "\\text{Non tifosi}=24-20=4\\ \\text{alunni}",
+  "risultato_tex": "\\text{Sono } 16 \\text{ romanisti, } 4 \\text{ milanisti e } 4 \\text{ non tifosi}",
   "risultato_sympy": "Integer(4)"
 }
 </script>
@@ -172,13 +172,13 @@ mjx-container[display]{margin:0!important}
     <summary>
       <div class="n">1</div>
       <div class="cont">
-        <div class="nota">«I $\frac{2}{3}$ di questi»: moltiplico per $24$.</div>
+        <div class="nota">Partiamo dai romanisti. «I $\frac{2}{3}$ di questi»: «questi» sono i $24$ alunni della classe, quindi moltiplichiamo per $24$.</div>
         <div class="f sx">$\displaystyle \text{Romanisti}=\frac{2}{3}\cdot 24=\frac{48}{3}=16\ \text{alunni}$</div>
       </div>
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">«Questi» sono i $24$ alunni della classe: la frazione si applica al totale.</p>
+      <p class="mossa">Nel testo le due frazioni non coprono tutta la classe: $\frac{2}{3}+\frac{1}{6}=\frac{5}{6}$, e il sesto che avanza sono i non tifosi.</p>
       <div class="teoria">
         <div class="nome">La frazione di un numero</div>
         <div class="frase">Nei problemi la parola <strong>di</strong> davanti a una quantità si traduce con il segno di moltiplicazione. Il numero moltiplica il <strong>numeratore</strong>, il denominatore resta com'è.</div>
@@ -202,13 +202,13 @@ mjx-container[display]{margin:0!important}
     <summary>
       <div class="n">2</div>
       <div class="cont">
-        <div class="nota">$\frac{1}{6}$ di $24$: divido in sei parti.</div>
+        <div class="nota">I milanisti si contano sullo stesso totale, e con numeratore $1$ ci basta dividere i $24$ in sei parti.</div>
         <div class="f sx">$\displaystyle \text{Milanisti}=\frac{1}{6}\cdot 24=24:6=4\ \text{alunni}$</div>
       </div>
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">Anche questa frazione si riferisce ai $24$ alunni. Il numeratore è $1$, quindi basta una divisione.</p>
+      <p class="mossa">Il denominatore $6$ dice in quante parti si divide la classe, il numeratore $1$ dice quante se ne prendono.</p>
       <div class="teoria">
         <div class="nome">Una frazione con numeratore uno è una divisione</div>
         <div class="frase">Prendere $\frac{1}{b}$ di una quantità vuol dire dividerla in $b$ parti uguali e prenderne una sola: cioè dividerla per $b$.</div>
@@ -232,13 +232,13 @@ mjx-container[display]{margin:0!important}
     <summary>
       <div class="n">3</div>
       <div class="cont">
-        <div class="nota">Sommo chi tifa per una delle due squadre.</div>
+        <div class="nota">Prima di arrivare ai non tifosi mettiamo insieme le due tifoserie.</div>
         <div class="f sx">$\displaystyle \text{Tifosi}=16+4=20\ \text{alunni}$</div>
       </div>
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">Per trovare chi non tifa conviene prima contare tutti i tifosi, e poi fare una sottrazione sola dal totale.</p>
+      <p class="mossa">Romanisti e milanisti sono gruppi separati: nessun alunno sta in tutti e due, quindi si possono sommare senza contare nessuno due volte.</p>
       <div class="teoria">
         <div class="nome">Il resto è il totale meno tutte le parti</div>
         <div class="frase">Quando il problema chiede quanto rimane, conviene sommare tutte le parti che se ne vanno e togliere il risultato dal totale, in una sola sottrazione.</div>
@@ -258,12 +258,23 @@ mjx-container[display]{margin:0!important}
     </div>
   </details>
 
-  <div class="riga res">
+  <div class="riga">
     <div class="fissa">
       <div class="n">4</div>
       <div class="cont">
-        <div class="nota">Il totale meno i tifosi.</div>
+        <div class="nota">Dal totale della classe togliamo tutti i tifosi: quello che avanza è chi non tifa per nessuno.</div>
         <div class="f sx">$\displaystyle \text{Non tifosi}=24-20=4\ \text{alunni}$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="riga res">
+    <div class="fissa">
+      <div class="n">5</div>
+      <div class="cont">
+        <div class="nota">Il testo chiedeva tre numeri: li rimettiamo insieme in una frase, ciascuno col nome del gruppo che conta.</div>
+        <div class="f sx">$\displaystyle \text{Sono } 16 \text{ romanisti, } 4 \text{ milanisti e } 4 \text{ non tifosi}$</div>
       </div>
       <div></div>
     </div>

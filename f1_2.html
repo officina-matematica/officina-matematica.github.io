@@ -13,7 +13,7 @@
   "consegna_label": "Risolvi il problema",
   "consegna_tex": "Una scatola contiene 150 cioccolatini. Se, in giorni diversi, ne mangiamo $\\displaystyle\\frac{1}{2}$, $\\displaystyle\\frac{1}{3}$ e $\\displaystyle\\frac{1}{15}$ del totale, quanti cioccolatini restano per i nostri amici?",
   "consegna_sympy": "150 - (Rational(1,2)*150 + Rational(1,3)*150 + Rational(1,15)*150)",
-  "risultato_tex": "\\text{Rimasti}=150-135=15\\ \\text{cioccolatini}",
+  "risultato_tex": "\\text{Restano } 15 \\text{ cioccolatini per gli amici}",
   "risultato_sympy": "Integer(15)"
 }
 </script>
@@ -172,13 +172,13 @@ mjx-container[display]{margin:0!important}
     <summary>
       <div class="n">1</div>
       <div class="cont">
-        <div class="nota">«Del totale»: ogni frazione si applica a $150$.</div>
+        <div class="nota">Partiamo dal primo giorno. Il testo dice «$\frac{1}{2}$ <strong>del totale</strong>», e il totale sono i $150$ cioccolatini della scatola.</div>
         <div class="f sx">$\displaystyle \text{Primo giorno}=\frac{1}{2}\cdot 150=\frac{150}{2}=75\ \text{cioccolatini}$</div>
       </div>
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">Le tre frazioni si riferiscono tutte allo stesso totale, i $150$ cioccolatini della scatola: non a quello che resta di volta in volta.</p>
+      <p class="mossa">Nel testo «del totale» vale per tutte e tre le frazioni: nessuna si applica a quello che era rimasto dal giorno prima.</p>
       <div class="teoria">
         <div class="nome">La frazione di un numero</div>
         <div class="frase">Nei problemi la parola <strong>di</strong> davanti a una quantità si traduce con il segno di moltiplicazione. Il numero moltiplica il <strong>numeratore</strong>, il denominatore resta com'è.</div>
@@ -202,7 +202,7 @@ mjx-container[display]{margin:0!important}
     <summary>
       <div class="n">2</div>
       <div class="cont">
-        <div class="nota">$\frac{1}{3}$ di $150$: divido in tre parti.</div>
+        <div class="nota">Passiamo al secondo giorno. Anche questa frazione si conta sui $150$ di partenza, e con numeratore $1$ ci basta una divisione.</div>
         <div class="f sx">$\displaystyle \text{Secondo giorno}=\frac{1}{3}\cdot 150=150:3=50\ \text{cioccolatini}$</div>
       </div>
       <span class="tab">Regola <span class="chev">▼</span></span>
@@ -232,7 +232,7 @@ mjx-container[display]{margin:0!important}
     <div class="fissa">
       <div class="n">3</div>
       <div class="cont">
-        <div class="nota">Stessa cosa con $\frac{1}{15}$.</div>
+        <div class="nota">Terzo giorno, stessa mossa: dividiamo i $150$ in quindici parti e ne prendiamo una.</div>
         <div class="f sx">$\displaystyle \text{Terzo giorno}=\frac{1}{15}\cdot 150=150:15=10\ \text{cioccolatini}$</div>
       </div>
       <div></div>
@@ -243,7 +243,7 @@ mjx-container[display]{margin:0!important}
     <summary>
       <div class="n">4</div>
       <div class="cont">
-        <div class="nota">Sommo le tre parti mangiate.</div>
+        <div class="nota">Prima di rispondere mettiamo insieme i tre giorni: sono i cioccolatini usciti dalla scatola in tutto.</div>
         <div class="f sx">$\displaystyle \text{Mangiati in tutto}=75+50+10=135\ \text{cioccolatini}$</div>
       </div>
       <span class="tab">Regola <span class="chev">▼</span></span>
@@ -269,12 +269,23 @@ mjx-container[display]{margin:0!important}
     </div>
   </details>
 
-  <div class="riga res">
+  <div class="riga">
     <div class="fissa">
       <div class="n">5</div>
       <div class="cont">
-        <div class="nota">Il totale meno quelli mangiati.</div>
+        <div class="nota">Adesso basta una sottrazione sola: dai $150$ della scatola togliamo i $135$ mangiati nei tre giorni.</div>
         <div class="f sx">$\displaystyle \text{Rimasti}=150-135=15\ \text{cioccolatini}$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="riga res">
+    <div class="fissa">
+      <div class="n">6</div>
+      <div class="cont">
+        <div class="nota">Il testo chiedeva quanti ne restano per gli amici: la risposta si scrive a parole, con il nome di quello che abbiamo contato.</div>
+        <div class="f sx">$\displaystyle \text{Restano } 15 \text{ cioccolatini per gli amici}$</div>
       </div>
       <div></div>
     </div>

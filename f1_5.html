@@ -13,7 +13,7 @@
   "consegna_label": "Risolvi il problema",
   "consegna_tex": "Di un libro di 500 pagine leggo prima i $\\displaystyle\\frac{3}{50}$ e poi i $\\displaystyle\\frac{7}{10}$. Quante pagine ho letto in tutto?",
   "consegna_sympy": "Rational(3,50)*500 + Rational(7,10)*500",
-  "risultato_tex": "\\text{Pagine lette}=30+350=380\\ \\text{pagine}",
+  "risultato_tex": "\\text{In tutto ha letto } 380 \\text{ pagine}",
   "risultato_sympy": "Integer(380)"
 }
 </script>
@@ -172,13 +172,13 @@ mjx-container[display]{margin:0!important}
     <summary>
       <div class="n">1</div>
       <div class="cont">
-        <div class="nota">«I $\frac{3}{50}$ di $500$»: moltiplico.</div>
+        <div class="nota">Partiamo dalla prima lettura. «I $\frac{3}{50}$» si riferiscono alle $500$ pagine del libro: quel «di» sottinteso è una moltiplicazione.</div>
         <div class="f sx">$\displaystyle \text{Prima lettura}=\frac{3}{50}\cdot 500=\frac{1500}{50}=30\ \text{pagine}$</div>
       </div>
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">Il libro intero è $500$ pagine, e la prima volta ne legge i $\frac{3}{50}$: la parola «di» diventa il segno di moltiplicazione.</p>
+      <p class="mossa">Il numero moltiplica il numeratore: $\frac{3\cdot 500}{50}=\frac{1500}{50}$. Il denominatore $50$ resta dov'è.</p>
       <div class="teoria">
         <div class="nome">La frazione di un numero</div>
         <div class="frase">Nei problemi la parola <strong>di</strong> davanti a una quantità si traduce con il segno di moltiplicazione. Il numero moltiplica il <strong>numeratore</strong>, il denominatore resta com'è.</div>
@@ -202,7 +202,7 @@ mjx-container[display]{margin:0!important}
     <summary>
       <div class="n">2</div>
       <div class="cont">
-        <div class="nota">Semplifico $500$ con $10$ prima di moltiplicare.</div>
+        <div class="nota">Passiamo alla seconda lettura, che si conta sulle stesse $500$ pagine. Prima di moltiplicare conviene semplificare, così i numeri restano piccoli.</div>
         <div class="f sx">$\displaystyle \text{Seconda lettura}=\frac{7}{10}\cdot 500=7\cdot 50=350\ \text{pagine}$</div>
       </div>
       <span class="tab">Regola <span class="chev">▼</span></span>
@@ -228,12 +228,23 @@ mjx-container[display]{margin:0!important}
     </div>
   </details>
 
-  <div class="riga res">
+  <div class="riga">
     <div class="fissa">
       <div class="n">3</div>
       <div class="cont">
-        <div class="nota">Sommo le pagine delle due letture.</div>
+        <div class="nota">Il testo chiede quante pagine in tutto, non quante ne restano: sommiamo le due letture.</div>
         <div class="f sx">$\displaystyle \text{Pagine lette}=30+350=380\ \text{pagine}$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="riga res">
+    <div class="fissa">
+      <div class="n">4</div>
+      <div class="cont">
+        <div class="nota">La domanda era quante pagine in tutto: la frase finale risponde a quella, con l'unità.</div>
+        <div class="f sx">$\displaystyle \text{In tutto ha letto } 380 \text{ pagine}$</div>
       </div>
       <div></div>
     </div>
