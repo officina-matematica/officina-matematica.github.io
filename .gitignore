@@ -18,3 +18,6 @@ genera_qr.py
 costruisci_documento.py
 rendi_formule.js
 modello_consegna.html
+
+# residui degli script Python
+__pycache__/
