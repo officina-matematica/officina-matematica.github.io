@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PX2_14 — Problemi con le percentuali</title>
+
+<script type="application/json" id="meta">
+{
+  "id": "px2_14",
+  "titolo": "Problemi con le percentuali",
+  "tipo": "problema",
+  "consegna_label": "Risolvi il problema",
+  "consegna_tex": "All'esame di Stato i candidati hanno conseguito il diploma con questi punteggi in centesimi: 60 (1 candidato), 64 (2), 70 (4), 72 (1), 78 (2), 80 (5), 84 (4), 88 (1), 94 (3), 100 (2). Per poter partecipare a un concorso occorre aver conseguito il diploma con un punteggio di almeno 80/100. Qual è la percentuale di candidati che può partecipare al concorso?",
+  "consegna_sympy": "Rational(5+4+1+3+2, 1+2+4+1+2+5+4+1+3+2)*100",
+  "risultato_tex": "\\text{Può partecipare il } 60\\ \\% \\text{ dei candidati}",
+  "risultato_sympy": "Integer(60)",
+  "righe_sympy": [
+    "Integer(25)",
+    "Integer(15)",
+    "Integer(60)",
+    null
+  ]
+}
+</script>
+
+<!-- Output SVG, non CHTML: glifi vettoriali, allineamento identico su ogni
+     dispositivo, nessun rischio di webfont non caricato dentro un iframe.
+     Ogni formula e' scritta con \displaystyle: senza, MathJax rende le frazioni
+     in textstyle e le parentesi non abbracciano la frazione. -->
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$','$']],
+    displayMath: [['$$','$$']],
+    processEscapes: true
+  },
+  svg: { fontCache: 'global', scale: 1.06, exFactor: .5 },
+  options: { enableMenu: false }
+};
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-svg.js"></script>
+
+<style>
+:root{
+  --ink:#0f172a; --body:#334155; --muted:#475569; --faint:#94a3b8;
+  --line:#e2e8f0; --paper:#f8fafc;
+  --blu:#12519e; --blubg:#e8f1fb; --blubd:#a8c9ea;
+  --amb:#b45309; --ambbg:#fffbeb; --ambbd:#fcd34d; --sol:#fef08a;
+  --teo:#14532d; --teobg:#f0fdf4; --teobd:#86efac;
+  --err:#9f1239; --errbg:#fff1f2; --errbd:#fda4af;
+  --ko:#b91c1c;  --kobg:#fee2e2;  --kobd:#ef4444;
+  --ok:#15803d;  --okbg:#dcfce7;  --okbd:#22c55e;
+  --sxbg:#ffffff;
+}
+*{box-sizing:border-box}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  background:var(--paper);color:var(--body);line-height:1.5;
+  margin:0;padding:20px 14px 60px;max-width:900px;margin-inline:auto;font-size:16px;
+}
+mjx-container{outline:none}
+mjx-container[display]{margin:0!important}
+
+/* formule scorrevoli, con sfumatura ai bordi quando escono dallo schermo */
+.sx{
+  overflow-x:auto;overflow-y:hidden;scrollbar-width:thin;-webkit-overflow-scrolling:touch;
+  background-image:
+    linear-gradient(to right,var(--sxbg),var(--sxbg)),
+    linear-gradient(to left,var(--sxbg),var(--sxbg)),
+    linear-gradient(to right,rgba(15,23,42,.16),rgba(15,23,42,0)),
+    linear-gradient(to left,rgba(15,23,42,.16),rgba(15,23,42,0));
+  background-position:left center,right center,left center,right center;
+  background-repeat:no-repeat;
+  background-size:22px 100%,22px 100%,13px 100%,13px 100%;
+  background-attachment:local,local,scroll,scroll;
+}
+
+/* ---------------- CONSEGNA ---------------- */
+.consegna{background:var(--blubg);border:2px solid var(--blubd);border-radius:12px;
+  padding:12px 16px;color:#0d47a1;--sxbg:var(--blubg)}
+.consegna .t{font-weight:700;font-size:.9rem}
+.consegna .m{text-align:center;margin-top:4px;padding:4px 0}
+
+/* ---------------- CATENA ---------------- */
+.catena{background:#fff;border:1px solid var(--line);border-radius:14px;
+  padding:14px 16px 10px;margin-top:16px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.catena>.k{font-weight:800;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.catena>.sub{font-size:.85rem;color:var(--faint);margin:2px 0 8px}
+
+.riga{border-top:1px dotted var(--line)}
+.riga:first-of-type{border-top:none}
+.riga>summary,.riga>.fissa{
+  display:grid;grid-template-columns:26px 1fr auto;gap:10px;align-items:center;
+  padding:11px 0;
+}
+.riga>summary{list-style:none;cursor:pointer}
+.riga>summary::-webkit-details-marker{display:none}
+.riga>summary:hover .f,.riga>summary:focus-visible .f{background-color:#f8fafc}
+
+.n{font-size:.72rem;font-weight:800;color:var(--faint);text-align:center;
+  background:#f1f5f9;border-radius:6px;padding:4px 0;align-self:start;margin-top:4px}
+.cont{min-width:0}
+.nota{font-size:.8rem;color:var(--muted);margin-bottom:1px}
+.f{padding:3px 0;border-radius:6px;color:var(--blu)}
+.riga.res .f{color:var(--ink)}
+.riga.res .f mjx-container{background:var(--sol);padding:4px 12px;border-radius:6px}
+
+/* linguetta della tendina */
+.tab{display:inline-flex;align-items:center;gap:5px;align-self:start;margin-top:5px;
+  font-size:.72rem;font-weight:700;letter-spacing:.02em;color:var(--muted);
+  background:#fff;border:1.5px solid var(--line);border-radius:999px;padding:4px 10px;
+  white-space:nowrap}
+.tab .chev{display:inline-block;font-size:.6rem;transition:transform .18s}
+.riga[open]>summary .tab{background:var(--ink);border-color:var(--ink);color:#fff}
+.riga[open]>summary .tab .chev{transform:rotate(180deg)}
+@media(prefers-reduced-motion:reduce){.tab .chev{transition:none}}
+
+/* pannello aperto */
+.pannello{padding:2px 0 16px 36px;display:grid;gap:10px}
+.mossa{font-size:.9rem;margin:0}
+
+.teoria{background:var(--teobg);border:1.5px solid var(--teobd);border-radius:10px;
+  padding:10px 14px;color:var(--teo);--sxbg:var(--teobg)}
+.teoria .nome{font-weight:800;font-size:.88rem;margin-bottom:2px}
+.teoria .frase{font-size:.87rem;line-height:1.45}
+.teoria .f{text-align:center;margin:8px 0 3px;background:rgba(255,255,255,.75);
+  border-radius:6px;padding:6px 8px;color:var(--teo);--sxbg:#f4fdf6}
+.teoria .ex{font-size:.78rem;opacity:.9;text-align:center}
+
+.errore{background:var(--errbg);border:1.5px solid var(--errbd);border-radius:10px;padding:11px 14px}
+.errore .k{font-weight:800;font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;
+  color:var(--err);margin-bottom:5px}
+.errore .nome{font-weight:700;font-size:.9rem;color:var(--err);margin-bottom:8px}
+.compare{display:grid;grid-template-columns:1fr 34px 1fr;align-items:stretch}
+.card{border:2px solid;border-radius:10px;padding:8px 12px;text-align:center}
+.card .tag{font-size:.7rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;margin-bottom:2px}
+.card .f{padding:2px 0;color:inherit}
+.card.ko{background:var(--kobg);border-color:var(--kobd);color:var(--ko);--sxbg:var(--kobg)}
+.card.ok{background:var(--okbg);border-color:var(--okbd);color:var(--ok);--sxbg:var(--okbg)}
+.arrow{display:flex;align-items:center;justify-content:center;font-size:1.2rem;color:var(--faint);font-weight:800}
+.why-txt{font-size:.82rem;color:#7f1d1d;margin-top:6px;text-align:center}
+
+/* ---- semplificazione a vista: i numeri barrati e quello che resta ---- */
+.semplifica{background:#f8fafc;border:1.5px solid var(--line);border-radius:10px;
+  padding:11px 14px;text-align:center}
+.semplifica .k{font-weight:800;font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;
+  color:var(--muted);margin-bottom:9px}
+.passi{display:inline-flex;align-items:center;gap:16px;flex-wrap:wrap;justify-content:center}
+.passi .op{color:var(--muted);font-weight:800;font-size:1.5rem;line-height:1}
+.fr{display:inline-flex;flex-direction:column;align-items:center;line-height:1.2;
+  font-size:1.05rem;color:var(--ink)}
+.fr .su{border-bottom:2px solid var(--ink);padding:0 7px 3px;white-space:nowrap}
+.fr .giu{padding:3px 7px 0;white-space:nowrap}
+.fr s{color:var(--faint);text-decoration-color:var(--ko);text-decoration-thickness:2px;
+  margin-right:6px}
+.fr b{color:var(--ok);font-weight:800}
+
+/* fermata di controllo */
+.check{display:flex;flex-wrap:wrap;align-items:center;gap:4px 10px;
+  background:var(--ambbg);border:1.5px dashed var(--ambbd);border-radius:10px;
+  padding:8px 14px;margin:8px 0;font-size:.85rem;color:var(--amb);--sxbg:var(--ambbg)}
+.check b{font-weight:800}
+.check .v{color:var(--ink)}
+
+/* ---------------- MOBILE ---------------- */
+@media(max-width:720px){
+  body{padding:16px 10px 50px;font-size:16px}
+  .catena{padding:12px 12px 8px}
+  .riga>summary,.riga>.fissa{grid-template-columns:24px 1fr;gap:8px}
+  .cont{grid-column:2}
+  .tab{grid-column:2;justify-self:start;margin-top:6px}
+  .pannello{padding-left:0}
+  .compare{grid-template-columns:1fr;gap:6px}
+  .arrow{transform:rotate(90deg);height:22px}
+}
+</style>
+</head>
+<body>
+
+<!-- ===================== CONSEGNA ===================== -->
+<div class="consegna">
+  <div class="t">📌 Risolvi il problema</div>
+  <div class="m sx">All'esame di Stato i candidati hanno conseguito il diploma con questi punteggi in centesimi: 60 (1 candidato), 64 (2), 70 (4), 72 (1), 78 (2), 80 (5), 84 (4), 88 (1), 94 (3), 100 (2). Per poter partecipare a un concorso occorre aver conseguito il diploma con un punteggio di almeno 80/100. Qual è la percentuale di candidati che può partecipare al concorso?</div>
+</div>
+
+<!-- ===================== CATENA ====================== -->
+<div class="catena">
+  <div class="k">Confronta con il tuo foglio</div>
+  <div class="sub">Scorri le righe fino alla prima che non coincide con la tua. Lì apri <b>Regola</b>.</div>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">1</div>
+      <div class="cont">
+        <div class="nota">Partiamo dal totale dei candidati: sommiamo tutti i numeri della riga di sotto.</div>
+        <div class="f sx">$\displaystyle \text{Candidati}=1+2+4+1+2+5+4+1+3+2=25$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">2</div>
+      <div class="cont">
+        <div class="nota">Adesso contiamo quelli che passano: hanno preso almeno $80$, cioè le ultime cinque colonne.</div>
+        <div class="f sx">$\displaystyle \text{Ammessi}=5+4+1+3+2=15$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <details class="riga">
+    <summary>
+      <div class="n">3</div>
+      <div class="cont">
+        <div class="nota">Adesso trasformiamo in percentuale: parte sopra, totale sotto, e poi per cento.</div>
+        <div class="f sx">$\displaystyle \text{Percentuale}=\frac{15}{25}\cdot 100=60$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">$\frac{15}{25}$ si riduce a $\frac{3}{5}$, e tre quinti di cento sono sessanta.</p>
+      <div class="teoria">
+        <div class="nome">Che percentuale è una parte del totale</div>
+        <div class="frase">Si scrive la frazione <strong>parte su totale</strong> e la si moltiplica per cento. Moltiplicare per cento è il passaggio che trasforma «quanti su sessanta» in «quanti su cento».</div>
+        <div class="f sx">$\displaystyle \%=\frac{\text{parte}}{\text{totale}}\cdot 100$</div>
+        <div class="ex">esempio: $\frac{15}{60}\cdot 100=25$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Mettere il totale sopra e la parte sotto</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \%=\frac{\text{totale}}{\text{parte}}\cdot 100$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \%=\frac{\text{parte}}{\text{totale}}\cdot 100$</div></div>
+        </div>
+        <div class="why-txt">Sopra va la parte, sotto il totale.</div>
+      </div>
+    </div>
+  </details>
+
+  <div class="riga res">
+    <div class="fissa">
+      <div class="n">4</div>
+      <div class="cont">
+        <div class="nota">La domanda chiedeva una percentuale, non quanti candidati: rispondiamo con quella.</div>
+        <div class="f sx">$\displaystyle \text{Può partecipare il } 60\ \% \text{ dei candidati}$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
