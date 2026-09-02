@@ -10,26 +10,32 @@
   "id": "of3_8",
   "titolo": "Espressioni con le frazioni",
   "tipo": "espressione",
-  "consegna_label": "Risolvi l'espressione con le frazioni",
-  "consegna_tex": "\\left\\{\\left[\\left(\\frac{2}{5}+\\frac{5}{6}-\\frac{1}{3}\\right)-\\frac{1}{2}\\right]+\\left(\\frac{2}{5}-\\frac{1}{4}\\right)+\\left(1+\\frac{31}{20}\\right)\\right\\}-\\left(\\frac{5}{12}+\\frac{7}{20}-\\frac{1}{4}\\right)-\\left(\\frac{11}{4}-\\frac{5}{6}\\right)",
-  "consegna_sympy": "(((Rational(2,5) + Rational(5,6) - Rational(1,3)) - Rational(1,2)) + (Rational(2,5) - Rational(1,4)) + (1 + Rational(31,20))) - (Rational(5,12) + Rational(7,20) - Rational(1,4)) - (Rational(11,4) - Rational(5,6))",
-  "risultato_tex": "\\frac{2}{3}",
-  "risultato_sympy": "Rational(2,3)",
+  "consegna_label": "Calcola la seguente espressione",
+  "consegna_tex": "\\left[\\frac{2}{3}+\\frac{1}{2}\\cdot\\left(\\frac{2}{5}+3\\right)-\\frac{1}{4}\\cdot\\left(\\frac{4}{3}+2\\right)-\\frac{1}{5}\\right]:\\left\\{\\left[\\frac{4}{3}+\\frac{1}{2}\\cdot\\left(\\frac{2}{5}+2\\right)+1\\right]:\\left[\\frac{7}{2}+\\frac{2}{3}\\cdot\\left(2+\\frac{1}{2}+\\frac{2}{5}\\right)-\\frac{2}{15}\\right]\\right\\}",
+  "consegna_sympy": "(Rational(2,3)+Rational(1,2)*(Rational(2,5)+3)-Rational(1,4)*(Rational(4,3)+2)-Rational(1,5)) / ((Rational(4,3)+Rational(1,2)*(Rational(2,5)+2)+1)/(Rational(7,2)+Rational(2,3)*(2+Rational(1,2)+Rational(2,5))-Rational(2,15)))",
+  "risultato_tex": "2",
+  "risultato_sympy": "Integer(2)",
   "righe_sympy": [
-    "Rational(2,3)",
-    "Rational(2,3)",
-    "Rational(2,3)",
-    "Rational(2,3)",
-    "Rational(2,3)",
-    "Rational(2,3)",
-    "Rational(2,3)",
-    "Rational(2,3)",
-    "Rational(2,3)",
-    "Rational(2,3)",
-    "Rational(2,3)",
-    "Rational(2,3)",
-    "Rational(2,3)",
-    "Rational(2,3)"
+    "Integer(2)",
+    "Integer(2)",
+    "Integer(2)",
+    "Integer(2)",
+    "Integer(2)",
+    "Integer(2)",
+    "Integer(2)",
+    "Integer(2)",
+    "Integer(2)",
+    "Integer(2)",
+    "Integer(2)",
+    "Integer(2)",
+    "Integer(2)",
+    "Integer(2)",
+    "Integer(2)",
+    "Integer(2)",
+    "Integer(2)",
+    "Integer(2)",
+    "Integer(2)",
+    "Integer(2)"
   ]
 }
 </script>
@@ -151,6 +157,21 @@ mjx-container[display]{margin:0!important}
 .arrow{display:flex;align-items:center;justify-content:center;font-size:1.2rem;color:var(--faint);font-weight:800}
 .why-txt{font-size:.82rem;color:#7f1d1d;margin-top:6px;text-align:center}
 
+/* ---- semplificazione a vista: i numeri barrati e quello che resta ---- */
+.semplifica{background:#f8fafc;border:1.5px solid var(--line);border-radius:10px;
+  padding:11px 14px;text-align:center}
+.semplifica .k{font-weight:800;font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;
+  color:var(--muted);margin-bottom:9px}
+.passi{display:inline-flex;align-items:center;gap:16px;flex-wrap:wrap;justify-content:center}
+.passi .op{color:var(--muted);font-weight:800;font-size:1.5rem;line-height:1}
+.fr{display:inline-flex;flex-direction:column;align-items:center;line-height:1.2;
+  font-size:1.05rem;color:var(--ink)}
+.fr .su{border-bottom:2px solid var(--ink);padding:0 7px 3px;white-space:nowrap}
+.fr .giu{padding:3px 7px 0;white-space:nowrap}
+.fr s{color:var(--faint);text-decoration-color:var(--ko);text-decoration-thickness:2px;
+  margin-right:6px}
+.fr b{color:var(--ok);font-weight:800}
+
 /* fermata di controllo */
 .check{display:flex;flex-wrap:wrap;align-items:center;gap:4px 10px;
   background:var(--ambbg);border:1.5px dashed var(--ambbd);border-radius:10px;
@@ -175,8 +196,8 @@ mjx-container[display]{margin:0!important}
 
 <!-- ===================== CONSEGNA ===================== -->
 <div class="consegna">
-  <div class="t">📌 Risolvi l'espressione con le frazioni</div>
-  <div class="m sx">$\displaystyle \left\{\left[\left(\frac{2}{5}+\frac{5}{6}-\frac{1}{3}\right)-\frac{1}{2}\right]+\left(\frac{2}{5}-\frac{1}{4}\right)+\left(1+\frac{31}{20}\right)\right\}-\left(\frac{5}{12}+\frac{7}{20}-\frac{1}{4}\right)-\left(\frac{11}{4}-\frac{5}{6}\right)$</div>
+  <div class="t">📌 Calcola la seguente espressione</div>
+  <div class="m sx">$\displaystyle \left[\frac{2}{3}+\frac{1}{2}\cdot\left(\frac{2}{5}+3\right)-\frac{1}{4}\cdot\left(\frac{4}{3}+2\right)-\frac{1}{5}\right]:\left\{\left[\frac{4}{3}+\frac{1}{2}\cdot\left(\frac{2}{5}+2\right)+1\right]:\left[\frac{7}{2}+\frac{2}{3}\cdot\left(2+\frac{1}{2}+\frac{2}{5}\right)-\frac{2}{15}\right]\right\}$</div>
 </div>
 
 <!-- ===================== CATENA ====================== -->
@@ -187,7 +208,7 @@ mjx-container[display]{margin:0!important}
   <div class="riga">
     <div class="fissa">
       <div class="n">1</div>
-      <div class="cont"><div class="f sx">$\displaystyle \left\{\left[\left(\frac{2}{5}+\frac{5}{6}-\frac{1}{3}\right)-\frac{1}{2}\right]+\left(\frac{2}{5}-\frac{1}{4}\right)+\left(1+\frac{31}{20}\right)\right\}-\left(\frac{5}{12}+\frac{7}{20}-\frac{1}{4}\right)-\left(\frac{11}{4}-\frac{5}{6}\right)=$</div></div>
+      <div class="cont"><div class="f sx">$\displaystyle \left[\frac{2}{3}+\frac{1}{2}\cdot\left(\frac{2}{5}+3\right)-\frac{1}{4}\cdot\left(\frac{4}{3}+2\right)-\frac{1}{5}\right]:\left\{\left[\frac{4}{3}+\frac{1}{2}\cdot\left(\frac{2}{5}+2\right)+1\right]:\left[\frac{7}{2}+\frac{2}{3}\cdot\left(2+\frac{1}{2}+\frac{2}{5}\right)-\frac{2}{15}\right]\right\}=$</div></div>
       <div></div>
     </div>
   </div>
@@ -196,13 +217,13 @@ mjx-container[display]{margin:0!important}
     <summary>
       <div class="n">2</div>
       <div class="cont">
-        <div class="nota">Scrivo $1$ come $\frac{20}{20}$.</div>
-        <div class="f sx">$\displaystyle =\left\{\left[\left(\frac{2}{5}+\frac{5}{6}-\frac{1}{3}\right)-\frac{1}{2}\right]+\left(\frac{2}{5}-\frac{1}{4}\right)+\left(\frac{20}{20}+\frac{31}{20}\right)\right\}-\left(\frac{5}{12}+\frac{7}{20}-\frac{1}{4}\right)-\left(\frac{11}{4}-\frac{5}{6}\right)=$</div>
+        <div class="nota">Dentro le tonde scrivo gli interi come frazioni.</div>
+        <div class="f sx">$\displaystyle =\left[\frac{2}{3}+\frac{1}{2}\cdot\frac{2+15}{5}-\frac{1}{4}\cdot\frac{4+6}{3}-\frac{1}{5}\right]:\left\{\left[\frac{4}{3}+\frac{1}{2}\cdot\frac{2+10}{5}+1\right]:\left[\frac{7}{2}+\frac{2}{3}\cdot\frac{20+5+4}{10}-\frac{2}{15}\right]\right\}=$</div>
       </div>
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">Nella terza tonda c'è l'intero $1$ da sommare a $\frac{31}{20}$: gli do lo stesso denominatore, $1=\frac{20}{20}$.</p>
+      <p class="mossa">Quattro tonde in una volta: $3=\frac{15}{5}$, $2=\frac{6}{3}$, $2=\frac{10}{5}$, e nell'ultima $2=\frac{20}{10}$ e $\frac{1}{2}=\frac{5}{10}$.</p>
       <div class="teoria">
         <div class="nome">Un numero intero scritto come frazione</div>
         <div class="frase">Ogni numero intero si può scrivere come frazione: basta dargli il denominatore che serve e moltiplicare per quello anche il numero stesso. Solo così lo si può sommare a una frazione.</div>
@@ -222,17 +243,92 @@ mjx-container[display]{margin:0!important}
     </div>
   </details>
 
-  <details class="riga">
-    <summary>
+  <div class="riga">
+    <div class="fissa">
       <div class="n">3</div>
       <div class="cont">
-        <div class="nota">Tutte le tonde: riduco allo stesso denominatore.</div>
-        <div class="f sx">$\displaystyle =\left\{\left[\left(\frac{12+25-10}{30}\right)-\frac{1}{2}\right]+\left(\frac{8-5}{20}\right)+\left(\frac{20+31}{20}\right)\right\}-\left(\frac{25+21-15}{60}\right)-\left(\frac{33-10}{12}\right)=$</div>
+        <div class="nota">Eseguo le somme dentro le tonde.</div>
+        <div class="f sx">$\displaystyle =\left[\frac{2}{3}+\frac{1}{2}\cdot\frac{17}{5}-\frac{1}{4}\cdot\frac{10}{3}-\frac{1}{5}\right]:\left\{\left[\frac{4}{3}+\frac{1}{2}\cdot\frac{12}{5}+1\right]:\left[\frac{7}{2}+\frac{2}{3}\cdot\frac{29}{10}-\frac{2}{15}\right]\right\}=$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <details class="riga">
+    <summary>
+      <div class="n">4</div>
+      <div class="cont">
+        <div class="nota">Semplifico a croce i prodotti che si possono semplificare.</div>
+        <div class="f sx">$\displaystyle =\left[\frac{2}{3}+\frac{1}{2}\cdot\frac{17}{5}-\frac{1}{2}\cdot\frac{5}{3}-\frac{1}{5}\right]:\left\{\left[\frac{4}{3}+\frac{1}{1}\cdot\frac{6}{5}+1\right]:\left[\frac{7}{2}+\frac{1}{3}\cdot\frac{29}{5}-\frac{2}{15}\right]\right\}=$</div>
       </div>
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">Una tonda alla volta: mcm $30$ nella prima, $20$ nella seconda e nella terza, $60$ nella quarta, $12$ nell'ultima.</p>
+      <p class="mossa">Si semplifica un numeratore con il denominatore di un'altra frazione, mai due numeratori fra loro. Dopo, il prodotto viene con numeri piccoli.</p>
+      <div class="teoria">
+        <div class="nome">Semplificare a croce prima di moltiplicare</div>
+        <div class="frase">Prima di eseguire il prodotto si semplifica <strong>in croce</strong>: un numeratore con il denominatore dell'<strong>altra</strong> frazione. Si dividono per lo stesso numero e si scrivono i risultati al loro posto. Semplificare dopo aver moltiplicato porta allo stesso risultato, ma passando da numeri molto più grandi — ed è lì che nascono gli errori di calcolo.</div>
+        <div class="f sx">$\displaystyle \frac{a\cdot k}{b}\cdot\frac{c}{d\cdot k}=\frac{a}{b}\cdot\frac{c}{d}$</div>
+        <div class="ex">esempio: $\frac{9}{5}\cdot\frac{5}{6}=\frac{3}{1}\cdot\frac{1}{2}$</div>
+      </div>
+      <div class="semplifica">
+        <div class="k">Semplifico a croce</div>
+        <div class="passi"><span class="fr"><span class="su"><b>1</b></span><span class="giu"><s>4</s><b>2</b></span></span><span class="op">·</span><span class="fr"><span class="su"><s>10</s><b>5</b></span><span class="giu"><b>3</b></span></span><span class="op">e</span><span class="fr"><span class="su"><b>1</b></span><span class="giu"><s>2</s><b>1</b></span></span><span class="op">·</span><span class="fr"><span class="su"><s>12</s><b>6</b></span><span class="giu"><b>5</b></span></span><span class="op">e</span><span class="fr"><span class="su"><s>2</s><b>1</b></span><span class="giu"><b>3</b></span></span><span class="op">·</span><span class="fr"><span class="su"><b>29</b></span><span class="giu"><s>10</s><b>5</b></span></span></div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Semplificare due numeratori fra loro</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{a\cdot k}{b}\cdot\frac{c\cdot k}{d}=\frac{a}{b}\cdot\frac{c}{d}$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{a\cdot k}{b}\cdot\frac{c}{d\cdot k}=\frac{a}{b}\cdot\frac{c}{d}$</div></div>
+        </div>
+        <div class="why-txt">Sopra con sotto, mai sopra con sopra.</div>
+      </div>
+    </div>
+  </details>
+
+  <details class="riga">
+    <summary>
+      <div class="n">5</div>
+      <div class="cont">
+        <div class="nota">Eseguo i quattro prodotti.</div>
+        <div class="f sx">$\displaystyle =\left[\frac{2}{3}+\frac{17}{10}-\frac{5}{6}-\frac{1}{5}\right]:\left\{\left[\frac{4}{3}+\frac{6}{5}+1\right]:\left[\frac{7}{2}+\frac{29}{15}-\frac{2}{15}\right]\right\}=$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">Il primo prodotto non si poteva semplificare: $\frac{1}{2}\cdot\frac{17}{5}=\frac{17}{10}$.</p>
+      <div class="teoria">
+        <div class="nome">Moltiplicare due frazioni</div>
+        <div class="frase">Per moltiplicare due frazioni si moltiplicano i <strong>numeratori fra loro</strong> e i <strong>denominatori fra loro</strong>. Non serve il denominatore comune: quello serve solo per addizioni e sottrazioni.</div>
+        <div class="f sx">$\displaystyle \frac{a}{b}\cdot\frac{c}{d}=\frac{a\cdot c}{b\cdot d}$</div>
+        <div class="ex">esempio: $\frac{2}{3}\cdot\frac{5}{7}=\frac{10}{21}$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Moltiplicare in croce</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{a}{b}\cdot\frac{c}{d}=\frac{a\cdot d}{b\cdot c}$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{a}{b}\cdot\frac{c}{d}=\frac{a\cdot c}{b\cdot d}$</div></div>
+        </div>
+        <div class="why-txt">Sopra con sopra, sotto con sotto.</div>
+      </div>
+    </div>
+  </details>
+
+  <details class="riga">
+    <summary>
+      <div class="n">6</div>
+      <div class="cont">
+        <div class="nota">Prima quadra: mcm $=30$.</div>
+        <div class="f sx">$\displaystyle =\frac{20+51-25-6}{30}:\left\{\left[\frac{4}{3}+\frac{6}{5}+1\right]:\left[\frac{7}{2}+\frac{29}{15}-\frac{2}{15}\right]\right\}=$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">Il minimo comune multiplo di $3$, $10$, $6$ e $5$ è $30$.</p>
       <div class="teoria">
         <div class="nome">Addizione e sottrazione fra frazioni</div>
         <div class="frase">Due frazioni si sommano o si sottraggono solo quando hanno lo <strong>stesso denominatore</strong>. Si cerca il minimo comune multiplo dei denominatori, si riscrivono tutte con quel denominatore e poi si sommano o si sottraggono i soli numeratori.</div>
@@ -252,52 +348,37 @@ mjx-container[display]{margin:0!important}
     </div>
   </details>
 
-  <details class="riga">
-    <summary>
-      <div class="n">4</div>
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">7</div>
       <div class="cont">
-        <div class="nota">Sommo i numeratori e tolgo le tonde.</div>
-        <div class="f sx">$\displaystyle =\left\{\left[\frac{27}{30}-\frac{1}{2}\right]+\frac{3}{20}+\frac{51}{20}\right\}-\frac{31}{60}-\frac{23}{12}=$</div>
+        <div class="nota">Eseguo la somma algebrica.</div>
+        <div class="f sx">$\displaystyle =\frac{40}{30}:\left\{\left[\frac{4}{3}+\frac{6}{5}+1\right]:\left[\frac{7}{2}+\frac{29}{15}-\frac{2}{15}\right]\right\}=$</div>
       </div>
-      <span class="tab">Regola <span class="chev">▼</span></span>
-    </summary>
-    <div class="pannello">
-      <p class="mossa">Le ultime due tonde valgono $\frac{31}{60}$ e $\frac{23}{12}$, e davanti a ognuna c'è il segno meno: si toglie il valore intero della parentesi.</p>
-      <div class="teoria">
-        <div class="nome">Parentesi preceduta dal segno meno</div>
-        <div class="frase">Quando davanti a una parentesi c'è il segno meno, si toglie il valore dell'<strong>intera</strong> parentesi, non solo il suo primo termine. Il modo più sicuro è chiudere prima la parentesi e sottrarre il risultato.</div>
-        <div class="f sx">$\displaystyle a-\left(b+c\right)=a-b-c$</div>
-        <div class="ex">esempio: $10-\left(3+2\right)=10-5=5$</div>
-      </div>
-      <div class="errore">
-        <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Togliere solo il primo termine della parentesi</div>
-        <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a-\left(b+c\right)=a-b+c$</div></div>
-          <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a-\left(b+c\right)=a-b-c$</div></div>
-        </div>
-        <div class="why-txt">Il meno davanti riguarda tutta la parentesi.</div>
-      </div>
+      <div></div>
     </div>
-  </details>
+  </div>
 
   <details class="riga">
     <summary>
-      <div class="n">5</div>
+      <div class="n">8</div>
       <div class="cont">
-        <div class="nota">Semplifico $\frac{27}{30}$ per $3$.</div>
-        <div class="f sx">$\displaystyle =\left\{\left[\frac{9}{10}-\frac{1}{2}\right]+\frac{3}{20}+\frac{51}{20}\right\}-\frac{31}{60}-\frac{23}{12}=$</div>
+        <div class="nota">Riduco $\frac{40}{30}$ un fattore alla volta.</div>
+        <div class="f sx">$\displaystyle =\frac{4}{3}:\left\{\left[\frac{4}{3}+\frac{6}{5}+1\right]:\left[\frac{7}{2}+\frac{29}{15}-\frac{2}{15}\right]\right\}=$</div>
       </div>
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">$27$ e $30$ sono divisibili per $3$: la frazione diventa $\frac{9}{10}$.</p>
+      <p class="mossa">$40$ e $30$ si dividono per $2$ e poi per $5$.</p>
       <div class="teoria">
         <div class="nome">Ridurre una frazione ai minimi termini</div>
         <div class="frase">Dividendo numeratore e denominatore per lo stesso numero il valore non cambia, ma i numeri diventano più piccoli. Conviene farlo appena si può: i conti che vengono dopo sono molto più facili.</div>
         <div class="f sx">$\displaystyle \frac{a\cdot k}{b\cdot k}=\frac{a}{b}$</div>
         <div class="ex">esempio: $\frac{9}{12}=\frac{3\cdot 3}{4\cdot 3}=\frac{3}{4}$</div>
+      </div>
+      <div class="semplifica">
+        <div class="k">Riduco un fattore alla volta</div>
+        <div class="passi"><span class="fr"><span class="su"><s>40</s><s>20</s><b>4</b></span><span class="giu"><s>30</s><s>15</s><b>3</b></span></span></div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
@@ -314,15 +395,15 @@ mjx-container[display]{margin:0!important}
 
   <details class="riga">
     <summary>
-      <div class="n">6</div>
+      <div class="n">9</div>
       <div class="cont">
-        <div class="nota">Quadra: mcm $=10$.</div>
-        <div class="f sx">$\displaystyle =\left\{\frac{9-5}{10}+\frac{3}{20}+\frac{51}{20}\right\}-\frac{31}{60}-\frac{23}{12}=$</div>
+        <div class="nota">Prima quadra della graffa: mcm $=15$.</div>
+        <div class="f sx">$\displaystyle =\frac{4}{3}:\left\{\frac{20+18+15}{15}:\left[\frac{7}{2}+\frac{29}{15}-\frac{2}{15}\right]\right\}=$</div>
       </div>
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">$10$ è multiplo di $2$: moltiplico sopra e sotto per $5$ e $\frac{1}{2}$ diventa $\frac{5}{10}$.</p>
+      <p class="mossa">$\frac{4}{3}=\frac{20}{15}$, $\frac{6}{5}=\frac{18}{15}$, $1=\frac{15}{15}$.</p>
       <div class="teoria">
         <div class="nome">Frazioni equivalenti</div>
         <div class="frase">Moltiplicando numeratore e denominatore per lo <strong>stesso</strong> numero si ottiene una frazione diversa da vedere ma uguale di valore. È così che si riscrivono più frazioni con il denominatore comune.</div>
@@ -344,60 +425,21 @@ mjx-container[display]{margin:0!important}
 
   <div class="riga">
     <div class="fissa">
-      <div class="n">7</div>
-      <div class="cont">
-        <div class="nota">Sottraggo i numeratori.</div>
-        <div class="f sx">$\displaystyle =\left\{\frac{4}{10}+\frac{3}{20}+\frac{51}{20}\right\}-\frac{31}{60}-\frac{23}{12}=$</div>
-      </div>
-      <div></div>
-    </div>
-  </div>
-
-  <div class="riga">
-    <div class="fissa">
-      <div class="n">8</div>
-      <div class="cont">
-        <div class="nota">Semplifico $\frac{4}{10}$ per $2$, come al passaggio 5.</div>
-        <div class="f sx">$\displaystyle =\left\{\frac{2}{5}+\frac{3}{20}+\frac{51}{20}\right\}-\frac{31}{60}-\frac{23}{12}=$</div>
-      </div>
-      <div></div>
-    </div>
-  </div>
-
-  <div class="riga">
-    <div class="fissa">
-      <div class="n">9</div>
-      <div class="cont">
-        <div class="nota">Graffe: mcm $=20$, come al passaggio 3.</div>
-        <div class="f sx">$\displaystyle =\left\{\frac{8+3+51}{20}\right\}-\frac{31}{60}-\frac{23}{12}=$</div>
-      </div>
-      <div></div>
-    </div>
-  </div>
-
-  <div class="riga">
-    <div class="fissa">
       <div class="n">10</div>
       <div class="cont">
-        <div class="nota">Chiudo le graffe.</div>
-        <div class="f sx">$\displaystyle =\frac{62}{20}-\frac{31}{60}-\frac{23}{12}=$</div>
+        <div class="nota">Eseguo la somma.</div>
+        <div class="f sx">$\displaystyle =\frac{4}{3}:\left\{\frac{53}{15}:\left[\frac{7}{2}+\frac{29}{15}-\frac{2}{15}\right]\right\}=$</div>
       </div>
       <div></div>
     </div>
-  </div>
-
-  <div class="check">
-    <span>🚩 <b>Fermata di controllo.</b> Se qui hai</span>
-    <span class="v">$\displaystyle \frac{62}{20}$</span><span>,</span><span class="v">$\displaystyle \frac{31}{60}$</span><span>e</span><span class="v">$\displaystyle \frac{23}{12}$</span>
-    <span>tutte le parentesi sono chiuse: restano due sottrazioni.</span>
   </div>
 
   <div class="riga">
     <div class="fissa">
       <div class="n">11</div>
       <div class="cont">
-        <div class="nota">Semplifico $\frac{62}{20}$ per $2$, come al passaggio 5.</div>
-        <div class="f sx">$\displaystyle =\frac{31}{10}-\frac{31}{60}-\frac{23}{12}=$</div>
+        <div class="nota">Seconda quadra: mcm $=30$, come al passaggio 6.</div>
+        <div class="f sx">$\displaystyle =\frac{4}{3}:\left\{\frac{53}{15}:\frac{105+58-4}{30}\right\}=$</div>
       </div>
       <div></div>
     </div>
@@ -407,8 +449,19 @@ mjx-container[display]{margin:0!important}
     <div class="fissa">
       <div class="n">12</div>
       <div class="cont">
-        <div class="nota">mcm $=60$.</div>
-        <div class="f sx">$\displaystyle =\frac{186-31-115}{60}=$</div>
+        <div class="nota">Eseguo la somma algebrica.</div>
+        <div class="f sx">$\displaystyle =\frac{4}{3}:\left\{\frac{53}{15}:\frac{159}{30}\right\}=$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">13</div>
+      <div class="cont">
+        <div class="nota">Riduco $\frac{159}{30}$ per $3$, come al passaggio 8.</div>
+        <div class="f sx">$\displaystyle =\frac{4}{3}:\left\{\frac{53}{15}:\frac{53}{10}\right\}=$</div>
       </div>
       <div></div>
     </div>
@@ -416,40 +469,95 @@ mjx-container[display]{margin:0!important}
 
   <details class="riga">
     <summary>
-      <div class="n">13</div>
+      <div class="n">14</div>
       <div class="cont">
-        <div class="nota">Sottraggo, da sinistra.</div>
-        <div class="f sx">$\displaystyle =\frac{40}{60}=$</div>
+        <div class="nota">Capovolgo la frazione che divide.</div>
+        <div class="f sx">$\displaystyle =\frac{4}{3}:\left\{\frac{53}{15}\cdot\frac{10}{53}\right\}=$</div>
       </div>
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">$186-31=155$, e poi $155-115=40$. Si procede nell'ordine in cui sono scritte, una sottrazione alla volta.</p>
+      <p class="mossa">$\frac{53}{15}:\frac{53}{10}$ diventa $\frac{53}{15}\cdot\frac{10}{53}$.</p>
       <div class="teoria">
-        <div class="nome">Addizione e sottrazione: stessa priorità</div>
-        <div class="frase">Quando ci sono più sottrazioni una dopo l'altra si procede da sinistra a destra. Partire dall'ultima cambia il risultato: la sottrazione non si può riordinare come l'addizione.</div>
-        <div class="f sx">$\displaystyle a-b-c=\left(a-b\right)-c$</div>
-        <div class="ex">esempio: $20-8-5=12-5=7$</div>
+        <div class="nome">Dividere per una frazione</div>
+        <div class="frase">Per dividere un numero per una frazione si moltiplica il numero per la frazione <strong>capovolta</strong>: numeratore e denominatore si scambiano di posto.</div>
+        <div class="f sx">$\displaystyle n:\frac{a}{b}=n\cdot\frac{b}{a}$</div>
+        <div class="ex">esempio: $20:\frac{2}{3}=20\cdot\frac{3}{2}=30$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Eseguire le sottrazioni partendo da destra</div>
+        <div class="nome">Moltiplicare per la frazione senza capovolgerla</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a-b-c=a-\left(b-c\right)$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle n:\frac{a}{b}=n\cdot\frac{a}{b}$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a-b-c=\left(a-b\right)-c$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle n:\frac{a}{b}=n\cdot\frac{b}{a}$</div></div>
         </div>
-        <div class="why-txt">Si sottrae da sinistra, una alla volta.</div>
+        <div class="why-txt">Si capovolge la frazione che divide.</div>
       </div>
     </div>
   </details>
 
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">15</div>
+      <div class="cont">
+        <div class="nota">Semplifico a croce, come al passaggio 4.</div>
+        <div class="f sx">$\displaystyle =\frac{4}{3}:\left\{\frac{1}{3}\cdot\frac{2}{1}\right\}=$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">16</div>
+      <div class="cont">
+        <div class="nota">Moltiplico, come al passaggio 5.</div>
+        <div class="f sx">$\displaystyle =\frac{4}{3}:\frac{2}{3}=$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">17</div>
+      <div class="cont">
+        <div class="nota">Capovolgo, come al passaggio 14.</div>
+        <div class="f sx">$\displaystyle =\frac{4}{3}\cdot\frac{3}{2}=$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">18</div>
+      <div class="cont">
+        <div class="nota">Semplifico a croce, come al passaggio 4.</div>
+        <div class="f sx">$\displaystyle =\frac{2}{1}\cdot\frac{1}{1}=$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">19</div>
+      <div class="cont">
+        <div class="nota">Moltiplico, come al passaggio 5.</div>
+        <div class="f sx">$\displaystyle =\frac{2}{1}=$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
   <div class="riga res">
     <div class="fissa">
-      <div class="n">14</div>
+      <div class="n">20</div>
       <div class="cont">
-        <div class="nota">Semplifico per $20$.</div>
-        <div class="f sx">$\displaystyle =\frac{2}{3}$</div>
+        <div class="nota">$\frac{2}{1}$ vale $2$.</div>
+        <div class="f sx">$\displaystyle =2$</div>
       </div>
       <div></div>
     </div>
