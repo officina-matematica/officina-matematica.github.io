@@ -23,6 +23,7 @@
     "Integer(1)",
     "Integer(1)",
     "Integer(1)",
+    "Integer(1)",
     "Integer(1)"
   ]
 }
@@ -34,7 +35,9 @@
      in textstyle e le parentesi non abbracciano la frazione. -->
 <script>
 MathJax = {
+  loader: { load: ['[tex]/cancel'] },
   tex: {
+    packages: { '[+]': ['cancel'] },
     inlineMath: [['$','$']],
     displayMath: [['$$','$$']],
     processEscapes: true
@@ -343,11 +346,22 @@ mjx-container[display]{margin:0!important}
     </div>
   </div>
 
-  <div class="riga res">
+  <div class="riga">
     <div class="fissa">
       <div class="n">8</div>
       <div class="cont">
         <div class="nota">$\frac{10}{10}$ vale $10:10$.</div>
+        <div class="f sx">$\displaystyle =\frac{\overset{1}{\cancel{10}}}{\underset{1}{\cancel{10}}}=$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="riga res">
+    <div class="fissa">
+      <div class="n">9</div>
+      <div class="cont">
+        <div class="nota">Riscrivo pulito.</div>
         <div class="f sx">$\displaystyle =1$</div>
       </div>
       <div></div>

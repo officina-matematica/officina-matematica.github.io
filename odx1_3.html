@@ -31,6 +31,8 @@
     "Rational(1,6)",
     "Rational(1,6)",
     "Rational(1,6)",
+    "Rational(1,6)",
+    "Rational(1,6)",
     "Rational(1,6)"
   ]
 }
@@ -42,7 +44,9 @@
      in textstyle e le parentesi non abbracciano la frazione. -->
 <script>
 MathJax = {
+  loader: { load: ['[tex]/cancel'] },
   tex: {
+    packages: { '[+]': ['cancel'] },
     inlineMath: [['$','$']],
     displayMath: [['$$','$$']],
     processEscapes: true
@@ -274,7 +278,7 @@ mjx-container[display]{margin:0!important}
       <div class="n">4</div>
       <div class="cont">
         <div class="nota">Riduco tutte le frazioni.</div>
-        <div class="f sx">$\displaystyle =\left(2-\frac{1}{3}\right)-\left\{\frac{7}{3}-\left[\frac{4}{3}-\left(\frac{3}{2}-\frac{1}{3}\right)\right]-1+\frac{1}{3}\right\}=$</div>
+        <div class="f sx">$\displaystyle =\left(2-\frac{\overset{1}{\cancel{3}}}{\underset{3}{\cancel{9}}}\right)-\left\{\frac{\overset{7}{\cancel{21}}}{\underset{3}{\cancel{9}}}-\left[\frac{\overset{4}{\cancel{12}}}{\underset{3}{\cancel{9}}}-\left(\frac{\overset{3}{\cancel{15}}}{\underset{2}{\cancel{10}}}-\frac{\overset{1}{\cancel{3}}}{\underset{3}{\cancel{9}}}\right)\right]-1+\frac{\overset{1}{\cancel{3}}}{\underset{3}{\cancel{9}}}\right\}=$</div>
       </div>
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
@@ -299,9 +303,20 @@ mjx-container[display]{margin:0!important}
     </div>
   </details>
 
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">5</div>
+      <div class="cont">
+        <div class="nota">Riscrivo pulito.</div>
+        <div class="f sx">$\displaystyle =\left(2-\frac{1}{3}\right)-\left\{\frac{7}{3}-\left[\frac{4}{3}-\left(\frac{3}{2}-\frac{1}{3}\right)\right]-1+\frac{1}{3}\right\}=$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
   <details class="riga">
     <summary>
-      <div class="n">5</div>
+      <div class="n">6</div>
       <div class="cont">
         <div class="nota">Tonda più interna: mcm $=6$.</div>
         <div class="f sx">$\displaystyle =\left(2-\frac{1}{3}\right)-\left\{\frac{7}{3}-\left[\frac{4}{3}-\frac{9-2}{6}\right]-1+\frac{1}{3}\right\}=$</div>
@@ -331,7 +346,7 @@ mjx-container[display]{margin:0!important}
 
   <div class="riga">
     <div class="fissa">
-      <div class="n">6</div>
+      <div class="n">7</div>
       <div class="cont">
         <div class="nota">Eseguo la sottrazione.</div>
         <div class="f sx">$\displaystyle =\left(2-\frac{1}{3}\right)-\left\{\frac{7}{3}-\left[\frac{4}{3}-\frac{7}{6}\right]-1+\frac{1}{3}\right\}=$</div>
@@ -342,7 +357,7 @@ mjx-container[display]{margin:0!important}
 
   <details class="riga">
     <summary>
-      <div class="n">7</div>
+      <div class="n">8</div>
       <div class="cont">
         <div class="nota">Quadra: mcm $=6$.</div>
         <div class="f sx">$\displaystyle =\left(2-\frac{1}{3}\right)-\left\{\frac{7}{3}-\left[\frac{8-7}{6}\right]-1+\frac{1}{3}\right\}=$</div>
@@ -372,7 +387,7 @@ mjx-container[display]{margin:0!important}
 
   <div class="riga">
     <div class="fissa">
-      <div class="n">8</div>
+      <div class="n">9</div>
       <div class="cont">
         <div class="nota">Chiudo la quadra.</div>
         <div class="f sx">$\displaystyle =\left(2-\frac{1}{3}\right)-\left\{\frac{7}{3}-\frac{1}{6}-1+\frac{1}{3}\right\}=$</div>
@@ -383,7 +398,7 @@ mjx-container[display]{margin:0!important}
 
   <details class="riga">
     <summary>
-      <div class="n">9</div>
+      <div class="n">10</div>
       <div class="cont">
         <div class="nota">Graffa: mcm $=6$, e l'intero diventa frazione.</div>
         <div class="f sx">$\displaystyle =\left(2-\frac{1}{3}\right)-\left\{\frac{14-1-6+2}{6}\right\}=$</div>
@@ -413,7 +428,7 @@ mjx-container[display]{margin:0!important}
 
   <div class="riga">
     <div class="fissa">
-      <div class="n">10</div>
+      <div class="n">11</div>
       <div class="cont">
         <div class="nota">Eseguo la somma algebrica.</div>
         <div class="f sx">$\displaystyle =\left(2-\frac{1}{3}\right)-\left\{\frac{9}{6}\right\}=$</div>
@@ -424,9 +439,20 @@ mjx-container[display]{margin:0!important}
 
   <div class="riga">
     <div class="fissa">
-      <div class="n">11</div>
+      <div class="n">12</div>
       <div class="cont">
         <div class="nota">Riduco $\frac{9}{6}$ per $3$, come al passaggio 4.</div>
+        <div class="f sx">$\displaystyle =\left(2-\frac{1}{3}\right)-\left\{\frac{\overset{3}{\cancel{9}}}{\underset{2}{\cancel{6}}}\right\}=$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">13</div>
+      <div class="cont">
+        <div class="nota">Riscrivo pulito.</div>
         <div class="f sx">$\displaystyle =\left(2-\frac{1}{3}\right)-\left\{\frac{3}{2}\right\}=$</div>
       </div>
       <div></div>
@@ -435,7 +461,7 @@ mjx-container[display]{margin:0!important}
 
   <details class="riga">
     <summary>
-      <div class="n">12</div>
+      <div class="n">14</div>
       <div class="cont">
         <div class="nota">Chiudo la graffa: tolgo tutto il suo valore.</div>
         <div class="f sx">$\displaystyle =\left(2-\frac{1}{3}\right)-\frac{3}{2}=$</div>
@@ -465,7 +491,7 @@ mjx-container[display]{margin:0!important}
 
   <div class="riga">
     <div class="fissa">
-      <div class="n">13</div>
+      <div class="n">15</div>
       <div class="cont">
         <div class="nota">Tonda: $2=\frac{6}{3}$, come al passaggio 9.</div>
         <div class="f sx">$\displaystyle =\frac{6-1}{3}-\frac{3}{2}=$</div>
@@ -476,7 +502,7 @@ mjx-container[display]{margin:0!important}
 
   <div class="riga">
     <div class="fissa">
-      <div class="n">14</div>
+      <div class="n">16</div>
       <div class="cont">
         <div class="nota">Eseguo la sottrazione.</div>
         <div class="f sx">$\displaystyle =\frac{5}{3}-\frac{3}{2}=$</div>
@@ -487,7 +513,7 @@ mjx-container[display]{margin:0!important}
 
   <div class="riga">
     <div class="fissa">
-      <div class="n">15</div>
+      <div class="n">17</div>
       <div class="cont">
         <div class="nota">mcm $=6$, come al passaggio 5.</div>
         <div class="f sx">$\displaystyle =\frac{10-9}{6}=$</div>
@@ -498,7 +524,7 @@ mjx-container[display]{margin:0!important}
 
   <div class="riga res">
     <div class="fissa">
-      <div class="n">16</div>
+      <div class="n">18</div>
       <div class="cont">
         <div class="nota">Eseguo la sottrazione.</div>
         <div class="f sx">$\displaystyle =\frac{1}{6}$</div>

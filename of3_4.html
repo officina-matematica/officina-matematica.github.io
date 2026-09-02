@@ -35,6 +35,12 @@
     "Rational(10,3)",
     "Rational(10,3)",
     "Rational(10,3)",
+    "Rational(10,3)",
+    "Rational(10,3)",
+    "Rational(10,3)",
+    "Rational(10,3)",
+    "Rational(10,3)",
+    "Rational(10,3)",
     "Rational(10,3)"
   ]
 }
@@ -46,7 +52,9 @@
      in textstyle e le parentesi non abbracciano la frazione. -->
 <script>
 MathJax = {
+  loader: { load: ['[tex]/cancel'] },
   tex: {
+    packages: { '[+]': ['cancel'] },
     inlineMath: [['$','$']],
     displayMath: [['$$','$$']],
     processEscapes: true
@@ -218,7 +226,7 @@ mjx-container[display]{margin:0!important}
       <div class="n">2</div>
       <div class="cont">
         <div class="nota">Riduco subito $\frac{12}{15}$ e $\frac{10}{12}$.</div>
-        <div class="f sx">$\displaystyle =\left\{\frac{5}{2}+\left[\left(\frac{1}{3}-\frac{1}{6}+\frac{6}{5}:\frac{4}{5}\right)\cdot\frac{5}{4}\right]:\frac{5}{6}\right\}\cdot\frac{5}{2}:\frac{15}{4}=$</div>
+        <div class="f sx">$\displaystyle =\left\{\frac{5}{2}+\left[\left(\frac{1}{3}-\frac{1}{6}+\frac{6}{5}:\frac{\overset{4}{\cancel{12}}}{\underset{5}{\cancel{15}}}\right)\cdot\frac{5}{4}\right]:\frac{\overset{5}{\cancel{10}}}{\underset{6}{\cancel{12}}}\right\}\cdot\frac{5}{2}:\frac{15}{4}=$</div>
       </div>
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
@@ -229,10 +237,6 @@ mjx-container[display]{margin:0!important}
         <div class="frase">Dividendo numeratore e denominatore per lo stesso numero il valore non cambia, ma i numeri diventano più piccoli. Conviene farlo appena si può: i conti che vengono dopo sono molto più facili.</div>
         <div class="f sx">$\displaystyle \frac{a\cdot k}{b\cdot k}=\frac{a}{b}$</div>
         <div class="ex">esempio: $\frac{9}{12}=\frac{3\cdot 3}{4\cdot 3}=\frac{3}{4}$</div>
-      </div>
-      <div class="semplifica">
-        <div class="k">Riduco un fattore alla volta</div>
-        <div class="passi"><span class="fr"><span class="su"><s>12</s><b>4</b></span><span class="giu"><s>15</s><b>5</b></span></span></div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
@@ -247,9 +251,20 @@ mjx-container[display]{margin:0!important}
     </div>
   </details>
 
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">3</div>
+      <div class="cont">
+        <div class="nota">Riscrivo pulito.</div>
+        <div class="f sx">$\displaystyle =\left\{\frac{5}{2}+\left[\left(\frac{1}{3}-\frac{1}{6}+\frac{6}{5}:\frac{4}{5}\right)\cdot\frac{5}{4}\right]:\frac{5}{6}\right\}\cdot\frac{5}{2}:\frac{15}{4}=$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
   <details class="riga">
     <summary>
-      <div class="n">3</div>
+      <div class="n">4</div>
       <div class="cont">
         <div class="nota">Capovolgo la frazione che divide.</div>
         <div class="f sx">$\displaystyle =\left\{\frac{5}{2}+\left[\left(\frac{1}{3}-\frac{1}{6}+\frac{6}{5}\cdot\frac{5}{4}\right)\cdot\frac{5}{4}\right]:\frac{5}{6}\right\}\cdot\frac{5}{2}:\frac{15}{4}=$</div>
@@ -279,10 +294,10 @@ mjx-container[display]{margin:0!important}
 
   <details class="riga">
     <summary>
-      <div class="n">4</div>
+      <div class="n">5</div>
       <div class="cont">
         <div class="nota">Semplifico a croce, prima di moltiplicare.</div>
-        <div class="f sx">$\displaystyle =\left\{\frac{5}{2}+\left[\left(\frac{1}{3}-\frac{1}{6}+\frac{3}{1}\cdot\frac{1}{2}\right)\cdot\frac{5}{4}\right]:\frac{5}{6}\right\}\cdot\frac{5}{2}:\frac{15}{4}=$</div>
+        <div class="f sx">$\displaystyle =\left\{\frac{5}{2}+\left[\left(\frac{1}{3}-\frac{1}{6}+\frac{\overset{3}{\cancel{6}}}{\underset{1}{\cancel{5}}}\cdot\frac{\overset{1}{\cancel{5}}}{\underset{2}{\cancel{4}}}\right)\cdot\frac{5}{4}\right]:\frac{5}{6}\right\}\cdot\frac{5}{2}:\frac{15}{4}=$</div>
       </div>
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
@@ -293,10 +308,6 @@ mjx-container[display]{margin:0!important}
         <div class="frase">Prima di eseguire il prodotto si semplifica <strong>in croce</strong>: un numeratore con il denominatore dell'<strong>altra</strong> frazione. Si dividono per lo stesso numero e si scrivono i risultati al loro posto. Semplificare dopo aver moltiplicato porta allo stesso risultato, ma passando da numeri molto più grandi — ed è lì che nascono gli errori di calcolo.</div>
         <div class="f sx">$\displaystyle \frac{a\cdot k}{b}\cdot\frac{c}{d\cdot k}=\frac{a}{b}\cdot\frac{c}{d}$</div>
         <div class="ex">esempio: $\frac{9}{5}\cdot\frac{5}{6}=\frac{3}{1}\cdot\frac{1}{2}$</div>
-      </div>
-      <div class="semplifica">
-        <div class="k">Semplifico a croce</div>
-        <div class="passi"><span class="fr"><span class="su"><s>6</s><b>3</b></span><span class="giu"><s>5</s><b>1</b></span></span><span class="op">·</span><span class="fr"><span class="su"><s>5</s><b>1</b></span><span class="giu"><s>4</s><b>2</b></span></span></div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
@@ -311,9 +322,20 @@ mjx-container[display]{margin:0!important}
     </div>
   </details>
 
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">6</div>
+      <div class="cont">
+        <div class="nota">Riscrivo pulito.</div>
+        <div class="f sx">$\displaystyle =\left\{\frac{5}{2}+\left[\left(\frac{1}{3}-\frac{1}{6}+\frac{3}{1}\cdot\frac{1}{2}\right)\cdot\frac{5}{4}\right]:\frac{5}{6}\right\}\cdot\frac{5}{2}:\frac{15}{4}=$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
   <details class="riga">
     <summary>
-      <div class="n">5</div>
+      <div class="n">7</div>
       <div class="cont">
         <div class="nota">Moltiplico sopra con sopra e sotto con sotto.</div>
         <div class="f sx">$\displaystyle =\left\{\frac{5}{2}+\left[\left(\frac{1}{3}-\frac{1}{6}+\frac{3}{2}\right)\cdot\frac{5}{4}\right]:\frac{5}{6}\right\}\cdot\frac{5}{2}:\frac{15}{4}=$</div>
@@ -343,7 +365,7 @@ mjx-container[display]{margin:0!important}
 
   <details class="riga">
     <summary>
-      <div class="n">6</div>
+      <div class="n">8</div>
       <div class="cont">
         <div class="nota">Tonda: mcm $=6$.</div>
         <div class="f sx">$\displaystyle =\left\{\frac{5}{2}+\left[\frac{2-1+9}{6}\cdot\frac{5}{4}\right]:\frac{5}{6}\right\}\cdot\frac{5}{2}:\frac{15}{4}=$</div>
@@ -373,7 +395,7 @@ mjx-container[display]{margin:0!important}
 
   <div class="riga">
     <div class="fissa">
-      <div class="n">7</div>
+      <div class="n">9</div>
       <div class="cont">
         <div class="nota">Eseguo la somma algebrica.</div>
         <div class="f sx">$\displaystyle =\left\{\frac{5}{2}+\left[\frac{10}{6}\cdot\frac{5}{4}\right]:\frac{5}{6}\right\}\cdot\frac{5}{2}:\frac{15}{4}=$</div>
@@ -384,9 +406,20 @@ mjx-container[display]{margin:0!important}
 
   <div class="riga">
     <div class="fissa">
-      <div class="n">8</div>
+      <div class="n">10</div>
       <div class="cont">
         <div class="nota">Riduco $\frac{10}{6}$, come al passaggio 2.</div>
+        <div class="f sx">$\displaystyle =\left\{\frac{5}{2}+\left[\frac{\overset{5}{\cancel{10}}}{\underset{3}{\cancel{6}}}\cdot\frac{5}{4}\right]:\frac{5}{6}\right\}\cdot\frac{5}{2}:\frac{15}{4}=$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">11</div>
+      <div class="cont">
+        <div class="nota">Riscrivo pulito.</div>
         <div class="f sx">$\displaystyle =\left\{\frac{5}{2}+\left[\frac{5}{3}\cdot\frac{5}{4}\right]:\frac{5}{6}\right\}\cdot\frac{5}{2}:\frac{15}{4}=$</div>
       </div>
       <div></div>
@@ -395,7 +428,7 @@ mjx-container[display]{margin:0!important}
 
   <div class="riga">
     <div class="fissa">
-      <div class="n">9</div>
+      <div class="n">12</div>
       <div class="cont">
         <div class="nota">Qui non c'è niente da semplificare: moltiplico.</div>
         <div class="f sx">$\displaystyle =\left\{\frac{5}{2}+\frac{25}{12}:\frac{5}{6}\right\}\cdot\frac{5}{2}:\frac{15}{4}=$</div>
@@ -406,7 +439,7 @@ mjx-container[display]{margin:0!important}
 
   <div class="riga">
     <div class="fissa">
-      <div class="n">10</div>
+      <div class="n">13</div>
       <div class="cont">
         <div class="nota">Capovolgo, come al passaggio 3.</div>
         <div class="f sx">$\displaystyle =\left\{\frac{5}{2}+\frac{25}{12}\cdot\frac{6}{5}\right\}\cdot\frac{5}{2}:\frac{15}{4}=$</div>
@@ -417,9 +450,20 @@ mjx-container[display]{margin:0!important}
 
   <div class="riga">
     <div class="fissa">
-      <div class="n">11</div>
+      <div class="n">14</div>
       <div class="cont">
         <div class="nota">Semplifico a croce, come al passaggio 4.</div>
+        <div class="f sx">$\displaystyle =\left\{\frac{5}{2}+\frac{\overset{5}{\cancel{25}}}{\underset{2}{\cancel{12}}}\cdot\frac{\overset{1}{\cancel{6}}}{\underset{1}{\cancel{5}}}\right\}\cdot\frac{5}{2}:\frac{15}{4}=$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">15</div>
+      <div class="cont">
+        <div class="nota">Riscrivo pulito.</div>
         <div class="f sx">$\displaystyle =\left\{\frac{5}{2}+\frac{5}{2}\cdot\frac{1}{1}\right\}\cdot\frac{5}{2}:\frac{15}{4}=$</div>
       </div>
       <div></div>
@@ -428,7 +472,7 @@ mjx-container[display]{margin:0!important}
 
   <div class="riga">
     <div class="fissa">
-      <div class="n">12</div>
+      <div class="n">16</div>
       <div class="cont">
         <div class="nota">Moltiplico, come al passaggio 5.</div>
         <div class="f sx">$\displaystyle =\left\{\frac{5}{2}+\frac{5}{2}\right\}\cdot\frac{5}{2}:\frac{15}{4}=$</div>
@@ -439,7 +483,7 @@ mjx-container[display]{margin:0!important}
 
   <div class="riga">
     <div class="fissa">
-      <div class="n">13</div>
+      <div class="n">17</div>
       <div class="cont">
         <div class="nota">Stesso denominatore: sommo i numeratori.</div>
         <div class="f sx">$\displaystyle =\left\{\frac{10}{2}\right\}\cdot\frac{5}{2}:\frac{15}{4}=$</div>
@@ -450,9 +494,20 @@ mjx-container[display]{margin:0!important}
 
   <div class="riga">
     <div class="fissa">
-      <div class="n">14</div>
+      <div class="n">18</div>
       <div class="cont">
         <div class="nota">$\frac{10}{2}$ vale $5$.</div>
+        <div class="f sx">$\displaystyle =\left\{\frac{\overset{5}{\cancel{10}}}{\underset{1}{\cancel{2}}}\right\}\cdot\frac{5}{2}:\frac{15}{4}=$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">19</div>
+      <div class="cont">
+        <div class="nota">Riscrivo pulito.</div>
         <div class="f sx">$\displaystyle =5\cdot\frac{5}{2}:\frac{15}{4}=$</div>
       </div>
       <div></div>
@@ -461,7 +516,7 @@ mjx-container[display]{margin:0!important}
 
   <details class="riga">
     <summary>
-      <div class="n">15</div>
+      <div class="n">20</div>
       <div class="cont">
         <div class="nota">Prodotto e divisione: si va da sinistra.</div>
         <div class="f sx">$\displaystyle =\left(5\cdot\frac{5}{2}\right):\frac{15}{4}=$</div>
@@ -491,7 +546,7 @@ mjx-container[display]{margin:0!important}
 
   <details class="riga">
     <summary>
-      <div class="n">16</div>
+      <div class="n">21</div>
       <div class="cont">
         <div class="nota">Scrivo $5$ come $\frac{5}{1}$.</div>
         <div class="f sx">$\displaystyle =\left(\frac{5}{1}\cdot\frac{5}{2}\right):\frac{15}{4}=$</div>
@@ -521,7 +576,7 @@ mjx-container[display]{margin:0!important}
 
   <div class="riga">
     <div class="fissa">
-      <div class="n">17</div>
+      <div class="n">22</div>
       <div class="cont">
         <div class="nota">Moltiplico, come al passaggio 5.</div>
         <div class="f sx">$\displaystyle =\frac{25}{2}:\frac{15}{4}=$</div>
@@ -532,7 +587,7 @@ mjx-container[display]{margin:0!important}
 
   <div class="riga">
     <div class="fissa">
-      <div class="n">18</div>
+      <div class="n">23</div>
       <div class="cont">
         <div class="nota">Capovolgo, come al passaggio 3.</div>
         <div class="f sx">$\displaystyle =\frac{25}{2}\cdot\frac{4}{15}=$</div>
@@ -543,9 +598,20 @@ mjx-container[display]{margin:0!important}
 
   <div class="riga">
     <div class="fissa">
-      <div class="n">19</div>
+      <div class="n">24</div>
       <div class="cont">
         <div class="nota">Semplifico a croce, come al passaggio 4.</div>
+        <div class="f sx">$\displaystyle =\frac{\overset{5}{\cancel{25}}}{\underset{1}{\cancel{2}}}\cdot\frac{\overset{2}{\cancel{4}}}{\underset{3}{\cancel{15}}}=$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">25</div>
+      <div class="cont">
+        <div class="nota">Riscrivo pulito.</div>
         <div class="f sx">$\displaystyle =\frac{5}{1}\cdot\frac{2}{3}=$</div>
       </div>
       <div></div>
@@ -554,7 +620,7 @@ mjx-container[display]{margin:0!important}
 
   <div class="riga res">
     <div class="fissa">
-      <div class="n">20</div>
+      <div class="n">26</div>
       <div class="cont">
         <div class="nota">Moltiplico, come al passaggio 5.</div>
         <div class="f sx">$\displaystyle =\frac{10}{3}$</div>

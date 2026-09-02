@@ -28,6 +28,10 @@
     "Rational(2,5)",
     "Rational(2,5)",
     "Rational(2,5)",
+    "Rational(2,5)",
+    "Rational(2,5)",
+    "Rational(2,5)",
+    "Rational(2,5)",
     "Rational(2,5)"
   ]
 }
@@ -39,7 +43,9 @@
      in textstyle e le parentesi non abbracciano la frazione. -->
 <script>
 MathJax = {
+  loader: { load: ['[tex]/cancel'] },
   tex: {
+    packages: { '[+]': ['cancel'] },
     inlineMath: [['$','$']],
     displayMath: [['$$','$$']],
     processEscapes: true
@@ -271,7 +277,7 @@ mjx-container[display]{margin:0!important}
       <div class="n">4</div>
       <div class="cont">
         <div class="nota">Riduco tutte le frazioni.</div>
-        <div class="f sx">$\displaystyle =\left(\frac{2}{5}+\frac{7}{9}-\frac{3}{20}\right)\cdot\frac{6}{5}-\frac{5}{6}=$</div>
+        <div class="f sx">$\displaystyle =\left(\frac{\overset{2}{\cancel{4}}}{\underset{5}{\cancel{10}}}+\frac{7}{9}-\frac{\overset{3}{\cancel{15}}}{\underset{20}{\cancel{100}}}\right)\cdot\frac{\overset{6}{\cancel{12}}}{\underset{5}{\cancel{10}}}-\frac{\overset{5}{\cancel{75}}}{\underset{6}{\cancel{90}}}=$</div>
       </div>
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
@@ -296,9 +302,20 @@ mjx-container[display]{margin:0!important}
     </div>
   </details>
 
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">5</div>
+      <div class="cont">
+        <div class="nota">Riscrivo pulito.</div>
+        <div class="f sx">$\displaystyle =\left(\frac{2}{5}+\frac{7}{9}-\frac{3}{20}\right)\cdot\frac{6}{5}-\frac{5}{6}=$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
   <details class="riga">
     <summary>
-      <div class="n">5</div>
+      <div class="n">6</div>
       <div class="cont">
         <div class="nota">Tonda: mcm $=180$.</div>
         <div class="f sx">$\displaystyle =\frac{72+140-27}{180}\cdot\frac{6}{5}-\frac{5}{6}=$</div>
@@ -328,7 +345,7 @@ mjx-container[display]{margin:0!important}
 
   <div class="riga">
     <div class="fissa">
-      <div class="n">6</div>
+      <div class="n">7</div>
       <div class="cont">
         <div class="nota">Eseguo la somma algebrica.</div>
         <div class="f sx">$\displaystyle =\frac{185}{180}\cdot\frac{6}{5}-\frac{5}{6}=$</div>
@@ -339,9 +356,20 @@ mjx-container[display]{margin:0!important}
 
   <div class="riga">
     <div class="fissa">
-      <div class="n">7</div>
+      <div class="n">8</div>
       <div class="cont">
         <div class="nota">Riduco $\frac{185}{180}$ per $5$, come al passaggio 4.</div>
+        <div class="f sx">$\displaystyle =\frac{\overset{37}{\cancel{185}}}{\underset{36}{\cancel{180}}}\cdot\frac{6}{5}-\frac{5}{6}=$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">9</div>
+      <div class="cont">
+        <div class="nota">Riscrivo pulito.</div>
         <div class="f sx">$\displaystyle =\frac{37}{36}\cdot\frac{6}{5}-\frac{5}{6}=$</div>
       </div>
       <div></div>
@@ -350,7 +378,7 @@ mjx-container[display]{margin:0!important}
 
   <details class="riga">
     <summary>
-      <div class="n">8</div>
+      <div class="n">10</div>
       <div class="cont">
         <div class="nota">Prima il prodotto, poi la sottrazione.</div>
         <div class="f sx">$\displaystyle =\left(\frac{37}{36}\cdot\frac{6}{5}\right)-\frac{5}{6}=$</div>
@@ -380,10 +408,10 @@ mjx-container[display]{margin:0!important}
 
   <details class="riga">
     <summary>
-      <div class="n">9</div>
+      <div class="n">11</div>
       <div class="cont">
         <div class="nota">Semplifico a croce, prima di moltiplicare.</div>
-        <div class="f sx">$\displaystyle =\left(\frac{37}{6}\cdot\frac{1}{5}\right)-\frac{5}{6}=$</div>
+        <div class="f sx">$\displaystyle =\left(\frac{37}{\underset{6}{\cancel{36}}}\cdot\frac{\overset{1}{\cancel{6}}}{5}\right)-\frac{5}{6}=$</div>
       </div>
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
@@ -394,10 +422,6 @@ mjx-container[display]{margin:0!important}
         <div class="frase">Prima di eseguire il prodotto si semplifica <strong>in croce</strong>: un numeratore con il denominatore dell'<strong>altra</strong> frazione. Si dividono per lo stesso numero e si scrivono i risultati al loro posto. Semplificare dopo aver moltiplicato porta allo stesso risultato, ma passando da numeri molto più grandi — ed è lì che nascono gli errori di calcolo.</div>
         <div class="f sx">$\displaystyle \frac{a\cdot k}{b}\cdot\frac{c}{d\cdot k}=\frac{a}{b}\cdot\frac{c}{d}$</div>
         <div class="ex">esempio: $\frac{9}{5}\cdot\frac{5}{6}=\frac{3}{1}\cdot\frac{1}{2}$</div>
-      </div>
-      <div class="semplifica">
-        <div class="k">Semplifico a croce</div>
-        <div class="passi"><span class="fr"><span class="su"><b>37</b></span><span class="giu"><s>36</s><b>6</b></span></span><span class="op">·</span><span class="fr"><span class="su"><s>6</s><b>1</b></span><span class="giu"><b>5</b></span></span></div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
@@ -414,7 +438,18 @@ mjx-container[display]{margin:0!important}
 
   <div class="riga">
     <div class="fissa">
-      <div class="n">10</div>
+      <div class="n">12</div>
+      <div class="cont">
+        <div class="nota">Riscrivo pulito.</div>
+        <div class="f sx">$\displaystyle =\left(\frac{37}{6}\cdot\frac{1}{5}\right)-\frac{5}{6}=$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">13</div>
       <div class="cont">
         <div class="nota">Moltiplico sopra con sopra e sotto con sotto.</div>
         <div class="f sx">$\displaystyle =\frac{37}{30}-\frac{5}{6}=$</div>
@@ -425,7 +460,7 @@ mjx-container[display]{margin:0!important}
 
   <details class="riga">
     <summary>
-      <div class="n">11</div>
+      <div class="n">14</div>
       <div class="cont">
         <div class="nota">mcm $=30$.</div>
         <div class="f sx">$\displaystyle =\frac{37-25}{30}=$</div>
@@ -455,7 +490,7 @@ mjx-container[display]{margin:0!important}
 
   <div class="riga">
     <div class="fissa">
-      <div class="n">12</div>
+      <div class="n">15</div>
       <div class="cont">
         <div class="nota">Eseguo la sottrazione.</div>
         <div class="f sx">$\displaystyle =\frac{12}{30}=$</div>
@@ -464,11 +499,22 @@ mjx-container[display]{margin:0!important}
     </div>
   </div>
 
-  <div class="riga res">
+  <div class="riga">
     <div class="fissa">
-      <div class="n">13</div>
+      <div class="n">16</div>
       <div class="cont">
         <div class="nota">Riduco $\frac{12}{30}$ dividendo per $6$.</div>
+        <div class="f sx">$\displaystyle =\frac{\overset{2}{\cancel{12}}}{\underset{5}{\cancel{30}}}=$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="riga res">
+    <div class="fissa">
+      <div class="n">17</div>
+      <div class="cont">
+        <div class="nota">Riscrivo pulito.</div>
         <div class="f sx">$\displaystyle =\frac{2}{5}$</div>
       </div>
       <div></div>

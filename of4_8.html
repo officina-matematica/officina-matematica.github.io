@@ -35,6 +35,11 @@
     "Rational(13,9)",
     "Rational(13,9)",
     "Rational(13,9)",
+    "Rational(13,9)",
+    "Rational(13,9)",
+    "Rational(13,9)",
+    "Rational(13,9)",
+    "Rational(13,9)",
     "Rational(13,9)"
   ]
 }
@@ -46,7 +51,9 @@
      in textstyle e le parentesi non abbracciano la frazione. -->
 <script>
 MathJax = {
+  loader: { load: ['[tex]/cancel'] },
   tex: {
+    packages: { '[+]': ['cancel'] },
     inlineMath: [['$','$']],
     displayMath: [['$$','$$']],
     processEscapes: true
@@ -338,7 +345,7 @@ mjx-container[display]{margin:0!important}
       <div class="n">6</div>
       <div class="cont">
         <div class="nota">Dentro la tonda semplifico a croce il prodotto.</div>
-        <div class="f sx">$\displaystyle =\left(\frac{2}{3}\right)^{2}+\left[\frac{1}{2}+\frac{1}{8}\cdot\left(\frac{7}{10}+\frac{3}{1}\cdot\frac{3}{2}-\frac{21}{16}:\frac{35}{32}\right)\right]=$</div>
+        <div class="f sx">$\displaystyle =\left(\frac{2}{3}\right)^{2}+\left[\frac{1}{2}+\frac{1}{8}\cdot\left(\frac{7}{10}+\frac{\overset{3}{\cancel{12}}}{\underset{1}{\cancel{5}}}\cdot\frac{\overset{3}{\cancel{15}}}{\underset{2}{\cancel{8}}}-\frac{21}{16}:\frac{35}{32}\right)\right]=$</div>
       </div>
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
@@ -349,10 +356,6 @@ mjx-container[display]{margin:0!important}
         <div class="frase">Prima di eseguire il prodotto si semplifica <strong>in croce</strong>: un numeratore con il denominatore dell'<strong>altra</strong> frazione. Si dividono per lo stesso numero e si scrivono i risultati al loro posto. Semplificare dopo aver moltiplicato porta allo stesso risultato, ma passando da numeri molto più grandi — ed è lì che nascono gli errori di calcolo.</div>
         <div class="f sx">$\displaystyle \frac{a\cdot k}{b}\cdot\frac{c}{d\cdot k}=\frac{a}{b}\cdot\frac{c}{d}$</div>
         <div class="ex">esempio: $\frac{9}{5}\cdot\frac{5}{6}=\frac{3}{1}\cdot\frac{1}{2}$</div>
-      </div>
-      <div class="semplifica">
-        <div class="k">Semplifico a croce</div>
-        <div class="passi"><span class="fr"><span class="su"><s>12</s><b>3</b></span><span class="giu"><s>5</s><b>1</b></span></span><span class="op">·</span><span class="fr"><span class="su"><s>15</s><b>3</b></span><span class="giu"><s>8</s><b>2</b></span></span></div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
@@ -367,9 +370,20 @@ mjx-container[display]{margin:0!important}
     </div>
   </details>
 
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">7</div>
+      <div class="cont">
+        <div class="nota">Riscrivo pulito.</div>
+        <div class="f sx">$\displaystyle =\left(\frac{2}{3}\right)^{2}+\left[\frac{1}{2}+\frac{1}{8}\cdot\left(\frac{7}{10}+\frac{3}{1}\cdot\frac{3}{2}-\frac{21}{16}:\frac{35}{32}\right)\right]=$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
   <details class="riga">
     <summary>
-      <div class="n">7</div>
+      <div class="n">8</div>
       <div class="cont">
         <div class="nota">Ora il prodotto, che viene prima di somma e sottrazione.</div>
         <div class="f sx">$\displaystyle =\left(\frac{2}{3}\right)^{2}+\left[\frac{1}{2}+\frac{1}{8}\cdot\left(\frac{7}{10}+\frac{9}{2}-\frac{21}{16}:\frac{35}{32}\right)\right]=$</div>
@@ -399,7 +413,7 @@ mjx-container[display]{margin:0!important}
 
   <details class="riga">
     <summary>
-      <div class="n">8</div>
+      <div class="n">9</div>
       <div class="cont">
         <div class="nota">Capovolgo la frazione che divide.</div>
         <div class="f sx">$\displaystyle =\left(\frac{2}{3}\right)^{2}+\left[\frac{1}{2}+\frac{1}{8}\cdot\left(\frac{7}{10}+\frac{9}{2}-\frac{21}{16}\cdot\frac{32}{35}\right)\right]=$</div>
@@ -429,9 +443,20 @@ mjx-container[display]{margin:0!important}
 
   <div class="riga">
     <div class="fissa">
-      <div class="n">9</div>
+      <div class="n">10</div>
       <div class="cont">
         <div class="nota">Semplifico a croce, come al passaggio 6.</div>
+        <div class="f sx">$\displaystyle =\left(\frac{2}{3}\right)^{2}+\left[\frac{1}{2}+\frac{1}{8}\cdot\left(\frac{7}{10}+\frac{9}{2}-\frac{\overset{3}{\cancel{21}}}{\underset{1}{\cancel{16}}}\cdot\frac{\overset{2}{\cancel{32}}}{\underset{5}{\cancel{35}}}\right)\right]=$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">11</div>
+      <div class="cont">
+        <div class="nota">Riscrivo pulito.</div>
         <div class="f sx">$\displaystyle =\left(\frac{2}{3}\right)^{2}+\left[\frac{1}{2}+\frac{1}{8}\cdot\left(\frac{7}{10}+\frac{9}{2}-\frac{3}{1}\cdot\frac{2}{5}\right)\right]=$</div>
       </div>
       <div></div>
@@ -440,7 +465,7 @@ mjx-container[display]{margin:0!important}
 
   <div class="riga">
     <div class="fissa">
-      <div class="n">10</div>
+      <div class="n">12</div>
       <div class="cont">
         <div class="nota">Eseguo il prodotto.</div>
         <div class="f sx">$\displaystyle =\left(\frac{2}{3}\right)^{2}+\left[\frac{1}{2}+\frac{1}{8}\cdot\left(\frac{7}{10}+\frac{9}{2}-\frac{6}{5}\right)\right]=$</div>
@@ -449,9 +474,15 @@ mjx-container[display]{margin:0!important}
     </div>
   </div>
 
+  <div class="check">
+    <span>🚩 <b>Fermata di controllo.</b> Se qui hai</span>
+    <span class="v">$\displaystyle \left(\frac{2}{3}\right)^{2}$</span><span>e</span><span class="v">$\displaystyle 4$</span>
+    <span>la tonda è chiusa: resta solo la quadra.</span>
+  </div>
+
   <details class="riga">
     <summary>
-      <div class="n">11</div>
+      <div class="n">13</div>
       <div class="cont">
         <div class="nota">Dentro la tonda: mcm$(10,2,5)=10$.</div>
         <div class="f sx">$\displaystyle =\left(\frac{2}{3}\right)^{2}+\left[\frac{1}{2}+\frac{1}{8}\cdot\frac{7+45-12}{10}\right]=$</div>
@@ -481,7 +512,7 @@ mjx-container[display]{margin:0!important}
 
   <div class="riga">
     <div class="fissa">
-      <div class="n">12</div>
+      <div class="n">14</div>
       <div class="cont">
         <div class="nota">Chiudo la tonda.</div>
         <div class="f sx">$\displaystyle =\left(\frac{2}{3}\right)^{2}+\left[\frac{1}{2}+\frac{1}{8}\cdot\frac{40}{10}\right]=$</div>
@@ -490,17 +521,22 @@ mjx-container[display]{margin:0!important}
     </div>
   </div>
 
-  <div class="check">
-    <span>🚩 <b>Fermata di controllo.</b> Se qui hai</span>
-    <span class="v">$\displaystyle \left(\frac{2}{3}\right)^{2}$</span><span>e</span><span class="v">$\displaystyle 4$</span>
-    <span>la tonda è chiusa: resta solo la quadra.</span>
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">15</div>
+      <div class="cont">
+        <div class="nota">$\frac{40}{10}$ vale $4$.</div>
+        <div class="f sx">$\displaystyle =\left(\frac{2}{3}\right)^{2}+\left[\frac{1}{2}+\frac{1}{8}\cdot\frac{\overset{4}{\cancel{40}}}{\underset{1}{\cancel{10}}}\right]=$</div>
+      </div>
+      <div></div>
+    </div>
   </div>
 
   <div class="riga">
     <div class="fissa">
-      <div class="n">13</div>
+      <div class="n">16</div>
       <div class="cont">
-        <div class="nota">$\frac{40}{10}$ vale $4$.</div>
+        <div class="nota">Riscrivo pulito.</div>
         <div class="f sx">$\displaystyle =\left(\frac{2}{3}\right)^{2}+\left[\frac{1}{2}+\frac{1}{8}\cdot 4\right]=$</div>
       </div>
       <div></div>
@@ -509,9 +545,20 @@ mjx-container[display]{margin:0!important}
 
   <div class="riga">
     <div class="fissa">
-      <div class="n">14</div>
+      <div class="n">17</div>
       <div class="cont">
         <div class="nota">Semplifico a croce, come al passaggio 6.</div>
+        <div class="f sx">$\displaystyle =\left(\frac{2}{3}\right)^{2}+\left[\frac{1}{2}+\frac{1}{\underset{2}{\cancel{8}}}\cdot \overset{1}{\cancel{4}}\right]=$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">18</div>
+      <div class="cont">
+        <div class="nota">Riscrivo pulito.</div>
         <div class="f sx">$\displaystyle =\left(\frac{2}{3}\right)^{2}+\left[\frac{1}{2}+\frac{1}{2}\cdot\frac{1}{1}\right]=$</div>
       </div>
       <div></div>
@@ -520,7 +567,7 @@ mjx-container[display]{margin:0!important}
 
   <div class="riga">
     <div class="fissa">
-      <div class="n">15</div>
+      <div class="n">19</div>
       <div class="cont">
         <div class="nota">Moltiplico: vale $\frac{1}{2}$.</div>
         <div class="f sx">$\displaystyle =\left(\frac{2}{3}\right)^{2}+\left[\frac{1}{2}+\frac{1}{2}\right]=$</div>
@@ -531,7 +578,7 @@ mjx-container[display]{margin:0!important}
 
   <div class="riga">
     <div class="fissa">
-      <div class="n">16</div>
+      <div class="n">20</div>
       <div class="cont">
         <div class="nota">Stesso denominatore: sommo i numeratori.</div>
         <div class="f sx">$\displaystyle =\left(\frac{2}{3}\right)^{2}+\frac{2}{2}=$</div>
@@ -542,9 +589,20 @@ mjx-container[display]{margin:0!important}
 
   <div class="riga">
     <div class="fissa">
-      <div class="n">17</div>
+      <div class="n">21</div>
       <div class="cont">
         <div class="nota">$\frac{2}{2}$ vale $1$.</div>
+        <div class="f sx">$\displaystyle =\left(\frac{2}{3}\right)^{2}+\frac{\overset{1}{\cancel{2}}}{\underset{1}{\cancel{2}}}=$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">22</div>
+      <div class="cont">
+        <div class="nota">Riscrivo pulito.</div>
         <div class="f sx">$\displaystyle =\left(\frac{2}{3}\right)^{2}+1=$</div>
       </div>
       <div></div>
@@ -553,7 +611,7 @@ mjx-container[display]{margin:0!important}
 
   <details class="riga">
     <summary>
-      <div class="n">18</div>
+      <div class="n">23</div>
       <div class="cont">
         <div class="nota">Elevo numeratore e denominatore.</div>
         <div class="f sx">$\displaystyle =\frac{4}{9}+1=$</div>
@@ -583,7 +641,7 @@ mjx-container[display]{margin:0!important}
 
   <details class="riga">
     <summary>
-      <div class="n">19</div>
+      <div class="n">24</div>
       <div class="cont">
         <div class="nota">Scrivo $1$ come frazione con denominatore $9$.</div>
         <div class="f sx">$\displaystyle =\frac{4+9}{9}=$</div>
@@ -613,7 +671,7 @@ mjx-container[display]{margin:0!important}
 
   <div class="riga res">
     <div class="fissa">
-      <div class="n">20</div>
+      <div class="n">25</div>
       <div class="cont"><div class="f sx">$\displaystyle =\frac{13}{9}$</div></div>
       <div></div>
     </div>

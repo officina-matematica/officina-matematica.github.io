@@ -34,6 +34,8 @@
     "Rational(27,5)",
     "Rational(27,5)",
     "Rational(27,5)",
+    "Rational(27,5)",
+    "Rational(27,5)",
     "Rational(27,5)"
   ]
 }
@@ -45,7 +47,9 @@
      in textstyle e le parentesi non abbracciano la frazione. -->
 <script>
 MathJax = {
+  loader: { load: ['[tex]/cancel'] },
   tex: {
+    packages: { '[+]': ['cancel'] },
     inlineMath: [['$','$']],
     displayMath: [['$$','$$']],
     processEscapes: true
@@ -515,7 +519,7 @@ mjx-container[display]{margin:0!important}
       <div class="n">13</div>
       <div class="cont">
         <div class="nota">Riduco $\frac{2}{8}$ dividendo per $2$.</div>
-        <div class="f sx">$\displaystyle =\frac{7}{5}+\frac{1}{4}:\frac{1}{16}=$</div>
+        <div class="f sx">$\displaystyle =\frac{7}{5}+\frac{\overset{1}{\cancel{2}}}{\underset{4}{\cancel{8}}}:\frac{1}{16}=$</div>
       </div>
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
@@ -540,9 +544,20 @@ mjx-container[display]{margin:0!important}
     </div>
   </details>
 
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">14</div>
+      <div class="cont">
+        <div class="nota">Riscrivo pulito.</div>
+        <div class="f sx">$\displaystyle =\frac{7}{5}+\frac{1}{4}:\frac{1}{16}=$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
   <details class="riga">
     <summary>
-      <div class="n">14</div>
+      <div class="n">15</div>
       <div class="cont">
         <div class="nota">Capovolgo la frazione che divide.</div>
         <div class="f sx">$\displaystyle =\frac{7}{5}+\frac{1}{4}\cdot\frac{16}{1}=$</div>
@@ -572,10 +587,10 @@ mjx-container[display]{margin:0!important}
 
   <details class="riga">
     <summary>
-      <div class="n">15</div>
+      <div class="n">16</div>
       <div class="cont">
         <div class="nota">Semplifico a croce, prima di moltiplicare.</div>
-        <div class="f sx">$\displaystyle =\frac{7}{5}+\frac{1}{1}\cdot\frac{4}{1}=$</div>
+        <div class="f sx">$\displaystyle =\frac{7}{5}+\frac{1}{\underset{1}{\cancel{4}}}\cdot\frac{\overset{4}{\cancel{16}}}{1}=$</div>
       </div>
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
@@ -586,10 +601,6 @@ mjx-container[display]{margin:0!important}
         <div class="frase">Prima di eseguire il prodotto si semplifica <strong>in croce</strong>: un numeratore con il denominatore dell'<strong>altra</strong> frazione. Si dividono per lo stesso numero e si scrivono i risultati al loro posto. Semplificare dopo aver moltiplicato porta allo stesso risultato, ma passando da numeri molto più grandi — ed è lì che nascono gli errori di calcolo.</div>
         <div class="f sx">$\displaystyle \frac{a\cdot k}{b}\cdot\frac{c}{d\cdot k}=\frac{a}{b}\cdot\frac{c}{d}$</div>
         <div class="ex">esempio: $\frac{9}{5}\cdot\frac{5}{6}=\frac{3}{1}\cdot\frac{1}{2}$</div>
-      </div>
-      <div class="semplifica">
-        <div class="k">Semplifico a croce</div>
-        <div class="passi"><span class="fr"><span class="su"><b>1</b></span><span class="giu"><s>4</s><b>1</b></span></span><span class="op">·</span><span class="fr"><span class="su"><s>16</s><b>4</b></span><span class="giu"><b>1</b></span></span></div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
@@ -606,7 +617,18 @@ mjx-container[display]{margin:0!important}
 
   <div class="riga">
     <div class="fissa">
-      <div class="n">16</div>
+      <div class="n">17</div>
+      <div class="cont">
+        <div class="nota">Riscrivo pulito.</div>
+        <div class="f sx">$\displaystyle =\frac{7}{5}+\frac{1}{1}\cdot\frac{4}{1}=$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">18</div>
       <div class="cont">
         <div class="nota">Moltiplico.</div>
         <div class="f sx">$\displaystyle =\frac{7}{5}+\frac{4}{1}=$</div>
@@ -617,7 +639,7 @@ mjx-container[display]{margin:0!important}
 
   <div class="riga">
     <div class="fissa">
-      <div class="n">17</div>
+      <div class="n">19</div>
       <div class="cont">
         <div class="nota">$\frac{4}{1}$ vale $4$.</div>
         <div class="f sx">$\displaystyle =\frac{7}{5}+4=$</div>
@@ -628,7 +650,7 @@ mjx-container[display]{margin:0!important}
 
   <details class="riga">
     <summary>
-      <div class="n">18</div>
+      <div class="n">20</div>
       <div class="cont">
         <div class="nota">Scrivo $4$ come frazione con denominatore $5$.</div>
         <div class="f sx">$\displaystyle =\frac{7+20}{5}=$</div>
@@ -658,7 +680,7 @@ mjx-container[display]{margin:0!important}
 
   <div class="riga res">
     <div class="fissa">
-      <div class="n">19</div>
+      <div class="n">21</div>
       <div class="cont"><div class="f sx">$\displaystyle =\frac{27}{5}$</div></div>
       <div></div>
     </div>

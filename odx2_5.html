@@ -27,6 +27,8 @@
     "Integer(1)",
     "Integer(1)",
     "Integer(1)",
+    "Integer(1)",
+    "Integer(1)",
     "Integer(1)"
   ]
 }
@@ -38,7 +40,9 @@
      in textstyle e le parentesi non abbracciano la frazione. -->
 <script>
 MathJax = {
+  loader: { load: ['[tex]/cancel'] },
   tex: {
+    packages: { '[+]': ['cancel'] },
     inlineMath: [['$','$']],
     displayMath: [['$$','$$']],
     processEscapes: true
@@ -352,7 +356,7 @@ mjx-container[display]{margin:0!important}
       <div class="n">8</div>
       <div class="cont">
         <div class="nota">Riduco $\frac{6}{9}$ dividendo per $3$.</div>
-        <div class="f sx">$\displaystyle =\left(\frac{2}{3}\right)^{2}+\frac{5}{9}=$</div>
+        <div class="f sx">$\displaystyle =\left(\frac{\overset{2}{\cancel{6}}}{\underset{3}{\cancel{9}}}\right)^{2}+\frac{5}{9}=$</div>
       </div>
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
@@ -377,9 +381,20 @@ mjx-container[display]{margin:0!important}
     </div>
   </details>
 
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">9</div>
+      <div class="cont">
+        <div class="nota">Riscrivo pulito.</div>
+        <div class="f sx">$\displaystyle =\left(\frac{2}{3}\right)^{2}+\frac{5}{9}=$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
   <details class="riga">
     <summary>
-      <div class="n">9</div>
+      <div class="n">10</div>
       <div class="cont">
         <div class="nota">Elevo numeratore e denominatore.</div>
         <div class="f sx">$\displaystyle =\frac{4}{9}+\frac{5}{9}=$</div>
@@ -409,7 +424,7 @@ mjx-container[display]{margin:0!important}
 
   <div class="riga">
     <div class="fissa">
-      <div class="n">10</div>
+      <div class="n">11</div>
       <div class="cont">
         <div class="nota">Stesso denominatore: sommo i numeratori.</div>
         <div class="f sx">$\displaystyle =\frac{4+5}{9}=$</div>
@@ -420,7 +435,7 @@ mjx-container[display]{margin:0!important}
 
   <div class="riga">
     <div class="fissa">
-      <div class="n">11</div>
+      <div class="n">12</div>
       <div class="cont">
         <div class="nota">Eseguo la somma.</div>
         <div class="f sx">$\displaystyle =\frac{9}{9}=$</div>
@@ -429,11 +444,22 @@ mjx-container[display]{margin:0!important}
     </div>
   </div>
 
-  <div class="riga res">
+  <div class="riga">
     <div class="fissa">
-      <div class="n">12</div>
+      <div class="n">13</div>
       <div class="cont">
         <div class="nota">$\frac{9}{9}$ vale $9:9$.</div>
+        <div class="f sx">$\displaystyle =\frac{\overset{1}{\cancel{9}}}{\underset{1}{\cancel{9}}}=$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="riga res">
+    <div class="fissa">
+      <div class="n">14</div>
+      <div class="cont">
+        <div class="nota">Riscrivo pulito.</div>
         <div class="f sx">$\displaystyle =1$</div>
       </div>
       <div></div>

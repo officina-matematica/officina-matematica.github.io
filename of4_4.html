@@ -28,6 +28,8 @@
     "Integer(1)",
     "Integer(1)",
     "Integer(1)",
+    "Integer(1)",
+    "Integer(1)",
     "Integer(1)"
   ]
 }
@@ -39,7 +41,9 @@
      in textstyle e le parentesi non abbracciano la frazione. -->
 <script>
 MathJax = {
+  loader: { load: ['[tex]/cancel'] },
   tex: {
+    packages: { '[+]': ['cancel'] },
     inlineMath: [['$','$']],
     displayMath: [['$$','$$']],
     processEscapes: true
@@ -271,7 +275,7 @@ mjx-container[display]{margin:0!important}
       <div class="n">4</div>
       <div class="cont">
         <div class="nota">Semplifico a croce, prima di moltiplicare.</div>
-        <div class="f sx">$\displaystyle =\left\{\left[\left(\frac{3}{1}\cdot\frac{1}{1}\right)^{3}\right]^{8}:\left[\left(12\right)^{4}\cdot\left(\frac{1}{4}\right)^{4}\right]^{5}\right\}^{3}\cdot\left[\left(\frac{1}{3}\right)^{2}\right]^{6}=$</div>
+        <div class="f sx">$\displaystyle =\left\{\left[\left(\frac{\overset{3}{\cancel{12}}}{\underset{1}{\cancel{5}}}\cdot\frac{\overset{1}{\cancel{5}}}{\underset{1}{\cancel{4}}}\right)^{3}\right]^{8}:\left[\left(12\right)^{4}\cdot\left(\frac{1}{4}\right)^{4}\right]^{5}\right\}^{3}\cdot\left[\left(\frac{1}{3}\right)^{2}\right]^{6}=$</div>
       </div>
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
@@ -282,10 +286,6 @@ mjx-container[display]{margin:0!important}
         <div class="frase">Prima di eseguire il prodotto si semplifica <strong>in croce</strong>: un numeratore con il denominatore dell'<strong>altra</strong> frazione. Si dividono per lo stesso numero e si scrivono i risultati al loro posto. Semplificare dopo aver moltiplicato porta allo stesso risultato, ma passando da numeri molto più grandi — ed è lì che nascono gli errori di calcolo.</div>
         <div class="f sx">$\displaystyle \frac{a\cdot k}{b}\cdot\frac{c}{d\cdot k}=\frac{a}{b}\cdot\frac{c}{d}$</div>
         <div class="ex">esempio: $\frac{9}{5}\cdot\frac{5}{6}=\frac{3}{1}\cdot\frac{1}{2}$</div>
-      </div>
-      <div class="semplifica">
-        <div class="k">Semplifico a croce</div>
-        <div class="passi"><span class="fr"><span class="su"><s>12</s><b>3</b></span><span class="giu"><s>5</s><b>1</b></span></span><span class="op">·</span><span class="fr"><span class="su"><s>5</s><b>1</b></span><span class="giu"><s>4</s><b>1</b></span></span></div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
@@ -304,6 +304,17 @@ mjx-container[display]{margin:0!important}
     <div class="fissa">
       <div class="n">5</div>
       <div class="cont">
+        <div class="nota">Riscrivo pulito.</div>
+        <div class="f sx">$\displaystyle =\left\{\left[\left(\frac{3}{1}\cdot\frac{1}{1}\right)^{3}\right]^{8}:\left[\left(12\right)^{4}\cdot\left(\frac{1}{4}\right)^{4}\right]^{5}\right\}^{3}\cdot\left[\left(\frac{1}{3}\right)^{2}\right]^{6}=$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">6</div>
+      <div class="cont">
         <div class="nota">Moltiplico dentro la tonda: $\frac{3}{1}$ vale $3$.</div>
         <div class="f sx">$\displaystyle =\left\{\left[3^{3}\right]^{8}:\left[\left(12\right)^{4}\cdot\left(\frac{1}{4}\right)^{4}\right]^{5}\right\}^{3}\cdot\left[\left(\frac{1}{3}\right)^{2}\right]^{6}=$</div>
       </div>
@@ -313,7 +324,7 @@ mjx-container[display]{margin:0!important}
 
   <details class="riga">
     <summary>
-      <div class="n">6</div>
+      <div class="n">7</div>
       <div class="cont">
         <div class="nota">Seconda quadra: stesso esponente, moltiplico le basi.</div>
         <div class="f sx">$\displaystyle =\left\{\left[3^{3}\right]^{8}:\left[\left(12\cdot\frac{1}{4}\right)^{4}\right]^{5}\right\}^{3}\cdot\left[\left(\frac{1}{3}\right)^{2}\right]^{6}=$</div>
@@ -343,9 +354,20 @@ mjx-container[display]{margin:0!important}
 
   <div class="riga">
     <div class="fissa">
-      <div class="n">7</div>
+      <div class="n">8</div>
       <div class="cont">
-        <div class="nota">$12\cdot\frac{1}{4}$ vale $3$.</div>
+        <div class="nota">$12\cdot\frac{1}{4}$ vale $3$: il $12$ si divide per il $4$.</div>
+        <div class="f sx">$\displaystyle =\left\{\left[3^{3}\right]^{8}:\left[\left(\overset{3}{\cancel{12}}\cdot\frac{1}{\underset{1}{\cancel{4}}}\right)^{4}\right]^{5}\right\}^{3}\cdot\left[\left(\frac{1}{3}\right)^{2}\right]^{6}=$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">9</div>
+      <div class="cont">
+        <div class="nota">Riscrivo pulito.</div>
         <div class="f sx">$\displaystyle =\left\{\left[3^{3}\right]^{8}:\left[3^{4}\right]^{5}\right\}^{3}\cdot\left[\left(\frac{1}{3}\right)^{2}\right]^{6}=$</div>
       </div>
       <div></div>
@@ -354,7 +376,7 @@ mjx-container[display]{margin:0!important}
 
   <details class="riga">
     <summary>
-      <div class="n">8</div>
+      <div class="n">10</div>
       <div class="cont">
         <div class="nota">Potenza di potenza: moltiplico gli esponenti.</div>
         <div class="f sx">$\displaystyle =\left\{3^{24}:3^{20}\right\}^{3}\cdot\left(\frac{1}{3}\right)^{12}=$</div>
@@ -382,9 +404,15 @@ mjx-container[display]{margin:0!important}
     </div>
   </details>
 
+  <div class="check">
+    <span>🚩 <b>Fermata di controllo.</b> Se qui hai</span>
+    <span class="v">$\displaystyle 3^{12}$</span><span>e</span><span class="v">$\displaystyle \left(\frac{1}{3}\right)^{12}$</span>
+    <span>resta un solo prodotto fra potenze con lo stesso esponente.</span>
+  </div>
+
   <details class="riga">
     <summary>
-      <div class="n">9</div>
+      <div class="n">11</div>
       <div class="cont">
         <div class="nota">Dentro la graffa: sottraggo gli esponenti.</div>
         <div class="f sx">$\displaystyle =\left\{3^{4}\right\}^{3}\cdot\left(\frac{1}{3}\right)^{12}=$</div>
@@ -414,7 +442,7 @@ mjx-container[display]{margin:0!important}
 
   <div class="riga">
     <div class="fissa">
-      <div class="n">10</div>
+      <div class="n">12</div>
       <div class="cont">
         <div class="nota">Ancora potenza di potenza, come al passaggio 8.</div>
         <div class="f sx">$\displaystyle =3^{12}\cdot\left(\frac{1}{3}\right)^{12}=$</div>
@@ -423,15 +451,9 @@ mjx-container[display]{margin:0!important}
     </div>
   </div>
 
-  <div class="check">
-    <span>🚩 <b>Fermata di controllo.</b> Se qui hai</span>
-    <span class="v">$\displaystyle 3^{12}$</span><span>e</span><span class="v">$\displaystyle \left(\frac{1}{3}\right)^{12}$</span>
-    <span>resta un solo prodotto fra potenze con lo stesso esponente.</span>
-  </div>
-
   <div class="riga">
     <div class="fissa">
-      <div class="n">11</div>
+      <div class="n">13</div>
       <div class="cont">
         <div class="nota">Stesso esponente: moltiplico le basi, come al passaggio 6.</div>
         <div class="f sx">$\displaystyle =\left(3\cdot\frac{1}{3}\right)^{12}=$</div>
@@ -442,7 +464,7 @@ mjx-container[display]{margin:0!important}
 
   <div class="riga">
     <div class="fissa">
-      <div class="n">12</div>
+      <div class="n">14</div>
       <div class="cont">
         <div class="nota">$3\cdot\frac{1}{3}$ vale $1$.</div>
         <div class="f sx">$\displaystyle =1^{12}=$</div>
@@ -453,7 +475,7 @@ mjx-container[display]{margin:0!important}
 
   <div class="riga res">
     <div class="fissa">
-      <div class="n">13</div>
+      <div class="n">15</div>
       <div class="cont">
         <div class="nota">Uno elevato a qualsiasi esponente resta uno.</div>
         <div class="f sx">$\displaystyle =1$</div>

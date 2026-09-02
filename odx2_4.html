@@ -33,6 +33,8 @@
     "Rational(1,2)",
     "Rational(1,2)",
     "Rational(1,2)",
+    "Rational(1,2)",
+    "Rational(1,2)",
     "Rational(1,2)"
   ]
 }
@@ -44,7 +46,9 @@
      in textstyle e le parentesi non abbracciano la frazione. -->
 <script>
 MathJax = {
+  loader: { load: ['[tex]/cancel'] },
   tex: {
+    packages: { '[+]': ['cancel'] },
     inlineMath: [['$','$']],
     displayMath: [['$$','$$']],
     processEscapes: true
@@ -306,7 +310,7 @@ mjx-container[display]{margin:0!important}
       <div class="n">5</div>
       <div class="cont">
         <div class="nota">Riduco tutte le frazioni.</div>
-        <div class="f sx">$\displaystyle =\left\{\left[\left(\frac{12}{5}:\frac{4}{5}\right)^{3}\cdot\left(\frac{1}{3}\right)^{3}\right]^{2}:\left(\frac{1}{2}\right)^{2}\right\}-\frac{7}{2}=$</div>
+        <div class="f sx">$\displaystyle =\left\{\left[\left(\frac{\overset{12}{\cancel{24}}}{\underset{5}{\cancel{10}}}:\frac{\overset{4}{\cancel{8}}}{\underset{5}{\cancel{10}}}\right)^{3}\cdot\left(\frac{\overset{1}{\cancel{3}}}{\underset{3}{\cancel{9}}}\right)^{3}\right]^{2}:\left(\frac{\overset{1}{\cancel{5}}}{\underset{2}{\cancel{10}}}\right)^{2}\right\}-\frac{\overset{7}{\cancel{35}}}{\underset{2}{\cancel{10}}}=$</div>
       </div>
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
@@ -331,9 +335,20 @@ mjx-container[display]{margin:0!important}
     </div>
   </details>
 
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">6</div>
+      <div class="cont">
+        <div class="nota">Riscrivo pulito.</div>
+        <div class="f sx">$\displaystyle =\left\{\left[\left(\frac{12}{5}:\frac{4}{5}\right)^{3}\cdot\left(\frac{1}{3}\right)^{3}\right]^{2}:\left(\frac{1}{2}\right)^{2}\right\}-\frac{7}{2}=$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
   <details class="riga">
     <summary>
-      <div class="n">6</div>
+      <div class="n">7</div>
       <div class="cont">
         <div class="nota">Capovolgo la frazione che divide.</div>
         <div class="f sx">$\displaystyle =\left\{\left[\left(\frac{12}{5}\cdot\frac{5}{4}\right)^{3}\cdot\left(\frac{1}{3}\right)^{3}\right]^{2}:\left(\frac{1}{2}\right)^{2}\right\}-\frac{7}{2}=$</div>
@@ -363,10 +378,10 @@ mjx-container[display]{margin:0!important}
 
   <details class="riga">
     <summary>
-      <div class="n">7</div>
+      <div class="n">8</div>
       <div class="cont">
         <div class="nota">Semplifico a croce, prima di moltiplicare.</div>
-        <div class="f sx">$\displaystyle =\left\{\left[\left(\frac{3}{1}\cdot\frac{1}{1}\right)^{3}\cdot\left(\frac{1}{3}\right)^{3}\right]^{2}:\left(\frac{1}{2}\right)^{2}\right\}-\frac{7}{2}=$</div>
+        <div class="f sx">$\displaystyle =\left\{\left[\left(\frac{\overset{3}{\cancel{12}}}{\underset{1}{\cancel{5}}}\cdot\frac{\overset{1}{\cancel{5}}}{\underset{1}{\cancel{4}}}\right)^{3}\cdot\left(\frac{1}{3}\right)^{3}\right]^{2}:\left(\frac{1}{2}\right)^{2}\right\}-\frac{7}{2}=$</div>
       </div>
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
@@ -377,10 +392,6 @@ mjx-container[display]{margin:0!important}
         <div class="frase">Prima di eseguire il prodotto si semplifica <strong>in croce</strong>: un numeratore con il denominatore dell'<strong>altra</strong> frazione. Si dividono per lo stesso numero e si scrivono i risultati al loro posto. Semplificare dopo aver moltiplicato porta allo stesso risultato, ma passando da numeri molto più grandi — ed è lì che nascono gli errori di calcolo.</div>
         <div class="f sx">$\displaystyle \frac{a\cdot k}{b}\cdot\frac{c}{d\cdot k}=\frac{a}{b}\cdot\frac{c}{d}$</div>
         <div class="ex">esempio: $\frac{9}{5}\cdot\frac{5}{6}=\frac{3}{1}\cdot\frac{1}{2}$</div>
-      </div>
-      <div class="semplifica">
-        <div class="k">Semplifico a croce</div>
-        <div class="passi"><span class="fr"><span class="su"><s>12</s><b>3</b></span><span class="giu"><s>5</s><b>1</b></span></span><span class="op">·</span><span class="fr"><span class="su"><s>5</s><b>1</b></span><span class="giu"><s>4</s><b>1</b></span></span></div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
@@ -397,7 +408,18 @@ mjx-container[display]{margin:0!important}
 
   <div class="riga">
     <div class="fissa">
-      <div class="n">8</div>
+      <div class="n">9</div>
+      <div class="cont">
+        <div class="nota">Riscrivo pulito.</div>
+        <div class="f sx">$\displaystyle =\left\{\left[\left(\frac{3}{1}\cdot\frac{1}{1}\right)^{3}\cdot\left(\frac{1}{3}\right)^{3}\right]^{2}:\left(\frac{1}{2}\right)^{2}\right\}-\frac{7}{2}=$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">10</div>
       <div class="cont">
         <div class="nota">Moltiplico: la tonda vale $3$.</div>
         <div class="f sx">$\displaystyle =\left\{\left[3^{3}\cdot\left(\frac{1}{3}\right)^{3}\right]^{2}:\left(\frac{1}{2}\right)^{2}\right\}-\frac{7}{2}=$</div>
@@ -408,7 +430,7 @@ mjx-container[display]{margin:0!important}
 
   <details class="riga">
     <summary>
-      <div class="n">9</div>
+      <div class="n">11</div>
       <div class="cont">
         <div class="nota">Stesso esponente: moltiplico le basi.</div>
         <div class="f sx">$\displaystyle =\left\{\left[\left(3\cdot\frac{1}{3}\right)^{3}\right]^{2}:\left(\frac{1}{2}\right)^{2}\right\}-\frac{7}{2}=$</div>
@@ -438,7 +460,7 @@ mjx-container[display]{margin:0!important}
 
   <div class="riga">
     <div class="fissa">
-      <div class="n">10</div>
+      <div class="n">12</div>
       <div class="cont">
         <div class="nota">$3\cdot\frac{1}{3}$ vale $1$.</div>
         <div class="f sx">$\displaystyle =\left\{\left[1^{3}\right]^{2}:\left(\frac{1}{2}\right)^{2}\right\}-\frac{7}{2}=$</div>
@@ -449,7 +471,7 @@ mjx-container[display]{margin:0!important}
 
   <details class="riga">
     <summary>
-      <div class="n">11</div>
+      <div class="n">13</div>
       <div class="cont">
         <div class="nota">Uno elevato a tre resta uno.</div>
         <div class="f sx">$\displaystyle =\left\{\left[1\right]^{2}:\left(\frac{1}{2}\right)^{2}\right\}-\frac{7}{2}=$</div>
@@ -479,7 +501,7 @@ mjx-container[display]{margin:0!important}
 
   <div class="riga">
     <div class="fissa">
-      <div class="n">12</div>
+      <div class="n">14</div>
       <div class="cont">
         <div class="nota">Uno elevato a due resta ancora uno.</div>
         <div class="f sx">$\displaystyle =\left\{1:\left(\frac{1}{2}\right)^{2}\right\}-\frac{7}{2}=$</div>
@@ -490,7 +512,7 @@ mjx-container[display]{margin:0!important}
 
   <details class="riga">
     <summary>
-      <div class="n">13</div>
+      <div class="n">15</div>
       <div class="cont">
         <div class="nota">Elevo numeratore e denominatore.</div>
         <div class="f sx">$\displaystyle =\left\{1:\frac{1}{4}\right\}-\frac{7}{2}=$</div>
@@ -520,7 +542,7 @@ mjx-container[display]{margin:0!important}
 
   <div class="riga">
     <div class="fissa">
-      <div class="n">14</div>
+      <div class="n">16</div>
       <div class="cont">
         <div class="nota">Capovolgo, come al passaggio 6.</div>
         <div class="f sx">$\displaystyle =\left\{1\cdot\frac{4}{1}\right\}-\frac{7}{2}=$</div>
@@ -531,7 +553,7 @@ mjx-container[display]{margin:0!important}
 
   <div class="riga">
     <div class="fissa">
-      <div class="n">15</div>
+      <div class="n">17</div>
       <div class="cont">
         <div class="nota">Moltiplico, come al passaggio 7.</div>
         <div class="f sx">$\displaystyle =\left\{\frac{4}{1}\right\}-\frac{7}{2}=$</div>
@@ -542,7 +564,7 @@ mjx-container[display]{margin:0!important}
 
   <div class="riga">
     <div class="fissa">
-      <div class="n">16</div>
+      <div class="n">18</div>
       <div class="cont">
         <div class="nota">Chiudo la graffa: $\frac{4}{1}$ vale $4$.</div>
         <div class="f sx">$\displaystyle =4-\frac{7}{2}=$</div>
@@ -553,7 +575,7 @@ mjx-container[display]{margin:0!important}
 
   <details class="riga">
     <summary>
-      <div class="n">17</div>
+      <div class="n">19</div>
       <div class="cont">
         <div class="nota">Scrivo $4$ come $\frac{8}{2}$.</div>
         <div class="f sx">$\displaystyle =\frac{8-7}{2}=$</div>
@@ -583,7 +605,7 @@ mjx-container[display]{margin:0!important}
 
   <div class="riga res">
     <div class="fissa">
-      <div class="n">18</div>
+      <div class="n">20</div>
       <div class="cont">
         <div class="nota">Eseguo la sottrazione.</div>
         <div class="f sx">$\displaystyle =\frac{1}{2}$</div>

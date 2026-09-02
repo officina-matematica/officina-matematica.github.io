@@ -19,6 +19,7 @@
     "Integer(3)",
     "Integer(3)",
     "Integer(3)",
+    "Integer(3)",
     "Integer(3)"
   ]
 }
@@ -30,7 +31,9 @@
      in textstyle e le parentesi non abbracciano la frazione. -->
 <script>
 MathJax = {
+  loader: { load: ['[tex]/cancel'] },
   tex: {
+    packages: { '[+]': ['cancel'] },
     inlineMath: [['$','$']],
     displayMath: [['$$','$$']],
     processEscapes: true
@@ -224,7 +227,7 @@ mjx-container[display]{margin:0!important}
       <div class="n">2</div>
       <div class="cont">
         <div class="nota">Semplifico a croce, prima di moltiplicare.</div>
-        <div class="f sx">$\displaystyle =\frac{1}{1}\cdot\frac{3}{1}=$</div>
+        <div class="f sx">$\displaystyle =\frac{\overset{1}{\cancel{11}}}{\underset{1}{\cancel{5}}}\cdot\frac{\overset{3}{\cancel{15}}}{\underset{1}{\cancel{11}}}=$</div>
       </div>
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
@@ -235,10 +238,6 @@ mjx-container[display]{margin:0!important}
         <div class="frase">Prima di eseguire il prodotto si semplifica <strong>in croce</strong>: un numeratore con il denominatore dell'<strong>altra</strong> frazione. Si dividono per lo stesso numero e si scrivono i risultati al loro posto. Semplificare dopo aver moltiplicato porta allo stesso risultato, ma passando da numeri molto più grandi — ed è lì che nascono gli errori di calcolo.</div>
         <div class="f sx">$\displaystyle \frac{a\cdot k}{b}\cdot\frac{c}{d\cdot k}=\frac{a}{b}\cdot\frac{c}{d}$</div>
         <div class="ex">esempio: $\frac{9}{5}\cdot\frac{5}{6}=\frac{3}{1}\cdot\frac{1}{2}$</div>
-      </div>
-      <div class="semplifica">
-        <div class="k">Semplifico a croce</div>
-        <div class="passi"><span class="fr"><span class="su"><s>11</s><b>1</b></span><span class="giu"><s>5</s><b>1</b></span></span><span class="op">·</span><span class="fr"><span class="su"><s>15</s><b>3</b></span><span class="giu"><s>11</s><b>1</b></span></span></div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
@@ -253,9 +252,20 @@ mjx-container[display]{margin:0!important}
     </div>
   </details>
 
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">3</div>
+      <div class="cont">
+        <div class="nota">Riscrivo pulito.</div>
+        <div class="f sx">$\displaystyle =\frac{1}{1}\cdot\frac{3}{1}=$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
   <details class="riga">
     <summary>
-      <div class="n">3</div>
+      <div class="n">4</div>
       <div class="cont">
         <div class="nota">Moltiplico sopra con sopra e sotto con sotto.</div>
         <div class="f sx">$\displaystyle =\frac{1\cdot 3}{1\cdot 1}=$</div>
@@ -285,7 +295,7 @@ mjx-container[display]{margin:0!important}
 
   <div class="riga res">
     <div class="fissa">
-      <div class="n">4</div>
+      <div class="n">5</div>
       <div class="cont">
         <div class="nota">Eseguo i due prodotti.</div>
         <div class="f sx">$\displaystyle =3$</div>

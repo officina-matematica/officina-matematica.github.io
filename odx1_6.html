@@ -40,6 +40,11 @@
     "Rational(9,10)",
     "Rational(9,10)",
     "Rational(9,10)",
+    "Rational(9,10)",
+    "Rational(9,10)",
+    "Rational(9,10)",
+    "Rational(9,10)",
+    "Rational(9,10)",
     "Rational(9,10)"
   ]
 }
@@ -51,7 +56,9 @@
      in textstyle e le parentesi non abbracciano la frazione. -->
 <script>
 MathJax = {
+  loader: { load: ['[tex]/cancel'] },
   tex: {
+    packages: { '[+]': ['cancel'] },
     inlineMath: [['$','$']],
     displayMath: [['$$','$$']],
     processEscapes: true
@@ -283,7 +290,7 @@ mjx-container[display]{margin:0!important}
       <div class="n">4</div>
       <div class="cont">
         <div class="nota">Riduco tutte le frazioni.</div>
-        <div class="f sx">$\displaystyle =\left(2-\frac{1}{2}\right)-\left\{\left[3\cdot\left(\frac{11}{6}-\frac{7}{4}\right)\right]:\left[1-\left(\frac{5}{2}-\frac{3}{4}\right):\frac{21}{5}\right]\right\}\cdot\frac{7}{5}=$</div>
+        <div class="f sx">$\displaystyle =\left(2-\frac{\overset{1}{\cancel{5}}}{\underset{2}{\cancel{10}}}\right)-\left\{\left[3\cdot\left(\frac{\overset{11}{\cancel{165}}}{\underset{6}{\cancel{90}}}-\frac{\overset{7}{\cancel{175}}}{\underset{4}{\cancel{100}}}\right)\right]:\left[1-\left(\frac{\overset{5}{\cancel{25}}}{\underset{2}{\cancel{10}}}-\frac{\overset{3}{\cancel{75}}}{\underset{4}{\cancel{100}}}\right):\frac{\overset{21}{\cancel{42}}}{\underset{5}{\cancel{10}}}\right]\right\}\cdot\frac{\overset{7}{\cancel{14}}}{\underset{5}{\cancel{10}}}=$</div>
       </div>
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
@@ -308,9 +315,20 @@ mjx-container[display]{margin:0!important}
     </div>
   </details>
 
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">5</div>
+      <div class="cont">
+        <div class="nota">Riscrivo pulito.</div>
+        <div class="f sx">$\displaystyle =\left(2-\frac{1}{2}\right)-\left\{\left[3\cdot\left(\frac{11}{6}-\frac{7}{4}\right)\right]:\left[1-\left(\frac{5}{2}-\frac{3}{4}\right):\frac{21}{5}\right]\right\}\cdot\frac{7}{5}=$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
   <details class="riga">
     <summary>
-      <div class="n">5</div>
+      <div class="n">6</div>
       <div class="cont">
         <div class="nota">Le due tonde più interne: mcm $=12$ e mcm $=4$.</div>
         <div class="f sx">$\displaystyle =\left(2-\frac{1}{2}\right)-\left\{\left[3\cdot\frac{22-21}{12}\right]:\left[1-\frac{10-3}{4}:\frac{21}{5}\right]\right\}\cdot\frac{7}{5}=$</div>
@@ -340,7 +358,7 @@ mjx-container[display]{margin:0!important}
 
   <div class="riga">
     <div class="fissa">
-      <div class="n">6</div>
+      <div class="n">7</div>
       <div class="cont">
         <div class="nota">Eseguo le due sottrazioni.</div>
         <div class="f sx">$\displaystyle =\left(2-\frac{1}{2}\right)-\left\{\left[3\cdot\frac{1}{12}\right]:\left[1-\frac{7}{4}:\frac{21}{5}\right]\right\}\cdot\frac{7}{5}=$</div>
@@ -351,7 +369,7 @@ mjx-container[display]{margin:0!important}
 
   <details class="riga">
     <summary>
-      <div class="n">7</div>
+      <div class="n">8</div>
       <div class="cont">
         <div class="nota">Quadra di sinistra: eseguo il prodotto.</div>
         <div class="f sx">$\displaystyle =\left(2-\frac{1}{2}\right)-\left\{\frac{3}{12}:\left[1-\frac{7}{4}:\frac{21}{5}\right]\right\}\cdot\frac{7}{5}=$</div>
@@ -381,9 +399,20 @@ mjx-container[display]{margin:0!important}
 
   <div class="riga">
     <div class="fissa">
-      <div class="n">8</div>
+      <div class="n">9</div>
       <div class="cont">
         <div class="nota">Riduco $\frac{3}{12}$ per $3$, come al passaggio 4.</div>
+        <div class="f sx">$\displaystyle =\left(2-\frac{1}{2}\right)-\left\{\frac{\overset{1}{\cancel{3}}}{\underset{4}{\cancel{12}}}:\left[1-\frac{7}{4}:\frac{21}{5}\right]\right\}\cdot\frac{7}{5}=$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">10</div>
+      <div class="cont">
+        <div class="nota">Riscrivo pulito.</div>
         <div class="f sx">$\displaystyle =\left(2-\frac{1}{2}\right)-\left\{\frac{1}{4}:\left[1-\frac{7}{4}:\frac{21}{5}\right]\right\}\cdot\frac{7}{5}=$</div>
       </div>
       <div></div>
@@ -392,7 +421,7 @@ mjx-container[display]{margin:0!important}
 
   <details class="riga">
     <summary>
-      <div class="n">9</div>
+      <div class="n">11</div>
       <div class="cont">
         <div class="nota">Dentro la quadra di destra viene prima la divisione: capovolgo.</div>
         <div class="f sx">$\displaystyle =\left(2-\frac{1}{2}\right)-\left\{\frac{1}{4}:\left[1-\frac{7}{4}\cdot\frac{5}{21}\right]\right\}\cdot\frac{7}{5}=$</div>
@@ -422,10 +451,10 @@ mjx-container[display]{margin:0!important}
 
   <details class="riga">
     <summary>
-      <div class="n">10</div>
+      <div class="n">12</div>
       <div class="cont">
         <div class="nota">Semplifico a croce, prima di moltiplicare.</div>
-        <div class="f sx">$\displaystyle =\left(2-\frac{1}{2}\right)-\left\{\frac{1}{4}:\left[1-\frac{1}{4}\cdot\frac{5}{3}\right]\right\}\cdot\frac{7}{5}=$</div>
+        <div class="f sx">$\displaystyle =\left(2-\frac{1}{2}\right)-\left\{\frac{1}{4}:\left[1-\frac{\overset{1}{\cancel{7}}}{4}\cdot\frac{5}{\underset{3}{\cancel{21}}}\right]\right\}\cdot\frac{7}{5}=$</div>
       </div>
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
@@ -436,10 +465,6 @@ mjx-container[display]{margin:0!important}
         <div class="frase">Prima di eseguire il prodotto si semplifica <strong>in croce</strong>: un numeratore con il denominatore dell'<strong>altra</strong> frazione. Si dividono per lo stesso numero e si scrivono i risultati al loro posto. Semplificare dopo aver moltiplicato porta allo stesso risultato, ma passando da numeri molto più grandi — ed è lì che nascono gli errori di calcolo.</div>
         <div class="f sx">$\displaystyle \frac{a\cdot k}{b}\cdot\frac{c}{d\cdot k}=\frac{a}{b}\cdot\frac{c}{d}$</div>
         <div class="ex">esempio: $\frac{9}{5}\cdot\frac{5}{6}=\frac{3}{1}\cdot\frac{1}{2}$</div>
-      </div>
-      <div class="semplifica">
-        <div class="k">Semplifico a croce</div>
-        <div class="passi"><span class="fr"><span class="su"><s>7</s><b>1</b></span><span class="giu"><b>4</b></span></span><span class="op">·</span><span class="fr"><span class="su"><b>5</b></span><span class="giu"><s>21</s><b>3</b></span></span></div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
@@ -456,7 +481,18 @@ mjx-container[display]{margin:0!important}
 
   <div class="riga">
     <div class="fissa">
-      <div class="n">11</div>
+      <div class="n">13</div>
+      <div class="cont">
+        <div class="nota">Riscrivo pulito.</div>
+        <div class="f sx">$\displaystyle =\left(2-\frac{1}{2}\right)-\left\{\frac{1}{4}:\left[1-\frac{1}{4}\cdot\frac{5}{3}\right]\right\}\cdot\frac{7}{5}=$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">14</div>
       <div class="cont">
         <div class="nota">Moltiplico.</div>
         <div class="f sx">$\displaystyle =\left(2-\frac{1}{2}\right)-\left\{\frac{1}{4}:\left[1-\frac{5}{12}\right]\right\}\cdot\frac{7}{5}=$</div>
@@ -467,7 +503,7 @@ mjx-container[display]{margin:0!important}
 
   <details class="riga">
     <summary>
-      <div class="n">12</div>
+      <div class="n">15</div>
       <div class="cont">
         <div class="nota">Quadra: $1=\frac{12}{12}$.</div>
         <div class="f sx">$\displaystyle =\left(2-\frac{1}{2}\right)-\left\{\frac{1}{4}:\left[\frac{12-5}{12}\right]\right\}\cdot\frac{7}{5}=$</div>
@@ -497,7 +533,7 @@ mjx-container[display]{margin:0!important}
 
   <div class="riga">
     <div class="fissa">
-      <div class="n">13</div>
+      <div class="n">16</div>
       <div class="cont">
         <div class="nota">Eseguo la sottrazione.</div>
         <div class="f sx">$\displaystyle =\left(2-\frac{1}{2}\right)-\left\{\frac{1}{4}:\left[\frac{7}{12}\right]\right\}\cdot\frac{7}{5}=$</div>
@@ -508,7 +544,7 @@ mjx-container[display]{margin:0!important}
 
   <div class="riga">
     <div class="fissa">
-      <div class="n">14</div>
+      <div class="n">17</div>
       <div class="cont">
         <div class="nota">Chiudo la quadra.</div>
         <div class="f sx">$\displaystyle =\left(2-\frac{1}{2}\right)-\left\{\frac{1}{4}:\frac{7}{12}\right\}\cdot\frac{7}{5}=$</div>
@@ -519,7 +555,7 @@ mjx-container[display]{margin:0!important}
 
   <div class="riga">
     <div class="fissa">
-      <div class="n">15</div>
+      <div class="n">18</div>
       <div class="cont">
         <div class="nota">Capovolgo, come al passaggio 9.</div>
         <div class="f sx">$\displaystyle =\left(2-\frac{1}{2}\right)-\left\{\frac{1}{4}\cdot\frac{12}{7}\right\}\cdot\frac{7}{5}=$</div>
@@ -530,9 +566,20 @@ mjx-container[display]{margin:0!important}
 
   <div class="riga">
     <div class="fissa">
-      <div class="n">16</div>
+      <div class="n">19</div>
       <div class="cont">
         <div class="nota">Semplifico a croce, come al passaggio 10.</div>
+        <div class="f sx">$\displaystyle =\left(2-\frac{1}{2}\right)-\left\{\frac{1}{\underset{1}{\cancel{4}}}\cdot\frac{\overset{3}{\cancel{12}}}{7}\right\}\cdot\frac{7}{5}=$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">20</div>
+      <div class="cont">
+        <div class="nota">Riscrivo pulito.</div>
         <div class="f sx">$\displaystyle =\left(2-\frac{1}{2}\right)-\left\{\frac{1}{1}\cdot\frac{3}{7}\right\}\cdot\frac{7}{5}=$</div>
       </div>
       <div></div>
@@ -541,7 +588,7 @@ mjx-container[display]{margin:0!important}
 
   <div class="riga">
     <div class="fissa">
-      <div class="n">17</div>
+      <div class="n">21</div>
       <div class="cont">
         <div class="nota">Moltiplico.</div>
         <div class="f sx">$\displaystyle =\left(2-\frac{1}{2}\right)-\left\{\frac{3}{7}\right\}\cdot\frac{7}{5}=$</div>
@@ -552,7 +599,7 @@ mjx-container[display]{margin:0!important}
 
   <div class="riga">
     <div class="fissa">
-      <div class="n">18</div>
+      <div class="n">22</div>
       <div class="cont">
         <div class="nota">Chiudo la graffa.</div>
         <div class="f sx">$\displaystyle =\left(2-\frac{1}{2}\right)-\frac{3}{7}\cdot\frac{7}{5}=$</div>
@@ -563,7 +610,7 @@ mjx-container[display]{margin:0!important}
 
   <details class="riga">
     <summary>
-      <div class="n">19</div>
+      <div class="n">23</div>
       <div class="cont">
         <div class="nota">Prima il prodotto, poi la sottrazione.</div>
         <div class="f sx">$\displaystyle =\left(2-\frac{1}{2}\right)-\left(\frac{3}{7}\cdot\frac{7}{5}\right)=$</div>
@@ -593,9 +640,20 @@ mjx-container[display]{margin:0!important}
 
   <div class="riga">
     <div class="fissa">
-      <div class="n">20</div>
+      <div class="n">24</div>
       <div class="cont">
         <div class="nota">Semplifico a croce, come al passaggio 10.</div>
+        <div class="f sx">$\displaystyle =\left(2-\frac{1}{2}\right)-\left(\frac{3}{\underset{1}{\cancel{7}}}\cdot\frac{\overset{1}{\cancel{7}}}{5}\right)=$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">25</div>
+      <div class="cont">
+        <div class="nota">Riscrivo pulito.</div>
         <div class="f sx">$\displaystyle =\left(2-\frac{1}{2}\right)-\left(\frac{3}{1}\cdot\frac{1}{5}\right)=$</div>
       </div>
       <div></div>
@@ -604,7 +662,7 @@ mjx-container[display]{margin:0!important}
 
   <div class="riga">
     <div class="fissa">
-      <div class="n">21</div>
+      <div class="n">26</div>
       <div class="cont">
         <div class="nota">Moltiplico.</div>
         <div class="f sx">$\displaystyle =\left(2-\frac{1}{2}\right)-\frac{3}{5}=$</div>
@@ -615,7 +673,7 @@ mjx-container[display]{margin:0!important}
 
   <div class="riga">
     <div class="fissa">
-      <div class="n">22</div>
+      <div class="n">27</div>
       <div class="cont">
         <div class="nota">Tonda: $2=\frac{4}{2}$, come al passaggio 12.</div>
         <div class="f sx">$\displaystyle =\frac{4-1}{2}-\frac{3}{5}=$</div>
@@ -626,7 +684,7 @@ mjx-container[display]{margin:0!important}
 
   <div class="riga">
     <div class="fissa">
-      <div class="n">23</div>
+      <div class="n">28</div>
       <div class="cont">
         <div class="nota">Eseguo la sottrazione.</div>
         <div class="f sx">$\displaystyle =\frac{3}{2}-\frac{3}{5}=$</div>
@@ -637,7 +695,7 @@ mjx-container[display]{margin:0!important}
 
   <details class="riga">
     <summary>
-      <div class="n">24</div>
+      <div class="n">29</div>
       <div class="cont">
         <div class="nota">mcm $=10$.</div>
         <div class="f sx">$\displaystyle =\frac{15-6}{10}=$</div>
@@ -667,7 +725,7 @@ mjx-container[display]{margin:0!important}
 
   <div class="riga res">
     <div class="fissa">
-      <div class="n">25</div>
+      <div class="n">30</div>
       <div class="cont">
         <div class="nota">Eseguo la sottrazione.</div>
         <div class="f sx">$\displaystyle =\frac{9}{10}$</div>

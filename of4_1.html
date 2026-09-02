@@ -27,6 +27,7 @@
     "Rational(11,24)",
     "Rational(11,24)",
     "Rational(11,24)",
+    "Rational(11,24)",
     "Rational(11,24)"
   ]
 }
@@ -38,7 +39,9 @@
      in textstyle e le parentesi non abbracciano la frazione. -->
 <script>
 MathJax = {
+  loader: { load: ['[tex]/cancel'] },
   tex: {
+    packages: { '[+]': ['cancel'] },
     inlineMath: [['$','$']],
     displayMath: [['$$','$$']],
     processEscapes: true
@@ -399,7 +402,7 @@ mjx-container[display]{margin:0!important}
       <div class="n">10</div>
       <div class="cont">
         <div class="nota">Riduco $\frac{26}{16}$ dividendo per $2$.</div>
-        <div class="f sx">$\displaystyle =\frac{13}{8}-\frac{7}{6}=$</div>
+        <div class="f sx">$\displaystyle =\frac{\overset{13}{\cancel{26}}}{\underset{8}{\cancel{16}}}-\frac{7}{6}=$</div>
       </div>
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
@@ -424,9 +427,20 @@ mjx-container[display]{margin:0!important}
     </div>
   </details>
 
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">11</div>
+      <div class="cont">
+        <div class="nota">Riscrivo pulito.</div>
+        <div class="f sx">$\displaystyle =\frac{13}{8}-\frac{7}{6}=$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
   <details class="riga">
     <summary>
-      <div class="n">11</div>
+      <div class="n">12</div>
       <div class="cont">
         <div class="nota">mcm$(8,6)=24$.</div>
         <div class="f sx">$\displaystyle =\frac{39-28}{24}=$</div>
@@ -456,7 +470,7 @@ mjx-container[display]{margin:0!important}
 
   <div class="riga res">
     <div class="fissa">
-      <div class="n">12</div>
+      <div class="n">13</div>
       <div class="cont"><div class="f sx">$\displaystyle =\frac{11}{24}$</div></div>
       <div></div>
     </div>
