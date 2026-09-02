@@ -149,6 +149,21 @@ mjx-container[display]{margin:0!important}
 .arrow{display:flex;align-items:center;justify-content:center;font-size:1.2rem;color:var(--faint);font-weight:800}
 .why-txt{font-size:.82rem;color:#7f1d1d;margin-top:6px;text-align:center}
 
+/* ---- semplificazione a vista: i numeri barrati e quello che resta ---- */
+.semplifica{background:#f8fafc;border:1.5px solid var(--line);border-radius:10px;
+  padding:11px 14px;text-align:center}
+.semplifica .k{font-weight:800;font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;
+  color:var(--muted);margin-bottom:9px}
+.passi{display:inline-flex;align-items:center;gap:16px;flex-wrap:wrap;justify-content:center}
+.passi .op{color:var(--muted);font-weight:800;font-size:1.5rem;line-height:1}
+.fr{display:inline-flex;flex-direction:column;align-items:center;line-height:1.2;
+  font-size:1.05rem;color:var(--ink)}
+.fr .su{border-bottom:2px solid var(--ink);padding:0 7px 3px;white-space:nowrap}
+.fr .giu{padding:3px 7px 0;white-space:nowrap}
+.fr s{color:var(--faint);text-decoration-color:var(--ko);text-decoration-thickness:2px;
+  margin-right:6px}
+.fr b{color:var(--ok);font-weight:800}
+
 /* fermata di controllo */
 .check{display:flex;flex-wrap:wrap;align-items:center;gap:4px 10px;
   background:var(--ambbg);border:1.5px dashed var(--ambbd);border-radius:10px;
@@ -284,28 +299,32 @@ mjx-container[display]{margin:0!important}
     <summary>
       <div class="n">5</div>
       <div class="cont">
-        <div class="nota">Dentro la tonda eseguo i tre prodotti.</div>
-        <div class="f sx">$\displaystyle =\left(\frac{42}{75}+\frac{9}{90}+\frac{126}{60}\right):\frac{23}{5}=$</div>
+        <div class="nota">Dentro la tonda semplifico a croce, prima di moltiplicare.</div>
+        <div class="f sx">$\displaystyle =\left(\frac{2}{25}\cdot\frac{7}{1}+\frac{1}{5}\cdot\frac{1}{2}+\frac{3}{10}\cdot\frac{7}{1}\right):\frac{23}{5}=$</div>
       </div>
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">Numeratori con numeratori e denominatori con denominatori: $6\cdot 7=42$ su $25\cdot 3=75$, e così per gli altri due.</p>
+      <p class="mossa">Si semplifica un numeratore con il denominatore di un'altra frazione, mai due numeratori fra loro. Dopo, il prodotto viene con numeri piccoli.</p>
       <div class="teoria">
-        <div class="nome">Moltiplicare due frazioni</div>
-        <div class="frase">Per moltiplicare due frazioni si moltiplicano i <strong>numeratori fra loro</strong> e i <strong>denominatori fra loro</strong>. Non serve il denominatore comune: quello serve solo per addizioni e sottrazioni.</div>
-        <div class="f sx">$\displaystyle \frac{a}{b}\cdot\frac{c}{d}=\frac{a\cdot c}{b\cdot d}$</div>
-        <div class="ex">esempio: $\frac{2}{3}\cdot\frac{5}{7}=\frac{10}{21}$</div>
+        <div class="nome">Semplificare a croce prima di moltiplicare</div>
+        <div class="frase">Prima di eseguire il prodotto si semplifica <strong>in croce</strong>: un numeratore con il denominatore dell'<strong>altra</strong> frazione. Si dividono per lo stesso numero e si scrivono i risultati al loro posto. Semplificare dopo aver moltiplicato porta allo stesso risultato, ma passando da numeri molto più grandi — ed è lì che nascono gli errori di calcolo.</div>
+        <div class="f sx">$\displaystyle \frac{a\cdot k}{b}\cdot\frac{c}{d\cdot k}=\frac{a}{b}\cdot\frac{c}{d}$</div>
+        <div class="ex">esempio: $\frac{9}{5}\cdot\frac{5}{6}=\frac{3}{1}\cdot\frac{1}{2}$</div>
+      </div>
+      <div class="semplifica">
+        <div class="k">Semplifico a croce</div>
+        <div class="passi"><span class="fr"><span class="su"><s>6</s><b>2</b></span><span class="giu"><b>25</b></span></span><span class="op">·</span><span class="fr"><span class="su"><b>7</b></span><span class="giu"><s>3</s><b>1</b></span></span><span class="op">+</span><span class="fr"><span class="su"><s>9</s><b>1</b></span><span class="giu"><b>5</b></span></span><span class="op">·</span><span class="fr"><span class="su"><b>1</b></span><span class="giu"><s>18</s><b>2</b></span></span><span class="op">+</span><span class="fr"><span class="su"><s>9</s><b>3</b></span><span class="giu"><s>20</s><b>10</b></span></span><span class="op">·</span><span class="fr"><span class="su"><s>14</s><b>7</b></span><span class="giu"><s>3</s><b>1</b></span></span></div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Moltiplicare in croce</div>
+        <div class="nome">Semplificare due numeratori fra loro</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{a}{b}\cdot\frac{c}{d}=\frac{a\cdot d}{b\cdot c}$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{a\cdot k}{b}\cdot\frac{c\cdot k}{d}=\frac{a}{b}\cdot\frac{c}{d}$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{a}{b}\cdot\frac{c}{d}=\frac{a\cdot c}{b\cdot d}$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{a\cdot k}{b}\cdot\frac{c}{d\cdot k}=\frac{a}{b}\cdot\frac{c}{d}$</div></div>
         </div>
-        <div class="why-txt">Sopra con sopra, sotto con sotto.</div>
+        <div class="why-txt">Sopra con sotto, mai sopra con sopra.</div>
       </div>
     </div>
   </details>
@@ -314,7 +333,7 @@ mjx-container[display]{margin:0!important}
     <div class="fissa">
       <div class="n">6</div>
       <div class="cont">
-        <div class="nota">Riduco le tre frazioni, come al passaggio 4.</div>
+        <div class="nota">Eseguo i tre prodotti.</div>
         <div class="f sx">$\displaystyle =\left(\frac{14}{25}+\frac{1}{10}+\frac{21}{10}\right):\frac{23}{5}=$</div>
       </div>
       <div></div>
@@ -407,8 +426,8 @@ mjx-container[display]{margin:0!important}
     <div class="fissa">
       <div class="n">11</div>
       <div class="cont">
-        <div class="nota">Moltiplico, come al passaggio 5.</div>
-        <div class="f sx">$\displaystyle =\frac{345}{575}=$</div>
+        <div class="nota">Semplifico a croce, come al passaggio 5.</div>
+        <div class="f sx">$\displaystyle =\frac{3}{5}\cdot\frac{1}{1}=$</div>
       </div>
       <div></div>
     </div>
@@ -418,7 +437,7 @@ mjx-container[display]{margin:0!important}
     <div class="fissa">
       <div class="n">12</div>
       <div class="cont">
-        <div class="nota">Riduco $\frac{345}{575}$ dividendo per $115$.</div>
+        <div class="nota">Moltiplico.</div>
         <div class="f sx">$\displaystyle =\frac{3}{5}$</div>
       </div>
       <div></div>
