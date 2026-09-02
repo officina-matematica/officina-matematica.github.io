@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OF1_8 — Addizioni e sottrazioni con le frazioni</title>
+
+<script type="application/json" id="meta">
+{
+  "id": "of1_8",
+  "titolo": "Addizioni e sottrazioni con le frazioni",
+  "tipo": "espressione",
+  "consegna_label": "Calcola la seguente espressione",
+  "consegna_tex": "\\left[\\left(\\frac{1}{2}+\\frac{3}{4}\\right)-\\left(\\frac{1}{3}+\\frac{3}{4}-\\frac{2}{6}\\right)\\right]+\\frac{1}{2}",
+  "consegna_sympy": "((Rational(1,2)+Rational(3,4)) - (Rational(1,3)+Rational(3,4)-Rational(2,6))) + Rational(1,2)",
+  "risultato_tex": "1",
+  "risultato_sympy": "Integer(1)",
+  "righe_sympy": [
+    "Integer(1)",
+    "Integer(1)",
+    "Integer(1)",
+    "Integer(1)",
+    "Integer(1)",
+    "Integer(1)",
+    "Integer(1)",
+    "Integer(1)",
+    "Integer(1)",
+    "Integer(1)",
+    "Integer(1)",
+    "Integer(1)",
+    "Integer(1)"
+  ]
+}
+</script>
+
+<!-- Output SVG, non CHTML: glifi vettoriali, allineamento identico su ogni
+     dispositivo, nessun rischio di webfont non caricato dentro un iframe.
+     Ogni formula e' scritta con \displaystyle: senza, MathJax rende le frazioni
+     in textstyle e le parentesi non abbracciano la frazione. -->
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$','$']],
+    displayMath: [['$$','$$']],
+    processEscapes: true
+  },
+  svg: { fontCache: 'global', scale: 1.06, exFactor: .5 },
+  options: { enableMenu: false }
+};
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-svg.js"></script>
+
+<style>
+:root{
+  --ink:#0f172a; --body:#334155; --muted:#475569; --faint:#94a3b8;
+  --line:#e2e8f0; --paper:#f8fafc;
+  --blu:#12519e; --blubg:#e8f1fb; --blubd:#a8c9ea;
+  --amb:#b45309; --ambbg:#fffbeb; --ambbd:#fcd34d; --sol:#fef08a;
+  --teo:#14532d; --teobg:#f0fdf4; --teobd:#86efac;
+  --err:#9f1239; --errbg:#fff1f2; --errbd:#fda4af;
+  --ko:#b91c1c;  --kobg:#fee2e2;  --kobd:#ef4444;
+  --ok:#15803d;  --okbg:#dcfce7;  --okbd:#22c55e;
+  --sxbg:#ffffff;
+}
+*{box-sizing:border-box}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  background:var(--paper);color:var(--body);line-height:1.5;
+  margin:0;padding:20px 14px 60px;max-width:900px;margin-inline:auto;font-size:16px;
+}
+mjx-container{outline:none}
+mjx-container[display]{margin:0!important}
+
+/* formule scorrevoli, con sfumatura ai bordi quando escono dallo schermo */
+.sx{
+  overflow-x:auto;overflow-y:hidden;scrollbar-width:thin;-webkit-overflow-scrolling:touch;
+  background-image:
+    linear-gradient(to right,var(--sxbg),var(--sxbg)),
+    linear-gradient(to left,var(--sxbg),var(--sxbg)),
+    linear-gradient(to right,rgba(15,23,42,.16),rgba(15,23,42,0)),
+    linear-gradient(to left,rgba(15,23,42,.16),rgba(15,23,42,0));
+  background-position:left center,right center,left center,right center;
+  background-repeat:no-repeat;
+  background-size:22px 100%,22px 100%,13px 100%,13px 100%;
+  background-attachment:local,local,scroll,scroll;
+}
+
+/* ---------------- CONSEGNA ---------------- */
+.consegna{background:var(--blubg);border:2px solid var(--blubd);border-radius:12px;
+  padding:12px 16px;color:#0d47a1;--sxbg:var(--blubg)}
+.consegna .t{font-weight:700;font-size:.9rem}
+.consegna .m{text-align:center;margin-top:4px;padding:4px 0}
+
+/* ---------------- CATENA ---------------- */
+.catena{background:#fff;border:1px solid var(--line);border-radius:14px;
+  padding:14px 16px 10px;margin-top:16px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.catena>.k{font-weight:800;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.catena>.sub{font-size:.85rem;color:var(--faint);margin:2px 0 8px}
+
+.riga{border-top:1px dotted var(--line)}
+.riga:first-of-type{border-top:none}
+.riga>summary,.riga>.fissa{
+  display:grid;grid-template-columns:26px 1fr auto;gap:10px;align-items:center;
+  padding:11px 0;
+}
+.riga>summary{list-style:none;cursor:pointer}
+.riga>summary::-webkit-details-marker{display:none}
+.riga>summary:hover .f,.riga>summary:focus-visible .f{background-color:#f8fafc}
+
+.n{font-size:.72rem;font-weight:800;color:var(--faint);text-align:center;
+  background:#f1f5f9;border-radius:6px;padding:4px 0;align-self:start;margin-top:4px}
+.cont{min-width:0}
+.nota{font-size:.8rem;color:var(--muted);margin-bottom:1px}
+.f{padding:3px 0;border-radius:6px;color:var(--blu)}
+.riga.res .f{color:var(--ink)}
+.riga.res .f mjx-container{background:var(--sol);padding:4px 12px;border-radius:6px}
+
+/* linguetta della tendina */
+.tab{display:inline-flex;align-items:center;gap:5px;align-self:start;margin-top:5px;
+  font-size:.72rem;font-weight:700;letter-spacing:.02em;color:var(--muted);
+  background:#fff;border:1.5px solid var(--line);border-radius:999px;padding:4px 10px;
+  white-space:nowrap}
+.tab .chev{display:inline-block;font-size:.6rem;transition:transform .18s}
+.riga[open]>summary .tab{background:var(--ink);border-color:var(--ink);color:#fff}
+.riga[open]>summary .tab .chev{transform:rotate(180deg)}
+@media(prefers-reduced-motion:reduce){.tab .chev{transition:none}}
+
+/* pannello aperto */
+.pannello{padding:2px 0 16px 36px;display:grid;gap:10px}
+.mossa{font-size:.9rem;margin:0}
+
+.teoria{background:var(--teobg);border:1.5px solid var(--teobd);border-radius:10px;
+  padding:10px 14px;color:var(--teo);--sxbg:var(--teobg)}
+.teoria .nome{font-weight:800;font-size:.88rem;margin-bottom:2px}
+.teoria .frase{font-size:.87rem;line-height:1.45}
+.teoria .f{text-align:center;margin:8px 0 3px;background:rgba(255,255,255,.75);
+  border-radius:6px;padding:6px 8px;color:var(--teo);--sxbg:#f4fdf6}
+.teoria .ex{font-size:.78rem;opacity:.9;text-align:center}
+
+.errore{background:var(--errbg);border:1.5px solid var(--errbd);border-radius:10px;padding:11px 14px}
+.errore .k{font-weight:800;font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;
+  color:var(--err);margin-bottom:5px}
+.errore .nome{font-weight:700;font-size:.9rem;color:var(--err);margin-bottom:8px}
+.compare{display:grid;grid-template-columns:1fr 34px 1fr;align-items:stretch}
+.card{border:2px solid;border-radius:10px;padding:8px 12px;text-align:center}
+.card .tag{font-size:.7rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;margin-bottom:2px}
+.card .f{padding:2px 0;color:inherit}
+.card.ko{background:var(--kobg);border-color:var(--kobd);color:var(--ko);--sxbg:var(--kobg)}
+.card.ok{background:var(--okbg);border-color:var(--okbd);color:var(--ok);--sxbg:var(--okbg)}
+.arrow{display:flex;align-items:center;justify-content:center;font-size:1.2rem;color:var(--faint);font-weight:800}
+.why-txt{font-size:.82rem;color:#7f1d1d;margin-top:6px;text-align:center}
+
+/* fermata di controllo */
+.check{display:flex;flex-wrap:wrap;align-items:center;gap:4px 10px;
+  background:var(--ambbg);border:1.5px dashed var(--ambbd);border-radius:10px;
+  padding:8px 14px;margin:8px 0;font-size:.85rem;color:var(--amb);--sxbg:var(--ambbg)}
+.check b{font-weight:800}
+.check .v{color:var(--ink)}
+
+/* ---------------- MOBILE ---------------- */
+@media(max-width:720px){
+  body{padding:16px 10px 50px;font-size:16px}
+  .catena{padding:12px 12px 8px}
+  .riga>summary,.riga>.fissa{grid-template-columns:24px 1fr;gap:8px}
+  .cont{grid-column:2}
+  .tab{grid-column:2;justify-self:start;margin-top:6px}
+  .pannello{padding-left:0}
+  .compare{grid-template-columns:1fr;gap:6px}
+  .arrow{transform:rotate(90deg);height:22px}
+}
+</style>
+</head>
+<body>
+
+<!-- ===================== CONSEGNA ===================== -->
+<div class="consegna">
+  <div class="t">📌 Calcola la seguente espressione</div>
+  <div class="m sx">$\displaystyle \left[\left(\frac{1}{2}+\frac{3}{4}\right)-\left(\frac{1}{3}+\frac{3}{4}-\frac{2}{6}\right)\right]+\frac{1}{2}$</div>
+</div>
+
+<!-- ===================== CATENA ====================== -->
+<div class="catena">
+  <div class="k">Confronta con il tuo foglio</div>
+  <div class="sub">Scorri le righe fino alla prima che non coincide con la tua. Lì apri <b>Regola</b>.</div>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">1</div>
+      <div class="cont"><div class="f sx">$\displaystyle \left[\left(\frac{1}{2}+\frac{3}{4}\right)-\left(\frac{1}{3}+\frac{3}{4}-\frac{2}{6}\right)\right]+\frac{1}{2}=$</div></div>
+      <div></div>
+    </div>
+  </div>
+
+  <details class="riga">
+    <summary>
+      <div class="n">2</div>
+      <div class="cont">
+        <div class="nota">Prima tonda: mcm $=4$.</div>
+        <div class="f sx">$\displaystyle =\left[\frac{2+3}{4}-\left(\frac{1}{3}+\frac{3}{4}-\frac{2}{6}\right)\right]+\frac{1}{2}=$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">$4$ è multiplo di $2$, quindi il minimo comune multiplo è $4$: $\frac{1}{2}=\frac{2}{4}$ e $\frac{3}{4}$ resta com'è.</p>
+      <div class="teoria">
+        <div class="nome">Addizione e sottrazione fra frazioni</div>
+        <div class="frase">Due frazioni si sommano o si sottraggono solo quando hanno lo <strong>stesso denominatore</strong>. Si cerca il minimo comune multiplo dei denominatori, si riscrivono tutte con quel denominatore e poi si sommano o si sottraggono i soli numeratori.</div>
+        <div class="f sx">$\displaystyle \frac{a}{b}+\frac{c}{d}=\frac{a\cdot d+b\cdot c}{b\cdot d}$</div>
+        <div class="ex">esempio: $\frac{1}{3}+\frac{1}{6}=\frac{2+1}{6}=\frac{3}{6}$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Sommare numeratori con numeratori e denominatori con denominatori</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{a}{b}+\frac{c}{d}=\frac{a+c}{b+d}$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{a}{b}+\frac{c}{d}=\frac{a\cdot d+b\cdot c}{b\cdot d}$</div></div>
+        </div>
+        <div class="why-txt">Il denominatore va reso uguale, non sommato.</div>
+      </div>
+    </div>
+  </details>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">3</div>
+      <div class="cont">
+        <div class="nota">Sommo i numeratori.</div>
+        <div class="f sx">$\displaystyle =\left[\frac{5}{4}-\left(\frac{1}{3}+\frac{3}{4}-\frac{2}{6}\right)\right]+\frac{1}{2}=$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <details class="riga">
+    <summary>
+      <div class="n">4</div>
+      <div class="cont">
+        <div class="nota">Nella seconda tonda riduco $\frac{2}{6}$ per $2$.</div>
+        <div class="f sx">$\displaystyle =\left[\frac{5}{4}-\left(\frac{1}{3}+\frac{3}{4}-\frac{1}{3}\right)\right]+\frac{1}{2}=$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">$\frac{2}{6}$ e $\frac{1}{3}$ sono la stessa quantità. Ridurla subito fa vedere che dentro la tonda si semplifica con il $\frac{1}{3}$ che c'è già.</p>
+      <div class="teoria">
+        <div class="nome">Ridurre una frazione ai minimi termini</div>
+        <div class="frase">Dividendo numeratore e denominatore per lo stesso numero il valore non cambia, ma i numeri diventano più piccoli. Conviene farlo appena si può: i conti che vengono dopo sono molto più facili.</div>
+        <div class="f sx">$\displaystyle \frac{a\cdot k}{b\cdot k}=\frac{a}{b}$</div>
+        <div class="ex">esempio: $\frac{9}{12}=\frac{3\cdot 3}{4\cdot 3}=\frac{3}{4}$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Dividere un solo termine della frazione</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{a\cdot k}{b\cdot k}=\frac{a}{b\cdot k}$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{a\cdot k}{b\cdot k}=\frac{a}{b}$</div></div>
+        </div>
+        <div class="why-txt">Sopra e sotto, per lo stesso numero.</div>
+      </div>
+    </div>
+  </details>
+
+  <details class="riga">
+    <summary>
+      <div class="n">5</div>
+      <div class="cont">
+        <div class="nota">Seconda tonda: mcm $=12$.</div>
+        <div class="f sx">$\displaystyle =\left[\frac{5}{4}-\frac{4+9-4}{12}\right]+\frac{1}{2}=$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">Il minimo comune multiplo di $3$, $4$ e $3$ è $12$: $\frac{1}{3}=\frac{4}{12}$ e $\frac{3}{4}=\frac{9}{12}$.</p>
+      <div class="teoria">
+        <div class="nome">Frazioni equivalenti</div>
+        <div class="frase">Moltiplicando numeratore e denominatore per lo <strong>stesso</strong> numero si ottiene una frazione diversa da vedere ma uguale di valore. È così che si riscrivono più frazioni con il denominatore comune.</div>
+        <div class="f sx">$\displaystyle \frac{a}{b}=\frac{a\cdot k}{b\cdot k}$</div>
+        <div class="ex">esempio: $\frac{2}{3}=\frac{2\cdot 4}{3\cdot 4}=\frac{8}{12}$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Moltiplicare solo il denominatore</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{a}{b}=\frac{a}{b\cdot k}$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{a}{b}=\frac{a\cdot k}{b\cdot k}$</div></div>
+        </div>
+        <div class="why-txt">Sopra e sotto, sempre insieme.</div>
+      </div>
+    </div>
+  </details>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">6</div>
+      <div class="cont">
+        <div class="nota">Sommo i numeratori.</div>
+        <div class="f sx">$\displaystyle =\left[\frac{5}{4}-\frac{9}{12}\right]+\frac{1}{2}=$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">7</div>
+      <div class="cont">
+        <div class="nota">Riduco $\frac{9}{12}$ per $3$, come al passaggio 4.</div>
+        <div class="f sx">$\displaystyle =\left[\frac{5}{4}-\frac{3}{4}\right]+\frac{1}{2}=$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <details class="riga">
+    <summary>
+      <div class="n">8</div>
+      <div class="cont">
+        <div class="nota">Quadra: il meno riguarda tutto il suo valore.</div>
+        <div class="f sx">$\displaystyle =\frac{5-3}{4}+\frac{1}{2}=$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">Le due frazioni dentro la quadra hanno già lo stesso denominatore: si sottraggono i numeratori e la parentesi sparisce.</p>
+      <div class="teoria">
+        <div class="nome">Parentesi preceduta dal segno meno</div>
+        <div class="frase">Quando davanti a una parentesi c'è il segno meno, si toglie il valore dell'<strong>intera</strong> parentesi, non solo il suo primo termine. Il modo più sicuro è chiudere prima la parentesi e sottrarre il risultato.</div>
+        <div class="f sx">$\displaystyle a-\left(b+c\right)=a-b-c$</div>
+        <div class="ex">esempio: $10-\left(3+2\right)=10-5=5$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Togliere solo il primo termine della parentesi</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a-\left(b+c\right)=a-b+c$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a-\left(b+c\right)=a-b-c$</div></div>
+        </div>
+        <div class="why-txt">Il meno davanti riguarda tutta la parentesi.</div>
+      </div>
+    </div>
+  </details>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">9</div>
+      <div class="cont">
+        <div class="nota">Sottraggo i numeratori.</div>
+        <div class="f sx">$\displaystyle =\frac{2}{4}+\frac{1}{2}=$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">10</div>
+      <div class="cont">
+        <div class="nota">Riduco $\frac{2}{4}$ per $2$.</div>
+        <div class="f sx">$\displaystyle =\frac{1}{2}+\frac{1}{2}=$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">11</div>
+      <div class="cont">
+        <div class="nota">Stesso denominatore: sommo i numeratori.</div>
+        <div class="f sx">$\displaystyle =\frac{1+1}{2}=$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">12</div>
+      <div class="cont">
+        <div class="nota">Eseguo la somma.</div>
+        <div class="f sx">$\displaystyle =\frac{2}{2}=$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="riga res">
+    <div class="fissa">
+      <div class="n">13</div>
+      <div class="cont">
+        <div class="nota">$\frac{2}{2}$ vale $2:2$.</div>
+        <div class="f sx">$\displaystyle =1$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
