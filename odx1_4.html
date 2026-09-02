@@ -27,6 +27,10 @@
     "Rational(484,65)",
     "Rational(484,65)",
     "Rational(484,65)",
+    "Rational(484,65)",
+    "Rational(484,65)",
+    "Rational(484,65)",
+    "Rational(484,65)",
     "Rational(484,65)"
   ]
 }
@@ -38,7 +42,9 @@
      in textstyle e le parentesi non abbracciano la frazione. -->
 <script>
 MathJax = {
+  loader: { load: ['[tex]/cancel'] },
   tex: {
+    packages: { '[+]': ['cancel'] },
     inlineMath: [['$','$']],
     displayMath: [['$$','$$']],
     processEscapes: true
@@ -239,13 +245,13 @@ mjx-container[display]{margin:0!important}
     <summary>
       <div class="n">3</div>
       <div class="cont">
-        <div class="nota">Riduco le frazioni.</div>
-        <div class="f sx">$\displaystyle =\left[\frac{3}{4}:\frac{3}{5}-\frac{83}{100}:\frac{13}{5}\right]:\frac{1}{8}=$</div>
+        <div class="nota">Riduco le frazioni: segno per quanto divido, sopra e sotto.</div>
+        <div class="f sx">$\displaystyle =\left[\frac{\overset{3}{\cancel{75}}}{\underset{4}{\cancel{100}}}:\frac{\overset{3}{\cancel{6}}}{\underset{5}{\cancel{10}}}-\frac{83}{100}:\frac{\overset{13}{\cancel{26}}}{\underset{5}{\cancel{10}}}\right]:\frac{\overset{1}{\cancel{125}}}{\underset{8}{\cancel{1000}}}=$</div>
       </div>
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">$\frac{75}{100}=\frac{3}{4}$, $\frac{6}{10}=\frac{3}{5}$, $\frac{26}{10}=\frac{13}{5}$, $\frac{125}{1000}=\frac{1}{8}$. $\frac{83}{100}$ non si può ridurre.</p>
+      <p class="mossa">$75$ e $100$ si dividono per $25$; $6$ e $10$ per $2$; $26$ e $10$ per $2$; $125$ e $1000$ per $125$. Solo $\frac{83}{100}$ non si può ridurre e resta com'è.</p>
       <div class="teoria">
         <div class="nome">Ridurre una frazione ai minimi termini</div>
         <div class="frase">Dividendo numeratore e denominatore per lo stesso numero il valore non cambia, ma i numeri diventano più piccoli. Conviene farlo appena si può: i conti che vengono dopo sono molto più facili.</div>
@@ -265,9 +271,20 @@ mjx-container[display]{margin:0!important}
     </div>
   </details>
 
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">4</div>
+      <div class="cont">
+        <div class="nota">Riscrivo pulito.</div>
+        <div class="f sx">$\displaystyle =\left[\frac{3}{4}:\frac{3}{5}-\frac{83}{100}:\frac{13}{5}\right]:\frac{1}{8}=$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
   <details class="riga">
     <summary>
-      <div class="n">4</div>
+      <div class="n">5</div>
       <div class="cont">
         <div class="nota">Capovolgo le due frazioni che dividono.</div>
         <div class="f sx">$\displaystyle =\left[\frac{3}{4}\cdot\frac{5}{3}-\frac{83}{100}\cdot\frac{5}{13}\right]:\frac{1}{8}=$</div>
@@ -297,24 +314,20 @@ mjx-container[display]{margin:0!important}
 
   <details class="riga">
     <summary>
-      <div class="n">5</div>
+      <div class="n">6</div>
       <div class="cont">
-        <div class="nota">Semplifico a croce tutti e due i prodotti.</div>
-        <div class="f sx">$\displaystyle =\left[\frac{1}{4}\cdot\frac{5}{1}-\frac{83}{20}\cdot\frac{1}{13}\right]:\frac{1}{8}=$</div>
+        <div class="nota">Semplifico a croce: il $3$ con il $3$, e il $5$ con il $100$.</div>
+        <div class="f sx">$\displaystyle =\left[\frac{\overset{1}{\cancel{3}}}{4}\cdot\frac{5}{\underset{1}{\cancel{3}}}-\frac{83}{\underset{20}{\cancel{100}}}\cdot\frac{\overset{1}{\cancel{5}}}{13}\right]:\frac{1}{8}=$</div>
       </div>
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">Si semplifica un numeratore con il denominatore di un'altra frazione, mai due numeratori fra loro. Dopo, il prodotto viene con numeri piccoli.</p>
+      <p class="mossa">I numeri barrati sono quelli che si semplificano fra loro: sempre un numeratore con il denominatore dell'altra frazione. Accanto a ognuno si scrive quello che resta.</p>
       <div class="teoria">
         <div class="nome">Semplificare a croce prima di moltiplicare</div>
         <div class="frase">Prima di eseguire il prodotto si semplifica <strong>in croce</strong>: un numeratore con il denominatore dell'<strong>altra</strong> frazione. Si dividono per lo stesso numero e si scrivono i risultati al loro posto. Semplificare dopo aver moltiplicato porta allo stesso risultato, ma passando da numeri molto più grandi — ed è lì che nascono gli errori di calcolo.</div>
         <div class="f sx">$\displaystyle \frac{a\cdot k}{b}\cdot\frac{c}{d\cdot k}=\frac{a}{b}\cdot\frac{c}{d}$</div>
         <div class="ex">esempio: $\frac{9}{5}\cdot\frac{5}{6}=\frac{3}{1}\cdot\frac{1}{2}$</div>
-      </div>
-      <div class="semplifica">
-        <div class="k">Semplifico a croce</div>
-        <div class="passi"><span class="fr"><span class="su"><s>3</s><b>1</b></span><span class="giu"><b>4</b></span></span><span class="op">·</span><span class="fr"><span class="su"><b>5</b></span><span class="giu"><s>3</s><b>1</b></span></span><span class="op">e</span><span class="fr"><span class="su"><b>83</b></span><span class="giu"><s>100</s><b>20</b></span></span><span class="op">·</span><span class="fr"><span class="su"><s>5</s><b>1</b></span><span class="giu"><b>13</b></span></span></div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
@@ -331,7 +344,18 @@ mjx-container[display]{margin:0!important}
 
   <div class="riga">
     <div class="fissa">
-      <div class="n">6</div>
+      <div class="n">7</div>
+      <div class="cont">
+        <div class="nota">Riscrivo pulito.</div>
+        <div class="f sx">$\displaystyle =\left[\frac{1}{4}\cdot\frac{5}{1}-\frac{83}{20}\cdot\frac{1}{13}\right]:\frac{1}{8}=$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">8</div>
       <div class="cont">
         <div class="nota">Eseguo i due prodotti.</div>
         <div class="f sx">$\displaystyle =\left[\frac{5}{4}-\frac{83}{260}\right]:\frac{1}{8}=$</div>
@@ -342,7 +366,7 @@ mjx-container[display]{margin:0!important}
 
   <details class="riga">
     <summary>
-      <div class="n">7</div>
+      <div class="n">9</div>
       <div class="cont">
         <div class="nota">Quadra: mcm $=260$.</div>
         <div class="f sx">$\displaystyle =\frac{325-83}{260}:\frac{1}{8}=$</div>
@@ -372,7 +396,7 @@ mjx-container[display]{margin:0!important}
 
   <div class="riga">
     <div class="fissa">
-      <div class="n">8</div>
+      <div class="n">10</div>
       <div class="cont">
         <div class="nota">Eseguo la sottrazione.</div>
         <div class="f sx">$\displaystyle =\frac{242}{260}:\frac{1}{8}=$</div>
@@ -383,9 +407,20 @@ mjx-container[display]{margin:0!important}
 
   <div class="riga">
     <div class="fissa">
-      <div class="n">9</div>
+      <div class="n">11</div>
       <div class="cont">
-        <div class="nota">Riduco $\frac{242}{260}$ per $2$, come al passaggio 3.</div>
+        <div class="nota">Riduco $\frac{242}{260}$: segno sopra e sotto la divisione per $2$.</div>
+        <div class="f sx">$\displaystyle =\frac{\overset{121}{\cancel{242}}}{\underset{130}{\cancel{260}}}:\frac{1}{8}=$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">12</div>
+      <div class="cont">
+        <div class="nota">Riscrivo pulito.</div>
         <div class="f sx">$\displaystyle =\frac{121}{130}:\frac{1}{8}=$</div>
       </div>
       <div></div>
@@ -394,7 +429,7 @@ mjx-container[display]{margin:0!important}
 
   <div class="riga">
     <div class="fissa">
-      <div class="n">10</div>
+      <div class="n">13</div>
       <div class="cont">
         <div class="nota">Capovolgo, come al passaggio 4.</div>
         <div class="f sx">$\displaystyle =\frac{121}{130}\cdot\frac{8}{1}=$</div>
@@ -405,9 +440,20 @@ mjx-container[display]{margin:0!important}
 
   <div class="riga">
     <div class="fissa">
-      <div class="n">11</div>
+      <div class="n">14</div>
       <div class="cont">
-        <div class="nota">Semplifico a croce, come al passaggio 5.</div>
+        <div class="nota">Semplifico a croce: segno il $130$ e l'$8$, che si dividono per $2$.</div>
+        <div class="f sx">$\displaystyle =\frac{121}{\underset{65}{\cancel{130}}}\cdot\frac{\overset{4}{\cancel{8}}}{1}=$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">15</div>
+      <div class="cont">
+        <div class="nota">Riscrivo pulito.</div>
         <div class="f sx">$\displaystyle =\frac{121}{65}\cdot\frac{4}{1}=$</div>
       </div>
       <div></div>
@@ -416,7 +462,7 @@ mjx-container[display]{margin:0!important}
 
   <div class="riga res">
     <div class="fissa">
-      <div class="n">12</div>
+      <div class="n">16</div>
       <div class="cont">
         <div class="nota">Moltiplico.</div>
         <div class="f sx">$\displaystyle =\frac{484}{65}$</div>
