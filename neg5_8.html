@@ -3,27 +3,31 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NEG3_1 — Espressioni con i numeri negativi</title>
+<title>NEG5_8 — Numeri negativi, potenze ed espressioni</title>
 
 <script type="application/json" id="meta">
 {
-  "id": "neg3_1",
-  "titolo": "Espressioni con i numeri negativi",
+  "id": "neg5_8",
+  "titolo": "Numeri negativi, potenze ed espressioni",
   "tipo": "espressione",
   "consegna_label": "Calcola la seguente espressione",
-  "consegna_tex": "\\left(-1+\\frac{1}{2}\\right):\\left(\\frac{3}{2}+\\frac{5}{4}\\right)",
-  "consegna_sympy": "(-1+Rational(1,2))/(Rational(3,2)+Rational(5,4))",
-  "risultato_tex": "-\\frac{2}{11}",
-  "risultato_sympy": "Rational(-2,11)",
+  "consegna_tex": "\\left(\\frac{8}{3}-\\frac{1}{6}\\right)^{-1}-\\left(\\frac{1}{2}-\\frac{3}{8}\\right)+\\frac{10}{8}\\cdot\\left(\\frac{5}{7}\\right)^{-2}+\\left(\\frac{1}{3}\\right)^{-3}\\cdot\\frac{1}{6^{2}}",
+  "consegna_sympy": "(Rational(8,3)-Rational(1,6))**(-1)-(Rational(1,2)-Rational(3,8))+Rational(10,8)*Rational(5,7)**(-2)+Rational(1,3)**(-3)*Rational(1,36)",
+  "risultato_tex": "\\frac{139}{40}",
+  "risultato_sympy": "Rational(139,40)",
   "righe_sympy": [
-    "Rational(-2,11)",
-    "Rational(-2,11)",
-    "Rational(-2,11)",
-    "Rational(-2,11)",
-    "Rational(-2,11)",
-    "Rational(-2,11)",
-    "Rational(-2,11)",
-    "Rational(-2,11)"
+    "Rational(139,40)",
+    "Rational(139,40)",
+    "Rational(139,40)",
+    "Rational(139,40)",
+    "Rational(139,40)",
+    "Rational(139,40)",
+    "Rational(139,40)",
+    "Rational(139,40)",
+    "Rational(139,40)",
+    "Rational(139,40)",
+    "Rational(139,40)",
+    "Rational(139,40)"
   ]
 }
 </script>
@@ -172,7 +176,7 @@ mjx-container[display]{margin:0!important}
 <!-- ===================== CONSEGNA ===================== -->
 <div class="consegna">
   <div class="t">📌 Calcola la seguente espressione</div>
-  <div class="m sx">$\displaystyle \left(-1+\frac{1}{2}\right):\left(\frac{3}{2}+\frac{5}{4}\right)$</div>
+  <div class="m sx">$\displaystyle \left(\frac{8}{3}-\frac{1}{6}\right)^{-1}-\left(\frac{1}{2}-\frac{3}{8}\right)+\frac{10}{8}\cdot\left(\frac{5}{7}\right)^{-2}+\left(\frac{1}{3}\right)^{-3}\cdot\frac{1}{6^{2}}$</div>
 </div>
 
 <!-- ===================== CATENA ====================== -->
@@ -183,7 +187,7 @@ mjx-container[display]{margin:0!important}
   <div class="riga">
     <div class="fissa">
       <div class="n">1</div>
-      <div class="cont"><div class="f sx">$\displaystyle \left(-1+\frac{1}{2}\right):\left(\frac{3}{2}+\frac{5}{4}\right)=$</div></div>
+      <div class="cont"><div class="f sx">$\displaystyle \left(\frac{8}{3}-\frac{1}{6}\right)^{-1}-\left(\frac{1}{2}-\frac{3}{8}\right)+\frac{10}{8}\cdot\left(\frac{5}{7}\right)^{-2}+\left(\frac{1}{3}\right)^{-3}\cdot\frac{1}{6^{2}}=$</div></div>
       <div></div>
     </div>
   </div>
@@ -192,98 +196,180 @@ mjx-container[display]{margin:0!important}
     <summary>
       <div class="n">2</div>
       <div class="cont">
-        <div class="nota">Dentro le due tonde: scrivo tutto con lo stesso denominatore.</div>
-        <div class="f sx">$\displaystyle =\left(\frac{-2+1}{2}\right):\left(\frac{6+5}{4}\right)=$</div>
+        <div class="nota">Dentro le due tonde: mcm $=6$ e mcm $=8$.</div>
+        <div class="f sx">$\displaystyle =\left(\frac{16-1}{6}\right)^{-1}-\frac{4-3}{8}+\frac{10}{8}\cdot\left(\frac{5}{7}\right)^{-2}+\left(\frac{1}{3}\right)^{-3}\cdot\frac{1}{6^{2}}=$</div>
       </div>
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">A sinistra $-1=-\frac{2}{2}$; a destra $\frac{3}{2}=\frac{6}{4}$.</p>
+      <p class="mossa">$\frac{8}{3}=\frac{16}{6}$ e $\frac{1}{2}=\frac{4}{8}$.</p>
       <div class="teoria">
-        <div class="nome">Un numero intero scritto come frazione</div>
-        <div class="frase">Ogni numero intero si può scrivere come frazione: basta dargli il denominatore che serve e moltiplicare per quello anche il numero stesso. Solo così lo si può sommare a una frazione.</div>
-        <div class="f sx">$\displaystyle a=\frac{a\cdot b}{b}$</div>
-        <div class="ex">esempio: $3=\frac{3\cdot 4}{4}=\frac{12}{4}$</div>
+        <div class="nome">Addizione e sottrazione fra frazioni</div>
+        <div class="frase">Due frazioni si sommano o si sottraggono solo quando hanno lo <strong>stesso denominatore</strong>. Si cerca il minimo comune multiplo dei denominatori, si riscrivono tutte con quel denominatore e poi si sommano o si sottraggono i soli numeratori.</div>
+        <div class="f sx">$\displaystyle \frac{a}{b}+\frac{c}{d}=\frac{a\cdot d+b\cdot c}{b\cdot d}$</div>
+        <div class="ex">esempio: $\frac{1}{3}+\frac{1}{6}=\frac{2+1}{6}=\frac{3}{6}$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Mettere l'intero solo al numeratore</div>
+        <div class="nome">Sommare numeratori con numeratori e denominatori con denominatori</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a+\frac{c}{b}=\frac{a+c}{b}$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{a}{b}+\frac{c}{d}=\frac{a+c}{b+d}$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a+\frac{c}{b}=\frac{a\cdot b+c}{b}$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{a}{b}+\frac{c}{d}=\frac{a\cdot d+b\cdot c}{b\cdot d}$</div></div>
         </div>
-        <div class="why-txt">L'intero va moltiplicato per il denominatore.</div>
+        <div class="why-txt">Il denominatore va reso uguale, non sommato.</div>
       </div>
     </div>
   </details>
 
-  <details class="riga">
-    <summary>
+  <div class="riga">
+    <div class="fissa">
       <div class="n">3</div>
       <div class="cont">
-        <div class="nota">Segni diversi: si sottrae e resta il segno del più grande.</div>
-        <div class="f sx">$\displaystyle =-\frac{1}{2}:\frac{11}{4}=$</div>
+        <div class="nota">Eseguo le somme.</div>
+        <div class="f sx">$\displaystyle =\left(\frac{15}{6}\right)^{-1}-\frac{1}{8}+\frac{10}{8}\cdot\left(\frac{5}{7}\right)^{-2}+\left(\frac{1}{3}\right)^{-3}\cdot\frac{1}{6^{2}}=$</div>
       </div>
-      <span class="tab">Regola <span class="chev">▼</span></span>
-    </summary>
-    <div class="pannello">
-      <p class="mossa">$-2+1$ non fa $-3$: si toglie $1$ a $2$ e resta $-1$, con il segno del $2$ che è il più grande.</p>
-      <div class="teoria">
-        <div class="nome">Sommare due numeri di segno diverso</div>
-        <div class="frase">Quando i segni sono <strong>diversi</strong> si fa la differenza fra i due numeri e si tiene il segno di quello più grande, senza guardare il segno. Con segni uguali invece si somma e si tiene quel segno.</div>
-        <div class="f sx">$\displaystyle -a+b=b-a$</div>
-        <div class="ex">esempio: $-1+\frac{1}{2}=-\frac{1}{2}$</div>
-      </div>
-      <div class="errore">
-        <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Sommare i due numeri invece di sottrarli</div>
-        <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle -a+b=-(a+b)$</div></div>
-          <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle -a+b=b-a$</div></div>
-        </div>
-        <div class="why-txt">Segni diversi: si sottrae.</div>
-      </div>
+      <div></div>
     </div>
-  </details>
+  </div>
 
   <details class="riga">
     <summary>
       <div class="n">4</div>
       <div class="cont">
-        <div class="nota">Capovolgo la frazione che divide.</div>
-        <div class="f sx">$\displaystyle =-\frac{1}{2}\cdot\frac{4}{11}=$</div>
+        <div class="nota">Riduco $\frac{15}{6}$ e $\frac{10}{8}$.</div>
+        <div class="f sx">$\displaystyle =\left(\frac{\overset{5}{\cancel{15}}}{\underset{2}{\cancel{6}}}\right)^{-1}-\frac{1}{8}+\frac{\overset{5}{\cancel{10}}}{\underset{4}{\cancel{8}}}\cdot\left(\frac{5}{7}\right)^{-2}+\left(\frac{1}{3}\right)^{-3}\cdot\frac{1}{6^{2}}=$</div>
       </div>
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">$-\frac{1}{2}:\frac{11}{4}$ diventa $-\frac{1}{2}\cdot\frac{4}{11}$.</p>
+      <p class="mossa">La prima per $3$, la seconda per $2$.</p>
       <div class="teoria">
-        <div class="nome">Dividere per una frazione</div>
-        <div class="frase">Per dividere un numero per una frazione si moltiplica il numero per la frazione <strong>capovolta</strong>: numeratore e denominatore si scambiano di posto.</div>
-        <div class="f sx">$\displaystyle n:\frac{a}{b}=n\cdot\frac{b}{a}$</div>
-        <div class="ex">esempio: $20:\frac{2}{3}=20\cdot\frac{3}{2}=30$</div>
+        <div class="nome">Ridurre una frazione ai minimi termini</div>
+        <div class="frase">Dividendo numeratore e denominatore per lo stesso numero il valore non cambia, ma i numeri diventano più piccoli. Conviene farlo appena si può: i conti che vengono dopo sono molto più facili.</div>
+        <div class="f sx">$\displaystyle \frac{a\cdot k}{b\cdot k}=\frac{a}{b}$</div>
+        <div class="ex">esempio: $\frac{9}{12}=\frac{3\cdot 3}{4\cdot 3}=\frac{3}{4}$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Moltiplicare per la frazione senza capovolgerla</div>
+        <div class="nome">Dividere un solo termine della frazione</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle n:\frac{a}{b}=n\cdot\frac{a}{b}$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{a\cdot k}{b\cdot k}=\frac{a}{b\cdot k}$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle n:\frac{a}{b}=n\cdot\frac{b}{a}$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{a\cdot k}{b\cdot k}=\frac{a}{b}$</div></div>
         </div>
-        <div class="why-txt">Si capovolge la frazione che divide.</div>
+        <div class="why-txt">Sopra e sotto, per lo stesso numero.</div>
+      </div>
+    </div>
+  </details>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">5</div>
+      <div class="cont">
+        <div class="nota">Riscrivo pulito.</div>
+        <div class="f sx">$\displaystyle =\left(\frac{5}{2}\right)^{-1}-\frac{1}{8}+\frac{5}{4}\cdot\left(\frac{5}{7}\right)^{-2}+\left(\frac{1}{3}\right)^{-3}\cdot\frac{1}{6^{2}}=$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <details class="riga">
+    <summary>
+      <div class="n">6</div>
+      <div class="cont">
+        <div class="nota">Esponente negativo: capovolgo le basi.</div>
+        <div class="f sx">$\displaystyle =\frac{2}{5}-\frac{1}{8}+\frac{5}{4}\cdot\left(\frac{7}{5}\right)^{2}+3^{3}\cdot\frac{1}{6^{2}}=$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">$\left(\frac{5}{2}\right)^{-1}=\frac{2}{5}$ e $\left(\frac{1}{3}\right)^{-3}=3^{3}$.</p>
+      <div class="teoria">
+        <div class="nome">Potenza con esponente negativo</div>
+        <div class="frase">Un esponente negativo dice di <strong>capovolgere</strong> la base e cambiare il segno dell'esponente. Il risultato non diventa negativo: l'esponente negativo riguarda la posizione, non il segno.</div>
+        <div class="f sx">$\displaystyle a^{-n}=\left(\frac{1}{a}\right)^{n}$</div>
+        <div class="ex">esempio: $\left(\frac{1}{4}\right)^{-2}=4^{2}=16$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Credere che l'esponente negativo dia un risultato negativo</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a^{-n}=-a^{n}$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a^{-n}=\left(\frac{1}{a}\right)^{n}$</div></div>
+        </div>
+        <div class="why-txt">Si capovolge la base, non si cambia segno.</div>
       </div>
     </div>
   </details>
 
   <details class="riga">
     <summary>
-      <div class="n">5</div>
+      <div class="n">7</div>
       <div class="cont">
-        <div class="nota">Semplifico a croce, prima di moltiplicare.</div>
-        <div class="f sx">$\displaystyle =-\frac{1}{\underset{1}{\cancel{2}}}\cdot\frac{\overset{2}{\cancel{4}}}{11}=$</div>
+        <div class="nota">Svolgo le potenze.</div>
+        <div class="f sx">$\displaystyle =\frac{2}{5}-\frac{1}{8}+\frac{5}{4}\cdot\frac{49}{25}+27\cdot\frac{1}{36}=$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">$\left(\frac{7}{5}\right)^{2}=\frac{49}{25}$ e $6^{2}=36$.</p>
+      <div class="teoria">
+        <div class="nome">Potenza di una frazione</div>
+        <div class="frase">Per elevare una frazione a un esponente si elevano <strong>sia il numeratore sia il denominatore</strong>. L'esponente riguarda tutta la frazione, non solo il numero di sopra.</div>
+        <div class="f sx">$\displaystyle \left(\frac{a}{b}\right)^{n}=\frac{a^{n}}{b^{n}}$</div>
+        <div class="ex">esempio: $\left(\frac{2}{3}\right)^{3}=\frac{8}{27}$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Elevare solo il numeratore</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \left(\frac{a}{b}\right)^{n}=\frac{a^{n}}{b}$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \left(\frac{a}{b}\right)^{n}=\frac{a^{n}}{b^{n}}$</div></div>
+        </div>
+        <div class="why-txt">L'esponente vale sopra e sotto.</div>
+      </div>
+    </div>
+  </details>
+
+  <details class="riga">
+    <summary>
+      <div class="n">8</div>
+      <div class="cont">
+        <div class="nota">Prima i due prodotti, poi le somme.</div>
+        <div class="f sx">$\displaystyle =\frac{2}{5}-\frac{1}{8}+\left(\frac{5}{4}\cdot\frac{49}{25}\right)+\left(27\cdot\frac{1}{36}\right)=$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">La moltiplicazione viene prima dell'addizione.</p>
+      <div class="teoria">
+        <div class="nome">Priorità delle operazioni</div>
+        <div class="frase">In un'espressione senza parentesi si eseguono prima tutte le moltiplicazioni e le divisioni. Solo dopo si passa alle addizioni e alle sottrazioni.</div>
+        <div class="f sx">$\displaystyle a+b\cdot c=a+(b\cdot c)$</div>
+        <div class="ex">esempio: $2+3\cdot 4=2+12=14$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Eseguire l'addizione prima della moltiplicazione</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a+b\cdot c=(a+b)\cdot c$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a+b\cdot c=a+(b\cdot c)$</div></div>
+        </div>
+        <div class="why-txt">La moltiplicazione non aspetta l'addizione.</div>
+      </div>
+    </div>
+  </details>
+
+  <details class="riga">
+    <summary>
+      <div class="n">9</div>
+      <div class="cont">
+        <div class="nota">Semplifico a croce tutti e due i prodotti.</div>
+        <div class="f sx">$\displaystyle =\frac{2}{5}-\frac{1}{8}+\left(\frac{1}{4}\cdot\frac{49}{5}\right)+\left(\frac{3}{1}\cdot\frac{1}{4}\right)=$</div>
       </div>
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
@@ -310,10 +396,10 @@ mjx-container[display]{margin:0!important}
 
   <div class="riga">
     <div class="fissa">
-      <div class="n">6</div>
+      <div class="n">10</div>
       <div class="cont">
-        <div class="nota">Riscrivo pulito.</div>
-        <div class="f sx">$\displaystyle =-\frac{1}{1}\cdot\frac{2}{11}=$</div>
+        <div class="nota">Moltiplico.</div>
+        <div class="f sx">$\displaystyle =\frac{2}{5}-\frac{1}{8}+\frac{49}{20}+\frac{3}{4}=$</div>
       </div>
       <div></div>
     </div>
@@ -321,40 +407,40 @@ mjx-container[display]{margin:0!important}
 
   <details class="riga">
     <summary>
-      <div class="n">7</div>
+      <div class="n">11</div>
       <div class="cont">
-        <div class="nota">Moltiplico: meno per più resta meno.</div>
-        <div class="f sx">$\displaystyle =-\frac{1\cdot 2}{1\cdot 11}=$</div>
+        <div class="nota">mcm $=40$.</div>
+        <div class="f sx">$\displaystyle =\frac{16-5+98+30}{40}=$</div>
       </div>
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">Un solo segno meno in tutto il prodotto: il risultato è negativo.</p>
+      <p class="mossa">$\frac{2}{5}=\frac{16}{40}$, $\frac{49}{20}=\frac{98}{40}$, $\frac{3}{4}=\frac{30}{40}$.</p>
       <div class="teoria">
-        <div class="nome">La regola dei segni</div>
-        <div class="frase">Nel prodotto e nella divisione, segni <strong>uguali</strong> danno più, segni <strong>diversi</strong> danno meno. Vale per la moltiplicazione e per la divisione allo stesso modo, e non c'entra niente con la regola della somma.</div>
-        <div class="f sx">$\displaystyle (-)\cdot(-)=+,\quad (-)\cdot(+)=-$</div>
-        <div class="ex">esempio: $\left(-\frac{1}{6}\right)\cdot\left(-\frac{1}{4}\right)=+\frac{1}{24}$</div>
+        <div class="nome">Frazioni equivalenti</div>
+        <div class="frase">Moltiplicando numeratore e denominatore per lo <strong>stesso</strong> numero si ottiene una frazione diversa da vedere ma uguale di valore. È così che si riscrivono più frazioni con il denominatore comune.</div>
+        <div class="f sx">$\displaystyle \frac{a}{b}=\frac{a\cdot k}{b\cdot k}$</div>
+        <div class="ex">esempio: $\frac{2}{3}=\frac{2\cdot 4}{3\cdot 4}=\frac{8}{12}$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Usare la regola dei segni nella somma</div>
+        <div class="nome">Moltiplicare solo il denominatore</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle -a-b=+ab$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{a}{b}=\frac{a}{b\cdot k}$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle -a-b=-(a+b)$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{a}{b}=\frac{a\cdot k}{b\cdot k}$</div></div>
         </div>
-        <div class="why-txt">Meno per meno fa più solo nel prodotto.</div>
+        <div class="why-txt">Sopra e sotto, sempre insieme.</div>
       </div>
     </div>
   </details>
 
   <div class="riga res">
     <div class="fissa">
-      <div class="n">8</div>
+      <div class="n">12</div>
       <div class="cont">
-        <div class="nota">Eseguo i prodotti.</div>
-        <div class="f sx">$\displaystyle =-\frac{2}{11}$</div>
+        <div class="nota">Eseguo la somma algebrica.</div>
+        <div class="f sx">$\displaystyle =\frac{139}{40}$</div>
       </div>
       <div></div>
     </div>

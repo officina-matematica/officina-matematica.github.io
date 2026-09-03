@@ -3,35 +3,38 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NEG3_4 — Espressioni con i numeri negativi</title>
+<title>NEG5_5 — Numeri negativi, potenze ed espressioni</title>
 
 <script type="application/json" id="meta">
 {
-  "id": "neg3_4",
-  "titolo": "Espressioni con i numeri negativi",
+  "id": "neg5_5",
+  "titolo": "Numeri negativi, potenze ed espressioni",
   "tipo": "espressione",
   "consegna_label": "Calcola la seguente espressione",
-  "consegna_tex": "\\frac{5}{6}\\cdot\\frac{2}{3}\\cdot\\frac{12}{5}-\\frac{3}{4}:\\left(0{,}75-\\frac{5}{6}\\right)",
-  "consegna_sympy": "Rational(5,6)*Rational(2,3)*Rational(12,5)-Rational(3,4)/(Rational(75,100)-Rational(5,6))",
-  "risultato_tex": "\\frac{31}{3}",
-  "risultato_sympy": "Rational(31,3)",
+  "consegna_tex": "\\left\\{3-\\left[0{,}\\overline{6}-\\left(0{,}1\\overline{6}+\\frac{5}{12}\\right)\\right]:0{,}25\\right\\}^{2}\\cdot\\left(0{,}\\overline{6}-0{,}625\\right)",
+  "consegna_sympy": "(3-(Rational(6,9)-(Rational(15,90)+Rational(5,12)))/Rational(25,100))**2*(Rational(6,9)-Rational(625,1000))",
+  "risultato_tex": "\\frac{8}{27}",
+  "risultato_sympy": "Rational(8,27)",
   "righe_sympy": [
-    "Rational(31,3)",
-    "Rational(31,3)",
-    "Rational(31,3)",
-    "Rational(31,3)",
-    "Rational(31,3)",
-    "Rational(31,3)",
-    "Rational(31,3)",
-    "Rational(31,3)",
-    "Rational(31,3)",
-    "Rational(31,3)",
-    "Rational(31,3)",
-    "Rational(31,3)",
-    "Rational(31,3)",
-    "Rational(31,3)",
-    "Rational(31,3)",
-    "Rational(31,3)"
+    "Rational(8,27)",
+    "Rational(8,27)",
+    "Rational(8,27)",
+    "Rational(8,27)",
+    "Rational(8,27)",
+    "Rational(8,27)",
+    "Rational(8,27)",
+    "Rational(8,27)",
+    "Rational(8,27)",
+    "Rational(8,27)",
+    "Rational(8,27)",
+    "Rational(8,27)",
+    "Rational(8,27)",
+    "Rational(8,27)",
+    "Rational(8,27)",
+    "Rational(8,27)",
+    "Rational(8,27)",
+    "Rational(8,27)",
+    "Rational(8,27)"
   ]
 }
 </script>
@@ -180,7 +183,7 @@ mjx-container[display]{margin:0!important}
 <!-- ===================== CONSEGNA ===================== -->
 <div class="consegna">
   <div class="t">📌 Calcola la seguente espressione</div>
-  <div class="m sx">$\displaystyle \frac{5}{6}\cdot\frac{2}{3}\cdot\frac{12}{5}-\frac{3}{4}:\left(0{,}75-\frac{5}{6}\right)$</div>
+  <div class="m sx">$\displaystyle \left\{3-\left[0{,}\overline{6}-\left(0{,}1\overline{6}+\frac{5}{12}\right)\right]:0{,}25\right\}^{2}\cdot\left(0{,}\overline{6}-0{,}625\right)$</div>
 </div>
 
 <!-- ===================== CATENA ====================== -->
@@ -191,7 +194,7 @@ mjx-container[display]{margin:0!important}
   <div class="riga">
     <div class="fissa">
       <div class="n">1</div>
-      <div class="cont"><div class="f sx">$\displaystyle \frac{5}{6}\cdot\frac{2}{3}\cdot\frac{12}{5}-\frac{3}{4}:\left(0{,}75-\frac{5}{6}\right)=$</div></div>
+      <div class="cont"><div class="f sx">$\displaystyle \left\{3-\left[0{,}\overline{6}-\left(0{,}1\overline{6}+\frac{5}{12}\right)\right]:0{,}25\right\}^{2}\cdot\left(0{,}\overline{6}-0{,}625\right)=$</div></div>
       <div></div>
     </div>
   </div>
@@ -200,13 +203,43 @@ mjx-container[display]{margin:0!important}
     <summary>
       <div class="n">2</div>
       <div class="cont">
-        <div class="nota">Nella tonda c'è un decimale: lo scrivo come frazione.</div>
-        <div class="f sx">$\displaystyle =\frac{5}{6}\cdot\frac{2}{3}\cdot\frac{12}{5}-\frac{3}{4}:\left(\frac{75}{100}-\frac{5}{6}\right)=$</div>
+        <div class="nota">Frazione generatrice dei due periodici.</div>
+        <div class="f sx">$\displaystyle =\left\{3-\left[\frac{6}{9}-\left(\frac{15}{90}+\frac{5}{12}\right)\right]:0{,}25\right\}^{2}\cdot\left(\frac{6}{9}-0{,}625\right)=$</div>
       </div>
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">$0{,}75$ ha due cifre dopo la virgola, quindi sotto va $100$.</p>
+      <p class="mossa">$0{,}\overline{6}=\frac{6}{9}$; $0{,}1\overline{6}$ ha l'antiperiodo $1$, quindi $\frac{16-1}{90}$.</p>
+      <div class="teoria">
+        <div class="nome">La frazione generatrice di un numero periodico</div>
+        <div class="frase">Sopra si scrive tutto il numero senza la virgola, <strong>meno</strong> la parte che precede il periodo. Sotto si scrivono tanti <strong>nove</strong> quante sono le cifre del periodo, seguiti da tanti <strong>zeri</strong> quante quelle fra la virgola e il periodo.</div>
+        <div class="f sx">$\displaystyle 0{,}a\overline{b}=\frac{ab-a}{90}$</div>
+        <div class="ex">esempio: $0{,}8\overline{3}=\frac{83-8}{90}=\frac{75}{90}$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Dimenticare di togliere la parte prima del periodo</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle 0{,}a\overline{b}=\frac{ab}{90}$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle 0{,}a\overline{b}=\frac{ab-a}{90}$</div></div>
+        </div>
+        <div class="why-txt">Si toglie sempre la parte non periodica.</div>
+      </div>
+    </div>
+  </details>
+
+  <details class="riga">
+    <summary>
+      <div class="n">3</div>
+      <div class="cont">
+        <div class="nota">Anche i decimali finiti diventano frazioni.</div>
+        <div class="f sx">$\displaystyle =\left\{3-\left[\frac{6}{9}-\left(\frac{15}{90}+\frac{5}{12}\right)\right]:\frac{25}{100}\right\}^{2}\cdot\left(\frac{6}{9}-\frac{625}{1000}\right)=$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">$0{,}25$ ha due cifre dopo la virgola, $0{,}625$ ne ha tre.</p>
       <div class="teoria">
         <div class="nome">Un numero decimale come frazione</div>
         <div class="frase">Un decimale con la virgola si scrive come frazione mettendo sopra <strong>il numero senza la virgola</strong> e sotto un uno seguito da tanti zeri quante sono le cifre dopo la virgola.</div>
@@ -228,15 +261,15 @@ mjx-container[display]{margin:0!important}
 
   <details class="riga">
     <summary>
-      <div class="n">3</div>
+      <div class="n">4</div>
       <div class="cont">
-        <div class="nota">Riduco $\frac{75}{100}$.</div>
-        <div class="f sx">$\displaystyle =\frac{5}{6}\cdot\frac{2}{3}\cdot\frac{12}{5}-\frac{3}{4}:\left(\frac{\overset{3}{\cancel{75}}}{\underset{4}{\cancel{100}}}-\frac{5}{6}\right)=$</div>
+        <div class="nota">Riduco tutte le frazioni.</div>
+        <div class="f sx">$\displaystyle =\left\{3-\left[\frac{\overset{2}{\cancel{6}}}{\underset{3}{\cancel{9}}}-\left(\frac{\overset{1}{\cancel{15}}}{\underset{6}{\cancel{90}}}+\frac{5}{12}\right)\right]:\frac{\overset{1}{\cancel{25}}}{\underset{4}{\cancel{100}}}\right\}^{2}\cdot\left(\frac{\overset{2}{\cancel{6}}}{\underset{3}{\cancel{9}}}-\frac{\overset{5}{\cancel{625}}}{\underset{8}{\cancel{1000}}}\right)=$</div>
       </div>
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">$75$ e $100$ si dividono per $25$.</p>
+      <p class="mossa">$\frac{6}{9}$ per $3$, $\frac{15}{90}$ per $15$, $\frac{25}{100}$ per $25$, $\frac{625}{1000}$ per $125$.</p>
       <div class="teoria">
         <div class="nome">Ridurre una frazione ai minimi termini</div>
         <div class="frase">Dividendo numeratore e denominatore per lo stesso numero il valore non cambia, ma i numeri diventano più piccoli. Conviene farlo appena si può: i conti che vengono dopo sono molto più facili.</div>
@@ -258,10 +291,10 @@ mjx-container[display]{margin:0!important}
 
   <div class="riga">
     <div class="fissa">
-      <div class="n">4</div>
+      <div class="n">5</div>
       <div class="cont">
         <div class="nota">Riscrivo pulito.</div>
-        <div class="f sx">$\displaystyle =\frac{5}{6}\cdot\frac{2}{3}\cdot\frac{12}{5}-\frac{3}{4}:\left(\frac{3}{4}-\frac{5}{6}\right)=$</div>
+        <div class="f sx">$\displaystyle =\left\{3-\left[\frac{2}{3}-\left(\frac{1}{6}+\frac{5}{12}\right)\right]:\frac{1}{4}\right\}^{2}\cdot\left(\frac{2}{3}-\frac{5}{8}\right)=$</div>
       </div>
       <div></div>
     </div>
@@ -269,15 +302,15 @@ mjx-container[display]{margin:0!important}
 
   <details class="riga">
     <summary>
-      <div class="n">5</div>
+      <div class="n">6</div>
       <div class="cont">
-        <div class="nota">Dentro la tonda: mcm $=12$.</div>
-        <div class="f sx">$\displaystyle =\frac{5}{6}\cdot\frac{2}{3}\cdot\frac{12}{5}-\frac{3}{4}:\left(\frac{9-10}{12}\right)=$</div>
+        <div class="nota">Tonda interna: mcm $=12$.</div>
+        <div class="f sx">$\displaystyle =\left\{3-\left[\frac{2}{3}-\frac{2+5}{12}\right]:\frac{1}{4}\right\}^{2}\cdot\left(\frac{2}{3}-\frac{5}{8}\right)=$</div>
       </div>
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">$\frac{3}{4}=\frac{9}{12}$ e $\frac{5}{6}=\frac{10}{12}$.</p>
+      <p class="mossa">$\frac{1}{6}=\frac{2}{12}$.</p>
       <div class="teoria">
         <div class="nome">Addizione e sottrazione fra frazioni</div>
         <div class="frase">Due frazioni si sommano o si sottraggono solo quando hanno lo <strong>stesso denominatore</strong>. Si cerca il minimo comune multiplo dei denominatori, si riscrivono tutte con quel denominatore e poi si sommano o si sottraggono i soli numeratori.</div>
@@ -299,10 +332,10 @@ mjx-container[display]{margin:0!important}
 
   <div class="riga">
     <div class="fissa">
-      <div class="n">6</div>
+      <div class="n">7</div>
       <div class="cont">
-        <div class="nota">Eseguo: la tonda viene negativa, perché si toglie il numero più grande.</div>
-        <div class="f sx">$\displaystyle =\frac{5}{6}\cdot\frac{2}{3}\cdot\frac{12}{5}-\frac{3}{4}:\left(-\frac{1}{12}\right)=$</div>
+        <div class="nota">Eseguo la somma.</div>
+        <div class="f sx">$\displaystyle =\left\{3-\left[\frac{2}{3}-\frac{7}{12}\right]:\frac{1}{4}\right\}^{2}\cdot\left(\frac{2}{3}-\frac{5}{8}\right)=$</div>
       </div>
       <div></div>
     </div>
@@ -310,10 +343,81 @@ mjx-container[display]{margin:0!important}
 
   <details class="riga">
     <summary>
-      <div class="n">7</div>
+      <div class="n">8</div>
       <div class="cont">
-        <div class="nota">Semplifico a croce il prodotto di tre frazioni.</div>
-        <div class="f sx">$\displaystyle =\frac{\overset{1}{\cancel{5}}}{\underset{1}{\cancel{6}}}\cdot\frac{\overset{1}{\cancel{2}}}{3}\cdot\frac{\overset{4}{\cancel{12}}}{\underset{1}{\cancel{5}}}-\frac{3}{4}:\left(-\frac{1}{12}\right)=$</div>
+        <div class="nota">Quadra e ultima tonda: mcm $=12$ e mcm $=24$.</div>
+        <div class="f sx">$\displaystyle =\left\{3-\frac{8-7}{12}:\frac{1}{4}\right\}^{2}\cdot\frac{16-15}{24}=$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">Sono due parti indipendenti: si chiudono insieme.</p>
+      <div class="teoria">
+        <div class="nome">Frazioni equivalenti</div>
+        <div class="frase">Moltiplicando numeratore e denominatore per lo <strong>stesso</strong> numero si ottiene una frazione diversa da vedere ma uguale di valore. È così che si riscrivono più frazioni con il denominatore comune.</div>
+        <div class="f sx">$\displaystyle \frac{a}{b}=\frac{a\cdot k}{b\cdot k}$</div>
+        <div class="ex">esempio: $\frac{2}{3}=\frac{2\cdot 4}{3\cdot 4}=\frac{8}{12}$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Moltiplicare solo il denominatore</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{a}{b}=\frac{a}{b\cdot k}$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{a}{b}=\frac{a\cdot k}{b\cdot k}$</div></div>
+        </div>
+        <div class="why-txt">Sopra e sotto, sempre insieme.</div>
+      </div>
+    </div>
+  </details>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">9</div>
+      <div class="cont">
+        <div class="nota">Eseguo le due somme.</div>
+        <div class="f sx">$\displaystyle =\left\{3-\frac{1}{12}:\frac{1}{4}\right\}^{2}\cdot\frac{1}{24}=$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <details class="riga">
+    <summary>
+      <div class="n">10</div>
+      <div class="cont">
+        <div class="nota">Capovolgo la frazione che divide.</div>
+        <div class="f sx">$\displaystyle =\left\{3-\frac{1}{12}\cdot\frac{4}{1}\right\}^{2}\cdot\frac{1}{24}=$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">$\frac{1}{12}:\frac{1}{4}$ diventa $\frac{1}{12}\cdot\frac{4}{1}$.</p>
+      <div class="teoria">
+        <div class="nome">Dividere per una frazione</div>
+        <div class="frase">Per dividere un numero per una frazione si moltiplica il numero per la frazione <strong>capovolta</strong>: numeratore e denominatore si scambiano di posto.</div>
+        <div class="f sx">$\displaystyle n:\frac{a}{b}=n\cdot\frac{b}{a}$</div>
+        <div class="ex">esempio: $20:\frac{2}{3}=20\cdot\frac{3}{2}=30$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Moltiplicare per la frazione senza capovolgerla</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle n:\frac{a}{b}=n\cdot\frac{a}{b}$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle n:\frac{a}{b}=n\cdot\frac{b}{a}$</div></div>
+        </div>
+        <div class="why-txt">Si capovolge la frazione che divide.</div>
+      </div>
+    </div>
+  </details>
+
+  <details class="riga">
+    <summary>
+      <div class="n">11</div>
+      <div class="cont">
+        <div class="nota">Semplifico a croce, prima di moltiplicare.</div>
+        <div class="f sx">$\displaystyle =\left\{3-\frac{1}{\underset{3}{\cancel{12}}}\cdot\frac{\overset{1}{\cancel{4}}}{1}\right\}^{2}\cdot\frac{1}{24}=$</div>
       </div>
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
@@ -340,133 +444,21 @@ mjx-container[display]{margin:0!important}
 
   <div class="riga">
     <div class="fissa">
-      <div class="n">8</div>
-      <div class="cont">
-        <div class="nota">Riscrivo pulito.</div>
-        <div class="f sx">$\displaystyle =\frac{1}{1}\cdot\frac{1}{3}\cdot\frac{4}{1}-\frac{3}{4}:\left(-\frac{1}{12}\right)=$</div>
-      </div>
-      <div></div>
-    </div>
-  </div>
-
-  <details class="riga">
-    <summary>
-      <div class="n">9</div>
-      <div class="cont">
-        <div class="nota">Moltiplico.</div>
-        <div class="f sx">$\displaystyle =\frac{4}{3}-\frac{3}{4}:\left(-\frac{1}{12}\right)=$</div>
-      </div>
-      <span class="tab">Regola <span class="chev">▼</span></span>
-    </summary>
-    <div class="pannello">
-      <p class="mossa">Restano $1\cdot 1\cdot 4$ sopra e $1\cdot 3\cdot 1$ sotto.</p>
-      <div class="teoria">
-        <div class="nome">Moltiplicare due frazioni</div>
-        <div class="frase">Per moltiplicare due frazioni si moltiplicano i <strong>numeratori fra loro</strong> e i <strong>denominatori fra loro</strong>. Non serve il denominatore comune: quello serve solo per addizioni e sottrazioni.</div>
-        <div class="f sx">$\displaystyle \frac{a}{b}\cdot\frac{c}{d}=\frac{a\cdot c}{b\cdot d}$</div>
-        <div class="ex">esempio: $\frac{2}{3}\cdot\frac{5}{7}=\frac{10}{21}$</div>
-      </div>
-      <div class="errore">
-        <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Moltiplicare in croce</div>
-        <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{a}{b}\cdot\frac{c}{d}=\frac{a\cdot d}{b\cdot c}$</div></div>
-          <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{a}{b}\cdot\frac{c}{d}=\frac{a\cdot c}{b\cdot d}$</div></div>
-        </div>
-        <div class="why-txt">Sopra con sopra, sotto con sotto.</div>
-      </div>
-    </div>
-  </details>
-
-  <details class="riga">
-    <summary>
-      <div class="n">10</div>
-      <div class="cont">
-        <div class="nota">Capovolgo la frazione che divide, con tutto il suo segno.</div>
-        <div class="f sx">$\displaystyle =\frac{4}{3}-\frac{3}{4}\cdot\left(-\frac{12}{1}\right)=$</div>
-      </div>
-      <span class="tab">Regola <span class="chev">▼</span></span>
-    </summary>
-    <div class="pannello">
-      <p class="mossa">$-\frac{1}{12}$ capovolta diventa $-\frac{12}{1}$: il segno resta attaccato al numero.</p>
-      <div class="teoria">
-        <div class="nome">Dividere per una frazione</div>
-        <div class="frase">Per dividere un numero per una frazione si moltiplica il numero per la frazione <strong>capovolta</strong>: numeratore e denominatore si scambiano di posto.</div>
-        <div class="f sx">$\displaystyle n:\frac{a}{b}=n\cdot\frac{b}{a}$</div>
-        <div class="ex">esempio: $20:\frac{2}{3}=20\cdot\frac{3}{2}=30$</div>
-      </div>
-      <div class="errore">
-        <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Moltiplicare per la frazione senza capovolgerla</div>
-        <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle n:\frac{a}{b}=n\cdot\frac{a}{b}$</div></div>
-          <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle n:\frac{a}{b}=n\cdot\frac{b}{a}$</div></div>
-        </div>
-        <div class="why-txt">Si capovolge la frazione che divide.</div>
-      </div>
-    </div>
-  </details>
-
-  <div class="riga">
-    <div class="fissa">
-      <div class="n">11</div>
-      <div class="cont">
-        <div class="nota">Semplifico a croce, come al passaggio 6.</div>
-        <div class="f sx">$\displaystyle =\frac{4}{3}-\frac{3}{\underset{1}{\cancel{4}}}\cdot\left(-\frac{\overset{3}{\cancel{12}}}{1}\right)=$</div>
-      </div>
-      <div></div>
-    </div>
-  </div>
-
-  <div class="riga">
-    <div class="fissa">
       <div class="n">12</div>
       <div class="cont">
         <div class="nota">Riscrivo pulito.</div>
-        <div class="f sx">$\displaystyle =\frac{4}{3}-\frac{3}{1}\cdot\left(-\frac{3}{1}\right)=$</div>
+        <div class="f sx">$\displaystyle =\left\{3-\frac{1}{3}\cdot\frac{1}{1}\right\}^{2}\cdot\frac{1}{24}=$</div>
       </div>
       <div></div>
     </div>
   </div>
-
-  <details class="riga">
-    <summary>
-      <div class="n">13</div>
-      <div class="cont">
-        <div class="nota">Più per meno fa meno: il prodotto è negativo.</div>
-        <div class="f sx">$\displaystyle =\frac{4}{3}-\left(-9\right)=$</div>
-      </div>
-      <span class="tab">Regola <span class="chev">▼</span></span>
-    </summary>
-    <div class="pannello">
-      <p class="mossa">$\frac{3}{1}\cdot\frac{3}{1}=9$, e un solo segno meno rende il risultato negativo.</p>
-      <div class="teoria">
-        <div class="nome">La regola dei segni</div>
-        <div class="frase">Nel prodotto e nella divisione, segni <strong>uguali</strong> danno più, segni <strong>diversi</strong> danno meno. Vale per la moltiplicazione e per la divisione allo stesso modo, e non c'entra niente con la regola della somma.</div>
-        <div class="f sx">$\displaystyle (-)\cdot(-)=+,\quad (-)\cdot(+)=-$</div>
-        <div class="ex">esempio: $\left(-\frac{1}{6}\right)\cdot\left(-\frac{1}{4}\right)=+\frac{1}{24}$</div>
-      </div>
-      <div class="errore">
-        <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Usare la regola dei segni nella somma</div>
-        <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle -a-b=+ab$</div></div>
-          <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle -a-b=-(a+b)$</div></div>
-        </div>
-        <div class="why-txt">Meno per meno fa più solo nel prodotto.</div>
-      </div>
-    </div>
-  </details>
 
   <div class="riga">
     <div class="fissa">
-      <div class="n">14</div>
+      <div class="n">13</div>
       <div class="cont">
-        <div class="nota">Togliere un numero negativo vuol dire aggiungerlo.</div>
-        <div class="f sx">$\displaystyle =\frac{4}{3}+9=$</div>
+        <div class="nota">Moltiplico.</div>
+        <div class="f sx">$\displaystyle =\left\{3-\frac{1}{3}\right\}^{2}\cdot\frac{1}{24}=$</div>
       </div>
       <div></div>
     </div>
@@ -474,15 +466,15 @@ mjx-container[display]{margin:0!important}
 
   <details class="riga">
     <summary>
-      <div class="n">15</div>
+      <div class="n">14</div>
       <div class="cont">
-        <div class="nota">mcm $=3$.</div>
-        <div class="f sx">$\displaystyle =\frac{4+27}{3}=$</div>
+        <div class="nota">Dentro la graffa: mcm $=3$.</div>
+        <div class="f sx">$\displaystyle =\left\{\frac{9-1}{3}\right\}^{2}\cdot\frac{1}{24}=$</div>
       </div>
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">$9=\frac{27}{3}$.</p>
+      <p class="mossa">$3=\frac{9}{3}$.</p>
       <div class="teoria">
         <div class="nome">Un numero intero scritto come frazione</div>
         <div class="frase">Ogni numero intero si può scrivere come frazione: basta dargli il denominatore che serve e moltiplicare per quello anche il numero stesso. Solo così lo si può sommare a una frazione.</div>
@@ -502,12 +494,75 @@ mjx-container[display]{margin:0!important}
     </div>
   </details>
 
-  <div class="riga res">
+  <div class="riga">
     <div class="fissa">
+      <div class="n">15</div>
+      <div class="cont">
+        <div class="nota">Eseguo.</div>
+        <div class="f sx">$\displaystyle =\left(\frac{8}{3}\right)^{2}\cdot\frac{1}{24}=$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <details class="riga">
+    <summary>
       <div class="n">16</div>
       <div class="cont">
-        <div class="nota">Eseguo la somma.</div>
-        <div class="f sx">$\displaystyle =\frac{31}{3}$</div>
+        <div class="nota">Svolgo la potenza.</div>
+        <div class="f sx">$\displaystyle =\frac{64}{9}\cdot\frac{1}{24}=$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">Si eleva sopra e sotto.</p>
+      <div class="teoria">
+        <div class="nome">Potenza di una frazione</div>
+        <div class="frase">Per elevare una frazione a un esponente si elevano <strong>sia il numeratore sia il denominatore</strong>. L'esponente riguarda tutta la frazione, non solo il numero di sopra.</div>
+        <div class="f sx">$\displaystyle \left(\frac{a}{b}\right)^{n}=\frac{a^{n}}{b^{n}}$</div>
+        <div class="ex">esempio: $\left(\frac{2}{3}\right)^{3}=\frac{8}{27}$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Elevare solo il numeratore</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \left(\frac{a}{b}\right)^{n}=\frac{a^{n}}{b}$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \left(\frac{a}{b}\right)^{n}=\frac{a^{n}}{b^{n}}$</div></div>
+        </div>
+        <div class="why-txt">L'esponente vale sopra e sotto.</div>
+      </div>
+    </div>
+  </details>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">17</div>
+      <div class="cont">
+        <div class="nota">Semplifico a croce, come al passaggio 10.</div>
+        <div class="f sx">$\displaystyle =\frac{\overset{8}{\cancel{64}}}{9}\cdot\frac{1}{\underset{3}{\cancel{24}}}=$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">18</div>
+      <div class="cont">
+        <div class="nota">Riscrivo pulito.</div>
+        <div class="f sx">$\displaystyle =\frac{8}{9}\cdot\frac{1}{3}=$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="riga res">
+    <div class="fissa">
+      <div class="n">19</div>
+      <div class="cont">
+        <div class="nota">Moltiplico.</div>
+        <div class="f sx">$\displaystyle =\frac{8}{27}$</div>
       </div>
       <div></div>
     </div>
