@@ -104,8 +104,10 @@ mjx-container[display]{margin:0!important}
 .cont{min-width:0}
 .nota{font-size:.8rem;color:var(--muted);margin-bottom:1px}
 .f{padding:3px 0;border-radius:6px;color:var(--blu)}
-.riga.res .f{color:var(--ink)}
-.riga.res .f mjx-container{background:var(--sol);padding:4px 12px;border-radius:6px}
+.riga.res>summary .f,.riga.res>.fissa .f{color:var(--ink)}
+/* solo la formula della riga, mai quelle dentro il pannello della tendina */
+.riga.res>summary .f mjx-container,
+.riga.res>.fissa .f mjx-container{background:var(--sol);padding:4px 12px;border-radius:6px}
 
 /* linguetta della tendina */
 .tab{display:inline-flex;align-items:center;gap:5px;align-self:start;margin-top:5px;
