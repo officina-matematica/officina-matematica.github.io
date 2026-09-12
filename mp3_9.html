@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MP3_9 — Massimo Comune Divisore fra monomi</title>
+
+<script type="application/json" id="meta">
+{
+  "id": "mp3_9",
+  "titolo": "Massimo Comune Divisore fra monomi",
+  "tipo": "fattorizzazione",
+  "consegna_label": "Calcola il MCD",
+  "consegna_tex": "Calcola il MCD dei monomi $9a^{3}b^{2}$, $12a^{2}b^{3}$ e $15ab^{4}$.",
+  "consegna_sympy": "gcd(gcd(9*a**3*b**2, 12*a**2*b**3), 15*a*b**4)",
+  "risultato_tex": "\\text{MCD}=3\\cdot a\\cdot b^{2}=3ab^{2}",
+  "risultato_sympy": "3*a*b**2",
+  "righe_sympy": [
+    "9*a**3*b**2",
+    "12*a**2*b**3",
+    "15*a*b**4",
+    "3*a*b**2",
+    "3*a*b**2"
+  ]
+}
+</script>
+
+<!-- Output SVG, non CHTML: glifi vettoriali, allineamento identico su ogni
+     dispositivo, nessun rischio di webfont non caricato dentro un iframe.
+     Ogni formula e' scritta con \displaystyle: senza, MathJax rende le frazioni
+     in textstyle e le parentesi non abbracciano la frazione. -->
+<script>
+MathJax = {
+  loader: { load: ['[tex]/cancel'] },
+  tex: {
+    packages: { '[+]': ['cancel'] },
+    inlineMath: [['$','$']],
+    displayMath: [['$$','$$']],
+    processEscapes: true
+  },
+  svg: { fontCache: 'global', scale: 1.06, exFactor: .5 },
+  options: { enableMenu: false }
+};
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-svg.js"></script>
+
+<style>
+:root{
+  --ink:#0f172a; --body:#334155; --muted:#475569; --faint:#94a3b8;
+  --line:#e2e8f0; --paper:#f8fafc;
+  --blu:#12519e; --blubg:#e8f1fb; --blubd:#a8c9ea;
+  --amb:#b45309; --ambbg:#fffbeb; --ambbd:#fcd34d; --sol:#fef08a;
+  --teo:#14532d; --teobg:#f0fdf4; --teobd:#86efac;
+  --err:#9f1239; --errbg:#fff1f2; --errbd:#fda4af;
+  --ko:#b91c1c;  --kobg:#fee2e2;  --kobd:#ef4444;
+  --ok:#15803d;  --okbg:#dcfce7;  --okbd:#22c55e;
+  --sxbg:#ffffff;
+}
+*{box-sizing:border-box}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  background:var(--paper);color:var(--body);line-height:1.5;
+  margin:0;padding:20px 14px 60px;max-width:900px;margin-inline:auto;font-size:16px;
+}
+mjx-container{outline:none}
+mjx-container[display]{margin:0!important}
+
+/* formule scorrevoli, con sfumatura ai bordi quando escono dallo schermo */
+.sx{
+  overflow-x:auto;overflow-y:hidden;scrollbar-width:thin;-webkit-overflow-scrolling:touch;
+  background-image:
+    linear-gradient(to right,var(--sxbg),var(--sxbg)),
+    linear-gradient(to left,var(--sxbg),var(--sxbg)),
+    linear-gradient(to right,rgba(15,23,42,.16),rgba(15,23,42,0)),
+    linear-gradient(to left,rgba(15,23,42,.16),rgba(15,23,42,0));
+  background-position:left center,right center,left center,right center;
+  background-repeat:no-repeat;
+  background-size:22px 100%,22px 100%,13px 100%,13px 100%;
+  background-attachment:local,local,scroll,scroll;
+}
+
+/* ---------------- CONSEGNA ---------------- */
+.consegna{background:var(--blubg);border:2px solid var(--blubd);border-radius:12px;
+  padding:12px 16px;color:#0d47a1;--sxbg:var(--blubg)}
+.consegna .t{font-weight:700;font-size:.9rem}
+.consegna .m{text-align:center;margin-top:4px;padding:4px 0}
+
+/* ---------------- CATENA ---------------- */
+.catena{background:#fff;border:1px solid var(--line);border-radius:14px;
+  padding:14px 16px 10px;margin-top:16px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.catena>.k{font-weight:800;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.catena>.sub{font-size:.85rem;color:var(--faint);margin:2px 0 8px}
+
+.riga{border-top:1px dotted var(--line)}
+.riga:first-of-type{border-top:none}
+.riga>summary,.riga>.fissa{
+  display:grid;grid-template-columns:26px 1fr auto;gap:10px;align-items:center;
+  padding:11px 0;
+}
+.riga>summary{list-style:none;cursor:pointer}
+.riga>summary::-webkit-details-marker{display:none}
+.riga>summary:hover .f,.riga>summary:focus-visible .f{background-color:#f8fafc}
+
+.n{font-size:.72rem;font-weight:800;color:var(--faint);text-align:center;
+  background:#f1f5f9;border-radius:6px;padding:4px 0;align-self:start;margin-top:4px}
+.cont{min-width:0}
+.nota{font-size:.8rem;color:var(--muted);margin-bottom:1px}
+.f{padding:3px 0;border-radius:6px;color:var(--blu)}
+.riga.res>summary .f,.riga.res>.fissa .f{color:var(--ink)}
+/* solo la formula della riga, mai quelle dentro il pannello della tendina */
+.riga.res>summary .f mjx-container,
+.riga.res>.fissa .f mjx-container{background:var(--sol);padding:4px 12px;border-radius:6px}
+
+/* linguetta della tendina */
+.tab{display:inline-flex;align-items:center;gap:5px;align-self:start;margin-top:5px;
+  font-size:.72rem;font-weight:700;letter-spacing:.02em;color:var(--muted);
+  background:#fff;border:1.5px solid var(--line);border-radius:999px;padding:4px 10px;
+  white-space:nowrap}
+.tab .chev{display:inline-block;font-size:.6rem;transition:transform .18s}
+.riga[open]>summary .tab{background:var(--ink);border-color:var(--ink);color:#fff}
+.riga[open]>summary .tab .chev{transform:rotate(180deg)}
+@media(prefers-reduced-motion:reduce){.tab .chev{transition:none}}
+
+/* pannello aperto */
+.pannello{padding:2px 0 16px 36px;display:grid;gap:10px}
+.mossa{font-size:.9rem;margin:0}
+
+.teoria{background:var(--teobg);border:1.5px solid var(--teobd);border-radius:10px;
+  padding:10px 14px;color:var(--teo);--sxbg:var(--teobg)}
+.teoria .nome{font-weight:800;font-size:.88rem;margin-bottom:2px}
+.teoria .frase{font-size:.87rem;line-height:1.45}
+.teoria .f{text-align:center;margin:8px 0 3px;background:rgba(255,255,255,.75);
+  border-radius:6px;padding:6px 8px;color:var(--teo);--sxbg:#f4fdf6}
+.teoria .ex{font-size:.78rem;opacity:.9;text-align:center}
+
+.errore{background:var(--errbg);border:1.5px solid var(--errbd);border-radius:10px;padding:11px 14px}
+.errore .k{font-weight:800;font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;
+  color:var(--err);margin-bottom:5px}
+.errore .nome{font-weight:700;font-size:.9rem;color:var(--err);margin-bottom:8px}
+.compare{display:grid;grid-template-columns:1fr 34px 1fr;align-items:stretch}
+.card{border:2px solid;border-radius:10px;padding:8px 12px;text-align:center}
+.card .tag{font-size:.7rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;margin-bottom:2px}
+.card .f{padding:2px 0;color:inherit}
+.card.ko{background:var(--kobg);border-color:var(--kobd);color:var(--ko);--sxbg:var(--kobg)}
+.card.ok{background:var(--okbg);border-color:var(--okbd);color:var(--ok);--sxbg:var(--okbg)}
+.arrow{display:flex;align-items:center;justify-content:center;font-size:1.2rem;color:var(--faint);font-weight:800}
+.why-txt{font-size:.82rem;color:#7f1d1d;margin-top:6px;text-align:center}
+
+/* fermata di controllo */
+.check{display:flex;flex-wrap:wrap;align-items:center;gap:4px 10px;
+  background:var(--ambbg);border:1.5px dashed var(--ambbd);border-radius:10px;
+  padding:8px 14px;margin:8px 0;font-size:.85rem;color:var(--amb);--sxbg:var(--ambbg)}
+.check b{font-weight:800}
+.check .v{color:var(--ink)}
+
+/* ---------------- MOBILE ---------------- */
+@media(max-width:720px){
+  body{padding:16px 10px 50px;font-size:16px}
+  .catena{padding:12px 12px 8px}
+  .riga>summary,.riga>.fissa{grid-template-columns:24px 1fr;gap:8px}
+  .cont{grid-column:2}
+  .tab{grid-column:2;justify-self:start;margin-top:6px}
+  .pannello{padding-left:0}
+  .compare{grid-template-columns:1fr;gap:6px}
+  .arrow{transform:rotate(90deg);height:22px}
+}
+</style>
+</head>
+<body>
+
+<!-- ===================== CONSEGNA ===================== -->
+<div class="consegna">
+  <div class="t">📌 Calcola il MCD</div>
+  <div class="m sx">Calcola il MCD dei monomi $9a^{3}b^{2}$, $12a^{2}b^{3}$ e $15ab^{4}$.</div>
+</div>
+
+<!-- ===================== CATENA ====================== -->
+<div class="catena">
+  <div class="k">Confronta con il tuo foglio</div>
+  <div class="sub">Scorri le righe fino alla prima che non coincide con la tua. Lì apri <b>Regola</b>.</div>
+
+  <details class="riga">
+    <summary>
+      <div class="n">1</div>
+      <div class="cont">
+        <div class="nota">Scomponiamo il primo monomio: prima il coefficiente, poi le lettere.</div>
+        <div class="f sx">$\displaystyle 9a^{3}b^{2}=3^{2}\cdot a^{3}\cdot b^{2}$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">Il coefficiente $9$ si scompone in $3^{2}$; la parte letterale resta com'è, con i suoi esponenti.</p>
+      <div class="teoria">
+        <div class="nome">Scomporre un monomio</div>
+        <div class="frase">Un monomio si scompone in due pezzi: il <strong>coefficiente</strong>, che si scrive come prodotto di fattori primi, e la <strong>parte letterale</strong>, che resta com'è con i suoi esponenti. Scritto così si vede a colpo d'occhio quali fattori due monomi hanno davvero in comune.</div>
+        <div class="f sx">$\displaystyle k\,a^{m}b^{n}=p_{1}\cdot p_{2}\cdot\ldots\cdot a^{m}\cdot b^{n}$</div>
+        <div class="ex">esempio: $20a^{2}b=2^{2}\cdot 5\cdot a^{2}\cdot b$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Confondere l'esponente con un fattore</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a^{3}=3a$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a^{3}=a\cdot a\cdot a$</div></div>
+        </div>
+        <div class="why-txt">L'esponente dice quante volte si moltiplica.</div>
+      </div>
+    </div>
+  </details>
+
+  <details class="riga">
+    <summary>
+      <div class="n">2</div>
+      <div class="cont">
+        <div class="nota">Stessa cosa sul secondo monomio.</div>
+        <div class="f sx">$\displaystyle 12a^{2}b^{3}=2^{2}\cdot 3\cdot a^{2}\cdot b^{3}$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">In $15ab^{4}$ la $a$ non ha esponente scritto: vale $a^{1}$, ed è il più piccolo dei tre.</p>
+      <div class="teoria">
+        <div class="nome">L'esponente 1 non si scrive</div>
+        <div class="frase">Quando una lettera compare senza esponente, l'esponente è <strong>1</strong>: $b$ e $b^{1}$ sono la stessa cosa. Saperlo conta proprio qui, perché $1$ è quasi sempre l'esponente più piccolo, e nel MCD è quello che vince.</div>
+        <div class="f sx">$\displaystyle a=a^{1}$</div>
+        <div class="ex">esempio: $\text{MCD}(a^{3};a)=a$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Dimenticare la lettera senza esponente</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \text{MCD}(a^{2};a)=1$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \text{MCD}(a^{2};a)=a$</div></div>
+        </div>
+        <div class="why-txt">La lettera da sola vale $a^{1}$, non zero.</div>
+      </div>
+    </div>
+  </details>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">3</div>
+      <div class="cont">
+        <div class="nota">Stessa cosa sul terzo monomio.</div>
+        <div class="f sx">$\displaystyle 15ab^{4}=3\cdot 5\cdot a\cdot b^{4}$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <details class="riga">
+    <summary>
+      <div class="n">4</div>
+      <div class="cont">
+        <div class="nota">Teniamo solo i fattori comuni a tutti, con l'esponente minore.</div>
+        <div class="f sx">$\displaystyle \text{MCD}=3\cdot a\cdot b^{2}$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">I fattori presenti in <strong>tutti</strong> i monomi sono $a$, $b$, più il coefficiente. Di ognuno si prende l'esponente più piccolo fra quelli scritti.</p>
+      <div class="teoria">
+        <div class="nome">Il MCD di due monomi</div>
+        <div class="frase">Il Massimo Comune Divisore prende <strong>solo</strong> i fattori che compaiono in tutti i monomi, e di ognuno l'esponente <strong>più piccolo</strong>. Una lettera che manca anche in un solo monomio non entra: se non c'è, non può dividerlo.</div>
+        <div class="f sx">$\displaystyle \text{MCD}=\text{fattori comuni, esponente minore}$</div>
+        <div class="ex">esempio: $\text{MCD}(22a^{3}b;33a^{2})=11a^{2}$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Prendere l'esponente più grande</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \text{MCD}(a^{2};a^{5})=a^{5}$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \text{MCD}(a^{2};a^{5})=a^{2}$</div></div>
+        </div>
+        <div class="why-txt">Con l'esponente grande non dividerebbe il primo.</div>
+      </div>
+    </div>
+  </details>
+
+  <div class="riga res">
+    <div class="fissa">
+      <div class="n">5</div>
+      <div class="cont">
+        <div class="nota">Moltiplichiamo quello che è rimasto.</div>
+        <div class="f sx">$\displaystyle \text{MCD}=3\cdot a\cdot b^{2}=3ab^{2}$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
