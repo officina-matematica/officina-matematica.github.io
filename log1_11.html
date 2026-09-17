@@ -10,18 +10,15 @@
   "id": "log1_11",
   "titolo": "Calcolo logaritmi",
   "tipo": "espressione",
-  "consegna_label": "Esegui l'espressione logaritmica",
-  "consegna_tex": "\\frac{1}{3}\\log 8-\\frac{3}{4}\\log 16+2\\log 3",
-  "consegna_sympy": "Rational(1,3)*log(8)/log(10)-Rational(3,4)*log(16)/log(10)+2*log(3)/log(10)",
-  "risultato_tex": "\\log\\frac{9}{4}",
-  "risultato_sympy": "log(Rational(9,4))/log(10)",
+  "consegna_label": "Calcola il valore del logaritmo",
+  "consegna_tex": "\\log_{3}243",
+  "consegna_sympy": "log(243)/log(3)",
+  "risultato_tex": "5",
+  "risultato_sympy": "Integer(5)",
   "righe_sympy": [
-    "log(Rational(9,4))/log(10)",
-    "log(Rational(9,4))/log(10)",
-    "log(Rational(9,4))/log(10)",
-    "log(Rational(9,4))/log(10)",
-    "log(Rational(9,4))/log(10)",
-    "log(Rational(9,4))/log(10)"
+    "Integer(5)",
+    "Integer(5)",
+    "Integer(5)"
   ]
 }
 </script>
@@ -171,8 +168,8 @@ mjx-container[display]{margin:0!important}
 
 <!-- ===================== CONSEGNA ===================== -->
 <div class="consegna">
-  <div class="t">📌 Esegui l'espressione logaritmica</div>
-  <div class="m sx">$\displaystyle \frac{1}{3}\log 8-\frac{3}{4}\log 16+2\log 3$</div>
+  <div class="t">📌 Calcola il valore del logaritmo</div>
+  <div class="m sx">$\displaystyle \log_{3}243$</div>
 </div>
 
 <!-- ===================== CATENA ====================== -->
@@ -183,7 +180,7 @@ mjx-container[display]{margin:0!important}
   <div class="riga">
     <div class="fissa">
       <div class="n">1</div>
-      <div class="cont"><div class="f sx">$\displaystyle \frac{1}{3}\log 8-\frac{3}{4}\log 16+2\log 3=$</div></div>
+      <div class="cont"><div class="f sx">$\displaystyle \log_{3}243=$</div></div>
       <div></div>
     </div>
   </div>
@@ -192,148 +189,58 @@ mjx-container[display]{margin:0!important}
     <summary>
       <div class="n">2</div>
       <div class="cont">
-        <div class="nota">Ogni numero davanti rientra come esponente.</div>
-        <div class="f sx">$\displaystyle =\log 8^{\frac{1}{3}}-\log 16^{\frac{3}{4}}+\log 3^{2}=$</div>
+        <div class="nota">$243$ è una potenza di $3$.</div>
+        <div class="f sx">$\displaystyle =\log_{3}3^{5}=$</div>
       </div>
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">La regola $n\log a=\log a^{n}$ letta al contrario: il fattore davanti diventa l'esponente dell'argomento.</p>
+      <p class="mossa">Scriviamo l'argomento come potenza della base: $243=3^{5}$.</p>
       <div class="teoria">
-        <div class="nome">Il logaritmo di una potenza</div>
-        <div class="frase">L'esponente dell'argomento <strong>scende davanti</strong> al logaritmo e diventa un fattore. Letta al contrario, la stessa regola dice che un numero davanti a un logaritmo può rientrare come esponente dell'argomento.</div>
-        <div class="f sx">$\displaystyle \log a^{n}=n\log a$</div>
-        <div class="ex">esempio: $\log 2^{5}=5\log 2,\quad 3\log 4=\log 4^{3}$</div>
+        <div class="nome">Base e argomento come potenze dello stesso numero</div>
+        <div class="frase">Per calcolare un logaritmo conviene scrivere <strong>base e argomento come potenze di uno stesso numero</strong>. Quando ci si è riusciti, il logaritmo è il rapporto fra i due esponenti: quello dell'argomento diviso quello della base.</div>
+        <div class="f sx">$\displaystyle \log_{a^{m}}a^{n}=\frac{n}{m}$</div>
+        <div class="ex">esempio: $\log_{4}8=\log_{2^{2}}2^{3}=\frac{3}{2}$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Elevare il logaritmo invece dell'argomento</div>
+        <div class="nome">Capovolgere il rapporto degli esponenti</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \log a^{n}=\left(\log a\right)^{n}$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \log_{a^{m}}a^{n}=\frac{m}{n}$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \log a^{n}=n\log a$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \log_{a^{m}}a^{n}=\frac{n}{m}$</div></div>
         </div>
-        <div class="why-txt">L'esponente riguarda l'argomento.</div>
-      </div>
-    </div>
-  </details>
-
-  <details class="riga">
-    <summary>
-      <div class="n">3</div>
-      <div class="cont">
-        <div class="nota">$8^{\frac{1}{3}}=2$, $16^{\frac{3}{4}}=8$ e $3^{2}=9$.</div>
-        <div class="f sx">$\displaystyle =\log 2-\log 8+\log 9=$</div>
-      </div>
-      <span class="tab">Regola <span class="chev">▼</span></span>
-    </summary>
-    <div class="pannello">
-      <p class="mossa">$8^{\frac{1}{3}}$ è la radice cubica di $8$, cioè $2$; $16^{\frac{3}{4}}=\left(\sqrt[4]{16}\right)^{3}=2^{3}=8$.</p>
-      <div class="teoria">
-        <div class="nome">La radice è una potenza con esponente frazionario</div>
-        <div class="frase">Ogni radice si può scrivere come potenza: l'indice della radice va al <strong>denominatore</strong> dell'esponente. Così le radici entrano nelle proprietà delle potenze e i conti si fanno solo sugli esponenti.</div>
-        <div class="f sx">$\displaystyle \sqrt[n]{a^{m}}=a^{\frac{m}{n}}$</div>
-        <div class="ex">esempio: $\sqrt[3]{5^{2}}=5^{\frac{2}{3}},\quad \sqrt{7}=7^{\frac{1}{2}}$</div>
-      </div>
-      <div class="errore">
-        <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Mettere l'indice sopra</div>
-        <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \sqrt[n]{a}=a^{n}$</div></div>
-          <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \sqrt[n]{a}=a^{\frac{1}{n}}$</div></div>
-        </div>
-        <div class="why-txt">L'indice della radice va sotto.</div>
-      </div>
-    </div>
-  </details>
-
-  <details class="riga">
-    <summary>
-      <div class="n">4</div>
-      <div class="cont">
-        <div class="nota">La somma di due logaritmi è il logaritmo del prodotto.</div>
-        <div class="f sx">$\displaystyle =\log\left(2\cdot 9\right)-\log 8=$</div>
-      </div>
-      <span class="tab">Regola <span class="chev">▼</span></span>
-    </summary>
-    <div class="pannello">
-      <p class="mossa">$\log 2+\log 9$ si riunisce in $\log\left(2\cdot 9\right)$: è la regola del prodotto letta al contrario.</p>
-      <div class="teoria">
-        <div class="nome">Il logaritmo di un prodotto</div>
-        <div class="frase">Il logaritmo di un prodotto è la <strong>somma</strong> dei logaritmi dei fattori. Vale anche al contrario: una somma di logaritmi con la stessa base si può riunire in un solo logaritmo.</div>
-        <div class="f sx">$\displaystyle \log\left(a\cdot b\right)=\log a+\log b$</div>
-        <div class="ex">esempio: $\log\left(2\cdot 5\right)=\log 2+\log 5$</div>
-      </div>
-      <div class="errore">
-        <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Spezzare una somma dentro il logaritmo</div>
-        <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \log\left(a+b\right)=\log a+\log b$</div></div>
-          <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \log\left(a\cdot b\right)=\log a+\log b$</div></div>
-        </div>
-        <div class="why-txt">Si spezza il prodotto, non la somma.</div>
-      </div>
-    </div>
-  </details>
-
-  <details class="riga">
-    <summary>
-      <div class="n">5</div>
-      <div class="cont">
-        <div class="nota">La differenza è il logaritmo del quoziente.</div>
-        <div class="f sx">$\displaystyle =\log\frac{18}{8}=$</div>
-      </div>
-      <span class="tab">Regola <span class="chev">▼</span></span>
-    </summary>
-    <div class="pannello">
-      <p class="mossa">$\log 18-\log 8$ diventa $\log\frac{18}{8}$.</p>
-      <div class="teoria">
-        <div class="nome">Il logaritmo di un quoziente</div>
-        <div class="frase">Il logaritmo di un quoziente è la <strong>differenza</strong> fra il logaritmo del numeratore e quello del denominatore. Anche questa regola si legge nei due versi.</div>
-        <div class="f sx">$\displaystyle \log\frac{a}{b}=\log a-\log b$</div>
-        <div class="ex">esempio: $\log\frac{100}{10}=\log 100-\log 10=1$</div>
-      </div>
-      <div class="errore">
-        <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Confondere il quoziente dei logaritmi</div>
-        <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{\log a}{\log b}=\log a-\log b$</div></div>
-          <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \log\frac{a}{b}=\log a-\log b$</div></div>
-        </div>
-        <div class="why-txt">La frazione sta dentro il logaritmo, non fuori.</div>
+        <div class="why-txt">Sopra va l'esponente dell'argomento.</div>
       </div>
     </div>
   </details>
 
   <details class="riga res">
     <summary>
-      <div class="n">6</div>
+      <div class="n">3</div>
       <div class="cont">
-        <div class="nota">$\frac{18}{8}$ si riduce dividendo per $2$.</div>
-        <div class="f sx">$\displaystyle =\log\frac{9}{4}$</div>
+        <div class="nota">Il logaritmo è quell'esponente.</div>
+        <div class="f sx">$\displaystyle =5$</div>
       </div>
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">$18$ e $8$ sono tutti e due pari: restano $9$ e $4$.</p>
+      <p class="mossa">L'esponente da dare a $3$ per ottenere $243$ è $5$.</p>
       <div class="teoria">
-        <div class="nome">Ridurre una frazione ai minimi termini</div>
-        <div class="frase">Dividendo numeratore e denominatore per lo stesso numero il valore non cambia, ma i numeri diventano più piccoli. Conviene farlo appena si può: i conti che vengono dopo sono molto più facili.</div>
-        <div class="f sx">$\displaystyle \frac{a\cdot k}{b\cdot k}=\frac{a}{b}$</div>
-        <div class="ex">esempio: $\frac{9}{12}=\frac{3\cdot 3}{4\cdot 3}=\frac{3}{4}$</div>
+        <div class="nome">La definizione di logaritmo</div>
+        <div class="frase">Il logaritmo di un numero è l'<strong>esponente</strong> che bisogna dare alla base per ottenere quel numero. Scrivere $\log_{a}b=c$ vuol dire esattamente $a^{c}=b$: sono due modi di dire la stessa cosa, e si passa dall'uno all'altro ogni volta che serve.</div>
+        <div class="f sx">$\displaystyle \log_{a}b=c\quad\Longleftrightarrow\quad a^{c}=b$</div>
+        <div class="ex">esempio: $\log_{2}8=3\ \text{perché}\ 2^{3}=8$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Dividere un solo termine della frazione</div>
+        <div class="nome">Scambiare esponente e base</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{a\cdot k}{b\cdot k}=\frac{a}{b\cdot k}$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \log_{a}a^{n}=a$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{a\cdot k}{b\cdot k}=\frac{a}{b}$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \log_{a}a^{n}=n$</div></div>
         </div>
-        <div class="why-txt">Sopra e sotto, per lo stesso numero.</div>
+        <div class="why-txt">Il logaritmo è l'esponente, non la base.</div>
       </div>
     </div>
   </details>

@@ -9,18 +9,16 @@
 {
   "id": "log1_10",
   "titolo": "Calcolo logaritmi",
-  "tipo": "incognita",
-  "consegna_label": "Trova il valore della base",
-  "consegna_tex": "\\log_{x}9=-2",
-  "consegna_sympy": "soluzione(log(9)/log(x), -2)",
-  "risultato_tex": "x=\\frac{1}{3}",
-  "risultato_sympy": "Rational(1,3)",
+  "tipo": "espressione",
+  "consegna_label": "Calcola il valore del logaritmo",
+  "consegna_tex": "\\log_{7}343",
+  "consegna_sympy": "log(343)/log(7)",
+  "risultato_tex": "3",
+  "risultato_sympy": "Integer(3)",
   "righe_sympy": [
-    null,
-    null,
-    null,
-    null,
-    null
+    "Integer(3)",
+    "Integer(3)",
+    "Integer(3)"
   ]
 }
 </script>
@@ -170,8 +168,8 @@ mjx-container[display]{margin:0!important}
 
 <!-- ===================== CONSEGNA ===================== -->
 <div class="consegna">
-  <div class="t">📌 Trova il valore della base</div>
-  <div class="m sx">$\displaystyle \log_{x}9=-2$</div>
+  <div class="t">📌 Calcola il valore del logaritmo</div>
+  <div class="m sx">$\displaystyle \log_{7}343$</div>
 </div>
 
 <!-- ===================== CATENA ====================== -->
@@ -182,10 +180,7 @@ mjx-container[display]{margin:0!important}
   <div class="riga">
     <div class="fissa">
       <div class="n">1</div>
-      <div class="cont">
-        <div class="nota">L'incognita è la base, e l'esponente è negativo.</div>
-        <div class="f sx">$\displaystyle \log_{x}9=-2$</div>
-      </div>
+      <div class="cont"><div class="f sx">$\displaystyle \log_{7}343=$</div></div>
       <div></div>
     </div>
   </div>
@@ -194,13 +189,43 @@ mjx-container[display]{margin:0!important}
     <summary>
       <div class="n">2</div>
       <div class="cont">
-        <div class="nota">Il logaritmo è l'esponente: la base elevata a $-2$ dà $9$.</div>
-        <div class="f sx">$\displaystyle x^{-2}=9$</div>
+        <div class="nota">$343$ è una potenza di $7$.</div>
+        <div class="f sx">$\displaystyle =\log_{7}7^{3}=$</div>
       </div>
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">$\log_{x}9=-2$ vuol dire $x^{-2}=9$.</p>
+      <p class="mossa">Scriviamo l'argomento come potenza della base: $343=7^{3}$.</p>
+      <div class="teoria">
+        <div class="nome">Base e argomento come potenze dello stesso numero</div>
+        <div class="frase">Per calcolare un logaritmo conviene scrivere <strong>base e argomento come potenze di uno stesso numero</strong>. Quando ci si è riusciti, il logaritmo è il rapporto fra i due esponenti: quello dell'argomento diviso quello della base.</div>
+        <div class="f sx">$\displaystyle \log_{a^{m}}a^{n}=\frac{n}{m}$</div>
+        <div class="ex">esempio: $\log_{4}8=\log_{2^{2}}2^{3}=\frac{3}{2}$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Capovolgere il rapporto degli esponenti</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \log_{a^{m}}a^{n}=\frac{m}{n}$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \log_{a^{m}}a^{n}=\frac{n}{m}$</div></div>
+        </div>
+        <div class="why-txt">Sopra va l'esponente dell'argomento.</div>
+      </div>
+    </div>
+  </details>
+
+  <details class="riga res">
+    <summary>
+      <div class="n">3</div>
+      <div class="cont">
+        <div class="nota">Il logaritmo è quell'esponente.</div>
+        <div class="f sx">$\displaystyle =3$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">L'esponente da dare a $7$ per ottenere $343$ è $3$.</p>
       <div class="teoria">
         <div class="nome">La definizione di logaritmo</div>
         <div class="frase">Il logaritmo di un numero è l'<strong>esponente</strong> che bisogna dare alla base per ottenere quel numero. Scrivere $\log_{a}b=c$ vuol dire esattamente $a^{c}=b$: sono due modi di dire la stessa cosa, e si passa dall'uno all'altro ogni volta che serve.</div>
@@ -216,77 +241,6 @@ mjx-container[display]{margin:0!important}
           <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \log_{a}a^{n}=n$</div></div>
         </div>
         <div class="why-txt">Il logaritmo è l'esponente, non la base.</div>
-      </div>
-    </div>
-  </details>
-
-  <details class="riga">
-    <summary>
-      <div class="n">3</div>
-      <div class="cont">
-        <div class="nota">L'esponente negativo manda la potenza sotto la linea.</div>
-        <div class="f sx">$\displaystyle \frac{1}{x^{2}}=9$</div>
-      </div>
-      <span class="tab">Regola <span class="chev">▼</span></span>
-    </summary>
-    <div class="pannello">
-      <p class="mossa">$x^{-2}$ si scrive $\frac{1}{x^{2}}$: è la definizione di esponente negativo.</p>
-      <div class="teoria">
-        <div class="nome">Potenza con esponente negativo</div>
-        <div class="frase">Un esponente negativo dice di <strong>capovolgere</strong> la base e cambiare il segno dell'esponente. Il risultato non diventa negativo: l'esponente negativo riguarda la posizione, non il segno.</div>
-        <div class="f sx">$\displaystyle a^{-n}=\left(\frac{1}{a}\right)^{n}$</div>
-        <div class="ex">esempio: $\left(\frac{1}{4}\right)^{-2}=4^{2}=16$</div>
-      </div>
-      <div class="errore">
-        <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Credere che l'esponente negativo dia un risultato negativo</div>
-        <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a^{-n}=-a^{n}$</div></div>
-          <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a^{-n}=\left(\frac{1}{a}\right)^{n}$</div></div>
-        </div>
-        <div class="why-txt">Si capovolge la base, non si cambia segno.</div>
-      </div>
-    </div>
-  </details>
-
-  <div class="riga">
-    <div class="fissa">
-      <div class="n">4</div>
-      <div class="cont">
-        <div class="nota">Capovolgendo tutti e due i membri.</div>
-        <div class="f sx">$\displaystyle x^{2}=\frac{1}{9}$</div>
-      </div>
-      <div></div>
-    </div>
-  </div>
-
-  <details class="riga res">
-    <summary>
-      <div class="n">5</div>
-      <div class="cont">
-        <div class="nota">Si tiene la soluzione positiva.</div>
-        <div class="f sx">$\displaystyle x=\frac{1}{3}$</div>
-      </div>
-      <span class="tab">Regola <span class="chev">▼</span></span>
-    </summary>
-    <div class="pannello">
-      <p class="mossa">$x^{2}=\frac{1}{9}$ avrebbe due soluzioni, ma la base di un logaritmo deve essere positiva: resta $\frac{1}{3}$.</p>
-      <div class="teoria">
-        <div class="nome">La base di un logaritmo</div>
-        <div class="frase">La base di un logaritmo deve essere <strong>positiva e diversa da 1</strong>, e anche l'argomento deve essere positivo. Per questo, quando si risolve un'equazione per trovare la base, le soluzioni negative si scartano.</div>
-        <div class="f sx">$\displaystyle \log_{a}b\ \text{esiste se}\ a>0,\ a\neq 1,\ b>0$</div>
-        <div class="ex">esempio: $x^{2}=9\ \to\ x=3\ \text{(si scarta}\ -3\text{)}$</div>
-      </div>
-      <div class="errore">
-        <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Tenere la base negativa</div>
-        <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \log_{-2}4=2$</div></div>
-          <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \log_{2}4=2$</div></div>
-        </div>
-        <div class="why-txt">La base non può essere negativa.</div>
       </div>
     </div>
   </details>

@@ -11,14 +11,14 @@
   "titolo": "Calcolo logaritmi",
   "tipo": "espressione",
   "consegna_label": "Calcola il valore del logaritmo",
-  "consegna_tex": "\\log_{2}\\sqrt{2}",
-  "consegna_sympy": "log(sqrt(2))/log(2)",
-  "risultato_tex": "\\frac{1}{2}",
-  "risultato_sympy": "Rational(1,2)",
+  "consegna_tex": "\\log_{745}1",
+  "consegna_sympy": "log(Integer(1))/log(745)",
+  "risultato_tex": "0",
+  "risultato_sympy": "Integer(0)",
   "righe_sympy": [
-    "Rational(1,2)",
-    "Rational(1,2)",
-    "Rational(1,2)"
+    "Integer(0)",
+    "Integer(0)",
+    "Integer(0)"
   ]
 }
 </script>
@@ -169,7 +169,7 @@ mjx-container[display]{margin:0!important}
 <!-- ===================== CONSEGNA ===================== -->
 <div class="consegna">
   <div class="t">📌 Calcola il valore del logaritmo</div>
-  <div class="m sx">$\displaystyle \log_{2}\sqrt{2}$</div>
+  <div class="m sx">$\displaystyle \log_{745}1$</div>
 </div>
 
 <!-- ===================== CATENA ====================== -->
@@ -180,7 +180,7 @@ mjx-container[display]{margin:0!important}
   <div class="riga">
     <div class="fissa">
       <div class="n">1</div>
-      <div class="cont"><div class="f sx">$\displaystyle \log_{2}\sqrt{2}=$</div></div>
+      <div class="cont"><div class="f sx">$\displaystyle \log_{745}1=$</div></div>
       <div></div>
     </div>
   </div>
@@ -189,28 +189,28 @@ mjx-container[display]{margin:0!important}
     <summary>
       <div class="n">2</div>
       <div class="cont">
-        <div class="nota">La radice quadrata è l'esponente $\frac{1}{2}$.</div>
-        <div class="f sx">$\displaystyle =\log_{2}2^{\frac{1}{2}}=$</div>
+        <div class="nota">Anche una base grande, elevata a zero, dà uno.</div>
+        <div class="f sx">$\displaystyle =\log_{745}745^{0}=$</div>
       </div>
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">$\sqrt{2}$ si scrive $2^{\frac{1}{2}}$: l'indice $2$ della radice va sotto nell'esponente.</p>
+      <p class="mossa">$1=745^{0}$: la base non conta, l'esponente che dà $1$ è sempre $0$.</p>
       <div class="teoria">
-        <div class="nome">La radice è una potenza con esponente frazionario</div>
-        <div class="frase">Ogni radice si può scrivere come potenza: l'indice della radice va al <strong>denominatore</strong> dell'esponente. Così le radici entrano nelle proprietà delle potenze e i conti si fanno solo sugli esponenti.</div>
-        <div class="f sx">$\displaystyle \sqrt[n]{a^{m}}=a^{\frac{m}{n}}$</div>
-        <div class="ex">esempio: $\sqrt[3]{5^{2}}=5^{\frac{2}{3}},\quad \sqrt{7}=7^{\frac{1}{2}}$</div>
+        <div class="nome">Potenza con esponente zero</div>
+        <div class="frase">Qualsiasi numero diverso da zero, elevato a <strong>zero</strong>, dà come risultato uno. Non zero: uno.</div>
+        <div class="f sx">$\displaystyle a^{0}=1$</div>
+        <div class="ex">esempio: $\left(\frac{4}{9}\right)^{0}=1$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Mettere l'indice sopra</div>
+        <div class="nome">Confondere l'esponente zero con il risultato zero</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \sqrt[n]{a}=a^{n}$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a^{0}=0$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \sqrt[n]{a}=a^{\frac{1}{n}}$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a^{0}=1$</div></div>
         </div>
-        <div class="why-txt">L'indice della radice va sotto.</div>
+        <div class="why-txt">Esponente zero, risultato uno.</div>
       </div>
     </div>
   </details>
@@ -220,12 +220,12 @@ mjx-container[display]{margin:0!important}
       <div class="n">3</div>
       <div class="cont">
         <div class="nota">Il logaritmo è quell'esponente.</div>
-        <div class="f sx">$\displaystyle =\frac{1}{2}$</div>
+        <div class="f sx">$\displaystyle =0$</div>
       </div>
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">L'esponente da dare a $2$ per ottenere $\sqrt{2}$ è proprio $\frac{1}{2}$.</p>
+      <p class="mossa">Non serve conoscere $745$: il logaritmo di $1$ è $0$ in ogni base.</p>
       <div class="teoria">
         <div class="nome">La definizione di logaritmo</div>
         <div class="frase">Il logaritmo di un numero è l'<strong>esponente</strong> che bisogna dare alla base per ottenere quel numero. Scrivere $\log_{a}b=c$ vuol dire esattamente $a^{c}=b$: sono due modi di dire la stessa cosa, e si passa dall'uno all'altro ogni volta che serve.</div>

@@ -10,21 +10,16 @@
   "id": "log1_15",
   "titolo": "Calcolo logaritmi",
   "tipo": "espressione",
-  "consegna_label": "Dimostra l'identità",
-  "consegna_tex": "\\log\\sqrt[5]{a^{3}\\sqrt{\\frac{a}{2}}}=\\frac{7}{10}\\log a-\\frac{1}{10}\\log 2",
-  "consegna_sympy": "log((a**3*sqrt(a/2))**Rational(1,5))/log(10)",
-  "risultato_tex": "\\frac{7}{10}\\log a-\\frac{1}{10}\\log 2",
-  "risultato_sympy": "Rational(7,10)*log(a)/log(10)-Rational(1,10)*log(2)/log(10)",
+  "consegna_label": "Calcola il valore del logaritmo",
+  "consegna_tex": "\\log_{2}\\frac{1}{16}",
+  "consegna_sympy": "log(Rational(1,16))/log(2)",
+  "risultato_tex": "-4",
+  "risultato_sympy": "Integer(-4)",
   "righe_sympy": [
-    "Rational(7,10)*log(a)/log(10)-Rational(1,10)*log(2)/log(10)",
-    "Rational(7,10)*log(a)/log(10)-Rational(1,10)*log(2)/log(10)",
-    "Rational(7,10)*log(a)/log(10)-Rational(1,10)*log(2)/log(10)",
-    "Rational(7,10)*log(a)/log(10)-Rational(1,10)*log(2)/log(10)",
-    "Rational(7,10)*log(a)/log(10)-Rational(1,10)*log(2)/log(10)",
-    "Rational(7,10)*log(a)/log(10)-Rational(1,10)*log(2)/log(10)",
-    "Rational(7,10)*log(a)/log(10)-Rational(1,10)*log(2)/log(10)",
-    "Rational(7,10)*log(a)/log(10)-Rational(1,10)*log(2)/log(10)",
-    "Rational(7,10)*log(a)/log(10)-Rational(1,10)*log(2)/log(10)"
+    "Integer(-4)",
+    "Integer(-4)",
+    "Integer(-4)",
+    "Integer(-4)"
   ]
 }
 </script>
@@ -174,8 +169,8 @@ mjx-container[display]{margin:0!important}
 
 <!-- ===================== CONSEGNA ===================== -->
 <div class="consegna">
-  <div class="t">📌 Dimostra l'identità</div>
-  <div class="m sx">$\displaystyle \log\sqrt[5]{a^{3}\sqrt{\frac{a}{2}}}=\frac{7}{10}\log a-\frac{1}{10}\log 2$</div>
+  <div class="t">📌 Calcola il valore del logaritmo</div>
+  <div class="m sx">$\displaystyle \log_{2}\frac{1}{16}$</div>
 </div>
 
 <!-- ===================== CATENA ====================== -->
@@ -186,7 +181,7 @@ mjx-container[display]{margin:0!important}
   <div class="riga">
     <div class="fissa">
       <div class="n">1</div>
-      <div class="cont"><div class="f sx">$\displaystyle \log\sqrt[5]{a^{3}\sqrt{\frac{a}{2}}}=$</div></div>
+      <div class="cont"><div class="f sx">$\displaystyle \log_{2}\frac{1}{16}=$</div></div>
       <div></div>
     </div>
   </div>
@@ -195,28 +190,28 @@ mjx-container[display]{margin:0!important}
     <summary>
       <div class="n">2</div>
       <div class="cont">
-        <div class="nota">La radice quinta è l'esponente $\frac{1}{5}$.</div>
-        <div class="f sx">$\displaystyle =\log\left(a^{3}\sqrt{\frac{a}{2}}\right)^{\frac{1}{5}}=$</div>
+        <div class="nota">$16$ è $2^{4}$.</div>
+        <div class="f sx">$\displaystyle =\log_{2}\frac{1}{2^{4}}=$</div>
       </div>
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">Tutto quello che sta sotto la radice viene elevato a $\frac{1}{5}$.</p>
+      <p class="mossa">Sotto la linea di frazione scriviamo $16$ come potenza di $2$: $16=2^{4}$.</p>
       <div class="teoria">
-        <div class="nome">La radice è una potenza con esponente frazionario</div>
-        <div class="frase">Ogni radice si può scrivere come potenza: l'indice della radice va al <strong>denominatore</strong> dell'esponente. Così le radici entrano nelle proprietà delle potenze e i conti si fanno solo sugli esponenti.</div>
-        <div class="f sx">$\displaystyle \sqrt[n]{a^{m}}=a^{\frac{m}{n}}$</div>
-        <div class="ex">esempio: $\sqrt[3]{5^{2}}=5^{\frac{2}{3}},\quad \sqrt{7}=7^{\frac{1}{2}}$</div>
+        <div class="nome">Base e argomento come potenze dello stesso numero</div>
+        <div class="frase">Per calcolare un logaritmo conviene scrivere <strong>base e argomento come potenze di uno stesso numero</strong>. Quando ci si è riusciti, il logaritmo è il rapporto fra i due esponenti: quello dell'argomento diviso quello della base.</div>
+        <div class="f sx">$\displaystyle \log_{a^{m}}a^{n}=\frac{n}{m}$</div>
+        <div class="ex">esempio: $\log_{4}8=\log_{2^{2}}2^{3}=\frac{3}{2}$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Mettere l'indice sopra</div>
+        <div class="nome">Capovolgere il rapporto degli esponenti</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \sqrt[n]{a}=a^{n}$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \log_{a^{m}}a^{n}=\frac{m}{n}$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \sqrt[n]{a}=a^{\frac{1}{n}}$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \log_{a^{m}}a^{n}=\frac{n}{m}$</div></div>
         </div>
-        <div class="why-txt">L'indice della radice va sotto.</div>
+        <div class="why-txt">Sopra va l'esponente dell'argomento.</div>
       </div>
     </div>
   </details>
@@ -225,135 +220,61 @@ mjx-container[display]{margin:0!important}
     <summary>
       <div class="n">3</div>
       <div class="cont">
-        <div class="nota">L'esponente scende davanti al logaritmo.</div>
-        <div class="f sx">$\displaystyle =\frac{1}{5}\log\left(a^{3}\sqrt{\frac{a}{2}}\right)=$</div>
+        <div class="nota">Sotto la linea: esponente negativo.</div>
+        <div class="f sx">$\displaystyle =\log_{2}2^{-4}=$</div>
       </div>
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">$\log a^{n}=n\log a$: l'esponente dell'argomento diventa un fattore davanti.</p>
+      <p class="mossa">$\frac{1}{2^{4}}$ si scrive $2^{-4}$: la potenza risale e l'esponente cambia segno.</p>
       <div class="teoria">
-        <div class="nome">Il logaritmo di una potenza</div>
-        <div class="frase">L'esponente dell'argomento <strong>scende davanti</strong> al logaritmo e diventa un fattore. Letta al contrario, la stessa regola dice che un numero davanti a un logaritmo può rientrare come esponente dell'argomento.</div>
-        <div class="f sx">$\displaystyle \log a^{n}=n\log a$</div>
-        <div class="ex">esempio: $\log 2^{5}=5\log 2,\quad 3\log 4=\log 4^{3}$</div>
+        <div class="nome">Potenza con esponente negativo</div>
+        <div class="frase">Un esponente negativo dice di <strong>capovolgere</strong> la base e cambiare il segno dell'esponente. Il risultato non diventa negativo: l'esponente negativo riguarda la posizione, non il segno.</div>
+        <div class="f sx">$\displaystyle a^{-n}=\left(\frac{1}{a}\right)^{n}$</div>
+        <div class="ex">esempio: $\left(\frac{1}{4}\right)^{-2}=4^{2}=16$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Elevare il logaritmo invece dell'argomento</div>
+        <div class="nome">Credere che l'esponente negativo dia un risultato negativo</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \log a^{n}=\left(\log a\right)^{n}$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a^{-n}=-a^{n}$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \log a^{n}=n\log a$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a^{-n}=\left(\frac{1}{a}\right)^{n}$</div></div>
         </div>
-        <div class="why-txt">L'esponente riguarda l'argomento.</div>
+        <div class="why-txt">Si capovolge la base, non si cambia segno.</div>
       </div>
     </div>
   </details>
 
-  <details class="riga">
+  <details class="riga res">
     <summary>
       <div class="n">4</div>
       <div class="cont">
-        <div class="nota">Il logaritmo di un prodotto è la somma dei logaritmi.</div>
-        <div class="f sx">$\displaystyle =\frac{1}{5}\left(\log a^{3}+\log\sqrt{\frac{a}{2}}\right)=$</div>
+        <div class="nota">Il logaritmo è quell'esponente.</div>
+        <div class="f sx">$\displaystyle =-4$</div>
       </div>
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">Dentro il logaritmo c'è il prodotto fra $a^{3}$ e la radice: si spezza in due logaritmi.</p>
+      <p class="mossa">L'esponente da dare a $2$ per ottenere $\frac{1}{16}$ è $-4$.</p>
       <div class="teoria">
-        <div class="nome">Il logaritmo di un prodotto</div>
-        <div class="frase">Il logaritmo di un prodotto è la <strong>somma</strong> dei logaritmi dei fattori. Vale anche al contrario: una somma di logaritmi con la stessa base si può riunire in un solo logaritmo.</div>
-        <div class="f sx">$\displaystyle \log\left(a\cdot b\right)=\log a+\log b$</div>
-        <div class="ex">esempio: $\log\left(2\cdot 5\right)=\log 2+\log 5$</div>
+        <div class="nome">La definizione di logaritmo</div>
+        <div class="frase">Il logaritmo di un numero è l'<strong>esponente</strong> che bisogna dare alla base per ottenere quel numero. Scrivere $\log_{a}b=c$ vuol dire esattamente $a^{c}=b$: sono due modi di dire la stessa cosa, e si passa dall'uno all'altro ogni volta che serve.</div>
+        <div class="f sx">$\displaystyle \log_{a}b=c\quad\Longleftrightarrow\quad a^{c}=b$</div>
+        <div class="ex">esempio: $\log_{2}8=3\ \text{perché}\ 2^{3}=8$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Spezzare una somma dentro il logaritmo</div>
+        <div class="nome">Scambiare esponente e base</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \log\left(a+b\right)=\log a+\log b$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \log_{a}a^{n}=a$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \log\left(a\cdot b\right)=\log a+\log b$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \log_{a}a^{n}=n$</div></div>
         </div>
-        <div class="why-txt">Si spezza il prodotto, non la somma.</div>
+        <div class="why-txt">Il logaritmo è l'esponente, non la base.</div>
       </div>
     </div>
   </details>
-
-  <div class="riga">
-    <div class="fissa">
-      <div class="n">5</div>
-      <div class="cont">
-        <div class="nota">Gli esponenti scendono davanti: $3$ e $\frac{1}{2}$.</div>
-        <div class="f sx">$\displaystyle =\frac{1}{5}\left(3\log a+\frac{1}{2}\log\frac{a}{2}\right)=$</div>
-      </div>
-      <div></div>
-    </div>
-  </div>
-
-  <details class="riga">
-    <summary>
-      <div class="n">6</div>
-      <div class="cont">
-        <div class="nota">Il logaritmo di un quoziente è la differenza.</div>
-        <div class="f sx">$\displaystyle =\frac{1}{5}\left(3\log a+\frac{1}{2}\left(\log a-\log 2\right)\right)=$</div>
-      </div>
-      <span class="tab">Regola <span class="chev">▼</span></span>
-    </summary>
-    <div class="pannello">
-      <p class="mossa">$\log\frac{a}{2}$ diventa $\log a-\log 2$.</p>
-      <div class="teoria">
-        <div class="nome">Il logaritmo di un quoziente</div>
-        <div class="frase">Il logaritmo di un quoziente è la <strong>differenza</strong> fra il logaritmo del numeratore e quello del denominatore. Anche questa regola si legge nei due versi.</div>
-        <div class="f sx">$\displaystyle \log\frac{a}{b}=\log a-\log b$</div>
-        <div class="ex">esempio: $\log\frac{100}{10}=\log 100-\log 10=1$</div>
-      </div>
-      <div class="errore">
-        <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Confondere il quoziente dei logaritmi</div>
-        <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{\log a}{\log b}=\log a-\log b$</div></div>
-          <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \log\frac{a}{b}=\log a-\log b$</div></div>
-        </div>
-        <div class="why-txt">La frazione sta dentro il logaritmo, non fuori.</div>
-      </div>
-    </div>
-  </details>
-
-  <div class="riga">
-    <div class="fissa">
-      <div class="n">7</div>
-      <div class="cont">
-        <div class="nota">Svolgiamo la parentesi interna.</div>
-        <div class="f sx">$\displaystyle =\frac{1}{5}\left(3\log a+\frac{1}{2}\log a-\frac{1}{2}\log 2\right)=$</div>
-      </div>
-      <div></div>
-    </div>
-  </div>
-
-  <div class="riga">
-    <div class="fissa">
-      <div class="n">8</div>
-      <div class="cont">
-        <div class="nota">$3+\frac{1}{2}=\frac{7}{2}$.</div>
-        <div class="f sx">$\displaystyle =\frac{1}{5}\left(\frac{7}{2}\log a-\frac{1}{2}\log 2\right)=$</div>
-      </div>
-      <div></div>
-    </div>
-  </div>
-
-  <div class="riga res">
-    <div class="fissa">
-      <div class="n">9</div>
-      <div class="cont">
-        <div class="nota">Moltiplichiamo per $\frac{1}{5}$: è il secondo membro, l'identità è dimostrata.</div>
-        <div class="f sx">$\displaystyle =\frac{7}{10}\log a-\frac{1}{10}\log 2$</div>
-      </div>
-      <div></div>
-    </div>
-  </div>
 
 </div>
 

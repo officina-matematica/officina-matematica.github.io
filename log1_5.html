@@ -11,14 +11,14 @@
   "titolo": "Calcolo logaritmi",
   "tipo": "espressione",
   "consegna_label": "Calcola il valore del logaritmo",
-  "consegna_tex": "\\log_{32}8",
-  "consegna_sympy": "log(8)/log(32)",
-  "risultato_tex": "\\frac{3}{5}",
-  "risultato_sympy": "Rational(3,5)",
+  "consegna_tex": "\\log_{10}10",
+  "consegna_sympy": "log(10)/log(10)",
+  "risultato_tex": "1",
+  "risultato_sympy": "Integer(1)",
   "righe_sympy": [
-    "Rational(3,5)",
-    "Rational(3,5)",
-    "Rational(3,5)"
+    "Integer(1)",
+    "Integer(1)",
+    "Integer(1)"
   ]
 }
 </script>
@@ -169,7 +169,7 @@ mjx-container[display]{margin:0!important}
 <!-- ===================== CONSEGNA ===================== -->
 <div class="consegna">
   <div class="t">📌 Calcola il valore del logaritmo</div>
-  <div class="m sx">$\displaystyle \log_{32}8$</div>
+  <div class="m sx">$\displaystyle \log_{10}10$</div>
 </div>
 
 <!-- ===================== CATENA ====================== -->
@@ -180,7 +180,7 @@ mjx-container[display]{margin:0!important}
   <div class="riga">
     <div class="fissa">
       <div class="n">1</div>
-      <div class="cont"><div class="f sx">$\displaystyle \log_{32}8=$</div></div>
+      <div class="cont"><div class="f sx">$\displaystyle \log_{10}10=$</div></div>
       <div></div>
     </div>
   </div>
@@ -189,28 +189,28 @@ mjx-container[display]{margin:0!important}
     <summary>
       <div class="n">2</div>
       <div class="cont">
-        <div class="nota">$32=2^{5}$ e $8=2^{3}$: stesso numero di partenza.</div>
-        <div class="f sx">$\displaystyle =\log_{2^{5}}2^{3}=$</div>
+        <div class="nota">Argomento e base sono lo stesso numero.</div>
+        <div class="f sx">$\displaystyle =\log_{10}10^{1}=$</div>
       </div>
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">Né $32$ è una potenza di $8$, né il contrario: si scrivono tutti e due come potenze di $2$, e il logaritmo diventa un rapporto fra esponenti.</p>
+      <p class="mossa">$10=10^{1}$: base e argomento coincidono, quindi l'esponente è $1$.</p>
       <div class="teoria">
-        <div class="nome">Base e argomento come potenze dello stesso numero</div>
-        <div class="frase">Per calcolare un logaritmo conviene scrivere <strong>base e argomento come potenze di uno stesso numero</strong>. Quando ci si è riusciti, il logaritmo è il rapporto fra i due esponenti: quello dell'argomento diviso quello della base.</div>
-        <div class="f sx">$\displaystyle \log_{a^{m}}a^{n}=\frac{n}{m}$</div>
-        <div class="ex">esempio: $\log_{4}8=\log_{2^{2}}2^{3}=\frac{3}{2}$</div>
+        <div class="nome">Potenza con esponente uno</div>
+        <div class="frase">Un numero elevato a <strong>uno</strong> è il numero stesso: l'esponente $1$ dice "preso una volta sola". Per questo di solito non lo si scrive nemmeno, ma scriverlo serve per usare le proprietà delle potenze.</div>
+        <div class="f sx">$\displaystyle a^{1}=a$</div>
+        <div class="ex">esempio: $\left(\frac{3}{5}\right)^{1}=\frac{3}{5}$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Capovolgere il rapporto degli esponenti</div>
+        <div class="nome">Confondere l'esponente uno con il risultato uno</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \log_{a^{m}}a^{n}=\frac{m}{n}$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a^{1}=1$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \log_{a^{m}}a^{n}=\frac{n}{m}$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a^{1}=a$</div></div>
         </div>
-        <div class="why-txt">Sopra va l'esponente dell'argomento.</div>
+        <div class="why-txt">Esponente uno: resta la base.</div>
       </div>
     </div>
   </details>
@@ -219,13 +219,13 @@ mjx-container[display]{margin:0!important}
     <summary>
       <div class="n">3</div>
       <div class="cont">
-        <div class="nota">Esponente dell'argomento diviso quello della base.</div>
-        <div class="f sx">$\displaystyle =\frac{3}{5}$</div>
+        <div class="nota">Il logaritmo è quell'esponente.</div>
+        <div class="f sx">$\displaystyle =1$</div>
       </div>
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">Cerchiamo $c$ tale che $\left(2^{5}\right)^{c}=2^{3}$: serve $5c=3$, cioè $c=\frac{3}{5}$.</p>
+      <p class="mossa">L'esponente da dare a $10$ per ottenere $10$ è $1$.</p>
       <div class="teoria">
         <div class="nome">La definizione di logaritmo</div>
         <div class="frase">Il logaritmo di un numero è l'<strong>esponente</strong> che bisogna dare alla base per ottenere quel numero. Scrivere $\log_{a}b=c$ vuol dire esattamente $a^{c}=b$: sono due modi di dire la stessa cosa, e si passa dall'uno all'altro ogni volta che serve.</div>
