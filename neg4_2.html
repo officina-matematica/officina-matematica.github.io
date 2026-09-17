@@ -11,17 +11,15 @@
   "titolo": "Espressioni con i numeri negativi",
   "tipo": "espressione",
   "consegna_label": "Calcola la seguente espressione",
-  "consegna_tex": "\\left(-\\frac{2}{3}+\\frac{1}{2}\\right)\\cdot\\left(\\frac{1}{2}-\\frac{3}{4}\\right)",
-  "consegna_sympy": "(-Rational(2,3)+Rational(1,2))*(Rational(1,2)-Rational(3,4))",
-  "risultato_tex": "\\frac{1}{24}",
-  "risultato_sympy": "Rational(1,24)",
+  "consegna_tex": "-2+7\\left(-3\\right)-\\left(15-2+6\\right):\\left(-19\\right)+\\left(4-3-10\\right)\\left(-7+5\\right)+2",
+  "consegna_sympy": "-2+7*(-3)-Rational(15-2+6,-19)+(4-3-10)*(-7+5)+2",
+  "risultato_tex": "-2",
+  "risultato_sympy": "Integer(-2)",
   "righe_sympy": [
-    "Rational(1,24)",
-    "Rational(1,24)",
-    "Rational(1,24)",
-    "Rational(1,24)",
-    "Rational(1,24)",
-    "Rational(1,24)"
+    "Integer(-2)",
+    "Integer(-2)",
+    "Integer(-2)",
+    "Integer(-2)"
   ]
 }
 </script>
@@ -172,7 +170,7 @@ mjx-container[display]{margin:0!important}
 <!-- ===================== CONSEGNA ===================== -->
 <div class="consegna">
   <div class="t">📌 Calcola la seguente espressione</div>
-  <div class="m sx">$\displaystyle \left(-\frac{2}{3}+\frac{1}{2}\right)\cdot\left(\frac{1}{2}-\frac{3}{4}\right)$</div>
+  <div class="m sx">$\displaystyle -2+7\left(-3\right)-\left(15-2+6\right):\left(-19\right)+\left(4-3-10\right)\left(-7+5\right)+2$</div>
 </div>
 
 <!-- ===================== CATENA ====================== -->
@@ -183,7 +181,7 @@ mjx-container[display]{margin:0!important}
   <div class="riga">
     <div class="fissa">
       <div class="n">1</div>
-      <div class="cont"><div class="f sx">$\displaystyle \left(-\frac{2}{3}+\frac{1}{2}\right)\cdot\left(\frac{1}{2}-\frac{3}{4}\right)=$</div></div>
+      <div class="cont"><div class="f sx">$\displaystyle -2+7\left(-3\right)-\left(15-2+6\right):\left(-19\right)+\left(4-3-10\right)\left(-7+5\right)+2=$</div></div>
       <div></div>
     </div>
   </div>
@@ -192,54 +190,43 @@ mjx-container[display]{margin:0!important}
     <summary>
       <div class="n">2</div>
       <div class="cont">
-        <div class="nota">Dentro le due tonde: mcm $6$ a sinistra, mcm $4$ a destra.</div>
-        <div class="f sx">$\displaystyle =\left(\frac{-4+3}{6}\right)\cdot\left(\frac{2-3}{4}\right)=$</div>
+        <div class="nota">Svolgiamo le tonde; i numeri accostati si moltiplicano.</div>
+        <div class="f sx">$\displaystyle =-2+7\cdot\left(-3\right)-19:\left(-19\right)+\left(-9\right)\cdot\left(-2\right)+2=$</div>
       </div>
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">$-\frac{2}{3}=-\frac{4}{6}$ e $\frac{1}{2}=\frac{3}{6}$; a destra $\frac{1}{2}=\frac{2}{4}$.</p>
+      <p class="mossa">$7\left(-3\right)$ vuol dire $7\cdot\left(-3\right)$, e $\left(-9\right)\left(-2\right)$ è il prodotto delle due parentesi.</p>
       <div class="teoria">
-        <div class="nome">Addizione e sottrazione fra frazioni</div>
-        <div class="frase">Due frazioni si sommano o si sottraggono solo quando hanno lo <strong>stesso denominatore</strong>. Si cerca il minimo comune multiplo dei denominatori, si riscrivono tutte con quel denominatore e poi si sommano o si sottraggono i soli numeratori.</div>
-        <div class="f sx">$\displaystyle \frac{a}{b}+\frac{c}{d}=\frac{a\cdot d+b\cdot c}{b\cdot d}$</div>
-        <div class="ex">esempio: $\frac{1}{3}+\frac{1}{6}=\frac{2+1}{6}=\frac{3}{6}$</div>
+        <div class="nome">Un numero accanto a una parentesi</div>
+        <div class="frase">Quando un numero è scritto <strong>attaccato</strong> a una parentesi, fra i due c'è una moltiplicazione sottintesa: il segno per non si scrive, ma c'è. Vale anche fra due parentesi vicine.</div>
+        <div class="f sx">$\displaystyle a\left(b+c\right)=a\cdot\left(b+c\right)$</div>
+        <div class="ex">esempio: $5\left(-3\right)=5\cdot\left(-3\right)=-15$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Sommare numeratori con numeratori e denominatori con denominatori</div>
+        <div class="nome">Leggere l'accostamento come una somma</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{a}{b}+\frac{c}{d}=\frac{a+c}{b+d}$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a\left(b\right)=a+b$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{a}{b}+\frac{c}{d}=\frac{a\cdot d+b\cdot c}{b\cdot d}$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a\left(b\right)=a\cdot b$</div></div>
         </div>
-        <div class="why-txt">Il denominatore va reso uguale, non sommato.</div>
+        <div class="why-txt">Numero e parentesi vicini si moltiplicano.</div>
       </div>
     </div>
   </details>
 
-  <div class="riga">
-    <div class="fissa">
-      <div class="n">3</div>
-      <div class="cont">
-        <div class="nota">Eseguo le due somme: tutte e due danno un numero negativo.</div>
-        <div class="f sx">$\displaystyle =\left(-\frac{1}{6}\right)\cdot\left(-\frac{1}{4}\right)=$</div>
-      </div>
-      <div></div>
-    </div>
-  </div>
-
   <details class="riga">
     <summary>
-      <div class="n">4</div>
+      <div class="n">3</div>
       <div class="cont">
-        <div class="nota">Meno per meno fa più: il risultato sarà positivo.</div>
-        <div class="f sx">$\displaystyle =\frac{1}{6}\cdot\frac{1}{4}=$</div>
+        <div class="nota">Eseguiamo prodotti e divisione, coi segni.</div>
+        <div class="f sx">$\displaystyle =-2-21+1+18+2=$</div>
       </div>
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">I due fattori sono tutti e due negativi: i segni si accoppiano e spariscono.</p>
+      <p class="mossa">Segni diversi danno meno: $7\cdot\left(-3\right)=-21$. Segni uguali danno più: $19:\left(-19\right)=-1$, col meno davanti diventa $+1$.</p>
       <div class="teoria">
         <div class="nome">La regola dei segni</div>
         <div class="frase">Nel prodotto e nella divisione, segni <strong>uguali</strong> danno più, segni <strong>diversi</strong> danno meno. Vale per la moltiplicazione e per la divisione allo stesso modo, e non c'entra niente con la regola della somma.</div>
@@ -259,42 +246,12 @@ mjx-container[display]{margin:0!important}
     </div>
   </details>
 
-  <details class="riga">
-    <summary>
-      <div class="n">5</div>
-      <div class="cont">
-        <div class="nota">Moltiplico sopra con sopra e sotto con sotto.</div>
-        <div class="f sx">$\displaystyle =\frac{1\cdot 1}{6\cdot 4}=$</div>
-      </div>
-      <span class="tab">Regola <span class="chev">▼</span></span>
-    </summary>
-    <div class="pannello">
-      <p class="mossa">Numeratori: $1\cdot 1=1$. Denominatori: $6\cdot 4=24$.</p>
-      <div class="teoria">
-        <div class="nome">Moltiplicare due frazioni</div>
-        <div class="frase">Per moltiplicare due frazioni si moltiplicano i <strong>numeratori fra loro</strong> e i <strong>denominatori fra loro</strong>. Non serve il denominatore comune: quello serve solo per addizioni e sottrazioni.</div>
-        <div class="f sx">$\displaystyle \frac{a}{b}\cdot\frac{c}{d}=\frac{a\cdot c}{b\cdot d}$</div>
-        <div class="ex">esempio: $\frac{2}{3}\cdot\frac{5}{7}=\frac{10}{21}$</div>
-      </div>
-      <div class="errore">
-        <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Moltiplicare in croce</div>
-        <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{a}{b}\cdot\frac{c}{d}=\frac{a\cdot d}{b\cdot c}$</div></div>
-          <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{a}{b}\cdot\frac{c}{d}=\frac{a\cdot c}{b\cdot d}$</div></div>
-        </div>
-        <div class="why-txt">Sopra con sopra, sotto con sotto.</div>
-      </div>
-    </div>
-  </details>
-
   <div class="riga res">
     <div class="fissa">
-      <div class="n">6</div>
+      <div class="n">4</div>
       <div class="cont">
-        <div class="nota">Eseguo i prodotti.</div>
-        <div class="f sx">$\displaystyle =\frac{1}{24}$</div>
+        <div class="nota">$-2-21=-23$, poi $-23+1+18+2=-2$.</div>
+        <div class="f sx">$\displaystyle =-2$</div>
       </div>
       <div></div>
     </div>

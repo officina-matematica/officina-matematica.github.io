@@ -3,24 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NEG4_7 — Espressioni con i numeri negativi</title>
+<title>NEG4_20 — Espressioni con i numeri negativi</title>
 
 <script type="application/json" id="meta">
 {
-  "id": "neg4_7",
+  "id": "neg4_20",
   "titolo": "Espressioni con i numeri negativi",
   "tipo": "espressione",
   "consegna_label": "Calcola la seguente espressione",
-  "consegna_tex": "\\left[-7-24:\\left(-8+15-13\\right)+8\\right]:\\left[16:\\left(-4\\right)+11\\left(-2\\right)-7\\left(-3\\right)\\right]",
-  "consegna_sympy": "Rational(-7-Rational(24,-8+15-13)+8, Rational(16,-4)+11*(-2)-7*(-3))",
-  "risultato_tex": "-1",
-  "risultato_sympy": "Integer(-1)",
+  "consegna_tex": "\\left[\\left(-27+14-41\\right):\\left(-9+3\\cdot 6\\right)-2\\right]:\\left\\{\\left[\\left(15-2\\cdot 5+3\\right):\\left(16-11\\cdot 2-2\\right)-3\\right]:4\\right\\}",
+  "consegna_sympy": "Rational(Rational(-27+14-41,-9+3*6)-2, Rational(Rational(15-2*5+3,16-11*2-2)-3,4))",
+  "risultato_tex": "8",
+  "risultato_sympy": "Integer(8)",
   "righe_sympy": [
-    "Integer(-1)",
-    "Integer(-1)",
-    "Integer(-1)",
-    "Integer(-1)",
-    "Integer(-1)"
+    "Integer(8)",
+    "Integer(8)",
+    "Integer(8)",
+    "Integer(8)",
+    "Integer(8)",
+    "Integer(8)"
   ]
 }
 </script>
@@ -171,7 +172,7 @@ mjx-container[display]{margin:0!important}
 <!-- ===================== CONSEGNA ===================== -->
 <div class="consegna">
   <div class="t">📌 Calcola la seguente espressione</div>
-  <div class="m sx">$\displaystyle \left[-7-24:\left(-8+15-13\right)+8\right]:\left[16:\left(-4\right)+11\left(-2\right)-7\left(-3\right)\right]$</div>
+  <div class="m sx">$\displaystyle \left[\left(-27+14-41\right):\left(-9+3\cdot 6\right)-2\right]:\left\{\left[\left(15-2\cdot 5+3\right):\left(16-11\cdot 2-2\right)-3\right]:4\right\}$</div>
 </div>
 
 <!-- ===================== CATENA ====================== -->
@@ -182,7 +183,7 @@ mjx-container[display]{margin:0!important}
   <div class="riga">
     <div class="fissa">
       <div class="n">1</div>
-      <div class="cont"><div class="f sx">$\displaystyle \left[-7-24:\left(-8+15-13\right)+8\right]:\left[16:\left(-4\right)+11\left(-2\right)-7\left(-3\right)\right]=$</div></div>
+      <div class="cont"><div class="f sx">$\displaystyle \left[\left(-27+14-41\right):\left(-9+3\cdot 6\right)-2\right]:\left\{\left[\left(15-2\cdot 5+3\right):\left(16-11\cdot 2-2\right)-3\right]:4\right\}=$</div></div>
       <div></div>
     </div>
   </div>
@@ -191,28 +192,28 @@ mjx-container[display]{margin:0!important}
     <summary>
       <div class="n">2</div>
       <div class="cont">
-        <div class="nota">Svolgiamo la tonda; i numeri accostati moltiplicano.</div>
-        <div class="f sx">$\displaystyle =\left[-7-24:\left(-6\right)+8\right]:\left[16:\left(-4\right)+11\cdot\left(-2\right)-7\cdot\left(-3\right)\right]=$</div>
+        <div class="nota">Svolgiamo tutte le tonde.</div>
+        <div class="f sx">$\displaystyle =\left[\left(-54\right):9-2\right]:\left\{\left[8:\left(-8\right)-3\right]:4\right\}=$</div>
       </div>
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">$11\left(-2\right)$ e $7\left(-3\right)$ sono prodotti: il segno per non è scritto ma c'è.</p>
+      <p class="mossa">$-27+14-41=-54$, $-9+3\cdot 6=9$, $15-10+3=8$ e $16-22-2=-8$.</p>
       <div class="teoria">
-        <div class="nome">Un numero accanto a una parentesi</div>
-        <div class="frase">Quando un numero è scritto <strong>attaccato</strong> a una parentesi, fra i due c'è una moltiplicazione sottintesa: il segno per non si scrive, ma c'è. Vale anche fra due parentesi vicine.</div>
-        <div class="f sx">$\displaystyle a\left(b+c\right)=a\cdot\left(b+c\right)$</div>
-        <div class="ex">esempio: $5\left(-3\right)=5\cdot\left(-3\right)=-15$</div>
+        <div class="nome">Priorità dentro le parentesi</div>
+        <div class="frase">Anche dentro una parentesi valgono le priorità: prima le moltiplicazioni e le divisioni, poi le addizioni e le sottrazioni. La parentesi si toglie solo quando dentro è rimasto un unico numero.</div>
+        <div class="f sx">$\displaystyle (a+b\cdot c)=a+(b\cdot c)$</div>
+        <div class="ex">esempio: $(5+2\cdot 3)=5+6=11$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Leggere l'accostamento come una somma</div>
+        <div class="nome">Sommare prima di moltiplicare dentro la parentesi</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a\left(b\right)=a+b$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle (a+b\cdot c)=(a+b)\cdot c$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a\left(b\right)=a\cdot b$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle (a+b\cdot c)=a+(b\cdot c)$</div></div>
         </div>
-        <div class="why-txt">Numero e parentesi vicini si moltiplicano.</div>
+        <div class="why-txt">Anche fra parentesi il prodotto viene prima.</div>
       </div>
     </div>
   </details>
@@ -221,13 +222,13 @@ mjx-container[display]{margin:0!important}
     <summary>
       <div class="n">3</div>
       <div class="cont">
-        <div class="nota">Divisioni e prodotti nelle due quadre.</div>
-        <div class="f sx">$\displaystyle =\left[-7+4+8\right]:\left[-4-22+21\right]=$</div>
+        <div class="nota">Le due divisioni.</div>
+        <div class="f sx">$\displaystyle =\left[-6-2\right]:\left\{\left[-1-3\right]:4\right\}=$</div>
       </div>
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">$-24:\left(-6\right)$ dà $+4$; $-7\cdot\left(-3\right)$ dà $+21$: due segni uguali danno più.</p>
+      <p class="mossa">$\left(-54\right):9=-6$ e $8:\left(-8\right)=-1$: segni diversi, quozienti negativi.</p>
       <div class="teoria">
         <div class="nome">La regola dei segni</div>
         <div class="frase">Nel prodotto e nella divisione, segni <strong>uguali</strong> danno più, segni <strong>diversi</strong> danno meno. Vale per la moltiplicazione e per la divisione allo stesso modo, e non c'entra niente con la regola della somma.</div>
@@ -251,8 +252,19 @@ mjx-container[display]{margin:0!important}
     <div class="fissa">
       <div class="n">4</div>
       <div class="cont">
-        <div class="nota">$-7+4+8=5$ e $-4-22+21=-5$.</div>
-        <div class="f sx">$\displaystyle =5:\left(-5\right)=$</div>
+        <div class="nota">$-6-2=-8$ e $-1-3=-4$.</div>
+        <div class="f sx">$\displaystyle =-8:\left\{\left(-4\right):4\right\}=$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">5</div>
+      <div class="cont">
+        <div class="nota">$\left(-4\right):4=-1$.</div>
+        <div class="f sx">$\displaystyle =-8:\left(-1\right)=$</div>
       </div>
       <div></div>
     </div>
@@ -260,10 +272,10 @@ mjx-container[display]{margin:0!important}
 
   <div class="riga res">
     <div class="fissa">
-      <div class="n">5</div>
+      <div class="n">6</div>
       <div class="cont">
-        <div class="nota">Segni diversi: il quoziente è negativo.</div>
-        <div class="f sx">$\displaystyle =-1$</div>
+        <div class="nota">Meno diviso meno fa più.</div>
+        <div class="f sx">$\displaystyle =8$</div>
       </div>
       <div></div>
     </div>
