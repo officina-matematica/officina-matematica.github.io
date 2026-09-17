@@ -3,30 +3,30 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NEG5_8 — Numeri negativi, potenze ed espressioni</title>
+<title>NEG5_10 — Numeri negativi, potenze ed espressioni</title>
 
 <script type="application/json" id="meta">
 {
-  "id": "neg5_8",
+  "id": "neg5_10",
   "titolo": "Numeri negativi, potenze ed espressioni",
   "tipo": "espressione",
   "consegna_label": "Calcola la seguente espressione",
-  "consegna_tex": "-1^{8}+\\left[\\left(-\\frac{1}{3}\\right)^{2}-\\left(\\frac{5}{2}\\right)^{2}+\\left(-\\frac{1}{7}\\right)^{2}\\right]^{0}:\\left[\\left(\\frac{1}{7}\\right)^{2}\\cdot\\left(\\frac{1}{7}\\right)^{3}:\\left(\\frac{1}{7}\\right)^{5}\\right]-\\left(-\\frac{1}{3}+\\frac{1}{6}-\\frac{1}{2}\\right)^{2}\\cdot\\left(\\frac{5}{2}-1\\right)^{2}",
-  "consegna_sympy": "-1**8+((Rational(-1,3)**2-Rational(5,2)**2+Rational(-1,7)**2)**0)/(Rational(1,7)**2*Rational(1,7)**3/Rational(1,7)**5)-(Rational(-1,3)+Rational(1,6)-Rational(1,2))**2*(Rational(5,2)-1)**2",
-  "risultato_tex": "-1",
-  "risultato_sympy": "-1",
+  "consegna_tex": "\\left\\{\\left[\\left(-\\frac{1}{2}\\right)^{2}\\right]^{3}\\right\\}^{5}\\left[\\left(-2\\right)^{10}\\right]^{3}+3\\left[-\\frac{1}{3}+\\left(-2-\\frac{1}{3}\\right)\\right]+\\left(-3\\right)^{5}:\\left(-3\\right)^{3}",
+  "consegna_sympy": "((Rational(-1,2)**2)**3)**5*(((-2)**10)**3)+3*(Rational(-1,3)+(-2-Rational(1,3)))+(-3)**5/(-3)**3",
+  "risultato_tex": "2",
+  "risultato_sympy": "2",
   "righe_sympy": [
-    "-1",
-    "-1",
-    "-1",
-    "-1",
-    "-1",
-    "-1",
-    "-1",
-    "-1",
-    "-1",
-    "-1",
-    "-1"
+    "2",
+    "2",
+    "2",
+    "2",
+    "2",
+    "2",
+    "2",
+    "2",
+    "2",
+    "2",
+    "2"
   ]
 }
 </script>
@@ -177,7 +177,7 @@ mjx-container[display]{margin:0!important}
 <!-- ===================== CONSEGNA ===================== -->
 <div class="consegna">
   <div class="t">📌 Calcola la seguente espressione</div>
-  <div class="m sx">$\displaystyle -1^{8}+\left[\left(-\frac{1}{3}\right)^{2}-\left(\frac{5}{2}\right)^{2}+\left(-\frac{1}{7}\right)^{2}\right]^{0}:\left[\left(\frac{1}{7}\right)^{2}\cdot\left(\frac{1}{7}\right)^{3}:\left(\frac{1}{7}\right)^{5}\right]-\left(-\frac{1}{3}+\frac{1}{6}-\frac{1}{2}\right)^{2}\cdot\left(\frac{5}{2}-1\right)^{2}$</div>
+  <div class="m sx">$\displaystyle \left\{\left[\left(-\frac{1}{2}\right)^{2}\right]^{3}\right\}^{5}\left[\left(-2\right)^{10}\right]^{3}+3\left[-\frac{1}{3}+\left(-2-\frac{1}{3}\right)\right]+\left(-3\right)^{5}:\left(-3\right)^{3}$</div>
 </div>
 
 <!-- ===================== CATENA ====================== -->
@@ -188,7 +188,7 @@ mjx-container[display]{margin:0!important}
   <div class="riga">
     <div class="fissa">
       <div class="n">1</div>
-      <div class="cont"><div class="f sx">$\displaystyle -1^{8}+\left[\left(-\frac{1}{3}\right)^{2}-\left(\frac{5}{2}\right)^{2}+\left(-\frac{1}{7}\right)^{2}\right]^{0}:\left[\left(\frac{1}{7}\right)^{2}\cdot\left(\frac{1}{7}\right)^{3}:\left(\frac{1}{7}\right)^{5}\right]-\left(-\frac{1}{3}+\frac{1}{6}-\frac{1}{2}\right)^{2}\cdot\left(\frac{5}{2}-1\right)^{2}=$</div></div>
+      <div class="cont"><div class="f sx">$\displaystyle \left\{\left[\left(-\frac{1}{2}\right)^{2}\right]^{3}\right\}^{5}\left[\left(-2\right)^{10}\right]^{3}+3\left[-\frac{1}{3}+\left(-2-\frac{1}{3}\right)\right]+\left(-3\right)^{5}:\left(-3\right)^{3}=$</div></div>
       <div></div>
     </div>
   </div>
@@ -197,13 +197,43 @@ mjx-container[display]{margin:0!important}
     <summary>
       <div class="n">2</div>
       <div class="cont">
-        <div class="nota">$-1^{8}$ vale $-1$: il meno resta fuori dalla potenza.</div>
-        <div class="f sx">$\displaystyle =-1+\left[\left(-\frac{1}{3}\right)^{2}-\left(\frac{5}{2}\right)^{2}+\left(-\frac{1}{7}\right)^{2}\right]^{0}:\left[\left(\frac{1}{7}\right)^{2}\cdot\left(\frac{1}{7}\right)^{3}:\left(\frac{1}{7}\right)^{5}\right]-\left(-\frac{1}{3}+\frac{1}{6}-\frac{1}{2}\right)^{2}\cdot\left(\frac{5}{2}-1\right)^{2}=$</div>
+        <div class="nota">Gli esponenti si moltiplicano: $2\cdot 3\cdot 5$ e $10\cdot 3$.</div>
+        <div class="f sx">$\displaystyle =\left(-\frac{1}{2}\right)^{30}\left(-2\right)^{30}+3\left[-\frac{1}{3}+\left(-2-\frac{1}{3}\right)\right]+\left(-3\right)^{5}:\left(-3\right)^{3}=$</div>
       </div>
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">In $-1^{8}$ l'esponente riguarda solo l'$1$: si calcola $1^{8}=1$ e poi si mette il meno davanti.</p>
+      <p class="mossa">Ogni volta che una potenza è elevata a un'altra potenza gli esponenti si moltiplicano: $2\cdot 3\cdot 5=30$ e $10\cdot 3=30$.</p>
+      <div class="teoria">
+        <div class="nome">Potenza di potenza</div>
+        <div class="frase">Quando una potenza è a sua volta elevata a un esponente, i due esponenti si <strong>moltiplicano</strong> fra loro. È l'unico caso in cui gli esponenti si moltiplicano.</div>
+        <div class="f sx">$\displaystyle \left(a^{m}\right)^{n}=a^{m\cdot n}$</div>
+        <div class="ex">esempio: $\left(3^{2}\right)^{4}=3^{8}$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Sommare gli esponenti nella potenza di potenza</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \left(a^{m}\right)^{n}=a^{m+n}$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \left(a^{m}\right)^{n}=a^{m\cdot n}$</div></div>
+        </div>
+        <div class="why-txt">Somma per il prodotto, prodotto per la potenza.</div>
+      </div>
+    </div>
+  </details>
+
+  <details class="riga">
+    <summary>
+      <div class="n">3</div>
+      <div class="cont">
+        <div class="nota">Esponenti pari: le due potenze diventano positive.</div>
+        <div class="f sx">$\displaystyle =\left(\frac{1}{2}\right)^{30}\cdot 2^{30}+3\left[-\frac{1}{3}-2-\frac{1}{3}\right]+\left(-3\right)^{5}:\left(-3\right)^{3}=$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">$30$ è pari, quindi tutte e due le potenze perdono il meno; il più davanti alla tonda invece non cambia i segni di ciò che sta dentro.</p>
       <div class="teoria">
         <div class="nome">Potenza di un numero negativo</div>
         <div class="frase">Se l'esponente è <strong>pari</strong> il risultato è positivo, perché i segni meno si accoppiano; se è <strong>dispari</strong> ne resta uno spaiato e il risultato è negativo. Attenzione alle parentesi: $(-2)^{2}$ e $-2^{2}$ non sono la stessa cosa.</div>
@@ -225,75 +255,15 @@ mjx-container[display]{margin:0!important}
 
   <details class="riga">
     <summary>
-      <div class="n">3</div>
-      <div class="cont">
-        <div class="nota">La quadra elevata a zero vale $1$; a destra $2+3=5$.</div>
-        <div class="f sx">$\displaystyle =-1+1:\left[\left(\frac{1}{7}\right)^{5}:\left(\frac{1}{7}\right)^{5}\right]-\left(-\frac{1}{3}+\frac{1}{6}-\frac{1}{2}\right)^{2}\cdot\left(\frac{5}{2}-1\right)^{2}=$</div>
-      </div>
-      <span class="tab">Regola <span class="chev">▼</span></span>
-    </summary>
-    <div class="pannello">
-      <p class="mossa">Non serve calcolare la quadra: qualunque numero diverso da zero elevato a zero dà $1$. A destra le potenze di uguale base sommano gli esponenti.</p>
-      <div class="teoria">
-        <div class="nome">Potenza con esponente zero</div>
-        <div class="frase">Qualsiasi numero diverso da zero, elevato a <strong>zero</strong>, dà come risultato uno. Non zero: uno.</div>
-        <div class="f sx">$\displaystyle a^{0}=1$</div>
-        <div class="ex">esempio: $\left(\frac{4}{9}\right)^{0}=1$</div>
-      </div>
-      <div class="errore">
-        <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Confondere l'esponente zero con il risultato zero</div>
-        <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a^{0}=0$</div></div>
-          <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a^{0}=1$</div></div>
-        </div>
-        <div class="why-txt">Esponente zero, risultato uno.</div>
-      </div>
-    </div>
-  </details>
-
-  <details class="riga">
-    <summary>
       <div class="n">4</div>
       <div class="cont">
-        <div class="nota">Esponenti sottratti: $5-5=0$; denominatore comune $6$.</div>
-        <div class="f sx">$\displaystyle =-1+1:\left(\frac{1}{7}\right)^{0}-\left(-\frac{2}{6}+\frac{1}{6}-\frac{3}{6}\right)^{2}\cdot\left(\frac{3}{2}\right)^{2}=$</div>
+        <div class="nota">Numeratore e denominatore all'esponente.</div>
+        <div class="f sx">$\displaystyle =\frac{1}{2^{30}}\cdot 2^{30}+3\left[-\frac{1}{3}-2-\frac{1}{3}\right]+\left(-3\right)^{5}:\left(-3\right)^{3}=$</div>
       </div>
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">Dividendo due potenze uguali gli esponenti si sottraggono e viene zero: $5-5=0$.</p>
-      <div class="teoria">
-        <div class="nome">Divisione di potenze con la stessa base</div>
-        <div class="frase">Quando due potenze hanno la <strong>stessa base</strong>, per dividerle si sottraggono gli esponenti: quello del divisore si toglie a quello del dividendo. La base resta la stessa.</div>
-        <div class="f sx">$\displaystyle a^{m}:a^{n}=a^{m-n}$</div>
-        <div class="ex">esempio: $5^{7}:5^{4}=5^{3}$</div>
-      </div>
-      <div class="errore">
-        <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Dividere gli esponenti invece di sottrarli</div>
-        <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a^{m}:a^{n}=a^{m:n}$</div></div>
-          <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a^{m}:a^{n}=a^{m-n}$</div></div>
-        </div>
-        <div class="why-txt">Divisione di potenze, sottrazione di esponenti.</div>
-      </div>
-    </div>
-  </details>
-
-  <details class="riga">
-    <summary>
-      <div class="n">5</div>
-      <div class="cont">
-        <div class="nota">$-2+1-3=-4$ e $\left(\frac{3}{2}\right)^{2}=\frac{9}{4}$.</div>
-        <div class="f sx">$\displaystyle =-1+1:1-\left(-\frac{4}{6}\right)^{2}\cdot\frac{9}{4}=$</div>
-      </div>
-      <span class="tab">Regola <span class="chev">▼</span></span>
-    </summary>
-    <div class="pannello">
-      <p class="mossa">$\left(\frac{3}{2}\right)^{2}$ si calcola elevando al quadrato sopra e sotto: $\frac{9}{4}$.</p>
+      <p class="mossa">$\left(\frac{1}{2}\right)^{30}$ si scrive $\frac{1^{30}}{2^{30}}$, cioè $\frac{1}{2^{30}}$.</p>
       <div class="teoria">
         <div class="nome">Potenza di una frazione</div>
         <div class="frase">Per elevare una frazione a un esponente si elevano <strong>sia il numeratore sia il denominatore</strong>. L'esponente riguarda tutta la frazione, non solo il numero di sopra.</div>
@@ -315,51 +285,40 @@ mjx-container[display]{margin:0!important}
 
   <details class="riga">
     <summary>
-      <div class="n">6</div>
+      <div class="n">5</div>
       <div class="cont">
-        <div class="nota">Semplifichiamo $\frac{4}{6}$ dividendo per $2$.</div>
-        <div class="f sx">$\displaystyle =-1+1:1-\left(-\frac{\overset{2}{\cancel{4}}}{\underset{3}{\cancel{6}}}\right)^{2}\cdot\frac{9}{4}=$</div>
+        <div class="nota">Sopra e sotto c'è lo stesso numero: si semplifica.</div>
+        <div class="f sx">$\displaystyle =\frac{1}{\underset{1}{\cancel{2^{30}}}}\cdot\overset{1}{\cancel{2^{30}}}+3\left[-\frac{1}{3}-2-\frac{1}{3}\right]+\left(-3\right)^{5}:\left(-3\right)^{3}=$</div>
       </div>
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">Conviene ridurre prima di elevare al quadrato: $4$ e $6$ si dividono tutti e due per $2$.</p>
+      <p class="mossa">$2^{30}$ compare sotto nella frazione e come fattore: si semplificano fra loro, senza calcolare quel numero enorme.</p>
       <div class="teoria">
-        <div class="nome">Ridurre una frazione ai minimi termini</div>
-        <div class="frase">Dividendo numeratore e denominatore per lo stesso numero il valore non cambia, ma i numeri diventano più piccoli. Conviene farlo appena si può: i conti che vengono dopo sono molto più facili.</div>
-        <div class="f sx">$\displaystyle \frac{a\cdot k}{b\cdot k}=\frac{a}{b}$</div>
-        <div class="ex">esempio: $\frac{9}{12}=\frac{3\cdot 3}{4\cdot 3}=\frac{3}{4}$</div>
+        <div class="nome">Semplificare prima di moltiplicare</div>
+        <div class="frase">Quando una frazione moltiplica un numero grande, conviene semplificare il numero con il <strong>denominatore</strong> prima di fare il conto: si lavora con numeri piccoli invece che con numeri enormi.</div>
+        <div class="f sx">$\displaystyle \frac{a}{b}\cdot n=a\cdot\frac{n}{b}$</div>
+        <div class="ex">esempio: $\frac{7}{10}\cdot 500=7\cdot 50=350$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Dividere un solo termine della frazione</div>
+        <div class="nome">Semplificare il numero con il numeratore</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{a\cdot k}{b\cdot k}=\frac{a}{b\cdot k}$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{a}{b}\cdot n=\frac{n}{a}\cdot b$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{a\cdot k}{b\cdot k}=\frac{a}{b}$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{a}{b}\cdot n=a\cdot\frac{n}{b}$</div></div>
         </div>
-        <div class="why-txt">Sopra e sotto, per lo stesso numero.</div>
+        <div class="why-txt">Si semplifica con il denominatore.</div>
       </div>
     </div>
   </details>
 
   <div class="riga">
     <div class="fissa">
-      <div class="n">7</div>
+      <div class="n">6</div>
       <div class="cont">
-        <div class="nota">Riscriviamo pulito.</div>
-        <div class="f sx">$\displaystyle =-1+1:1-\left(-\frac{2}{3}\right)^{2}\cdot\frac{9}{4}=$</div>
-      </div>
-      <div></div>
-    </div>
-  </div>
-
-  <div class="riga">
-    <div class="fissa">
-      <div class="n">8</div>
-      <div class="cont">
-        <div class="nota">$1:1=1$; l'esponente pari toglie il meno.</div>
-        <div class="f sx">$\displaystyle =-1+1-\frac{4}{9}\cdot\frac{9}{4}=$</div>
+        <div class="nota">Riscriviamo pulito: resta $1$.</div>
+        <div class="f sx">$\displaystyle =1+3\left[-\frac{1}{3}-2-\frac{1}{3}\right]+\left(-3\right)^{5}:\left(-3\right)^{3}=$</div>
       </div>
       <div></div>
     </div>
@@ -367,15 +326,75 @@ mjx-container[display]{margin:0!important}
 
   <details class="riga">
     <summary>
-      <div class="n">9</div>
+      <div class="n">7</div>
       <div class="cont">
-        <div class="nota">A croce: $4$ con $4$ e $9$ con $9$.</div>
-        <div class="f sx">$\displaystyle =-1+1-\frac{\overset{1}{\cancel{4}}}{\underset{1}{\cancel{9}}}\cdot\frac{\overset{1}{\cancel{9}}}{\underset{1}{\cancel{4}}}=$</div>
+        <div class="nota">Nella quadra: $2$ diventa $\frac{6}{3}$.</div>
+        <div class="f sx">$\displaystyle =1+3\left[-\frac{1}{3}-\frac{6}{3}-\frac{1}{3}\right]+\left(-3\right)^{5}:\left(-3\right)^{3}=$</div>
       </div>
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">I due fattori sono uno il capovolto dell'altro: semplificando in croce il prodotto vale $1$, senza fare conti.</p>
+      <p class="mossa">Per sommare $2$ con i terzi lo si riscrive $\frac{6}{3}$: stesso denominatore, stesso valore.</p>
+      <div class="teoria">
+        <div class="nome">Un numero intero scritto come frazione</div>
+        <div class="frase">Ogni numero intero si può scrivere come frazione: basta dargli il denominatore che serve e moltiplicare per quello anche il numero stesso. Solo così lo si può sommare a una frazione.</div>
+        <div class="f sx">$\displaystyle a=\frac{a\cdot b}{b}$</div>
+        <div class="ex">esempio: $3=\frac{3\cdot 4}{4}=\frac{12}{4}$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Mettere l'intero solo al numeratore</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a+\frac{c}{b}=\frac{a+c}{b}$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a+\frac{c}{b}=\frac{a\cdot b+c}{b}$</div></div>
+        </div>
+        <div class="why-txt">L'intero va moltiplicato per il denominatore.</div>
+      </div>
+    </div>
+  </details>
+
+  <details class="riga">
+    <summary>
+      <div class="n">8</div>
+      <div class="cont">
+        <div class="nota">$-1-6-1=-8$; a destra gli esponenti si sottraggono.</div>
+        <div class="f sx">$\displaystyle =1+3\cdot\left(-\frac{8}{3}\right)+\left(-3\right)^{2}=$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">$\left(-3\right)^{5}:\left(-3\right)^{3}$ ha la stessa base: gli esponenti si sottraggono, $5-3=2$.</p>
+      <div class="teoria">
+        <div class="nome">Divisione di potenze con la stessa base</div>
+        <div class="frase">Quando due potenze hanno la <strong>stessa base</strong>, per dividerle si sottraggono gli esponenti: quello del divisore si toglie a quello del dividendo. La base resta la stessa.</div>
+        <div class="f sx">$\displaystyle a^{m}:a^{n}=a^{m-n}$</div>
+        <div class="ex">esempio: $5^{7}:5^{4}=5^{3}$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Dividere gli esponenti invece di sottrarli</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a^{m}:a^{n}=a^{m:n}$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a^{m}:a^{n}=a^{m-n}$</div></div>
+        </div>
+        <div class="why-txt">Divisione di potenze, sottrazione di esponenti.</div>
+      </div>
+    </div>
+  </details>
+
+  <details class="riga">
+    <summary>
+      <div class="n">9</div>
+      <div class="cont">
+        <div class="nota">Semplifichiamo $3$ con $3$; $\left(-3\right)^{2}=9$.</div>
+        <div class="f sx">$\displaystyle =1+\overset{1}{\cancel{3}}\cdot\left(-\frac{8}{\underset{1}{\cancel{3}}}\right)+9=$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">Il $3$ davanti alla tonda si semplifica col $3$ al denominatore: il prodotto diventa immediato.</p>
       <div class="teoria">
         <div class="nome">Semplificare a croce prima di moltiplicare</div>
         <div class="frase">Prima di eseguire il prodotto si semplifica <strong>in croce</strong>: un numeratore con il denominatore dell'<strong>altra</strong> frazione. Si dividono per lo stesso numero e si scrivono i risultati al loro posto. Semplificare dopo aver moltiplicato porta allo stesso risultato, ma passando da numeri molto più grandi — ed è lì che nascono gli errori di calcolo.</div>
@@ -399,8 +418,8 @@ mjx-container[display]{margin:0!important}
     <div class="fissa">
       <div class="n">10</div>
       <div class="cont">
-        <div class="nota">Riscriviamo pulito: il prodotto vale $1$.</div>
-        <div class="f sx">$\displaystyle =-1+1-1=$</div>
+        <div class="nota">Riscriviamo pulito.</div>
+        <div class="f sx">$\displaystyle =1-8+9=$</div>
       </div>
       <div></div>
     </div>
@@ -410,8 +429,8 @@ mjx-container[display]{margin:0!important}
     <div class="fissa">
       <div class="n">11</div>
       <div class="cont">
-        <div class="nota">$-1+1-1=-1$.</div>
-        <div class="f sx">$\displaystyle =-1$</div>
+        <div class="nota">$1-8+9=2$.</div>
+        <div class="f sx">$\displaystyle =2$</div>
       </div>
       <div></div>
     </div>
