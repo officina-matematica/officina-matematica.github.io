@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PX1_11 — Alla scoperta delle percentuali</title>
+
+<script type="application/json" id="meta">
+{
+  "id": "px1_11",
+  "titolo": "Alla scoperta delle percentuali",
+  "tipo": "problema",
+  "consegna_label": "Risolvi il problema",
+  "consegna_tex": "A un pranzo c'erano 10 invitati. Dopo mangiato tutti hanno preso il caffè: il 60% degli invitati ha aggiunto lo zucchero e il 30% ha aggiunto un goccio di latte. a) Qual è il numero minimo di invitati che non hanno messo né zucchero né latte? E il massimo? b) Se due invitati hanno preso il caffè senza zucchero e senza latte, quanti hanno messo sia lo zucchero sia il latte?",
+  "consegna_sympy": "Rational(60,100)*10+Rational(30,100)*10-(10-2)",
+  "risultato_tex": "\\text{Senza niente da }1\\text{ a }4\\text{ invitati; con tutte e due le cose }1\\text{ invitato}",
+  "risultato_sympy": "Integer(1)",
+  "righe_sympy": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ]
+}
+</script>
+
+<!-- Output SVG, non CHTML: glifi vettoriali, allineamento identico su ogni
+     dispositivo, nessun rischio di webfont non caricato dentro un iframe.
+     Ogni formula e' scritta con \displaystyle: senza, MathJax rende le frazioni
+     in textstyle e le parentesi non abbracciano la frazione. -->
+<script>
+MathJax = {
+  loader: { load: ['[tex]/cancel'] },
+  tex: {
+    packages: { '[+]': ['cancel'] },
+    inlineMath: [['$','$']],
+    displayMath: [['$$','$$']],
+    processEscapes: true
+  },
+  svg: { fontCache: 'global', scale: 1.06, exFactor: .5 },
+  options: { enableMenu: false }
+};
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-svg.js"></script>
+
+<style>
+:root{
+  --ink:#0f172a; --body:#334155; --muted:#475569; --faint:#94a3b8;
+  --line:#e2e8f0; --paper:#f8fafc;
+  --blu:#12519e; --blubg:#e8f1fb; --blubd:#a8c9ea;
+  --amb:#b45309; --ambbg:#fffbeb; --ambbd:#fcd34d; --sol:#fef08a;
+  --teo:#14532d; --teobg:#f0fdf4; --teobd:#86efac;
+  --err:#9f1239; --errbg:#fff1f2; --errbd:#fda4af;
+  --ko:#b91c1c;  --kobg:#fee2e2;  --kobd:#ef4444;
+  --ok:#15803d;  --okbg:#dcfce7;  --okbd:#22c55e;
+  --sxbg:#ffffff;
+}
+*{box-sizing:border-box}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  background:var(--paper);color:var(--body);line-height:1.5;
+  margin:0;padding:20px 14px 60px;max-width:900px;margin-inline:auto;font-size:16px;
+}
+mjx-container{outline:none}
+mjx-container[display]{margin:0!important}
+
+/* formule scorrevoli, con sfumatura ai bordi quando escono dallo schermo */
+.sx{
+  overflow-x:auto;overflow-y:hidden;scrollbar-width:thin;-webkit-overflow-scrolling:touch;
+  background-image:
+    linear-gradient(to right,var(--sxbg),var(--sxbg)),
+    linear-gradient(to left,var(--sxbg),var(--sxbg)),
+    linear-gradient(to right,rgba(15,23,42,.16),rgba(15,23,42,0)),
+    linear-gradient(to left,rgba(15,23,42,.16),rgba(15,23,42,0));
+  background-position:left center,right center,left center,right center;
+  background-repeat:no-repeat;
+  background-size:22px 100%,22px 100%,13px 100%,13px 100%;
+  background-attachment:local,local,scroll,scroll;
+}
+
+/* ---------------- CONSEGNA ---------------- */
+.consegna{background:var(--blubg);border:2px solid var(--blubd);border-radius:12px;
+  padding:12px 16px;color:#0d47a1;--sxbg:var(--blubg)}
+.consegna .t{font-weight:700;font-size:.9rem}
+.consegna .m{text-align:center;margin-top:4px;padding:4px 0}
+
+/* ---------------- CATENA ---------------- */
+.catena{background:#fff;border:1px solid var(--line);border-radius:14px;
+  padding:14px 16px 10px;margin-top:16px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.catena>.k{font-weight:800;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.catena>.sub{font-size:.85rem;color:var(--faint);margin:2px 0 8px}
+
+.riga{border-top:1px dotted var(--line)}
+.riga:first-of-type{border-top:none}
+.riga>summary,.riga>.fissa{
+  display:grid;grid-template-columns:26px 1fr auto;gap:10px;align-items:center;
+  padding:11px 0;
+}
+.riga>summary{list-style:none;cursor:pointer}
+.riga>summary::-webkit-details-marker{display:none}
+.riga>summary:hover .f,.riga>summary:focus-visible .f{background-color:#f8fafc}
+
+.n{font-size:.72rem;font-weight:800;color:var(--faint);text-align:center;
+  background:#f1f5f9;border-radius:6px;padding:4px 0;align-self:start;margin-top:4px}
+.cont{min-width:0}
+.nota{font-size:.8rem;color:var(--muted);margin-bottom:1px}
+.f{padding:3px 0;border-radius:6px;color:var(--blu)}
+.riga.res>summary .f,.riga.res>.fissa .f{color:var(--ink)}
+/* solo la formula della riga, mai quelle dentro il pannello della tendina */
+.riga.res>summary .f mjx-container,
+.riga.res>.fissa .f mjx-container{background:var(--sol);padding:4px 12px;border-radius:6px}
+
+/* linguetta della tendina */
+.tab{display:inline-flex;align-items:center;gap:5px;align-self:start;margin-top:5px;
+  font-size:.72rem;font-weight:700;letter-spacing:.02em;color:var(--muted);
+  background:#fff;border:1.5px solid var(--line);border-radius:999px;padding:4px 10px;
+  white-space:nowrap}
+.tab .chev{display:inline-block;font-size:.6rem;transition:transform .18s}
+.riga[open]>summary .tab{background:var(--ink);border-color:var(--ink);color:#fff}
+.riga[open]>summary .tab .chev{transform:rotate(180deg)}
+@media(prefers-reduced-motion:reduce){.tab .chev{transition:none}}
+
+/* pannello aperto */
+.pannello{padding:2px 0 16px 36px;display:grid;gap:10px}
+.mossa{font-size:.9rem;margin:0}
+
+.teoria{background:var(--teobg);border:1.5px solid var(--teobd);border-radius:10px;
+  padding:10px 14px;color:var(--teo);--sxbg:var(--teobg)}
+.teoria .nome{font-weight:800;font-size:.88rem;margin-bottom:2px}
+.teoria .frase{font-size:.87rem;line-height:1.45}
+.teoria .f{text-align:center;margin:8px 0 3px;background:rgba(255,255,255,.75);
+  border-radius:6px;padding:6px 8px;color:var(--teo);--sxbg:#f4fdf6}
+.teoria .ex{font-size:.78rem;opacity:.9;text-align:center}
+
+.errore{background:var(--errbg);border:1.5px solid var(--errbd);border-radius:10px;padding:11px 14px}
+.errore .k{font-weight:800;font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;
+  color:var(--err);margin-bottom:5px}
+.errore .nome{font-weight:700;font-size:.9rem;color:var(--err);margin-bottom:8px}
+.compare{display:grid;grid-template-columns:1fr 34px 1fr;align-items:stretch}
+.card{border:2px solid;border-radius:10px;padding:8px 12px;text-align:center}
+.card .tag{font-size:.7rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;margin-bottom:2px}
+.card .f{padding:2px 0;color:inherit}
+.card.ko{background:var(--kobg);border-color:var(--kobd);color:var(--ko);--sxbg:var(--kobg)}
+.card.ok{background:var(--okbg);border-color:var(--okbd);color:var(--ok);--sxbg:var(--okbg)}
+.arrow{display:flex;align-items:center;justify-content:center;font-size:1.2rem;color:var(--faint);font-weight:800}
+.why-txt{font-size:.82rem;color:#7f1d1d;margin-top:6px;text-align:center}
+
+/* fermata di controllo */
+.check{display:flex;flex-wrap:wrap;align-items:center;gap:4px 10px;
+  background:var(--ambbg);border:1.5px dashed var(--ambbd);border-radius:10px;
+  padding:8px 14px;margin:8px 0;font-size:.85rem;color:var(--amb);--sxbg:var(--ambbg)}
+.check b{font-weight:800}
+.check .v{color:var(--ink)}
+
+/* ---------------- MOBILE ---------------- */
+@media(max-width:720px){
+  body{padding:16px 10px 50px;font-size:16px}
+  .catena{padding:12px 12px 8px}
+  .riga>summary,.riga>.fissa{grid-template-columns:24px 1fr;gap:8px}
+  .cont{grid-column:2}
+  .tab{grid-column:2;justify-self:start;margin-top:6px}
+  .pannello{padding-left:0}
+  .compare{grid-template-columns:1fr;gap:6px}
+  .arrow{transform:rotate(90deg);height:22px}
+}
+</style>
+</head>
+<body>
+
+<!-- ===================== CONSEGNA ===================== -->
+<div class="consegna">
+  <div class="t">📌 Risolvi il problema</div>
+  <div class="m sx">A un pranzo c'erano 10 invitati. Dopo mangiato tutti hanno preso il caffè: il 60% degli invitati ha aggiunto lo zucchero e il 30% ha aggiunto un goccio di latte. a) Qual è il numero minimo di invitati che non hanno messo né zucchero né latte? E il massimo? b) Se due invitati hanno preso il caffè senza zucchero e senza latte, quanti hanno messo sia lo zucchero sia il latte?</div>
+</div>
+
+<!-- ===================== CATENA ====================== -->
+<div class="catena">
+  <div class="k">Confronta con il tuo foglio</div>
+  <div class="sub">Scorri le righe fino alla prima che non coincide con la tua. Lì apri <b>Regola</b>.</div>
+
+  <details class="riga">
+    <summary>
+      <div class="n">1</div>
+      <div class="cont">
+        <div class="nota">Partiamo dai numeri veri: il 60% di dieci invitati fa sei persone.</div>
+        <div class="f sx">$\displaystyle \text{Con lo zucchero}=\frac{60}{100}\cdot 10=6\ \text{invitati}$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">$\frac{60}{100}$ di $10$: tre quinti di dieci fanno $6$.</p>
+      <div class="teoria">
+        <div class="nome">La percentuale di una quantità</div>
+        <div class="frase">Per calcolare il <strong>p%</strong> di una quantità si moltiplica la quantità per $\frac{p}{100}$. È lo stesso identico procedimento della frazione di un numero.</div>
+        <div class="f sx">$\displaystyle p\,\%\text{ di }N=\frac{p}{100}\cdot N$</div>
+        <div class="ex">esempio: $5\,\%\text{ di }50=\frac{5}{100}\cdot 50=2{,}5$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Dividere per la percentuale invece di moltiplicare</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle p\,\%\text{ di }N=N:\frac{p}{100}$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle p\,\%\text{ di }N=\frac{p}{100}\cdot N$</div></div>
+        </div>
+        <div class="why-txt">Per trovare la parte si moltiplica.</div>
+      </div>
+    </div>
+  </details>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">2</div>
+      <div class="cont">
+        <div class="nota">Il 30% di dieci fa tre persone.</div>
+        <div class="f sx">$\displaystyle \text{Con il latte}=\frac{30}{100}\cdot 10=3\ \text{invitati}$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <details class="riga">
+    <summary>
+      <div class="n">3</div>
+      <div class="cont">
+        <div class="nota">Il minimo si ha se nessuno mette tutte e due le cose: zuccherati e latteggiati sono nove persone diverse, e resta uno.</div>
+        <div class="f sx">$\displaystyle \text{Minimo senza niente}=10-6-3=1\ \text{invitato}$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">Le due percentuali si sovrappongono: $60\%+30\%$ non è il $90\%$ di persone diverse.</p>
+      <div class="teoria">
+        <div class="nome">Due suddivisioni che si sovrappongono</div>
+        <div class="frase">Le stesse figure possono essere divise in due modi diversi, per esempio per forma e per colore. Le due suddivisioni si sovrappongono: le loro percentuali <strong>non</strong> si sommano fra loro, perché parlano della stessa cosa da due punti di vista.</div>
+        <div class="f sx">$\displaystyle \%\ \text{forme}=100\%\quad\text{e}\quad\%\ \text{colori}=100\%$</div>
+        <div class="ex">esempio: $40\%\ \text{cerchi e}\ 75\%\ \text{neri}:\ \text{un cerchio può essere nero}$</div>
+      </div>
+    </div>
+  </details>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">4</div>
+      <div class="cont">
+        <div class="nota">Il massimo si ha se tutti e tre quelli con il latte mettono anche lo zucchero: senza zucchero restano quattro persone.</div>
+        <div class="f sx">$\displaystyle \text{Massimo senza niente}=10-6=4\ \text{invitati}$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">5</div>
+      <div class="cont">
+        <div class="nota">Seconda domanda: se due non mettono niente, otto mettono almeno una delle due cose.</div>
+        <div class="f sx">$\displaystyle \text{Con almeno una cosa}=10-2=8\ \text{invitati}$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <details class="riga">
+    <summary>
+      <div class="n">6</div>
+      <div class="cont">
+        <div class="nota">Sei più tre fa nove, ma le persone sono otto: una è stata contata due volte, ed è quella che mette zucchero e latte.</div>
+        <div class="f sx">$\displaystyle \text{Con tutte e due}=6+3-8=1\ \text{invitato}$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">La differenza fra la somma dei gruppi e chi sta in almeno uno dà chi sta in tutti e due.</p>
+      <div class="teoria">
+        <div class="nome">Chi sta in tutti e due i gruppi</div>
+        <div class="frase">Se si sommano due gruppi e il risultato supera il numero di chi sta in almeno uno dei due, la differenza è il numero di quelli contati due volte: sono quelli che stanno in <strong>tutti e due</strong> i gruppi.</div>
+        <div class="f sx">$\displaystyle \text{in tutti e due}=\text{primo}+\text{secondo}-\text{in almeno uno}$</div>
+        <div class="ex">esempio: $6+3-8=1$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Sommare e basta i due gruppi</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle 6+3=9\ \text{persone}$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle 6+3-8=1\ \text{in tutti e due}$</div></div>
+        </div>
+        <div class="why-txt">Chi sta in tutti e due viene contato due volte.</div>
+      </div>
+    </div>
+  </details>
+
+  <div class="riga res">
+    <div class="fissa">
+      <div class="n">7</div>
+      <div class="cont">
+        <div class="nota">Rispondiamo alle due domande: il minimo, il massimo e chi mette sia zucchero sia latte.</div>
+        <div class="f sx">$\displaystyle \text{Senza niente da }1\text{ a }4\text{ invitati; con tutte e due le cose }1\text{ invitato}$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
