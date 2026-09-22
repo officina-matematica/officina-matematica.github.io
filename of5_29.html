@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OF5_29 — Problemi con frazioni</title>
+
+<script type="application/json" id="meta">
+{
+  "id": "of5_29",
+  "titolo": "Problemi con frazioni",
+  "tipo": "problema",
+  "consegna_label": "Risolvi il problema",
+  "consegna_tex": "Un signore guadagna 1800 €. Mette da parte $\\displaystyle\\frac{2}{9}$ e spende $\\displaystyle\\frac{1}{2}$ dei soldi rimanenti in affitto. Quanto spende di affitto?",
+  "consegna_sympy": "Rational(1,2)*(1-Rational(2,9))*1800",
+  "risultato_tex": "\\text{Di affitto spende }700\\ \\text{€}",
+  "risultato_sympy": "Integer(700)",
+  "righe_sympy": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ]
+}
+</script>
+
+<!-- Output SVG, non CHTML: glifi vettoriali, allineamento identico su ogni
+     dispositivo, nessun rischio di webfont non caricato dentro un iframe.
+     Ogni formula e' scritta con \displaystyle: senza, MathJax rende le frazioni
+     in textstyle e le parentesi non abbracciano la frazione. -->
+<script>
+MathJax = {
+  loader: { load: ['[tex]/cancel'] },
+  tex: {
+    packages: { '[+]': ['cancel'] },
+    inlineMath: [['$','$']],
+    displayMath: [['$$','$$']],
+    processEscapes: true
+  },
+  svg: { fontCache: 'global', scale: 1.06, exFactor: .5 },
+  options: { enableMenu: false }
+};
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-svg.js"></script>
+
+<style>
+:root{
+  --ink:#0f172a; --body:#334155; --muted:#475569; --faint:#94a3b8;
+  --line:#e2e8f0; --paper:#f8fafc;
+  --blu:#12519e; --blubg:#e8f1fb; --blubd:#a8c9ea;
+  --amb:#b45309; --ambbg:#fffbeb; --ambbd:#fcd34d; --sol:#fef08a;
+  --teo:#14532d; --teobg:#f0fdf4; --teobd:#86efac;
+  --err:#9f1239; --errbg:#fff1f2; --errbd:#fda4af;
+  --ko:#b91c1c;  --kobg:#fee2e2;  --kobd:#ef4444;
+  --ok:#15803d;  --okbg:#dcfce7;  --okbd:#22c55e;
+  --sxbg:#ffffff;
+}
+*{box-sizing:border-box}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  background:var(--paper);color:var(--body);line-height:1.5;
+  margin:0;padding:20px 14px 60px;max-width:900px;margin-inline:auto;font-size:16px;
+}
+mjx-container{outline:none}
+mjx-container[display]{margin:0!important}
+
+/* formule scorrevoli, con sfumatura ai bordi quando escono dallo schermo */
+.sx{
+  overflow-x:auto;overflow-y:hidden;scrollbar-width:thin;-webkit-overflow-scrolling:touch;
+  background-image:
+    linear-gradient(to right,var(--sxbg),var(--sxbg)),
+    linear-gradient(to left,var(--sxbg),var(--sxbg)),
+    linear-gradient(to right,rgba(15,23,42,.16),rgba(15,23,42,0)),
+    linear-gradient(to left,rgba(15,23,42,.16),rgba(15,23,42,0));
+  background-position:left center,right center,left center,right center;
+  background-repeat:no-repeat;
+  background-size:22px 100%,22px 100%,13px 100%,13px 100%;
+  background-attachment:local,local,scroll,scroll;
+}
+
+/* ---------------- CONSEGNA ---------------- */
+.consegna{background:var(--blubg);border:2px solid var(--blubd);border-radius:12px;
+  padding:12px 16px;color:#0d47a1;--sxbg:var(--blubg)}
+.consegna .t{font-weight:700;font-size:.9rem}
+.consegna .m{text-align:center;margin-top:4px;padding:4px 0}
+
+/* ---------------- CATENA ---------------- */
+.catena{background:#fff;border:1px solid var(--line);border-radius:14px;
+  padding:14px 16px 10px;margin-top:16px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.catena>.k{font-weight:800;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.catena>.sub{font-size:.85rem;color:var(--faint);margin:2px 0 8px}
+
+.riga{border-top:1px dotted var(--line)}
+.riga:first-of-type{border-top:none}
+.riga>summary,.riga>.fissa{
+  display:grid;grid-template-columns:26px 1fr auto;gap:10px;align-items:center;
+  padding:11px 0;
+}
+.riga>summary{list-style:none;cursor:pointer}
+.riga>summary::-webkit-details-marker{display:none}
+.riga>summary:hover .f,.riga>summary:focus-visible .f{background-color:#f8fafc}
+
+.n{font-size:.72rem;font-weight:800;color:var(--faint);text-align:center;
+  background:#f1f5f9;border-radius:6px;padding:4px 0;align-self:start;margin-top:4px}
+.cont{min-width:0}
+.nota{font-size:.8rem;color:var(--muted);margin-bottom:1px}
+.f{padding:3px 0;border-radius:6px;color:var(--blu)}
+.riga.res>summary .f,.riga.res>.fissa .f{color:var(--ink)}
+/* solo la formula della riga, mai quelle dentro il pannello della tendina */
+.riga.res>summary .f mjx-container,
+.riga.res>.fissa .f mjx-container{background:var(--sol);padding:4px 12px;border-radius:6px}
+
+/* linguetta della tendina */
+.tab{display:inline-flex;align-items:center;gap:5px;align-self:start;margin-top:5px;
+  font-size:.72rem;font-weight:700;letter-spacing:.02em;color:var(--muted);
+  background:#fff;border:1.5px solid var(--line);border-radius:999px;padding:4px 10px;
+  white-space:nowrap}
+.tab .chev{display:inline-block;font-size:.6rem;transition:transform .18s}
+.riga[open]>summary .tab{background:var(--ink);border-color:var(--ink);color:#fff}
+.riga[open]>summary .tab .chev{transform:rotate(180deg)}
+@media(prefers-reduced-motion:reduce){.tab .chev{transition:none}}
+
+/* pannello aperto */
+.pannello{padding:2px 0 16px 36px;display:grid;gap:10px}
+.mossa{font-size:.9rem;margin:0}
+
+.teoria{background:var(--teobg);border:1.5px solid var(--teobd);border-radius:10px;
+  padding:10px 14px;color:var(--teo);--sxbg:var(--teobg)}
+.teoria .nome{font-weight:800;font-size:.88rem;margin-bottom:2px}
+.teoria .frase{font-size:.87rem;line-height:1.45}
+.teoria .f{text-align:center;margin:8px 0 3px;background:rgba(255,255,255,.75);
+  border-radius:6px;padding:6px 8px;color:var(--teo);--sxbg:#f4fdf6}
+.teoria .ex{font-size:.78rem;opacity:.9;text-align:center}
+
+.errore{background:var(--errbg);border:1.5px solid var(--errbd);border-radius:10px;padding:11px 14px}
+.errore .k{font-weight:800;font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;
+  color:var(--err);margin-bottom:5px}
+.errore .nome{font-weight:700;font-size:.9rem;color:var(--err);margin-bottom:8px}
+.compare{display:grid;grid-template-columns:1fr 34px 1fr;align-items:stretch}
+.card{border:2px solid;border-radius:10px;padding:8px 12px;text-align:center}
+.card .tag{font-size:.7rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;margin-bottom:2px}
+.card .f{padding:2px 0;color:inherit}
+.card.ko{background:var(--kobg);border-color:var(--kobd);color:var(--ko);--sxbg:var(--kobg)}
+.card.ok{background:var(--okbg);border-color:var(--okbd);color:var(--ok);--sxbg:var(--okbg)}
+.arrow{display:flex;align-items:center;justify-content:center;font-size:1.2rem;color:var(--faint);font-weight:800}
+.why-txt{font-size:.82rem;color:#7f1d1d;margin-top:6px;text-align:center}
+
+/* fermata di controllo */
+.check{display:flex;flex-wrap:wrap;align-items:center;gap:4px 10px;
+  background:var(--ambbg);border:1.5px dashed var(--ambbd);border-radius:10px;
+  padding:8px 14px;margin:8px 0;font-size:.85rem;color:var(--amb);--sxbg:var(--ambbg)}
+.check b{font-weight:800}
+.check .v{color:var(--ink)}
+
+/* ---------------- MOBILE ---------------- */
+@media(max-width:720px){
+  body{padding:16px 10px 50px;font-size:16px}
+  .catena{padding:12px 12px 8px}
+  .riga>summary,.riga>.fissa{grid-template-columns:24px 1fr;gap:8px}
+  .cont{grid-column:2}
+  .tab{grid-column:2;justify-self:start;margin-top:6px}
+  .pannello{padding-left:0}
+  .compare{grid-template-columns:1fr;gap:6px}
+  .arrow{transform:rotate(90deg);height:22px}
+}
+</style>
+</head>
+<body>
+
+<!-- ===================== CONSEGNA ===================== -->
+<div class="consegna">
+  <div class="t">📌 Risolvi il problema</div>
+  <div class="m sx">Un signore guadagna 1800 €. Mette da parte $\displaystyle\frac{2}{9}$ e spende $\displaystyle\frac{1}{2}$ dei soldi rimanenti in affitto. Quanto spende di affitto?</div>
+</div>
+
+<!-- ===================== CATENA ====================== -->
+<div class="catena">
+  <div class="k">Confronta con il tuo foglio</div>
+  <div class="sub">Scorri le righe fino alla prima che non coincide con la tua. Lì apri <b>Regola</b>.</div>
+
+  <details class="riga">
+    <summary>
+      <div class="n">1</div>
+      <div class="cont">
+        <div class="nota">Partiamo da quello che resta dopo il risparmio: tutto lo stipendio tranne i $\frac{2}{9}$ messi da parte.</div>
+        <div class="f sx">$\displaystyle \text{Soldi rimanenti}=1-\frac{2}{9}=\frac{9}{9}-\frac{2}{9}=\frac{7}{9}$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">Messi da parte $\frac{2}{9}$, rimanenti $\frac{7}{9}$.</p>
+      <div class="teoria">
+        <div class="nome">La frazione complementare</div>
+        <div class="frase">È quello che manca a una frazione per arrivare all'intero. Due frazioni complementari hanno lo <strong>stesso denominatore</strong> e i numeratori che, sommati, danno il denominatore.</div>
+        <div class="f sx">$\displaystyle \frac{a}{c}+\frac{c-a}{c}=\frac{c}{c}=1$</div>
+        <div class="ex">esempio: $\frac{4}{11}+\frac{7}{11}=\frac{11}{11}=1$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Capovolgere la frazione invece di completarla</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{a}{c}\ \to\ \frac{c}{a}$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{a}{c}\ \to\ \frac{c-a}{c}$</div></div>
+        </div>
+        <div class="why-txt">Il denominatore non cambia mai.</div>
+      </div>
+    </div>
+  </details>
+
+  <details class="riga">
+    <summary>
+      <div class="n">2</div>
+      <div class="cont">
+        <div class="nota">L'affitto è metà «dei soldi rimanenti», cioè dei $\frac{7}{9}$: la frazione di una frazione è un prodotto.</div>
+        <div class="f sx">$\displaystyle \text{Affitto}=\frac{1}{2}\cdot\frac{7}{9}=\frac{7}{18}\ \text{(dello stipendio)}$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">$\frac{1}{2}\cdot\frac{7}{9}=\frac{7}{18}$: non c'è niente da semplificare.</p>
+      <div class="teoria">
+        <div class="nome">La frazione di una frazione</div>
+        <div class="frase">Prendere i $\frac{c}{d}$ di una parte che è già una frazione vuol dire moltiplicare le due frazioni: anche qui «di» si traduce con il per. Il risultato dice che parte dell'intero si ottiene alla fine.</div>
+        <div class="f sx">$\displaystyle \frac{c}{d}\ \text{di}\ \frac{a}{b}=\frac{c}{d}\cdot\frac{a}{b}$</div>
+        <div class="ex">esempio: $\frac{1}{2}\ \text{di}\ \frac{4}{5}=\frac{1}{2}\cdot\frac{4}{5}=\frac{2}{5}$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Sommare invece di moltiplicare</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{c}{d}\ \text{di}\ \frac{a}{b}=\frac{c}{d}+\frac{a}{b}$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{c}{d}\ \text{di}\ \frac{a}{b}=\frac{c}{d}\cdot\frac{a}{b}$</div></div>
+        </div>
+        <div class="why-txt">«Di» è un per, non un più.</div>
+      </div>
+    </div>
+  </details>
+
+  <details class="riga">
+    <summary>
+      <div class="n">3</div>
+      <div class="cont">
+        <div class="nota">Ora sappiamo che parte dello stipendio è: la calcoliamo sui 1800 €.</div>
+        <div class="f sx">$\displaystyle \text{Affitto}=\frac{7}{18}\cdot 1800$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">I $\frac{7}{18}$ di $1800$: $\frac{7}{18}\cdot 1800$.</p>
+      <div class="teoria">
+        <div class="nome">La frazione di un numero</div>
+        <div class="frase">Nei problemi la parola <strong>di</strong> davanti a una quantità si traduce con il segno di moltiplicazione. Il numero moltiplica il <strong>numeratore</strong>, il denominatore resta com'è.</div>
+        <div class="f sx">$\displaystyle \frac{a}{b}\cdot n=\frac{a\cdot n}{b}$</div>
+        <div class="ex">esempio: $\frac{3}{4}\cdot 20=\frac{60}{4}=15$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Moltiplicare il denominatore invece del numeratore</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{a}{b}\cdot n=\frac{a}{b\cdot n}$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{a}{b}\cdot n=\frac{a\cdot n}{b}$</div></div>
+        </div>
+        <div class="why-txt">Il numero moltiplica sopra la linea.</div>
+      </div>
+    </div>
+  </details>
+
+  <details class="riga">
+    <summary>
+      <div class="n">4</div>
+      <div class="cont">
+        <div class="nota">Semplifichiamo il 1800 con il 18 prima di moltiplicare.</div>
+        <div class="f sx">$\displaystyle \text{Affitto}=\frac{7}{\underset{1}{\cancel{18}}}\cdot\overset{100}{\cancel{1800}}$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">$1800:18=100$.</p>
+      <div class="teoria">
+        <div class="nome">Semplificare prima di moltiplicare</div>
+        <div class="frase">Quando una frazione moltiplica un numero grande, conviene semplificare il numero con il <strong>denominatore</strong> prima di fare il conto: si lavora con numeri piccoli invece che con numeri enormi.</div>
+        <div class="f sx">$\displaystyle \frac{a}{b}\cdot n=a\cdot\frac{n}{b}$</div>
+        <div class="ex">esempio: $\frac{7}{10}\cdot 500=7\cdot 50=350$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Semplificare il numero con il numeratore</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{a}{b}\cdot n=\frac{n}{a}\cdot b$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{a}{b}\cdot n=a\cdot\frac{n}{b}$</div></div>
+        </div>
+        <div class="why-txt">Si semplifica con il denominatore.</div>
+      </div>
+    </div>
+  </details>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">5</div>
+      <div class="cont">
+        <div class="nota">Un diciottesimo dello stipendio vale 100 €, e l'affitto ne vale sette.</div>
+        <div class="f sx">$\displaystyle \text{Affitto}=7\cdot 100=700\ \text{€}$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="riga res">
+    <div class="fissa">
+      <div class="n">6</div>
+      <div class="cont">
+        <div class="nota">Rispondiamo con la spesa dell'affitto, non con i soldi rimanenti.</div>
+        <div class="f sx">$\displaystyle \text{Di affitto spende }700\ \text{€}$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
