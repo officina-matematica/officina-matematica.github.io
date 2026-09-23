@@ -248,35 +248,16 @@ mjx-container[display]{margin:0!important}
     </div>
   </details>
 
-  <details class="riga">
-    <summary>
+  <div class="riga">
+    <div class="fissa">
       <div class="n">4</div>
       <div class="cont">
         <div class="nota">Il $\frac{1}{2}$ rientra come esponente.</div>
         <div class="f sx">$\displaystyle =\log_{2}\left[a\left(a+4\right)^{2}\right]^{\frac{1}{2}}-\log_{2}\left(a-1\right)=$</div>
       </div>
-      <span class="tab">Regola <span class="chev">▼</span></span>
-    </summary>
-    <div class="pannello">
-      <p class="mossa">Letta al contrario: l'esponente va su tutta la quadra.</p>
-      <div class="teoria">
-        <div class="nome">Il logaritmo di una potenza</div>
-        <div class="frase">L'esponente dell'argomento <strong>scende davanti</strong> al logaritmo e diventa un fattore. Letta al contrario, la stessa regola dice che un numero davanti a un logaritmo può rientrare come esponente dell'argomento.</div>
-        <div class="f sx">$\displaystyle \log a^{n}=n\log a$</div>
-        <div class="ex">esempio: $\log 2^{5}=5\log 2,\quad 3\log 4=\log 4^{3}$</div>
-      </div>
-      <div class="errore">
-        <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Elevare il logaritmo invece dell'argomento</div>
-        <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \log a^{n}=\left(\log a\right)^{n}$</div></div>
-          <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \log a^{n}=n\log a$</div></div>
-        </div>
-        <div class="why-txt">L'esponente riguarda l'argomento.</div>
-      </div>
+      <div></div>
     </div>
-  </details>
+  </div>
 
   <details class="riga">
     <summary>
@@ -291,19 +272,19 @@ mjx-container[display]{margin:0!important}
       <p class="mossa">$\left[a\left(a+4\right)^{2}\right]^{\frac{1}{2}}=a^{\frac{1}{2}}\left(a+4\right)^{1}=\sqrt{a}\left(a+4\right)$.</p>
       <div class="teoria">
         <div class="nome">Potenza di un prodotto</div>
-        <div class="frase">Se due potenze hanno lo <strong>stesso esponente</strong> si possono moltiplicare le basi fra loro e tenere quell'esponente una volta sola. Vale anche al contrario, e serve proprio quando le basi sono scomode e il loro prodotto è semplice.</div>
-        <div class="f sx">$\displaystyle a^{n}\cdot b^{n}=\left(a\cdot b\right)^{n}$</div>
-        <div class="ex">esempio: $2^{3}\cdot 5^{3}=\left(2\cdot 5\right)^{3}=10^{3}$</div>
+        <div class="frase">Un esponente che sta su un <strong>prodotto</strong> va su <strong>ciascun</strong> fattore. Letta al contrario, due potenze con lo stesso esponente si riuniscono moltiplicando le basi e tenendo l'esponente una volta sola.</div>
+        <div class="f sx">$\displaystyle \left(a\cdot b\right)^{n}=a^{n}\cdot b^{n}$</div>
+        <div class="ex">esempio: $\left(2y\right)^{3}=2^{3}y^{3}=8y^{3},\quad 2^{3}\cdot 5^{3}=10^{3}$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Sommare gli esponenti invece delle basi</div>
+        <div class="nome">Dare l'esponente a un solo fattore</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a^{n}\cdot b^{n}=\left(a\cdot b\right)^{2n}$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \left(a\cdot b\right)^{n}=a^{n}\cdot b$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a^{n}\cdot b^{n}=\left(a\cdot b\right)^{n}$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \left(a\cdot b\right)^{n}=a^{n}\cdot b^{n}$</div></div>
         </div>
-        <div class="why-txt">L'esponente resta quello, non raddoppia.</div>
+        <div class="why-txt">L'esponente riguarda tutti i fattori.</div>
       </div>
     </div>
   </details>

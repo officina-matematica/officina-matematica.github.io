@@ -218,36 +218,55 @@ mjx-container[display]{margin:0!important}
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">$\frac{3}{4}$ di $12$ € vuol dire $12:4=3$ € per ogni quarto, e $3\cdot 3=9$ €.</p>
+      <p class="mossa">Un quarto di litro costa $12:4$; di quarti ne servono tre.</p>
       <div class="teoria">
-        <div class="nome">La frazione di un numero</div>
-        <div class="frase">Nei problemi la parola <strong>di</strong> davanti a una quantità si traduce con il segno di moltiplicazione. Il numero moltiplica il <strong>numeratore</strong>, il denominatore resta com'è.</div>
-        <div class="f sx">$\displaystyle \frac{a}{b}\cdot n=\frac{a\cdot n}{b}$</div>
-        <div class="ex">esempio: $\frac{3}{4}\cdot 20=\frac{60}{4}=15$</div>
+        <div class="nome">Prima quanto vale una parte</div>
+        <div class="frase">Per prendere $\frac{a}{b}$ di una quantità conviene prima trovare quanto vale <strong>una</strong> parte, dividendo per il denominatore, e poi moltiplicare per il numeratore, cioè per quante parti se ne prendono.</div>
+        <div class="f sx">$\displaystyle \frac{a}{b}\ \text{di}\ n=\left(n:b\right)\cdot a$</div>
+        <div class="ex">esempio: $\frac{2}{5}\ \text{di}\ 40=\left(40:5\right)\cdot 2=8\cdot 2=16$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Moltiplicare il denominatore invece del numeratore</div>
+        <div class="nome">Dividere per il numeratore e moltiplicare per il denominatore</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{a}{b}\cdot n=\frac{a}{b\cdot n}$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{a}{b}\ \text{di}\ n=\left(n:a\right)\cdot b$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{a}{b}\cdot n=\frac{a\cdot n}{b}$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{a}{b}\ \text{di}\ n=\left(n:b\right)\cdot a$</div></div>
         </div>
-        <div class="why-txt">Il numero moltiplica sopra la linea.</div>
+        <div class="why-txt">Il denominatore dice in quante parti dividere.</div>
       </div>
     </div>
   </details>
 
-  <div class="riga">
-    <div class="fissa">
+  <details class="riga">
+    <summary>
       <div class="n">3</div>
       <div class="cont">
         <div class="nota">Rimettiamo insieme le due parti: il vino intero e il pezzo che avanzava.</div>
         <div class="f sx">$\displaystyle \text{Guadagno}=72+9=81\ \text{€}$</div>
       </div>
-      <div></div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">Il prezzo di $6\frac{3}{4}$ litri è il prezzo dei sei interi più quello dei tre quarti.</p>
+      <div class="teoria">
+        <div class="nome">Proprietà distributiva della moltiplicazione</div>
+        <div class="frase">Per moltiplicare un numero per una somma (o una differenza) si può moltiplicare quel numero per <strong>ciascun</strong> termine e poi sommare (o sottrarre) i risultati. Letta al contrario, permette di raccogliere un fattore comune.</div>
+        <div class="f sx">$\displaystyle a\cdot\left(b+c\right)=a\cdot b+a\cdot c$</div>
+        <div class="ex">esempio: $11\cdot\left(10+3\right)=11\cdot 10+11\cdot 3=110+33=143$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Moltiplicare un solo termine</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a\cdot\left(b+c\right)=a\cdot b+c$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a\cdot\left(b+c\right)=a\cdot b+a\cdot c$</div></div>
+        </div>
+        <div class="why-txt">Il fattore moltiplica tutti e due i termini.</div>
+      </div>
     </div>
-  </div>
+  </details>
 
   <div class="riga res">
     <div class="fissa">

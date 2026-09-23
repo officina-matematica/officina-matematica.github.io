@@ -205,9 +205,9 @@ mjx-container[display]{margin:0!important}
       <p class="mossa">Si parte dalla radice più esterna: tutto il radicando va elevato ad $\frac{1}{2}$.</p>
       <div class="teoria">
         <div class="nome">La radice è una potenza con esponente frazionario</div>
-        <div class="frase">Ogni radice si può scrivere come potenza: l'indice della radice va al <strong>denominatore</strong> dell'esponente. Così le radici entrano nelle proprietà delle potenze e i conti si fanno solo sugli esponenti.</div>
+        <div class="frase">Ogni radice si può scrivere come potenza: l'indice della radice va al <strong>denominatore</strong> dell'esponente, l'esponente del radicando al numeratore. Si legge anche al contrario: una potenza con esponente frazionario è una radice, ed è spesso così che il conto si chiude.</div>
         <div class="f sx">$\displaystyle \sqrt[n]{a^{m}}=a^{\frac{m}{n}}$</div>
-        <div class="ex">esempio: $\sqrt[3]{5^{2}}=5^{\frac{2}{3}},\quad \sqrt{7}=7^{\frac{1}{2}}$</div>
+        <div class="ex">esempio: $\sqrt[3]{5^{2}}=5^{\frac{2}{3}},\quad 49^{\frac{1}{2}}=\sqrt{49}=7$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
@@ -282,95 +282,38 @@ mjx-container[display]{margin:0!important}
     </div>
   </details>
 
-  <details class="riga">
-    <summary>
+  <div class="riga">
+    <div class="fissa">
       <div class="n">5</div>
       <div class="cont">
         <div class="nota">Come prima: la radice diventa un fattore davanti.</div>
         <div class="f sx">$\displaystyle =\frac{1}{2}\left[\log a+\frac{1}{3}\log\left(ab^{2}\right)\right]=$</div>
       </div>
-      <span class="tab">Regola <span class="chev">▼</span></span>
-    </summary>
-    <div class="pannello">
-      <p class="mossa">$\sqrt[3]{ab^{2}}=\left(ab^{2}\right)^{\frac{1}{3}}$, e l'esponente $\frac{1}{3}$ scende davanti al logaritmo.</p>
-      <div class="teoria">
-        <div class="nome">Il logaritmo di una potenza</div>
-        <div class="frase">L'esponente dell'argomento <strong>scende davanti</strong> al logaritmo e diventa un fattore. Letta al contrario, la stessa regola dice che un numero davanti a un logaritmo può rientrare come esponente dell'argomento.</div>
-        <div class="f sx">$\displaystyle \log a^{n}=n\log a$</div>
-        <div class="ex">esempio: $\log 2^{5}=5\log 2,\quad 3\log 4=\log 4^{3}$</div>
-      </div>
-      <div class="errore">
-        <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Elevare il logaritmo invece dell'argomento</div>
-        <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \log a^{n}=\left(\log a\right)^{n}$</div></div>
-          <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \log a^{n}=n\log a$</div></div>
-        </div>
-        <div class="why-txt">L'esponente riguarda l'argomento.</div>
-      </div>
+      <div></div>
     </div>
-  </details>
+  </div>
 
-  <details class="riga">
-    <summary>
+  <div class="riga">
+    <div class="fissa">
       <div class="n">6</div>
       <div class="cont">
         <div class="nota">Anche $ab^{2}$ è un prodotto.</div>
         <div class="f sx">$\displaystyle =\frac{1}{2}\left[\log a+\frac{1}{3}\left(\log a+\log b^{2}\right)\right]=$</div>
       </div>
-      <span class="tab">Regola <span class="chev">▼</span></span>
-    </summary>
-    <div class="pannello">
-      <p class="mossa">$\log\left(ab^{2}\right)=\log a+\log b^{2}$.</p>
-      <div class="teoria">
-        <div class="nome">Il logaritmo di un prodotto</div>
-        <div class="frase">Il logaritmo di un prodotto è la <strong>somma</strong> dei logaritmi dei fattori. Vale anche al contrario: una somma di logaritmi con la stessa base si può riunire in un solo logaritmo.</div>
-        <div class="f sx">$\displaystyle \log\left(a\cdot b\right)=\log a+\log b$</div>
-        <div class="ex">esempio: $\log\left(2\cdot 5\right)=\log 2+\log 5$</div>
-      </div>
-      <div class="errore">
-        <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Spezzare una somma dentro il logaritmo</div>
-        <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \log\left(a+b\right)=\log a+\log b$</div></div>
-          <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \log\left(a\cdot b\right)=\log a+\log b$</div></div>
-        </div>
-        <div class="why-txt">Si spezza il prodotto, non la somma.</div>
-      </div>
+      <div></div>
     </div>
-  </details>
+  </div>
 
-  <details class="riga">
-    <summary>
+  <div class="riga">
+    <div class="fissa">
       <div class="n">7</div>
       <div class="cont">
         <div class="nota">L'esponente $2$ scende davanti.</div>
         <div class="f sx">$\displaystyle =\frac{1}{2}\left[\log a+\frac{1}{3}\left(\log a+2\log b\right)\right]=$</div>
       </div>
-      <span class="tab">Regola <span class="chev">▼</span></span>
-    </summary>
-    <div class="pannello">
-      <p class="mossa">$\log b^{2}=2\log b$.</p>
-      <div class="teoria">
-        <div class="nome">Il logaritmo di una potenza</div>
-        <div class="frase">L'esponente dell'argomento <strong>scende davanti</strong> al logaritmo e diventa un fattore. Letta al contrario, la stessa regola dice che un numero davanti a un logaritmo può rientrare come esponente dell'argomento.</div>
-        <div class="f sx">$\displaystyle \log a^{n}=n\log a$</div>
-        <div class="ex">esempio: $\log 2^{5}=5\log 2,\quad 3\log 4=\log 4^{3}$</div>
-      </div>
-      <div class="errore">
-        <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Elevare il logaritmo invece dell'argomento</div>
-        <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \log a^{n}=\left(\log a\right)^{n}$</div></div>
-          <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \log a^{n}=n\log a$</div></div>
-        </div>
-        <div class="why-txt">L'esponente riguarda l'argomento.</div>
-      </div>
+      <div></div>
     </div>
-  </details>
+  </div>
 
   <details class="riga">
     <summary>
@@ -415,7 +358,7 @@ mjx-container[display]{margin:0!important}
       <p class="mossa">$1+\frac{1}{3}=\frac{4}{3}$.</p>
       <div class="teoria">
         <div class="nome">Somma di monomi simili</div>
-        <div class="frase">Due monomi sono <strong>simili</strong> quando hanno la stessa parte letterale, con gli stessi esponenti. Per sommarli si sommano solo i <strong>coefficienti</strong>, e la parte letterale si riscrive uguale: non cambia e non si somma.</div>
+        <div class="frase">Due monomi sono <strong>simili</strong> quando hanno la stessa parte letterale, con gli stessi esponenti. Per sommarli si sommano solo i <strong>coefficienti</strong>, e la parte letterale si riscrive uguale. Funziona allo stesso modo quando la parte che si ripete non è una lettera ma un logaritmo: si sommano i numeri davanti e il logaritmo resta uno solo.</div>
         <div class="f sx">$\displaystyle ka^{m}+ha^{m}=\left(k+h\right)a^{m}$</div>
         <div class="ex">esempio: $7b^{3}+2b^{3}=9b^{3}$</div>
       </div>
@@ -432,35 +375,16 @@ mjx-container[display]{margin:0!important}
     </div>
   </details>
 
-  <details class="riga res">
-    <summary>
+  <div class="riga res">
+    <div class="fissa">
       <div class="n">10</div>
       <div class="cont">
         <div class="nota">Il $\frac{1}{2}$ moltiplica i due termini.</div>
         <div class="f sx">$\displaystyle =\frac{2}{3}\log a+\frac{1}{3}\log b$</div>
       </div>
-      <span class="tab">Regola <span class="chev">▼</span></span>
-    </summary>
-    <div class="pannello">
-      <p class="mossa">$\frac{1}{2}\cdot\frac{4}{3}=\frac{2}{3}$ e $\frac{1}{2}\cdot\frac{2}{3}=\frac{1}{3}$.</p>
-      <div class="teoria">
-        <div class="nome">Proprietà distributiva della moltiplicazione</div>
-        <div class="frase">Per moltiplicare un numero per una somma (o una differenza) si può moltiplicare quel numero per <strong>ciascun</strong> termine e poi sommare (o sottrarre) i risultati. Letta al contrario, permette di raccogliere un fattore comune.</div>
-        <div class="f sx">$\displaystyle a\cdot\left(b+c\right)=a\cdot b+a\cdot c$</div>
-        <div class="ex">esempio: $11\cdot\left(10+3\right)=11\cdot 10+11\cdot 3=110+33=143$</div>
-      </div>
-      <div class="errore">
-        <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Moltiplicare un solo termine</div>
-        <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a\cdot\left(b+c\right)=a\cdot b+c$</div></div>
-          <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a\cdot\left(b+c\right)=a\cdot b+a\cdot c$</div></div>
-        </div>
-        <div class="why-txt">Il fattore moltiplica tutti e due i termini.</div>
-      </div>
+      <div></div>
     </div>
-  </details>
+  </div>
 
 </div>
 

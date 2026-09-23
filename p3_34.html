@@ -234,22 +234,12 @@ mjx-container[display]{margin:0!important}
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">$8^{25}:8^{24}=8^{25-24}=8^{1}$. Divisione e prodotto hanno la stessa priorità, quindi si parte da sinistra.</p>
+      <p class="mossa">Dentro la graffa c'è una quadra, e dentro la quadra una tonda.</p>
       <div class="teoria">
-        <div class="nome">Divisione di potenze con la stessa base</div>
-        <div class="frase">Quando due potenze hanno la <strong>stessa base</strong>, per dividerle si sottraggono gli esponenti: quello del divisore si toglie a quello del dividendo. La base resta la stessa.</div>
-        <div class="f sx">$\displaystyle a^{m}:a^{n}=a^{m-n}$</div>
-        <div class="ex">esempio: $5^{7}:5^{4}=5^{3}$</div>
-      </div>
-      <div class="errore">
-        <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Dividere gli esponenti invece di sottrarli</div>
-        <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a^{m}:a^{n}=a^{m:n}$</div></div>
-          <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a^{m}:a^{n}=a^{m-n}$</div></div>
-        </div>
-        <div class="why-txt">Divisione di potenze, sottrazione di esponenti.</div>
+        <div class="nome">Si parte dalla parentesi più interna</div>
+        <div class="frase">Quando ci sono parentesi dentro altre parentesi si comincia sempre dalla più interna — la tonda — poi la quadra, infine la graffa. Una parentesi già svolta si toglie, e si passa a quella che la conteneva.</div>
+        <div class="f sx">$\displaystyle \left\{\ \left[\ \left(\ \right)\ \right]\ \right\}$</div>
+        <div class="ex">esempio: $2-\left[3-\left(4-1\right)\right]=2-\left[3-3\right]=2$</div>
       </div>
     </div>
   </details>
@@ -356,8 +346,8 @@ mjx-container[display]{margin:0!important}
       <div class="teoria">
         <div class="nome">Portare le potenze alla stessa base</div>
         <div class="frase">Le proprietà delle potenze funzionano solo se le basi sono <strong>uguali</strong>. Spesso un numero è già una potenza travestita: basta riscriverlo per far comparire la stessa base.</div>
-        <div class="f sx">$\displaystyle a^{m\cdot n}=\left(a^{m}\right)^{n}$</div>
-        <div class="ex">esempio: $16^{3}=\left(2^{4}\right)^{3}$</div>
+        <div class="f sx">$\displaystyle b=a^{m}\ \Rightarrow\ b^{n}=\left(a^{m}\right)^{n}$</div>
+        <div class="ex">esempio: $343^{2}=\left(7^{3}\right)^{2}$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>

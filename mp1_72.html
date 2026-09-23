@@ -198,11 +198,11 @@ mjx-container[display]{margin:0!important}
         <div class="k">⚠️ L'errore che si fa qui</div>
         <div class="nome">Dimenticare la parentesi</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \left(m+n\right)^{2}=m+n^{2}$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \text{il quadrato della somma di }m\text{ e }n=m+n^{2}$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \left(m+n\right)^{2}=\left(m+n\right)\cdot\left(m+n\right)$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \text{il quadrato della somma di }m\text{ e }n=\left(m+n\right)^{2}$</div></div>
         </div>
-        <div class="why-txt">Senza parentesi il quadrato va solo alla seconda lettera.</div>
+        <div class="why-txt">Senza parentesi il quadrato riguarda solo la seconda lettera.</div>
       </div>
     </div>
   </details>
@@ -217,22 +217,22 @@ mjx-container[display]{margin:0!important}
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">Prima la parentesi, poi la potenza.</p>
+      <p class="mossa">Prima si chiude la tonda, poi si eleva il risultato.</p>
       <div class="teoria">
-        <div class="nome">Priorità dentro le parentesi</div>
-        <div class="frase">Anche dentro una parentesi valgono le priorità: prima le moltiplicazioni e le divisioni, poi le addizioni e le sottrazioni. La parentesi si toglie solo quando dentro è rimasto un unico numero.</div>
-        <div class="f sx">$\displaystyle (a+b\cdot c)=a+(b\cdot c)$</div>
-        <div class="ex">esempio: $(5+2\cdot 3)=5+6=11$</div>
+        <div class="nome">La potenza di una parentesi</div>
+        <div class="frase">Quando l'esponente sta <strong>fuori</strong> dalla parentesi si eleva il risultato dell'operazione, non i singoli numeri. Con l'addizione e la sottrazione elevare i numeri uno per uno dà un risultato diverso.</div>
+        <div class="f sx">$\displaystyle \left(a+b\right)^{2}\neq a^{2}+b^{2}$</div>
+        <div class="ex">esempio: $\left(1+2\right)^{2}=9,\quad 1^{2}+2^{2}=5$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Sommare prima di moltiplicare dentro la parentesi</div>
+        <div class="nome">Elevare i due addendi separatamente</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle (a+b\cdot c)=(a+b)\cdot c$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \left(a+b\right)^{2}=a^{2}+b^{2}$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle (a+b\cdot c)=a+(b\cdot c)$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \left(a+b\right)^{2}=\left(a+b\right)\cdot\left(a+b\right)$</div></div>
         </div>
-        <div class="why-txt">Anche fra parentesi il prodotto viene prima.</div>
+        <div class="why-txt">Prima la somma, poi la potenza.</div>
       </div>
     </div>
   </details>
@@ -250,7 +250,7 @@ mjx-container[display]{margin:0!important}
       <p class="mossa">$\left(-2\right)^{2}=4$.</p>
       <div class="teoria">
         <div class="nome">Potenza di un numero negativo</div>
-        <div class="frase">Se l'esponente è <strong>pari</strong> il risultato è positivo, perché i segni meno si accoppiano; se è <strong>dispari</strong> ne resta uno spaiato e il risultato è negativo. Attenzione alle parentesi: $(-2)^{2}$ e $-2^{2}$ non sono la stessa cosa.</div>
+        <div class="frase">Se l'esponente è <strong>pari</strong> il risultato è positivo, perché i segni meno si accoppiano; se è <strong>dispari</strong> ne resta uno spaiato e il risultato è negativo. Attenzione alle parentesi: $\left(-a\right)^{2}$ e $-a^{2}$ non sono la stessa cosa.</div>
         <div class="f sx">$\displaystyle (-a)^{2}=+a^{2},\quad (-a)^{3}=-a^{3}$</div>
         <div class="ex">esempio: $(-0{,}1)^{2}=+0{,}01$</div>
       </div>
@@ -258,11 +258,11 @@ mjx-container[display]{margin:0!important}
         <div class="k">⚠️ L'errore che si fa qui</div>
         <div class="nome">Elevare senza la parentesi</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle -2^{2}=(-2)^{2}$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle -a^{2}=\left(-a\right)^{2}$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle -2^{2}=-\left(2^{2}\right)$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle -a^{2}=-\left(a^{2}\right)$</div></div>
         </div>
-        <div class="why-txt">Senza parentesi l'esponente riguarda solo il numero.</div>
+        <div class="why-txt">Senza parentesi l'esponente riguarda solo il numero, non il segno.</div>
       </div>
     </div>
   </details>

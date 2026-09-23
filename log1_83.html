@@ -209,13 +209,13 @@ mjx-container[display]{margin:0!important}
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Scambiare esponente e base</div>
+        <div class="nome">Elevare il logaritmo alla base</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \log_{a}a^{n}=a$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \log_{a}b=c\ \Rightarrow\ c^{a}=b$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \log_{a}a^{n}=n$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \log_{a}b=c\ \Rightarrow\ a^{c}=b$</div></div>
         </div>
-        <div class="why-txt">Il logaritmo è l'esponente, non la base.</div>
+        <div class="why-txt">Si eleva la base al logaritmo, non il logaritmo alla base.</div>
       </div>
     </div>
   </details>
@@ -233,9 +233,9 @@ mjx-container[display]{margin:0!important}
       <p class="mossa">$x^{-4}=\frac{1}{x^{4}}$.</p>
       <div class="teoria">
         <div class="nome">Potenza con esponente negativo</div>
-        <div class="frase">Un esponente negativo dice di <strong>capovolgere</strong> la base e cambiare il segno dell'esponente. Il risultato non diventa negativo: l'esponente negativo riguarda la posizione, non il segno.</div>
-        <div class="f sx">$\displaystyle a^{-n}=\left(\frac{1}{a}\right)^{n}$</div>
-        <div class="ex">esempio: $\left(\frac{1}{4}\right)^{-2}=4^{2}=16$</div>
+        <div class="frase">Un esponente negativo manda la potenza <strong>dall'altra parte della linea di frazione</strong>: $a^{-n}$ vuol dire $\frac{1}{a^{n}}$. Su una frazione la stessa cosa si vede come un capovolgimento. Il risultato non diventa negativo: il segno dell'esponente riguarda la posizione, non il segno del numero.</div>
+        <div class="f sx">$\displaystyle a^{-n}=\frac{1}{a^{n}}$</div>
+        <div class="ex">esempio: $2^{-3}=\frac{1}{2^{3}}=\frac{1}{8},\quad\left(\frac{3}{4}\right)^{-2}=\left(\frac{4}{3}\right)^{2}$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
@@ -243,23 +243,42 @@ mjx-container[display]{margin:0!important}
         <div class="compare">
           <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a^{-n}=-a^{n}$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a^{-n}=\left(\frac{1}{a}\right)^{n}$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a^{-n}=\frac{1}{a^{n}}$</div></div>
         </div>
-        <div class="why-txt">Si capovolge la base, non si cambia segno.</div>
+        <div class="why-txt">Si sposta la potenza sotto la linea, non si cambia segno.</div>
       </div>
     </div>
   </details>
 
-  <div class="riga">
-    <div class="fissa">
+  <details class="riga">
+    <summary>
       <div class="n">4</div>
       <div class="cont">
         <div class="nota">Capovolgendo tutti e due i membri.</div>
         <div class="f sx">$\displaystyle x^{4}=81$</div>
       </div>
-      <div></div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">L'incognita è sotto la linea: si capovolgono tutti e due i membri.</p>
+      <div class="teoria">
+        <div class="nome">Capovolgere tutti e due i membri</div>
+        <div class="frase">Due quantità uguali hanno uguali anche i <strong>reciproci</strong>: si possono capovolgere tutti e due i membri insieme. Serve quando l'incognita è finita sotto la linea di frazione, perché capovolgendo torna sopra.</div>
+        <div class="f sx">$\displaystyle \frac{1}{A}=\frac{p}{q}\quad\Longrightarrow\quad A=\frac{q}{p}$</div>
+        <div class="ex">esempio: $\frac{1}{k}=\frac{2}{7}\ \to\ k=\frac{7}{2}$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Capovolgere un membro solo</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{1}{A}=\frac{p}{q}\ \to\ A=\frac{p}{q}$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{1}{A}=\frac{p}{q}\ \to\ A=\frac{q}{p}$</div></div>
+        </div>
+        <div class="why-txt">Se si capovolge, si capovolge da tutte e due le parti.</div>
+      </div>
     </div>
-  </div>
+  </details>
 
   <details class="riga res">
     <summary>
@@ -276,17 +295,17 @@ mjx-container[display]{margin:0!important}
         <div class="nome">La base di un logaritmo</div>
         <div class="frase">La base di un logaritmo deve essere <strong>positiva e diversa da 1</strong>, e anche l'argomento deve essere positivo. Per questo, quando si risolve un'equazione per trovare la base, le soluzioni negative si scartano.</div>
         <div class="f sx">$\displaystyle \log_{a}b\ \text{esiste se}\ a>0,\ a\neq 1,\ b>0$</div>
-        <div class="ex">esempio: $x^{2}=9\ \to\ x=3\ \text{(si scarta}\ -3\text{)}$</div>
+        <div class="ex">esempio: $x^{2}=49\ \to\ x=7\ \text{(si scarta}\ -7\text{)}$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Tenere la base negativa</div>
+        <div class="nome">Tenere la soluzione negativa</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \log_{-2}4=2$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle x^{2}=a^{2}\ \to\ x=-a$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \log_{2}4=2$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle x^{2}=a^{2}\ \to\ x=a$</div></div>
         </div>
-        <div class="why-txt">La base non può essere negativa.</div>
+        <div class="why-txt">Con una base negativa il logaritmo non esisterebbe.</div>
       </div>
     </div>
   </details>

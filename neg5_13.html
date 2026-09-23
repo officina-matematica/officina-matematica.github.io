@@ -205,17 +205,17 @@ mjx-container[display]{margin:0!important}
         <div class="nome">Potenza di un numero negativo</div>
         <div class="frase">Se l'esponente è <strong>pari</strong> il risultato è positivo, perché i segni meno si accoppiano; se è <strong>dispari</strong> ne resta uno spaiato e il risultato è negativo. Attenzione alle parentesi: $(-2)^{2}$ e $-2^{2}$ non sono la stessa cosa.</div>
         <div class="f sx">$\displaystyle (-a)^{2}=+a^{2},\quad (-a)^{3}=-a^{3}$</div>
-        <div class="ex">esempio: $(-0{,}1)^{2}=+0{,}01$</div>
+        <div class="ex">esempio: $\left(-5\right)^{2}=+25,\quad\left(-5\right)^{3}=-125$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Elevare senza la parentesi</div>
+        <div class="nome">Tenere il meno anche con l'esponente pari</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle -2^{2}=(-2)^{2}$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \left(-a\right)^{2}=-a^{2}$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle -2^{2}=-\left(2^{2}\right)$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \left(-a\right)^{2}=+a^{2}$</div></div>
         </div>
-        <div class="why-txt">Senza parentesi l'esponente riguarda solo il numero.</div>
+        <div class="why-txt">Con l'esponente pari i due meno si accoppiano e spariscono.</div>
       </div>
     </div>
   </details>
@@ -230,22 +230,22 @@ mjx-container[display]{margin:0!important}
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">Nella prima quadra gli esponenti si sottraggono; nella seconda, essendo un prodotto, si sommano: $-\frac{2}{5}$ vale esponente $1$.</p>
+      <p class="mossa">Nel prodotto gli esponenti si sommano.</p>
       <div class="teoria">
-        <div class="nome">Divisione di potenze con la stessa base</div>
-        <div class="frase">Quando due potenze hanno la <strong>stessa base</strong>, per dividerle si sottraggono gli esponenti: quello del divisore si toglie a quello del dividendo. La base resta la stessa.</div>
-        <div class="f sx">$\displaystyle a^{m}:a^{n}=a^{m-n}$</div>
-        <div class="ex">esempio: $5^{7}:5^{4}=5^{3}$</div>
+        <div class="nome">Prodotto di potenze con la stessa base</div>
+        <div class="frase">Quando due potenze hanno la <strong>stessa base</strong>, per moltiplicarle si sommano gli esponenti. La base resta quella di partenza e non si tocca mai.</div>
+        <div class="f sx">$\displaystyle a^{m}\cdot a^{n}=a^{m+n}$</div>
+        <div class="ex">esempio: $2^{3}\cdot 2^{4}=2^{7}$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Dividere gli esponenti invece di sottrarli</div>
+        <div class="nome">Moltiplicare gli esponenti invece di sommarli</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a^{m}:a^{n}=a^{m:n}$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a^{m}\cdot a^{n}=a^{m\cdot n}$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a^{m}:a^{n}=a^{m-n}$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a^{m}\cdot a^{n}=a^{m+n}$</div></div>
         </div>
-        <div class="why-txt">Divisione di potenze, sottrazione di esponenti.</div>
+        <div class="why-txt">Prodotto di potenze, somma di esponenti.</div>
       </div>
     </div>
   </details>

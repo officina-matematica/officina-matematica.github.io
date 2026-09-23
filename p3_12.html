@@ -233,8 +233,8 @@ mjx-container[display]{margin:0!important}
       <div class="teoria">
         <div class="nome">Portare le potenze alla stessa base</div>
         <div class="frase">Le proprietà delle potenze funzionano solo se le basi sono <strong>uguali</strong>. Spesso un numero è già una potenza travestita: basta riscriverlo per far comparire la stessa base.</div>
-        <div class="f sx">$\displaystyle a^{m\cdot n}=\left(a^{m}\right)^{n}$</div>
-        <div class="ex">esempio: $16^{3}=\left(2^{4}\right)^{3}$</div>
+        <div class="f sx">$\displaystyle b=a^{m}\ \Rightarrow\ b^{n}=\left(a^{m}\right)^{n}$</div>
+        <div class="ex">esempio: $343^{2}=\left(7^{3}\right)^{2}$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
@@ -249,35 +249,16 @@ mjx-container[display]{margin:0!important}
     </div>
   </details>
 
-  <details class="riga">
-    <summary>
+  <div class="riga">
+    <div class="fissa">
       <div class="n">4</div>
       <div class="cont">
         <div class="nota">Potenza di potenza.</div>
         <div class="f sx">$\displaystyle =2^{36}:2^{24}:2^{12}=$</div>
       </div>
-      <span class="tab">Regola <span class="chev">▼</span></span>
-    </summary>
-    <div class="pannello">
-      <p class="mossa">$3\cdot 12=36$ e $2\cdot 12=24$.</p>
-      <div class="teoria">
-        <div class="nome">Potenza di potenza</div>
-        <div class="frase">Quando una potenza è a sua volta elevata a un esponente, i due esponenti si <strong>moltiplicano</strong> fra loro. È l'unico caso in cui gli esponenti si moltiplicano.</div>
-        <div class="f sx">$\displaystyle \left(a^{m}\right)^{n}=a^{m\cdot n}$</div>
-        <div class="ex">esempio: $\left(3^{2}\right)^{4}=3^{8}$</div>
-      </div>
-      <div class="errore">
-        <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Sommare gli esponenti nella potenza di potenza</div>
-        <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \left(a^{m}\right)^{n}=a^{m+n}$</div></div>
-          <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \left(a^{m}\right)^{n}=a^{m\cdot n}$</div></div>
-        </div>
-        <div class="why-txt">Somma per il prodotto, prodotto per la potenza.</div>
-      </div>
+      <div></div>
     </div>
-  </details>
+  </div>
 
   <details class="riga">
     <summary>
@@ -309,35 +290,16 @@ mjx-container[display]{margin:0!important}
     </div>
   </details>
 
-  <details class="riga">
-    <summary>
+  <div class="riga">
+    <div class="fissa">
       <div class="n">6</div>
       <div class="cont">
         <div class="nota">Stessa base: sottraggo gli esponenti.</div>
         <div class="f sx">$\displaystyle =2^{0}=$</div>
       </div>
-      <span class="tab">Regola <span class="chev">▼</span></span>
-    </summary>
-    <div class="pannello">
-      <p class="mossa">$2^{12}:2^{12}=2^{12-12}=2^{0}$.</p>
-      <div class="teoria">
-        <div class="nome">Divisione di potenze con la stessa base</div>
-        <div class="frase">Quando due potenze hanno la <strong>stessa base</strong>, per dividerle si sottraggono gli esponenti: quello del divisore si toglie a quello del dividendo. La base resta la stessa.</div>
-        <div class="f sx">$\displaystyle a^{m}:a^{n}=a^{m-n}$</div>
-        <div class="ex">esempio: $5^{7}:5^{4}=5^{3}$</div>
-      </div>
-      <div class="errore">
-        <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Dividere gli esponenti invece di sottrarli</div>
-        <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a^{m}:a^{n}=a^{m:n}$</div></div>
-          <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a^{m}:a^{n}=a^{m-n}$</div></div>
-        </div>
-        <div class="why-txt">Divisione di potenze, sottrazione di esponenti.</div>
-      </div>
+      <div></div>
     </div>
-  </details>
+  </div>
 
   <details class="riga res">
     <summary>

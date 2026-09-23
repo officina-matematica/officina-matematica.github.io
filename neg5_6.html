@@ -202,22 +202,22 @@ mjx-container[display]{margin:0!important}
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">Le potenze si calcolano prima di somme e prodotti: qui stanno dentro le frazioni, sopra o sotto la linea.</p>
+      <p class="mossa">Dentro le frazioni ci sono potenze: si svolgono per prime.</p>
       <div class="teoria">
-        <div class="nome">Priorità delle operazioni</div>
-        <div class="frase">In un'espressione senza parentesi si eseguono prima tutte le moltiplicazioni e le divisioni. Solo dopo si passa alle addizioni e alle sottrazioni.</div>
-        <div class="f sx">$\displaystyle a+b\cdot c=a+(b\cdot c)$</div>
-        <div class="ex">esempio: $2+3\cdot 4=2+12=14$</div>
+        <div class="nome">Priorità: prima le potenze</div>
+        <div class="frase">Le potenze si svolgono per prime, prima ancora delle moltiplicazioni e delle divisioni. L'esponente riguarda <strong>soltanto</strong> il numero su cui è scritto.</div>
+        <div class="f sx">$\displaystyle a\cdot b^{n}=a\cdot\left(b^{n}\right)$</div>
+        <div class="ex">esempio: $7\cdot 2^{3}=7\cdot 8=56$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Eseguire l'addizione prima della moltiplicazione</div>
+        <div class="nome">Elevare anche il fattore accanto</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a+b\cdot c=(a+b)\cdot c$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a\cdot b^{n}=\left(a\cdot b\right)^{n}$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a+b\cdot c=a+(b\cdot c)$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a\cdot b^{n}=a\cdot\left(b^{n}\right)$</div></div>
         </div>
-        <div class="why-txt">La moltiplicazione non aspetta l'addizione.</div>
+        <div class="why-txt">L'esponente riguarda un numero solo.</div>
       </div>
     </div>
   </details>
@@ -308,17 +308,17 @@ mjx-container[display]{margin:0!important}
         <div class="nome">Potenza di un numero negativo</div>
         <div class="frase">Se l'esponente è <strong>pari</strong> il risultato è positivo, perché i segni meno si accoppiano; se è <strong>dispari</strong> ne resta uno spaiato e il risultato è negativo. Attenzione alle parentesi: $(-2)^{2}$ e $-2^{2}$ non sono la stessa cosa.</div>
         <div class="f sx">$\displaystyle (-a)^{2}=+a^{2},\quad (-a)^{3}=-a^{3}$</div>
-        <div class="ex">esempio: $(-0{,}1)^{2}=+0{,}01$</div>
+        <div class="ex">esempio: $\left(-5\right)^{2}=+25,\quad\left(-5\right)^{3}=-125$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Elevare senza la parentesi</div>
+        <div class="nome">Tenere il meno anche con l'esponente pari</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle -2^{2}=(-2)^{2}$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \left(-a\right)^{2}=-a^{2}$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle -2^{2}=-\left(2^{2}\right)$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \left(-a\right)^{2}=+a^{2}$</div></div>
         </div>
-        <div class="why-txt">Senza parentesi l'esponente riguarda solo il numero.</div>
+        <div class="why-txt">Con l'esponente pari i due meno si accoppiano e spariscono.</div>
       </div>
     </div>
   </details>

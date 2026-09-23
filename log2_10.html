@@ -249,35 +249,16 @@ mjx-container[display]{margin:0!important}
     </div>
   </details>
 
-  <details class="riga">
-    <summary>
+  <div class="riga">
+    <div class="fissa">
       <div class="n">4</div>
       <div class="cont">
         <div class="nota">Anche $5a$ è un prodotto.</div>
         <div class="f sx">$\displaystyle =\log 5+\log a-\log b^{4}+\log\sqrt[7]{b}=$</div>
       </div>
-      <span class="tab">Regola <span class="chev">▼</span></span>
-    </summary>
-    <div class="pannello">
-      <p class="mossa">$\log\left(5a\right)=\log 5+\log a$.</p>
-      <div class="teoria">
-        <div class="nome">Il logaritmo di un prodotto</div>
-        <div class="frase">Il logaritmo di un prodotto è la <strong>somma</strong> dei logaritmi dei fattori. Vale anche al contrario: una somma di logaritmi con la stessa base si può riunire in un solo logaritmo.</div>
-        <div class="f sx">$\displaystyle \log\left(a\cdot b\right)=\log a+\log b$</div>
-        <div class="ex">esempio: $\log\left(2\cdot 5\right)=\log 2+\log 5$</div>
-      </div>
-      <div class="errore">
-        <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Spezzare una somma dentro il logaritmo</div>
-        <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \log\left(a+b\right)=\log a+\log b$</div></div>
-          <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \log\left(a\cdot b\right)=\log a+\log b$</div></div>
-        </div>
-        <div class="why-txt">Si spezza il prodotto, non la somma.</div>
-      </div>
+      <div></div>
     </div>
-  </details>
+  </div>
 
   <details class="riga">
     <summary>
@@ -292,9 +273,9 @@ mjx-container[display]{margin:0!important}
       <p class="mossa">$\sqrt[7]{b}=b^{\frac{1}{7}}$.</p>
       <div class="teoria">
         <div class="nome">La radice è una potenza con esponente frazionario</div>
-        <div class="frase">Ogni radice si può scrivere come potenza: l'indice della radice va al <strong>denominatore</strong> dell'esponente. Così le radici entrano nelle proprietà delle potenze e i conti si fanno solo sugli esponenti.</div>
+        <div class="frase">Ogni radice si può scrivere come potenza: l'indice della radice va al <strong>denominatore</strong> dell'esponente, l'esponente del radicando al numeratore. Si legge anche al contrario: una potenza con esponente frazionario è una radice, ed è spesso così che il conto si chiude.</div>
         <div class="f sx">$\displaystyle \sqrt[n]{a^{m}}=a^{\frac{m}{n}}$</div>
-        <div class="ex">esempio: $\sqrt[3]{5^{2}}=5^{\frac{2}{3}},\quad \sqrt{7}=7^{\frac{1}{2}}$</div>
+        <div class="ex">esempio: $\sqrt[3]{5^{2}}=5^{\frac{2}{3}},\quad 49^{\frac{1}{2}}=\sqrt{49}=7$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
@@ -352,7 +333,7 @@ mjx-container[display]{margin:0!important}
       <p class="mossa">Si trattano come termini simili: $-4+\frac{1}{7}=-\frac{27}{7}$.</p>
       <div class="teoria">
         <div class="nome">Somma di monomi simili</div>
-        <div class="frase">Due monomi sono <strong>simili</strong> quando hanno la stessa parte letterale, con gli stessi esponenti. Per sommarli si sommano solo i <strong>coefficienti</strong>, e la parte letterale si riscrive uguale: non cambia e non si somma.</div>
+        <div class="frase">Due monomi sono <strong>simili</strong> quando hanno la stessa parte letterale, con gli stessi esponenti. Per sommarli si sommano solo i <strong>coefficienti</strong>, e la parte letterale si riscrive uguale. Funziona allo stesso modo quando la parte che si ripete non è una lettera ma un logaritmo: si sommano i numeri davanti e il logaritmo resta uno solo.</div>
         <div class="f sx">$\displaystyle ka^{m}+ha^{m}=\left(k+h\right)a^{m}$</div>
         <div class="ex">esempio: $7b^{3}+2b^{3}=9b^{3}$</div>
       </div>

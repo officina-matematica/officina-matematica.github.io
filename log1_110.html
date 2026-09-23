@@ -227,7 +227,37 @@ mjx-container[display]{margin:0!important}
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">$\log 2$ e $\log 3$ si comportano come due quantità diverse: si sommano fra loro solo i coefficienti dello stesso logaritmo.</p>
+      <p class="mossa">Si mettono in evidenza i logaritmi uguali.</p>
+      <div class="teoria">
+        <div class="nome">Raccogliere un fattore comune</div>
+        <div class="frase">Se tutti i termini di una somma hanno un fattore in comune, lo si porta <strong>fuori da una parentesi</strong>: dentro resta quello che ogni termine ha in più. È la proprietà distributiva letta al contrario.</div>
+        <div class="f sx">$\displaystyle ab+ac=a\left(b+c\right)$</div>
+        <div class="ex">esempio: $y^{2}+5y=y\left(y+5\right)$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Dimenticare il termine che resta 1</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle y^{2}+y=y\cdot y$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle y^{2}+y=y\left(y+1\right)$</div></div>
+        </div>
+        <div class="why-txt">Dove c'era il fattore da solo resta 1.</div>
+      </div>
+    </div>
+  </details>
+
+  <details class="riga">
+    <summary>
+      <div class="n">4</div>
+      <div class="cont">
+        <div class="nota">$2-\frac{3}{2}=\frac{1}{2}$; i due mezzi si annullano.</div>
+        <div class="f sx">$\displaystyle =\frac{1}{2}\log 2+0\cdot\log 3=$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">Adesso si sommano i coefficienti davanti a ogni logaritmo.</p>
       <div class="teoria">
         <div class="nome">Addizione e sottrazione fra frazioni</div>
         <div class="frase">Due frazioni si sommano o si sottraggono solo quando hanno lo <strong>stesso denominatore</strong>. Si cerca il minimo comune multiplo dei denominatori, si riscrivono tutte con quel denominatore e poi si sommano o si sottraggono i soli numeratori.</div>
@@ -246,17 +276,6 @@ mjx-container[display]{margin:0!important}
       </div>
     </div>
   </details>
-
-  <div class="riga">
-    <div class="fissa">
-      <div class="n">4</div>
-      <div class="cont">
-        <div class="nota">$2-\frac{3}{2}=\frac{1}{2}$; i due mezzi si annullano.</div>
-        <div class="f sx">$\displaystyle =\frac{1}{2}\log 2+0\cdot\log 3=$</div>
-      </div>
-      <div></div>
-    </div>
-  </div>
 
   <div class="riga res">
     <div class="fissa">

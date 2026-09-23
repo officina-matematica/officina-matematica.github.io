@@ -256,22 +256,22 @@ mjx-container[display]{margin:0!important}
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">$-\left(\log 5+\log a\right)=-\log 5-\log a$.</p>
+      <p class="mossa">Tutti i termini dentro la parentesi cambiano segno.</p>
       <div class="teoria">
-        <div class="nome">Il meno davanti alla parentesi</div>
-        <div class="frase">Quando davanti a una parentesi c'è il segno meno, togliendo la parentesi <strong>tutti</strong> i termini che stanno dentro cambiano segno: il più diventa meno e il meno diventa più. Con il più davanti, invece, non cambia niente.</div>
-        <div class="f sx">$\displaystyle -\left(a-b\right)=-a+b$</div>
-        <div class="ex">esempio: $-\left(3x-5x\right)=-3x+5x$</div>
+        <div class="nome">Parentesi preceduta dal segno meno</div>
+        <div class="frase">Quando davanti a una parentesi c'è il segno meno, si toglie il valore dell'<strong>intera</strong> parentesi, non solo il suo primo termine. Il modo più sicuro è chiudere prima la parentesi e sottrarre il risultato.</div>
+        <div class="f sx">$\displaystyle a-\left(b+c\right)=a-b-c$</div>
+        <div class="ex">esempio: $10-\left(3+2\right)=10-5=5$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Cambiare il segno solo al primo termine</div>
+        <div class="nome">Togliere solo il primo termine della parentesi</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle -\left(a-b\right)=-a-b$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a-\left(b+c\right)=a-b+c$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle -\left(a-b\right)=-a+b$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a-\left(b+c\right)=a-b-c$</div></div>
         </div>
-        <div class="why-txt">Il meno vale per tutto quello che c'è dentro.</div>
+        <div class="why-txt">Il meno davanti riguarda tutta la parentesi.</div>
       </div>
     </div>
   </details>

@@ -192,18 +192,18 @@ mjx-container[display]{margin:0!important}
       <div class="teoria">
         <div class="nome">Sostituire un numero a una lettera</div>
         <div class="frase">Al posto di ogni lettera si scrive il suo valore, <strong>sempre fra parentesi</strong> se è negativo, una frazione o un decimale. Le moltiplicazioni nascoste diventano visibili: $3ab$ vuol dire $3\cdot a\cdot b$.</div>
-        <div class="f sx">$\displaystyle 3ab\ \text{con}\ a=m,\ b=n\ \to\ 3\cdot\left(m\right)\cdot\left(n\right)$</div>
+        <div class="f sx">$\displaystyle 3ab\ \text{con}\ a=p,\ b=-q\ \to\ 3\cdot p\cdot\left(-q\right)$</div>
         <div class="ex">esempio: $5k^{2}\ \text{con}\ k=-3\ \to\ 5\cdot\left(-3\right)^{2}=45$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Dimenticare le parentesi sul numero negativo</div>
+        <div class="nome">Sostituire un valore negativo senza parentesi</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle -3^{2}=9$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle k^{2}\ \text{con}\ k=-p\ \to\ -p^{2}$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \left(-3\right)^{2}=9$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle k^{2}\ \text{con}\ k=-p\ \to\ \left(-p\right)^{2}$</div></div>
         </div>
-        <div class="why-txt">Senza parentesi il quadrato va solo al $3$.</div>
+        <div class="why-txt">Senza parentesi l'esponente lascia fuori il segno.</div>
       </div>
     </div>
   </details>
@@ -251,19 +251,19 @@ mjx-container[display]{margin:0!important}
       <p class="mossa">$-\left(-8\right)=+8$.</p>
       <div class="teoria">
         <div class="nome">Il meno davanti alla parentesi</div>
-        <div class="frase">Quando davanti a una parentesi c'è il segno meno, togliendo la parentesi <strong>tutti</strong> i termini che stanno dentro cambiano segno: il più diventa meno e il meno diventa più. Con il più davanti, invece, non cambia niente.</div>
-        <div class="f sx">$\displaystyle -\left(a-b\right)=-a+b$</div>
-        <div class="ex">esempio: $-\left(3x-5x\right)=-3x+5x$</div>
+        <div class="frase">Il segno davanti a una parentesi decide i segni di quello che c'è dentro. Con il <strong>meno</strong> tutti i termini cambiano segno, e due meno di fila danno più; con il <strong>più</strong> non cambia niente, e un numero negativo resta negativo.</div>
+        <div class="f sx">$\displaystyle -\left(-a\right)=+a\qquad +\left(-a\right)=-a\qquad-\left(a-b\right)=-a+b$</div>
+        <div class="ex">esempio: $-\left(-7\right)=+7,\qquad 4+\left(-7\right)=4-7$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Cambiare il segno solo al primo termine</div>
+        <div class="nome">Lasciare il meno quando i meno sono due</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle -\left(a-b\right)=-a-b$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle -\left(-a\right)=-a$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle -\left(a-b\right)=-a+b$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle -\left(-a\right)=+a$</div></div>
         </div>
-        <div class="why-txt">Il meno vale per tutto quello che c'è dentro.</div>
+        <div class="why-txt">Due segni meno di fila si annullano.</div>
       </div>
     </div>
   </details>

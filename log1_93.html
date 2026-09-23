@@ -207,13 +207,13 @@ mjx-container[display]{margin:0!important}
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Scambiare esponente e base</div>
+        <div class="nome">Elevare il logaritmo alla base</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \log_{a}a^{n}=a$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \log_{a}b=c\ \Rightarrow\ c^{a}=b$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \log_{a}a^{n}=n$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \log_{a}b=c\ \Rightarrow\ a^{c}=b$</div></div>
         </div>
-        <div class="why-txt">Il logaritmo è l'esponente, non la base.</div>
+        <div class="why-txt">Si eleva la base al logaritmo, non il logaritmo alla base.</div>
       </div>
     </div>
   </details>
@@ -228,22 +228,22 @@ mjx-container[display]{margin:0!important}
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">$64$ non è una potenza quinta di un intero: la base resta scritta come radice.</p>
+      <p class="mossa">La radice quinta scioglie l'esponente 5.</p>
       <div class="teoria">
-        <div class="nome">La radice è una potenza con esponente frazionario</div>
-        <div class="frase">Ogni radice si può scrivere come potenza: l'indice della radice va al <strong>denominatore</strong> dell'esponente. Così le radici entrano nelle proprietà delle potenze e i conti si fanno solo sugli esponenti.</div>
-        <div class="f sx">$\displaystyle \sqrt[n]{a^{m}}=a^{\frac{m}{n}}$</div>
-        <div class="ex">esempio: $\sqrt[3]{5^{2}}=5^{\frac{2}{3}},\quad \sqrt{7}=7^{\frac{1}{2}}$</div>
+        <div class="nome">La radice scioglie l'esponente</div>
+        <div class="frase">Quando si conosce la potenza e si cerca la base si fa l'operazione inversa: si estrae da tutti e due i membri la radice con indice uguale all'esponente. Se il numero non è una potenza esatta, la radice resta scritta così: è già il risultato.</div>
+        <div class="f sx">$\displaystyle x^{n}=k\quad\Longrightarrow\quad x=\sqrt[n]{k}$</div>
+        <div class="ex">esempio: $x^{3}=7\ \to\ x=\sqrt[3]{7}$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Mettere l'indice sopra</div>
+        <div class="nome">Dividere per l'esponente invece di estrarre la radice</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \sqrt[n]{a}=a^{n}$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle x^{n}=k\ \to\ x=\frac{k}{n}$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \sqrt[n]{a}=a^{\frac{1}{n}}$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle x^{n}=k\ \to\ x=\sqrt[n]{k}$</div></div>
         </div>
-        <div class="why-txt">L'indice della radice va sotto.</div>
+        <div class="why-txt">Una potenza si disfa con una radice, non con una divisione.</div>
       </div>
     </div>
   </details>

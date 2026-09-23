@@ -220,35 +220,16 @@ mjx-container[display]{margin:0!important}
     </div>
   </details>
 
-  <details class="riga">
-    <summary>
+  <div class="riga">
+    <div class="fissa">
       <div class="n">3</div>
       <div class="cont">
         <div class="nota">Il secondo logaritmo vale $2$.</div>
         <div class="f sx">$\displaystyle =5-4\cdot 2+\log\left[\log_{2}\left(\log 100\right)\right]=$</div>
       </div>
-      <span class="tab">Regola <span class="chev">▼</span></span>
-    </summary>
-    <div class="pannello">
-      <p class="mossa">$16=4^{2}$, quindi $\log_{4}16=\log_{4}4^{2}=2$.</p>
-      <div class="teoria">
-        <div class="nome">Base e argomento come potenze dello stesso numero</div>
-        <div class="frase">Per calcolare un logaritmo conviene scrivere <strong>base e argomento come potenze di uno stesso numero</strong>. Quando ci si è riusciti, il logaritmo è il rapporto fra i due esponenti: quello dell'argomento diviso quello della base.</div>
-        <div class="f sx">$\displaystyle \log_{a^{m}}a^{n}=\frac{n}{m}$</div>
-        <div class="ex">esempio: $\log_{4}8=\log_{2^{2}}2^{3}=\frac{3}{2}$</div>
-      </div>
-      <div class="errore">
-        <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Capovolgere il rapporto degli esponenti</div>
-        <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \log_{a^{m}}a^{n}=\frac{m}{n}$</div></div>
-          <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \log_{a^{m}}a^{n}=\frac{n}{m}$</div></div>
-        </div>
-        <div class="why-txt">Sopra va l'esponente dell'argomento.</div>
-      </div>
+      <div></div>
     </div>
-  </details>
+  </div>
 
   <details class="riga">
     <summary>
@@ -299,13 +280,13 @@ mjx-container[display]{margin:0!important}
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Scambiare esponente e base</div>
+        <div class="nome">Elevare il logaritmo alla base</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \log_{a}a^{n}=a$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \log_{a}b=c\ \Rightarrow\ c^{a}=b$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \log_{a}a^{n}=n$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \log_{a}b=c\ \Rightarrow\ a^{c}=b$</div></div>
         </div>
-        <div class="why-txt">Il logaritmo è l'esponente, non la base.</div>
+        <div class="why-txt">Si eleva la base al logaritmo, non il logaritmo alla base.</div>
       </div>
     </div>
   </details>

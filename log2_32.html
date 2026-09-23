@@ -233,9 +233,9 @@ mjx-container[display]{margin:0!important}
       <p class="mossa">$\sqrt{100}=10$.</p>
       <div class="teoria">
         <div class="nome">La radice è una potenza con esponente frazionario</div>
-        <div class="frase">Ogni radice si può scrivere come potenza: l'indice della radice va al <strong>denominatore</strong> dell'esponente. Così le radici entrano nelle proprietà delle potenze e i conti si fanno solo sugli esponenti.</div>
+        <div class="frase">Ogni radice si può scrivere come potenza: l'indice della radice va al <strong>denominatore</strong> dell'esponente, l'esponente del radicando al numeratore. Si legge anche al contrario: una potenza con esponente frazionario è una radice, ed è spesso così che il conto si chiude.</div>
         <div class="f sx">$\displaystyle \sqrt[n]{a^{m}}=a^{\frac{m}{n}}$</div>
-        <div class="ex">esempio: $\sqrt[3]{5^{2}}=5^{\frac{2}{3}},\quad \sqrt{7}=7^{\frac{1}{2}}$</div>
+        <div class="ex">esempio: $\sqrt[3]{5^{2}}=5^{\frac{2}{3}},\quad 49^{\frac{1}{2}}=\sqrt{49}=7$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
@@ -320,22 +320,22 @@ mjx-container[display]{margin:0!important}
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">$-\log_{2}4$ va in fondo, con il suo segno.</p>
+      <p class="mossa">Il termine si sposta con il segno che ha davanti.</p>
       <div class="teoria">
-        <div class="nome">Proprietà commutativa dell'addizione</div>
-        <div class="frase">In un'addizione si può cambiare l'<strong>ordine</strong> degli addendi: la somma non cambia. Serve ad avvicinare i numeri che insieme fanno una decina, un centinaio o un migliaio.</div>
-        <div class="f sx">$\displaystyle a+b=b+a$</div>
-        <div class="ex">esempio: $19+36+1=19+1+36=20+36=56$</div>
+        <div class="nome">Proprietà commutativa della somma algebrica</div>
+        <div class="frase">In una somma algebrica si può cambiare l'ordine dei termini, purché ognuno si porti dietro il proprio segno. Serve a raggruppare da una parte i numeri da aggiungere e dall'altra quelli da togliere.</div>
+        <div class="f sx">$\displaystyle a-b+c=a+c-b$</div>
+        <div class="ex">esempio: $20-7+5=20+5-7=18$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Scambiare i termini di una sottrazione</div>
+        <div class="nome">Spostare un termine lasciando indietro il segno</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a-b=b-a$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a-b+c=a+c+b$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a+b=b+a$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a-b+c=a+c-b$</div></div>
         </div>
-        <div class="why-txt">Nella sottrazione l'ordine non si può cambiare.</div>
+        <div class="why-txt">Il segno viaggia insieme al numero.</div>
       </div>
     </div>
   </details>
@@ -370,35 +370,16 @@ mjx-container[display]{margin:0!important}
     </div>
   </details>
 
-  <details class="riga res">
-    <summary>
+  <div class="riga res">
+    <div class="fissa">
       <div class="n">8</div>
       <div class="cont">
         <div class="nota">Differenza: si dividono gli argomenti.</div>
         <div class="f sx">$\displaystyle =\log_{2}5$</div>
       </div>
-      <span class="tab">Regola <span class="chev">▼</span></span>
-    </summary>
-    <div class="pannello">
-      <p class="mossa">$\log_{2}\frac{20}{4}=\log_{2}5$.</p>
-      <div class="teoria">
-        <div class="nome">Il logaritmo di un quoziente</div>
-        <div class="frase">Il logaritmo di un quoziente è la <strong>differenza</strong> fra il logaritmo del numeratore e quello del denominatore. Anche questa regola si legge nei due versi.</div>
-        <div class="f sx">$\displaystyle \log\frac{a}{b}=\log a-\log b$</div>
-        <div class="ex">esempio: $\log\frac{100}{10}=\log 100-\log 10=1$</div>
-      </div>
-      <div class="errore">
-        <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Confondere il quoziente dei logaritmi</div>
-        <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{\log a}{\log b}=\log a-\log b$</div></div>
-          <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \log\frac{a}{b}=\log a-\log b$</div></div>
-        </div>
-        <div class="why-txt">La frazione sta dentro il logaritmo, non fuori.</div>
-      </div>
+      <div></div>
     </div>
-  </details>
+  </div>
 
 </div>
 

@@ -190,18 +190,18 @@ mjx-container[display]{margin:0!important}
       <div class="teoria">
         <div class="nome">Sostituire un numero a una lettera</div>
         <div class="frase">Al posto di ogni lettera si scrive il suo valore, <strong>sempre fra parentesi</strong> se è negativo, una frazione o un decimale. Le moltiplicazioni nascoste diventano visibili: $3ab$ vuol dire $3\cdot a\cdot b$.</div>
-        <div class="f sx">$\displaystyle 3ab\ \text{con}\ a=m,\ b=n\ \to\ 3\cdot\left(m\right)\cdot\left(n\right)$</div>
+        <div class="f sx">$\displaystyle 3ab\ \text{con}\ a=p,\ b=-q\ \to\ 3\cdot p\cdot\left(-q\right)$</div>
         <div class="ex">esempio: $5k^{2}\ \text{con}\ k=-3\ \to\ 5\cdot\left(-3\right)^{2}=45$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Dimenticare le parentesi sul numero negativo</div>
+        <div class="nome">Sostituire un valore negativo senza parentesi</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle -3^{2}=9$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle k^{2}\ \text{con}\ k=-p\ \to\ -p^{2}$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \left(-3\right)^{2}=9$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle k^{2}\ \text{con}\ k=-p\ \to\ \left(-p\right)^{2}$</div></div>
         </div>
-        <div class="why-txt">Senza parentesi il quadrato va solo al $3$.</div>
+        <div class="why-txt">Senza parentesi l'esponente lascia fuori il segno.</div>
       </div>
     </div>
   </details>
@@ -227,11 +227,11 @@ mjx-container[display]{margin:0!important}
         <div class="k">⚠️ L'errore che si fa qui</div>
         <div class="nome">Sottrarre invece di dividere</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle 5k=20\ \to\ k=20-5$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a\cdot x=b\ \to\ x=b-a$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle 5k=20\ \to\ k=20:5$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a\cdot x=b\ \to\ x=b:a$</div></div>
         </div>
-        <div class="why-txt">Si toglie una moltiplicazione con una divisione.</div>
+        <div class="why-txt">Una moltiplicazione si toglie con una divisione, non con una sottrazione.</div>
       </div>
     </div>
   </details>

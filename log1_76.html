@@ -208,13 +208,13 @@ mjx-container[display]{margin:0!important}
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Scambiare esponente e base</div>
+        <div class="nome">Elevare il logaritmo alla base</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \log_{a}a^{n}=a$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \log_{a}b=c\ \Rightarrow\ c^{a}=b$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \log_{a}a^{n}=n$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \log_{a}b=c\ \Rightarrow\ a^{c}=b$</div></div>
         </div>
-        <div class="why-txt">Il logaritmo è l'esponente, non la base.</div>
+        <div class="why-txt">Si eleva la base al logaritmo, non il logaritmo alla base.</div>
       </div>
     </div>
   </details>
@@ -229,22 +229,22 @@ mjx-container[display]{margin:0!important}
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">$100=10^{2}$: adesso i due membri hanno lo stesso esponente.</p>
+      <p class="mossa">Stesso esponente da tutte e due le parti.</p>
       <div class="teoria">
-        <div class="nome">Base e argomento come potenze dello stesso numero</div>
-        <div class="frase">Per calcolare un logaritmo conviene scrivere <strong>base e argomento come potenze di uno stesso numero</strong>. Quando ci si è riusciti, il logaritmo è il rapporto fra i due esponenti: quello dell'argomento diviso quello della base.</div>
-        <div class="f sx">$\displaystyle \log_{a^{m}}a^{n}=\frac{n}{m}$</div>
-        <div class="ex">esempio: $\log_{4}8=\log_{2^{2}}2^{3}=\frac{3}{2}$</div>
+        <div class="nome">Due potenze uguali con lo stesso esponente</div>
+        <div class="frase">Se due potenze hanno lo <strong>stesso esponente</strong> e sono uguali, allora hanno la stessa base. Vale per le basi positive, che sono quelle di cui ci si occupa qui.</div>
+        <div class="f sx">$\displaystyle x^{n}=a^{n}\quad\Longrightarrow\quad x=a$</div>
+        <div class="ex">esempio: $k^{3}=5^{3}\ \to\ k=5$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Capovolgere il rapporto degli esponenti</div>
+        <div class="nome">Confrontare gli esponenti invece delle basi</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \log_{a^{m}}a^{n}=\frac{m}{n}$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle x^{n}=a^{n}\ \to\ n=n$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \log_{a^{m}}a^{n}=\frac{n}{m}$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle x^{n}=a^{n}\ \to\ x=a$</div></div>
         </div>
-        <div class="why-txt">Sopra va l'esponente dell'argomento.</div>
+        <div class="why-txt">Gli esponenti sono già uguali: a cambiare sono le basi.</div>
       </div>
     </div>
   </details>
@@ -259,22 +259,22 @@ mjx-container[display]{margin:0!important}
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">Resta $10$, che è positivo e diverso da $1$: può fare da base.</p>
+      <p class="mossa">Si tiene la soluzione positiva: una base negativa non andrebbe bene.</p>
       <div class="teoria">
         <div class="nome">La base di un logaritmo</div>
         <div class="frase">La base di un logaritmo deve essere <strong>positiva e diversa da 1</strong>, e anche l'argomento deve essere positivo. Per questo, quando si risolve un'equazione per trovare la base, le soluzioni negative si scartano.</div>
         <div class="f sx">$\displaystyle \log_{a}b\ \text{esiste se}\ a>0,\ a\neq 1,\ b>0$</div>
-        <div class="ex">esempio: $x^{2}=9\ \to\ x=3\ \text{(si scarta}\ -3\text{)}$</div>
+        <div class="ex">esempio: $x^{2}=49\ \to\ x=7\ \text{(si scarta}\ -7\text{)}$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Tenere la base negativa</div>
+        <div class="nome">Tenere la soluzione negativa</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \log_{-2}4=2$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle x^{2}=a^{2}\ \to\ x=-a$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \log_{2}4=2$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle x^{2}=a^{2}\ \to\ x=a$</div></div>
         </div>
-        <div class="why-txt">La base non può essere negativa.</div>
+        <div class="why-txt">Con una base negativa il logaritmo non esisterebbe.</div>
       </div>
     </div>
   </details>

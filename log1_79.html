@@ -208,13 +208,13 @@ mjx-container[display]{margin:0!important}
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Scambiare esponente e base</div>
+        <div class="nome">Elevare il logaritmo alla base</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \log_{a}a^{n}=a$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \log_{a}b=c\ \Rightarrow\ c^{a}=b$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \log_{a}a^{n}=n$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \log_{a}b=c\ \Rightarrow\ a^{c}=b$</div></div>
         </div>
-        <div class="why-txt">Il logaritmo è l'esponente, non la base.</div>
+        <div class="why-txt">Si eleva la base al logaritmo, non il logaritmo alla base.</div>
       </div>
     </div>
   </details>
@@ -234,7 +234,7 @@ mjx-container[display]{margin:0!important}
         <div class="nome">Potenza di una frazione</div>
         <div class="frase">Per elevare una frazione a un esponente si elevano <strong>sia il numeratore sia il denominatore</strong>. L'esponente riguarda tutta la frazione, non solo il numero di sopra.</div>
         <div class="f sx">$\displaystyle \left(\frac{a}{b}\right)^{n}=\frac{a^{n}}{b^{n}}$</div>
-        <div class="ex">esempio: $\left(\frac{2}{3}\right)^{3}=\frac{8}{27}$</div>
+        <div class="ex">esempio: $\left(\frac{3}{5}\right)^{2}=\frac{3^{2}}{5^{2}}=\frac{9}{25}$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
@@ -264,17 +264,17 @@ mjx-container[display]{margin:0!important}
         <div class="nome">La base di un logaritmo</div>
         <div class="frase">La base di un logaritmo deve essere <strong>positiva e diversa da 1</strong>, e anche l'argomento deve essere positivo. Per questo, quando si risolve un'equazione per trovare la base, le soluzioni negative si scartano.</div>
         <div class="f sx">$\displaystyle \log_{a}b\ \text{esiste se}\ a>0,\ a\neq 1,\ b>0$</div>
-        <div class="ex">esempio: $x^{2}=9\ \to\ x=3\ \text{(si scarta}\ -3\text{)}$</div>
+        <div class="ex">esempio: $x^{2}=49\ \to\ x=7\ \text{(si scarta}\ -7\text{)}$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Tenere la base negativa</div>
+        <div class="nome">Tenere la soluzione negativa</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \log_{-2}4=2$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle x^{2}=a^{2}\ \to\ x=-a$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \log_{2}4=2$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle x^{2}=a^{2}\ \to\ x=a$</div></div>
         </div>
-        <div class="why-txt">La base non può essere negativa.</div>
+        <div class="why-txt">Con una base negativa il logaritmo non esisterebbe.</div>
       </div>
     </div>
   </details>

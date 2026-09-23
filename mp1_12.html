@@ -194,18 +194,18 @@ mjx-container[display]{margin:0!important}
       <div class="teoria">
         <div class="nome">Sostituire un numero a una lettera</div>
         <div class="frase">Al posto di ogni lettera si scrive il suo valore, <strong>sempre fra parentesi</strong> se è negativo, una frazione o un decimale. Le moltiplicazioni nascoste diventano visibili: $3ab$ vuol dire $3\cdot a\cdot b$.</div>
-        <div class="f sx">$\displaystyle 3ab\ \text{con}\ a=m,\ b=n\ \to\ 3\cdot\left(m\right)\cdot\left(n\right)$</div>
+        <div class="f sx">$\displaystyle 3ab\ \text{con}\ a=p,\ b=-q\ \to\ 3\cdot p\cdot\left(-q\right)$</div>
         <div class="ex">esempio: $5k^{2}\ \text{con}\ k=-3\ \to\ 5\cdot\left(-3\right)^{2}=45$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Dimenticare le parentesi sul numero negativo</div>
+        <div class="nome">Sostituire un valore negativo senza parentesi</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle -3^{2}=9$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle k^{2}\ \text{con}\ k=-p\ \to\ -p^{2}$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \left(-3\right)^{2}=9$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle k^{2}\ \text{con}\ k=-p\ \to\ \left(-p\right)^{2}$</div></div>
         </div>
-        <div class="why-txt">Senza parentesi il quadrato va solo al $3$.</div>
+        <div class="why-txt">Senza parentesi l'esponente lascia fuori il segno.</div>
       </div>
     </div>
   </details>
@@ -220,22 +220,22 @@ mjx-container[display]{margin:0!important}
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">Prima la parentesi.</p>
+      <p class="mossa">Fuori dalla tonda c'è una moltiplicazione: la tonda si chiude prima.</p>
       <div class="teoria">
-        <div class="nome">Priorità dentro le parentesi</div>
-        <div class="frase">Anche dentro una parentesi valgono le priorità: prima le moltiplicazioni e le divisioni, poi le addizioni e le sottrazioni. La parentesi si toglie solo quando dentro è rimasto un unico numero.</div>
-        <div class="f sx">$\displaystyle (a+b\cdot c)=a+(b\cdot c)$</div>
-        <div class="ex">esempio: $(5+2\cdot 3)=5+6=11$</div>
+        <div class="nome">L'ordine delle operazioni</div>
+        <div class="frase">Prima si svolgono le parentesi, poi moltiplicazioni e divisioni, infine addizioni e sottrazioni. Moltiplicazione e divisione hanno la <strong>stessa</strong> priorità: fra loro si eseguono nell'ordine in cui sono scritte, da sinistra a destra.</div>
+        <div class="f sx">$\displaystyle a+b\cdot c=a+\left(b\cdot c\right)$</div>
+        <div class="ex">esempio: $2+3\cdot 4=2+12=14$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Sommare prima di moltiplicare dentro la parentesi</div>
+        <div class="nome">Eseguire la somma prima del prodotto</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle (a+b\cdot c)=(a+b)\cdot c$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a+b\cdot c=\left(a+b\right)\cdot c$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle (a+b\cdot c)=a+(b\cdot c)$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a+b\cdot c=a+\left(b\cdot c\right)$</div></div>
         </div>
-        <div class="why-txt">Anche fra parentesi il prodotto viene prima.</div>
+        <div class="why-txt">Il prodotto viene prima della somma.</div>
       </div>
     </div>
   </details>
@@ -253,7 +253,7 @@ mjx-container[display]{margin:0!important}
       <p class="mossa">$\left(-3\right)^{2}=9$ e $\left(-3\right)^{3}=-27$.</p>
       <div class="teoria">
         <div class="nome">Potenza di un numero negativo</div>
-        <div class="frase">Se l'esponente è <strong>pari</strong> il risultato è positivo, perché i segni meno si accoppiano; se è <strong>dispari</strong> ne resta uno spaiato e il risultato è negativo. Attenzione alle parentesi: $(-2)^{2}$ e $-2^{2}$ non sono la stessa cosa.</div>
+        <div class="frase">Se l'esponente è <strong>pari</strong> il risultato è positivo, perché i segni meno si accoppiano; se è <strong>dispari</strong> ne resta uno spaiato e il risultato è negativo. Attenzione alle parentesi: $\left(-a\right)^{2}$ e $-a^{2}$ non sono la stessa cosa.</div>
         <div class="f sx">$\displaystyle (-a)^{2}=+a^{2},\quad (-a)^{3}=-a^{3}$</div>
         <div class="ex">esempio: $(-0{,}1)^{2}=+0{,}01$</div>
       </div>
@@ -261,11 +261,11 @@ mjx-container[display]{margin:0!important}
         <div class="k">⚠️ L'errore che si fa qui</div>
         <div class="nome">Elevare senza la parentesi</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle -2^{2}=(-2)^{2}$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle -a^{2}=\left(-a\right)^{2}$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle -2^{2}=-\left(2^{2}\right)$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle -a^{2}=-\left(a^{2}\right)$</div></div>
         </div>
-        <div class="why-txt">Senza parentesi l'esponente riguarda solo il numero.</div>
+        <div class="why-txt">Senza parentesi l'esponente riguarda solo il numero, non il segno.</div>
       </div>
     </div>
   </details>
@@ -284,7 +284,7 @@ mjx-container[display]{margin:0!important}
       <div class="teoria">
         <div class="nome">La regola dei segni</div>
         <div class="frase">Nel prodotto e nella divisione due segni uguali danno <strong>più</strong>, due segni diversi danno <strong>meno</strong>. Con più di due fattori si contano i meno: se sono in numero dispari il risultato è negativo, se sono pari è positivo.</div>
-        <div class="f sx">$\displaystyle \left(-a\right)\cdot\left(-b\right)=ab$</div>
+        <div class="f sx">$\displaystyle \left(-a\right)\cdot\left(-b\right)=+ab\qquad a\cdot\left(-b\right)=-ab\qquad \left(-a\right):\left(-b\right)=+\left(a:b\right)$</div>
         <div class="ex">esempio: $\left(-2\right)\cdot\left(-3\right)\cdot\left(-1\right)=-6$</div>
       </div>
       <div class="errore">
@@ -313,19 +313,19 @@ mjx-container[display]{margin:0!important}
       <p class="mossa">$-\left(-27\right)=+27$.</p>
       <div class="teoria">
         <div class="nome">Il meno davanti alla parentesi</div>
-        <div class="frase">Quando davanti a una parentesi c'è il segno meno, togliendo la parentesi <strong>tutti</strong> i termini che stanno dentro cambiano segno: il più diventa meno e il meno diventa più. Con il più davanti, invece, non cambia niente.</div>
-        <div class="f sx">$\displaystyle -\left(a-b\right)=-a+b$</div>
-        <div class="ex">esempio: $-\left(3x-5x\right)=-3x+5x$</div>
+        <div class="frase">Il segno davanti a una parentesi decide i segni di quello che c'è dentro. Con il <strong>meno</strong> tutti i termini cambiano segno, e due meno di fila danno più; con il <strong>più</strong> non cambia niente, e un numero negativo resta negativo.</div>
+        <div class="f sx">$\displaystyle -\left(-a\right)=+a\qquad +\left(-a\right)=-a\qquad-\left(a-b\right)=-a+b$</div>
+        <div class="ex">esempio: $-\left(-7\right)=+7,\qquad 4+\left(-7\right)=4-7$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Cambiare il segno solo al primo termine</div>
+        <div class="nome">Lasciare il meno quando i meno sono due</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle -\left(a-b\right)=-a-b$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle -\left(-a\right)=-a$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle -\left(a-b\right)=-a+b$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle -\left(-a\right)=+a$</div></div>
         </div>
-        <div class="why-txt">Il meno vale per tutto quello che c'è dentro.</div>
+        <div class="why-txt">Due segni meno di fila si annullano.</div>
       </div>
     </div>
   </details>

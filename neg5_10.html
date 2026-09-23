@@ -233,22 +233,22 @@ mjx-container[display]{margin:0!important}
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">$30$ è pari, quindi tutte e due le potenze perdono il meno; il più davanti alla tonda invece non cambia i segni di ciò che sta dentro.</p>
+      <p class="mossa">Davanti alla tonda c'è un più: i segni dentro non cambiano.</p>
       <div class="teoria">
-        <div class="nome">Potenza di un numero negativo</div>
-        <div class="frase">Se l'esponente è <strong>pari</strong> il risultato è positivo, perché i segni meno si accoppiano; se è <strong>dispari</strong> ne resta uno spaiato e il risultato è negativo. Attenzione alle parentesi: $(-2)^{2}$ e $-2^{2}$ non sono la stessa cosa.</div>
-        <div class="f sx">$\displaystyle (-a)^{2}=+a^{2},\quad (-a)^{3}=-a^{3}$</div>
-        <div class="ex">esempio: $(-0{,}1)^{2}=+0{,}01$</div>
+        <div class="nome">Il meno davanti alla parentesi</div>
+        <div class="frase">Quando davanti a una parentesi c'è il segno meno, togliendo la parentesi <strong>tutti</strong> i termini che stanno dentro cambiano segno: il più diventa meno e il meno diventa più. Con il più davanti, invece, non cambia niente.</div>
+        <div class="f sx">$\displaystyle -\left(a-b\right)=-a+b$</div>
+        <div class="ex">esempio: $-\left(3x-5x\right)=-3x+5x$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Elevare senza la parentesi</div>
+        <div class="nome">Cambiare il segno solo al primo termine</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle -2^{2}=(-2)^{2}$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle -\left(a-b\right)=-a-b$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle -2^{2}=-\left(2^{2}\right)$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle -\left(a-b\right)=-a+b$</div></div>
         </div>
-        <div class="why-txt">Senza parentesi l'esponente riguarda solo il numero.</div>
+        <div class="why-txt">Il meno vale per tutto quello che c'è dentro.</div>
       </div>
     </div>
   </details>
@@ -268,7 +268,7 @@ mjx-container[display]{margin:0!important}
         <div class="nome">Potenza di una frazione</div>
         <div class="frase">Per elevare una frazione a un esponente si elevano <strong>sia il numeratore sia il denominatore</strong>. L'esponente riguarda tutta la frazione, non solo il numero di sopra.</div>
         <div class="f sx">$\displaystyle \left(\frac{a}{b}\right)^{n}=\frac{a^{n}}{b^{n}}$</div>
-        <div class="ex">esempio: $\left(\frac{2}{3}\right)^{3}=\frac{8}{27}$</div>
+        <div class="ex">esempio: $\left(\frac{2}{5}\right)^{3}=\frac{8}{125}$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
@@ -296,19 +296,19 @@ mjx-container[display]{margin:0!important}
       <p class="mossa">$2^{30}$ compare sotto nella frazione e come fattore: si semplificano fra loro, senza calcolare quel numero enorme.</p>
       <div class="teoria">
         <div class="nome">Semplificare prima di moltiplicare</div>
-        <div class="frase">Quando una frazione moltiplica un numero grande, conviene semplificare il numero con il <strong>denominatore</strong> prima di fare il conto: si lavora con numeri piccoli invece che con numeri enormi.</div>
-        <div class="f sx">$\displaystyle \frac{a}{b}\cdot n=a\cdot\frac{n}{b}$</div>
+        <div class="frase">Quando un numero intero moltiplica una frazione, si semplifica quel numero con il <strong>denominatore</strong> prima di fare il prodotto: si dividono tutti e due per un divisore comune. Farlo dopo porta allo stesso risultato, ma passando da numeri molto più grandi.</div>
+        <div class="f sx">$\displaystyle \frac{a}{b\cdot k}\cdot\left(n\cdot k\right)=\frac{a\cdot n}{b}$</div>
         <div class="ex">esempio: $\frac{7}{10}\cdot 500=7\cdot 50=350$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
         <div class="nome">Semplificare il numero con il numeratore</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{a}{b}\cdot n=\frac{n}{a}\cdot b$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{a\cdot k}{b}\cdot\left(n\cdot k\right)=\frac{a\cdot n}{b}$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{a}{b}\cdot n=a\cdot\frac{n}{b}$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{a}{b\cdot k}\cdot\left(n\cdot k\right)=\frac{a\cdot n}{b}$</div></div>
         </div>
-        <div class="why-txt">Si semplifica con il denominatore.</div>
+        <div class="why-txt">Il numero intero si semplifica con il denominatore, mai con il numeratore.</div>
       </div>
     </div>
   </details>
@@ -384,35 +384,16 @@ mjx-container[display]{margin:0!important}
     </div>
   </details>
 
-  <details class="riga">
-    <summary>
+  <div class="riga">
+    <div class="fissa">
       <div class="n">9</div>
       <div class="cont">
         <div class="nota">Semplifichiamo $3$ con $3$; $\left(-3\right)^{2}=9$.</div>
         <div class="f sx">$\displaystyle =1+\overset{1}{\cancel{3}}\cdot\left(-\frac{8}{\underset{1}{\cancel{3}}}\right)+9=$</div>
       </div>
-      <span class="tab">Regola <span class="chev">▼</span></span>
-    </summary>
-    <div class="pannello">
-      <p class="mossa">Il $3$ davanti alla tonda si semplifica col $3$ al denominatore: il prodotto diventa immediato.</p>
-      <div class="teoria">
-        <div class="nome">Semplificare a croce prima di moltiplicare</div>
-        <div class="frase">Prima di eseguire il prodotto si semplifica <strong>in croce</strong>: un numeratore con il denominatore dell'<strong>altra</strong> frazione. Si dividono per lo stesso numero e si scrivono i risultati al loro posto. Semplificare dopo aver moltiplicato porta allo stesso risultato, ma passando da numeri molto più grandi — ed è lì che nascono gli errori di calcolo.</div>
-        <div class="f sx">$\displaystyle \frac{a\cdot k}{b}\cdot\frac{c}{d\cdot k}=\frac{a}{b}\cdot\frac{c}{d}$</div>
-        <div class="ex">esempio: $\frac{9}{5}\cdot\frac{5}{6}=\frac{3}{1}\cdot\frac{1}{2}$</div>
-      </div>
-      <div class="errore">
-        <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Semplificare due numeratori fra loro</div>
-        <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{a\cdot k}{b}\cdot\frac{c\cdot k}{d}=\frac{a}{b}\cdot\frac{c}{d}$</div></div>
-          <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{a\cdot k}{b}\cdot\frac{c}{d\cdot k}=\frac{a}{b}\cdot\frac{c}{d}$</div></div>
-        </div>
-        <div class="why-txt">Sopra con sotto, mai sopra con sopra.</div>
-      </div>
+      <div></div>
     </div>
-  </details>
+  </div>
 
   <div class="riga">
     <div class="fissa">

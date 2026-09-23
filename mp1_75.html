@@ -206,11 +206,11 @@ mjx-container[display]{margin:0!important}
         <div class="k">⚠️ L'errore che si fa qui</div>
         <div class="nome">Dimenticare la parentesi</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \left(m+n\right)^{2}=m+n^{2}$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \text{il quadrato della somma di }m\text{ e }n=m+n^{2}$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \left(m+n\right)^{2}=\left(m+n\right)\cdot\left(m+n\right)$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \text{il quadrato della somma di }m\text{ e }n=\left(m+n\right)^{2}$</div></div>
         </div>
-        <div class="why-txt">Senza parentesi il quadrato va solo alla seconda lettera.</div>
+        <div class="why-txt">Senza parentesi il quadrato riguarda solo la seconda lettera.</div>
       </div>
     </div>
   </details>
@@ -229,8 +229,8 @@ mjx-container[display]{margin:0!important}
       <div class="teoria">
         <div class="nome">Potenza con esponente negativo</div>
         <div class="frase">Un esponente negativo dice di <strong>capovolgere</strong> la base e cambiare il segno dell'esponente. Il risultato non diventa negativo: l'esponente negativo riguarda la posizione, non il segno.</div>
-        <div class="f sx">$\displaystyle a^{-n}=\left(\frac{1}{a}\right)^{n}$</div>
-        <div class="ex">esempio: $\left(\frac{1}{4}\right)^{-2}=4^{2}=16$</div>
+        <div class="f sx">$\displaystyle a^{-n}=\frac{1}{a^{n}}\qquad\left(\frac{a}{b}\right)^{-n}=\left(\frac{b}{a}\right)^{n}$</div>
+        <div class="ex">esempio: $7^{-2}=\frac{1}{7^{2}}=\frac{1}{49},\quad\left(\frac{3}{5}\right)^{-2}=\left(\frac{5}{3}\right)^{2}$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
@@ -238,9 +238,9 @@ mjx-container[display]{margin:0!important}
         <div class="compare">
           <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a^{-n}=-a^{n}$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a^{-n}=\left(\frac{1}{a}\right)^{n}$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a^{-n}=\frac{1}{a^{n}}$</div></div>
         </div>
-        <div class="why-txt">Si capovolge la base, non si cambia segno.</div>
+        <div class="why-txt">Si capovolge la base, non si cambia il segno.</div>
       </div>
     </div>
   </details>
@@ -260,7 +260,7 @@ mjx-container[display]{margin:0!important}
         <div class="nome">Priorità: prima le potenze</div>
         <div class="frase">Le potenze si svolgono per prime, prima ancora delle moltiplicazioni e delle divisioni. L'esponente riguarda <strong>soltanto</strong> il numero su cui è scritto.</div>
         <div class="f sx">$\displaystyle a\cdot b^{n}=a\cdot\left(b^{n}\right)$</div>
-        <div class="ex">esempio: $2\cdot 3^{2}=2\cdot 9=18$</div>
+        <div class="ex">esempio: $5\cdot 4^{2}=5\cdot 16=80$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
@@ -289,8 +289,8 @@ mjx-container[display]{margin:0!important}
       <div class="teoria">
         <div class="nome">Addizione e sottrazione fra frazioni</div>
         <div class="frase">Due frazioni si sommano o si sottraggono solo quando hanno lo <strong>stesso denominatore</strong>. Si cerca il minimo comune multiplo dei denominatori, si riscrivono tutte con quel denominatore e poi si sommano o si sottraggono i soli numeratori.</div>
-        <div class="f sx">$\displaystyle \frac{a}{b}+\frac{c}{d}=\frac{a\cdot d+b\cdot c}{b\cdot d}$</div>
-        <div class="ex">esempio: $\frac{1}{3}+\frac{1}{6}=\frac{2+1}{6}=\frac{3}{6}$</div>
+        <div class="f sx">$\displaystyle \frac{a}{b}+\frac{c}{d}=\frac{a\cdot\left(q:b\right)+c\cdot\left(q:d\right)}{q},\quad q=\text{mcm}\left(b,d\right)$</div>
+        <div class="ex">esempio: $\frac{1}{4}+\frac{1}{6}=\frac{3}{12}+\frac{2}{12}=\frac{5}{12}$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
@@ -298,9 +298,9 @@ mjx-container[display]{margin:0!important}
         <div class="compare">
           <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{a}{b}+\frac{c}{d}=\frac{a+c}{b+d}$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{a}{b}+\frac{c}{d}=\frac{a\cdot d+b\cdot c}{b\cdot d}$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{a}{b}+\frac{c}{d}=\frac{a\cdot\left(q:b\right)+c\cdot\left(q:d\right)}{q}$</div></div>
         </div>
-        <div class="why-txt">Il denominatore va reso uguale, non sommato.</div>
+        <div class="why-txt">Il denominatore si rende uguale al mcm, non si somma.</div>
       </div>
     </div>
   </details>
@@ -357,35 +357,16 @@ mjx-container[display]{margin:0!important}
     </div>
   </div>
 
-  <details class="riga">
-    <summary>
+  <div class="riga">
+    <div class="fissa">
       <div class="n">8</div>
       <div class="cont">
         <div class="nota">Gli esponenti $-1$ danno i reciproci.</div>
         <div class="f sx">$\displaystyle =\frac{2}{7}-\left(-6\right)=$</div>
       </div>
-      <span class="tab">Regola <span class="chev">▼</span></span>
-    </summary>
-    <div class="pannello">
-      <p class="mossa">$\left(\frac{7}{2}\right)^{-1}=\frac{2}{7}$ e $\left(-\frac{1}{6}\right)^{-1}=-6$.</p>
-      <div class="teoria">
-        <div class="nome">Potenza con esponente negativo</div>
-        <div class="frase">Un esponente negativo dice di <strong>capovolgere</strong> la base e cambiare il segno dell'esponente. Il risultato non diventa negativo: l'esponente negativo riguarda la posizione, non il segno.</div>
-        <div class="f sx">$\displaystyle a^{-n}=\left(\frac{1}{a}\right)^{n}$</div>
-        <div class="ex">esempio: $\left(\frac{1}{4}\right)^{-2}=4^{2}=16$</div>
-      </div>
-      <div class="errore">
-        <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Credere che l'esponente negativo dia un risultato negativo</div>
-        <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a^{-n}=-a^{n}$</div></div>
-          <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a^{-n}=\left(\frac{1}{a}\right)^{n}$</div></div>
-        </div>
-        <div class="why-txt">Si capovolge la base, non si cambia segno.</div>
-      </div>
+      <div></div>
     </div>
-  </details>
+  </div>
 
   <details class="riga">
     <summary>
@@ -400,52 +381,33 @@ mjx-container[display]{margin:0!important}
       <p class="mossa">$-\left(-6\right)=+6$.</p>
       <div class="teoria">
         <div class="nome">Il meno davanti alla parentesi</div>
-        <div class="frase">Quando davanti a una parentesi c'è il segno meno, togliendo la parentesi <strong>tutti</strong> i termini che stanno dentro cambiano segno: il più diventa meno e il meno diventa più. Con il più davanti, invece, non cambia niente.</div>
-        <div class="f sx">$\displaystyle -\left(a-b\right)=-a+b$</div>
-        <div class="ex">esempio: $-\left(3x-5x\right)=-3x+5x$</div>
+        <div class="frase">Il segno davanti a una parentesi decide i segni di quello che c'è dentro. Con il <strong>meno</strong> tutti i termini cambiano segno, e due meno di fila danno più; con il <strong>più</strong> non cambia niente, e un numero negativo resta negativo.</div>
+        <div class="f sx">$\displaystyle -\left(-a\right)=+a\qquad +\left(-a\right)=-a\qquad-\left(a-b\right)=-a+b$</div>
+        <div class="ex">esempio: $-\left(-7\right)=+7,\qquad 4+\left(-7\right)=4-7$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Cambiare il segno solo al primo termine</div>
+        <div class="nome">Lasciare il meno quando i meno sono due</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle -\left(a-b\right)=-a-b$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle -\left(-a\right)=-a$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle -\left(a-b\right)=-a+b$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle -\left(-a\right)=+a$</div></div>
         </div>
-        <div class="why-txt">Il meno vale per tutto quello che c'è dentro.</div>
+        <div class="why-txt">Due segni meno di fila si annullano.</div>
       </div>
     </div>
   </details>
 
-  <details class="riga">
-    <summary>
+  <div class="riga">
+    <div class="fissa">
       <div class="n">10</div>
       <div class="cont">
         <div class="nota">Il $6$ diventa $\frac{42}{7}$.</div>
         <div class="f sx">$\displaystyle =\frac{2}{7}+\frac{42}{7}=$</div>
       </div>
-      <span class="tab">Regola <span class="chev">▼</span></span>
-    </summary>
-    <div class="pannello">
-      <p class="mossa">Stesso denominatore per sommare.</p>
-      <div class="teoria">
-        <div class="nome">Addizione e sottrazione fra frazioni</div>
-        <div class="frase">Due frazioni si sommano o si sottraggono solo quando hanno lo <strong>stesso denominatore</strong>. Si cerca il minimo comune multiplo dei denominatori, si riscrivono tutte con quel denominatore e poi si sommano o si sottraggono i soli numeratori.</div>
-        <div class="f sx">$\displaystyle \frac{a}{b}+\frac{c}{d}=\frac{a\cdot d+b\cdot c}{b\cdot d}$</div>
-        <div class="ex">esempio: $\frac{1}{3}+\frac{1}{6}=\frac{2+1}{6}=\frac{3}{6}$</div>
-      </div>
-      <div class="errore">
-        <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Sommare numeratori con numeratori e denominatori con denominatori</div>
-        <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{a}{b}+\frac{c}{d}=\frac{a+c}{b+d}$</div></div>
-          <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{a}{b}+\frac{c}{d}=\frac{a\cdot d+b\cdot c}{b\cdot d}$</div></div>
-        </div>
-        <div class="why-txt">Il denominatore va reso uguale, non sommato.</div>
-      </div>
+      <div></div>
     </div>
-  </details>
+  </div>
 
   <div class="riga res">
     <div class="fissa">

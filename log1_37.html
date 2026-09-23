@@ -230,9 +230,9 @@ mjx-container[display]{margin:0!important}
       <p class="mossa">$\sqrt[117]{2^{2}}=2^{\frac{2}{117}}$.</p>
       <div class="teoria">
         <div class="nome">La radice è una potenza con esponente frazionario</div>
-        <div class="frase">Ogni radice si può scrivere come potenza: l'indice della radice va al <strong>denominatore</strong> dell'esponente. Così le radici entrano nelle proprietà delle potenze e i conti si fanno solo sugli esponenti.</div>
+        <div class="frase">Ogni radice si può scrivere come potenza: l'indice della radice va al <strong>denominatore</strong> dell'esponente. Si legge anche al contrario, e serve nei due versi: per far entrare le radici nelle proprietà delle potenze, e per riscrivere come radice un risultato venuto con l'esponente frazionario.</div>
         <div class="f sx">$\displaystyle \sqrt[n]{a^{m}}=a^{\frac{m}{n}}$</div>
-        <div class="ex">esempio: $\sqrt[3]{5^{2}}=5^{\frac{2}{3}},\quad \sqrt{7}=7^{\frac{1}{2}}$</div>
+        <div class="ex">esempio: $\sqrt[3]{4^{2}}=4^{\frac{2}{3}},\quad 6^{\frac{1}{2}}=\sqrt{6}$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
@@ -247,35 +247,16 @@ mjx-container[display]{margin:0!important}
     </div>
   </details>
 
-  <details class="riga">
-    <summary>
+  <div class="riga">
+    <div class="fissa">
       <div class="n">4</div>
       <div class="cont">
         <div class="nota">Esponente dell'argomento diviso quello della base.</div>
         <div class="f sx">$\displaystyle =\frac{\frac{2}{117}}{3}=$</div>
       </div>
-      <span class="tab">Regola <span class="chev">▼</span></span>
-    </summary>
-    <div class="pannello">
-      <p class="mossa">Il logaritmo è il rapporto fra i due esponenti: $\frac{2}{117}$ diviso $3$.</p>
-      <div class="teoria">
-        <div class="nome">Base e argomento come potenze dello stesso numero</div>
-        <div class="frase">Per calcolare un logaritmo conviene scrivere <strong>base e argomento come potenze di uno stesso numero</strong>. Quando ci si è riusciti, il logaritmo è il rapporto fra i due esponenti: quello dell'argomento diviso quello della base.</div>
-        <div class="f sx">$\displaystyle \log_{a^{m}}a^{n}=\frac{n}{m}$</div>
-        <div class="ex">esempio: $\log_{4}8=\log_{2^{2}}2^{3}=\frac{3}{2}$</div>
-      </div>
-      <div class="errore">
-        <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Capovolgere il rapporto degli esponenti</div>
-        <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \log_{a^{m}}a^{n}=\frac{m}{n}$</div></div>
-          <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \log_{a^{m}}a^{n}=\frac{n}{m}$</div></div>
-        </div>
-        <div class="why-txt">Sopra va l'esponente dell'argomento.</div>
-      </div>
+      <div></div>
     </div>
-  </details>
+  </div>
 
   <details class="riga res">
     <summary>
@@ -287,22 +268,22 @@ mjx-container[display]{margin:0!important}
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">$\frac{2}{117}:3=\frac{2}{117\cdot 3}=\frac{2}{351}$.</p>
+      <p class="mossa">Dividere per un intero moltiplica il denominatore.</p>
       <div class="teoria">
-        <div class="nome">La linea di frazione è una divisione</div>
-        <div class="frase">La linea di frazione lunga vuol dire <strong>sopra diviso sotto</strong>. Prima si riduce a un solo numero quello che sta sopra e quello che sta sotto, e solo alla fine si esegue la divisione fra i due.</div>
-        <div class="f sx">$\displaystyle \frac{a}{b}=a:b$</div>
-        <div class="ex">esempio: $\frac{90}{15}=90:15=6$</div>
+        <div class="nome">Dividere una frazione per un numero intero</div>
+        <div class="frase">Dividere per un numero intero vuol dire prenderne una parte: dividere per $n$ è come moltiplicare per $\frac{1}{n}$. Il numero va sotto la linea, con il denominatore, e la frazione diventa più piccola.</div>
+        <div class="f sx">$\displaystyle \frac{a}{b}:n=\frac{a}{b}\cdot\frac{1}{n}=\frac{a}{b\cdot n}$</div>
+        <div class="ex">esempio: $\frac{4}{5}:3=\frac{4}{5}\cdot\frac{1}{3}=\frac{4}{15}$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Dividere il denominatore per il numeratore</div>
+        <div class="nome">Moltiplicare invece di dividere</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{a}{b}=b:a$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{a}{b}:n=\frac{a\cdot n}{b}$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{a}{b}=a:b$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{a}{b}:n=\frac{a}{b\cdot n}$</div></div>
         </div>
-        <div class="why-txt">Sopra diviso sotto, in quest'ordine.</div>
+        <div class="why-txt">Dividere rimpicciolisce: il numero va sotto.</div>
       </div>
     </div>
   </details>
