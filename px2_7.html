@@ -195,16 +195,16 @@ mjx-container[display]{margin:0!important}
       <div class="teoria">
         <div class="nome">L'aumento in un colpo solo</div>
         <div class="frase">Aumentare del <strong>p%</strong> vuol dire arrivare al $(100+p)\%$: il valore di partenza conta già come $100\%$. Si moltiplica per $1+\frac{p}{100}$ e si arriva alla quantità aumentata in un passaggio solo, senza calcolare prima l'aumento.</div>
-        <div class="f sx">$\displaystyle n\ \text{aumentato del}\ p\%=n\cdot\left(1+\frac{p}{100}\right)$</div>
-        <div class="ex">esempio: $250\ \text{€ aumentati dell'}8\%:\ 250\cdot 1{,}08=270\ \text{€}$</div>
+        <div class="f sx">$\displaystyle n\ \text{aumentato del}\ p\%\ \to\ (100+p)\%\ \text{di}\ n=n\cdot\left(1+\frac{p}{100}\right)$</div>
+        <div class="ex">esempio: $250\ \text{€ aumentati dell'}8\%:\ 100+8=108\ \to\ 250\cdot 1{,}08=270\ \text{€}$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
         <div class="nome">Moltiplicare per la sola percentuale dell'aumento</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle n\cdot 0{,}08$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle n\cdot\frac{p}{100}$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle n\cdot 1{,}08$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle n\cdot\left(1+\frac{p}{100}\right)$</div></div>
         </div>
         <div class="why-txt">Il primo dà solo l'aumento, il secondo la quantità aumentata.</div>
       </div>

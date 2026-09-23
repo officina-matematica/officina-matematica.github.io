@@ -190,7 +190,7 @@ mjx-container[display]{margin:0!important}
       <p class="mossa">Si comincia dal primo più piccolo che divide il numero: qui è $5$.</p>
       <div class="teoria">
         <div class="nome">La scomposizione in fattori primi</div>
-        <div class="frase">Si divide il numero per il <strong>più piccolo primo</strong> che lo divide, poi si ricomincia sul risultato, fino ad arrivare a $1$. Si parte sempre da $2$: un numero è divisibile per $2$ quando finisce con una cifra pari. La scomposizione che si ottiene è <strong>una sola</strong>: non dipende dall'ordine in cui si prova.</div>
+        <div class="frase">Si divide il numero per il <strong>più piccolo primo</strong> che lo divide, poi si ricomincia sul risultato, fino ad arrivare a $1$. Si prova prima il $2$ — un numero si divide per $2$ quando finisce con una cifra pari — e se non va si passa al $3$, poi al $5$, poi al $7$. La scomposizione che si ottiene è <strong>una sola</strong>: non dipende dall'ordine in cui si prova.</div>
         <div class="f sx">$\displaystyle n=p_{1}\cdot p_{2}\cdot\ldots\cdot p_{k}$</div>
         <div class="ex">esempio: $12=2\cdot 2\cdot 3$</div>
       </div>
@@ -222,31 +222,50 @@ mjx-container[display]{margin:0!important}
         <div class="nome">Quando un numero è primo</div>
         <div class="frase">Un numero è <strong>primo</strong> se si divide soltanto per $1$ e per sé stesso. Per esserne sicuri basta provare i primi fino alla sua radice quadrata: se nessuno lo divide, è primo.</div>
         <div class="f sx">$\displaystyle p\ \text{primo}\ \Leftrightarrow\ \text{divisori}=\{1,p\}$</div>
-        <div class="ex">esempio: $19:\ 2,3\ \text{non lo dividono, e }5^{2}>19$</div>
+        <div class="ex">esempio: $29:\ 2,3,5\ \text{non lo dividono, e }7^{2}>29$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Confondere «dispari» con «primo»</div>
+        <div class="nome">Credere che ogni dispari sia primo</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \text{dispari}\Rightarrow\text{primo}$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle n\ \text{dispari}\Rightarrow n\ \text{primo}$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \text{primo}\Rightarrow\text{divisibile solo per }1\text{ e per sé}$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle n\ \text{primo e}\ n>2\Rightarrow n\ \text{dispari}$</div></div>
         </div>
-        <div class="why-txt">$9$, $15$, $21$ sono dispari ma non primi.</div>
+        <div class="why-txt">Il contrario non vale: $9$, $27$, $49$ sono dispari e non primi.</div>
       </div>
     </div>
   </details>
 
-  <div class="riga res">
-    <div class="fissa">
+  <details class="riga res">
+    <summary>
       <div class="n">3</div>
       <div class="cont">
         <div class="nota">Raccolgo i fattori, dal più piccolo al più grande.</div>
         <div class="f sx">$\displaystyle 445=5\cdot 89$</div>
       </div>
-      <div></div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">I fattori uguali si raccolgono in una potenza.</p>
+      <div class="teoria">
+        <div class="nome">La potenza è un prodotto di fattori uguali</div>
+        <div class="frase">Una potenza è una scrittura breve per una moltiplicazione: la <strong>base</strong> è il fattore che si ripete, l'<strong>esponente</strong> dice quante volte lo si scrive. Non è la base moltiplicata per l'esponente.</div>
+        <div class="f sx">$\displaystyle a^{n}=\underbrace{a\cdot a\cdot\ldots\cdot a}_{n\ \text{volte}}$</div>
+        <div class="ex">esempio: $2^{5}=2\cdot 2\cdot 2\cdot 2\cdot 2=32$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Moltiplicare la base per l'esponente</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a^{n}=a\cdot n$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a^{n}=a\cdot a\cdot\ldots\cdot a$</div></div>
+        </div>
+        <div class="why-txt">L'esponente conta i fattori, non è un fattore.</div>
+      </div>
     </div>
-  </div>
+  </details>
 
 </div>
 

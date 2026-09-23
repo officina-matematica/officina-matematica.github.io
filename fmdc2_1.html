@@ -191,9 +191,9 @@ mjx-container[display]{margin:0!important}
       <p class="mossa">Si divide per il primo più piccolo e si va avanti fino a $1$: $56=2^{3}\cdot 7$.</p>
       <div class="teoria">
         <div class="nome">La scomposizione in fattori primi</div>
-        <div class="frase">Si divide il numero per il <strong>più piccolo primo</strong> che lo divide, poi si ricomincia sul risultato, fino ad arrivare a $1$. Si parte sempre da $2$: un numero è divisibile per $2$ quando finisce con una cifra pari. La scomposizione che si ottiene è <strong>una sola</strong>: non dipende dall'ordine in cui si prova.</div>
+        <div class="frase">Si divide il numero per il <strong>più piccolo primo</strong> che lo divide, poi si ricomincia sul risultato, fino ad arrivare a $1$. Si prova prima il $2$ — un numero si divide per $2$ quando finisce con una cifra pari — e se non va si passa al $3$, poi al $5$, poi al $7$. I fattori uguali si raccolgono poi in una potenza.</div>
         <div class="f sx">$\displaystyle n=p_{1}\cdot p_{2}\cdot\ldots\cdot p_{k}$</div>
-        <div class="ex">esempio: $12=2\cdot 2\cdot 3$</div>
+        <div class="ex">esempio: $44=2\cdot 2\cdot 11=2^{2}\cdot 11$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
@@ -234,17 +234,17 @@ mjx-container[display]{margin:0!important}
         <div class="nome">Il MCD si legge dalle scomposizioni</div>
         <div class="frase">Il Massimo Comun Divisore prende solo i fattori <strong>comuni</strong> a tutti i numeri, e di ciascuno l'esponente <strong>più piccolo</strong>. Un fattore che manca anche in un solo numero non entra: non potrebbe dividerlo.</div>
         <div class="f sx">$\displaystyle \text{MCD}=\text{fattori comuni, esponente minore}$</div>
-        <div class="ex">esempio: $56=2^{3}\cdot 7,\ 84=2^{2}\cdot 3\cdot 7\ \to\ 2^{2}\cdot 7$</div>
+        <div class="ex">esempio: $70=2\cdot 5\cdot 7,\ 98=2\cdot 7^{2}\ \to\ \text{MCD}=2\cdot 7$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
         <div class="nome">Prendere l'esponente più grande</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \text{MCD}=\text{esponente maggiore}$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \text{MCD}\left(2^{2};2^{5}\right)=2^{5}$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \text{MCD}=\text{esponente minore}$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \text{MCD}\left(2^{2};2^{5}\right)=2^{2}$</div></div>
         </div>
-        <div class="why-txt">Con l'esponente grande non dividerebbe tutti.</div>
+        <div class="why-txt">Con l'esponente grande non dividerebbe il primo numero.</div>
       </div>
     </div>
   </details>

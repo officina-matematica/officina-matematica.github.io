@@ -210,18 +210,18 @@ mjx-container[display]{margin:0!important}
       <div class="teoria">
         <div class="nome">Le percentuali di un insieme fanno cento</div>
         <div class="frase">Quando un insieme è diviso in gruppi, le loro percentuali sommate danno sempre <strong>100%</strong>: quello che non sta in un gruppo sta in tutti gli altri. È il modo più rapido per trovare la percentuale di un gruppo che il testo non dà.</div>
-        <div class="f sx">$\displaystyle \%\ \text{primo}+\%\ \text{secondo}+\dots=100\%$</div>
-        <div class="ex">esempio: $40\%\ \text{cerchi}\ \to\ 60\%\ \text{non cerchi}$</div>
+        <div class="f sx">$\displaystyle \%\ \text{primo}+\%\ \text{secondo}+\dots=100\%\ \to\ \%\ \text{mancante}=100\%-\text{le altre}$</div>
+        <div class="ex">esempio: $100\%-30\%-35\%=35\%\ \text{al terzo gruppo}$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Dare per scontato che i gruppi siano due</div>
+        <div class="nome">Togliere una sola percentuale quando i gruppi sono tre</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle 100\%-40\%=60\%\ \text{cerchi}$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle r\%=100\%-p\%$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle 100\%-40\%=60\%\ \text{di tutto il resto}$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle r\%=100\%-p\%-q\%$</div></div>
         </div>
-        <div class="why-txt">Il resto può essere fatto di più gruppi.</div>
+        <div class="why-txt">Vanno tolte tutte le percentuali già note, non solo la prima.</div>
       </div>
     </div>
   </details>
@@ -323,9 +323,19 @@ mjx-container[display]{margin:0!important}
       <p class="mossa">Riconoscere che $50\%=\frac{1}{2}$ fa risparmiare la divisione.</p>
       <div class="teoria">
         <div class="nome">Le percentuali che conviene sapere a memoria</div>
-        <div class="frase">Il 50% è $\frac{50}{100}=\frac{1}{2}$, cioè la metà. Allo stesso modo il 25% è un quarto, il 20% un quinto, il 10% un decimo. Riconoscerle evita tutti i conti.</div>
-        <div class="f sx">$\displaystyle 50\%=\frac{1}{2},\quad 25\%=\frac{1}{4},\quad 20\%=\frac{1}{5},\quad 10\%=\frac{1}{10}$</div>
+        <div class="frase">Ogni percentuale è una frazione con cento sotto, e le più comuni conviene saperle a memoria già ridotte: il 50% è $\frac{1}{2}$, il 25% è $\frac{1}{4}$, il 20% è $\frac{1}{5}$, il 10% è $\frac{1}{10}$, il 5% è $\frac{1}{20}$. Riconoscerle evita tutti i conti.</div>
+        <div class="f sx">$\displaystyle 50\%=\frac{1}{2},\quad 25\%=\frac{1}{4},\quad 20\%=\frac{1}{5},\quad 10\%=\frac{1}{10},\quad 5\%=\frac{1}{20}$</div>
         <div class="ex">esempio: $\text{il}\ 25\%\ \text{di}\ 40=40:4=10$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Copiare il numero della percentuale sotto la linea</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle 20\%=\frac{1}{20}$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle 20\%=\frac{1}{5}$</div></div>
+        </div>
+        <div class="why-txt">Si riduce $\frac{20}{100}$, non si scrive il numero al denominatore.</div>
       </div>
     </div>
   </details>

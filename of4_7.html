@@ -445,7 +445,7 @@ mjx-container[display]{margin:0!important}
         <div class="nome">Potenza di una frazione</div>
         <div class="frase">Per elevare una frazione a un esponente si elevano <strong>sia il numeratore sia il denominatore</strong>. L'esponente riguarda tutta la frazione, non solo il numero di sopra.</div>
         <div class="f sx">$\displaystyle \left(\frac{a}{b}\right)^{n}=\frac{a^{n}}{b^{n}}$</div>
-        <div class="ex">esempio: $\left(\frac{2}{3}\right)^{3}=\frac{8}{27}$</div>
+        <div class="ex">esempio: $\left(\frac{3}{10}\right)^{2}=\frac{9}{100}$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
@@ -500,22 +500,22 @@ mjx-container[display]{margin:0!important}
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">Il numero intero si semplifica con il denominatore della frazione, prima di moltiplicare. Farlo dopo vuol dire passare da numeri più grandi per arrivare allo stesso risultato.</p>
+      <p class="mossa">Il numero intero si semplifica con il denominatore.</p>
       <div class="teoria">
-        <div class="nome">Semplificare prima di moltiplicare</div>
-        <div class="frase">Quando una frazione moltiplica un numero grande, conviene semplificare il numero con il <strong>denominatore</strong> prima di fare il conto: si lavora con numeri piccoli invece che con numeri enormi.</div>
-        <div class="f sx">$\displaystyle \frac{a}{b}\cdot n=a\cdot\frac{n}{b}$</div>
-        <div class="ex">esempio: $\frac{7}{10}\cdot 500=7\cdot 50=350$</div>
+        <div class="nome">Semplificare a croce prima di moltiplicare</div>
+        <div class="frase">Prima di eseguire il prodotto si semplifica <strong>in croce</strong>: un numeratore con il denominatore dell'<strong>altra</strong> frazione. Si dividono per lo stesso numero e si scrivono i risultati al loro posto. Semplificare dopo aver moltiplicato porta allo stesso risultato, ma passando da numeri molto più grandi — ed è lì che nascono gli errori di calcolo.</div>
+        <div class="f sx">$\displaystyle \frac{a\cdot k}{b}\cdot\frac{c}{d\cdot k}=\frac{a}{b}\cdot\frac{c}{d}$</div>
+        <div class="ex">esempio: $\frac{9}{5}\cdot\frac{5}{6}=\frac{3}{1}\cdot\frac{1}{2}$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Semplificare il numero con il numeratore</div>
+        <div class="nome">Semplificare due numeratori fra loro</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{a}{b}\cdot n=\frac{n}{a}\cdot b$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{a\cdot k}{b}\cdot\frac{c\cdot k}{d}=\frac{a}{b}\cdot\frac{c}{d}$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{a}{b}\cdot n=a\cdot\frac{n}{b}$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{a\cdot k}{b}\cdot\frac{c}{d\cdot k}=\frac{a}{b}\cdot\frac{c}{d}$</div></div>
         </div>
-        <div class="why-txt">Si semplifica con il denominatore.</div>
+        <div class="why-txt">Sopra con sotto, mai sopra con sopra.</div>
       </div>
     </div>
   </details>
@@ -572,35 +572,16 @@ mjx-container[display]{margin:0!important}
     </div>
   </details>
 
-  <details class="riga">
-    <summary>
+  <div class="riga">
+    <div class="fissa">
       <div class="n">16</div>
       <div class="cont">
         <div class="nota">Semplifico a croce, prima di moltiplicare.</div>
         <div class="f sx">$\displaystyle =\frac{7}{5}+\frac{1}{\underset{1}{\cancel{4}}}\cdot\frac{\overset{4}{\cancel{16}}}{1}=$</div>
       </div>
-      <span class="tab">Regola <span class="chev">▼</span></span>
-    </summary>
-    <div class="pannello">
-      <p class="mossa">Si semplifica un numeratore con il denominatore di un'altra frazione, mai due numeratori fra loro. Dopo, il prodotto viene con numeri piccoli.</p>
-      <div class="teoria">
-        <div class="nome">Semplificare a croce prima di moltiplicare</div>
-        <div class="frase">Prima di eseguire il prodotto si semplifica <strong>in croce</strong>: un numeratore con il denominatore dell'<strong>altra</strong> frazione. Si dividono per lo stesso numero e si scrivono i risultati al loro posto. Semplificare dopo aver moltiplicato porta allo stesso risultato, ma passando da numeri molto più grandi — ed è lì che nascono gli errori di calcolo.</div>
-        <div class="f sx">$\displaystyle \frac{a\cdot k}{b}\cdot\frac{c}{d\cdot k}=\frac{a}{b}\cdot\frac{c}{d}$</div>
-        <div class="ex">esempio: $\frac{9}{5}\cdot\frac{5}{6}=\frac{3}{1}\cdot\frac{1}{2}$</div>
-      </div>
-      <div class="errore">
-        <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Semplificare due numeratori fra loro</div>
-        <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{a\cdot k}{b}\cdot\frac{c\cdot k}{d}=\frac{a}{b}\cdot\frac{c}{d}$</div></div>
-          <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{a\cdot k}{b}\cdot\frac{c}{d\cdot k}=\frac{a}{b}\cdot\frac{c}{d}$</div></div>
-        </div>
-        <div class="why-txt">Sopra con sotto, mai sopra con sopra.</div>
-      </div>
+      <div></div>
     </div>
-  </details>
+  </div>
 
   <div class="riga">
     <div class="fissa">

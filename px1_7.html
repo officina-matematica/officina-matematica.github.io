@@ -207,18 +207,18 @@ mjx-container[display]{margin:0!important}
       <div class="teoria">
         <div class="nome">Le percentuali di un insieme fanno cento</div>
         <div class="frase">Quando un insieme è diviso in gruppi, le loro percentuali sommate danno sempre <strong>100%</strong>: quello che non sta in un gruppo sta in tutti gli altri. È il modo più rapido per trovare la percentuale di un gruppo che il testo non dà.</div>
-        <div class="f sx">$\displaystyle \%\ \text{primo}+\%\ \text{secondo}+\dots=100\%$</div>
-        <div class="ex">esempio: $40\%\ \text{cerchi}\ \to\ 60\%\ \text{non cerchi}$</div>
+        <div class="f sx">$\displaystyle \%\ \text{primo}+\%\ \text{secondo}+\dots=100\%\ \to\ \%\ \text{mancante}=100\%-\text{le altre}$</div>
+        <div class="ex">esempio: $100\%-30\%-35\%=35\%\ \text{al terzo gruppo}$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Dare per scontato che i gruppi siano due</div>
+        <div class="nome">Togliere una sola percentuale quando i gruppi sono tre</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle 100\%-40\%=60\%\ \text{cerchi}$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle r\%=100\%-p\%$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle 100\%-40\%=60\%\ \text{di tutto il resto}$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle r\%=100\%-p\%-q\%$</div></div>
         </div>
-        <div class="why-txt">Il resto può essere fatto di più gruppi.</div>
+        <div class="why-txt">Vanno tolte tutte le percentuali già note, non solo la prima.</div>
       </div>
     </div>
   </details>
@@ -238,7 +238,17 @@ mjx-container[display]{margin:0!important}
         <div class="nome">Quando il totale deve essere un multiplo</div>
         <div class="frase">Le figure, le persone e gli oggetti si contano a numeri interi. Se una percentuale ridotta è $\frac{3}{20}$, il totale deve essere un <strong>multiplo di 20</strong>: altrimenti quel gruppo non verrebbe un numero intero.</div>
         <div class="f sx">$\displaystyle \frac{a}{b}\ \text{di}\ n\ \text{intero}\ \to\ n\ \text{multiplo di}\ b$</div>
-        <div class="ex">esempio: $15\%=\frac{3}{20}\ \to\ n=20,\ 40,\ 60\dots$</div>
+        <div class="ex">esempio: $12\%=\frac{3}{25}\ \to\ n=25,\ 50,\ 100\dots$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Prendere il numeratore invece del denominatore</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{a}{b}\ \text{di}\ n\ \text{intero}\ \to\ n\ \text{multiplo di}\ a$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{a}{b}\ \text{di}\ n\ \text{intero}\ \to\ n\ \text{multiplo di}\ b$</div></div>
+        </div>
+        <div class="why-txt">Le parti in cui si divide il totale sono quelle sotto la linea.</div>
       </div>
     </div>
   </details>

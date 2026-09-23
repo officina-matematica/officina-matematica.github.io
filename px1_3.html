@@ -211,18 +211,18 @@ mjx-container[display]{margin:0!important}
       <div class="teoria">
         <div class="nome">Le percentuali di un insieme fanno cento</div>
         <div class="frase">Quando un insieme è diviso in gruppi, le loro percentuali sommate danno sempre <strong>100%</strong>: quello che non sta in un gruppo sta in tutti gli altri. È il modo più rapido per trovare la percentuale di un gruppo che il testo non dà.</div>
-        <div class="f sx">$\displaystyle \%\ \text{primo}+\%\ \text{secondo}+\dots=100\%$</div>
-        <div class="ex">esempio: $40\%\ \text{cerchi}\ \to\ 60\%\ \text{non cerchi}$</div>
+        <div class="f sx">$\displaystyle \%\ \text{primo}+\%\ \text{secondo}+\dots=100\%\ \to\ \%\ \text{mancante}=100\%-\text{le altre}$</div>
+        <div class="ex">esempio: $100\%-30\%-35\%=35\%\ \text{al terzo gruppo}$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Dare per scontato che i gruppi siano due</div>
+        <div class="nome">Togliere una sola percentuale quando i gruppi sono tre</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle 100\%-40\%=60\%\ \text{cerchi}$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle r\%=100\%-p\%$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle 100\%-40\%=60\%\ \text{di tutto il resto}$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle r\%=100\%-p\%-q\%$</div></div>
         </div>
-        <div class="why-txt">Il resto può essere fatto di più gruppi.</div>
+        <div class="why-txt">Vanno tolte tutte le percentuali già note, non solo la prima.</div>
       </div>
     </div>
   </details>
@@ -362,12 +362,22 @@ mjx-container[display]{margin:0!important}
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">Se $80\%$ sono $8$ figure, il $20\%$ è quattro volte più piccolo: $8:4$.</p>
+      <p class="mossa">Una percentuale è multipla dell'altra: si divide per quante volte ci sta.</p>
       <div class="teoria">
-        <div class="nome">L'uno per cento</div>
-        <div class="frase">L'1% è il totale diviso cento. Una volta trovato l'1%, tutte le altre percentuali si ottengono moltiplicando: il 7% è sette volte l'1%. È la via più corta quando non si ha la calcolatrice.</div>
-        <div class="f sx">$\displaystyle 1\%=\text{totale}:100$</div>
-        <div class="ex">esempio: $1\%\ \text{di}\ 3200=32\ \to\ 7\%=7\cdot 32=224$</div>
+        <div class="nome">Una percentuale multipla di un'altra</div>
+        <div class="frase">Se una percentuale è il doppio, il triplo, il quadruplo di un'altra, anche le quantità stanno nello stesso rapporto: il 60% è tre volte il 20%, quindi la quantità del 20% si trova dividendo per tre. Non serve passare dal totale.</div>
+        <div class="f sx">$\displaystyle \text{se}\ q\%=k\cdot p\%\ \to\ \text{parte}\left(p\%\right)=\text{parte}\left(q\%\right):k$</div>
+        <div class="ex">esempio: $40\%\ \text{vale}\ 12\ \to\ 20\%\ \text{vale}\ 12:2=6$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Dividere per la percentuale invece che per quante volte ci sta</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \text{parte}\left(p\%\right)=\text{parte}\left(q\%\right):q$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \text{parte}\left(p\%\right)=\text{parte}\left(q\%\right):\frac{q}{p}$</div></div>
+        </div>
+        <div class="why-txt">Si divide per quante volte una percentuale sta nell'altra, non per la percentuale.</div>
       </div>
     </div>
   </details>

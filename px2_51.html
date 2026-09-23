@@ -203,22 +203,22 @@ mjx-container[display]{margin:0!important}
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">Il netto è il lordo meno la tara: qui la tara è la cassetta vuota.</p>
+      <p class="mossa">Il netto è il lordo meno la tara: prima i pesi nella stessa unità.</p>
       <div class="teoria">
-        <div class="nome">Peso lordo, peso netto e tara</div>
-        <div class="frase">Il peso <strong>lordo</strong> è quello di tutto, contenitore compreso; la <strong>tara</strong> è il contenitore vuoto; il peso <strong>netto</strong> è la merce, cioè il lordo meno la tara. Prima di sottrarre, i pesi vanno nella stessa unità.</div>
-        <div class="f sx">$\displaystyle \text{netto}=\text{lordo}-\text{tara}$</div>
-        <div class="ex">esempio: $15\ \text{kg}-0{,}25\ \text{kg}=14{,}75\ \text{kg}$</div>
+        <div class="nome">Lordo, netto e tara</div>
+        <div class="frase">Il peso <strong>lordo</strong> è quello della merce insieme al suo contenitore; il <strong>netto</strong> è la sola merce, la <strong>tara</strong> il contenitore. Quindi il lordo è la somma di netto e tara.</div>
+        <div class="f sx">$\displaystyle \text{lordo}=\text{netto}+\text{tara}$</div>
+        <div class="ex">esempio: $\text{netto}\ 5\ \text{kg, tara}\ 0{,}5\ \text{kg}\ \to\ \text{lordo}\ 5{,}5\ \text{kg}$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Sottrarre senza convertire</div>
+        <div class="nome">Aggiungere la tara invece di toglierla</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle 15-250=-235\ \text{kg}$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \text{netto}=\text{lordo}+\text{tara}$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle 15-0{,}25=14{,}75\ \text{kg}$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \text{netto}=\text{lordo}-\text{tara}$</div></div>
         </div>
-        <div class="why-txt">Prima di sottrarre, i pesi vanno nella stessa unità.</div>
+        <div class="why-txt">La tara si toglie dal lordo.</div>
       </div>
     </div>
   </details>
@@ -264,13 +264,13 @@ mjx-container[display]{margin:0!important}
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Fermarsi alla cifra invece di arrotondare</div>
+        <div class="nome">Arrotondare per eccesso quando la cifra non lo chiede</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle 12{,}6\ \to\ 12$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle 8{,}3\ \to\ 9$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle 12{,}6\ \to\ 13$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle 8{,}3\ \to\ 8$</div></div>
         </div>
-        <div class="why-txt">Dal cinque in su l'ultima cifra che resta sale di uno.</div>
+        <div class="why-txt">Sotto il cinque l'ultima cifra che resta non cambia.</div>
       </div>
     </div>
   </details>
@@ -301,7 +301,7 @@ mjx-container[display]{margin:0!important}
         <div class="nome">Il rapporto percentuale</div>
         <div class="frase">Per sapere che percentuale è una parte del totale si <strong>divide la parte per il totale</strong> e si moltiplica per cento. Il risultato della divisione è un numero decimale: 0,32 vuol dire 32%.</div>
         <div class="f sx">$\displaystyle \%=\frac{\text{parte}}{\text{totale}}\cdot 100$</div>
-        <div class="ex">esempio: $\frac{27}{75}=0{,}36\ \to\ 36\%$</div>
+        <div class="ex">esempio: $\frac{27}{75}\cdot 100=36\ \to\ 36\%$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>

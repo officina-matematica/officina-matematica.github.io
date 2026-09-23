@@ -220,19 +220,19 @@ mjx-container[display]{margin:0!important}
       <p class="mossa">Crescenti e decrescenti sono lo stesso polinomio scritto al contrario: cambia solo l'ordine.</p>
       <div class="teoria">
         <div class="nome">Ordinare un polinomio rispetto a una lettera</div>
-        <div class="frase">Si guardano gli esponenti di <strong>quella sola</strong> lettera e si mettono i monomi in fila dal più grande al più piccolo. Gli altri esponenti non contano per l'ordine, e ogni monomio si sposta con il suo segno.</div>
-        <div class="f sx">$\displaystyle \text{si guarda solo l'esponente della lettera indicata}$</div>
-        <div class="ex">esempio: $3x^{2}+2x^{4}-3x+1\to 2x^{4}+3x^{2}-3x+1$</div>
+        <div class="frase">Si guardano gli esponenti di <strong>quella sola</strong> lettera e si mettono i monomi in fila: dal più grande al più piccolo se il testo dice «decrescenti», dal più piccolo al più grande se dice «crescenti». Gli altri esponenti non contano per l'ordine, e ogni monomio si sposta con il suo segno.</div>
+        <div class="f sx">$\displaystyle k_{1}x^{p}+k_{2}x^{q}+k_{3}x^{r}\quad\text{con}\ p>q>r$</div>
+        <div class="ex">esempio: $5y+2y^{3}-y^{2}\to 2y^{3}-y^{2}+5y$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Ordinare secondo il grado totale</div>
+        <div class="nome">Ordinare secondo il grado del monomio</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \text{si guarda il grado del monomio}$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a^{2}b^{4}+a^{3}b\to a^{2}b^{4}+a^{3}b$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \text{si guarda l'esponente della lettera indicata}$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a^{2}b^{4}+a^{3}b\to a^{3}b+a^{2}b^{4}$</div></div>
         </div>
-        <div class="why-txt">Conta solo la lettera che il testo indica.</div>
+        <div class="why-txt">Rispetto ad $a$ contano solo gli esponenti di $a$.</div>
       </div>
     </div>
   </details>

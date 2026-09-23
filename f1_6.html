@@ -206,7 +206,17 @@ mjx-container[display]{margin:0!important}
         <div class="nome">Dalla parte all'intero: si divide</div>
         <div class="frase">Quando il problema dà una <strong>parte</strong> e dice a quale frazione corrisponde, per risalire all'intero si divide la parte per quella frazione. È il contrario di quando si cerca la parte, dove invece si moltiplica.</div>
         <div class="f sx">$\displaystyle \text{intero}=\text{parte}:\text{frazione}$</div>
-        <div class="ex">esempio: $24:\frac{4}{5}=30$</div>
+        <div class="ex">esempio: $21:\frac{3}{7}=49$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Moltiplicare invece di dividere</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \text{intero}=\text{parte}\cdot\text{frazione}$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \text{intero}=\text{parte}:\text{frazione}$</div></div>
+        </div>
+        <div class="why-txt">L'intero è più grande della parte: moltiplicandolo per una frazione si rimpicciolisce.</div>
       </div>
     </div>
   </details>
@@ -260,19 +270,19 @@ mjx-container[display]{margin:0!important}
       <p class="mossa">Le rate che mancano non si contano sul costo della macchina, ma solo su questi $5000$ € ancora scoperti.</p>
       <div class="teoria">
         <div class="nome">Il resto è il totale meno tutte le parti</div>
-        <div class="frase">Quando il problema chiede quanto rimane, conviene sommare tutte le parti che se ne vanno e togliere il risultato dal totale, in una sola sottrazione.</div>
-        <div class="f sx">$\displaystyle n-a-b=n-\left(a+b\right)$</div>
-        <div class="ex">esempio: $20-5-3=20-8=12$</div>
+        <div class="frase">Quando il problema chiede quanto <strong>rimane</strong>, si toglie dal totale tutto quello che se n'è andato. Se le parti sono più di una conviene sommarle prima e fare una sottrazione sola: il risultato è lo stesso e non si perde un pezzo per strada.</div>
+        <div class="f sx">$\displaystyle \text{resto}=n-\left(a+b+\dots\right)$</div>
+        <div class="ex">esempio: $20-\left(5+3\right)=20-8=12$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Conservare il segno meno dentro la parentesi</div>
+        <div class="nome">Togliere una parte sola e dimenticare le altre</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle n-a-b=n-\left(a-b\right)$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \text{resto}=n-a$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle n-a-b=n-\left(a+b\right)$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \text{resto}=n-\left(a+b\right)$</div></div>
         </div>
-        <div class="why-txt">Due sottrazioni diventano una somma da togliere.</div>
+        <div class="why-txt">Dal totale va tolto tutto quello che se n'è andato, non solo l'ultima parte.</div>
       </div>
     </div>
   </details>

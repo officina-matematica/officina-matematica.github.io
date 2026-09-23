@@ -213,16 +213,35 @@ mjx-container[display]{margin:0!important}
     </div>
   </details>
 
-  <div class="riga">
-    <div class="fissa">
+  <details class="riga">
+    <summary>
       <div class="n">2</div>
       <div class="cont">
         <div class="nota">Tre mesi sono un quarto d'anno: si paga un quarto dell'interesse annuo.</div>
         <div class="f sx">$\displaystyle \text{Interesse di tre mesi}=\frac{1}{4}\cdot 480=120\ \text{€}$</div>
       </div>
-      <div></div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">Il tasso della banca è annuo: tre mesi sono un quarto di anno.</p>
+      <div class="teoria">
+        <div class="nome">L'interesse della banca è annuo</div>
+        <div class="frase">Il tasso che la banca dichiara vale per un <strong>anno</strong> intero. Per un periodo più corto si prende la frazione di anno corrispondente: un mese è un dodicesimo, sette mesi sono sette dodicesimi.</div>
+        <div class="f sx">$\displaystyle \text{interesse}=\text{capitale}\cdot\text{tasso}\cdot\frac{\text{mesi}}{12}$</div>
+        <div class="ex">esempio: $1000\cdot\frac{3}{100}\cdot\frac{6}{12}=15\ \text{€}$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Usare il tasso annuo per un periodo più corto</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \text{interesse di un mese}=\text{capitale}\cdot\text{tasso}$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \text{interesse di un mese}=\text{capitale}\cdot\text{tasso}\cdot\frac{1}{12}$</div></div>
+        </div>
+        <div class="why-txt">Il tasso dichiarato vale per un anno intero.</div>
+      </div>
     </div>
-  </div>
+  </details>
 
   <div class="riga">
     <div class="fissa">

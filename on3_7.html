@@ -221,16 +221,25 @@ mjx-container[display]{margin:0!important}
     </div>
   </details>
 
-  <div class="riga">
-    <div class="fissa">
+  <details class="riga">
+    <summary>
       <div class="n">3</div>
       <div class="cont">
         <div class="nota">Completo il prodotto: $6\cdot 2=12$.</div>
         <div class="f sx">$\displaystyle =\left\{3\cdot\left[2+2\cdot(4+12-11)\right]+5\cdot\left[5+3\cdot 6-2\cdot(15-12+1)-2\right]\right\}-9\cdot 11=$</div>
       </div>
-      <div></div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">Si parte dalla parentesi più interna.</p>
+      <div class="teoria">
+        <div class="nome">Si parte dalla parentesi più interna</div>
+        <div class="frase">Quando ci sono parentesi dentro altre parentesi si comincia sempre dalla più interna — la tonda — poi la quadra, infine la graffa. Una parentesi già svolta si toglie, e si passa a quella che la conteneva.</div>
+        <div class="f sx">$\displaystyle \left\{\ \left[\ \left(\ \right)\ \right]\ \right\}$</div>
+        <div class="ex">esempio: $2-\left[3-\left(4-1\right)\right]=2-\left[3-3\right]=2$</div>
+      </div>
     </div>
-  </div>
+  </details>
 
   <details class="riga">
     <summary>
@@ -272,22 +281,22 @@ mjx-container[display]{margin:0!important}
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">Nella prima quadra $2\cdot 5=10$. Nella seconda $3\cdot 6=18$ e $2\cdot 4=8$: i prodotti si chiudono prima di addizioni e sottrazioni.</p>
+      <p class="mossa">Dentro la parentesi il prodotto viene prima della somma.</p>
       <div class="teoria">
-        <div class="nome">Priorità delle operazioni</div>
-        <div class="frase">Dentro ogni parentesi quadra le moltiplicazioni si eseguono per prime. Le addizioni e le sottrazioni aspettano che tutti i prodotti siano chiusi.</div>
-        <div class="f sx">$\displaystyle a+b\cdot c=a+(b\cdot c)$</div>
-        <div class="ex">esempio: $2+3\cdot 4=2+12=14$</div>
+        <div class="nome">Priorità dentro le parentesi</div>
+        <div class="frase">Anche dentro una parentesi valgono le priorità: prima le moltiplicazioni e le divisioni, poi le addizioni e le sottrazioni. La parentesi si toglie solo quando dentro è rimasto un unico numero.</div>
+        <div class="f sx">$\displaystyle (a+b\cdot c)=a+(b\cdot c)$</div>
+        <div class="ex">esempio: $(5+2\cdot 3)=5+6=11$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Eseguire l'addizione prima della moltiplicazione</div>
+        <div class="nome">Sommare prima di moltiplicare dentro la parentesi</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a+b\cdot c=(a+b)\cdot c$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle (a+b\cdot c)=(a+b)\cdot c$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a+b\cdot c=a+(b\cdot c)$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle (a+b\cdot c)=a+(b\cdot c)$</div></div>
         </div>
-        <div class="why-txt">La moltiplicazione non aspetta l'addizione.</div>
+        <div class="why-txt">Anche fra parentesi il prodotto viene prima.</div>
       </div>
     </div>
   </details>

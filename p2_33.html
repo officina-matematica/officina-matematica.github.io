@@ -204,7 +204,7 @@ mjx-container[display]{margin:0!important}
       <p class="mossa">$2=2^{1}$: così anche il primo fattore mostra il suo esponente.</p>
       <div class="teoria">
         <div class="nome">Potenza con esponente uno</div>
-        <div class="frase">Un numero elevato a <strong>uno</strong> è il numero stesso: l'esponente $1$ dice "preso una volta sola". Per questo di solito non lo si scrive nemmeno.</div>
+        <div class="frase">Un numero elevato a <strong>uno</strong> è il numero stesso: l'esponente $1$ dice «preso una volta sola». Per questo di solito non lo si scrive, ma scriverlo serve per usare le proprietà delle potenze.</div>
         <div class="f sx">$\displaystyle a^{1}=a$</div>
         <div class="ex">esempio: $7^{1}=7$</div>
       </div>
@@ -265,8 +265,8 @@ mjx-container[display]{margin:0!important}
       <div class="teoria">
         <div class="nome">Portare le potenze alla stessa base</div>
         <div class="frase">Le proprietà delle potenze funzionano solo se le basi sono <strong>uguali</strong>. Spesso un numero è già una potenza travestita: basta riscriverlo per far comparire la stessa base.</div>
-        <div class="f sx">$\displaystyle a^{m\cdot n}=\left(a^{m}\right)^{n}$</div>
-        <div class="ex">esempio: $16^{3}=\left(2^{4}\right)^{3}$</div>
+        <div class="f sx">$\displaystyle b=a^{k}\quad\to\quad a^{m}=b\ \Longleftrightarrow\ a^{m}=a^{k}$</div>
+        <div class="ex">esempio: $81=3^{4}:\quad 3^{x}=81\ \to\ 3^{x}=3^{4}$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
@@ -300,13 +300,13 @@ mjx-container[display]{margin:0!important}
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Confrontare le basi invece degli esponenti</div>
+        <div class="nome">Dare come soluzione la potenza invece dell'esponente</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a^{m}=a^{n}\ \to\ a=a$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a^{m}=a^{n}\ \to\ m=a^{n}$</div></div>
           <div class="arrow">➜</div>
           <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a^{m}=a^{n}\ \to\ m=n$</div></div>
         </div>
-        <div class="why-txt">Le basi sono già uguali: a cambiare sono gli esponenti.</div>
+        <div class="why-txt">L'incognita è l'esponente, non tutta la potenza.</div>
       </div>
     </div>
   </details>
@@ -325,16 +325,16 @@ mjx-container[display]{margin:0!important}
       <div class="teoria">
         <div class="nome">Portare l'incognita da sola</div>
         <div class="frase">In un'equazione un termine si può spostare da un membro all'altro <strong>cambiandogli il segno</strong>: è come toglierlo da tutti e due i membri. Si portano le incognite da una parte e i numeri dall'altra.</div>
-        <div class="f sx">$\displaystyle a+x=b\quad\Longleftrightarrow\quad x=b-a$</div>
+        <div class="f sx">$\displaystyle a+x=b\ \to\ x=b-a,\qquad x-a=b\ \to\ x=b+a,\qquad a-x=b\ \to\ x=a-b$</div>
         <div class="ex">esempio: $x-3=5\ \to\ x=5+3=8$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
         <div class="nome">Spostare senza cambiare segno</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle x-3=5\ \to\ x=5-3$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle x-a=b\ \to\ x=b-a$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle x-3=5\ \to\ x=5+3$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle x-a=b\ \to\ x=b+a$</div></div>
         </div>
         <div class="why-txt">Chi cambia membro cambia segno.</div>
       </div>

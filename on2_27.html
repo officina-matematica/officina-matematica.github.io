@@ -187,16 +187,35 @@ mjx-container[display]{margin:0!important}
     </div>
   </div>
 
-  <div class="riga">
-    <div class="fissa">
+  <details class="riga">
+    <summary>
       <div class="n">2</div>
       <div class="cont">
         <div class="nota">Scriviamo $99$ come $100-1$.</div>
         <div class="f sx">$\displaystyle =23\cdot \left(100-1\right)=$</div>
       </div>
-      <div></div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">Il numero si spezza nel tondo meno quello che manca.</p>
+      <div class="teoria">
+        <div class="nome">Scrivere un numero come differenza</div>
+        <div class="frase">Un numero appena sotto un numero tondo si può scrivere come quel tondo <strong>meno</strong> il poco che manca: il valore non cambia, ma il conto diventa facile.</div>
+        <div class="f sx">$\displaystyle b=t-d\quad\text{con}\ t\ \text{tondo e}\ d=t-b$</div>
+        <div class="ex">esempio: $97=100-3$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Scriverlo come somma invece che come differenza</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle b=t+d$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle b=t-d$</div></div>
+        </div>
+        <div class="why-txt">Se il numero è più piccolo del tondo, il poco che manca si toglie.</div>
+      </div>
     </div>
-  </div>
+  </details>
 
   <details class="riga">
     <summary>
@@ -212,7 +231,7 @@ mjx-container[display]{margin:0!important}
       <div class="teoria">
         <div class="nome">Proprietà distributiva della moltiplicazione</div>
         <div class="frase">Per moltiplicare un numero per una somma (o una differenza) si può moltiplicare quel numero per <strong>ciascun</strong> termine e poi sommare (o sottrarre) i risultati. Letta al contrario, permette di raccogliere un fattore comune.</div>
-        <div class="f sx">$\displaystyle a\cdot\left(b+c\right)=a\cdot b+a\cdot c$</div>
+        <div class="f sx">$\displaystyle a\cdot\left(b+c\right)=a\cdot b+a\cdot c\qquad\left(b+c\right)\cdot a=b\cdot a+c\cdot a$</div>
         <div class="ex">esempio: $11\cdot\left(10+3\right)=11\cdot 10+11\cdot 3=110+33=143$</div>
       </div>
       <div class="errore">
@@ -242,8 +261,18 @@ mjx-container[display]{margin:0!important}
       <div class="teoria">
         <div class="nome">Moltiplicare per 10, 100, 1000</div>
         <div class="frase">Per moltiplicare un numero naturale per $10$, $100$ o $1000$ si scrivono in fondo uno, due o tre zeri. Se un fattore finisce con degli zeri, si moltiplica senza quegli zeri e poi li si aggiunge in fondo.</div>
-        <div class="f sx">$\displaystyle a\cdot 100\ \to\ a\ \text{con due zeri in fondo}$</div>
-        <div class="ex">esempio: $36\cdot 100=3600$</div>
+        <div class="f sx">$\displaystyle a\cdot 100=a\ \text{con due zeri in fondo}\qquad\left(a\cdot 10\right)\cdot b=\left(a\cdot b\right)\cdot 10$</div>
+        <div class="ex">esempio: $36\cdot 100=3600\qquad 60\cdot 12=\left(6\cdot 12\right)\cdot 10=720$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Perdere gli zeri messi da parte</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \left(a\cdot 10\right)\cdot b=a\cdot b$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \left(a\cdot 10\right)\cdot b=\left(a\cdot b\right)\cdot 10$</div></div>
+        </div>
+        <div class="why-txt">Lo zero tolto per fare il conto va rimesso in fondo al risultato.</div>
       </div>
     </div>
   </details>

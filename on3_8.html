@@ -230,36 +230,45 @@ mjx-container[display]{margin:0!important}
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">$25:5=5$ dentro le graffe, $30:15=2$ dentro la quadra, $5\cdot 5=25$ nell'altra quadra: ovunque il quoziente e il prodotto si chiudono prima di somme e sottrazioni.</p>
+      <p class="mossa">Dentro la parentesi il prodotto viene prima della somma.</p>
       <div class="teoria">
-        <div class="nome">Priorità delle operazioni</div>
-        <div class="frase">Dentro ogni parentesi si eseguono prima le divisioni e le moltiplicazioni, poi le addizioni e le sottrazioni. Cambiare parentesi non cambia questa regola.</div>
-        <div class="f sx">$\displaystyle a-b:c=a-(b:c)$</div>
-        <div class="ex">esempio: $20-12:4=20-3=17$</div>
+        <div class="nome">Priorità dentro le parentesi</div>
+        <div class="frase">Anche dentro una parentesi valgono le priorità: prima le moltiplicazioni e le divisioni, poi le addizioni e le sottrazioni. La parentesi si toglie solo quando dentro è rimasto un unico numero.</div>
+        <div class="f sx">$\displaystyle (a+b\cdot c)=a+(b\cdot c)$</div>
+        <div class="ex">esempio: $(5+2\cdot 3)=5+6=11$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Sottrarre prima di dividere</div>
+        <div class="nome">Sommare prima di moltiplicare dentro la parentesi</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a-b:c=(a-b):c$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle (a+b\cdot c)=(a+b)\cdot c$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a-b:c=a-(b:c)$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle (a+b\cdot c)=a+(b\cdot c)$</div></div>
         </div>
-        <div class="why-txt">La divisione si chiude prima della sottrazione.</div>
+        <div class="why-txt">Anche fra parentesi il prodotto viene prima.</div>
       </div>
     </div>
   </details>
 
-  <div class="riga">
-    <div class="fissa">
+  <details class="riga">
+    <summary>
       <div class="n">4</div>
       <div class="cont">
         <div class="nota">Chiudo le due quadre.</div>
         <div class="f sx">$\displaystyle =\left\{155-5+10\right\}:4+50-81=$</div>
       </div>
-      <div></div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">Si parte dalla parentesi più interna.</p>
+      <div class="teoria">
+        <div class="nome">Si parte dalla parentesi più interna</div>
+        <div class="frase">Quando ci sono parentesi dentro altre parentesi si comincia sempre dalla più interna — la tonda — poi la quadra, infine la graffa. Una parentesi già svolta si toglie, e si passa a quella che la conteneva.</div>
+        <div class="f sx">$\displaystyle \left\{\ \left[\ \left(\ \right)\ \right]\ \right\}$</div>
+        <div class="ex">esempio: $2-\left[3-\left(4-1\right)\right]=2-\left[3-3\right]=2$</div>
+      </div>
     </div>
-  </div>
+  </details>
 
   <details class="riga">
     <summary>
@@ -275,8 +284,8 @@ mjx-container[display]{margin:0!important}
       <div class="teoria">
         <div class="nome">Una parentesi seguita da una divisione</div>
         <div class="frase">Quando dopo una parentesi c'è una divisione, si divide il <strong>risultato dell'intera parentesi</strong>, non il suo primo numero. Chiuderla prima è il modo più sicuro per non sbagliare.</div>
-        <div class="f sx">$\displaystyle \left(a+b\right):c=a:c+b:c$</div>
-        <div class="ex">esempio: $\left(6+4\right):2=3+2=5$</div>
+        <div class="f sx">$\displaystyle \left(a+b\right):c=s:c\quad\text{con}\ s=a+b$</div>
+        <div class="ex">esempio: $\left(6+4\right):2=10:2=5$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
@@ -284,9 +293,9 @@ mjx-container[display]{margin:0!important}
         <div class="compare">
           <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \left(a+b\right):c=a+b:c$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \left(a+b\right):c=a:c+b:c$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \left(a+b\right):c=s:c$</div></div>
         </div>
-        <div class="why-txt">La divisione riguarda tutta la parentesi.</div>
+        <div class="why-txt">Il segno di divisione riguarda tutta la parentesi.</div>
       </div>
     </div>
   </details>

@@ -235,17 +235,17 @@ mjx-container[display]{margin:0!important}
         <div class="nome">La regola dei segni</div>
         <div class="frase">Nel prodotto e nella divisione, segni <strong>uguali</strong> danno più, segni <strong>diversi</strong> danno meno. Vale per la moltiplicazione e per la divisione allo stesso modo, e non c'entra niente con la regola della somma.</div>
         <div class="f sx">$\displaystyle (-)\cdot(-)=+,\quad (-)\cdot(+)=-$</div>
-        <div class="ex">esempio: $\left(-\frac{1}{6}\right)\cdot\left(-\frac{1}{4}\right)=+\frac{1}{24}$</div>
+        <div class="ex">esempio: $\left(-5\right)\cdot\left(-3\right)=+15$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Usare la regola dei segni nella somma</div>
+        <div class="nome">Meno per meno uguale meno</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle -a-b=+ab$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \left(-a\right)\cdot\left(-b\right)=-ab$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle -a-b=-(a+b)$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \left(-a\right)\cdot\left(-b\right)=ab$</div></div>
         </div>
-        <div class="why-txt">Meno per meno fa più solo nel prodotto.</div>
+        <div class="why-txt">Due segni uguali danno più.</div>
       </div>
     </div>
   </details>
@@ -260,22 +260,22 @@ mjx-container[display]{margin:0!important}
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">$abc$ e $ab$ non sono simili: la $c$ c'è in uno e non nell'altro.</p>
+      <p class="mossa">Stessa parte letterale: si sommano solo i coefficienti.</p>
       <div class="teoria">
-        <div class="nome">Solo i monomi simili si sommano</div>
-        <div class="frase">Due monomi sono <strong>simili</strong> quando hanno la stessa parte letterale, cioè le stesse lettere con gli stessi esponenti. Solo quelli si possono sommare, e si sommano i <strong>coefficienti</strong> lasciando la parte letterale com'è.</div>
-        <div class="f sx">$\displaystyle ka^{m}+ha^{m}=(k+h)a^{m}$</div>
-        <div class="ex">esempio: $5x^{2}y^{3}+3x^{2}y^{3}=8x^{2}y^{3}$</div>
+        <div class="nome">Somma di monomi simili</div>
+        <div class="frase">Due monomi sono <strong>simili</strong> quando hanno la stessa parte letterale, con gli stessi esponenti. Per sommarli si sommano solo i <strong>coefficienti</strong>, e la parte letterale si riscrive uguale: non cambia e non si somma.</div>
+        <div class="f sx">$\displaystyle ka^{m}+ha^{m}=\left(k+h\right)a^{m}$</div>
+        <div class="ex">esempio: $7b^{3}+2b^{3}=9b^{3}$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Sommare anche gli esponenti</div>
+        <div class="nome">Sommare anche la parte letterale</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle ka^{m}+ha^{m}=(k+h)a^{2m}$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle 3a+2a=5a^{2}$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle ka^{m}+ha^{m}=(k+h)a^{m}$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle 3a+2a=5a$</div></div>
         </div>
-        <div class="why-txt">La parte letterale non si tocca.</div>
+        <div class="why-txt">La parte letterale resta com'è.</div>
       </div>
     </div>
   </details>
@@ -294,7 +294,7 @@ mjx-container[display]{margin:0!important}
       <div class="teoria">
         <div class="nome">Addizione e sottrazione fra frazioni</div>
         <div class="frase">Due frazioni si sommano o si sottraggono solo quando hanno lo <strong>stesso denominatore</strong>. Si cerca il minimo comune multiplo dei denominatori, si riscrivono tutte con quel denominatore e poi si sommano o si sottraggono i soli numeratori.</div>
-        <div class="f sx">$\displaystyle \frac{a}{b}+\frac{c}{d}=\frac{a\cdot d+b\cdot c}{b\cdot d}$</div>
+        <div class="f sx">$\displaystyle \frac{a}{b}+\frac{c}{d}=\frac{a\cdot\left(m:b\right)+c\cdot\left(m:d\right)}{m}\quad\text{con}\ m=\text{mcm}(b;d)$</div>
         <div class="ex">esempio: $\frac{1}{3}+\frac{1}{6}=\frac{2+1}{6}=\frac{3}{6}$</div>
       </div>
       <div class="errore">

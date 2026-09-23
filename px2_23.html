@@ -194,15 +194,15 @@ mjx-container[display]{margin:0!important}
         <div class="nome">Togliere una percentuale in un colpo solo</div>
         <div class="frase">Togliere il <strong>s%</strong> da una quantità vuol dire tenerne il $(100-s)\%$: invece di calcolare la parte da togliere e poi sottrarla, si moltiplica subito per il numero decimale che resta. Con i prezzi: scontare del 25% vuol dire pagare il 75%.</div>
         <div class="f sx">$\displaystyle n\ \text{scontato del}\ s\%=n\cdot\left(1-\frac{s}{100}\right)$</div>
-        <div class="ex">esempio: $150\ \text{€ scontato del}\ 35\%:\ 150\cdot 0{,}65=97{,}50\ \text{€}$</div>
+        <div class="ex">esempio: $140\ \text{€ scontato del}\ 45\%:\ 140\cdot 0{,}55=77\ \text{€}$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
         <div class="nome">Moltiplicare per la percentuale dello sconto</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle n\ \text{scontato del}\ s\%=n\cdot\frac{s}{100}$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle n\cdot\frac{s}{100}$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle n\ \text{scontato del}\ s\%=n\cdot\frac{100-s}{100}$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle n\cdot\left(1-\frac{s}{100}\right)$</div></div>
         </div>
         <div class="why-txt">Il primo dà lo sconto, il secondo quello che si paga.</div>
       </div>
@@ -220,23 +220,12 @@ mjx-container[display]{margin:0!important}
     </div>
   </div>
 
-  <div class="riga">
-    <div class="fissa">
+  <details class="riga">
+    <summary>
       <div class="n">3</div>
       <div class="cont">
         <div class="nota">Il guadagno è il raccolto per il prezzo al chilogrammo.</div>
         <div class="f sx">$\displaystyle \text{Guadagno del 2011}=180\cdot 1{,}80=324\ \text{€}$</div>
-      </div>
-      <div></div>
-    </div>
-  </div>
-
-  <details class="riga">
-    <summary>
-      <div class="n">4</div>
-      <div class="cont">
-        <div class="nota">Confrontiamo con l'anno prima: nel 2010 aveva guadagnato di più, anche se le due percentuali erano uguali.</div>
-        <div class="f sx">$\displaystyle \text{Guadagno del 2010}=225\cdot 1{,}50=337{,}50\ \text{€}$</div>
       </div>
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
@@ -244,22 +233,33 @@ mjx-container[display]{margin:0!important}
       <p class="mossa">Qui i due fattori sono i chilogrammi raccolti e il prezzo al chilogrammo.</p>
       <div class="teoria">
         <div class="nome">Due fattori che cambiano insieme</div>
-        <div class="frase">Quando una grandezza è il <strong>prodotto</strong> di due fattori — il raccolto per il prezzo, i pezzi per il costo di uno — e i due fattori cambiano, il prodotto cambia del prodotto dei due numeri decimali. Un calo e un aumento della stessa percentuale non si annullano.</div>
+        <div class="frase">Quando una grandezza è il <strong>prodotto</strong> di due fattori — il raccolto per il prezzo, i pezzi per il costo di uno — e tutti e due i fattori cambiano, il prodotto cambia del prodotto dei due numeri decimali: un calo su un fattore e un aumento sull'altro non si compensano.</div>
         <div class="f sx">$\displaystyle (a\cdot k_1)\cdot(b\cdot k_2)=(a\cdot b)\cdot k_1\cdot k_2$</div>
         <div class="ex">esempio: $0{,}75\cdot 1{,}40=1{,}05\ \to\ +5\%$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Credere che i due cambiamenti si compensino</div>
+        <div class="nome">Sommare le due variazioni</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle -25\%\ \text{e}\ +40\%\ \to\ +15\%$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle k=k_1+k_2$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle 0{,}75\cdot 1{,}40=1{,}05\ \to\ +5\%$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle k=k_1\cdot k_2$</div></div>
         </div>
         <div class="why-txt">I due cambiamenti si moltiplicano, non si sommano.</div>
       </div>
     </div>
   </details>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">4</div>
+      <div class="cont">
+        <div class="nota">Confrontiamo con l'anno prima: nel 2010 aveva guadagnato di più, anche se le due percentuali erano uguali.</div>
+        <div class="f sx">$\displaystyle \text{Guadagno del 2010}=225\cdot 1{,}50=337{,}50\ \text{€}$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
 
   <div class="riga res">
     <div class="fissa">

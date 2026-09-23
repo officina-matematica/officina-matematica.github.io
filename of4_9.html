@@ -295,7 +295,7 @@ mjx-container[display]{margin:0!important}
         <div class="nome">Potenza di una frazione</div>
         <div class="frase">Per elevare una frazione a un esponente si elevano <strong>sia il numeratore sia il denominatore</strong>. L'esponente riguarda tutta la frazione, non solo il numero di sopra.</div>
         <div class="f sx">$\displaystyle \left(\frac{a}{b}\right)^{n}=\frac{a^{n}}{b^{n}}$</div>
-        <div class="ex">esempio: $\left(\frac{2}{3}\right)^{3}=\frac{8}{27}$</div>
+        <div class="ex">esempio: $\left(\frac{3}{10}\right)^{2}=\frac{9}{100}$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
@@ -370,13 +370,34 @@ mjx-container[display]{margin:0!important}
     </div>
   </details>
 
-  <div class="riga res">
-    <div class="fissa">
+  <details class="riga res">
+    <summary>
       <div class="n">8</div>
-      <div class="cont"><div class="f sx">$\displaystyle =\frac{27}{64}$</div></div>
-      <div></div>
+      <div class="cont">
+        <div class="f sx">$\displaystyle =\frac{27}{64}$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">Numeratori fra loro, denominatori fra loro.</p>
+      <div class="teoria">
+        <div class="nome">Moltiplicare due frazioni</div>
+        <div class="frase">Per moltiplicare due frazioni si moltiplicano i <strong>numeratori fra loro</strong> e i <strong>denominatori fra loro</strong>. Non serve il denominatore comune: quello serve solo per addizioni e sottrazioni.</div>
+        <div class="f sx">$\displaystyle \frac{a}{b}\cdot\frac{c}{d}=\frac{a\cdot c}{b\cdot d}$</div>
+        <div class="ex">esempio: $\frac{2}{3}\cdot\frac{5}{7}=\frac{10}{21}$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Moltiplicare in croce</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{a}{b}\cdot\frac{c}{d}=\frac{a\cdot d}{b\cdot c}$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{a}{b}\cdot\frac{c}{d}=\frac{a\cdot c}{b\cdot d}$</div></div>
+        </div>
+        <div class="why-txt">Sopra con sopra, sotto con sotto.</div>
+      </div>
     </div>
-  </div>
+  </details>
 
 </div>
 

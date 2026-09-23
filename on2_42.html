@@ -187,16 +187,35 @@ mjx-container[display]{margin:0!important}
     </div>
   </div>
 
-  <div class="riga">
-    <div class="fissa">
+  <details class="riga">
+    <summary>
       <div class="n">2</div>
       <div class="cont">
         <div class="nota">Distributiva: $99$ è $100-1$.</div>
         <div class="f sx">$\displaystyle =\left(100-1\right)\cdot 45=$</div>
       </div>
-      <div></div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">Il numero si spezza nel tondo meno quello che manca.</p>
+      <div class="teoria">
+        <div class="nome">Scrivere un numero come differenza</div>
+        <div class="frase">Un numero appena sotto un numero tondo si può scrivere come quel tondo <strong>meno</strong> il poco che manca: il valore non cambia, ma il conto diventa facile.</div>
+        <div class="f sx">$\displaystyle b=t-d\quad\text{con}\ t\ \text{tondo e}\ d=t-b$</div>
+        <div class="ex">esempio: $97=100-3$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Scriverlo come somma invece che come differenza</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle b=t+d$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle b=t-d$</div></div>
+        </div>
+        <div class="why-txt">Se il numero è più piccolo del tondo, il poco che manca si toglie.</div>
+      </div>
     </div>
-  </div>
+  </details>
 
   <details class="riga">
     <summary>
@@ -212,7 +231,7 @@ mjx-container[display]{margin:0!important}
       <div class="teoria">
         <div class="nome">Proprietà distributiva della moltiplicazione</div>
         <div class="frase">Per moltiplicare un numero per una somma (o una differenza) si può moltiplicare quel numero per <strong>ciascun</strong> termine e poi sommare (o sottrarre) i risultati. Letta al contrario, permette di raccogliere un fattore comune.</div>
-        <div class="f sx">$\displaystyle a\cdot\left(b+c\right)=a\cdot b+a\cdot c$</div>
+        <div class="f sx">$\displaystyle a\cdot\left(b+c\right)=a\cdot b+a\cdot c\qquad\left(b+c\right)\cdot a=b\cdot a+c\cdot a$</div>
         <div class="ex">esempio: $11\cdot\left(10+3\right)=11\cdot 10+11\cdot 3=110+33=143$</div>
       </div>
       <div class="errore">
@@ -238,22 +257,22 @@ mjx-container[display]{margin:0!important}
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">Moltiplicare $45$ per $1$ lascia $45$ com'è.</p>
+      <p class="mossa">Moltiplicare per uno non cambia niente.</p>
       <div class="teoria">
-        <div class="nome">Moltiplicare per 1</div>
-        <div class="frase">Qualsiasi numero moltiplicato per $1$ resta uguale. Per questo un numero che compare da solo accanto a dei prodotti si può leggere come quel numero per $1$.</div>
-        <div class="f sx">$\displaystyle a\cdot 1=a$</div>
-        <div class="ex">esempio: $58\cdot 1=58$</div>
+        <div class="nome">Moltiplicare per uno</div>
+        <div class="frase">Moltiplicare per <strong>uno</strong> non cambia niente: il numero resta quello. Letta al contrario, la regola dice che un numero da solo si può sempre scrivere come quel numero per uno, e a volte è proprio quello che serve per raccogliere.</div>
+        <div class="f sx">$\displaystyle 1\cdot a=a$</div>
+        <div class="ex">esempio: $1\cdot 12=12$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Confondere 1 con 0</div>
+        <div class="nome">Far sparire anche l'altro fattore</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a\cdot 1=1$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle 1\cdot a=1$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a\cdot 1=a$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle 1\cdot a=a$</div></div>
         </div>
-        <div class="why-txt">Per 1 il numero resta com'è.</div>
+        <div class="why-txt">Sparisce l'uno, l'altro resta.</div>
       </div>
     </div>
   </details>

@@ -218,12 +218,12 @@ mjx-container[display]{margin:0!important}
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">Coefficienti fra loro, e per ogni lettera si sommano gli esponenti: da $6ab^{2}\cdot 36a^{2}b^{3}$ esce $216a^{3}b^{5}$.</p>
+      <p class="mossa">Coefficienti fra loro, e gli esponenti della stessa lettera si sommano.</p>
       <div class="teoria">
-        <div class="nome">Moltiplicare due monomi</div>
-        <div class="frase">Per moltiplicare due monomi si moltiplicano i coefficienti fra loro e si <strong>sommano</strong> gli esponenti delle lettere uguali. Le lettere diverse si scrivono una accanto all'altra, senza toccarle.</div>
-        <div class="f sx">$\displaystyle a^{m}\cdot a^{n}=a^{m+n}$</div>
-        <div class="ex">esempio: $11a^{2}\cdot 2a^{4}=22a^{6}$</div>
+        <div class="nome">Prodotto di due monomi</div>
+        <div class="frase">Si moltiplicano i coefficienti fra loro e le lettere fra loro. Per ogni lettera uguale gli esponenti si <strong>sommano</strong>; una lettera che compare in un solo fattore si riscrive com'è.</div>
+        <div class="f sx">$\displaystyle ka^{m}\cdot ha^{n}=\left(k\cdot h\right)\cdot a^{m+n}$</div>
+        <div class="ex">esempio: $2a^{2}\cdot 5a^{3}=10a^{5}$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
@@ -248,20 +248,20 @@ mjx-container[display]{margin:0!important}
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">Dividiamo $216a^{3}b^{5}$ per $12a^{2}b^{3}$: i coefficienti fra loro, e per ogni lettera si sottraggono gli esponenti.</p>
+      <p class="mossa">Coefficienti fra loro, e gli esponenti della stessa lettera si sottraggono.</p>
       <div class="teoria">
-        <div class="nome">La divisione fra monomi</div>
-        <div class="frase">Per dividere due monomi si dividono i coefficienti fra loro e si <strong>sottraggono</strong> gli esponenti delle lettere uguali. Una lettera che sta solo sopra resta com'è; se sopra e sotto ha lo stesso esponente, sparisce.</div>
-        <div class="f sx">$\displaystyle \frac{a^{m}}{a^{n}}=a^{m-n}$</div>
-        <div class="ex">esempio: $\frac{22a^{5}}{11a^{2}}=2a^{3}$</div>
+        <div class="nome">Divisione di due monomi</div>
+        <div class="frase">Si dividono i coefficienti fra loro e per ogni lettera uguale si <strong>sottraggono</strong> gli esponenti: quello del dividendo meno quello del divisore. Una lettera che sta solo nel primo monomio si riscrive com'è.</div>
+        <div class="f sx">$\displaystyle ka^{m}:ha^{n}=\left(k:h\right)a^{m-n}\qquad\frac{a^{m}}{a^{n}}=a^{m-n}$</div>
+        <div class="ex">esempio: $12a^{5}:4a^{2}=3a^{3}$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
         <div class="nome">Dividere gli esponenti</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{a^{6}}{a^{2}}=a^{3}$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a^{6}:a^{2}=a^{3}$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{a^{6}}{a^{2}}=a^{4}$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a^{6}:a^{2}=a^{4}$</div></div>
         </div>
         <div class="why-txt">Gli esponenti si sottraggono, non si dividono.</div>
       </div>

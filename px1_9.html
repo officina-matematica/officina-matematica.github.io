@@ -225,9 +225,19 @@ mjx-container[display]{margin:0!important}
       <p class="mossa">$\frac{5}{100}=\frac{1}{20}$: il totale è venti volte la parte.</p>
       <div class="teoria">
         <div class="nome">Le percentuali che conviene sapere a memoria</div>
-        <div class="frase">Il 50% è $\frac{50}{100}=\frac{1}{2}$, cioè la metà. Allo stesso modo il 25% è un quarto, il 20% un quinto, il 10% un decimo. Riconoscerle evita tutti i conti.</div>
-        <div class="f sx">$\displaystyle 50\%=\frac{1}{2},\quad 25\%=\frac{1}{4},\quad 20\%=\frac{1}{5},\quad 10\%=\frac{1}{10}$</div>
+        <div class="frase">Ogni percentuale è una frazione con cento sotto, e le più comuni conviene saperle a memoria già ridotte: il 50% è $\frac{1}{2}$, il 25% è $\frac{1}{4}$, il 20% è $\frac{1}{5}$, il 10% è $\frac{1}{10}$, il 5% è $\frac{1}{20}$. Riconoscerle evita tutti i conti.</div>
+        <div class="f sx">$\displaystyle 50\%=\frac{1}{2},\quad 25\%=\frac{1}{4},\quad 20\%=\frac{1}{5},\quad 10\%=\frac{1}{10},\quad 5\%=\frac{1}{20}$</div>
         <div class="ex">esempio: $\text{il}\ 25\%\ \text{di}\ 40=40:4=10$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Copiare il numero della percentuale sotto la linea</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle 20\%=\frac{1}{20}$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle 20\%=\frac{1}{5}$</div></div>
+        </div>
+        <div class="why-txt">Si riduce $\frac{20}{100}$, non si scrive il numero al denominatore.</div>
       </div>
     </div>
   </details>
@@ -315,12 +325,22 @@ mjx-container[display]{margin:0!important}
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">Il $60\%$ è tre volte il $20\%$: basta dividere per tre.</p>
+      <p class="mossa">Una percentuale è multipla dell'altra: si divide per quante volte ci sta.</p>
       <div class="teoria">
-        <div class="nome">L'uno per cento</div>
-        <div class="frase">L'1% è il totale diviso cento. Una volta trovato l'1%, tutte le altre percentuali si ottengono moltiplicando: il 7% è sette volte l'1%. È la via più corta quando non si ha la calcolatrice.</div>
-        <div class="f sx">$\displaystyle 1\%=\text{totale}:100$</div>
-        <div class="ex">esempio: $1\%\ \text{di}\ 3200=32\ \to\ 7\%=7\cdot 32=224$</div>
+        <div class="nome">Una percentuale multipla di un'altra</div>
+        <div class="frase">Se una percentuale è il doppio, il triplo, il quadruplo di un'altra, anche le quantità stanno nello stesso rapporto: il 60% è tre volte il 20%, quindi la quantità del 20% si trova dividendo per tre. Non serve passare dal totale.</div>
+        <div class="f sx">$\displaystyle \text{se}\ q\%=k\cdot p\%\ \to\ \text{parte}\left(p\%\right)=\text{parte}\left(q\%\right):k$</div>
+        <div class="ex">esempio: $40\%\ \text{vale}\ 12\ \to\ 20\%\ \text{vale}\ 12:2=6$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Dividere per la percentuale invece che per quante volte ci sta</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \text{parte}\left(p\%\right)=\text{parte}\left(q\%\right):q$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \text{parte}\left(p\%\right)=\text{parte}\left(q\%\right):\frac{q}{p}$</div></div>
+        </div>
+        <div class="why-txt">Si divide per quante volte una percentuale sta nell'altra, non per la percentuale.</div>
       </div>
     </div>
   </details>

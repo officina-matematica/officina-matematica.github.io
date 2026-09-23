@@ -265,7 +265,7 @@ mjx-container[display]{margin:0!important}
         <div class="nome">Priorità delle operazioni</div>
         <div class="frase">La moltiplicazione si esegue prima dell'addizione, anche quando è scritta in mezzo a una somma. I numeri che la circondano aspettano il loro turno.</div>
         <div class="f sx">$\displaystyle a+b\cdot c=a+(b\cdot c)$</div>
-        <div class="ex">esempio: $2+3\cdot 4=2+12=14$</div>
+        <div class="ex">esempio: $7+9\cdot 3=7+27=34$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
@@ -293,9 +293,9 @@ mjx-container[display]{margin:0!important}
       <p class="mossa">Dentro la quadra viene $26$, e il $\cdot 3$ che segue moltiplica quel risultato: tutti e tre i pezzi che stavano dentro, non solo il $6$.</p>
       <div class="teoria">
         <div class="nome">Una parentesi seguita da una moltiplicazione</div>
-        <div class="frase">Quando dopo una parentesi c'è una moltiplicazione, si moltiplica il <strong>risultato dell'intera parentesi</strong>. Ogni termine che stava dentro viene moltiplicato, non solo l'ultimo.</div>
-        <div class="f sx">$\displaystyle \left(a+b\right)\cdot c=a\cdot c+b\cdot c$</div>
-        <div class="ex">esempio: $\left(2+3\right)\cdot 4=8+12=20$</div>
+        <div class="frase">Quando dopo una parentesi c'è una moltiplicazione, il fattore moltiplica il risultato di <strong>tutta</strong> la parentesi: prima si chiude la parentesi, poi si moltiplica quel numero.</div>
+        <div class="f sx">$\displaystyle \left(a+b\right)\cdot c=p\cdot c\quad\text{con}\ p=a+b$</div>
+        <div class="ex">esempio: $\left(2+3\right)\cdot 4=5\cdot 4=20$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
@@ -303,9 +303,9 @@ mjx-container[display]{margin:0!important}
         <div class="compare">
           <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \left(a+b\right)\cdot c=a+b\cdot c$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \left(a+b\right)\cdot c=a\cdot c+b\cdot c$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \left(a+b\right)\cdot c=p\cdot c$</div></div>
         </div>
-        <div class="why-txt">Il prodotto riguarda tutta la parentesi.</div>
+        <div class="why-txt">Il fattore moltiplica tutta la parentesi.</div>
       </div>
     </div>
   </details>

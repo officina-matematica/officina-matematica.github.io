@@ -193,18 +193,18 @@ mjx-container[display]{margin:0!important}
       <div class="teoria">
         <div class="nome">Le percentuali di un insieme fanno cento</div>
         <div class="frase">Quando un insieme è diviso in gruppi, le loro percentuali sommate danno sempre <strong>100%</strong>: quello che non sta in un gruppo sta in tutti gli altri. È il modo più rapido per trovare la percentuale di un gruppo che il testo non dà.</div>
-        <div class="f sx">$\displaystyle \%\ \text{primo}+\%\ \text{secondo}+\dots=100\%$</div>
-        <div class="ex">esempio: $40\%\ \text{cerchi}\ \to\ 60\%\ \text{non cerchi}$</div>
+        <div class="f sx">$\displaystyle \%\ \text{primo}+\%\ \text{secondo}+\dots=100\%\ \to\ \%\ \text{mancante}=100\%-\text{le altre}$</div>
+        <div class="ex">esempio: $100\%-30\%-35\%=35\%\ \text{al terzo gruppo}$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Dare per scontato che i gruppi siano due</div>
+        <div class="nome">Togliere una sola percentuale quando i gruppi sono tre</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle 100\%-40\%=60\%\ \text{cerchi}$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle r\%=100\%-p\%$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle 100\%-40\%=60\%\ \text{di tutto il resto}$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle r\%=100\%-p\%-q\%$</div></div>
         </div>
-        <div class="why-txt">Il resto può essere fatto di più gruppi.</div>
+        <div class="why-txt">Vanno tolte tutte le percentuali già note, non solo la prima.</div>
       </div>
     </div>
   </details>
@@ -219,22 +219,22 @@ mjx-container[display]{margin:0!important}
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">Tre parti su quattro sono $\frac{3}{4}$, e tre quarti di cento fanno $75$.</p>
+      <p class="mossa">«Il triplo delle femmine» vuol dire tre parti su quattro.</p>
       <div class="teoria">
-        <div class="nome">La percentuale di una quantità</div>
-        <div class="frase">Per calcolare il <strong>p%</strong> di una quantità si moltiplica la quantità per $\frac{p}{100}$. È lo stesso identico procedimento della frazione di un numero.</div>
-        <div class="f sx">$\displaystyle p\,\%\text{ di }N=\frac{p}{100}\cdot N$</div>
-        <div class="ex">esempio: $5\,\%\text{ di }50=\frac{5}{100}\cdot 50=2{,}5$</div>
+        <div class="nome">Le parti di un rapporto</div>
+        <div class="frase">La scrittura $a:b:c$ vuol dire che il tutto è diviso in parti uguali, $a$ di un tipo, $b$ di un altro e $c$ del terzo. Il totale delle parti si ottiene sommandole, e ogni pezzo è una frazione di quel totale.</div>
+        <div class="f sx">$\displaystyle a:b:c\quad\to\quad a+b+c\ \text{parti}$</div>
+        <div class="ex">esempio: $2:3:5\ \to\ 10\ \text{parti; il primo è}\ \frac{2}{10}$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Dividere per la percentuale invece di moltiplicare</div>
+        <div class="nome">Mettere sotto una parte invece del totale</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle p\,\%\text{ di }N=N:\frac{p}{100}$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \text{il primo è}\ \frac{a}{b}$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle p\,\%\text{ di }N=\frac{p}{100}\cdot N$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \text{il primo è}\ \frac{a}{a+b+c}$</div></div>
         </div>
-        <div class="why-txt">Per trovare la parte si moltiplica.</div>
+        <div class="why-txt">Sotto va il totale delle parti.</div>
       </div>
     </div>
   </details>

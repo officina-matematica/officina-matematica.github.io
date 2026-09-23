@@ -201,16 +201,16 @@ mjx-container[display]{margin:0!important}
       <div class="teoria">
         <div class="nome">L'aumento in un colpo solo</div>
         <div class="frase">Aumentare del <strong>p%</strong> vuol dire arrivare al $(100+p)\%$: il valore di partenza conta già come $100\%$. Si moltiplica per $1+\frac{p}{100}$ e si arriva alla quantità aumentata in un passaggio solo, senza calcolare prima l'aumento.</div>
-        <div class="f sx">$\displaystyle n\ \text{aumentato del}\ p\%=n\cdot\left(1+\frac{p}{100}\right)$</div>
-        <div class="ex">esempio: $250\ \text{€ aumentati dell'}8\%:\ 250\cdot 1{,}08=270\ \text{€}$</div>
+        <div class="f sx">$\displaystyle n\ \text{aumentato del}\ p\%\ \to\ (100+p)\%\ \text{di}\ n=n\cdot\left(1+\frac{p}{100}\right)$</div>
+        <div class="ex">esempio: $250\ \text{€ aumentati dell'}8\%:\ 100+8=108\ \to\ 250\cdot 1{,}08=270\ \text{€}$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
         <div class="nome">Moltiplicare per la sola percentuale dell'aumento</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle n\cdot 0{,}08$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle n\cdot\frac{p}{100}$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle n\cdot 1{,}08$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle n\cdot\left(1+\frac{p}{100}\right)$</div></div>
         </div>
         <div class="why-txt">Il primo dà solo l'aumento, il secondo la quantità aumentata.</div>
       </div>
@@ -249,22 +249,22 @@ mjx-container[display]{margin:0!important}
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">Il secondo aumento si calcola sui $1050$ € di gennaio.</p>
+      <p class="mossa">Il secondo aumento si calcola sullo stipendio già aumentato.</p>
       <div class="teoria">
-        <div class="nome">Un aumento dopo l'altro</div>
-        <div class="frase">Il secondo aumento si calcola sul valore <strong>già aumentato</strong>, non su quello di partenza: i due fattori si moltiplicano fra loro. Due aumenti non si sommano, e insieme fanno un po' di più della somma.</div>
-        <div class="f sx">$\displaystyle n\cdot\left(1+\frac{p}{100}\right)\cdot\left(1+\frac{q}{100}\right)$</div>
-        <div class="ex">esempio: $1{,}08\cdot 1{,}15=1{,}242\ \to\ +24{,}2\%$</div>
+        <div class="nome">Una percentuale dopo l'altra</div>
+        <div class="frase">La seconda percentuale si calcola su quello che è venuto fuori dalla prima, non sul valore di partenza. I due numeri decimali si moltiplicano fra loro, e il prodotto dice com'è cambiato il valore in tutto.</div>
+        <div class="f sx">$\displaystyle n\cdot k_1\cdot k_2\qquad k=1\pm\frac{p}{100}$</div>
+        <div class="ex">esempio: $-45\%\ \text{e poi}\ -30\%:\ 0{,}55\cdot 0{,}70=0{,}385\ \to\ -61{,}5\%$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Sommare i due aumenti</div>
+        <div class="nome">Sommare le due percentuali</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle +8\%\ \text{e}\ +15\%\ \to\ +23\%$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle k=1-\frac{p+q}{100}$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle +8\%\ \text{e}\ +15\%\ \to\ +24{,}2\%$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle k=\left(1-\frac{p}{100}\right)\cdot\left(1-\frac{q}{100}\right)$</div></div>
         </div>
-        <div class="why-txt">Il secondo aumento si calcola su un valore già cresciuto.</div>
+        <div class="why-txt">La seconda percentuale si calcola su quello che resta della prima.</div>
       </div>
     </div>
   </details>

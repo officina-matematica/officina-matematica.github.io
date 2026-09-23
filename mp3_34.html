@@ -200,11 +200,11 @@ mjx-container[display]{margin:0!important}
         <div class="k">⚠️ L'errore che si fa qui</div>
         <div class="nome">Sommare i denominatori</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{p}{m}+\frac{q}{n}=\frac{p+q}{m+n}$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{1}{a}+\frac{1}{a^{2}}=\frac{2}{a+a^{2}}$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{p}{m}+\frac{q}{n}=\frac{p\cdot n+q\cdot m}{m\cdot n}$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{1}{a}+\frac{1}{a^{2}}=\frac{a+1}{a^{2}}$</div></div>
         </div>
-        <div class="why-txt">I denominatori non si sommano mai.</div>
+        <div class="why-txt">Il denominatore comune è il mcm, e i numeratori si adeguano.</div>
       </div>
     </div>
   </details>
@@ -219,22 +219,22 @@ mjx-container[display]{margin:0!important}
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">La $x$ manca in $18y^{2}z^{2}$ e la $z$ manca in $8x^{2}y$: nel mcm entrano tutte e due.</p>
+      <p class="mossa">Il monomio si spezza nei suoi fattori primi e nelle sue lettere.</p>
       <div class="teoria">
-        <div class="nome">Una lettera che compare una volta sola</div>
-        <div class="frase">Nel mcm entrano <strong>tutte</strong> le lettere, comprese quelle che si vedono in un monomio solo: il risultato deve contenere ciascun monomio, quindi non può perderne nessuna. Nel MCD succede l'opposto, e le lettere non comuni si buttano.</div>
-        <div class="f sx">$\displaystyle \text{mcm}(ab;ac)=abc$</div>
-        <div class="ex">esempio: $\text{mcm}(11a;13b)=143ab$</div>
+        <div class="nome">Scomporre un monomio</div>
+        <div class="frase">Un monomio si scompone in due pezzi: il <strong>coefficiente</strong>, che si scrive come prodotto di fattori primi, e la <strong>parte letterale</strong>, che resta com'è con i suoi esponenti. Scritto così si vede a colpo d'occhio quali fattori due monomi hanno davvero in comune.</div>
+        <div class="f sx">$\displaystyle k\,a^{m}b^{n}=p_{1}\cdot p_{2}\cdot\ldots\cdot a^{m}\cdot b^{n}$</div>
+        <div class="ex">esempio: $20a^{2}b=2^{2}\cdot 5\cdot a^{2}\cdot b$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Tenere solo le lettere comuni</div>
+        <div class="nome">Confondere l'esponente con un fattore</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \text{mcm}(ab;ac)=a$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a^{3}=3a$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \text{mcm}(ab;ac)=abc$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a^{3}=a\cdot a\cdot a$</div></div>
         </div>
-        <div class="why-txt">È la regola del MCD, non quella del mcm.</div>
+        <div class="why-txt">L'esponente dice quante volte si moltiplica.</div>
       </div>
     </div>
   </details>

@@ -238,27 +238,46 @@ mjx-container[display]{margin:0!important}
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Confrontare le basi invece degli esponenti</div>
+        <div class="nome">Dare come soluzione la potenza invece dell'esponente</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a^{m}=a^{n}\ \to\ a=a$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a^{m}=a^{n}\ \to\ m=a^{n}$</div></div>
           <div class="arrow">➜</div>
           <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a^{m}=a^{n}\ \to\ m=n$</div></div>
         </div>
-        <div class="why-txt">Le basi sono già uguali: a cambiare sono gli esponenti.</div>
+        <div class="why-txt">L'incognita è l'esponente, non tutta la potenza.</div>
       </div>
     </div>
   </details>
 
-  <div class="riga res">
-    <div class="fissa">
+  <details class="riga res">
+    <summary>
       <div class="n">4</div>
       <div class="cont">
         <div class="nota">Il numero che moltiplicato per sé stesso dà $64$ è $8$.</div>
         <div class="f sx">$\displaystyle x=8$</div>
       </div>
-      <div></div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">Gli esponenti sono uguali: allora lo sono anche le basi.</p>
+      <div class="teoria">
+        <div class="nome">Due potenze uguali con lo stesso esponente</div>
+        <div class="frase">Se due potenze hanno lo <strong>stesso esponente</strong> e sono uguali, allora hanno la stessa base. Vale per le basi positive, che sono quelle di cui ci si occupa qui.</div>
+        <div class="f sx">$\displaystyle x^{n}=a^{n}\quad\Longrightarrow\quad x=a$</div>
+        <div class="ex">esempio: $k^{3}=5^{3}\ \to\ k=5$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Dare come soluzione l'esponente invece della base</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle x^{n}=a^{n}\ \to\ x=n$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle x^{n}=a^{n}\ \to\ x=a$</div></div>
+        </div>
+        <div class="why-txt">Qui l'incognita è la base: gli esponenti sono già uguali.</div>
+      </div>
     </div>
-  </div>
+  </details>
 
 </div>
 
