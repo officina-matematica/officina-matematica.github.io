@@ -186,16 +186,35 @@ mjx-container[display]{margin:0!important}
     </div>
   </div>
 
-  <div class="riga">
-    <div class="fissa">
+  <details class="riga">
+    <summary>
       <div class="n">2</div>
       <div class="cont">
         <div class="nota">Dentro la tonda, $5+3=8$.</div>
         <div class="f sx">$\displaystyle =9^{2}-8^{2}=$</div>
       </div>
-      <div></div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">Il quadrato sta fuori dalla tonda: prima $5+3=8$, poi si eleva l'$8$. Scrivere $5^{2}+3^{2}$ darebbe $34$ al posto di $64$.</p>
+      <div class="teoria">
+        <div class="nome">La potenza di una parentesi</div>
+        <div class="frase">Quando l'esponente sta <strong>fuori</strong> dalla parentesi si eleva il risultato dell'operazione, non i singoli numeri. Con l'addizione e la sottrazione elevare i numeri uno per uno dà un risultato diverso.</div>
+        <div class="f sx">$\displaystyle \left(a+b\right)^{2}\neq a^{2}+b^{2}$</div>
+        <div class="ex">esempio: $\left(1+2\right)^{2}=9,\quad 1^{2}+2^{2}=5$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Elevare i due addendi separatamente</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \left(a+b\right)^{2}=a^{2}+b^{2}$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \left(a+b\right)^{2}=\left(a+b\right)\cdot\left(a+b\right)$</div></div>
+        </div>
+        <div class="why-txt">Prima la somma, poi la potenza.</div>
+      </div>
     </div>
-  </div>
+  </details>
 
   <details class="riga">
     <summary>

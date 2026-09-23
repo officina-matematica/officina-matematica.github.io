@@ -222,16 +222,35 @@ mjx-container[display]{margin:0!important}
     </div>
   </div>
 
-  <div class="riga">
-    <div class="fissa">
+  <details class="riga">
+    <summary>
       <div class="n">3</div>
       <div class="cont">
         <div class="nota">In euro i conti si fermano al centesimo: arrotondiamo.</div>
         <div class="f sx">$\displaystyle \text{Prezzo IVA inclusa}\approx 18{,}10\ \text{€}$</div>
       </div>
-      <div></div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">$18{,}096$ € ha tre cifre dopo la virgola, ma in euro si arriva al centesimo: la prima cifra buttata via è $6$, quindi si sale a $18{,}10$ €.</p>
+      <div class="teoria">
+        <div class="nome">Arrotondare il risultato</div>
+        <div class="frase">Quando il conto dà molte cifre dopo la virgola si arrotonda: si guarda la prima cifra che si butta via e, se è 5 o più, si aumenta di uno l'ultima cifra che resta. Il risultato si scrive con «circa».</div>
+        <div class="f sx">$\displaystyle x{,}d\ldots \ \to\ x\quad \text{se}\ d<5\qquad x{,}d\ldots \ \to\ x+1\quad \text{se}\ d\geq 5$</div>
+        <div class="ex">esempio: $7{,}349\ \text{€}\ \to\ 7{,}35\ \text{€}\qquad 12{,}4\ \to\ 12$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Arrotondare per eccesso quando la cifra non lo chiede</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle 8{,}3\ \to\ 9$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle 8{,}3\ \to\ 8$</div></div>
+        </div>
+        <div class="why-txt">Sotto il cinque l'ultima cifra che resta non cambia.</div>
+      </div>
     </div>
-  </div>
+  </details>
 
   <div class="k">Metodo 2 · in un conto solo</div>
   <div class="sub">Senza calcolare prima l'IVA in euro.</div>

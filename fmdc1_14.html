@@ -211,16 +211,35 @@ mjx-container[display]{margin:0!important}
     </div>
   </details>
 
-  <div class="riga">
-    <div class="fissa">
+  <details class="riga">
+    <summary>
       <div class="n">2</div>
       <div class="cont">
         <div class="nota">Ancora divisibile per $3$: le cifre di $405$ sommano $9$.</div>
         <div class="f sx">$\displaystyle 405:3=135$</div>
       </div>
-      <div></div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">Per sapere se $405$ si può dividere ancora per $3$ si sommano le sue cifre: $4+0+5=9$, e $9$ è divisibile per $3$, quindi $405:3=135$.</p>
+      <div class="teoria">
+        <div class="nome">Il criterio di divisibilità per 3</div>
+        <div class="frase">Un numero è divisibile per <strong>3</strong> quando lo è la <strong>somma delle sue cifre</strong>. Se la somma è ancora grande, si può sommare di nuovo: il criterio si può ripetere.</div>
+        <div class="f sx">$\displaystyle \text{un numero si divide per }3\ \text{quando la somma delle sue cifre si divide per }3$</div>
+        <div class="ex">esempio: $861\to 8+6+1=15\to 861:3=287$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Guardare l'ultima cifra invece della somma</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \text{ultima cifra divisibile per }3$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \text{somma delle cifre divisibile per }3$</div></div>
+        </div>
+        <div class="why-txt">$23$ finisce per $3$ ma per $3$ non si divide.</div>
+      </div>
     </div>
-  </div>
+  </details>
 
   <div class="riga">
     <div class="fissa">

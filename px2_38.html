@@ -266,16 +266,35 @@ mjx-container[display]{margin:0!important}
     </div>
   </div>
 
-  <div class="riga">
-    <div class="fissa">
+  <details class="riga">
+    <summary>
       <div class="n">5</div>
       <div class="cont">
         <div class="nota">E il peso totale triplica, perché aggiungiamo anche l'acqua.</div>
         <div class="f sx">$\displaystyle \text{Soluzione dopo l'aggiunta}=100+100+100=300\ \text{g}$</div>
       </div>
-      <div></div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">I $100$ g di sale contano due volte: fanno salire il sale a $130$ g e anche il peso totale. Ai $100$ g di soluzione si aggiungono $100$ g di acqua e $100$ g di sale, quindi sotto va $300$ g, non $200$.</p>
+      <div class="teoria">
+        <div class="nome">Quando cambia anche il totale</div>
+        <div class="frase">Se quello che si aggiunge è dello stesso tipo della parte, cresce sia la parte sia il totale: la nuova percentuale si calcola sul <strong>totale nuovo</strong>. Chi arriva conta anche nel mucchio.</div>
+        <div class="f sx">$\displaystyle \text{totale nuovo}=\text{totale}+a\quad\to\quad\frac{\text{parte}+a}{\text{totale}+a}$</div>
+        <div class="ex">esempio: $\frac{12+8}{40+8}=\frac{20}{48}\approx 42\%$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Tenere il totale di prima</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{\text{parte}+a}{\text{totale}}$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{\text{parte}+a}{\text{totale}+a}$</div></div>
+        </div>
+        <div class="why-txt">Chi si aggiunge conta anche nel totale.</div>
+      </div>
     </div>
-  </div>
+  </details>
 
   <div class="riga">
     <div class="fissa">

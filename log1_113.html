@@ -322,27 +322,65 @@ mjx-container[display]{margin:0!important}
     </div>
   </details>
 
-  <div class="riga">
-    <div class="fissa">
+  <details class="riga">
+    <summary>
       <div class="n">7</div>
       <div class="cont">
         <div class="nota">Svolgiamo la parentesi interna.</div>
         <div class="f sx">$\displaystyle =\frac{1}{5}\left(3\log a+\frac{1}{2}\log a-\frac{1}{2}\log 2\right)=$</div>
       </div>
-      <div></div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">Il $\frac{1}{2}$ moltiplica tutta la parentesi $\left(\log a-\log 2\right)$: va su $\log a$ e anche su $\log 2$, che esce con il meno davanti.</p>
+      <div class="teoria">
+        <div class="nome">Proprietà distributiva della moltiplicazione</div>
+        <div class="frase">Per moltiplicare un numero per una somma (o una differenza) si può moltiplicare quel numero per <strong>ciascun</strong> termine e poi sommare (o sottrarre) i risultati. Letta al contrario, permette di raccogliere un fattore comune.</div>
+        <div class="f sx">$\displaystyle a\cdot\left(b+c\right)=a\cdot b+a\cdot c$</div>
+        <div class="ex">esempio: $8\cdot\left(5+\frac{1}{4}\right)=8\cdot 5+8\cdot\frac{1}{4}=40+2=42$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Moltiplicare un solo termine</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a\cdot\left(b+c\right)=a\cdot b+c$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a\cdot\left(b+c\right)=a\cdot b+a\cdot c$</div></div>
+        </div>
+        <div class="why-txt">Il fattore moltiplica tutti e due i termini.</div>
+      </div>
     </div>
-  </div>
+  </details>
 
-  <div class="riga">
-    <div class="fissa">
+  <details class="riga">
+    <summary>
       <div class="n">8</div>
       <div class="cont">
         <div class="nota">$3+\frac{1}{2}=\frac{7}{2}$.</div>
         <div class="f sx">$\displaystyle =\frac{1}{5}\left(\frac{7}{2}\log a-\frac{1}{2}\log 2\right)=$</div>
       </div>
-      <div></div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">$3\log a$ e $\frac{1}{2}\log a$ hanno in comune $\log a$: si porta fuori e restano solo i due numeri, $3+\frac{1}{2}=\frac{7}{2}$.</p>
+      <div class="teoria">
+        <div class="nome">Raccogliere un fattore comune</div>
+        <div class="frase">Se tutti i termini di una somma hanno un fattore in comune, lo si porta <strong>fuori da una parentesi</strong>: dentro resta quello che ogni termine ha in più. È la proprietà distributiva letta al contrario.</div>
+        <div class="f sx">$\displaystyle ab+ac=a\left(b+c\right)$</div>
+        <div class="ex">esempio: $y^{2}+5y=y\left(y+5\right)$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Dimenticare il termine che resta 1</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle y^{2}+y=y\cdot y$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle y^{2}+y=y\left(y+1\right)$</div></div>
+        </div>
+        <div class="why-txt">Dove c'era il fattore da solo resta 1.</div>
+      </div>
     </div>
-  </div>
+  </details>
 
   <div class="riga res">
     <div class="fissa">

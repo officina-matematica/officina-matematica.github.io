@@ -345,16 +345,35 @@ mjx-container[display]{margin:0!important}
     </div>
   </details>
 
-  <div class="riga">
-    <div class="fissa">
+  <details class="riga">
+    <summary>
       <div class="n">8</div>
       <div class="cont">
         <div class="nota">Semplifico a croce, come al passaggio 5.</div>
         <div class="f sx">$\displaystyle =\left\{\frac{1}{\underset{1}{\cancel{2}}}\cdot\frac{\overset{2}{\cancel{4}}}{3}+\frac{1}{4}\right\}-\left(\frac{1}{6}\cdot\frac{12}{5}-\frac{2}{15}\right)=$</div>
       </div>
-      <div></div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">Nella graffa ci sono un prodotto e una somma: prima si fa $\frac{1}{2}\cdot\frac{4}{3}$, e infatti si semplifica solo lì; $\frac{1}{4}$ aspetta il suo turno.</p>
+      <div class="teoria">
+        <div class="nome">Priorità dentro le parentesi</div>
+        <div class="frase">Anche dentro una parentesi valgono le priorità: prima le moltiplicazioni e le divisioni, poi le addizioni e le sottrazioni. La parentesi si toglie solo quando dentro è rimasto un unico numero.</div>
+        <div class="f sx">$\displaystyle (a+b\cdot c)=a+(b\cdot c)$</div>
+        <div class="ex">esempio: $(5+2\cdot 3)=5+6=11$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Sommare prima di moltiplicare dentro la parentesi</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle (a+b\cdot c)=(a+b)\cdot c$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle (a+b\cdot c)=a+(b\cdot c)$</div></div>
+        </div>
+        <div class="why-txt">Anche fra parentesi il prodotto viene prima.</div>
+      </div>
     </div>
-  </div>
+  </details>
 
   <div class="riga">
     <div class="fissa">
@@ -515,16 +534,35 @@ mjx-container[display]{margin:0!important}
     </div>
   </div>
 
-  <div class="riga">
-    <div class="fissa">
+  <details class="riga">
+    <summary>
       <div class="n">20</div>
       <div class="cont">
         <div class="nota">Riduco $\frac{39}{60}$ dividendo per $3$.</div>
         <div class="f sx">$\displaystyle =\frac{\overset{13}{\cancel{39}}}{\underset{20}{\cancel{60}}}=$</div>
       </div>
-      <div></div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">$39$ e $60$ si dividono tutti e due per $3$: la frazione diventa $\frac{13}{20}$, che vale lo stesso ma con numeri più piccoli.</p>
+      <div class="teoria">
+        <div class="nome">Ridurre una frazione ai minimi termini</div>
+        <div class="frase">Dividendo numeratore e denominatore per lo stesso numero il valore non cambia, ma i numeri diventano più piccoli. Conviene farlo appena si può e andare avanti finché sopra e sotto non hanno più divisori in comune.</div>
+        <div class="f sx">$\displaystyle \frac{a\cdot k}{b\cdot k}=\frac{a}{b}$</div>
+        <div class="ex">esempio: $\frac{9}{12}=\frac{3\cdot 3}{4\cdot 3}=\frac{3}{4}$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Dividere un solo termine della frazione</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{a\cdot k}{b\cdot k}=\frac{a}{b\cdot k}$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{a\cdot k}{b\cdot k}=\frac{a}{b}$</div></div>
+        </div>
+        <div class="why-txt">Sopra e sotto, per lo stesso numero.</div>
+      </div>
     </div>
-  </div>
+  </details>
 
   <div class="riga res">
     <div class="fissa">

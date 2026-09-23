@@ -390,16 +390,35 @@ mjx-container[display]{margin:0!important}
     <span>le potenze sono finite: restano una somma, un prodotto e due divisioni.</span>
   </div>
 
-  <div class="riga">
-    <div class="fissa">
+  <details class="riga">
+    <summary>
       <div class="n">9</div>
       <div class="cont">
         <div class="nota">Chiudo la quadra e la tonda.</div>
         <div class="f sx">$\displaystyle =120:40+27:3=$</div>
       </div>
-      <div></div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">Nella quadra $125-16+11$ il meno e il più contano uguale: prima $125-16=109$, poi $+11$, e viene $120$.</p>
+      <div class="teoria">
+        <div class="nome">Stessa priorità: si va da sinistra a destra</div>
+        <div class="frase">Addizione e sottrazione contano allo stesso modo. Quando si susseguono non se ne sceglie una perché sembra più comoda: si eseguono nell'ordine in cui sono scritte, partendo da sinistra.</div>
+        <div class="f sx">$\displaystyle a-b+c=(a-b)+c$</div>
+        <div class="ex">esempio: $10-4+3=6+3=9$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Eseguire l'addizione prima della sottrazione</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a-b+c=a-\left(b+c\right)$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a-b+c=\left(a-b\right)+c$</div></div>
+        </div>
+        <div class="why-txt">Facendo prima l'addizione, il $c$ finisce tolto invece che aggiunto.</div>
+      </div>
     </div>
-  </div>
+  </details>
 
   <details class="riga">
     <summary>

@@ -293,16 +293,35 @@ mjx-container[display]{margin:0!important}
     </div>
   </div>
 
-  <div class="riga">
-    <div class="fissa">
+  <details class="riga">
+    <summary>
       <div class="n">6</div>
       <div class="cont">
         <div class="nota">Quelle sono le ore da aspettare: aggiungiamole all'ora della prima presa.</div>
         <div class="f sx">$\displaystyle 8+12=20$</div>
       </div>
-      <div></div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">Il mcm $12$ sono le ore da aspettare, non l'ora: la prima presa era alle $8$, quindi $8+12=20$.</p>
+      <div class="teoria">
+        <div class="nome">Il mcm dice ogni quanto, non quando</div>
+        <div class="frase">Il mcm dice <strong>ogni quanto</strong> tempo le cose ricapitano insieme, non a che ora capitano. Per rispondere «a che ora» si aggiunge quel tempo all'ora di partenza.</div>
+        <div class="f sx">$\displaystyle \text{ora giusta}=\text{ora di partenza}+\text{mcm}$</div>
+        <div class="ex">esempio: $\text{partenza alle }7,\ \text{mcm}=5\ \text{ore}\to 7+5=12$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Rispondere con il mcm invece che con l'ora</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \text{ora giusta}=\text{mcm}$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \text{ora giusta}=\text{ora di partenza}+\text{mcm}$</div></div>
+        </div>
+        <div class="why-txt">Il mcm è quanto si aspetta, non quello che segna l'orologio.</div>
+      </div>
     </div>
-  </div>
+  </details>
 
   <div class="riga res">
     <div class="fissa">

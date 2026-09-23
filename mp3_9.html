@@ -220,16 +220,35 @@ mjx-container[display]{margin:0!important}
     </div>
   </div>
 
-  <div class="riga">
-    <div class="fissa">
+  <details class="riga">
+    <summary>
       <div class="n">3</div>
       <div class="cont">
         <div class="nota">Stessa cosa sul terzo monomio.</div>
         <div class="f sx">$\displaystyle 15ab^{4}=3\cdot 5\cdot a\cdot b^{4}$</div>
       </div>
-      <div></div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">In $15ab^{4}$ la $a$ è senza esponente, cioè $a^{1}$: è il più piccolo fra $a^{3}$, $a^{2}$ e $a$, e nel MCD vince lui.</p>
+      <div class="teoria">
+        <div class="nome">L'esponente 1 non si scrive</div>
+        <div class="frase">Una lettera senza esponente ha esponente <strong>1</strong>: $y$ è $y^{1}$. Conta quando si sommano o si sottraggono gli esponenti, perché quell'$1$ va messo nel conto come tutti gli altri.</div>
+        <div class="f sx">$\displaystyle a=a^{1}$</div>
+        <div class="ex">esempio: $a^{5}:a=a^{5-1}=a^{4}$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Dimenticare la lettera senza esponente</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a^{3}:a=a^{3}$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a^{3}:a=a^{2}$</div></div>
+        </div>
+        <div class="why-txt">La lettera da sola vale $a^{1}$.</div>
+      </div>
     </div>
-  </div>
+  </details>
 
   <details class="riga">
     <summary>

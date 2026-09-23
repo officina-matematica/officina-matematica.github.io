@@ -352,16 +352,35 @@ mjx-container[display]{margin:0!important}
     </div>
   </div>
 
-  <div class="riga">
-    <div class="fissa">
+  <details class="riga">
+    <summary>
       <div class="n">8</div>
       <div class="cont">
         <div class="nota">$\frac{100}{100}$ vale $100:100$.</div>
         <div class="f sx">$\displaystyle =\frac{\overset{1}{\cancel{100}}}{\underset{1}{\cancel{100}}}=$</div>
       </div>
-      <div></div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">La linea di frazione è una divisione: $\frac{100}{100}$ vuol dire $100:100$, e un numero diviso sé stesso fa $1$.</p>
+      <div class="teoria">
+        <div class="nome">Un numero diviso sé stesso</div>
+        <div class="frase">Qualsiasi numero diverso da zero diviso per sé stesso dà <strong>uno</strong>: quante volte un numero ci sta dentro sé stesso? Una volta sola.</div>
+        <div class="f sx">$\displaystyle a:a=1\quad \text{con}\ a\neq 0$</div>
+        <div class="ex">esempio: $37:37=1$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Scrivere zero invece di uno</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a:a=0$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a:a=1$</div></div>
+        </div>
+        <div class="why-txt">Zero verrebbe da $a-a$: qui si divide, e un numero sta dentro sé stesso una volta.</div>
+      </div>
     </div>
-  </div>
+  </details>
 
   <div class="riga res">
     <div class="fissa">

@@ -297,16 +297,35 @@ mjx-container[display]{margin:0!important}
 
   <div class="k">Metodo 2 · con il numero decimale</div>
   <div class="sub">Una sola divisione con la calcolatrice.</div>
-  <div class="riga">
-    <div class="fissa">
+  <details class="riga">
+    <summary>
       <div class="n">6</div>
       <div class="cont">
         <div class="nota">Il 25% diventa 0,25: è la stessa divisione di prima, fatta con la calcolatrice invece che con la frazione.</div>
         <div class="f sx">$\displaystyle \text{Prezzo pieno}=120:0{,}25=480\ \text{€}$</div>
       </div>
-      <div></div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">Lo sconto del $25\%$ è $\frac{25}{100}$, cioè $0{,}25$: dividere i $120$ € per $0{,}25$ è la stessa divisione di prima, fatta con la calcolatrice.</p>
+      <div class="teoria">
+        <div class="nome">La percentuale come numero decimale</div>
+        <div class="frase">Il $p\%$ è $\frac{p}{100}$: diviso cento diventa un numero decimale. Il 12% è 0,12, il 7% è 0,07, l'1,5% è 0,015. Per calcolare quella percentuale di una quantità basta moltiplicare per quel numero.</div>
+        <div class="f sx">$\displaystyle p\%=\frac{p}{100}\quad\to\quad p\%\ \text{di}\ n=\frac{p}{100}\cdot n$</div>
+        <div class="ex">esempio: $24\%\ \text{di}\ 350=0{,}24\cdot 350=84$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Dimenticare di dividere per cento</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle p\%\ \text{di}\ n=p\cdot n$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle p\%\ \text{di}\ n=\frac{p}{100}\cdot n$</div></div>
+        </div>
+        <div class="why-txt">Per cento vuol dire diviso cento.</div>
+      </div>
     </div>
-  </div>
+  </details>
 
   <div class="riga">
     <div class="fissa">

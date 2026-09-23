@@ -431,16 +431,35 @@ mjx-container[display]{margin:0!important}
     </div>
   </div>
 
-  <div class="riga">
-    <div class="fissa">
+  <details class="riga">
+    <summary>
       <div class="n">13</div>
       <div class="cont">
         <div class="nota">Zero diviso qualsiasi numero dà zero.</div>
         <div class="f sx">$\displaystyle =\frac{\overset{0}{\cancel{0}}}{\underset{1}{\cancel{40}}}=$</div>
       </div>
-      <div></div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">Sopra la linea è rimasto $0$: zero diviso $40$ dà $0$, non $40$.</p>
+      <div class="teoria">
+        <div class="nome">Zero diviso un numero</div>
+        <div class="frase">Zero diviso qualsiasi numero diverso da zero dà <strong>zero</strong>: se non c'è niente da distribuire, a ognuno tocca niente.</div>
+        <div class="f sx">$\displaystyle 0:a=0\quad \text{con}\ a\neq 0$</div>
+        <div class="ex">esempio: $0:7=0$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Restituire il divisore invece di zero</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle 0:a=a$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle 0:a=0$</div></div>
+        </div>
+        <div class="why-txt">Non c'è niente da dividere: il risultato non può essere il divisore.</div>
+      </div>
     </div>
-  </div>
+  </details>
 
   <div class="riga res">
     <div class="fissa">

@@ -219,16 +219,35 @@ mjx-container[display]{margin:0!important}
     </div>
   </details>
 
-  <div class="riga">
-    <div class="fissa">
+  <details class="riga">
+    <summary>
       <div class="n">3</div>
       <div class="cont">
         <div class="nota">Il pezzo $500:20$ è uguale dalle due parti: resta da confrontare l'altro.</div>
         <div class="f sx">$\displaystyle 260:20=x$</div>
       </div>
-      <div></div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">Nei due lati c'è lo stesso $500:20$, e in tutti e due è seguito da una sottrazione: si cancella e resta $260:20=x$.</p>
+      <div class="teoria">
+        <div class="nome">Lo stesso pezzo dalle due parti</div>
+        <div class="frase">Se i due lati dell'uguale hanno lo <strong>stesso pezzo</strong>, con la stessa operazione, quel pezzo si cancella da tutti e due: quello che resta è ancora uguale.</div>
+        <div class="f sx">$\displaystyle c+a=c+b\quad \to\quad a=b,\qquad c-a=c-b\quad \to\quad a=b$</div>
+        <div class="ex">esempio: $8\cdot 5+8\cdot n=8\cdot 5+8\cdot 9\quad \to\quad 8\cdot n=8\cdot 9$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Toglierlo da una parte sola</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle c+a=c+b\quad \to\quad a=c+b$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle c+a=c+b\quad \to\quad a=b$</div></div>
+        </div>
+        <div class="why-txt">Il pezzo uguale va tolto da tutte e due le parti, o l'uguaglianza si rompe.</div>
+      </div>
     </div>
-  </div>
+  </details>
 
   <div class="riga res">
     <div class="fissa">

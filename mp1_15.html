@@ -302,16 +302,35 @@ mjx-container[display]{margin:0!important}
     </div>
   </details>
 
-  <div class="riga">
-    <div class="fissa">
+  <details class="riga">
+    <summary>
       <div class="n">5</div>
       <div class="cont">
         <div class="nota">Il $4$ diventa $\frac{16}{4}$.</div>
         <div class="f sx">$\displaystyle =\frac{3}{4}+\frac{16}{4}-\frac{1}{4}=$</div>
       </div>
-      <div></div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">Il $4$ non si può sommare così ai quarti: si riscrive con il denominatore $4$, cioè $\frac{16}{4}$, e allora i tre termini sono tutti in quarti.</p>
+      <div class="teoria">
+        <div class="nome">Un numero intero scritto come frazione</div>
+        <div class="frase">Ogni numero intero si può scrivere come frazione: basta dargli il denominatore che serve e moltiplicare per quello anche il numero stesso. Solo così lo si può sommare o sottrarre a una frazione.</div>
+        <div class="f sx">$\displaystyle a=\frac{a\cdot b}{b}$</div>
+        <div class="ex">esempio: $3=\frac{3\cdot 4}{4}=\frac{12}{4}$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Mettere l'intero solo al numeratore</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a+\frac{c}{b}=\frac{a+c}{b}$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a+\frac{c}{b}=\frac{a\cdot b+c}{b}$</div></div>
+        </div>
+        <div class="why-txt">L'intero vale $b$ fette, non una: senza moltiplicarlo per $b$ se ne conta molto meno di quello che è.</div>
+      </div>
     </div>
-  </div>
+  </details>
 
   <div class="riga">
     <div class="fissa">

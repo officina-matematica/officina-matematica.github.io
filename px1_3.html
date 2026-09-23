@@ -186,16 +186,35 @@ mjx-container[display]{margin:0!important}
   <div class="sub">Scorri le righe fino alla prima che non coincide con la tua. Lì apri <b>Regola</b>.</div>
 
   <div class="k">Metodo 1 · dai quadrati al totale</div>
-  <div class="riga">
-    <div class="fissa">
+  <details class="riga">
+    <summary>
       <div class="n">1</div>
       <div class="cont">
         <div class="nota">Partiamo dagli otto quadrati, che restano tali e quali.</div>
         <div class="f sx">$\displaystyle \text{Quadrati}=8\ \text{quadrati}$</div>
       </div>
-      <div></div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">Si aggiungono soltanto cerchi, quindi gli $8$ quadrati restano $8$ anche dopo: è il numero sicuro da cui partire.</p>
+      <div class="teoria">
+        <div class="nome">Il gruppo che non si tocca</div>
+        <div class="frase">Le figure di cui il testo non parla <strong>non cambiano</strong>: restano quante sono, prima e dopo. Da lì si parte, perché sono l'unica quantità del gruppo finito che si conosce già.</div>
+        <div class="f sx">$\displaystyle \text{figure non toccate prima}=\text{figure non toccate dopo}$</div>
+        <div class="ex">esempio: $\text{si aggiungono solo lune}:\ 6\ \text{stelle prima},\ 6\ \text{stelle dopo}$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Calcolare la percentuale sulle figure di partenza</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle p\%\ \text{di}\ \left(\text{figure di adesso}\right)$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle p\%\ \text{di}\ \left(\text{figure alla fine}\right)$</div></div>
+        </div>
+        <div class="why-txt">La percentuale del testo vale sul gruppo finito, non su quello di prima.</div>
+      </div>
     </div>
-  </div>
+  </details>
 
   <details class="riga">
     <summary>
@@ -317,16 +336,35 @@ mjx-container[display]{margin:0!important}
     </div>
   </details>
 
-  <div class="riga">
-    <div class="fissa">
+  <details class="riga">
+    <summary>
       <div class="n">6</div>
       <div class="cont">
         <div class="nota">Otto per cinque quarti fa dieci: il gruppo finito ha dieci figure.</div>
         <div class="f sx">$\displaystyle \text{Figure in tutto}=8\cdot\frac{5}{4}=10\ \text{figure}$</div>
       </div>
-      <div></div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">Prima di moltiplicare si semplifica l'$8$ con il $4$ che sta sotto la linea: $8:4=2$, e resta $2\cdot 5=10$ figure in tutto.</p>
+      <div class="teoria">
+        <div class="nome">Semplificare prima di moltiplicare</div>
+        <div class="frase">Quando un numero intero e una frazione si moltiplicano, si semplifica il numero con il <strong>denominatore</strong> prima di fare il prodotto: si dividono tutti e due per un divisore comune. Farlo dopo porta allo stesso risultato, ma passando da numeri molto più grandi.</div>
+        <div class="f sx">$\displaystyle \frac{a}{b\cdot k}\cdot\left(n\cdot k\right)=\frac{a\cdot n}{b}$</div>
+        <div class="ex">esempio: $\frac{2}{7}\cdot 63=2\cdot 9=18$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Semplificare il numero con il numeratore</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{a\cdot k}{b}\cdot\left(n\cdot k\right)=\frac{a\cdot n}{b}$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{a}{b\cdot k}\cdot\left(n\cdot k\right)=\frac{a\cdot n}{b}$</div></div>
+        </div>
+        <div class="why-txt">Il numero intero sta sopra la linea come il numeratore: si semplifica solo con quello che sta sotto.</div>
+      </div>
     </div>
-  </div>
+  </details>
 
   <div class="riga">
     <div class="fissa">

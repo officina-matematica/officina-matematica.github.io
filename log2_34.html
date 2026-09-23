@@ -508,16 +508,35 @@ mjx-container[display]{margin:0!important}
     </div>
   </details>
 
-  <div class="riga">
-    <div class="fissa">
+  <details class="riga">
+    <summary>
       <div class="n">13</div>
       <div class="cont">
         <div class="nota">$\frac{1}{10}$ è $\frac{1}{2}$ per $\frac{1}{5}$.</div>
         <div class="f sx">$\displaystyle =\log_{5}\left(\frac{1}{2}\cdot\frac{1}{5}\right)=$</div>
       </div>
-      <div></div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">$\frac{1}{10}$ non è una potenza di $5$, ma si spezza in $\frac{1}{2}\cdot\frac{1}{5}$: il pezzo $\frac{1}{5}$ è fatto con la base $5$ e diventerà un numero.</p>
+      <div class="teoria">
+        <div class="nome">Far comparire la base nell'argomento</div>
+        <div class="frase">Se l'argomento non è una potenza della base, lo si scrive come <strong>prodotto</strong> in cui un fattore è fatto con la base. Quel fattore diventerà un numero, l'altro resterà un logaritmo.</div>
+        <div class="f sx">$\displaystyle \log_{a}\frac{1}{a\cdot k}=\log_{a}\left(\frac{1}{k}\cdot\frac{1}{a}\right)$</div>
+        <div class="ex">esempio: $\log_{4}\frac{1}{24}=\log_{4}\left(\frac{1}{6}\cdot\frac{1}{4}\right)$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Spezzare in una somma</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{1}{a\cdot b}=\frac{1}{a}+\frac{1}{b}$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{1}{a\cdot b}=\frac{1}{a}\cdot\frac{1}{b}$</div></div>
+        </div>
+        <div class="why-txt">Sotto la linea c'è un prodotto, quindi anche le due frazioni si moltiplicano.</div>
+      </div>
     </div>
-  </div>
+  </details>
 
   <div class="riga">
     <div class="fissa">

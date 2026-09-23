@@ -208,16 +208,35 @@ mjx-container[display]{margin:0!important}
     </div>
   </details>
 
-  <div class="riga">
-    <div class="fissa">
+  <details class="riga">
+    <summary>
       <div class="n">2</div>
       <div class="cont">
         <div class="nota">Proviamo con un numero, per esempio $5$: i due lati fanno tutti e due $39$.</div>
         <div class="f sx">$\displaystyle 34+5=5+34$</div>
       </div>
-      <div></div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">Mettendo $5$ al posto della $x$ i due lati fanno tutti e due $39$: a sinistra e a destra ci sono gli stessi addendi $34$ e $x$, solo scambiati, quindi la $x$ non deve valere un numero preciso.</p>
+      <div class="teoria">
+        <div class="nome">Un'uguaglianza vera per ogni numero</div>
+        <div class="frase">Quando ai due lati dell'uguale ci sono gli <strong>stessi numeri</strong> con le stesse operazioni, l'uguaglianza è vera qualunque numero metti al posto della lettera. Per accorgertene provi con un numero a caso, poi con un altro: torna tutte e due le volte.</div>
+        <div class="f sx">$\displaystyle n+a=a+n\quad \text{e}\quad n\cdot\left(a+b\right)=n\cdot a+n\cdot b\quad \text{valgono per ogni } n$</div>
+        <div class="ex">esempio: $4+n=n+4\quad \to\quad 4+3=3+4\quad \text{e}\quad 4+9=9+4$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Cercare un solo valore</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a+n=n+a\quad \to\quad n=a$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a+n=n+a\quad \to\quad n\ \text{qualsiasi}$</div></div>
+        </div>
+        <div class="why-txt">Qui non c'è un valore da trovare: i due lati sono la stessa somma scritta in due modi.</div>
+      </div>
     </div>
-  </div>
+  </details>
 
   <div class="riga">
     <div class="fissa">

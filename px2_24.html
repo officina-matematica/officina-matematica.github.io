@@ -250,16 +250,35 @@ mjx-container[display]{margin:0!important}
     </div>
   </details>
 
-  <div class="riga">
-    <div class="fissa">
+  <details class="riga">
+    <summary>
       <div class="n">4</div>
       <div class="cont">
         <div class="nota">La spesa nuova è il consumo nuovo per il prezzo nuovo.</div>
         <div class="f sx">$\displaystyle \text{Spesa di adesso}=1{,}8\cdot 7{,}70=13{,}86\ \text{€}$</div>
       </div>
-      <div></div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">La spesa è consumo per prezzo, e sono cambiati tutti e due: $1{,}8$ kg è $2\cdot 0{,}90$ e $7{,}70$ € è $7\cdot 1{,}10$. I due decimali si moltiplicano fra loro, $0{,}90\cdot 1{,}10=0{,}99$, così la spesa scende a $13{,}86$ €.</p>
+      <div class="teoria">
+        <div class="nome">Due fattori che cambiano insieme</div>
+        <div class="frase">Se una grandezza è il prodotto di due fattori e tutti e due cambiano, i due cambiamenti si moltiplicano fra loro. Un calo su un fattore e un aumento sull'altro non si annullano.</div>
+        <div class="f sx">$\displaystyle \left(a\cdot k_{1}\right)\cdot\left(b\cdot k_{2}\right)=\left(a\cdot b\right)\cdot k_{1}\cdot k_{2}$</div>
+        <div class="ex">esempio: $-30\%\to k_{1}=0{,}70,\quad +40\%\to k_{2}=1{,}40:\quad 0{,}70\cdot 1{,}40=0{,}98\ \to\ -2\%$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Sommare i due moltiplicatori</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle k=k_{1}+k_{2}$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle k=k_{1}\cdot k_{2}$</div></div>
+        </div>
+        <div class="why-txt">Il secondo cambiamento agisce su quello che resta dal primo.</div>
+      </div>
     </div>
-  </div>
+  </details>
 
   <div class="riga res">
     <div class="fissa">

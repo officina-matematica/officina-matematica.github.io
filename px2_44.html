@@ -289,16 +289,35 @@ mjx-container[display]{margin:0!important}
     </div>
   </div>
 
-  <div class="riga">
-    <div class="fissa">
+  <details class="riga">
+    <summary>
       <div class="n">7</div>
       <div class="cont">
         <div class="nota">Quello che avanza sopra l'uno è la maggiorazione: il 6,29% in più.</div>
         <div class="f sx">$\displaystyle \text{Maggiorazione}=1{,}0629-1=0{,}0629$</div>
       </div>
-      <div></div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">Il $1{,}0629$ trovato prima contiene già il prezzo intero, che vale $1$: togliendo quell'$1$ resta solo quello che si paga in più, $0{,}0629$.</p>
+      <div class="teoria">
+        <div class="nome">Il rapporto meno uno</div>
+        <div class="frase">Dividendo il valore nuovo per quello vecchio si ottiene un numero che contiene già il $100\%$ di partenza: $1{,}1$ vuol dire $110\%$. Togliendo $1$ resta la sola variazione, che moltiplicata per cento diventa la percentuale di aumento.</div>
+        <div class="f sx">$\displaystyle \text{aumento \%}=\left(\frac{\text{nuovo}}{\text{vecchio}}-1\right)\cdot 100=\frac{\text{nuovo}}{\text{vecchio}}\cdot 100-100$</div>
+        <div class="ex">esempio: $\frac{55}{50}=1{,}1\ \to\ \left(1{,}1-1\right)\cdot 100=10\ \to\ 10\%$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Scambiare il rapporto per l'aumento</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \text{aumento \%}=\frac{\text{nuovo}}{\text{vecchio}}\cdot 100$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \text{aumento \%}=\left(\frac{\text{nuovo}}{\text{vecchio}}-1\right)\cdot 100$</div></div>
+        </div>
+        <div class="why-txt">Il rapporto dice quanto è diventato, non di quanto è cresciuto.</div>
+      </div>
     </div>
-  </div>
+  </details>
 
   <div class="riga res">
     <div class="fissa">

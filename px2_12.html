@@ -265,29 +265,67 @@ mjx-container[display]{margin:0!important}
     </div>
   </div>
 
-  <div class="riga">
-    <div class="fissa">
+  <details class="riga">
+    <summary>
       <div class="n">5</div>
       <div class="cont">
         <div class="nota">La divisione non è esatta: in euro si arrotonda al centesimo.</div>
         <div class="f sx">$\displaystyle \text{Prezzo IVA esclusa}\approx 10115{,}70\ \text{€}$</div>
       </div>
-      <div></div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">$1224000:121$ dà $10\,115{,}7024\ldots$: in euro si tiene fino al centesimo, e la prima cifra buttata via è $2$, quindi resta $10\,115{,}70$ €.</p>
+      <div class="teoria">
+        <div class="nome">Arrotondare il risultato</div>
+        <div class="frase">Quando il conto dà molte cifre dopo la virgola si arrotonda: si guarda la prima cifra che si butta via e, se è 5 o più, si aumenta di uno l'ultima cifra che resta. Il risultato si scrive con «circa».</div>
+        <div class="f sx">$\displaystyle x{,}d\ldots \ \to\ x\quad \text{se}\ d<5\qquad x{,}d\ldots \ \to\ x+1\quad \text{se}\ d\geq 5$</div>
+        <div class="ex">esempio: $7{,}349\ \text{€}\ \to\ 7{,}35\ \text{€}\qquad 12{,}4\ \to\ 12$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Arrotondare per eccesso quando la cifra non lo chiede</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle 8{,}3\ \to\ 9$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle 8{,}3\ \to\ 8$</div></div>
+        </div>
+        <div class="why-txt">Sotto il cinque l'ultima cifra che resta non cambia.</div>
+      </div>
     </div>
-  </div>
+  </details>
 
   <div class="k">Metodo 2 · dividendo per 1,21</div>
   <div class="sub">Una sola divisione con la calcolatrice.</div>
-  <div class="riga">
-    <div class="fissa">
+  <details class="riga">
+    <summary>
       <div class="n">6</div>
       <div class="cont">
         <div class="nota">Il 121% diventa 1,21: dividiamo per quel numero invece di capovolgere la frazione.</div>
         <div class="f sx">$\displaystyle \text{Prezzo IVA esclusa}=12240:1{,}21$</div>
       </div>
-      <div></div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">Il $121\%$ diventa $1{,}21$: per cento vuol dire diviso cento. I $12\,240$ € divisi per $1{,}21$ danno lo stesso prezzo della frazione $\frac{100}{121}$.</p>
+      <div class="teoria">
+        <div class="nome">La percentuale come numero decimale</div>
+        <div class="frase">Il $p\%$ è $\frac{p}{100}$: diviso cento diventa un numero decimale. Il 12% è 0,12, il 7% è 0,07, l'1,5% è 0,015. Per calcolare quella percentuale di una quantità basta moltiplicare per quel numero.</div>
+        <div class="f sx">$\displaystyle p\%=\frac{p}{100}\quad\to\quad p\%\ \text{di}\ n=\frac{p}{100}\cdot n$</div>
+        <div class="ex">esempio: $24\%\ \text{di}\ 350=0{,}24\cdot 350=84$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Dimenticare di dividere per cento</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle p\%\ \text{di}\ n=p\cdot n$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle p\%\ \text{di}\ n=\frac{p}{100}\cdot n$</div></div>
+        </div>
+        <div class="why-txt">Per cento vuol dire diviso cento.</div>
+      </div>
     </div>
-  </div>
+  </details>
 
   <div class="riga">
     <div class="fissa">

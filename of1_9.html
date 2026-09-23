@@ -386,16 +386,35 @@ mjx-container[display]{margin:0!important}
     </div>
   </details>
 
-  <div class="riga">
-    <div class="fissa">
+  <details class="riga">
+    <summary>
       <div class="n">10</div>
       <div class="cont">
         <div class="nota">$\frac{12}{12}$ vale $1$.</div>
         <div class="f sx">$\displaystyle =1-\frac{\overset{1}{\cancel{12}}}{\underset{1}{\cancel{12}}}=$</div>
       </div>
-      <div></div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">$\frac{12}{12}$ ha sopra e sotto lo stesso numero: vale $1$, e la sottrazione diventa $1-1$.</p>
+      <div class="teoria">
+        <div class="nome">La frazione apparente</div>
+        <div class="frase">Quando il numeratore è un multiplo del denominatore la frazione è in realtà un <strong>numero intero</strong>: le fette bastano esattamente a riempire uno o più interi, senza avanzi.</div>
+        <div class="f sx">$\displaystyle \frac{a\cdot c}{c}=a$</div>
+        <div class="ex">esempio: $\frac{28}{4}=7,\qquad\frac{9}{9}=1$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Tenere il denominatore anche quando sparisce</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{a\cdot c}{c}=\frac{a}{c}$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{a\cdot c}{c}=a$</div></div>
+        </div>
+        <div class="why-txt">Sopra e sotto si dividono per $c$: sotto resta $1$.</div>
+      </div>
     </div>
-  </div>
+  </details>
 
   <div class="riga">
     <div class="fissa">
