@@ -238,6 +238,12 @@ mjx-container[display]{margin:0!important}
         <div class="f sx">$\displaystyle a^{m}\cdot a^{n}=a^{m+n}$</div>
         <div class="ex">esempio: $2^{3}\cdot 2^{4}=2^{7}$</div>
       </div>
+      <div class="teoria">
+        <div class="nome">Divisione di potenze con la stessa base</div>
+        <div class="frase">Quando due potenze hanno la <strong>stessa base</strong>, per dividerle si sottraggono gli esponenti: quello del divisore si toglie a quello del dividendo. La base resta la stessa.</div>
+        <div class="f sx">$\displaystyle a^{m}:a^{n}=a^{m-n}$</div>
+        <div class="ex">esempio: $5^{7}:5^{4}=5^{3}$</div>
+      </div>
       <div class="errore">
         <div class="k">⚠️ Errore da non fare</div>
         <div class="nome">Moltiplicare gli esponenti invece di sommarli</div>
@@ -300,13 +306,13 @@ mjx-container[display]{margin:0!important}
       </div>
       <div class="errore">
         <div class="k">⚠️ Errore da non fare</div>
-        <div class="nome">Eseguire la moltiplicazione prima della divisione</div>
+        <div class="nome">Eseguire la seconda divisione per prima</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a:b\cdot c=a:(b\cdot c)$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a:b:c=a:\left(b:c\right)$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a:b\cdot c=(a:b)\cdot c$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a:b:c=\left(a:b\right):c$</div></div>
         </div>
-        <div class="why-txt">Senza parentesi si va da sinistra.</div>
+        <div class="why-txt">Partendo da destra si finisce per moltiplicare per $c$.</div>
       </div>
     </div>
   </details>
@@ -327,6 +333,12 @@ mjx-container[display]{margin:0!important}
         <div class="frase">Per elevare una frazione a un esponente si elevano <strong>sia il numeratore sia il denominatore</strong>. L'esponente riguarda tutta la frazione, non solo il numero di sopra.</div>
         <div class="f sx">$\displaystyle \left(\frac{a}{b}\right)^{n}=\frac{a^{n}}{b^{n}}$</div>
         <div class="ex">esempio: $\left(\frac{2}{5}\right)^{3}=\frac{8}{125}$</div>
+      </div>
+      <div class="teoria">
+        <div class="nome">La frazione apparente</div>
+        <div class="frase">Quando il numeratore è un multiplo del denominatore la frazione è in realtà un <strong>numero intero</strong>: le fette bastano esattamente a riempire uno o più interi, senza avanzi.</div>
+        <div class="f sx">$\displaystyle \frac{a\cdot c}{c}=a$</div>
+        <div class="ex">esempio: $\frac{32}{4}=8,\qquad\frac{9}{9}=1$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ Errore da non fare</div>
@@ -360,13 +372,13 @@ mjx-container[display]{margin:0!important}
       </div>
       <div class="errore">
         <div class="k">⚠️ Errore da non fare</div>
-        <div class="nome">Cambiare il segno solo al primo termine</div>
+        <div class="nome">Lasciare il meno davanti a un numero già negativo</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle -\left(a-b\right)=-a-b$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a-\left(-b\right)=a-b$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle -\left(a-b\right)=-a+b$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a-\left(-b\right)=a+b$</div></div>
         </div>
-        <div class="why-txt">Il meno vale per tutto quello che c'è dentro.</div>
+        <div class="why-txt">Due meno di fila si accoppiano e diventano un più.</div>
       </div>
     </div>
   </details>

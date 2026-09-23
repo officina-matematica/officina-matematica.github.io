@@ -254,6 +254,12 @@ mjx-container[display]{margin:0!important}
         <div class="f sx">$\displaystyle a=\frac{a\cdot b}{b}$</div>
         <div class="ex">esempio: $3=\frac{3\cdot 4}{4}=\frac{12}{4}$</div>
       </div>
+      <div class="teoria">
+        <div class="nome">Si parte dalla parentesi più interna</div>
+        <div class="frase">Quando ci sono parentesi dentro altre parentesi si comincia sempre dalla più interna — la tonda — poi la quadra, infine la graffa. Una parentesi già svolta si toglie, e si passa a quella che la conteneva.</div>
+        <div class="f sx">$\displaystyle \left(\ \right)\ \to\ \left[\ \right]\ \to\ \left\{\ \right\}$</div>
+        <div class="ex">esempio: $2-\left[3-\left(4-1\right)\right]=2-\left[3-3\right]=2$</div>
+      </div>
       <div class="errore">
         <div class="k">⚠️ Errore da non fare</div>
         <div class="nome">Mettere l'intero solo al numeratore</div>
@@ -305,16 +311,6 @@ mjx-container[display]{margin:0!important}
         <div class="frase">Quando davanti a una parentesi c'è il segno meno, togliendo la parentesi <strong>tutti</strong> i termini che stanno dentro cambiano segno: il più diventa meno e il meno diventa più. Con il più davanti, invece, non cambia niente.</div>
         <div class="f sx">$\displaystyle a-\left(b+c\right)=a-b-c$</div>
         <div class="ex">esempio: $20-\left(7+4\right)=20-11=9$</div>
-      </div>
-      <div class="errore">
-        <div class="k">⚠️ Errore da non fare</div>
-        <div class="nome">Togliere solo il primo termine della parentesi</div>
-        <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a-\left(b+c\right)=a-b+c$</div></div>
-          <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a-\left(b+c\right)=a-b-c$</div></div>
-        </div>
-        <div class="why-txt">Il meno davanti riguarda tutta la parentesi.</div>
       </div>
     </div>
   </details>
@@ -409,13 +405,13 @@ mjx-container[display]{margin:0!important}
       </div>
       <div class="errore">
         <div class="k">⚠️ Errore da non fare</div>
-        <div class="nome">Eseguire l'addizione prima della sottrazione</div>
+        <div class="nome">Eseguire la seconda sottrazione per prima</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a-b+c=a-\left(b+c\right)$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a-b-c=a-\left(b-c\right)$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a-b+c=\left(a-b\right)+c$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a-b-c=\left(a-b\right)-c$</div></div>
         </div>
-        <div class="why-txt">Facendo prima l'addizione, il $c$ finisce tolto invece che aggiunto.</div>
+        <div class="why-txt">Partendo da destra il $c$ finisce aggiunto invece che tolto.</div>
       </div>
     </div>
   </details>
