@@ -197,9 +197,9 @@ mjx-container[display]{margin:0!important}
       <p class="mossa">Ognuno passa a intervalli regolari: capitano tutti insieme dopo un multiplo comune dei quattro intervalli.</p>
       <div class="teoria">
         <div class="nome">Nei problemi: MCD o mcm?</div>
-        <div class="frase">Quando il testo chiede di <strong>dividere</strong> quantità note in parti tutte uguali e il più grandi possibile — mazzi, gruppi, cesti, sacchettini — si cerca il <strong>MCD</strong>. Quando invece la quantità è da trovare e deve contenere esattamente $a$, $b$, $c$ per volta, oppure si chiede <strong>quando</strong> cose che si ripetono torneranno insieme, si cerca il <strong>mcm</strong>. La spia è che cosa si conosce: i numeri da dividere, oppure gli intervalli.</div>
+        <div class="frase">Se il testo dà le quantità e chiede di dividerle in parti tutte uguali e più grandi possibile — mazzi, gruppi, cesti, sacchetti — si cerca il MCD. Se invece la quantità è da trovare, perché deve stare in gruppi esatti da $a$, da $b$, da $c$, o perché si chiede quando cose che si ripetono torneranno insieme, si cerca il mcm.</div>
         <div class="f sx">$\displaystyle \text{quantità note, parti uguali}\to\text{MCD};\quad\text{quantità da trovare, multipla di tutte}\to\text{mcm}$</div>
-        <div class="ex">esempio: $33\ \text{e}\ 22\ \text{in mazzi uguali}\to\text{MCD}=11$</div>
+        <div class="ex">esempio: $33\ \text{e}\ 22\ \text{in mazzi uguali}\to \text{MCD}=11;\qquad \text{insieme ogni}\ 4\ \text{e}\ 6\ \text{giorni}\to \text{mcm}=12$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
@@ -228,18 +228,18 @@ mjx-container[display]{margin:0!important}
       <div class="teoria">
         <div class="nome">Quando un numero è primo</div>
         <div class="frase">Un numero è <strong>primo</strong> se è maggiore di $1$ e si divide soltanto per $1$ e per sé stesso. Per esserne sicuri basta provare i numeri primi fino alla sua radice quadrata: se nessuno lo divide, è primo.</div>
-        <div class="f sx">$\displaystyle p\ \text{primo}\ \Leftrightarrow\ p>1\ \text{e divisori}=\{1,p\}$</div>
+        <div class="f sx">$\displaystyle p\ \text{primo}:\ p>1\ \text{e si divide solo per}\ 1\ \text{e per}\ p$</div>
         <div class="ex">esempio: $29:\ 2,3,5\ \text{non lo dividono, e }7^{2}>29$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
         <div class="nome">Credere che ogni dispari sia primo</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle n\ \text{dispari}\Rightarrow n\ \text{primo}$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle n\ \text{dispari}\ \to\ n\ \text{primo}$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle n\ \text{primo e}\ n>2\Rightarrow n\ \text{dispari}$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle n\ \text{dispari}\ \to\ \text{provo a dividerlo}$</div></div>
         </div>
-        <div class="why-txt">Il contrario non vale: $9$, $27$, $49$ sono dispari e non primi.</div>
+        <div class="why-txt">Dispari vuol dire solo che il $2$ non lo divide: restano $3$, $5$, $7$.</div>
       </div>
     </div>
   </details>
@@ -287,11 +287,11 @@ mjx-container[display]{margin:0!important}
         <div class="k">⚠️ L'errore che si fa qui</div>
         <div class="nome">Prendere solo i fattori comuni</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \text{mcm}=\text{solo i comuni}$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \text{mcm}\left(a\cdot b;\ b\cdot c\right)=b$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \text{mcm}=\text{tutti}$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \text{mcm}\left(a\cdot b;\ b\cdot c\right)=a\cdot b\cdot c$</div></div>
         </div>
-        <div class="why-txt">Servono tutti, altrimenti non è multiplo di tutti.</div>
+        <div class="why-txt">Con il solo fattore comune non viene un multiplo.</div>
       </div>
     </div>
   </details>

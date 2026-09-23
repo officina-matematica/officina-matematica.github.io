@@ -211,11 +211,11 @@ mjx-container[display]{margin:0!important}
         <div class="k">⚠️ L'errore che si fa qui</div>
         <div class="nome">Eseguire l'addizione prima della sottrazione</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a-b+c=a-(b+c)$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a-b+c=a-\left(b+c\right)$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a-b+c=(a-b)+c$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a-b+c=\left(a-b\right)+c$</div></div>
         </div>
-        <div class="why-txt">Si va da sinistra, una operazione alla volta.</div>
+        <div class="why-txt">Facendo prima l'addizione, il $c$ finisce tolto invece che aggiunto.</div>
       </div>
     </div>
   </details>
@@ -264,7 +264,7 @@ mjx-container[display]{margin:0!important}
       <div class="teoria">
         <div class="nome">Si parte dalla parentesi più interna</div>
         <div class="frase">Quando ci sono parentesi dentro altre parentesi si comincia sempre dalla più interna — la tonda — poi la quadra, infine la graffa. Una parentesi già svolta si toglie, e si passa a quella che la conteneva.</div>
-        <div class="f sx">$\displaystyle \left\{\ \left[\ \left(\ \right)\ \right]\ \right\}$</div>
+        <div class="f sx">$\displaystyle \left(\ \right)\ \to\ \left[\ \right]\ \to\ \left\{\ \right\}$</div>
         <div class="ex">esempio: $2-\left[3-\left(4-1\right)\right]=2-\left[3-3\right]=2$</div>
       </div>
     </div>
@@ -284,7 +284,7 @@ mjx-container[display]{margin:0!important}
       <div class="teoria">
         <div class="nome">Una parentesi seguita da una divisione</div>
         <div class="frase">Quando dopo una parentesi c'è una divisione, si divide il <strong>risultato dell'intera parentesi</strong>, non il suo primo numero. Chiuderla prima è il modo più sicuro per non sbagliare.</div>
-        <div class="f sx">$\displaystyle \left(a+b\right):c=s:c\quad\text{con}\ s=a+b$</div>
+        <div class="f sx">$\displaystyle \left(a+b\right):c=\frac{a+b}{c}$</div>
         <div class="ex">esempio: $\left(6+4\right):2=10:2=5$</div>
       </div>
       <div class="errore">
@@ -293,9 +293,9 @@ mjx-container[display]{margin:0!important}
         <div class="compare">
           <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \left(a+b\right):c=a+b:c$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \left(a+b\right):c=s:c$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \left(a+b\right):c=\frac{a+b}{c}$</div></div>
         </div>
-        <div class="why-txt">Il segno di divisione riguarda tutta la parentesi.</div>
+        <div class="why-txt">Senza la parentesi il $c$ dividerebbe solo il $b$.</div>
       </div>
     </div>
   </details>

@@ -216,13 +216,13 @@ mjx-container[display]{margin:0!important}
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Togliere una sola percentuale quando i gruppi sono tre</div>
+        <div class="nome">Togliere la percentuale dalla quantità</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle r\%=100\%-p\%$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \text{resto}=N-p$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle r\%=100\%-p\%-q\%$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \text{resto}\%=100\%-p\%$</div></div>
         </div>
-        <div class="why-txt">Vanno tolte tutte le percentuali già note, non solo la prima.</div>
+        <div class="why-txt">Le percentuali si tolgono da cento, non dai pezzi.</div>
       </div>
     </div>
   </details>
@@ -242,7 +242,7 @@ mjx-container[display]{margin:0!important}
         <div class="nome">Dalla percentuale al totale: si divide</div>
         <div class="frase">Quando il problema dà una <strong>parte</strong> e dice a quale percentuale corrisponde, per risalire al totale si divide la parte per quella percentuale scritta come frazione. È il contrario di quando si cerca la parte.</div>
         <div class="f sx">$\displaystyle \text{totale}=\text{parte}:\frac{p}{100}$</div>
-        <div class="ex">esempio: $120:\frac{25}{100}=480$</div>
+        <div class="ex">esempio: $120:\frac{40}{100}=300$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
@@ -270,19 +270,19 @@ mjx-container[display]{margin:0!important}
       <p class="mossa">$8:\frac{80}{100}$ diventa $8\cdot\frac{100}{80}$.</p>
       <div class="teoria">
         <div class="nome">Dividere per una frazione</div>
-        <div class="frase">Per dividere un numero per una frazione si moltiplica il numero per la frazione <strong>capovolta</strong>: numeratore e denominatore si scambiano di posto.</div>
-        <div class="f sx">$\displaystyle n:\frac{a}{b}=n\cdot\frac{b}{a}$</div>
+        <div class="frase">Dividere per una frazione è lo stesso che moltiplicare per la frazione <strong>capovolta</strong>: il suo numeratore e il suo denominatore si scambiano di posto. Quello che sta prima del segno di divisione non si tocca.</div>
+        <div class="f sx">$\displaystyle n:\frac{a}{b}=n\cdot\frac{b}{a}\qquad \text{con}\ a\neq 0$</div>
         <div class="ex">esempio: $20:\frac{2}{3}=20\cdot\frac{3}{2}=30$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Moltiplicare per la frazione senza capovolgerla</div>
+        <div class="nome">Moltiplicare senza capovolgere</div>
         <div class="compare">
           <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle n:\frac{a}{b}=n\cdot\frac{a}{b}$</div></div>
           <div class="arrow">➜</div>
           <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle n:\frac{a}{b}=n\cdot\frac{b}{a}$</div></div>
         </div>
-        <div class="why-txt">Si capovolge la frazione che divide.</div>
+        <div class="why-txt">Senza capovolgere si moltiplica invece di dividere.</div>
       </div>
     </div>
   </details>
@@ -300,7 +300,7 @@ mjx-container[display]{margin:0!important}
       <p class="mossa">$100:20=5$ e $80:20=4$.</p>
       <div class="teoria">
         <div class="nome">Ridurre una frazione ai minimi termini</div>
-        <div class="frase">Dividendo numeratore e denominatore per lo stesso numero il valore non cambia, ma i numeri diventano più piccoli. Conviene farlo appena si può: i conti che vengono dopo sono molto più facili.</div>
+        <div class="frase">Dividendo numeratore e denominatore per lo stesso numero il valore non cambia, ma i numeri diventano più piccoli. Conviene farlo appena si può e andare avanti finché sopra e sotto non hanno più divisori in comune.</div>
         <div class="f sx">$\displaystyle \frac{a\cdot k}{b\cdot k}=\frac{a}{b}$</div>
         <div class="ex">esempio: $\frac{9}{12}=\frac{3\cdot 3}{4\cdot 3}=\frac{3}{4}$</div>
       </div>
@@ -366,18 +366,18 @@ mjx-container[display]{margin:0!important}
       <div class="teoria">
         <div class="nome">Una percentuale multipla di un'altra</div>
         <div class="frase">Se una percentuale è il doppio, il triplo, il quadruplo di un'altra, anche le quantità stanno nello stesso rapporto: il 60% è tre volte il 20%, quindi la quantità del 20% si trova dividendo per tre. Non serve passare dal totale.</div>
-        <div class="f sx">$\displaystyle \text{se}\ q\%=k\cdot p\%\ \to\ \text{parte}\left(p\%\right)=\text{parte}\left(q\%\right):k$</div>
+        <div class="f sx">$\displaystyle \text{parte del }p\%=\text{parte del }q\%:\frac{q}{p}$</div>
         <div class="ex">esempio: $40\%\ \text{vale}\ 12\ \to\ 20\%\ \text{vale}\ 12:2=6$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
         <div class="nome">Dividere per la percentuale invece che per quante volte ci sta</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \text{parte}\left(p\%\right)=\text{parte}\left(q\%\right):q$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \text{parte del }p\%=\text{parte del }q\%:q$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \text{parte}\left(p\%\right)=\text{parte}\left(q\%\right):\frac{q}{p}$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \text{parte del }p\%=\text{parte del }q\%:\frac{q}{p}$</div></div>
         </div>
-        <div class="why-txt">Si divide per quante volte una percentuale sta nell'altra, non per la percentuale.</div>
+        <div class="why-txt">Si divide per quante volte una percentuale sta nell'altra.</div>
       </div>
     </div>
   </details>

@@ -204,19 +204,19 @@ mjx-container[display]{margin:0!important}
       <p class="mossa">$1-\frac{1}{2}$, $-7+\frac{15}{2}$ e $3-\frac{5}{2}$ danno tutte $\frac{1}{2}$: è quello che rende possibili le proprietà delle potenze.</p>
       <div class="teoria">
         <div class="nome">Addizione e sottrazione fra frazioni</div>
-        <div class="frase">Due frazioni si sommano o si sottraggono solo quando hanno lo <strong>stesso denominatore</strong>. Si cerca il minimo comune multiplo dei denominatori, si riscrivono tutte con quel denominatore e poi si sommano o si sottraggono i soli numeratori.</div>
-        <div class="f sx">$\displaystyle \frac{a}{m}+\frac{c}{m}=\frac{a+c}{m}\qquad \text{con}\ m=\text{mcm dei denominatori}$</div>
-        <div class="ex">esempio: $\frac{2}{11}+\frac{3}{33}=\frac{6}{33}+\frac{3}{33}=\frac{9}{33}$</div>
+        <div class="frase">Due frazioni si sommano o si sottraggono solo quando hanno lo <strong>stesso denominatore</strong>. Come denominatore comune si prende il minimo comune multiplo: ogni numeratore si moltiplica per quante volte il suo denominatore sta nel mcm, e poi si sommano o si sottraggono i soli numeratori.</div>
+        <div class="f sx">$\displaystyle \frac{a}{b}\pm\frac{c}{d}=\frac{a\cdot\left(m:b\right)\pm c\cdot\left(m:d\right)}{m}\quad \text{con}\ m=\text{mcm}(b;d)$</div>
+        <div class="ex">esempio: $\frac{3}{10}+\frac{1}{15}=\frac{3\cdot 3+1\cdot 2}{30}=\frac{11}{30}$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
         <div class="nome">Sommare anche i denominatori</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{a}{m}+\frac{c}{m}=\frac{a+c}{m+m}$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{a}{b}+\frac{c}{d}=\frac{a+c}{b+d}$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{a}{m}+\frac{c}{m}=\frac{a+c}{m}$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{a}{b}+\frac{c}{d}=\frac{a\cdot\left(m:b\right)+ c\cdot\left(m:d\right)}{m}$</div></div>
         </div>
-        <div class="why-txt">Il denominatore dice la misura delle fette: si sommano solo i numeratori.</div>
+        <div class="why-txt">Il denominatore dice quanto è grande la fetta: non cambia.</div>
       </div>
     </div>
   </details>
@@ -246,7 +246,7 @@ mjx-container[display]{margin:0!important}
           <div class="arrow">➜</div>
           <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a^{m}\cdot a^{n}=a^{m+n}$</div></div>
         </div>
-        <div class="why-txt">Prodotto di potenze, somma di esponenti.</div>
+        <div class="why-txt">L'esponente conta quante volte la base è scritta in fila.</div>
       </div>
     </div>
   </details>
@@ -276,7 +276,7 @@ mjx-container[display]{margin:0!important}
           <div class="arrow">➜</div>
           <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \left(a^{m}\right)^{n}=a^{m\cdot n}$</div></div>
         </div>
-        <div class="why-txt">Somma per il prodotto, prodotto per la potenza.</div>
+        <div class="why-txt">Nel prodotto di potenze si sommano, qui si moltiplicano.</div>
       </div>
     </div>
   </details>
@@ -365,7 +365,7 @@ mjx-container[display]{margin:0!important}
       <p class="mossa">Per sommare l'intero con la frazione lo si riscrive con lo stesso denominatore: $1=\frac{8}{8}$.</p>
       <div class="teoria">
         <div class="nome">Un numero intero scritto come frazione</div>
-        <div class="frase">Ogni numero intero si può scrivere come frazione: basta dargli il denominatore che serve e moltiplicare per quello anche il numero stesso. Solo così lo si può sommare a una frazione.</div>
+        <div class="frase">Ogni numero intero si può scrivere come frazione: basta dargli il denominatore che serve e moltiplicare per quello anche il numero stesso. Solo così lo si può sommare o sottrarre a una frazione.</div>
         <div class="f sx">$\displaystyle a=\frac{a\cdot b}{b}$</div>
         <div class="ex">esempio: $3=\frac{3\cdot 4}{4}=\frac{12}{4}$</div>
       </div>
@@ -377,7 +377,7 @@ mjx-container[display]{margin:0!important}
           <div class="arrow">➜</div>
           <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a+\frac{c}{b}=\frac{a\cdot b+c}{b}$</div></div>
         </div>
-        <div class="why-txt">L'intero va moltiplicato per il denominatore.</div>
+        <div class="why-txt">L'intero vale $b$ fette, non una: senza moltiplicarlo per $b$ se ne conta molto meno di quello che è.</div>
       </div>
     </div>
   </details>

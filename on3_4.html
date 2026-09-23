@@ -201,9 +201,9 @@ mjx-container[display]{margin:0!important}
       <p class="mossa">Non ci sono parentesi: $16:2=8$, $16:8=2$, $2\cdot 3=6$, $144:36=4$, $12:3=4$. Ogni divisione riguarda solo i due numeri che ha accanto.</p>
       <div class="teoria">
         <div class="nome">Priorità delle operazioni</div>
-        <div class="frase">Divisioni e moltiplicazioni si eseguono prima delle addizioni e delle sottrazioni. Ogni quoziente si chiude da solo, con il numero che sta subito prima e quello che sta subito dopo, e solo dopo entra nella somma.</div>
+        <div class="frase">Divisioni e moltiplicazioni si eseguono prima delle addizioni e delle sottrazioni. Ogni divisione riguarda solo i due numeri che ha accanto: si chiude da sola e poi entra nella somma.</div>
         <div class="f sx">$\displaystyle a-b:c=a-(b:c)$</div>
-        <div class="ex">esempio: $20-12:4=20-3=17$</div>
+        <div class="ex">esempio: $50-35:7=50-5=45$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
@@ -245,11 +245,11 @@ mjx-container[display]{margin:0!important}
         <div class="k">⚠️ L'errore che si fa qui</div>
         <div class="nome">Eseguire l'addizione prima della sottrazione</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a-b+c=a-(b+c)$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a-b+c=a-\left(b+c\right)$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a-b+c=(a-b)+c$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a-b+c=\left(a-b\right)+c$</div></div>
         </div>
-        <div class="why-txt">Si va da sinistra, una operazione alla volta.</div>
+        <div class="why-txt">Facendo prima l'addizione, il $c$ finisce tolto invece che aggiunto.</div>
       </div>
     </div>
   </details>

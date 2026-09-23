@@ -203,7 +203,7 @@ mjx-container[display]{margin:0!important}
       <p class="mossa">Letta al contrario, per $\frac{1}{5}$ e per $2$.</p>
       <div class="teoria">
         <div class="nome">Il logaritmo di una potenza</div>
-        <div class="frase">L'esponente dell'argomento <strong>scende davanti</strong> al logaritmo e diventa un fattore. Letta al contrario, la stessa regola dice che un numero davanti a un logaritmo può rientrare come esponente dell'argomento.</div>
+        <div class="frase">L'esponente dell'argomento scende davanti al logaritmo e diventa un fattore, purché l'argomento sia positivo. Letta al contrario, la stessa regola dice che un numero davanti a un logaritmo può rientrare come esponente dell'argomento.</div>
         <div class="f sx">$\displaystyle \log a^{n}=n\log a$</div>
         <div class="ex">esempio: $\log 2^{5}=5\log 2,\quad 3\log 4=\log 4^{3}$</div>
       </div>
@@ -263,8 +263,8 @@ mjx-container[display]{margin:0!important}
       <p class="mossa">$1=\log 10$.</p>
       <div class="teoria">
         <div class="nome">Un numero scritto come logaritmo</div>
-        <div class="frase">Ogni numero si può scrivere come logaritmo in una base scelta: $n$ è l'esponente che porta la base $a$ a diventare $a^{n}$. Serve per mettere un numero insieme ai logaritmi e riunire tutto in uno solo.</div>
-        <div class="f sx">$\displaystyle n=\log_{a}a^{n}$</div>
+        <div class="frase">Ogni numero si può scrivere come logaritmo scegliendo la base che serve: $3$ diventa $\log_{2}2^{3}$, perché $3$ è l'esponente da dare al $2$ per ottenere $8$. Così il numero si unisce ai logaritmi che ha accanto e si riunisce tutto in uno solo.</div>
+        <div class="f sx">$\displaystyle n=\log_{a}a^{n}\quad \left(a>0,\ a\neq 1\right)$</div>
         <div class="ex">esempio: $3=\log_{5}125,\quad 1=\log_{7}7,\quad 0=\log_{7}1$</div>
       </div>
       <div class="errore">
@@ -331,11 +331,11 @@ mjx-container[display]{margin:0!important}
         <div class="k">⚠️ L'errore che si fa qui</div>
         <div class="nome">Conservare il segno meno dentro la parentesi</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a-b-c=a-(b-c)$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a-b-c=a-\left(b-c\right)$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a-b-c=a-(b+c)$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a-b-c=a-\left(b+c\right)$</div></div>
         </div>
-        <div class="why-txt">Due sottrazioni diventano una somma da togliere.</div>
+        <div class="why-txt">Anche il secondo numero va tolto: col meno davanti, dentro si somma.</div>
       </div>
     </div>
   </details>

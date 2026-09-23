@@ -201,7 +201,7 @@ mjx-container[display]{margin:0!important}
       <p class="mossa">$-16\%$ diventa $\cdot\,0{,}84$.</p>
       <div class="teoria">
         <div class="nome">Togliere una percentuale in un colpo solo</div>
-        <div class="frase">Togliere il <strong>s%</strong> da una quantità vuol dire tenerne il $(100-s)\%$: invece di calcolare la parte da togliere e poi sottrarla, si moltiplica subito per il numero decimale che resta. Con i prezzi: scontare del 25% vuol dire pagare il 75%.</div>
+        <div class="frase">Togliere una percentuale da una quantità vuol dire tenere tutto il resto: invece di calcolare la parte da togliere e poi sottrarla, si moltiplica subito per quello che resta. Scontare del $25\%$ vuol dire pagare il $75\%$.</div>
         <div class="f sx">$\displaystyle n\ \text{scontato del}\ s\%=n\cdot\left(1-\frac{s}{100}\right)$</div>
         <div class="ex">esempio: $140\ \text{€ scontato del}\ 45\%:\ 140\cdot 0{,}55=77\ \text{€}$</div>
       </div>
@@ -209,11 +209,11 @@ mjx-container[display]{margin:0!important}
         <div class="k">⚠️ L'errore che si fa qui</div>
         <div class="nome">Moltiplicare per la percentuale dello sconto</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle n\cdot\frac{s}{100}$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \text{si paga}=n\cdot\frac{s}{100}$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle n\cdot\left(1-\frac{s}{100}\right)$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \text{si paga}=n\cdot\left(1-\frac{s}{100}\right)$</div></div>
         </div>
-        <div class="why-txt">Il primo dà lo sconto, il secondo quello che si paga.</div>
+        <div class="why-txt">Il primo conto dà quanto si risparmia, non quanto si paga.</div>
       </div>
     </div>
   </details>
@@ -232,7 +232,7 @@ mjx-container[display]{margin:0!important}
       <div class="teoria">
         <div class="nome">Arrotondare il risultato</div>
         <div class="frase">Quando il conto dà molte cifre dopo la virgola si arrotonda: si guarda la prima cifra che si butta via e, se è 5 o più, si aumenta di uno l'ultima cifra che resta. Il risultato si scrive con «circa».</div>
-        <div class="f sx">$\displaystyle \text{la prima cifra che si butta via: sotto il}\ 5\ \text{si resta, dal}\ 5\ \text{in su si sale}$</div>
+        <div class="f sx">$\displaystyle x{,}d\ldots \ \to\ x\quad \text{se}\ d<5\qquad x{,}d\ldots \ \to\ x+1\quad \text{se}\ d\geq 5$</div>
         <div class="ex">esempio: $7{,}349\ \text{€}\ \to\ 7{,}35\ \text{€}\qquad 12{,}4\ \to\ 12$</div>
       </div>
       <div class="errore">
@@ -261,7 +261,7 @@ mjx-container[display]{margin:0!important}
       <p class="mossa">Si divide il prezzo che si paga davvero, quello scontato.</p>
       <div class="teoria">
         <div class="nome">Il prezzo al chilogrammo</div>
-        <div class="frase">Il prezzo al chilogrammo si trova dividendo il prezzo <strong>che si paga</strong> per il peso <strong>in chilogrammi</strong>. Il peso va convertito prima: i grammi si dividono per mille, e così i millilitri per avere i litri. Serve per confrontare confezioni diverse.</div>
+        <div class="frase">Il prezzo al chilogrammo si trova dividendo quello che si paga per il peso in chilogrammi. Il peso va portato prima in chilogrammi: i grammi si dividono per mille, e allo stesso modo i millilitri per avere i litri.</div>
         <div class="f sx">$\displaystyle \text{€/kg}=\frac{\text{prezzo pagato}}{\text{peso in kg}}$</div>
         <div class="ex">esempio: $\frac{3{,}60\ \text{€}}{0{,}4\ \text{kg}}=9\ \text{€/kg}$</div>
       </div>
@@ -269,11 +269,11 @@ mjx-container[display]{margin:0!important}
         <div class="k">⚠️ L'errore che si fa qui</div>
         <div class="nome">Dividere per i grammi invece che per i chilogrammi</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \text{€/kg}=\frac{3{,}60}{400}=0{,}009$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \text{€/kg}=\frac{\text{prezzo}}{\text{grammi}}$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \text{€/kg}=\frac{3{,}60}{0{,}4}=9$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \text{€/kg}=\frac{\text{prezzo}}{\text{grammi}:1000}$</div></div>
         </div>
-        <div class="why-txt">Quattrocento grammi sono $0{,}4$ kg: diviso per i grammi viene il prezzo di un grammo.</div>
+        <div class="why-txt">Mille grammi fanno un chilogrammo.</div>
       </div>
     </div>
   </details>

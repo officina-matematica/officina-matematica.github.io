@@ -215,13 +215,13 @@ mjx-container[display]{margin:0!important}
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Togliere una sola percentuale quando i gruppi sono tre</div>
+        <div class="nome">Togliere la percentuale dalla quantità</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle r\%=100\%-p\%$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \text{resto}=N-p$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle r\%=100\%-p\%-q\%$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \text{resto}\%=100\%-p\%$</div></div>
         </div>
-        <div class="why-txt">Vanno tolte tutte le percentuali già note, non solo la prima.</div>
+        <div class="why-txt">Le percentuali si tolgono da cento, non dai pezzi.</div>
       </div>
     </div>
   </details>
@@ -241,7 +241,7 @@ mjx-container[display]{margin:0!important}
         <div class="nome">Dalla percentuale al totale: si divide</div>
         <div class="frase">Quando il problema dà una <strong>parte</strong> e dice a quale percentuale corrisponde, per risalire al totale si divide la parte per quella percentuale scritta come frazione. È il contrario di quando si cerca la parte.</div>
         <div class="f sx">$\displaystyle \text{totale}=\text{parte}:\frac{p}{100}$</div>
-        <div class="ex">esempio: $120:\frac{25}{100}=480$</div>
+        <div class="ex">esempio: $120:\frac{40}{100}=300$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
@@ -269,19 +269,19 @@ mjx-container[display]{margin:0!important}
       <p class="mossa">$\frac{50}{100}$ capovolta è $\frac{100}{50}$, cioè $2$.</p>
       <div class="teoria">
         <div class="nome">Dividere per una frazione</div>
-        <div class="frase">Per dividere un numero per una frazione si moltiplica il numero per la frazione <strong>capovolta</strong>: numeratore e denominatore si scambiano di posto.</div>
-        <div class="f sx">$\displaystyle n:\frac{a}{b}=n\cdot\frac{b}{a}$</div>
+        <div class="frase">Dividere per una frazione è lo stesso che moltiplicare per la frazione <strong>capovolta</strong>: il suo numeratore e il suo denominatore si scambiano di posto. Quello che sta prima del segno di divisione non si tocca.</div>
+        <div class="f sx">$\displaystyle n:\frac{a}{b}=n\cdot\frac{b}{a}\qquad \text{con}\ a\neq 0$</div>
         <div class="ex">esempio: $20:\frac{2}{3}=20\cdot\frac{3}{2}=30$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Moltiplicare per la frazione senza capovolgerla</div>
+        <div class="nome">Moltiplicare senza capovolgere</div>
         <div class="compare">
           <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle n:\frac{a}{b}=n\cdot\frac{a}{b}$</div></div>
           <div class="arrow">➜</div>
           <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle n:\frac{a}{b}=n\cdot\frac{b}{a}$</div></div>
         </div>
-        <div class="why-txt">Si capovolge la frazione che divide.</div>
+        <div class="why-txt">Senza capovolgere si moltiplica invece di dividere.</div>
       </div>
     </div>
   </details>
@@ -323,7 +323,7 @@ mjx-container[display]{margin:0!important}
       <p class="mossa">Riconoscere che $50\%=\frac{1}{2}$ fa risparmiare la divisione.</p>
       <div class="teoria">
         <div class="nome">Le percentuali che conviene sapere a memoria</div>
-        <div class="frase">Ogni percentuale è una frazione con cento sotto, e le più comuni conviene saperle a memoria già ridotte: il 50% è $\frac{1}{2}$, il 25% è $\frac{1}{4}$, il 20% è $\frac{1}{5}$, il 10% è $\frac{1}{10}$, il 5% è $\frac{1}{20}$. Riconoscerle evita tutti i conti.</div>
+        <div class="frase">Ogni percentuale è una frazione con $100$ sotto, e le più comuni conviene saperle a memoria già ridotte. Riconoscerle fa risparmiare la divisione.</div>
         <div class="f sx">$\displaystyle 50\%=\frac{1}{2},\quad 25\%=\frac{1}{4},\quad 20\%=\frac{1}{5},\quad 10\%=\frac{1}{10},\quad 5\%=\frac{1}{20}$</div>
         <div class="ex">esempio: $\text{il}\ 25\%\ \text{di}\ 40=40:4=10$</div>
       </div>

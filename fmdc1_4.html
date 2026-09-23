@@ -194,8 +194,8 @@ mjx-container[display]{margin:0!important}
       <div class="teoria">
         <div class="nome">La scomposizione in fattori primi</div>
         <div class="frase">Si divide il numero per il <strong>più piccolo primo</strong> che lo divide, poi si ricomincia sul risultato, fino ad arrivare a $1$. Si prova prima il $2$ — un numero si divide per $2$ quando finisce con una cifra pari — e se non va si passa al $3$, poi al $5$, poi al $7$. La scomposizione che si ottiene è <strong>una sola</strong>: non dipende dall'ordine in cui si prova.</div>
-        <div class="f sx">$\displaystyle n=p_{1}\cdot p_{2}\cdot\ldots\cdot p_{k}$</div>
-        <div class="ex">esempio: $12=2\cdot 2\cdot 3$</div>
+        <div class="f sx">$\displaystyle n=p\cdot q\cdot r\cdot\ldots \qquad \left(p,q,r\ \text{primi}\right)$</div>
+        <div class="ex">esempio: $60:2=30,\ \ 30:2=15,\ \ 15:3=5,\ \ 5:5=1\ \to\ 60=2\cdot 2\cdot 3\cdot 5$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
@@ -224,8 +224,8 @@ mjx-container[display]{margin:0!important}
       <div class="teoria">
         <div class="nome">Il criterio di divisibilità per 3</div>
         <div class="frase">Un numero è divisibile per <strong>3</strong> quando lo è la <strong>somma delle sue cifre</strong>. Se la somma è ancora grande, si può sommare di nuovo: il criterio si può ripetere.</div>
-        <div class="f sx">$\displaystyle 3\mid n\ \Leftrightarrow\ 3\mid(\text{somma delle cifre})$</div>
-        <div class="ex">esempio: $471\to 4+7+1=12$</div>
+        <div class="f sx">$\displaystyle \text{un numero si divide per }3\ \text{quando la somma delle sue cifre si divide per }3$</div>
+        <div class="ex">esempio: $861\to 8+6+1=15\to 861:3=287$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
@@ -235,7 +235,7 @@ mjx-container[display]{margin:0!important}
           <div class="arrow">➜</div>
           <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \text{somma delle cifre divisibile per }3$</div></div>
         </div>
-        <div class="why-txt">Per il 3 conta la somma, non l'ultima cifra.</div>
+        <div class="why-txt">$23$ finisce per $3$ ma per $3$ non si divide.</div>
       </div>
     </div>
   </details>
@@ -265,18 +265,18 @@ mjx-container[display]{margin:0!important}
       <div class="teoria">
         <div class="nome">Il criterio di divisibilità per 5</div>
         <div class="frase">Un numero è divisibile per <strong>5</strong> quando finisce per <strong>0</strong> o per <strong>5</strong>. Nessun'altra cifra finale va bene.</div>
-        <div class="f sx">$\displaystyle 5\mid n\ \Leftrightarrow\ \text{finisce per }0\text{ o }5$</div>
-        <div class="ex">esempio: $340\to\text{finisce per }0$</div>
+        <div class="f sx">$\displaystyle \text{un numero si divide per }5\ \text{quando finisce per }0\ \text{o}\ 5$</div>
+        <div class="ex">esempio: $340\to \text{finisce per }0\to 340:5=68$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
         <div class="nome">Guardare una cifra qualunque invece dell'ultima</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle 5\mid n\ \Leftrightarrow\ n\ \text{contiene un}\ 5$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle n\ \text{contiene un}\ 5$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle 5\mid n\ \Leftrightarrow\ n\ \text{finisce per}\ 0\ \text{o}\ 5$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle n\ \text{finisce per}\ 0\ \text{o}\ 5$</div></div>
         </div>
-        <div class="why-txt">Conta solo la cifra in fondo: $52$ contiene un cinque e per cinque non si divide.</div>
+        <div class="why-txt">$52$ contiene un cinque ma per cinque non si divide.</div>
       </div>
     </div>
   </details>
@@ -295,18 +295,18 @@ mjx-container[display]{margin:0!important}
       <div class="teoria">
         <div class="nome">Quando un numero è primo</div>
         <div class="frase">Un numero è <strong>primo</strong> se è maggiore di $1$ e si divide soltanto per $1$ e per sé stesso. Per esserne sicuri basta provare i numeri primi fino alla sua radice quadrata: se nessuno lo divide, è primo.</div>
-        <div class="f sx">$\displaystyle p\ \text{primo}\ \Leftrightarrow\ p>1\ \text{e divisori}=\{1,p\}$</div>
+        <div class="f sx">$\displaystyle p\ \text{primo}:\ p>1\ \text{e si divide solo per}\ 1\ \text{e per}\ p$</div>
         <div class="ex">esempio: $29:\ 2,3,5\ \text{non lo dividono, e }7^{2}>29$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
         <div class="nome">Credere che ogni dispari sia primo</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle n\ \text{dispari}\Rightarrow n\ \text{primo}$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle n\ \text{dispari}\ \to\ n\ \text{primo}$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle n\ \text{primo e}\ n>2\Rightarrow n\ \text{dispari}$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle n\ \text{dispari}\ \to\ \text{provo a dividerlo}$</div></div>
         </div>
-        <div class="why-txt">Il contrario non vale: $9$, $27$, $49$ sono dispari e non primi.</div>
+        <div class="why-txt">Dispari vuol dire solo che il $2$ non lo divide: restano $3$, $5$, $7$.</div>
       </div>
     </div>
   </details>

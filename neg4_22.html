@@ -201,19 +201,19 @@ mjx-container[display]{margin:0!important}
       <p class="mossa">$-\frac{2}{3}=-\frac{4}{6}$ e $\frac{1}{2}=\frac{3}{6}$; a destra $\frac{1}{2}=\frac{2}{4}$.</p>
       <div class="teoria">
         <div class="nome">Addizione e sottrazione fra frazioni</div>
-        <div class="frase">Due frazioni si sommano o si sottraggono solo quando hanno lo <strong>stesso denominatore</strong>. Si cerca il minimo comune multiplo dei denominatori, si riscrivono tutte con quel denominatore e poi si sommano o si sottraggono i soli numeratori.</div>
-        <div class="f sx">$\displaystyle \frac{a}{b}+\frac{c}{d}=\frac{a\cdot\left(m:b\right)+c\cdot\left(m:d\right)}{m}\quad\text{con}\ m=\text{mcm}(b;d)$</div>
-        <div class="ex">esempio: $\frac{1}{3}+\frac{1}{6}=\frac{2+1}{6}=\frac{3}{6}$</div>
+        <div class="frase">Due frazioni si sommano o si sottraggono solo quando hanno lo <strong>stesso denominatore</strong>. Come denominatore comune si prende il minimo comune multiplo: ogni numeratore si moltiplica per quante volte il suo denominatore sta nel mcm, e poi si sommano o si sottraggono i soli numeratori.</div>
+        <div class="f sx">$\displaystyle \frac{a}{b}\pm\frac{c}{d}=\frac{a\cdot\left(m:b\right)\pm c\cdot\left(m:d\right)}{m}\quad \text{con}\ m=\text{mcm}(b;d)$</div>
+        <div class="ex">esempio: $\frac{3}{4}+\frac{1}{5}=\frac{3\cdot 5+1\cdot 4}{20}=\frac{19}{20}$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Sommare numeratori con numeratori e denominatori con denominatori</div>
+        <div class="nome">Sommare anche i denominatori</div>
         <div class="compare">
           <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{a}{b}+\frac{c}{d}=\frac{a+c}{b+d}$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{a}{b}+\frac{c}{d}=\frac{a\cdot\left(m:b\right)+c\cdot\left(m:d\right)}{m}$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{a}{b}+\frac{c}{d}=\frac{a\cdot\left(m:b\right)+ c\cdot\left(m:d\right)}{m}$</div></div>
         </div>
-        <div class="why-txt">Il denominatore si rende uguale al mcm, non si somma.</div>
+        <div class="why-txt">Il denominatore dice quanto è grande la fetta: non cambia.</div>
       </div>
     </div>
   </details>
@@ -242,7 +242,7 @@ mjx-container[display]{margin:0!important}
       <p class="mossa">I due fattori sono tutti e due negativi: i segni si accoppiano e spariscono.</p>
       <div class="teoria">
         <div class="nome">La regola dei segni</div>
-        <div class="frase">Nel prodotto e nella divisione, segni <strong>uguali</strong> danno più, segni <strong>diversi</strong> danno meno. Con più di due fattori si contano i meno: se sono in numero dispari il risultato è negativo, se sono pari è positivo. Non c'entra niente con la regola della somma.</div>
+        <div class="frase">Nel prodotto e nella divisione, segni uguali danno più e segni diversi danno meno; nella somma questa regola non vale. Con più di due fattori si contano i meno: se sono dispari il risultato è negativo, se sono pari è positivo.</div>
         <div class="f sx">$\displaystyle (-)\cdot(-)=+,\ \ (-):(-)=+,\qquad (-)\cdot(+)=-,\ \ (-):(+)=-$</div>
         <div class="ex">esempio: $\left(-30\right):\left(-5\right)=+6,\qquad\left(-30\right):5=-6$</div>
       </div>
@@ -250,11 +250,11 @@ mjx-container[display]{margin:0!important}
         <div class="k">⚠️ L'errore che si fa qui</div>
         <div class="nome">Usare la regola dei segni nella somma</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle -a-b=+ab$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle -a-b=+\left(a+b\right)$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle -a-b=-(a+b)$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle -a-b=-\left(a+b\right)$</div></div>
         </div>
-        <div class="why-txt">Meno per meno fa più solo nel prodotto.</div>
+        <div class="why-txt">Qui non si moltiplica: si toglie due volte.</div>
       </div>
     </div>
   </details>
@@ -274,7 +274,7 @@ mjx-container[display]{margin:0!important}
         <div class="nome">Moltiplicare due frazioni</div>
         <div class="frase">Per moltiplicare due frazioni si moltiplicano i <strong>numeratori fra loro</strong> e i <strong>denominatori fra loro</strong>. Non serve il denominatore comune: quello serve solo per addizioni e sottrazioni.</div>
         <div class="f sx">$\displaystyle \frac{a}{b}\cdot\frac{c}{d}=\frac{a\cdot c}{b\cdot d}$</div>
-        <div class="ex">esempio: $\frac{2}{4}\cdot\frac{9}{8}=\frac{18}{32}$</div>
+        <div class="ex">esempio: $\frac{3}{8}\cdot\frac{5}{4}=\frac{15}{32}$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>

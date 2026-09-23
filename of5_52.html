@@ -197,7 +197,7 @@ mjx-container[display]{margin:0!important}
       <p class="mossa">Tutte e due le frazioni riportano alla prima parte, se ci si arriva passando dalla seconda.</p>
       <div class="teoria">
         <div class="nome">Tre quantità, un solo intero</div>
-        <div class="frase">Quando le quantità sono tre, si sceglie come intero quella a cui si riferiscono le frazioni e si scrivono le altre due come frazioni di quella. Poi si procede come con due: il totale vale tutte le parti insieme, una volta portate allo stesso denominatore.</div>
+        <div class="frase">Quando le quantità sono tre si prende come intero quella da cui partono tutte le altre: se una è frazione di un'altra e non dell'intero, la si riporta prima a quella e poi all'intero. Poi si somma, portando tutto allo stesso denominatore.</div>
         <div class="f sx">$\displaystyle A=1,\quad B=\frac{a}{b}\ \text{di}\ A,\quad C=\frac{c}{d}\ \text{di}\ A\ \to\ A+B+C=1+\frac{a}{b}+\frac{c}{d}$</div>
         <div class="ex">esempio: $\text{B è}\ \frac{2}{3}\ \text{di A, C è}\ \frac{1}{6}\ \text{di A}\ \to\ 1+\frac{2}{3}+\frac{1}{6}=\frac{11}{6}$</div>
       </div>
@@ -247,7 +247,7 @@ mjx-container[display]{margin:0!important}
       <p class="mossa">$5:5=1$; $2:2=1$ e $8:2=4$.</p>
       <div class="teoria">
         <div class="nome">Semplificare a croce prima di moltiplicare</div>
-        <div class="frase">Prima di eseguire il prodotto si semplifica <strong>in croce</strong>: un numeratore con il denominatore dell'<strong>altra</strong> frazione. Si dividono per lo stesso numero e si scrivono i risultati al loro posto. Semplificare dopo aver moltiplicato porta allo stesso risultato, ma passando da numeri molto più grandi — ed è lì che nascono gli errori di calcolo.</div>
+        <div class="frase">Prima di moltiplicare si semplifica <strong>in croce</strong>: un numeratore con il denominatore dell'altra frazione, divisi tutti e due per lo stesso numero. Semplificare dopo porta allo stesso risultato, ma con numeri molto più grandi, ed è lì che nascono gli errori di calcolo.</div>
         <div class="f sx">$\displaystyle \frac{a\cdot k}{b}\cdot\frac{c}{d\cdot k}=\frac{a}{b}\cdot\frac{c}{d}$</div>
         <div class="ex">esempio: $\frac{9}{5}\cdot\frac{5}{6}=\frac{3}{1}\cdot\frac{1}{2}$</div>
       </div>
@@ -288,19 +288,19 @@ mjx-container[display]{margin:0!important}
       <p class="mossa">$\text{mcm}(5;4)=20$: $1=\frac{20}{20}$, $\frac{2}{5}=\frac{8}{20}$, $\frac{1}{4}=\frac{5}{20}$.</p>
       <div class="teoria">
         <div class="nome">Addizione e sottrazione fra frazioni</div>
-        <div class="frase">Due frazioni si sommano o si sottraggono solo quando hanno lo <strong>stesso denominatore</strong>. Si cerca il minimo comune multiplo dei denominatori, si riscrivono tutte con quel denominatore e poi si sommano o si sottraggono i soli numeratori.</div>
+        <div class="frase">Due frazioni si sommano o si sottraggono solo quando hanno lo <strong>stesso denominatore</strong>. Come denominatore comune si prende il minimo comune multiplo: ogni numeratore si moltiplica per quante volte il suo denominatore sta nel mcm, e poi si sommano o si sottraggono i soli numeratori.</div>
         <div class="f sx">$\displaystyle \frac{a}{b}\pm\frac{c}{d}=\frac{a\cdot\left(m:b\right)\pm c\cdot\left(m:d\right)}{m}\quad \text{con}\ m=\text{mcm}(b;d)$</div>
-        <div class="ex">esempio: $\frac{1}{3}+\frac{1}{6}=\frac{2}{6}+\frac{1}{6}=\frac{3}{6}$</div>
+        <div class="ex">esempio: $\frac{1}{4}+\frac{3}{10}=\frac{1\cdot 5+3\cdot 2}{20}=\frac{11}{20}$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Sommare numeratori con numeratori e denominatori con denominatori</div>
+        <div class="nome">Sommare anche i denominatori</div>
         <div class="compare">
           <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{a}{b}+\frac{c}{d}=\frac{a+c}{b+d}$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{a}{b}+\frac{c}{d}=\frac{a\cdot\left(m:b\right)+c\cdot\left(m:d\right)}{m}$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{a}{b}+\frac{c}{d}=\frac{a\cdot\left(m:b\right)+ c\cdot\left(m:d\right)}{m}$</div></div>
         </div>
-        <div class="why-txt">Il denominatore si rende uguale al mcm, non si somma.</div>
+        <div class="why-txt">Il denominatore dice quanto è grande la fetta: non cambia.</div>
       </div>
     </div>
   </details>
@@ -321,6 +321,16 @@ mjx-container[display]{margin:0!important}
         <div class="frase">Quando si sa quanto valgono tante parti uguali messe insieme, una parte sola si trova dividendo per il numero delle parti. Poi ogni quantità si ottiene moltiplicando quella parte per il numero di parti che contiene.</div>
         <div class="f sx">$\displaystyle \text{una parte}=\text{valore}:\text{numero delle parti}$</div>
         <div class="ex">esempio: $5\ \text{parti valgono}\ 20\ \to\ \text{una parte}=20:5=4$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Dividere per il numero sbagliato</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \text{una parte}=\frac{\text{valore}}{\text{denominatore della frazione}}$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \text{una parte}=\frac{\text{valore}}{\text{quante parti fanno quel valore}}$</div></div>
+        </div>
+        <div class="why-txt">Si divide per le parti che formano quella quantità.</div>
       </div>
     </div>
   </details>

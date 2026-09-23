@@ -206,19 +206,19 @@ mjx-container[display]{margin:0!important}
       <p class="mossa">$-1+\frac{1}{4}=-\frac{3}{4}$, $2+\frac{5}{3}=\frac{11}{3}$, $-5+\frac{1}{2}=-\frac{9}{2}$, e così le altre.</p>
       <div class="teoria">
         <div class="nome">Addizione e sottrazione fra frazioni</div>
-        <div class="frase">Due frazioni si sommano o si sottraggono solo quando hanno lo <strong>stesso denominatore</strong>. Si cerca il minimo comune multiplo dei denominatori, si riscrivono tutte con quel denominatore e poi si sommano o si sottraggono i soli numeratori.</div>
-        <div class="f sx">$\displaystyle \frac{a}{m}+\frac{c}{m}=\frac{a+c}{m}\qquad \text{con}\ m=\text{mcm dei denominatori}$</div>
-        <div class="ex">esempio: $\frac{2}{11}+\frac{3}{33}=\frac{6}{33}+\frac{3}{33}=\frac{9}{33}$</div>
+        <div class="frase">Due frazioni si sommano o si sottraggono solo quando hanno lo <strong>stesso denominatore</strong>. Come denominatore comune si prende il minimo comune multiplo: ogni numeratore si moltiplica per quante volte il suo denominatore sta nel mcm, e poi si sommano o si sottraggono i soli numeratori.</div>
+        <div class="f sx">$\displaystyle \frac{a}{b}\pm\frac{c}{d}=\frac{a\cdot\left(m:b\right)\pm c\cdot\left(m:d\right)}{m}\quad \text{con}\ m=\text{mcm}(b;d)$</div>
+        <div class="ex">esempio: $\frac{3}{10}+\frac{1}{15}=\frac{3\cdot 3+1\cdot 2}{30}=\frac{11}{30}$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
         <div class="nome">Sommare anche i denominatori</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{a}{m}+\frac{c}{m}=\frac{a+c}{m+m}$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{a}{b}+\frac{c}{d}=\frac{a+c}{b+d}$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{a}{m}+\frac{c}{m}=\frac{a+c}{m}$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{a}{b}+\frac{c}{d}=\frac{a\cdot\left(m:b\right)+ c\cdot\left(m:d\right)}{m}$</div></div>
         </div>
-        <div class="why-txt">Il denominatore dice la misura delle fette: si sommano solo i numeratori.</div>
+        <div class="why-txt">Il denominatore dice quanto è grande la fetta: non cambia.</div>
       </div>
     </div>
   </details>
@@ -266,19 +266,19 @@ mjx-container[display]{margin:0!important}
       <p class="mossa">Dividere per $-\frac{1}{8}$ è moltiplicare per $-8$, e dividere per $\frac{1}{5}$ è moltiplicare per $5$.</p>
       <div class="teoria">
         <div class="nome">Dividere per una frazione</div>
-        <div class="frase">Per dividere un numero per una frazione si moltiplica il numero per la frazione <strong>capovolta</strong>: numeratore e denominatore si scambiano di posto.</div>
-        <div class="f sx">$\displaystyle n:\frac{a}{b}=n\cdot\frac{b}{a}$</div>
+        <div class="frase">Dividere per una frazione è lo stesso che moltiplicare per la frazione <strong>capovolta</strong>: il suo numeratore e il suo denominatore si scambiano di posto. Quello che sta prima del segno di divisione non si tocca.</div>
+        <div class="f sx">$\displaystyle n:\frac{a}{b}=n\cdot\frac{b}{a}\qquad \text{con}\ a\neq 0$</div>
         <div class="ex">esempio: $20:\frac{2}{3}=20\cdot\frac{3}{2}=30$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Moltiplicare per la frazione senza capovolgerla</div>
+        <div class="nome">Moltiplicare senza capovolgere</div>
         <div class="compare">
           <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle n:\frac{a}{b}=n\cdot\frac{a}{b}$</div></div>
           <div class="arrow">➜</div>
           <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle n:\frac{a}{b}=n\cdot\frac{b}{a}$</div></div>
         </div>
-        <div class="why-txt">Si capovolge la frazione che divide.</div>
+        <div class="why-txt">Senza capovolgere si moltiplica invece di dividere.</div>
       </div>
     </div>
   </details>
@@ -296,7 +296,7 @@ mjx-container[display]{margin:0!important}
       <p class="mossa">L'$8$ intero si semplifica con il $16$ al denominatore.</p>
       <div class="teoria">
         <div class="nome">Semplificare prima di moltiplicare</div>
-        <div class="frase">Quando un numero intero moltiplica una frazione, si semplifica quel numero con il <strong>denominatore</strong> prima di fare il prodotto: si dividono tutti e due per un divisore comune. Farlo dopo porta allo stesso risultato, ma passando da numeri molto più grandi.</div>
+        <div class="frase">Quando un numero intero e una frazione si moltiplicano, si semplifica il numero con il <strong>denominatore</strong> prima di fare il prodotto: si dividono tutti e due per un divisore comune. Farlo dopo porta allo stesso risultato, ma passando da numeri molto più grandi.</div>
         <div class="f sx">$\displaystyle \frac{a}{b\cdot k}\cdot\left(n\cdot k\right)=\frac{a\cdot n}{b}$</div>
         <div class="ex">esempio: $\frac{7}{10}\cdot 500=7\cdot 50=350$</div>
       </div>
@@ -326,7 +326,7 @@ mjx-container[display]{margin:0!important}
       <p class="mossa">Dentro la quadra il minimo comune multiplo è $4$: $\frac{45}{2}$ diventa $\frac{90}{4}$ e $4$ diventa $\frac{16}{4}$.</p>
       <div class="teoria">
         <div class="nome">Frazioni equivalenti</div>
-        <div class="frase">Moltiplicando numeratore e denominatore per lo <strong>stesso</strong> numero si ottiene una frazione diversa da vedere ma uguale di valore. È così che si riscrivono più frazioni con il denominatore comune.</div>
+        <div class="frase">Moltiplicando numeratore e denominatore per uno stesso numero, diverso da zero, si ottiene una frazione diversa da vedere ma uguale di valore. È così che si riscrivono più frazioni con lo stesso denominatore.</div>
         <div class="f sx">$\displaystyle \frac{a}{b}=\frac{a\cdot k}{b\cdot k}$</div>
         <div class="ex">esempio: $\frac{2}{3}=\frac{2\cdot 4}{3\cdot 4}=\frac{8}{12}$</div>
       </div>
@@ -338,7 +338,7 @@ mjx-container[display]{margin:0!important}
           <div class="arrow">➜</div>
           <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{a}{b}=\frac{a\cdot k}{b\cdot k}$</div></div>
         </div>
-        <div class="why-txt">Sopra e sotto, sempre insieme.</div>
+        <div class="why-txt">Toccando solo il denominatore la frazione cambia valore.</div>
       </div>
     </div>
   </details>

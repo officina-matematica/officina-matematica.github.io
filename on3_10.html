@@ -241,11 +241,11 @@ mjx-container[display]{margin:0!important}
         <div class="k">⚠️ L'errore che si fa qui</div>
         <div class="nome">Eseguire l'addizione prima della sottrazione</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a-b+c=a-(b+c)$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a-b+c=a-\left(b+c\right)$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a-b+c=(a-b)+c$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a-b+c=\left(a-b\right)+c$</div></div>
         </div>
-        <div class="why-txt">Si va da sinistra, una operazione alla volta.</div>
+        <div class="why-txt">Facendo prima l'addizione, il $c$ finisce tolto invece che aggiunto.</div>
       </div>
     </div>
   </details>
@@ -263,9 +263,9 @@ mjx-container[display]{margin:0!important}
       <p class="mossa">Dentro la quadra $5\cdot 2=10$ va chiuso prima delle addizioni. Fuori dalla quadra resta $35\cdot 2=70$, anch'esso da chiudere prima della sottrazione.</p>
       <div class="teoria">
         <div class="nome">Priorità delle operazioni</div>
-        <div class="frase">La moltiplicazione si esegue prima dell'addizione, anche quando è scritta in mezzo a una somma. I numeri che la circondano aspettano il loro turno.</div>
-        <div class="f sx">$\displaystyle a+b\cdot c=a+(b\cdot c)$</div>
-        <div class="ex">esempio: $7+9\cdot 3=7+27=34$</div>
+        <div class="frase">Dentro una parentesi vale la stessa regola: prima la moltiplicazione, poi l'addizione. I numeri che la circondano aspettano il loro turno.</div>
+        <div class="f sx">$\displaystyle \left[a+b\cdot c\right]=a+\left(b\cdot c\right)$</div>
+        <div class="ex">esempio: $\left[9+4\cdot 7\right]=9+28=37$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
@@ -293,9 +293,9 @@ mjx-container[display]{margin:0!important}
       <p class="mossa">Dentro la quadra viene $26$, e il $\cdot 3$ che segue moltiplica quel risultato: tutti e tre i pezzi che stavano dentro, non solo il $6$.</p>
       <div class="teoria">
         <div class="nome">Una parentesi seguita da una moltiplicazione</div>
-        <div class="frase">Quando dopo una parentesi c'è una moltiplicazione, il fattore moltiplica il risultato di <strong>tutta</strong> la parentesi: prima si chiude la parentesi, poi si moltiplica quel numero.</div>
-        <div class="f sx">$\displaystyle \left(a+b\right)\cdot c=p\cdot c\quad\text{con}\ p=a+b$</div>
-        <div class="ex">esempio: $\left(2+3\right)\cdot 4=5\cdot 4=20$</div>
+        <div class="frase">Quando dopo una parentesi c'è una moltiplicazione, il fattore moltiplica tutto quello che sta dentro, non solo l'ultimo pezzo. Il modo più sicuro è chiudere prima la parentesi e poi moltiplicare il risultato.</div>
+        <div class="f sx">$\displaystyle \left(a+b\right)\cdot c=a\cdot c+b\cdot c$</div>
+        <div class="ex">esempio: $\left(7+1\right)\cdot 5=8\cdot 5=40$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
@@ -303,9 +303,9 @@ mjx-container[display]{margin:0!important}
         <div class="compare">
           <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \left(a+b\right)\cdot c=a+b\cdot c$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \left(a+b\right)\cdot c=p\cdot c$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \left(a+b\right)\cdot c=a\cdot c+b\cdot c$</div></div>
         </div>
-        <div class="why-txt">Il fattore moltiplica tutta la parentesi.</div>
+        <div class="why-txt">Senza la parentesi il $c$ moltiplicherebbe solo il $b$.</div>
       </div>
     </div>
   </details>

@@ -231,7 +231,7 @@ mjx-container[display]{margin:0!important}
         <div class="nome">Priorità delle operazioni</div>
         <div class="frase">In un'espressione senza parentesi si eseguono prima tutte le moltiplicazioni e le divisioni. Solo dopo si passa alle addizioni e alle sottrazioni.</div>
         <div class="f sx">$\displaystyle a+b\cdot c=a+\left(b\cdot c\right)$</div>
-        <div class="ex">esempio: $2+3\cdot 4=2+12=14$</div>
+        <div class="ex">esempio: $7+5\cdot 6=7+30=37$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
@@ -267,11 +267,11 @@ mjx-container[display]{margin:0!important}
         <div class="k">⚠️ L'errore che si fa qui</div>
         <div class="nome">Eseguire l'addizione prima della sottrazione</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a-b+c=a-(b+c)$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a-b+c=a-\left(b+c\right)$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a-b+c=(a-b)+c$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a-b+c=\left(a-b\right)+c$</div></div>
         </div>
-        <div class="why-txt">Si va da sinistra, una operazione alla volta.</div>
+        <div class="why-txt">Facendo prima l'addizione, il $c$ finisce tolto invece che aggiunto.</div>
       </div>
     </div>
   </details>

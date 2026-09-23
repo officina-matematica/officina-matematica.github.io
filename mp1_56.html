@@ -191,18 +191,18 @@ mjx-container[display]{margin:0!important}
       <div class="teoria">
         <div class="nome">Sostituire un numero a una lettera</div>
         <div class="frase">Al posto di ogni lettera si scrive il suo valore, <strong>sempre fra parentesi</strong> se è negativo, una frazione o un decimale. Le moltiplicazioni nascoste diventano visibili: $3ab$ vuol dire $3\cdot a\cdot b$.</div>
-        <div class="f sx">$\displaystyle 3ab\ \text{con}\ a=p,\ b=-q\ \to\ 3\cdot p\cdot\left(-q\right)$</div>
-        <div class="ex">esempio: $5k^{2}\ \text{con}\ k=-3\ \to\ 5\cdot\left(-3\right)^{2}=45$</div>
+        <div class="f sx">$\displaystyle 3ab\ \text{con}\ a=6,\ b=-5\ \to\ 3\cdot 6\cdot\left(-5\right)=-90$</div>
+        <div class="ex">esempio: $6t^{2}\ \text{con}\ t=-3\ \to\ 6\cdot\left(-3\right)^{2}=54$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
         <div class="nome">Sostituire un valore negativo senza parentesi</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle k^{2}\ \text{con}\ k=-p\ \to\ -p^{2}$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle t^{2}\ \text{con}\ t=-5\ \to\ -5^{2}=-25$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle k^{2}\ \text{con}\ k=-p\ \to\ \left(-p\right)^{2}$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle t^{2}\ \text{con}\ t=-5\ \to\ \left(-5\right)^{2}=25$</div></div>
         </div>
-        <div class="why-txt">Senza parentesi l'esponente lascia fuori il segno.</div>
+        <div class="why-txt">Senza parentesi il quadrato prende solo il cinque e il meno resta fuori.</div>
       </div>
     </div>
   </details>
@@ -220,7 +220,7 @@ mjx-container[display]{margin:0!important}
       <p class="mossa">$x+y=0$: la seconda frazione dovrebbe dividere per zero.</p>
       <div class="teoria">
         <div class="nome">Il denominatore non può essere zero</div>
-        <div class="frase">Una divisione per zero non ha risultato. Se, sostituiti i valori, un denominatore vale $0$, l'espressione <strong>non ha significato</strong> per quei valori. Per trovare il valore da escludere si scrive «denominatore $=0$» e si risolve. Vale anche per un esponente negativo, che è una frazione nascosta.</div>
+        <div class="frase">Una divisione per zero non dà nessun risultato: se un denominatore vale $0$, l'espressione non ha significato per quel valore. Per trovare il valore vietato si scrive «denominatore $=0$» e si risolve, e ricorda che anche un esponente negativo nasconde una frazione.</div>
         <div class="f sx">$\displaystyle \frac{A}{B}\ \text{ha significato solo se}\ B\neq 0$</div>
         <div class="ex">esempio: $\frac{5}{k-4}\ \text{con}\ k=4\ \to\ \frac{5}{0}\ \text{non esiste}$</div>
       </div>

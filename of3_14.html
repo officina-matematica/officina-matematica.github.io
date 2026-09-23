@@ -206,18 +206,18 @@ mjx-container[display]{margin:0!important}
       <div class="teoria">
         <div class="nome">Addizione e sottrazione fra frazioni</div>
         <div class="frase">Due frazioni si sommano o si sottraggono solo quando hanno lo <strong>stesso denominatore</strong>. Come denominatore comune si prende il <strong>minimo comune multiplo</strong>: ogni numeratore si moltiplica per quante volte il suo denominatore sta nel mcm, e poi si sommano o si sottraggono i soli numeratori.</div>
-        <div class="f sx">$\displaystyle \frac{a}{b}+\frac{c}{d}=\frac{a\cdot(m:b)+c\cdot(m:d)}{m}\quad\text{con}\ m=\text{mcm}(b;d)$</div>
+        <div class="f sx">$\displaystyle \frac{a}{b}\pm\frac{c}{d}=\frac{a\cdot\left(m:b\right)\pm c\cdot\left(m:d\right)}{m}\quad \text{con}\ m=\text{mcm}(b;d)$</div>
         <div class="ex">esempio: $\frac{1}{4}+\frac{1}{10}=\frac{1\cdot 5+1\cdot 2}{20}=\frac{7}{20}$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
         <div class="nome">Sommare anche i denominatori</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{a}{m}+\frac{c}{m}=\frac{a+c}{m+m}$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{a}{b}+\frac{c}{d}=\frac{a+c}{b+d}$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{a}{m}+\frac{c}{m}=\frac{a+c}{m}$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{a}{b}+\frac{c}{d}=\frac{a\cdot\left(m:b\right)+ c\cdot\left(m:d\right)}{m}$</div></div>
         </div>
-        <div class="why-txt">Il denominatore comune si scrive una volta sola.</div>
+        <div class="why-txt">Il denominatore dice quanto è grande la fetta: non cambia.</div>
       </div>
     </div>
   </details>
@@ -247,18 +247,18 @@ mjx-container[display]{margin:0!important}
       <div class="teoria">
         <div class="nome">Priorità delle operazioni</div>
         <div class="frase">In un'espressione senza parentesi si eseguono prima tutte le moltiplicazioni e le divisioni. Solo dopo si passa alle addizioni e alle sottrazioni.</div>
-        <div class="f sx">$\displaystyle a+b\cdot c=a+(b\cdot c)$</div>
-        <div class="ex">esempio: $5+6\cdot 7=5+42=47$</div>
+        <div class="f sx">$\displaystyle a+b:c=a+\left(b:c\right)$</div>
+        <div class="ex">esempio: $7+20:5=7+4=11$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Eseguire l'addizione prima della moltiplicazione</div>
+        <div class="nome">Sommare prima di dividere</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a+b\cdot c=(a+b)\cdot c$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a+b:c=\left(a+b\right):c$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a+b\cdot c=a+(b\cdot c)$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a+b:c=a+\left(b:c\right)$</div></div>
         </div>
-        <div class="why-txt">La moltiplicazione non aspetta l'addizione.</div>
+        <div class="why-txt">La divisione si chiude prima della somma.</div>
       </div>
     </div>
   </details>
@@ -358,7 +358,7 @@ mjx-container[display]{margin:0!important}
       <p class="mossa">$12:12=1$ sopra e sotto.</p>
       <div class="teoria">
         <div class="nome">Ridurre una frazione ai minimi termini</div>
-        <div class="frase">Dividendo numeratore e denominatore per lo stesso numero il valore non cambia, ma i numeri diventano più piccoli. Conviene farlo appena si può: i conti che vengono dopo sono molto più facili.</div>
+        <div class="frase">Dividendo numeratore e denominatore per lo stesso numero il valore non cambia, ma i numeri diventano più piccoli. Conviene farlo appena si può e andare avanti finché sopra e sotto non hanno più divisori in comune.</div>
         <div class="f sx">$\displaystyle \frac{a\cdot k}{b\cdot k}=\frac{a}{b}$</div>
         <div class="ex">esempio: $\frac{9}{12}=\frac{3\cdot 3}{4\cdot 3}=\frac{3}{4}$</div>
       </div>

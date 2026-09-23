@@ -207,19 +207,19 @@ mjx-container[display]{margin:0!important}
       <p class="mossa">Sono due tonde indipendenti, si possono fare insieme: nella prima $\frac{2}{3}=\frac{4}{6}$, nella seconda $\frac{1}{3}=\frac{4}{12}$ e $\frac{1}{4}=\frac{3}{12}$.</p>
       <div class="teoria">
         <div class="nome">Addizione e sottrazione fra frazioni</div>
-        <div class="frase">Due frazioni si sommano o si sottraggono solo quando hanno lo <strong>stesso denominatore</strong>. Si cerca il minimo comune multiplo dei denominatori, si riscrivono tutte con quel denominatore e poi si sommano o si sottraggono i soli numeratori.</div>
+        <div class="frase">Due frazioni si sommano o si sottraggono solo quando hanno lo <strong>stesso denominatore</strong>. Come denominatore comune si prende il minimo comune multiplo: ogni numeratore si moltiplica per quante volte il suo denominatore sta nel mcm, e poi si sommano o si sottraggono i soli numeratori.</div>
         <div class="f sx">$\displaystyle \frac{a}{b}\pm\frac{c}{d}=\frac{a\cdot\left(m:b\right)\pm c\cdot\left(m:d\right)}{m}\quad \text{con}\ m=\text{mcm}(b;d)$</div>
-        <div class="ex">esempio: $\frac{1}{3}+\frac{1}{6}=\frac{1\cdot 2+1\cdot 1}{6}=\frac{3}{6}$</div>
+        <div class="ex">esempio: $\frac{1}{4}+\frac{1}{6}=\frac{1\cdot 3+1\cdot 2}{12}=\frac{5}{12}$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
         <div class="nome">Sommare anche i denominatori</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{a}{m}+\frac{b}{m}=\frac{a+b}{m+m}$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{a}{b}+\frac{c}{d}=\frac{a+c}{b+d}$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{a}{m}+\frac{b}{m}=\frac{a+b}{m}$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{a}{b}+\frac{c}{d}=\frac{a\cdot\left(m:b\right)+ c\cdot\left(m:d\right)}{m}$</div></div>
         </div>
-        <div class="why-txt">Il denominatore comune si scrive una volta sola.</div>
+        <div class="why-txt">Il denominatore dice quanto è grande la fetta: non cambia.</div>
       </div>
     </div>
   </details>
@@ -237,7 +237,7 @@ mjx-container[display]{margin:0!important}
       <p class="mossa">$2=\frac{6}{3}$ nella terza tonda e $2=\frac{8}{4}$ nella quarta: ogni volta l'intero prende il denominatore della frazione che gli sta accanto.</p>
       <div class="teoria">
         <div class="nome">Un numero intero scritto come frazione</div>
-        <div class="frase">Ogni numero intero si può scrivere come frazione: basta dargli il denominatore che serve e moltiplicare per quello anche il numero stesso. Solo così lo si può sommare a una frazione.</div>
+        <div class="frase">Ogni numero intero si può scrivere come frazione: basta dargli il denominatore che serve e moltiplicare per quello anche il numero stesso. Solo così lo si può sommare o sottrarre a una frazione.</div>
         <div class="f sx">$\displaystyle a=\frac{a\cdot b}{b}$</div>
         <div class="ex">esempio: $3=\frac{3\cdot 4}{4}=\frac{12}{4}$</div>
       </div>
@@ -249,7 +249,7 @@ mjx-container[display]{margin:0!important}
           <div class="arrow">➜</div>
           <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a+\frac{c}{b}=\frac{a\cdot b+c}{b}$</div></div>
         </div>
-        <div class="why-txt">L'intero va moltiplicato per il denominatore.</div>
+        <div class="why-txt">L'intero vale $b$ fette, non una: senza moltiplicarlo per $b$ se ne conta molto meno di quello che è.</div>
       </div>
     </div>
   </details>
@@ -268,7 +268,7 @@ mjx-container[display]{margin:0!important}
       <div class="teoria">
         <div class="nome">Si parte dalla parentesi più interna</div>
         <div class="frase">Quando ci sono parentesi dentro altre parentesi si comincia sempre dalla più interna — la tonda — poi la quadra, infine la graffa. Una parentesi già svolta si toglie, e si passa a quella che la conteneva.</div>
-        <div class="f sx">$\displaystyle \left\{\ \left[\ \left(\ \right)\ \right]\ \right\}$</div>
+        <div class="f sx">$\displaystyle \left(\ \right)\ \to\ \left[\ \right]\ \to\ \left\{\ \right\}$</div>
         <div class="ex">esempio: $2-\left[3-\left(4-1\right)\right]=2-\left[3-3\right]=2$</div>
       </div>
     </div>
@@ -287,7 +287,7 @@ mjx-container[display]{margin:0!important}
       <p class="mossa">$3$ e $6$ si dividono entrambi per $3$: $\frac{3}{6}$ diventa $\frac{1}{2}$.</p>
       <div class="teoria">
         <div class="nome">Ridurre una frazione ai minimi termini</div>
-        <div class="frase">Dividendo numeratore e denominatore per lo stesso numero il valore non cambia, ma i numeri diventano più piccoli. Conviene farlo appena si può: i conti che vengono dopo sono molto più facili.</div>
+        <div class="frase">Dividendo numeratore e denominatore per lo stesso numero il valore non cambia, ma i numeri diventano più piccoli. Conviene farlo appena si può e andare avanti finché sopra e sotto non hanno più divisori in comune.</div>
         <div class="f sx">$\displaystyle \frac{a\cdot k}{b\cdot k}=\frac{a}{b}$</div>
         <div class="ex">esempio: $\frac{9}{12}=\frac{3\cdot 3}{4\cdot 3}=\frac{3}{4}$</div>
       </div>
@@ -328,7 +328,7 @@ mjx-container[display]{margin:0!important}
       <p class="mossa">Il minimo comune multiplo di $2$, $12$, $3$ e $4$ è $12$: $\frac{1}{2}=\frac{6}{12}$, $\frac{5}{3}=\frac{20}{12}$, $\frac{5}{4}=\frac{15}{12}$.</p>
       <div class="teoria">
         <div class="nome">Frazioni equivalenti</div>
-        <div class="frase">Moltiplicando numeratore e denominatore per lo <strong>stesso</strong> numero si ottiene una frazione diversa da vedere ma uguale di valore. È così che si riscrivono più frazioni con il denominatore comune.</div>
+        <div class="frase">Moltiplicando numeratore e denominatore per uno stesso numero, diverso da zero, si ottiene una frazione diversa da vedere ma uguale di valore. È così che si riscrivono più frazioni con lo stesso denominatore.</div>
         <div class="f sx">$\displaystyle \frac{a}{b}=\frac{a\cdot k}{b\cdot k}$</div>
         <div class="ex">esempio: $\frac{2}{3}=\frac{2\cdot 4}{3\cdot 4}=\frac{8}{12}$</div>
       </div>
@@ -340,7 +340,7 @@ mjx-container[display]{margin:0!important}
           <div class="arrow">➜</div>
           <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{a}{b}=\frac{a\cdot k}{b\cdot k}$</div></div>
         </div>
-        <div class="why-txt">Sopra e sotto, sempre insieme.</div>
+        <div class="why-txt">Toccando solo il denominatore la frazione cambia valore.</div>
       </div>
     </div>
   </details>
@@ -371,7 +371,7 @@ mjx-container[display]{margin:0!important}
         <div class="nome">Parentesi preceduta dal segno meno</div>
         <div class="frase">Quando davanti a una parentesi c'è il segno meno, si toglie il valore dell'<strong>intera</strong> parentesi, non solo il suo primo termine. Il modo più sicuro è chiudere prima la parentesi e sottrarre il risultato.</div>
         <div class="f sx">$\displaystyle a-\left(b+c\right)=a-b-c$</div>
-        <div class="ex">esempio: $10-\left(3+2\right)=10-5=5$</div>
+        <div class="ex">esempio: $20-\left(7+4\right)=20-11=9$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>

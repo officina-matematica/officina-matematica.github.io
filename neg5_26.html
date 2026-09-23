@@ -205,18 +205,18 @@ mjx-container[display]{margin:0!important}
       <div class="teoria">
         <div class="nome">Un numero decimale come frazione</div>
         <div class="frase">Un decimale con la virgola si scrive come frazione mettendo sopra <strong>il numero senza la virgola</strong> e sotto un uno seguito da tanti zeri quante sono le cifre dopo la virgola.</div>
-        <div class="f sx">$\displaystyle 0{,}a=\frac{a}{10},\qquad 0{,}ab=\frac{ab}{100}$</div>
+        <div class="f sx">$\displaystyle 0{,}7=\frac{7}{10},\qquad 2{,}39=\frac{239}{100}$</div>
         <div class="ex">esempio: $2{,}3=\frac{23}{10},\qquad 0{,}46=\frac{46}{100}$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
         <div class="nome">Contare male gli zeri del denominatore</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle 0{,}ab=\frac{ab}{10}$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle 0{,}29=\frac{29}{10}$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle 0{,}ab=\frac{ab}{100}$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle 0{,}29=\frac{29}{100}$</div></div>
         </div>
-        <div class="why-txt">Uno zero per ogni cifra dopo la virgola.</div>
+        <div class="why-txt">Le cifre dopo la virgola sono due: sono centesimi, e i centesimi hanno $100$ sotto la linea.</div>
       </div>
     </div>
   </details>
@@ -294,19 +294,19 @@ mjx-container[display]{margin:0!important}
       <p class="mossa">Le sei tonde danno $\frac{11}{4}$, $\frac{11}{4}$, $\frac{6}{5}$, $\frac{6}{5}$, $\frac{1}{12}$ e $\frac{1}{12}$: è quello che rende possibili le proprietà delle potenze.</p>
       <div class="teoria">
         <div class="nome">Addizione e sottrazione fra frazioni</div>
-        <div class="frase">Due frazioni si sommano o si sottraggono solo quando hanno lo <strong>stesso denominatore</strong>. Si cerca il minimo comune multiplo dei denominatori, si riscrivono tutte con quel denominatore e poi si sommano o si sottraggono i soli numeratori.</div>
-        <div class="f sx">$\displaystyle \frac{a}{m}+\frac{c}{m}=\frac{a+c}{m}\qquad \text{con}\ m=\text{mcm dei denominatori}$</div>
-        <div class="ex">esempio: $\frac{2}{11}+\frac{3}{33}=\frac{6}{33}+\frac{3}{33}=\frac{9}{33}$</div>
+        <div class="frase">Due frazioni si sommano o si sottraggono solo quando hanno lo <strong>stesso denominatore</strong>. Come denominatore comune si prende il minimo comune multiplo: ogni numeratore si moltiplica per quante volte il suo denominatore sta nel mcm, e poi si sommano o si sottraggono i soli numeratori.</div>
+        <div class="f sx">$\displaystyle \frac{a}{b}\pm\frac{c}{d}=\frac{a\cdot\left(m:b\right)\pm c\cdot\left(m:d\right)}{m}\quad \text{con}\ m=\text{mcm}(b;d)$</div>
+        <div class="ex">esempio: $\frac{3}{10}+\frac{1}{15}=\frac{3\cdot 3+1\cdot 2}{30}=\frac{11}{30}$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
         <div class="nome">Sommare anche i denominatori</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{a}{m}+\frac{c}{m}=\frac{a+c}{m+m}$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{a}{b}+\frac{c}{d}=\frac{a+c}{b+d}$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{a}{m}+\frac{c}{m}=\frac{a+c}{m}$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{a}{b}+\frac{c}{d}=\frac{a\cdot\left(m:b\right)+ c\cdot\left(m:d\right)}{m}$</div></div>
         </div>
-        <div class="why-txt">Il denominatore dice la misura delle fette: si sommano solo i numeratori.</div>
+        <div class="why-txt">Il denominatore dice quanto è grande la fetta: non cambia.</div>
       </div>
     </div>
   </details>
@@ -336,7 +336,7 @@ mjx-container[display]{margin:0!important}
           <div class="arrow">➜</div>
           <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a^{m}:a^{n}=a^{m-n}$</div></div>
         </div>
-        <div class="why-txt">Divisione di potenze, sottrazione di esponenti.</div>
+        <div class="why-txt">Dividendo si tolgono fattori, quindi l'esponente cala.</div>
       </div>
     </div>
   </details>
@@ -355,7 +355,7 @@ mjx-container[display]{margin:0!important}
       <div class="teoria">
         <div class="nome">Potenza con esponente zero</div>
         <div class="frase">Qualsiasi numero diverso da zero, elevato a <strong>zero</strong>, dà come risultato uno. Non zero: uno.</div>
-        <div class="f sx">$\displaystyle a^{0}=1$</div>
+        <div class="f sx">$\displaystyle a^{0}=1\qquad \left(a\neq 0\right)$</div>
         <div class="ex">esempio: $\left(\frac{4}{9}\right)^{0}=1$</div>
       </div>
       <div class="errore">
@@ -366,7 +366,7 @@ mjx-container[display]{margin:0!important}
           <div class="arrow">➜</div>
           <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a^{0}=1$</div></div>
         </div>
-        <div class="why-txt">Esponente zero, risultato uno.</div>
+        <div class="why-txt">Una potenza divisa per sé stessa fa uno.</div>
       </div>
     </div>
   </details>

@@ -202,7 +202,7 @@ mjx-container[display]{margin:0!important}
       <p class="mossa">$2\log_{2}2=\log_{2}2^{2}=\log_{2}4$.</p>
       <div class="teoria">
         <div class="nome">Il logaritmo di una potenza</div>
-        <div class="frase">L'esponente dell'argomento <strong>scende davanti</strong> al logaritmo e diventa un fattore. Letta al contrario, la stessa regola dice che un numero davanti a un logaritmo può rientrare come esponente dell'argomento.</div>
+        <div class="frase">L'esponente dell'argomento scende davanti al logaritmo e diventa un fattore, purché l'argomento sia positivo. Letta al contrario, la stessa regola dice che un numero davanti a un logaritmo può rientrare come esponente dell'argomento.</div>
         <div class="f sx">$\displaystyle \log a^{n}=n\log a$</div>
         <div class="ex">esempio: $\log 2^{5}=5\log 2,\quad 3\log 4=\log 4^{3}$</div>
       </div>
@@ -262,19 +262,19 @@ mjx-container[display]{margin:0!important}
       <p class="mossa">$4:\frac{1}{6}=4\cdot 6=24$.</p>
       <div class="teoria">
         <div class="nome">Dividere per una frazione</div>
-        <div class="frase">Per dividere un numero per una frazione si moltiplica il numero per la frazione <strong>capovolta</strong>: numeratore e denominatore si scambiano di posto.</div>
-        <div class="f sx">$\displaystyle n:\frac{a}{b}=n\cdot\frac{b}{a}$</div>
+        <div class="frase">Dividere per una frazione è lo stesso che moltiplicare per la frazione <strong>capovolta</strong>: il suo numeratore e il suo denominatore si scambiano di posto. Quello che sta prima del segno di divisione non si tocca.</div>
+        <div class="f sx">$\displaystyle n:\frac{a}{b}=n\cdot\frac{b}{a}\qquad \text{con}\ a\neq 0$</div>
         <div class="ex">esempio: $20:\frac{2}{3}=20\cdot\frac{3}{2}=30$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Moltiplicare per la frazione senza capovolgerla</div>
+        <div class="nome">Moltiplicare senza capovolgere</div>
         <div class="compare">
           <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle n:\frac{a}{b}=n\cdot\frac{a}{b}$</div></div>
           <div class="arrow">➜</div>
           <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle n:\frac{a}{b}=n\cdot\frac{b}{a}$</div></div>
         </div>
-        <div class="why-txt">Si capovolge la frazione che divide.</div>
+        <div class="why-txt">Senza capovolgere si moltiplica invece di dividere.</div>
       </div>
     </div>
   </details>
@@ -292,19 +292,19 @@ mjx-container[display]{margin:0!important}
       <p class="mossa">Due logaritmi uguali con segno opposto si annullano.</p>
       <div class="teoria">
         <div class="nome">La somma di due opposti</div>
-        <div class="frase">Due monomi opposti — stessa parte letterale, coefficienti uguali ma di segno contrario — danno somma <strong>zero</strong>. Il risultato è zero e basta: non resta nessuna lettera.</div>
-        <div class="f sx">$\displaystyle ka^{m}-ka^{m}=0$</div>
-        <div class="ex">esempio: $7xy-7xy=0$</div>
+        <div class="frase">Due quantità uguali con il segno opposto si cancellano: la loro somma fa zero. Vale per un numero, per un monomio o per un logaritmo, basta che siano identici.</div>
+        <div class="f sx">$\displaystyle A-A=0$</div>
+        <div class="ex">esempio: $7xy-7xy=0,\qquad \log 5-\log 5=0$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Lasciare la parte letterale</div>
+        <div class="nome">Lasciare in piedi quello che si è annullato</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle ka^{m}-ka^{m}=a^{m}$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle 5a-5a=a$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle ka^{m}-ka^{m}=0$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle 5a-5a=0$</div></div>
         </div>
-        <div class="why-txt">Se il coefficiente è zero, sparisce tutto.</div>
+        <div class="why-txt">Zero volte una lettera fa zero.</div>
       </div>
     </div>
   </details>
@@ -322,8 +322,8 @@ mjx-container[display]{margin:0!important}
       <p class="mossa">$2=\log_{2}2^{2}=\log_{2}4$.</p>
       <div class="teoria">
         <div class="nome">Un numero scritto come logaritmo</div>
-        <div class="frase">Ogni numero si può scrivere come logaritmo in una base scelta: $n$ è l'esponente che porta la base $a$ a diventare $a^{n}$. Serve per mettere un numero insieme ai logaritmi e riunire tutto in uno solo.</div>
-        <div class="f sx">$\displaystyle n=\log_{a}a^{n}$</div>
+        <div class="frase">Ogni numero si può scrivere come logaritmo scegliendo la base che serve: $3$ diventa $\log_{2}2^{3}$, perché $3$ è l'esponente da dare al $2$ per ottenere $8$. Così il numero si unisce ai logaritmi che ha accanto e si riunisce tutto in uno solo.</div>
+        <div class="f sx">$\displaystyle n=\log_{a}a^{n}\quad \left(a>0,\ a\neq 1\right)$</div>
         <div class="ex">esempio: $3=\log_{5}125,\quad 1=\log_{7}7,\quad 0=\log_{7}1$</div>
       </div>
       <div class="errore">

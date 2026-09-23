@@ -236,7 +236,7 @@ mjx-container[display]{margin:0!important}
       <div class="teoria">
         <div class="nome">Si parte dalla parentesi più interna</div>
         <div class="frase">Quando ci sono parentesi dentro altre parentesi si comincia sempre dalla più interna — la tonda — poi la quadra, infine la graffa. Una parentesi già svolta si toglie, e si passa a quella che la conteneva.</div>
-        <div class="f sx">$\displaystyle \left\{\ \left[\ \left(\ \right)\ \right]\ \right\}$</div>
+        <div class="f sx">$\displaystyle \left(\ \right)\ \to\ \left[\ \right]\ \to\ \left\{\ \right\}$</div>
         <div class="ex">esempio: $2-\left[3-\left(4-1\right)\right]=2-\left[3-3\right]=2$</div>
       </div>
     </div>
@@ -257,7 +257,7 @@ mjx-container[display]{margin:0!important}
         <div class="nome">Priorità delle operazioni</div>
         <div class="frase">Dentro le parentesi quadre si ricomincia da capo: prima tutte le moltiplicazioni e le divisioni, poi le addizioni e le sottrazioni.</div>
         <div class="f sx">$\displaystyle \left[a-b\cdot c\right]=a-\left(b\cdot c\right)$</div>
-        <div class="ex">esempio: $\left[20-3\cdot 4\right]=20-12=8$</div>
+        <div class="ex">esempio: $\left[100-11\cdot 6\right]=100-66=34$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
@@ -293,11 +293,11 @@ mjx-container[display]{margin:0!important}
         <div class="k">⚠️ L'errore che si fa qui</div>
         <div class="nome">Eseguire l'addizione prima della sottrazione</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a-b+c=a-(b+c)$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a-b+c=a-\left(b+c\right)$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a-b+c=(a-b)+c$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a-b+c=\left(a-b\right)+c$</div></div>
         </div>
-        <div class="why-txt">Si va da sinistra, una operazione alla volta.</div>
+        <div class="why-txt">Facendo prima l'addizione, il $c$ finisce tolto invece che aggiunto.</div>
       </div>
     </div>
   </details>
@@ -317,7 +317,7 @@ mjx-container[display]{margin:0!important}
         <div class="nome">Parentesi preceduta dal segno meno</div>
         <div class="frase">Quando davanti a una parentesi c'è il segno meno, si toglie il valore dell'<strong>intera</strong> parentesi, non solo il suo primo termine. Il modo più sicuro è chiudere prima la parentesi e sottrarre il risultato.</div>
         <div class="f sx">$\displaystyle a-\left(b+c\right)=a-b-c$</div>
-        <div class="ex">esempio: $10-\left(3+2\right)=10-5=5$</div>
+        <div class="ex">esempio: $20-\left(7+4\right)=20-11=9$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>

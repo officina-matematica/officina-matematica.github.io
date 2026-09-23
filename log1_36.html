@@ -204,18 +204,18 @@ mjx-container[display]{margin:0!important}
       <div class="teoria">
         <div class="nome">Un numero decimale come frazione</div>
         <div class="frase">Un decimale con la virgola si scrive come frazione mettendo sopra <strong>il numero senza la virgola</strong> e sotto un uno seguito da tanti zeri quante sono le cifre dopo la virgola.</div>
-        <div class="f sx">$\displaystyle 0{,}75=\frac{75}{100}$</div>
+        <div class="f sx">$\displaystyle 0{,}7=\frac{7}{10},\qquad 2{,}39=\frac{239}{100}$</div>
         <div class="ex">esempio: $1{,}2=\frac{12}{10}$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
         <div class="nome">Contare male gli zeri del denominatore</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle 0{,}75=\frac{75}{10}$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle 0{,}29=\frac{29}{10}$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle 0{,}75=\frac{75}{100}$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle 0{,}29=\frac{29}{100}$</div></div>
         </div>
-        <div class="why-txt">Uno zero per ogni cifra dopo la virgola.</div>
+        <div class="why-txt">Le cifre dopo la virgola sono due: sono centesimi, e i centesimi hanno $100$ sotto la linea.</div>
       </div>
     </div>
   </details>
@@ -233,7 +233,7 @@ mjx-container[display]{margin:0!important}
       <p class="mossa">$2$ e $10$ si dividono per $2$: restano $1$ e $5$.</p>
       <div class="teoria">
         <div class="nome">Ridurre una frazione ai minimi termini</div>
-        <div class="frase">Dividendo numeratore e denominatore per lo stesso numero il valore non cambia, ma i numeri diventano più piccoli. Conviene farlo appena si può: i conti che vengono dopo sono molto più facili.</div>
+        <div class="frase">Dividendo numeratore e denominatore per lo stesso numero il valore non cambia, ma i numeri diventano più piccoli. Conviene farlo appena si può e andare avanti finché sopra e sotto non hanno più divisori in comune.</div>
         <div class="f sx">$\displaystyle \frac{a\cdot k}{b\cdot k}=\frac{a}{b}$</div>
         <div class="ex">esempio: $\frac{9}{12}=\frac{3\cdot 3}{4\cdot 3}=\frac{3}{4}$</div>
       </div>
@@ -304,8 +304,8 @@ mjx-container[display]{margin:0!important}
       <p class="mossa">$\frac{1}{5}=5^{-1}$: vale per tutti e due i denominatori.</p>
       <div class="teoria">
         <div class="nome">Potenza con esponente negativo</div>
-        <div class="frase">Un esponente negativo manda la potenza <strong>dall'altra parte della linea di frazione</strong>: $a^{-n}$ vuol dire $\frac{1}{a^{n}}$. Su una frazione la stessa cosa si vede come un capovolgimento. Il risultato non diventa negativo: il segno dell'esponente riguarda la posizione, non il segno del numero.</div>
-        <div class="f sx">$\displaystyle a^{-n}=\frac{1}{a^{n}}$</div>
+        <div class="frase">Un esponente negativo manda la potenza <strong>dall'altra parte della linea di frazione</strong>: $a^{-n}$ vuol dire $\frac{1}{a^{n}}$, e una frazione con esponente negativo si capovolge. Il risultato non diventa negativo: il segno dell'esponente dice dove va la potenza, non che segno ha.</div>
+        <div class="f sx">$\displaystyle a^{-n}=\frac{1}{a^{n}},\qquad \left(\frac{a}{b}\right)^{-n}=\left(\frac{b}{a}\right)^{n}$</div>
         <div class="ex">esempio: $2^{-3}=\frac{1}{2^{3}}=\frac{1}{8},\quad\left(\frac{3}{4}\right)^{-2}=\left(\frac{4}{3}\right)^{2}$</div>
       </div>
       <div class="errore">
@@ -346,7 +346,7 @@ mjx-container[display]{margin:0!important}
           <div class="arrow">➜</div>
           <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a^{m}\cdot a^{n}=a^{m+n}$</div></div>
         </div>
-        <div class="why-txt">Prodotto di potenze, somma di esponenti.</div>
+        <div class="why-txt">L'esponente conta quante volte la base è scritta in fila.</div>
       </div>
     </div>
   </details>

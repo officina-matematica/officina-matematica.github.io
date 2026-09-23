@@ -200,7 +200,7 @@ mjx-container[display]{margin:0!important}
       <p class="mossa">Il calo del $27\%$ lascia il $73\%$ del prezzo di listino.</p>
       <div class="teoria">
         <div class="nome">Quello che resta dopo un calo</div>
-        <div class="frase">Un calo del <strong>s%</strong> lascia il $(100-s)\%$ del valore di partenza: se qualcosa cala del 40%, quello che resta è il 60% di prima. È la percentuale da cui si riparte, sia per calcolare il valore nuovo sia per risalire a quello vecchio.</div>
+        <div class="frase">Un calo del $s\%$ lascia il $(100-s)\%$ del valore di partenza: se qualcosa cala del 40%, quello che resta è il 60% di prima. È la percentuale da cui si riparte, sia per calcolare il valore nuovo sia per risalire a quello vecchio.</div>
         <div class="f sx">$\displaystyle \text{dopo un calo del}\ s\%\ \text{resta il}\ (100-s)\%$</div>
         <div class="ex">esempio: $\text{calo del}\ 35\%:\ \text{resta il}\ 65\%$</div>
       </div>
@@ -210,9 +210,9 @@ mjx-container[display]{margin:0!important}
         <div class="compare">
           <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \text{resta il}\ s\%$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \text{resta il}\ (100-s)\%$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \text{resta il}\ \left(100-s\right)\%$</div></div>
         </div>
-        <div class="why-txt">Il $s\%$ è quello che se n'è andato, non quello che resta.</div>
+        <div class="why-txt">Quella percentuale è quella che se n'è andata, non quella che resta.</div>
       </div>
     </div>
   </details>
@@ -261,7 +261,7 @@ mjx-container[display]{margin:0!important}
       <div class="teoria">
         <div class="nome">Arrotondare il risultato</div>
         <div class="frase">Quando il conto dà molte cifre dopo la virgola si arrotonda: si guarda la prima cifra che si butta via e, se è 5 o più, si aumenta di uno l'ultima cifra che resta. Il risultato si scrive con «circa».</div>
-        <div class="f sx">$\displaystyle \text{la prima cifra che si butta via: sotto il}\ 5\ \text{si resta, dal}\ 5\ \text{in su si sale}$</div>
+        <div class="f sx">$\displaystyle x{,}d\ldots \ \to\ x\quad \text{se}\ d<5\qquad x{,}d\ldots \ \to\ x+1\quad \text{se}\ d\geq 5$</div>
         <div class="ex">esempio: $7{,}349\ \text{€}\ \to\ 7{,}35\ \text{€}\qquad 12{,}4\ \to\ 12$</div>
       </div>
       <div class="errore">
@@ -301,7 +301,7 @@ mjx-container[display]{margin:0!important}
       <p class="mossa">Si divide il prezzo scontato, non quello di listino.</p>
       <div class="teoria">
         <div class="nome">Il prezzo al chilogrammo</div>
-        <div class="frase">Il prezzo al chilogrammo si trova dividendo il prezzo <strong>che si paga</strong> per il peso <strong>in chilogrammi</strong>. Il peso va convertito prima: i grammi si dividono per mille, e così i millilitri per avere i litri. Serve per confrontare confezioni diverse.</div>
+        <div class="frase">Il prezzo al chilogrammo si trova dividendo quello che si paga per il peso in chilogrammi. Il peso va portato prima in chilogrammi: i grammi si dividono per mille, e allo stesso modo i millilitri per avere i litri.</div>
         <div class="f sx">$\displaystyle \text{€/kg}=\frac{\text{prezzo pagato}}{\text{peso in kg}}$</div>
         <div class="ex">esempio: $\frac{3{,}60\ \text{€}}{0{,}4\ \text{kg}}=9\ \text{€/kg}$</div>
       </div>
@@ -309,11 +309,11 @@ mjx-container[display]{margin:0!important}
         <div class="k">⚠️ L'errore che si fa qui</div>
         <div class="nome">Dividere per i grammi invece che per i chilogrammi</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \text{€/kg}=\frac{3{,}60}{400}=0{,}009$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \text{€/kg}=\frac{\text{prezzo}}{\text{grammi}}$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \text{€/kg}=\frac{3{,}60}{0{,}4}=9$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \text{€/kg}=\frac{\text{prezzo}}{\text{grammi}:1000}$</div></div>
         </div>
-        <div class="why-txt">Quattrocento grammi sono $0{,}4$ kg: diviso per i grammi viene il prezzo di un grammo.</div>
+        <div class="why-txt">Mille grammi fanno un chilogrammo.</div>
       </div>
     </div>
   </details>

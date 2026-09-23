@@ -192,9 +192,9 @@ mjx-container[display]{margin:0!important}
       <p class="mossa">Ogni mazzo deve contenere lo stesso numero di garofani e lo stesso numero di rose: il numero di mazzi deve dividere sia $24$ sia $16$.</p>
       <div class="teoria">
         <div class="nome">Nei problemi: MCD o mcm?</div>
-        <div class="frase">Quando il testo chiede di <strong>dividere</strong> quantità note in parti tutte uguali e il più grandi possibile — mazzi, gruppi, cesti, sacchettini — si cerca il <strong>MCD</strong>. Quando invece la quantità è da trovare e deve contenere esattamente $a$, $b$, $c$ per volta, oppure si chiede <strong>quando</strong> cose che si ripetono torneranno insieme, si cerca il <strong>mcm</strong>. La spia è che cosa si conosce: i numeri da dividere, oppure gli intervalli.</div>
+        <div class="frase">Se il testo dà le quantità e chiede di dividerle in parti tutte uguali e più grandi possibile — mazzi, gruppi, cesti, sacchetti — si cerca il MCD. Se invece la quantità è da trovare, perché deve stare in gruppi esatti da $a$, da $b$, da $c$, o perché si chiede quando cose che si ripetono torneranno insieme, si cerca il mcm.</div>
         <div class="f sx">$\displaystyle \text{quantità note, parti uguali}\to\text{MCD};\quad\text{quantità da trovare, multipla di tutte}\to\text{mcm}$</div>
-        <div class="ex">esempio: $33\ \text{e}\ 22\ \text{in mazzi uguali}\to\text{MCD}=11$</div>
+        <div class="ex">esempio: $33\ \text{e}\ 22\ \text{in mazzi uguali}\to \text{MCD}=11;\qquad \text{insieme ogni}\ 4\ \text{e}\ 6\ \text{giorni}\to \text{mcm}=12$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
@@ -223,8 +223,8 @@ mjx-container[display]{margin:0!important}
       <div class="teoria">
         <div class="nome">La scomposizione in fattori primi</div>
         <div class="frase">Si divide il numero per il <strong>più piccolo primo</strong> che lo divide, poi si ricomincia sul risultato, fino ad arrivare a $1$. Si prova prima il $2$, poi il $3$, poi il $5$, poi il $7$. I fattori uguali si raccolgono in una potenza.</div>
-        <div class="f sx">$\displaystyle n=p_{1}\cdot p_{2}\cdot\ldots\cdot p_{k}$</div>
-        <div class="ex">esempio: $44=2\cdot 2\cdot 11=2^{2}\cdot 11$</div>
+        <div class="f sx">$\displaystyle n=p\cdot p\cdot q=p^{2}\cdot q\qquad \left(p,q\ \text{primi}\right)$</div>
+        <div class="ex">esempio: $20=2\cdot 2\cdot 5=2^{2}\cdot 5$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
