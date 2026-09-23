@@ -378,18 +378,18 @@ mjx-container[display]{margin:0!important}
       <div class="teoria">
         <div class="nome">Priorità delle operazioni</div>
         <div class="frase">Prima le potenze, poi le moltiplicazioni e le divisioni, e solo alla fine le addizioni e le sottrazioni.</div>
-        <div class="f sx">$\displaystyle a+b:c=a+\left(b:c\right)$</div>
-        <div class="ex">esempio: $2+12:4=2+3=5$</div>
+        <div class="f sx">$\displaystyle a+b:c^{n}=a+\left(b:c^{n}\right)$</div>
+        <div class="ex">esempio: $2+12:2^{2}=2+12:4=2+3=5$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
         <div class="nome">Eseguire l'addizione prima della divisione</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a+b:c=\left(a+b\right):c$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a+b:c^{n}=\left(a+b\right):c^{n}$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a+b:c=a+\left(b:c\right)$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a+b:c^{n}=a+\left(b:c^{n}\right)$</div></div>
         </div>
-        <div class="why-txt">La divisione si chiude per prima.</div>
+        <div class="why-txt">Prima la potenza, poi la divisione: la somma viene per ultima.</div>
       </div>
     </div>
   </details>

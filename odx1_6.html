@@ -256,18 +256,18 @@ mjx-container[display]{margin:0!important}
       <div class="teoria">
         <div class="nome">La frazione generatrice di un numero periodico</div>
         <div class="frase">Sopra si scrive tutto il numero senza la virgola, <strong>meno</strong> la parte che precede il periodo. Sotto si scrivono tanti <strong>nove</strong> quante sono le cifre del periodo, seguiti da tanti <strong>zeri</strong> quante quelle fra la virgola e il periodo.</div>
-        <div class="f sx">$\displaystyle 0{,}a\overline{b}=\frac{ab-a}{90}$</div>
+        <div class="f sx">$\displaystyle \text{frazione}=\frac{\text{numero senza la virgola}-\text{parte prima del periodo}}{\underbrace{9\ldots9}_{\text{cifre del periodo}}\,\underbrace{0\ldots0}_{\text{cifre fra virgola e periodo}}}$</div>
         <div class="ex">esempio: $0{,}2\overline{26}=\frac{226-2}{990}=\frac{224}{990}$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
         <div class="nome">Dimenticare di togliere la parte prima del periodo</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle 0{,}a\overline{b}=\frac{ab}{90}$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle 0{,}2\overline{26}=\frac{226}{990}$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle 0{,}a\overline{b}=\frac{ab-a}{90}$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle 0{,}2\overline{26}=\frac{226-2}{990}$</div></div>
         </div>
-        <div class="why-txt">Si toglie sempre la parte non periodica.</div>
+        <div class="why-txt">Si toglie sempre la parte che viene prima del periodo.</div>
       </div>
     </div>
   </details>

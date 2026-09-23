@@ -321,18 +321,18 @@ mjx-container[display]{margin:0!important}
       <div class="teoria">
         <div class="nome">Priorità delle operazioni</div>
         <div class="frase">Prima le potenze, poi le moltiplicazioni e le divisioni, e solo alla fine le addizioni e le sottrazioni: quello che si toglie è il <strong>risultato</strong> del prodotto, non uno dei suoi fattori.</div>
-        <div class="f sx">$\displaystyle a-b\cdot c=a-\left(b\cdot c\right)$</div>
-        <div class="ex">esempio: $20-3\cdot 4=20-12=8$</div>
+        <div class="f sx">$\displaystyle a-b\cdot c^{n}=a-\left(b\cdot c^{n}\right)$</div>
+        <div class="ex">esempio: $20-3\cdot 2^{2}=20-3\cdot 4=20-12=8$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
         <div class="nome">Sottrarre prima di moltiplicare</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a-b\cdot c=\left(a-b\right)\cdot c$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a-b\cdot c^{n}=\left(a-b\right)\cdot c^{n}$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a-b\cdot c=a-\left(b\cdot c\right)$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a-b\cdot c^{n}=a-\left(b\cdot c^{n}\right)$</div></div>
         </div>
-        <div class="why-txt">Il prodotto si chiude prima della sottrazione.</div>
+        <div class="why-txt">Prima la potenza, poi il prodotto: quello che si toglie è il risultato.</div>
       </div>
     </div>
   </details>
