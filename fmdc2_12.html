@@ -196,16 +196,6 @@ mjx-container[display]{margin:0!important}
         <div class="f sx">$\displaystyle n=p\cdot p\cdot q=p^{2}\cdot q\qquad \left(p,q\ \text{primi}\right)$</div>
         <div class="ex">esempio: $44=2\cdot 2\cdot 11=2^{2}\cdot 11$</div>
       </div>
-      <div class="errore">
-        <div class="k">⚠️ Errore da non fare</div>
-        <div class="nome">Fermarsi a un fattore che primo non è</div>
-        <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle 12=2\cdot 6$</div></div>
-          <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle 12=2\cdot 2\cdot 3$</div></div>
-        </div>
-        <div class="why-txt">Si continua finché tutti i fattori sono primi.</div>
-      </div>
     </div>
   </details>
 
@@ -250,13 +240,13 @@ mjx-container[display]{margin:0!important}
       </div>
       <div class="errore">
         <div class="k">⚠️ Errore da non fare</div>
-        <div class="nome">Prendere l'esponente più grande</div>
+        <div class="nome">Prendere un fattore che non c'è in tutte le scomposizioni</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \text{MCD}\left(2^{2};2^{5}\right)=2^{5}$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \text{MCD}\left(a\cdot b;a\right)=a\cdot b$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \text{MCD}\left(2^{2};2^{5}\right)=2^{2}$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \text{MCD}\left(a\cdot b;a\right)=a$</div></div>
         </div>
-        <div class="why-txt">Con l'esponente grande non dividerebbe il primo numero.</div>
+        <div class="why-txt">Il fattore che manca a uno dei numeri non lo divide.</div>
       </div>
     </div>
   </details>

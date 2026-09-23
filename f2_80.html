@@ -228,16 +228,6 @@ mjx-container[display]{margin:0!important}
         <div class="f sx">$\displaystyle a\frac{b}{c}\pm d\frac{e}{c}=a\pm d+\frac{b}{c}\pm\frac{e}{c}$</div>
         <div class="ex">esempio: $5\frac{4}{7}-2\frac{1}{7}=5-2+\frac{4}{7}-\frac{1}{7}=3\frac{3}{7}$</div>
       </div>
-      <div class="errore">
-        <div class="k">⚠️ Errore da non fare</div>
-        <div class="nome">Lasciare indietro il meno sulla frazione</div>
-        <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a\frac{b}{c}-d\frac{e}{c}=a-d+\frac{b}{c}+\frac{e}{c}$</div></div>
-          <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a\frac{b}{c}-d\frac{e}{c}=a-d+\frac{b}{c}-\frac{e}{c}$</div></div>
-        </div>
-        <div class="why-txt">Il meno davanti al secondo numero misto vale per tutti e due i suoi pezzi.</div>
-      </div>
     </div>
   </details>
 
@@ -297,6 +287,16 @@ mjx-container[display]{margin:0!important}
           <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a\frac{b}{c}=\left(a-1\right)\frac{c+b}{c}$</div></div>
         </div>
         <div class="why-txt">Le fette in più vengono da un intero, che va tolto.</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ E nemmeno questo</div>
+        <div class="nome">Prendere una fetta sola invece dell'intero</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a=\left(a-1\right)\frac{1}{c}$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a=\left(a-1\right)\frac{c}{c}$</div></div>
+        </div>
+        <div class="why-txt">Con una fetta sola il numero diventa più piccolo di prima.</div>
       </div>
     </div>
   </details>
