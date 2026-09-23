@@ -16,9 +16,13 @@
   "risultato_tex": "\\text{Ogni rata è di } 737{,}50\\ \\text{€}",
   "risultato_sympy": "Rational(1475,2)",
   "righe_sympy": [
-    "Integer(2950)",
+    null,
+    null,
+    null,
     "Integer(8850)",
-    "Rational(1475,2)",
+    null,
+    null,
+    null,
     null
   ]
 }
@@ -178,12 +182,13 @@ mjx-container[display]{margin:0!important}
   <div class="k">Confronta con il tuo foglio</div>
   <div class="sub">Scorri le righe fino alla prima che non coincide con la tua. Lì apri <b>Regola</b>.</div>
 
+  <div class="k">Metodo 1 · prima quanto ha già versato</div>
   <details class="riga">
     <summary>
       <div class="n">1</div>
       <div class="cont">
-        <div class="nota">Partiamo da quanto ha già versato: la caparra e l'acconto sono due pezzi del prezzo, il $5\%$ e il $20\%$.</div>
-        <div class="f sx">$\displaystyle \text{Gi\`a versato}=\frac{5}{100}\cdot 11800+\frac{20}{100}\cdot 11800=590+2360=2950\ \text{€}$</div>
+        <div class="nota">Partiamo dalla caparra: è il 5% del prezzo dell'auto, versato alla prenotazione.</div>
+        <div class="f sx">$\displaystyle \text{Caparra}=\frac{5}{100}\cdot 11800=590\ \text{€}$</div>
       </div>
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
@@ -193,7 +198,7 @@ mjx-container[display]{margin:0!important}
         <div class="nome">La percentuale di una quantità</div>
         <div class="frase">Per calcolare il <strong>p%</strong> di una quantità si moltiplica la quantità per $\frac{p}{100}$. È lo stesso identico procedimento della frazione di un numero.</div>
         <div class="f sx">$\displaystyle p\,\%\text{ di }N=\frac{p}{100}\cdot N$</div>
-        <div class="ex">esempio: $5\,\%\text{ di }50=\frac{5}{100}\cdot 50=2{,}5$</div>
+        <div class="ex">esempio: $12\,\%\text{ di }150=\frac{12}{100}\cdot 150=18$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
@@ -201,7 +206,7 @@ mjx-container[display]{margin:0!important}
         <div class="compare">
           <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle p\,\%\text{ di }N=N:\frac{p}{100}$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle p\,\%\text{ di }N=\frac{p}{100}\cdot N$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle p\,\%\text{ di }N=N\cdot\frac{p}{100}$</div></div>
         </div>
         <div class="why-txt">Per trovare la parte si moltiplica.</div>
       </div>
@@ -212,8 +217,8 @@ mjx-container[display]{margin:0!important}
     <div class="fissa">
       <div class="n">2</div>
       <div class="cont">
-        <div class="nota">Quello che resta da mettere in rate è il prezzo meno quanto ha già versato.</div>
-        <div class="f sx">$\displaystyle \text{Da pagare a rate}=11800-2950=8850\ \text{€}$</div>
+        <div class="nota">Alla consegna se ne aggiunge un altro 20%, sempre calcolato sul prezzo intero.</div>
+        <div class="f sx">$\displaystyle \text{Acconto alla consegna}=\frac{20}{100}\cdot 11800=2360\ \text{€}$</div>
       </div>
       <div></div>
     </div>
@@ -223,7 +228,73 @@ mjx-container[display]{margin:0!important}
     <div class="fissa">
       <div class="n">3</div>
       <div class="cont">
-        <div class="nota">Le rate sono dodici e tutte uguali, quindi dividiamo.</div>
+        <div class="nota">Mettiamo insieme i due versamenti: sono euro, e gli euro si sommano.</div>
+        <div class="f sx">$\displaystyle \text{Già versato}=590+2360=2950\ \text{€}$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">4</div>
+      <div class="cont">
+        <div class="nota">Quello che resta da mettere in rate è il prezzo meno quanto ha già versato.</div>
+        <div class="f sx">$\displaystyle \text{Da pagare a rate}=11800-2950=8850\ \text{€}$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="k">Metodo 2 · con la percentuale che resta</div>
+  <div class="sub">Si arriva alle rate senza calcolare i due versamenti.</div>
+  <details class="riga">
+    <summary>
+      <div class="n">5</div>
+      <div class="cont">
+        <div class="nota">Caparra e consegna si portano via 5 e 20 parti su cento: alle rate ne restano 75.</div>
+        <div class="f sx">$\displaystyle \text{Percentuale da pagare a rate}=100-5-20=75$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">Caparra, consegna e rate insieme fanno tutto il prezzo.</p>
+      <div class="teoria">
+        <div class="nome">Le percentuali di un insieme fanno cento</div>
+        <div class="frase">Quando un insieme è diviso in gruppi, le loro percentuali sommate danno sempre <strong>100%</strong>: quello che non sta in un gruppo sta in tutti gli altri. È il modo più rapido per trovare la percentuale di un gruppo che il testo non dà.</div>
+        <div class="f sx">$\displaystyle \%\ \text{primo}+\%\ \text{secondo}+\dots=100\%$</div>
+        <div class="ex">esempio: $\text{un gruppo}\ 45\%\ \to\ \text{tutto il resto}\ 55\%$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Togliere la percentuale dalla quantità</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \text{resto}=N-p$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \text{resto}=100\%-p\%$</div></div>
+        </div>
+        <div class="why-txt">Le percentuali si tolgono da cento, la quantità dalla quantità.</div>
+      </div>
+    </div>
+  </details>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">6</div>
+      <div class="cont">
+        <div class="nota">Il 75% diventa 0,75: moltiplichiamo e ritroviamo la somma da mettere in rate.</div>
+        <div class="f sx">$\displaystyle \text{Da pagare a rate}=0{,}75\cdot 11800=8850\ \text{€}$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="k">Dopo i due metodi · l'importo della rata</div>
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">7</div>
+      <div class="cont">
+        <div class="nota">Le rate sono dodici e tutte uguali: dividiamo, qualunque strada abbiamo seguito per arrivare agli 8850 €.</div>
         <div class="f sx">$\displaystyle \text{Rata}=8850:12=737{,}50\ \text{€}$</div>
       </div>
       <div></div>
@@ -232,7 +303,7 @@ mjx-container[display]{margin:0!important}
 
   <div class="riga res">
     <div class="fissa">
-      <div class="n">4</div>
+      <div class="n">8</div>
       <div class="cont">
         <div class="nota">La domanda era l'importo di una rata, non il totale ancora da pagare.</div>
         <div class="f sx">$\displaystyle \text{Ogni rata è di } 737{,}50\ \text{€}$</div>

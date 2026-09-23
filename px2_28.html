@@ -3,24 +3,32 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PX2_4 — Problemi con le percentuali</title>
+<title>PX2_28 — Problemi con le percentuali</title>
 
 <script type="application/json" id="meta">
 {
-  "id": "px2_4",
+  "id": "px2_28",
   "titolo": "Problemi con le percentuali",
   "tipo": "problema",
   "consegna_label": "Risolvi il problema",
-  "consegna_tex": "Per l'acquisto di un armadio, Maria è riuscita a spuntare, dopo lunghe discussioni, uno sconto del 25%, risparmiando 120 €. Qual era il prezzo senza sconto dell'armadio?",
-  "consegna_sympy": "120/Rational(25,100)",
-  "risultato_tex": "\\text{Senza sconto l'armadio costava } 480\\ \\text{€}",
-  "risultato_sympy": "Integer(480)",
+  "consegna_tex": "La tabella riporta i risultati delle partite di un torneo di calcio. Squali: 50 partite, 12 vinte, 5 pareggiate. Giaguari: 50 partite, 16 vinte, 4 pareggiate. Cobra: 50 partite, 30 vinte, 3 pareggiate. Falchi: 50 partite, 34 vinte, 6 pareggiate. Calcola per ciascuna squadra la percentuale di partite vinte, pareggiate e perse.",
+  "consegna_sympy": "(50-34-6)/50*100",
+  "risultato_tex": "\\text{Squali }24\\%,\\ 10\\%,\\ 66\\%\\text{; Giaguari }32\\%,\\ 8\\%,\\ 60\\%\\text{; Cobra }60\\%,\\ 6\\%,\\ 34\\%\\text{; Falchi }68\\%,\\ 12\\%,\\ 20\\%",
+  "risultato_sympy": "Integer(20)",
   "righe_sympy": [
-    "Integer(480)",
-    "Integer(480)",
-    "Integer(480)",
-    "Integer(480)",
-    "Integer(480)",
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
     null,
     null,
     null
@@ -174,7 +182,7 @@ mjx-container[display]{margin:0!important}
 <!-- ===================== CONSEGNA ===================== -->
 <div class="consegna">
   <div class="t">📌 Risolvi il problema</div>
-  <div class="m sx">Per l'acquisto di un armadio, Maria è riuscita a spuntare, dopo lunghe discussioni, uno sconto del 25%, risparmiando 120 €. Qual era il prezzo senza sconto dell'armadio?</div>
+  <div class="m sx">La tabella riporta i risultati delle partite di un torneo di calcio. Squali: 50 partite, 12 vinte, 5 pareggiate. Giaguari: 50 partite, 16 vinte, 4 pareggiate. Cobra: 50 partite, 30 vinte, 3 pareggiate. Falchi: 50 partite, 34 vinte, 6 pareggiate. Calcola per ciascuna squadra la percentuale di partite vinte, pareggiate e perse.</div>
 </div>
 
 <!-- ===================== CATENA ====================== -->
@@ -182,127 +190,121 @@ mjx-container[display]{margin:0!important}
   <div class="k">Confronta con il tuo foglio</div>
   <div class="sub">Scorri le righe fino alla prima che non coincide con la tua. Lì apri <b>Regola</b>.</div>
 
-  <div class="k">Metodo 1 · con la frazione capovolta</div>
+  <div class="k">Metodo 1 · dividendo per il totale</div>
   <details class="riga">
     <summary>
       <div class="n">1</div>
       <div class="cont">
-        <div class="nota">Attenzione a cosa sono i $120$ €: non è il prezzo, è quanto Maria ha risparmiato, cioè il $25\%$ del prezzo pieno.</div>
-        <div class="f sx">$\displaystyle \text{Prezzo pieno}=120:\frac{25}{100}$</div>
+        <div class="nota">Partiamo dagli Squali: le partite vinte divise per quelle giocate danno 0,24, cioè il 24%.</div>
+        <div class="f sx">$\displaystyle \text{Squali, vinte}=12:50\cdot 100=24$</div>
       </div>
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">Qui il problema dà la parte e chiede il totale: si divide. Moltiplicare darebbe un numero più piccolo del risparmio.</p>
+      <p class="mossa">Sotto va il totale delle partite giocate.</p>
       <div class="teoria">
-        <div class="nome">Dalla percentuale al totale: si divide</div>
-        <div class="frase">Quando il problema dà una <strong>parte</strong> e dice a quale percentuale corrisponde, per risalire al totale si divide la parte per quella percentuale scritta come frazione. È il contrario di quando si cerca la parte.</div>
-        <div class="f sx">$\displaystyle \text{totale}=\text{parte}:\frac{p}{100}$</div>
-        <div class="ex">esempio: $90:\frac{15}{100}=600$</div>
+        <div class="nome">Il rapporto percentuale</div>
+        <div class="frase">Per sapere che percentuale è una parte del totale si <strong>divide la parte per il totale</strong> e si moltiplica per cento. Il risultato della divisione è un numero decimale: 0,32 vuol dire 32%.</div>
+        <div class="f sx">$\displaystyle \%=\frac{\text{parte}}{\text{totale}}\cdot 100$</div>
+        <div class="ex">esempio: $\frac{27}{75}=0{,}36\ \to\ 36\%$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Moltiplicare invece di dividere</div>
+        <div class="nome">Dividere per la parte invece che per il totale</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \text{totale}=\text{parte}\cdot\frac{p}{100}$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \%=\frac{\text{totale}}{\text{parte}}\cdot 100$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \text{totale}=\text{parte}:\frac{p}{100}$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \%=\frac{\text{parte}}{\text{totale}}\cdot 100$</div></div>
         </div>
-        <div class="why-txt">Il totale è più grande della parte.</div>
+        <div class="why-txt">Sotto va sempre il totale.</div>
       </div>
     </div>
   </details>
 
-  <details class="riga">
-    <summary>
+  <div class="riga">
+    <div class="fissa">
       <div class="n">2</div>
       <div class="cont">
-        <div class="nota">La divisione per una frazione ci blocca: la riscriviamo come moltiplicazione, che sappiamo fare.</div>
-        <div class="f sx">$\displaystyle \text{Prezzo pieno}=120\cdot\frac{100}{25}$</div>
+        <div class="nota">Stessa divisione per i pareggi: cinque partite sulle cinquanta giocate.</div>
+        <div class="f sx">$\displaystyle \text{Squali, pareggiate}=5:50\cdot 100=10$</div>
       </div>
-      <span class="tab">Regola <span class="chev">▼</span></span>
-    </summary>
-    <div class="pannello">
-      <p class="mossa">$120:\frac{25}{100}$ diventa $120\cdot\frac{100}{25}$.</p>
-      <div class="teoria">
-        <div class="nome">Dividere per una frazione</div>
-        <div class="frase">Per dividere un numero per una frazione si moltiplica il numero per la frazione <strong>capovolta</strong>: numeratore e denominatore si scambiano di posto.</div>
-        <div class="f sx">$\displaystyle n:\frac{a}{b}=n\cdot\frac{b}{a}$</div>
-        <div class="ex">esempio: $20:\frac{2}{3}=20\cdot\frac{3}{2}=30$</div>
-      </div>
-      <div class="errore">
-        <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Moltiplicare per la frazione senza capovolgerla</div>
-        <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle n:\frac{a}{b}=n\cdot\frac{a}{b}$</div></div>
-          <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle n:\frac{a}{b}=n\cdot\frac{b}{a}$</div></div>
-        </div>
-        <div class="why-txt">Si capovolge la frazione che divide.</div>
-      </div>
+      <div></div>
     </div>
-  </details>
+  </div>
 
-  <details class="riga">
-    <summary>
+  <div class="riga">
+    <div class="fissa">
       <div class="n">3</div>
       <div class="cont">
-        <div class="nota">Riduciamo la frazione prima di moltiplicare: vale esattamente $4$.</div>
-        <div class="f sx">$\displaystyle \text{Prezzo pieno}=120\cdot\frac{\overset{4}{\cancel{100}}}{\underset{1}{\cancel{25}}}$</div>
+        <div class="nota">Le partite perse non sono nella tabella: sono quelle che restano delle cinquanta giocate.</div>
+        <div class="f sx">$\displaystyle \text{Squali, partite perse}=50-12-5=33$</div>
       </div>
-      <span class="tab">Regola <span class="chev">▼</span></span>
-    </summary>
-    <div class="pannello">
-      <p class="mossa">$100$ e $25$ si dividono per $25$: resta $\frac{4}{1}$, cioè $4$.</p>
-      <div class="teoria">
-        <div class="nome">Ridurre una frazione ai minimi termini</div>
-        <div class="frase">Dividendo numeratore e denominatore per lo stesso numero il valore non cambia, ma i numeri diventano più piccoli. Conviene farlo appena si può: i conti che vengono dopo sono molto più facili.</div>
-        <div class="f sx">$\displaystyle \frac{a\cdot k}{b\cdot k}=\frac{a}{b}$</div>
-        <div class="ex">esempio: $\frac{9}{12}=\frac{3\cdot 3}{4\cdot 3}=\frac{3}{4}$</div>
-      </div>
-      <div class="errore">
-        <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Dividere un solo termine della frazione</div>
-        <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{a\cdot k}{b\cdot k}=\frac{a}{b\cdot k}$</div></div>
-          <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{a\cdot k}{b\cdot k}=\frac{a}{b}$</div></div>
-        </div>
-        <div class="why-txt">Sopra e sotto, per lo stesso numero.</div>
-      </div>
+      <div></div>
     </div>
-  </details>
+  </div>
 
   <div class="riga">
     <div class="fissa">
       <div class="n">4</div>
       <div class="cont">
-        <div class="nota">Rimettiamo in fila il conto dopo la semplificazione: resta centoventi per quattro.</div>
-        <div class="f sx">$\displaystyle \text{Prezzo pieno}=120\cdot\frac{100}{25}=120\cdot 4$</div>
+        <div class="nota">E anche queste si dividono per le partite giocate, come le altre due.</div>
+        <div class="f sx">$\displaystyle \text{Squali, perse}=33:50\cdot 100=66$</div>
       </div>
       <div></div>
     </div>
   </div>
 
-  <div class="riga">
-    <div class="fissa">
+  <div class="k">Metodo 2 · ogni partita vale il 2%</div>
+  <div class="sub">Funziona perché le partite sono cinquanta: basta moltiplicare per due.</div>
+  <details class="riga">
+    <summary>
       <div class="n">5</div>
       <div class="cont">
-        <div class="nota">Quattro volte centoventi: ecco il prezzo pieno dell'armadio.</div>
-        <div class="f sx">$\displaystyle \text{Prezzo pieno}=120\cdot 4=480\ \text{€}$</div>
+        <div class="nota">Con cinquanta partite il conto si fa a mente: ogni partita vale il 2% del torneo.</div>
+        <div class="f sx">$\displaystyle \text{Quanto vale una partita}=100:50=2$</div>
       </div>
-      <div></div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">Cento diviso cinquanta: ogni partita è un cinquantesimo del torneo.</p>
+      <div class="teoria">
+        <div class="nome">Quanto vale uno solo</div>
+        <div class="frase">Quando gli elementi sono pochi e il loro numero divide cento, conviene trovare quanto vale <strong>un elemento solo</strong>: si divide $100$ per quanti sono. Poi ogni gruppo vale quel numero moltiplicato per quanti elementi contiene.</div>
+        <div class="f sx">$\displaystyle \text{un elemento fra}\ t\ \text{vale}\ \frac{100}{t}\%$</div>
+        <div class="ex">esempio: $\text{con}\ t=20:\ \frac{100}{20}=5\%\ \text{ciascuno}$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Dividere il totale per cento invece del contrario</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{t}{100}$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{100}{t}$</div></div>
+        </div>
+        <div class="why-txt">Si divide cento per il numero degli elementi.</div>
+      </div>
     </div>
-  </div>
+  </details>
 
-  <div class="k">Metodo 2 · con il numero decimale</div>
-  <div class="sub">Una sola divisione con la calcolatrice.</div>
   <div class="riga">
     <div class="fissa">
       <div class="n">6</div>
       <div class="cont">
-        <div class="nota">Il 25% diventa 0,25: è la stessa divisione di prima, fatta con la calcolatrice invece che con la frazione.</div>
-        <div class="f sx">$\displaystyle \text{Prezzo pieno}=120:0{,}25=480\ \text{€}$</div>
+        <div class="nota">Rifacciamo gli Squali per controllo: dodici vittorie, ciascuna vale il 2%, e ritroviamo il 24%.</div>
+        <div class="f sx">$\displaystyle \text{Squali, vinte}=12\cdot 2=24$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="k">Le altre tre squadre · con il metodo più corto</div>
+  <div class="sub">Ogni partita vale il 2%: una moltiplicazione e una differenza per squadra.</div>
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">7</div>
+      <div class="cont">
+        <div class="nota">Passiamo alle altre squadre, con il metodo più corto: i Giaguari hanno vinto sedici partite.</div>
+        <div class="f sx">$\displaystyle \text{Giaguari, vinte}=16\cdot 2=32$</div>
       </div>
       <div></div>
     </div>
@@ -310,10 +312,106 @@ mjx-container[display]{margin:0!important}
 
   <div class="riga">
     <div class="fissa">
-      <div class="n">7</div>
+      <div class="n">8</div>
       <div class="cont">
-        <div class="nota">Controlliamo: il 25% di 480 € è proprio il risparmio di Maria.</div>
-        <div class="f sx">$\displaystyle \text{Controllo}=0{,}25\cdot 480=120\ \text{€}$</div>
+        <div class="nota">I pareggi dei Giaguari sono quattro, e ogni partita vale quanto le altre.</div>
+        <div class="f sx">$\displaystyle \text{Giaguari, pareggiate}=4\cdot 2=8$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <details class="riga">
+    <summary>
+      <div class="n">9</div>
+      <div class="cont">
+        <div class="nota">Le sconfitte si trovano più in fretta da cento: è quello che resta delle tre percentuali.</div>
+        <div class="f sx">$\displaystyle \text{Giaguari, perse}=100-32-8=60$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">Vinte, pareggiate e perse sono tutte le partite: insieme fanno cento.</p>
+      <div class="teoria">
+        <div class="nome">Le percentuali di un insieme fanno cento</div>
+        <div class="frase">Quando un insieme è diviso in gruppi, le loro percentuali sommate danno sempre <strong>100%</strong>: quello che non sta in un gruppo sta in tutti gli altri. È il modo più rapido per trovare la percentuale di un gruppo che il testo non dà.</div>
+        <div class="f sx">$\displaystyle \%\ \text{primo}+\%\ \text{secondo}+\dots=100\%$</div>
+        <div class="ex">esempio: $\text{un gruppo}\ 45\%\ \to\ \text{tutto il resto}\ 55\%$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Togliere la percentuale dalla quantità</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \text{resto}=N-p$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \text{resto}=100\%-p\%$</div></div>
+        </div>
+        <div class="why-txt">Le percentuali si tolgono da cento, la quantità dalla quantità.</div>
+      </div>
+    </div>
+  </details>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">10</div>
+      <div class="cont">
+        <div class="nota">I Cobra hanno vinto trenta partite su cinquanta: più della metà.</div>
+        <div class="f sx">$\displaystyle \text{Cobra, vinte}=30\cdot 2=60$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">11</div>
+      <div class="cont">
+        <div class="nota">Poi i loro pareggi, con la stessa moltiplicazione: sono solo tre.</div>
+        <div class="f sx">$\displaystyle \text{Cobra, pareggiate}=3\cdot 2=6$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">12</div>
+      <div class="cont">
+        <div class="nota">Di nuovo le sconfitte arrivano per differenza da cento.</div>
+        <div class="f sx">$\displaystyle \text{Cobra, perse}=100-60-6=34$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">13</div>
+      <div class="cont">
+        <div class="nota">Restano i Falchi, che di partite ne hanno vinte trentaquattro.</div>
+        <div class="f sx">$\displaystyle \text{Falchi, vinte}=34\cdot 2=68$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">14</div>
+      <div class="cont">
+        <div class="nota">Poi i loro pareggi: sei, il numero più alto delle quattro squadre.</div>
+        <div class="f sx">$\displaystyle \text{Falchi, pareggiate}=6\cdot 2=12$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">15</div>
+      <div class="cont">
+        <div class="nota">E anche qui il resto, per differenza da cento, sono le sconfitte.</div>
+        <div class="f sx">$\displaystyle \text{Falchi, perse}=100-68-12=20$</div>
       </div>
       <div></div>
     </div>
@@ -321,10 +419,10 @@ mjx-container[display]{margin:0!important}
 
   <div class="riga res">
     <div class="fissa">
-      <div class="n">8</div>
+      <div class="n">16</div>
       <div class="cont">
-        <div class="nota">La domanda era il prezzo prima dello sconto, non il risparmio: rispondiamo a quella.</div>
-        <div class="f sx">$\displaystyle \text{Senza sconto l'armadio costava } 480\ \text{€}$</div>
+        <div class="nota">Rispondiamo squadra per squadra, con vinte, pareggiate e perse: ogni terna somma cento, ed è il controllo più rapido.</div>
+        <div class="f sx">$\displaystyle \text{Squali }24\%,\ 10\%,\ 66\%\text{; Giaguari }32\%,\ 8\%,\ 60\%\text{; Cobra }60\%,\ 6\%,\ 34\%\text{; Falchi }68\%,\ 12\%,\ 20\%$</div>
       </div>
       <div></div>
     </div>

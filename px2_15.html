@@ -3,21 +3,27 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PX2_12 — Problemi con le percentuali</title>
+<title>PX2_15 — Problemi con le percentuali</title>
 
 <script type="application/json" id="meta">
 {
-  "id": "px2_12",
+  "id": "px2_15",
   "titolo": "Problemi con le percentuali",
   "tipo": "problema",
   "consegna_label": "Risolvi il problema",
-  "consegna_tex": "Un oggetto costa 12 240 € IVA inclusa e l'IVA è del 21%. Quanto costa IVA esclusa?",
-  "consegna_sympy": "12240/(1+Rational(21,100))",
-  "risultato_tex": "\\text{Il prezzo IVA esclusa è } 10115{,}70\\ \\text{€}",
-  "risultato_sympy": "Rational(1224000,121)",
+  "consegna_tex": "La superficie italiana ha un'estensione di 301 317 km². L'Abruzzo è il 3,6% del suolo italiano, la Liguria l'1,8%, la Sicilia l'8,5% e il Veneto il 6,1%. Calcola la superficie di ciascuna delle quattro regioni.",
+  "consegna_sympy": "floor(Rational(61,1000)*301317+Rational(1,2))",
+  "risultato_tex": "\\text{Abruzzo circa }10847\\text{ km², Liguria }5424\\text{, Sicilia }25612\\text{, Veneto }18380",
+  "risultato_sympy": "Integer(18380)",
   "righe_sympy": [
-    "Integer(121)",
-    "Rational(1224000,121)",
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
     null,
     null,
     null,
@@ -174,7 +180,7 @@ mjx-container[display]{margin:0!important}
 <!-- ===================== CONSEGNA ===================== -->
 <div class="consegna">
   <div class="t">📌 Risolvi il problema</div>
-  <div class="m sx">Un oggetto costa 12 240 € IVA inclusa e l'IVA è del 21%. Quanto costa IVA esclusa?</div>
+  <div class="m sx">La superficie italiana ha un'estensione di 301 317 km². L'Abruzzo è il 3,6% del suolo italiano, la Liguria l'1,8%, la Sicilia l'8,5% e il Veneto il 6,1%. Calcola la superficie di ciascuna delle quattro regioni.</div>
 </div>
 
 <!-- ===================== CATENA ====================== -->
@@ -182,84 +188,85 @@ mjx-container[display]{margin:0!important}
   <div class="k">Confronta con il tuo foglio</div>
   <div class="sub">Scorri le righe fino alla prima che non coincide con la tua. Lì apri <b>Regola</b>.</div>
 
-  <div class="k">Metodo 1 · con la frazione capovolta</div>
-  <div class="riga">
-    <div class="fissa">
+  <div class="k">Metodo 1 · con il numero decimale</div>
+  <div class="sub">Ogni regione è un conto solo con la calcolatrice.</div>
+  <details class="riga">
+    <summary>
       <div class="n">1</div>
       <div class="cont">
-        <div class="nota">Attenzione a cosa sono i 12 240 €: è il prezzo con l'IVA già dentro, cioè il 121% di quello senza.</div>
-        <div class="f sx">$\displaystyle \text{Percentuale}=100+21=121$</div>
+        <div class="nota">Partiamo dall'Abruzzo: il 3,6% diventa 0,036, e con la calcolatrice lo moltiplichiamo per la superficie italiana.</div>
+        <div class="f sx">$\displaystyle \text{Abruzzo}=0{,}036\cdot 301317=10847{,}412$</div>
       </div>
-      <div></div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">$3{,}6\%=\frac{3{,}6}{100}=0{,}036$.</p>
+      <div class="teoria">
+        <div class="nome">La percentuale come numero decimale</div>
+        <div class="frase">Il $p\%$ è $\frac{p}{100}$: diviso cento diventa un numero decimale. Il 12% è 0,12, il 7% è 0,07, l'1,5% è 0,015. Per calcolare quella percentuale di una quantità basta moltiplicare per quel numero.</div>
+        <div class="f sx">$\displaystyle p\%=\frac{p}{100}\quad\to\quad p\%\ \text{di}\ n=\frac{p}{100}\cdot n$</div>
+        <div class="ex">esempio: $24\%\ \text{di}\ 350=0{,}24\cdot 350=84$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Dimenticare di dividere per cento</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle p\%\ \text{di}\ n=p\cdot n$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle p\%\ \text{di}\ n=\frac{p}{100}\cdot n$</div></div>
+        </div>
+        <div class="why-txt">Per cento vuol dire diviso cento.</div>
+      </div>
     </div>
-  </div>
+  </details>
 
   <details class="riga">
     <summary>
       <div class="n">2</div>
       <div class="cont">
-        <div class="nota">Il 121% si scrive come frazione, 121 su 100, e ci si divide sopra per tornare al prezzo senza IVA.</div>
-        <div class="f sx">$\displaystyle \text{Prezzo IVA esclusa}=12240:\frac{121}{100}$</div>
+        <div class="nota">Una superficie si dà in chilometri quadrati interi: la prima cifra buttata via è 4, quindi si arrotonda per difetto.</div>
+        <div class="f sx">$\displaystyle \text{Abruzzo}\approx 10847\ \text{km}^2$</div>
       </div>
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">Il numero che ha fatto l'aumento, qui, è $\frac{121}{100}$.</p>
+      <p class="mossa">$10847{,}412$: la parte dopo la virgola è meno di mezzo.</p>
       <div class="teoria">
-        <div class="nome">Tornare al valore prima dell'aumento</div>
-        <div class="frase">Se si conosce il valore <strong>dopo</strong> l'aumento e si vuole quello di partenza, si <strong>divide</strong> per il numero decimale che ha fatto l'aumento. Togliere la percentuale dal valore nuovo dà un numero sbagliato, perché l'aumento si calcolava su un valore più piccolo.</div>
-        <div class="f sx">$\displaystyle \text{valore di partenza}=\text{valore aumentato}:\left(1+\frac{p}{100}\right)$</div>
-        <div class="ex">esempio: $270:1{,}08=250\ \text{€}$</div>
+        <div class="nome">Arrotondare il risultato</div>
+        <div class="frase">Quando il conto dà molte cifre dopo la virgola si arrotonda: si guarda la prima cifra che si butta via e, se è 5 o più, si aumenta di uno l'ultima cifra che resta. Il risultato si scrive con «circa».</div>
+        <div class="f sx">$\displaystyle \text{la prima cifra che si butta via: sotto il}\ 5\ \text{si resta, dal}\ 5\ \text{in su si sale}$</div>
+        <div class="ex">esempio: $7{,}349\ \text{€}\ \to\ 7{,}35\ \text{€}\qquad 12{,}4\ \to\ 12$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Togliere la percentuale dal valore aumentato</div>
+        <div class="nome">Arrotondare per eccesso quando la cifra non lo chiede</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle n-\frac{p}{100}\cdot n$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle 12{,}4\\ \\to\\ 13$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle n:\left(1+\frac{p}{100}\right)$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle 12{,}4\\ \\to\\ 12$</div></div>
         </div>
-        <div class="why-txt">L'aumento si calcolava sul valore di partenza.</div>
-      </div>
-    </div>
-  </details>
-
-  <details class="riga">
-    <summary>
-      <div class="n">3</div>
-      <div class="cont">
-        <div class="nota">Con la frazione capovolta la divisione diventa una moltiplicazione.</div>
-        <div class="f sx">$\displaystyle \text{Prezzo IVA esclusa}=12240\cdot\frac{100}{121}$</div>
-      </div>
-      <span class="tab">Regola <span class="chev">▼</span></span>
-    </summary>
-    <div class="pannello">
-      <p class="mossa">$12240:\frac{121}{100}$ diventa $12240\cdot\frac{100}{121}$.</p>
-      <div class="teoria">
-        <div class="nome">Dividere per una frazione</div>
-        <div class="frase">Per dividere un numero per una frazione si moltiplica il numero per la frazione <strong>capovolta</strong>: numeratore e denominatore si scambiano di posto.</div>
-        <div class="f sx">$\displaystyle n:\frac{a}{b}=n\cdot\frac{b}{a}$</div>
-        <div class="ex">esempio: $20:\frac{2}{3}=20\cdot\frac{3}{2}=30$</div>
-      </div>
-      <div class="errore">
-        <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Moltiplicare per la frazione senza capovolgerla</div>
-        <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle n:\frac{a}{b}=n\cdot\frac{a}{b}$</div></div>
-          <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle n:\frac{a}{b}=n\cdot\frac{b}{a}$</div></div>
-        </div>
-        <div class="why-txt">Si capovolge la frazione che divide.</div>
+        <div class="why-txt">Sotto il cinque l'ultima cifra che resta non cambia.</div>
       </div>
     </div>
   </details>
 
   <div class="riga">
     <div class="fissa">
+      <div class="n">3</div>
+      <div class="cont">
+        <div class="nota">Stessa mossa per la Liguria, con 0,018.</div>
+        <div class="f sx">$\displaystyle \text{Liguria}=0{,}018\cdot 301317=5423{,}706$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="riga">
+    <div class="fissa">
       <div class="n">4</div>
       <div class="cont">
-        <div class="nota">Eseguiamo il prodotto: dodicimiladuecentoquaranta per cento sopra, centoventuno sotto.</div>
-        <div class="f sx">$\displaystyle \text{Prezzo IVA esclusa}=12240\cdot\frac{100}{121}=\frac{1224000}{121}$</div>
+        <div class="nota">Qui la prima cifra buttata via è 7: si arrotonda per eccesso.</div>
+        <div class="f sx">$\displaystyle \text{Liguria}\approx 5424\ \text{km}^2$</div>
       </div>
       <div></div>
     </div>
@@ -269,21 +276,19 @@ mjx-container[display]{margin:0!important}
     <div class="fissa">
       <div class="n">5</div>
       <div class="cont">
-        <div class="nota">La divisione non è esatta: in euro si arrotonda al centesimo.</div>
-        <div class="f sx">$\displaystyle \text{Prezzo IVA esclusa}\approx 10115{,}70\ \text{€}$</div>
+        <div class="nota">L'8,5% diventa 0,085: la Sicilia è la più grande delle quattro.</div>
+        <div class="f sx">$\displaystyle \text{Sicilia}=0{,}085\cdot 301317=25611{,}945$</div>
       </div>
       <div></div>
     </div>
   </div>
 
-  <div class="k">Metodo 2 · dividendo per 1,21</div>
-  <div class="sub">Una sola divisione con la calcolatrice.</div>
   <div class="riga">
     <div class="fissa">
       <div class="n">6</div>
       <div class="cont">
-        <div class="nota">Il 121% diventa 1,21: dividiamo per quel numero invece di capovolgere la frazione.</div>
-        <div class="f sx">$\displaystyle \text{Prezzo IVA esclusa}=12240:1{,}21$</div>
+        <div class="nota">La prima cifra buttata via è 9: la Sicilia arriva a 25 612 km².</div>
+        <div class="f sx">$\displaystyle \text{Sicilia}\approx 25612\ \text{km}^2$</div>
       </div>
       <div></div>
     </div>
@@ -293,8 +298,95 @@ mjx-container[display]{margin:0!important}
     <div class="fissa">
       <div class="n">7</div>
       <div class="cont">
-        <div class="nota">La divisione dà lo stesso numero di prima, e di nuovo lo arrotondiamo al centesimo.</div>
-        <div class="f sx">$\displaystyle \text{Prezzo IVA esclusa}\approx 10115{,}70\ \text{€}$</div>
+        <div class="nota">L'ultima regione è il Veneto, con il suo 6,1% del suolo italiano.</div>
+        <div class="f sx">$\displaystyle \text{Veneto}=0{,}061\cdot 301317=18380{,}337$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">8</div>
+      <div class="cont">
+        <div class="nota">Qui la prima cifra buttata via è 3: il Veneto resta a 18 380 km².</div>
+        <div class="f sx">$\displaystyle \text{Veneto}\approx 18380\ \text{km}^2$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="k">Metodo 2 · con l'uno per cento</div>
+  <div class="sub">Trovato l'1%, ogni regione diventa una moltiplicazione sola.</div>
+  <details class="riga">
+    <summary>
+      <div class="n">9</div>
+      <div class="cont">
+        <div class="nota">Si può anche trovare prima l'1% del suolo italiano, dividendo per cento.</div>
+        <div class="f sx">$\displaystyle \text{Uno per cento dell'Italia}=301317:100=3013{,}17\ \text{km}^2$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">Trovato l'$1\%$, ogni percentuale è un suo multiplo.</p>
+      <div class="teoria">
+        <div class="nome">L'uno per cento</div>
+        <div class="frase">L'1% è il totale diviso cento. Una volta trovato l'1%, tutte le altre percentuali si ottengono moltiplicando: il 7% è sette volte l'1%. Conviene quando dello stesso totale servono più percentuali.</div>
+        <div class="f sx">$\displaystyle 1\%=\text{totale}:100$</div>
+        <div class="ex">esempio: $1\%\ \text{di}\ 3200=32\ \to\ 7\%=7\cdot 32=224$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Moltiplicare invece di dividere</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle 1\%=\text{totale}\cdot 100$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle 1\%=\text{totale}:100$</div></div>
+        </div>
+        <div class="why-txt">L'uno per cento è cento volte più piccolo del totale.</div>
+      </div>
+    </div>
+  </details>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">10</div>
+      <div class="cont">
+        <div class="nota">Il 3,6% è 3,6 volte l'1%: ritroviamo il numero dell'Abruzzo.</div>
+        <div class="f sx">$\displaystyle \text{Abruzzo}=3{,}6\cdot 3013{,}17=10847{,}412$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">11</div>
+      <div class="cont">
+        <div class="nota">La Liguria è 1,8 volte l'1%: anche qui lo stesso numero di prima.</div>
+        <div class="f sx">$\displaystyle \text{Liguria}=1{,}8\cdot 3013{,}17=5423{,}706$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">12</div>
+      <div class="cont">
+        <div class="nota">Per la Sicilia bastano 8,5 volte l'uno per cento.</div>
+        <div class="f sx">$\displaystyle \text{Sicilia}=8{,}5\cdot 3013{,}17=25611{,}945$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">13</div>
+      <div class="cont">
+        <div class="nota">E per il Veneto 6,1 volte: gli arrotondamenti sono quelli di prima.</div>
+        <div class="f sx">$\displaystyle \text{Veneto}=6{,}1\cdot 3013{,}17=18380{,}337$</div>
       </div>
       <div></div>
     </div>
@@ -302,10 +394,10 @@ mjx-container[display]{margin:0!important}
 
   <div class="riga res">
     <div class="fissa">
-      <div class="n">8</div>
+      <div class="n">14</div>
       <div class="cont">
-        <div class="nota">La domanda era il prezzo senza IVA: rispondiamo con quello.</div>
-        <div class="f sx">$\displaystyle \text{Il prezzo IVA esclusa è } 10115{,}70\ \text{€}$</div>
+        <div class="nota">Rispondiamo con le quattro superfici; la classifica delle regioni si leggeva già dalle percentuali.</div>
+        <div class="f sx">$\displaystyle \text{Abruzzo circa }10847\text{ km², Liguria }5424\text{, Sicilia }25612\text{, Veneto }18380$</div>
       </div>
       <div></div>
     </div>

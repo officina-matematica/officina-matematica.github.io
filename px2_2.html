@@ -20,6 +20,8 @@
     "Integer(375)",
     "Integer(375)",
     "Integer(375)",
+    null,
+    null,
     null
   ]
 }
@@ -179,6 +181,7 @@ mjx-container[display]{margin:0!important}
   <div class="k">Confronta con il tuo foglio</div>
   <div class="sub">Scorri le righe fino alla prima che non coincide con la tua. Lì apri <b>Regola</b>.</div>
 
+  <div class="k">Metodo 1 · con la frazione</div>
   <details class="riga">
     <summary>
       <div class="n">1</div>
@@ -192,17 +195,17 @@ mjx-container[display]{margin:0!important}
       <p class="mossa">«3 parti ogni 4 parti» non dice quanti grammi: dice che il rapporto fra i due resta fisso.</p>
       <div class="teoria">
         <div class="nome">Le parti di una ricetta stanno in proporzione</div>
-        <div class="frase">«3 parti ogni 4 parti» vuol dire che il rapporto fra le due quantità resta <strong>sempre</strong> $\frac{3}{4}$, qualunque sia la quantità che si usa. Per trovare l'una si moltiplica l'altra per quel rapporto.</div>
-        <div class="f sx">$\displaystyle \text{zucchero}=\frac{3}{4}\cdot\text{farina}$</div>
-        <div class="ex">esempio: $\frac{3}{4}\cdot 500=375$</div>
+        <div class="frase">«$a$ parti ogni $b$ parti» vuol dire che il rapporto fra le due quantità resta <strong>sempre</strong> $\frac{a}{b}$, qualunque sia la quantità che si usa. Per trovare l'una si moltiplica l'altra per quel rapporto.</div>
+        <div class="f sx">$\displaystyle \text{primo}=\frac{a}{b}\cdot\text{secondo}$</div>
+        <div class="ex">esempio: $\frac{2}{5}\cdot 200=80$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
         <div class="nome">Capovolgere il rapporto</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \text{zucchero}=\frac{4}{3}\cdot\text{farina}$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \text{primo}=\frac{b}{a}\cdot\text{secondo}$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \text{zucchero}=\frac{3}{4}\cdot\text{farina}$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \text{primo}=\frac{a}{b}\cdot\text{secondo}$</div></div>
         </div>
         <div class="why-txt">Sopra va la parte che si cerca.</div>
       </div>
@@ -213,7 +216,7 @@ mjx-container[display]{margin:0!important}
     <summary>
       <div class="n">2</div>
       <div class="cont">
-        <div class="nota">Semplifichiamo prima di moltiplicare: il $500$ si divide per il $4$ e restano numeri piccoli.</div>
+        <div class="nota">Cinquecento si lascia dividere per quattro: centoventicinque, e i numeri restano maneggevoli.</div>
         <div class="f sx">$\displaystyle \text{Zucchero}=\frac{3}{\underset{1}{\cancel{4}}}\cdot \overset{125}{\cancel{500}}$</div>
       </div>
       <span class="tab">Regola <span class="chev">▼</span></span>
@@ -224,17 +227,7 @@ mjx-container[display]{margin:0!important}
         <div class="nome">Semplificare prima di moltiplicare</div>
         <div class="frase">Quando una frazione moltiplica un numero grande, conviene semplificare il numero con il <strong>denominatore</strong> prima di fare il conto: si lavora con numeri piccoli invece che con numeri enormi.</div>
         <div class="f sx">$\displaystyle \frac{a}{b}\cdot n=a\cdot\frac{n}{b}$</div>
-        <div class="ex">esempio: $\frac{7}{10}\cdot 500=7\cdot 50=350$</div>
-      </div>
-      <div class="errore">
-        <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Semplificare il numero con il numeratore</div>
-        <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{a}{b}\cdot n=\frac{n}{a}\cdot b$</div></div>
-          <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{a}{b}\cdot n=a\cdot\frac{n}{b}$</div></div>
-        </div>
-        <div class="why-txt">Si semplifica con il denominatore.</div>
+        <div class="ex">esempio: $\frac{5}{8}\cdot 240=5\cdot 30=150$</div>
       </div>
     </div>
   </details>
@@ -243,7 +236,7 @@ mjx-container[display]{margin:0!important}
     <div class="fissa">
       <div class="n">3</div>
       <div class="cont">
-        <div class="nota">Riscrivo pulito.</div>
+        <div class="nota">Con il cinquecento già diviso per quattro restano numeri piccoli, e il prodotto si fa a mente.</div>
         <div class="f sx">$\displaystyle \text{Zucchero}=\frac{3}{4}\cdot 500=3\cdot 125$</div>
       </div>
       <div></div>
@@ -254,8 +247,51 @@ mjx-container[display]{margin:0!important}
     <div class="fissa">
       <div class="n">4</div>
       <div class="cont">
-        <div class="nota">Adesso il conto è immediato.</div>
+        <div class="nota">Tre volte centoventicinque: ecco i grammi di zucchero che servono.</div>
         <div class="f sx">$\displaystyle \text{Zucchero}=3\cdot 125=375\ \text{g}$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="k">Metodo 2 · con il numero decimale</div>
+  <div class="sub">Comodo se la farina non è un numero tondo.</div>
+  <details class="riga">
+    <summary>
+      <div class="n">5</div>
+      <div class="cont">
+        <div class="nota">La stessa frazione, eseguita: per ogni grammo di farina servono 0,75 g di zucchero.</div>
+        <div class="f sx">$\displaystyle \text{Zucchero per ogni grammo di farina}=3:4=0{,}75$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">Tre quarti, eseguito, dice quanto zucchero va per ogni grammo di farina.</p>
+      <div class="teoria">
+        <div class="nome">Il rapporto come numero decimale</div>
+        <div class="frase">Una frazione è una divisione: eseguendola si ottiene un numero decimale che dice quanto vale <strong>una sola unità</strong> dell'altra quantità. Poi basta moltiplicare per quante unità ci sono davvero.</div>
+        <div class="f sx">$\displaystyle \frac{a}{b}=a:b$</div>
+        <div class="ex">esempio: $\frac{2}{5}=2:5=0{,}4\ \text{per ogni unità}$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Dividere al contrario</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{a}{b}=b:a$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{a}{b}=a:b$</div></div>
+        </div>
+        <div class="why-txt">Si divide il numeratore per il denominatore.</div>
+      </div>
+    </div>
+  </details>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">6</div>
+      <div class="cont">
+        <div class="nota">Moltiplichiamo per i cinquecento grammi di farina: ritroviamo gli stessi 375 g di zucchero.</div>
+        <div class="f sx">$\displaystyle \text{Zucchero}=0{,}75\cdot 500=375\ \text{g}$</div>
       </div>
       <div></div>
     </div>
@@ -263,7 +299,7 @@ mjx-container[display]{margin:0!important}
 
   <div class="riga res">
     <div class="fissa">
-      <div class="n">5</div>
+      <div class="n">7</div>
       <div class="cont">
         <div class="nota">La domanda era quanto zucchero serve: rispondiamo con la quantità e la sua unità.</div>
         <div class="f sx">$\displaystyle \text{Servono } 375 \text{ g di zucchero}$</div>

@@ -3,21 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PX2_12 — Problemi con le percentuali</title>
+<title>PX2_33 — Problemi con le percentuali</title>
 
 <script type="application/json" id="meta">
 {
-  "id": "px2_12",
+  "id": "px2_33",
   "titolo": "Problemi con le percentuali",
   "tipo": "problema",
   "consegna_label": "Risolvi il problema",
-  "consegna_tex": "Un oggetto costa 12 240 € IVA inclusa e l'IVA è del 21%. Quanto costa IVA esclusa?",
-  "consegna_sympy": "12240/(1+Rational(21,100))",
-  "risultato_tex": "\\text{Il prezzo IVA esclusa è } 10115{,}70\\ \\text{€}",
-  "risultato_sympy": "Rational(1224000,121)",
+  "consegna_tex": "Qual è la concentrazione percentuale di zucchero in una soluzione ottenuta mescolando 300 g di soluzione zuccherina al 5 per cento con 200 g di soluzione zuccherina al 2,5 per cento?",
+  "consegna_sympy": "Rational(20,500)*100",
+  "risultato_tex": "\\text{La soluzione ottenuta è al }4\\%",
+  "risultato_sympy": "Integer(4)",
   "righe_sympy": [
-    "Integer(121)",
-    "Rational(1224000,121)",
     null,
     null,
     null,
@@ -174,7 +172,7 @@ mjx-container[display]{margin:0!important}
 <!-- ===================== CONSEGNA ===================== -->
 <div class="consegna">
   <div class="t">📌 Risolvi il problema</div>
-  <div class="m sx">Un oggetto costa 12 240 € IVA inclusa e l'IVA è del 21%. Quanto costa IVA esclusa?</div>
+  <div class="m sx">Qual è la concentrazione percentuale di zucchero in una soluzione ottenuta mescolando 300 g di soluzione zuccherina al 5 per cento con 200 g di soluzione zuccherina al 2,5 per cento?</div>
 </div>
 
 <!-- ===================== CATENA ====================== -->
@@ -182,130 +180,105 @@ mjx-container[display]{margin:0!important}
   <div class="k">Confronta con il tuo foglio</div>
   <div class="sub">Scorri le righe fino alla prima che non coincide con la tua. Lì apri <b>Regola</b>.</div>
 
-  <div class="k">Metodo 1 · con la frazione capovolta</div>
-  <div class="riga">
-    <div class="fissa">
+  <details class="riga">
+    <summary>
       <div class="n">1</div>
       <div class="cont">
-        <div class="nota">Attenzione a cosa sono i 12 240 €: è il prezzo con l'IVA già dentro, cioè il 121% di quello senza.</div>
-        <div class="f sx">$\displaystyle \text{Percentuale}=100+21=121$</div>
+        <div class="nota">Partiamo dalle due soluzioni, una per volta: il 5% di 300 g fa 15 g di zucchero.</div>
+        <div class="f sx">$\displaystyle \text{Zucchero della prima}=0{,}05\cdot 300=15\ \text{g}$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">Il $5\%$ diventa $0{,}05$.</p>
+      <div class="teoria">
+        <div class="nome">La percentuale come numero decimale</div>
+        <div class="frase">Il $p\%$ è $\frac{p}{100}$: diviso cento diventa un numero decimale. Il 12% è 0,12, il 7% è 0,07, l'1,5% è 0,015. Per calcolare quella percentuale di una quantità basta moltiplicare per quel numero.</div>
+        <div class="f sx">$\displaystyle p\%=\frac{p}{100}\quad\to\quad p\%\ \text{di}\ n=\frac{p}{100}\cdot n$</div>
+        <div class="ex">esempio: $24\%\ \text{di}\ 350=0{,}24\cdot 350=84$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Dimenticare di dividere per cento</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle p\%\ \text{di}\ n=p\cdot n$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle p\%\ \text{di}\ n=\frac{p}{100}\cdot n$</div></div>
+        </div>
+        <div class="why-txt">Per cento vuol dire diviso cento.</div>
+      </div>
+    </div>
+  </details>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">2</div>
+      <div class="cont">
+        <div class="nota">Nella seconda lo zucchero è meno concentrato, e di soluzione ce n'è anche meno: 200 g invece di 300.</div>
+        <div class="f sx">$\displaystyle \text{Zucchero della seconda}=0{,}025\cdot 200=5\ \text{g}$</div>
       </div>
       <div></div>
     </div>
   </div>
 
-  <details class="riga">
-    <summary>
-      <div class="n">2</div>
-      <div class="cont">
-        <div class="nota">Il 121% si scrive come frazione, 121 su 100, e ci si divide sopra per tornare al prezzo senza IVA.</div>
-        <div class="f sx">$\displaystyle \text{Prezzo IVA esclusa}=12240:\frac{121}{100}$</div>
-      </div>
-      <span class="tab">Regola <span class="chev">▼</span></span>
-    </summary>
-    <div class="pannello">
-      <p class="mossa">Il numero che ha fatto l'aumento, qui, è $\frac{121}{100}$.</p>
-      <div class="teoria">
-        <div class="nome">Tornare al valore prima dell'aumento</div>
-        <div class="frase">Se si conosce il valore <strong>dopo</strong> l'aumento e si vuole quello di partenza, si <strong>divide</strong> per il numero decimale che ha fatto l'aumento. Togliere la percentuale dal valore nuovo dà un numero sbagliato, perché l'aumento si calcolava su un valore più piccolo.</div>
-        <div class="f sx">$\displaystyle \text{valore di partenza}=\text{valore aumentato}:\left(1+\frac{p}{100}\right)$</div>
-        <div class="ex">esempio: $270:1{,}08=250\ \text{€}$</div>
-      </div>
-      <div class="errore">
-        <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Togliere la percentuale dal valore aumentato</div>
-        <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle n-\frac{p}{100}\cdot n$</div></div>
-          <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle n:\left(1+\frac{p}{100}\right)$</div></div>
-        </div>
-        <div class="why-txt">L'aumento si calcolava sul valore di partenza.</div>
-      </div>
-    </div>
-  </details>
-
-  <details class="riga">
-    <summary>
+  <div class="riga">
+    <div class="fissa">
       <div class="n">3</div>
       <div class="cont">
-        <div class="nota">Con la frazione capovolta la divisione diventa una moltiplicazione.</div>
-        <div class="f sx">$\displaystyle \text{Prezzo IVA esclusa}=12240\cdot\frac{100}{121}$</div>
+        <div class="nota">Lo zucchero si somma: sono grammi, e i grammi si sommano.</div>
+        <div class="f sx">$\displaystyle \text{Zucchero in tutto}=15+5=20\ \text{g}$</div>
       </div>
-      <span class="tab">Regola <span class="chev">▼</span></span>
-    </summary>
-    <div class="pannello">
-      <p class="mossa">$12240:\frac{121}{100}$ diventa $12240\cdot\frac{100}{121}$.</p>
-      <div class="teoria">
-        <div class="nome">Dividere per una frazione</div>
-        <div class="frase">Per dividere un numero per una frazione si moltiplica il numero per la frazione <strong>capovolta</strong>: numeratore e denominatore si scambiano di posto.</div>
-        <div class="f sx">$\displaystyle n:\frac{a}{b}=n\cdot\frac{b}{a}$</div>
-        <div class="ex">esempio: $20:\frac{2}{3}=20\cdot\frac{3}{2}=30$</div>
-      </div>
-      <div class="errore">
-        <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Moltiplicare per la frazione senza capovolgerla</div>
-        <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle n:\frac{a}{b}=n\cdot\frac{a}{b}$</div></div>
-          <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle n:\frac{a}{b}=n\cdot\frac{b}{a}$</div></div>
-        </div>
-        <div class="why-txt">Si capovolge la frazione che divide.</div>
-      </div>
+      <div></div>
     </div>
-  </details>
+  </div>
 
   <div class="riga">
     <div class="fissa">
       <div class="n">4</div>
       <div class="cont">
-        <div class="nota">Eseguiamo il prodotto: dodicimiladuecentoquaranta per cento sopra, centoventuno sotto.</div>
-        <div class="f sx">$\displaystyle \text{Prezzo IVA esclusa}=12240\cdot\frac{100}{121}=\frac{1224000}{121}$</div>
+        <div class="nota">Sotto andrà il peso di tutta la miscela: sommiamo anche i pesi delle due soluzioni.</div>
+        <div class="f sx">$\displaystyle \text{Peso della miscela}=300+200=500\ \text{g}$</div>
       </div>
       <div></div>
     </div>
   </div>
 
-  <div class="riga">
-    <div class="fissa">
+  <details class="riga">
+    <summary>
       <div class="n">5</div>
       <div class="cont">
-        <div class="nota">La divisione non è esatta: in euro si arrotonda al centesimo.</div>
-        <div class="f sx">$\displaystyle \text{Prezzo IVA esclusa}\approx 10115{,}70\ \text{€}$</div>
+        <div class="nota">E la concentrazione è lo zucchero diviso il peso della miscela.</div>
+        <div class="f sx">$\displaystyle \text{Concentrazione}=20:500\cdot 100=4$</div>
       </div>
-      <div></div>
-    </div>
-  </div>
-
-  <div class="k">Metodo 2 · dividendo per 1,21</div>
-  <div class="sub">Una sola divisione con la calcolatrice.</div>
-  <div class="riga">
-    <div class="fissa">
-      <div class="n">6</div>
-      <div class="cont">
-        <div class="nota">Il 121% diventa 1,21: dividiamo per quel numero invece di capovolgere la frazione.</div>
-        <div class="f sx">$\displaystyle \text{Prezzo IVA esclusa}=12240:1{,}21$</div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">La media delle due percentuali darebbe $3{,}75\%$: sarebbe sbagliata.</p>
+      <div class="teoria">
+        <div class="nome">Mescolando non si fa la media</div>
+        <div class="frase">La concentrazione di una miscela non è la media delle due concentrazioni, a meno che le due quantità pesino uguale. Si sommano le sostanze, si sommano i pesi, e poi si divide.</div>
+        <div class="f sx">$\displaystyle \text{concentrazione}=\frac{s_1+s_2}{p_1+p_2}$</div>
+        <div class="ex">esempio: $\frac{24+6}{600+400}=\frac{30}{1000}=0{,}03\ \to\ 3\%$</div>
       </div>
-      <div></div>
-    </div>
-  </div>
-
-  <div class="riga">
-    <div class="fissa">
-      <div class="n">7</div>
-      <div class="cont">
-        <div class="nota">La divisione dà lo stesso numero di prima, e di nuovo lo arrotondiamo al centesimo.</div>
-        <div class="f sx">$\displaystyle \text{Prezzo IVA esclusa}\approx 10115{,}70\ \text{€}$</div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Fare la media delle due concentrazioni</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{c_1+c_2}{2}$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{s_1+s_2}{p_1+p_2}$</div></div>
+        </div>
+        <div class="why-txt">La quantità più pesante conta di più.</div>
       </div>
-      <div></div>
     </div>
-  </div>
+  </details>
 
   <div class="riga res">
     <div class="fissa">
-      <div class="n">8</div>
+      <div class="n">6</div>
       <div class="cont">
-        <div class="nota">La domanda era il prezzo senza IVA: rispondiamo con quello.</div>
-        <div class="f sx">$\displaystyle \text{Il prezzo IVA esclusa è } 10115{,}70\ \text{€}$</div>
+        <div class="nota">Rispondiamo con la concentrazione. È più vicina al 5% perché la prima soluzione era più pesante.</div>
+        <div class="f sx">$\displaystyle \text{La soluzione ottenuta è al }4\%$</div>
       </div>
       <div></div>
     </div>

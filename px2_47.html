@@ -3,21 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PX2_12 — Problemi con le percentuali</title>
+<title>PX2_47 — Problemi con le percentuali</title>
 
 <script type="application/json" id="meta">
 {
-  "id": "px2_12",
+  "id": "px2_47",
   "titolo": "Problemi con le percentuali",
   "tipo": "problema",
   "consegna_label": "Risolvi il problema",
-  "consegna_tex": "Un oggetto costa 12 240 € IVA inclusa e l'IVA è del 21%. Quanto costa IVA esclusa?",
-  "consegna_sympy": "12240/(1+Rational(21,100))",
-  "risultato_tex": "\\text{Il prezzo IVA esclusa è } 10115{,}70\\ \\text{€}",
-  "risultato_sympy": "Rational(1224000,121)",
+  "consegna_tex": "«L'evaso», un fumetto Diabolik del 24 agosto 1987, costava mille lire, cioè 52 centesimi di euro. I Diabolik del 2010 costavano 1,48 € in più rispetto al 1987. Che aumento percentuale ha subito questo fumetto dal 1987 al 2010?",
+  "consegna_sympy": "floor(Rational(148,52)*1000+Rational(1,2))/10",
+  "risultato_tex": "\\text{Il fumetto è aumentato di circa il }284{,}6\\%",
+  "risultato_sympy": "Rational(1423,5)",
   "righe_sympy": [
-    "Integer(121)",
-    "Rational(1224000,121)",
+    null,
     null,
     null,
     null,
@@ -174,7 +173,7 @@ mjx-container[display]{margin:0!important}
 <!-- ===================== CONSEGNA ===================== -->
 <div class="consegna">
   <div class="t">📌 Risolvi il problema</div>
-  <div class="m sx">Un oggetto costa 12 240 € IVA inclusa e l'IVA è del 21%. Quanto costa IVA esclusa?</div>
+  <div class="m sx">«L'evaso», un fumetto Diabolik del 24 agosto 1987, costava mille lire, cioè 52 centesimi di euro. I Diabolik del 2010 costavano 1,48 € in più rispetto al 1987. Che aumento percentuale ha subito questo fumetto dal 1987 al 2010?</div>
 </div>
 
 <!-- ===================== CATENA ====================== -->
@@ -182,13 +181,12 @@ mjx-container[display]{margin:0!important}
   <div class="k">Confronta con il tuo foglio</div>
   <div class="sub">Scorri le righe fino alla prima che non coincide con la tua. Lì apri <b>Regola</b>.</div>
 
-  <div class="k">Metodo 1 · con la frazione capovolta</div>
   <div class="riga">
     <div class="fissa">
       <div class="n">1</div>
       <div class="cont">
-        <div class="nota">Attenzione a cosa sono i 12 240 €: è il prezzo con l'IVA già dentro, cioè il 121% di quello senza.</div>
-        <div class="f sx">$\displaystyle \text{Percentuale}=100+21=121$</div>
+        <div class="nota">Partiamo dai due prezzi: nel 2010 il fumetto costava due euro.</div>
+        <div class="f sx">$\displaystyle \text{Prezzo del 2010}=0{,}52+1{,}48=2\ \text{€}$</div>
       </div>
       <div></div>
     </div>
@@ -198,28 +196,28 @@ mjx-container[display]{margin:0!important}
     <summary>
       <div class="n">2</div>
       <div class="cont">
-        <div class="nota">Il 121% si scrive come frazione, 121 su 100, e ci si divide sopra per tornare al prezzo senza IVA.</div>
-        <div class="f sx">$\displaystyle \text{Prezzo IVA esclusa}=12240:\frac{121}{100}$</div>
+        <div class="nota">L'aumento in percentuale è l'aumento in euro diviso il prezzo di partenza.</div>
+        <div class="f sx">$\displaystyle \text{Aumento in percentuale}=1{,}48:0{,}52\cdot 100$</div>
       </div>
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">Il numero che ha fatto l'aumento, qui, è $\frac{121}{100}$.</p>
+      <p class="mossa">Sopra va l'aumento, $1{,}48$ €, non il prezzo nuovo.</p>
       <div class="teoria">
-        <div class="nome">Tornare al valore prima dell'aumento</div>
-        <div class="frase">Se si conosce il valore <strong>dopo</strong> l'aumento e si vuole quello di partenza, si <strong>divide</strong> per il numero decimale che ha fatto l'aumento. Togliere la percentuale dal valore nuovo dà un numero sbagliato, perché l'aumento si calcolava su un valore più piccolo.</div>
-        <div class="f sx">$\displaystyle \text{valore di partenza}=\text{valore aumentato}:\left(1+\frac{p}{100}\right)$</div>
-        <div class="ex">esempio: $270:1{,}08=250\ \text{€}$</div>
+        <div class="nome">L'aumento in percentuale</div>
+        <div class="frase">L'aumento percentuale si trova dividendo <strong>l'aumento</strong> per il prezzo di partenza. Dividendo invece il prezzo nuovo per quello vecchio si ottiene un numero più grande di cento: dice quanto è diventato il prezzo, non di quanto è cresciuto.</div>
+        <div class="f sx">$\displaystyle \text{aumento \%}=\frac{\text{prezzo nuovo}-\text{prezzo vecchio}}{\text{prezzo vecchio}}\cdot 100$</div>
+        <div class="ex">esempio: $\text{da}\ 12\ \text{a}\ 15:\ \frac{3}{12}\cdot 100=25\%$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Togliere la percentuale dal valore aumentato</div>
+        <div class="nome">Dividere il valore nuovo per quello vecchio</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle n-\frac{p}{100}\cdot n$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{15}{12}\cdot 100=125\%$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle n:\left(1+\frac{p}{100}\right)$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{15-12}{12}\cdot 100=25\%$</div></div>
         </div>
-        <div class="why-txt">L'aumento si calcolava sul valore di partenza.</div>
+        <div class="why-txt">Il rapporto dice quanto è diventato, non di quanto è cresciuto.</div>
       </div>
     </div>
   </details>
@@ -228,38 +226,40 @@ mjx-container[display]{margin:0!important}
     <summary>
       <div class="n">3</div>
       <div class="cont">
-        <div class="nota">Con la frazione capovolta la divisione diventa una moltiplicazione.</div>
-        <div class="f sx">$\displaystyle \text{Prezzo IVA esclusa}=12240\cdot\frac{100}{121}$</div>
+        <div class="nota">Viene 284,6%: il prezzo è cresciuto di quasi tre volte il prezzo del 1987.</div>
+        <div class="f sx">$\displaystyle \text{Aumento}\approx 284{,}6\%$</div>
       </div>
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">$12240:\frac{121}{100}$ diventa $12240\cdot\frac{100}{121}$.</p>
+      <p class="mossa">$284{,}61\ldots$ con un decimale diventa $284{,}6$.</p>
       <div class="teoria">
-        <div class="nome">Dividere per una frazione</div>
-        <div class="frase">Per dividere un numero per una frazione si moltiplica il numero per la frazione <strong>capovolta</strong>: numeratore e denominatore si scambiano di posto.</div>
-        <div class="f sx">$\displaystyle n:\frac{a}{b}=n\cdot\frac{b}{a}$</div>
-        <div class="ex">esempio: $20:\frac{2}{3}=20\cdot\frac{3}{2}=30$</div>
+        <div class="nome">Arrotondare il risultato</div>
+        <div class="frase">Quando il conto dà molte cifre dopo la virgola si arrotonda: si guarda la prima cifra che si butta via e, se è 5 o più, si aumenta di uno l'ultima cifra che resta. Il risultato si scrive con «circa».</div>
+        <div class="f sx">$\displaystyle \text{la prima cifra che si butta via: sotto il}\ 5\ \text{si resta, dal}\ 5\ \text{in su si sale}$</div>
+        <div class="ex">esempio: $7{,}349\ \text{€}\ \to\ 7{,}35\ \text{€}\qquad 12{,}4\ \to\ 12$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Moltiplicare per la frazione senza capovolgerla</div>
+        <div class="nome">Arrotondare per eccesso quando la cifra non lo chiede</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle n:\frac{a}{b}=n\cdot\frac{a}{b}$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle 12{,}4\\ \\to\\ 13$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle n:\frac{a}{b}=n\cdot\frac{b}{a}$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle 12{,}4\\ \\to\\ 12$</div></div>
         </div>
-        <div class="why-txt">Si capovolge la frazione che divide.</div>
+        <div class="why-txt">Sotto il cinque l'ultima cifra che resta non cambia.</div>
       </div>
     </div>
   </details>
 
+  <div class="k">Perché 384,6% è un'altra cosa</div>
+  <div class="sub">È l'errore che si trova nelle soluzioni del libro.</div>
   <div class="riga">
     <div class="fissa">
       <div class="n">4</div>
       <div class="cont">
-        <div class="nota">Eseguiamo il prodotto: dodicimiladuecentoquaranta per cento sopra, centoventuno sotto.</div>
-        <div class="f sx">$\displaystyle \text{Prezzo IVA esclusa}=12240\cdot\frac{100}{121}=\frac{1224000}{121}$</div>
+        <div class="nota">Se invece si divide il prezzo nuovo per quello vecchio viene un altro numero.</div>
+        <div class="f sx">$\displaystyle \text{Rapporto fra i due prezzi}=2:0{,}52\cdot 100$</div>
       </div>
       <div></div>
     </div>
@@ -269,43 +269,49 @@ mjx-container[display]{margin:0!important}
     <div class="fissa">
       <div class="n">5</div>
       <div class="cont">
-        <div class="nota">La divisione non è esatta: in euro si arrotonda al centesimo.</div>
-        <div class="f sx">$\displaystyle \text{Prezzo IVA esclusa}\approx 10115{,}70\ \text{€}$</div>
+        <div class="nota">Il 384,6% dice che il prezzo è diventato quasi quattro volte quello del 1987.</div>
+        <div class="f sx">$\displaystyle \text{Rapporto}\approx 384{,}6\%$</div>
       </div>
       <div></div>
     </div>
   </div>
 
-  <div class="k">Metodo 2 · dividendo per 1,21</div>
-  <div class="sub">Una sola divisione con la calcolatrice.</div>
-  <div class="riga">
-    <div class="fissa">
+  <details class="riga">
+    <summary>
       <div class="n">6</div>
       <div class="cont">
-        <div class="nota">Il 121% diventa 1,21: dividiamo per quel numero invece di capovolgere la frazione.</div>
-        <div class="f sx">$\displaystyle \text{Prezzo IVA esclusa}=12240:1{,}21$</div>
+        <div class="nota">Il prezzo è diventato il 384,6% di quello del 1987: tolto il 100% di partenza, resta l'aumento.</div>
+        <div class="f sx">$\displaystyle \text{Aumento}=384{,}6-100=284{,}6$</div>
       </div>
-      <div></div>
-    </div>
-  </div>
-
-  <div class="riga">
-    <div class="fissa">
-      <div class="n">7</div>
-      <div class="cont">
-        <div class="nota">La divisione dà lo stesso numero di prima, e di nuovo lo arrotondiamo al centesimo.</div>
-        <div class="f sx">$\displaystyle \text{Prezzo IVA esclusa}\approx 10115{,}70\ \text{€}$</div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">Con le percentuali il $100\%$ di partenza si toglie come $100$.</p>
+      <div class="teoria">
+        <div class="nome">Il rapporto meno uno</div>
+        <div class="frase">Dividendo il valore nuovo per quello vecchio si ottiene un numero che contiene già il $100\%$ di partenza: $1{,}1$ vuol dire $110\%$. Togliendo $1$ resta la sola variazione, che moltiplicata per cento diventa la percentuale di aumento.</div>
+        <div class="f sx">$\displaystyle \frac{\text{nuovo}}{\text{vecchio}}-1\qquad\text{oppure}\qquad\frac{\text{nuovo}}{\text{vecchio}}\cdot 100-100$</div>
+        <div class="ex">esempio: $\frac{55}{50}=1{,}1\ \to\ 1{,}1-1=0{,}1\ \to\ 10\%$</div>
       </div>
-      <div></div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Scambiare il rapporto per l'aumento</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{n}{v}\cdot 100$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \left(\frac{n}{v}-1\right)\cdot 100$</div></div>
+        </div>
+        <div class="why-txt">Il rapporto dice quanto è diventato, non di quanto è cresciuto.</div>
+      </div>
     </div>
-  </div>
+  </details>
 
   <div class="riga res">
     <div class="fissa">
-      <div class="n">8</div>
+      <div class="n">7</div>
       <div class="cont">
-        <div class="nota">La domanda era il prezzo senza IVA: rispondiamo con quello.</div>
-        <div class="f sx">$\displaystyle \text{Il prezzo IVA esclusa è } 10115{,}70\ \text{€}$</div>
+        <div class="nota">Rispondiamo con l'aumento: il prezzo è diventato circa 3,85 volte, quindi è cresciuto di 2,85 volte.</div>
+        <div class="f sx">$\displaystyle \text{Il fumetto è aumentato di circa il }284{,}6\%$</div>
       </div>
       <div></div>
     </div>

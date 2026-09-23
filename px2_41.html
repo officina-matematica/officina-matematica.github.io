@@ -3,25 +3,27 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PX2_6 — Problemi con le percentuali</title>
+<title>PX2_41 — Problemi con le percentuali</title>
 
 <script type="application/json" id="meta">
 {
-  "id": "px2_6",
+  "id": "px2_41",
   "titolo": "Problemi con le percentuali",
   "tipo": "problema",
   "consegna_label": "Risolvi il problema",
-  "consegna_tex": "Un paio di scarpe scontato del 20% costa 40 €. Quanto costava prima dello sconto?",
-  "consegna_sympy": "40/(1-Rational(20,100))",
-  "risultato_tex": "\\text{Prima dello sconto costavano } 50\\ \\text{€}",
-  "risultato_sympy": "Integer(50)",
+  "consegna_tex": "Su tre cartellini ci sono il prezzo scontato e la percentuale di sconto: 6 x 30 g a 1,29 € con il 27% di sconto; 230 g a 1,79 € con il 31%; 1,5 l a 5,88 € con il 40%. Calcola per ognuno il prezzo di listino, arrotondato al centesimo, e il prezzo al kg (o al litro).",
+  "consegna_sympy": "Rational(588,100)/Rational(6,10)",
+  "risultato_tex": "\\text{1,77 € e 7,17 €/kg; 2,59 € e 7,78 €/kg; 9,80 € e 3,92 €/l}",
+  "risultato_sympy": "Rational(49,5)",
   "righe_sympy": [
-    "Integer(80)",
-    "Integer(50)",
-    "Integer(50)",
-    "Integer(50)",
-    "Integer(50)",
-    "Integer(50)",
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
     null,
     null,
     null,
@@ -177,7 +179,7 @@ mjx-container[display]{margin:0!important}
 <!-- ===================== CONSEGNA ===================== -->
 <div class="consegna">
   <div class="t">📌 Risolvi il problema</div>
-  <div class="m sx">Un paio di scarpe scontato del 20% costa 40 €. Quanto costava prima dello sconto?</div>
+  <div class="m sx">Su tre cartellini ci sono il prezzo scontato e la percentuale di sconto: 6 x 30 g a 1,29 € con il 27% di sconto; 230 g a 1,79 € con il 31%; 1,5 l a 5,88 € con il 40%. Calcola per ognuno il prezzo di listino, arrotondato al centesimo, e il prezzo al kg (o al litro).</div>
 </div>
 
 <!-- ===================== CATENA ====================== -->
@@ -185,18 +187,17 @@ mjx-container[display]{margin:0!important}
   <div class="k">Confronta con il tuo foglio</div>
   <div class="sub">Scorri le righe fino alla prima che non coincide con la tua. Lì apri <b>Regola</b>.</div>
 
-  <div class="k">Metodo 1 · con la frazione capovolta</div>
   <details class="riga">
     <summary>
       <div class="n">1</div>
       <div class="cont">
-        <div class="nota">Attenzione a cosa sono i $40$ €: è il prezzo già scontato. Con il $20\%$ tolto, quello che si paga è l'$80\%$ del prezzo pieno.</div>
-        <div class="f sx">$\displaystyle \text{Percentuale pagata}=100-20=80$</div>
+        <div class="nota">Partiamo dalla prima confezione: scontata del 27%, il prezzo scontato è il 73% di quello di listino.</div>
+        <div class="f sx">$\displaystyle \text{Percentuale pagata, 6 x 30 g}=100-27=73$</div>
       </div>
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">Lo sconto si calcola sul prezzo pieno: chi paga $40$ € sta pagando $80$ parti su cento di un prezzo più alto.</p>
+      <p class="mossa">Il calo del $27\%$ lascia il $73\%$ del prezzo di listino.</p>
       <div class="teoria">
         <div class="nome">Quello che resta dopo un calo</div>
         <div class="frase">Un calo del <strong>s%</strong> lascia il $(100-s)\%$ del valore di partenza: se qualcosa cala del 40%, quello che resta è il 60% di prima. È la percentuale da cui si riparte, sia per calcolare il valore nuovo sia per risalire a quello vecchio.</div>
@@ -220,168 +221,13 @@ mjx-container[display]{margin:0!important}
     <summary>
       <div class="n">2</div>
       <div class="cont">
-        <div class="nota">Il problema dà la parte e chiede il totale: dividiamo.</div>
-        <div class="f sx">$\displaystyle \text{Prezzo pieno}=40:\frac{80}{100}$</div>
+        <div class="nota">Conosciamo la parte, 1,29 €, e la sua percentuale: per risalire al listino si divide.</div>
+        <div class="f sx">$\displaystyle \text{Prezzo di listino}=1{,}29:0{,}73$</div>
       </div>
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">Il prezzo pieno è più grande di quello scontato, e infatti dividendo per una frazione minore di $1$ il numero cresce.</p>
-      <div class="teoria">
-        <div class="nome">Dalla percentuale al totale: si divide</div>
-        <div class="frase">Quando il problema dà una <strong>parte</strong> e dice a quale percentuale corrisponde, per risalire al totale si divide la parte per quella percentuale scritta come frazione. È il contrario di quando si cerca la parte.</div>
-        <div class="f sx">$\displaystyle \text{totale}=\text{parte}:\frac{p}{100}$</div>
-        <div class="ex">esempio: $90:\frac{15}{100}=600$</div>
-      </div>
-      <div class="errore">
-        <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Moltiplicare invece di dividere</div>
-        <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \text{totale}=\text{parte}\cdot\frac{p}{100}$</div></div>
-          <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \text{totale}=\text{parte}:\frac{p}{100}$</div></div>
-        </div>
-        <div class="why-txt">Il totale è più grande della parte.</div>
-      </div>
-    </div>
-  </details>
-
-  <details class="riga">
-    <summary>
-      <div class="n">3</div>
-      <div class="cont">
-        <div class="nota">La divisione per una frazione ci blocca: la riscriviamo come moltiplicazione.</div>
-        <div class="f sx">$\displaystyle \text{Prezzo pieno}=40\cdot\frac{100}{80}$</div>
-      </div>
-      <span class="tab">Regola <span class="chev">▼</span></span>
-    </summary>
-    <div class="pannello">
-      <p class="mossa">$40:\frac{80}{100}$ diventa $40\cdot\frac{100}{80}$.</p>
-      <div class="teoria">
-        <div class="nome">Dividere per una frazione</div>
-        <div class="frase">Per dividere un numero per una frazione si moltiplica il numero per la frazione <strong>capovolta</strong>: numeratore e denominatore si scambiano di posto.</div>
-        <div class="f sx">$\displaystyle n:\frac{a}{b}=n\cdot\frac{b}{a}$</div>
-        <div class="ex">esempio: $20:\frac{2}{3}=20\cdot\frac{3}{2}=30$</div>
-      </div>
-      <div class="errore">
-        <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Moltiplicare per la frazione senza capovolgerla</div>
-        <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle n:\frac{a}{b}=n\cdot\frac{a}{b}$</div></div>
-          <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle n:\frac{a}{b}=n\cdot\frac{b}{a}$</div></div>
-        </div>
-        <div class="why-txt">Si capovolge la frazione che divide.</div>
-      </div>
-    </div>
-  </details>
-
-  <details class="riga">
-    <summary>
-      <div class="n">4</div>
-      <div class="cont">
-        <div class="nota">Riduciamo la frazione prima di moltiplicare.</div>
-        <div class="f sx">$\displaystyle \text{Prezzo pieno}=40\cdot\frac{\overset{5}{\cancel{100}}}{\underset{4}{\cancel{80}}}$</div>
-      </div>
-      <span class="tab">Regola <span class="chev">▼</span></span>
-    </summary>
-    <div class="pannello">
-      <p class="mossa">$100$ e $80$ si dividono per $2$, per $2$ e poi per $5$.</p>
-      <div class="teoria">
-        <div class="nome">Ridurre una frazione ai minimi termini</div>
-        <div class="frase">Dividendo numeratore e denominatore per lo stesso numero il valore non cambia, ma i numeri diventano più piccoli. Conviene farlo appena si può: i conti che vengono dopo sono molto più facili.</div>
-        <div class="f sx">$\displaystyle \frac{a\cdot k}{b\cdot k}=\frac{a}{b}$</div>
-        <div class="ex">esempio: $\frac{9}{12}=\frac{3\cdot 3}{4\cdot 3}=\frac{3}{4}$</div>
-      </div>
-      <div class="errore">
-        <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Dividere un solo termine della frazione</div>
-        <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{a\cdot k}{b\cdot k}=\frac{a}{b\cdot k}$</div></div>
-          <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{a\cdot k}{b\cdot k}=\frac{a}{b}$</div></div>
-        </div>
-        <div class="why-txt">Sopra e sotto, per lo stesso numero.</div>
-      </div>
-    </div>
-  </details>
-
-  <div class="riga">
-    <div class="fissa">
-      <div class="n">5</div>
-      <div class="cont">
-        <div class="nota">Rimettiamo in fila il conto: quaranta per cinque quarti.</div>
-        <div class="f sx">$\displaystyle \text{Prezzo pieno}=40\cdot\frac{100}{80}=40\cdot\frac{5}{4}$</div>
-      </div>
-      <div></div>
-    </div>
-  </div>
-
-  <details class="riga">
-    <summary>
-      <div class="n">6</div>
-      <div class="cont">
-        <div class="nota">Semplifichiamo il $40$ con il $4$ e il conto viene da sé.</div>
-        <div class="f sx">$\displaystyle \text{Prezzo pieno}=\overset{10}{\cancel{40}}\cdot\frac{5}{\underset{1}{\cancel{4}}}$</div>
-      </div>
-      <span class="tab">Regola <span class="chev">▼</span></span>
-    </summary>
-    <div class="pannello">
-      <p class="mossa">$40:4=10$, e restano $10\cdot 5$.</p>
-      <div class="teoria">
-        <div class="nome">Semplificare prima di moltiplicare</div>
-        <div class="frase">Quando una frazione moltiplica un numero grande, conviene semplificare il numero con il <strong>denominatore</strong> prima di fare il conto: si lavora con numeri piccoli invece che con numeri enormi.</div>
-        <div class="f sx">$\displaystyle \frac{a}{b}\cdot n=a\cdot\frac{n}{b}$</div>
-        <div class="ex">esempio: $\frac{5}{8}\cdot 240=5\cdot 30=150$</div>
-      </div>
-      <div class="errore">
-        <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Semplificare il numero con il numeratore</div>
-        <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{6}{5}\cdot 8=\frac{3}{5}\cdot 4$</div></div>
-          <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{6}{5}\cdot 8=6\cdot\frac{8}{5}$</div></div>
-        </div>
-        <div class="why-txt">Si semplifica sempre un numeratore con un denominatore.</div>
-      </div>
-    </div>
-  </details>
-
-  <div class="riga">
-    <div class="fissa">
-      <div class="n">7</div>
-      <div class="cont">
-        <div class="nota">Rimettiamo in fila il conto dopo la semplificazione.</div>
-        <div class="f sx">$\displaystyle \text{Prezzo pieno}=40\cdot\frac{5}{4}=10\cdot 5$</div>
-      </div>
-      <div></div>
-    </div>
-  </div>
-
-  <div class="riga">
-    <div class="fissa">
-      <div class="n">8</div>
-      <div class="cont">
-        <div class="nota">Dieci volte cinque: ecco il prezzo prima dello sconto.</div>
-        <div class="f sx">$\displaystyle \text{Prezzo pieno}=10\cdot 5=50\ \text{€}$</div>
-      </div>
-      <div></div>
-    </div>
-  </div>
-
-  <div class="k">Metodo 2 · dividendo per 0,80</div>
-  <div class="sub">Una sola divisione con la calcolatrice.</div>
-  <details class="riga">
-    <summary>
-      <div class="n">9</div>
-      <div class="cont">
-        <div class="nota">L'80% diventa 0,80: il prezzo scontato diviso per 0,80 dà il prezzo di partenza.</div>
-        <div class="f sx">$\displaystyle \text{Prezzo pieno}=40:0{,}80=50\ \text{€}$</div>
-      </div>
-      <span class="tab">Regola <span class="chev">▼</span></span>
-    </summary>
-    <div class="pannello">
-      <p class="mossa">Aggiungere il $20\%$ a $40$ darebbe $48$: sarebbe sbagliato.</p>
+      <p class="mossa">Aggiungere il $27\%$ a $1{,}29$ darebbe $1{,}64$: sarebbe sbagliato.</p>
       <div class="teoria">
         <div class="nome">Tornare al valore di partenza</div>
         <div class="frase">Se si conosce il valore <strong>dopo</strong> il calo e si vuole quello di partenza, si <strong>divide</strong> per il numero decimale che ha fatto il calo. Aggiungere la percentuale al valore diminuito dà un numero sbagliato, perché quella percentuale si calcolava su un valore più alto.</div>
@@ -401,12 +247,149 @@ mjx-container[display]{margin:0!important}
     </div>
   </details>
 
+  <details class="riga">
+    <summary>
+      <div class="n">3</div>
+      <div class="cont">
+        <div class="nota">I prezzi si scrivono al centesimo: 1,767... diventa 1,77 €.</div>
+        <div class="f sx">$\displaystyle \text{Prezzo di listino}\approx 1{,}77\ \text{€}$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">$1{,}767\ldots$ diventa $1{,}77$.</p>
+      <div class="teoria">
+        <div class="nome">Arrotondare il risultato</div>
+        <div class="frase">Quando il conto dà molte cifre dopo la virgola si arrotonda: si guarda la prima cifra che si butta via e, se è 5 o più, si aumenta di uno l'ultima cifra che resta. Il risultato si scrive con «circa».</div>
+        <div class="f sx">$\displaystyle \text{la prima cifra che si butta via: sotto il}\ 5\ \text{si resta, dal}\ 5\ \text{in su si sale}$</div>
+        <div class="ex">esempio: $7{,}349\ \text{€}\ \to\ 7{,}35\ \text{€}\qquad 12{,}4\ \to\ 12$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Fermarsi alla cifra invece di arrotondare</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle 12{,}6\ \to\ 12$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle 12{,}6\ \to\ 13$</div></div>
+        </div>
+        <div class="why-txt">Dal cinque in su l'ultima cifra che resta sale di uno.</div>
+      </div>
+    </div>
+  </details>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">4</div>
+      <div class="cont">
+        <div class="nota">Sei pezzi da 30 g fanno 180 g, cioè 0,18 kg.</div>
+        <div class="f sx">$\displaystyle \text{Peso, 6 x 30 g}=6\cdot 30=180\ \text{g}$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <details class="riga">
+    <summary>
+      <div class="n">5</div>
+      <div class="cont">
+        <div class="nota">Il prezzo al chilogrammo si calcola su quello che si paga.</div>
+        <div class="f sx">$\displaystyle \text{Prezzo al kg}=1{,}29:0{,}18$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">Si divide il prezzo scontato, non quello di listino.</p>
+      <div class="teoria">
+        <div class="nome">Il prezzo al chilogrammo</div>
+        <div class="frase">Il prezzo al chilogrammo si trova dividendo il prezzo <strong>che si paga</strong> per il peso <strong>in chilogrammi</strong>. Il peso va convertito prima: i grammi si dividono per mille, e così i millilitri per avere i litri. Serve per confrontare confezioni diverse.</div>
+        <div class="f sx">$\displaystyle \text{€/kg}=\frac{\text{prezzo pagato}}{\text{peso in kg}}$</div>
+        <div class="ex">esempio: $\frac{3{,}60\ \text{€}}{0{,}4\ \text{kg}}=9\ \text{€/kg}$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Dividere per i grammi invece che per i chilogrammi</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{3{,}60}{400}=0{,}009$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{3{,}60}{0{,}4}=9$</div></div>
+        </div>
+        <div class="why-txt">Quattrocento grammi sono $0{,}4$ kg.</div>
+      </div>
+    </div>
+  </details>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">6</div>
+      <div class="cont">
+        <div class="nota">Anche il prezzo al chilogrammo si ferma al centesimo.</div>
+        <div class="f sx">$\displaystyle \text{Prezzo al kg}\approx 7{,}17\ \text{€/kg}$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">7</div>
+      <div class="cont">
+        <div class="nota">Seconda confezione: sconto del 31%, quindi si è pagato il 69%.</div>
+        <div class="f sx">$\displaystyle \text{Prezzo di listino, 230 g}=1{,}79:0{,}69$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">8</div>
+      <div class="cont">
+        <div class="nota">Arrotondiamo al centesimo, come per la prima confezione.</div>
+        <div class="f sx">$\displaystyle \text{Prezzo di listino, 230 g}\approx 2{,}59\ \text{€}$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">9</div>
+      <div class="cont">
+        <div class="nota">Per il prezzo al chilogrammo si usa quello che si paga, e 230 g sono 0,23 kg.</div>
+        <div class="f sx">$\displaystyle \text{Prezzo al kg, 230 g}=1{,}79:0{,}23$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
   <div class="riga">
     <div class="fissa">
       <div class="n">10</div>
       <div class="cont">
-        <div class="nota">Controlliamo rifacendo lo sconto: si ritrova il prezzo del cartellino.</div>
-        <div class="f sx">$\displaystyle \text{Controllo}=50\cdot 0{,}80=40\ \text{€}$</div>
+        <div class="nota">Anche questo prezzo al chilogrammo si ferma al centesimo.</div>
+        <div class="f sx">$\displaystyle \text{Prezzo al kg, 230 g}\approx 7{,}78\ \text{€/kg}$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">11</div>
+      <div class="cont">
+        <div class="nota">Terza confezione: sconto del 40%, quindi si è pagato il 60%.</div>
+        <div class="f sx">$\displaystyle \text{Prezzo di listino, 1,5 l}=5{,}88:0{,}60=9{,}80\ \text{€}$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">12</div>
+      <div class="cont">
+        <div class="nota">E qui la capacità è già in litri.</div>
+        <div class="f sx">$\displaystyle \text{Prezzo al litro}=5{,}88:1{,}5=3{,}92\ \text{€/l}$</div>
       </div>
       <div></div>
     </div>
@@ -414,10 +397,10 @@ mjx-container[display]{margin:0!important}
 
   <div class="riga res">
     <div class="fissa">
-      <div class="n">11</div>
+      <div class="n">13</div>
       <div class="cont">
-        <div class="nota">La domanda era il prezzo prima dello sconto: rispondiamo con quello.</div>
-        <div class="f sx">$\displaystyle \text{Prima dello sconto costavano } 50\ \text{€}$</div>
+        <div class="nota">Rispondiamo con i tre listini e i tre prezzi al chilogrammo o al litro.</div>
+        <div class="f sx">$\displaystyle \text{1,77 € e 7,17 €/kg; 2,59 € e 7,78 €/kg; 9,80 € e 3,92 €/l}$</div>
       </div>
       <div></div>
     </div>

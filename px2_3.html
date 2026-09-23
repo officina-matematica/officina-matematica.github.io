@@ -19,6 +19,8 @@
     "Rational(5,2)",
     "Rational(95,2)",
     "Rational(105,2)",
+    null,
+    null,
     null
   ]
 }
@@ -178,6 +180,7 @@ mjx-container[display]{margin:0!important}
   <div class="k">Confronta con il tuo foglio</div>
   <div class="sub">Scorri le righe fino alla prima che non coincide con la tua. Lì apri <b>Regola</b>.</div>
 
+  <div class="k">Metodo 1 · prima il margine, poi i due pesi</div>
   <details class="riga">
     <summary>
       <div class="n">1</div>
@@ -193,7 +196,7 @@ mjx-container[display]{margin:0!important}
         <div class="nome">La percentuale di una quantità</div>
         <div class="frase">Per calcolare il <strong>p%</strong> di una quantità si moltiplica la quantità per $\frac{p}{100}$. È lo stesso identico procedimento della frazione di un numero.</div>
         <div class="f sx">$\displaystyle p\,\%\text{ di }N=\frac{p}{100}\cdot N$</div>
-        <div class="ex">esempio: $5\,\%\text{ di }50=\frac{5}{100}\cdot 50=2{,}5$</div>
+        <div class="ex">esempio: $12\,\%\text{ di }150=\frac{12}{100}\cdot 150=18$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
@@ -201,7 +204,7 @@ mjx-container[display]{margin:0!important}
         <div class="compare">
           <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle p\,\%\text{ di }N=N:\frac{p}{100}$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle p\,\%\text{ di }N=\frac{p}{100}\cdot N$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle p\,\%\text{ di }N=N\cdot\frac{p}{100}$</div></div>
         </div>
         <div class="why-txt">Per trovare la parte si moltiplica.</div>
       </div>
@@ -230,9 +233,52 @@ mjx-container[display]{margin:0!important}
     </div>
   </div>
 
+  <div class="k">Metodo 2 · i due pesi in un conto solo</div>
+  <div class="sub">Senza calcolare prima i 2,5 kg di margine.</div>
+  <details class="riga">
+    <summary>
+      <div class="n">4</div>
+      <div class="cont">
+        <div class="nota">Il peso più basso è il 5% in meno, cioè il 95% del peso di adesso.</div>
+        <div class="f sx">$\displaystyle \text{Peso minimo}=50\cdot 0{,}95=47{,}5\ \text{kg}$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">$-5\%$ diventa $\cdot\,0{,}95$.</p>
+      <div class="teoria">
+        <div class="nome">Togliere una percentuale in un colpo solo</div>
+        <div class="frase">Togliere il <strong>s%</strong> da una quantità vuol dire tenerne il $(100-s)\%$: invece di calcolare la parte da togliere e poi sottrarla, si moltiplica subito per il numero decimale che resta. Con i prezzi: scontare del 25% vuol dire pagare il 75%.</div>
+        <div class="f sx">$\displaystyle n\ \text{scontato del}\ s\%=n\cdot\left(1-\frac{s}{100}\right)$</div>
+        <div class="ex">esempio: $150\ \text{€ scontato del}\ 35\%:\ 150\cdot 0{,}65=97{,}50\ \text{€}$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Moltiplicare per la percentuale dello sconto</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle n\ \text{scontato del}\ s\%=n\cdot\frac{s}{100}$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle n\ \text{scontato del}\ s\%=n\cdot\frac{100-s}{100}$</div></div>
+        </div>
+        <div class="why-txt">Il primo dà lo sconto, il secondo quello che si paga.</div>
+      </div>
+    </div>
+  </details>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">5</div>
+      <div class="cont">
+        <div class="nota">E il più alto è il 5% in più, cioè il 105%: si ritrovano gli stessi valori.</div>
+        <div class="f sx">$\displaystyle \text{Peso massimo}=50\cdot 1{,}05=52{,}5\ \text{kg}$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
   <div class="riga res">
     <div class="fissa">
-      <div class="n">4</div>
+      <div class="n">6</div>
       <div class="cont">
         <div class="nota">La domanda chiedeva fra quali valori può oscillare: la risposta sono due numeri, non uno.</div>
         <div class="f sx">$\displaystyle \text{Il peso può oscillare fra } 47{,}5 \text{ e } 52{,}5 \text{ kg}$</div>

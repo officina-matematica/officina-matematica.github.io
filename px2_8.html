@@ -18,6 +18,7 @@
   "righe_sympy": [
     "Rational(273,10)",
     "Rational(1573,10)",
+    null,
     null
   ]
 }
@@ -177,6 +178,7 @@ mjx-container[display]{margin:0!important}
   <div class="k">Confronta con il tuo foglio</div>
   <div class="sub">Scorri le righe fino alla prima che non coincide con la tua. Lì apri <b>Regola</b>.</div>
 
+  <div class="k">Metodo 1 · prima l'IVA, poi la somma</div>
   <details class="riga">
     <summary>
       <div class="n">1</div>
@@ -192,7 +194,7 @@ mjx-container[display]{margin:0!important}
         <div class="nome">La percentuale di una quantità</div>
         <div class="frase">Per calcolare il <strong>p%</strong> di una quantità si moltiplica la quantità per $\frac{p}{100}$. È lo stesso identico procedimento della frazione di un numero.</div>
         <div class="f sx">$\displaystyle p\,\%\text{ di }N=\frac{p}{100}\cdot N$</div>
-        <div class="ex">esempio: $5\,\%\text{ di }50=\frac{5}{100}\cdot 50=2{,}5$</div>
+        <div class="ex">esempio: $12\,\%\text{ di }150=\frac{12}{100}\cdot 150=18$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
@@ -200,7 +202,7 @@ mjx-container[display]{margin:0!important}
         <div class="compare">
           <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle p\,\%\text{ di }N=N:\frac{p}{100}$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle p\,\%\text{ di }N=\frac{p}{100}\cdot N$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle p\,\%\text{ di }N=N\cdot\frac{p}{100}$</div></div>
         </div>
         <div class="why-txt">Per trovare la parte si moltiplica.</div>
       </div>
@@ -218,9 +220,41 @@ mjx-container[display]{margin:0!important}
     </div>
   </div>
 
+  <div class="k">Metodo 2 · in un conto solo</div>
+  <div class="sub">Senza calcolare prima l'IVA in euro.</div>
+  <details class="riga">
+    <summary>
+      <div class="n">3</div>
+      <div class="cont">
+        <div class="nota">Il 121% diventa 1,21, e quel fattore tiene dentro il prezzo e l'IVA insieme: un conto al posto di due.</div>
+        <div class="f sx">$\displaystyle \text{Prezzo IVA inclusa}=130\cdot 1{,}21=157{,}30\ \text{€}$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">Il $p$ della regola, qui, è $21$: l'aliquota dell'IVA.</p>
+      <div class="teoria">
+        <div class="nome">L'aumento in un colpo solo</div>
+        <div class="frase">Aumentare del <strong>p%</strong> vuol dire arrivare al $(100+p)\%$: il valore di partenza conta già come $100\%$. Si moltiplica per $1+\frac{p}{100}$ e si arriva alla quantità aumentata in un passaggio solo, senza calcolare prima l'aumento.</div>
+        <div class="f sx">$\displaystyle n\ \text{aumentato del}\ p\%=n\cdot\left(1+\frac{p}{100}\right)$</div>
+        <div class="ex">esempio: $250\ \text{€ aumentati dell'}8\%:\ 250\cdot 1{,}08=270\ \text{€}$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Moltiplicare per la sola percentuale dell'aumento</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle n\cdot 0{,}08$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle n\cdot 1{,}08$</div></div>
+        </div>
+        <div class="why-txt">Il primo dà solo l'aumento, il secondo la quantità aumentata.</div>
+      </div>
+    </div>
+  </details>
+
   <div class="riga res">
     <div class="fissa">
-      <div class="n">3</div>
+      <div class="n">4</div>
       <div class="cont">
         <div class="nota">La domanda era il prezzo con l'IVA dentro: rispondiamo con quello.</div>
         <div class="f sx">$\displaystyle \text{Il prezzo IVA inclusa è } 157{,}30\ \text{€}$</div>

@@ -18,7 +18,10 @@
   "righe_sympy": [
     "Integer(121)",
     "Rational(17000,121)",
-    "Rational(17000,121)",
+    null,
+    null,
+    null,
+    null,
     null,
     null
   ]
@@ -179,62 +182,44 @@ mjx-container[display]{margin:0!important}
   <div class="k">Confronta con il tuo foglio</div>
   <div class="sub">Scorri le righe fino alla prima che non coincide con la tua. Lì apri <b>Regola</b>.</div>
 
-  <details class="riga">
-    <summary>
+  <div class="k">Metodo 1 · con la frazione capovolta</div>
+  <div class="riga">
+    <div class="fissa">
       <div class="n">1</div>
       <div class="cont">
-        <div class="nota">Attenzione a cosa sono i $170$ €: è il prezzo con l'IVA gia' dentro, cioè il $121\%$ di quello senza.</div>
+        <div class="nota">Attenzione a cosa sono i 170 €: è il prezzo con l'IVA già dentro, cioè il 121% di quello senza.</div>
         <div class="f sx">$\displaystyle \text{Percentuale}=100+21=121$</div>
       </div>
-      <span class="tab">Regola <span class="chev">▼</span></span>
-    </summary>
-    <div class="pannello">
-      <p class="mossa">Il prezzo senza IVA vale $100$ parti; con l'IVA del $21\%$ ne vale $121$.</p>
-      <div class="teoria">
-        <div class="nome">Prezzo scontato e prezzo pieno</div>
-        <div class="frase">Uno sconto del <strong>s%</strong> lascia da pagare il $(100-s)\%$ del prezzo pieno. Per risalire al prezzo pieno partendo da quello scontato si divide per quella percentuale, non si aggiunge lo sconto al prezzo scontato.</div>
-        <div class="f sx">$\displaystyle \text{scontato}=\frac{100-s}{100}\cdot\text{pieno}$</div>
-        <div class="ex">esempio: $20\,\%\text{ di sconto}:\ \text{si paga }\frac{80}{100}$</div>
-      </div>
-      <div class="errore">
-        <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Aggiungere lo sconto al prezzo scontato</div>
-        <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \text{pieno}=\text{scontato}+\frac{s}{100}\cdot\text{scontato}$</div></div>
-          <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \text{pieno}=\text{scontato}:\frac{100-s}{100}$</div></div>
-        </div>
-        <div class="why-txt">Lo sconto si calcola sul prezzo pieno, non su quello scontato.</div>
-      </div>
+      <div></div>
     </div>
-  </details>
+  </div>
 
   <details class="riga">
     <summary>
       <div class="n">2</div>
       <div class="cont">
-        <div class="nota">Il problema dà il totale con l'IVA e chiede il prezzo senza: dividiamo.</div>
+        <div class="nota">Il 121% si scrive come frazione, 121 su 100, e ci si divide sopra per tornare al prezzo senza IVA.</div>
         <div class="f sx">$\displaystyle \text{Prezzo IVA esclusa}=170:\frac{121}{100}$</div>
       </div>
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">Il prezzo senza IVA è più piccolo di quello con l'IVA, e infatti dividendo per una frazione maggiore di $1$ il numero cala.</p>
+      <p class="mossa">Il numero che ha fatto l'aumento, qui, è $\frac{121}{100}$.</p>
       <div class="teoria">
-        <div class="nome">Dalla percentuale al totale: si divide</div>
-        <div class="frase">Quando il problema dà una <strong>parte</strong> e dice a quale percentuale corrisponde, per risalire al totale si divide la parte per quella percentuale scritta come frazione. È il contrario di quando si cerca la parte.</div>
-        <div class="f sx">$\displaystyle \text{totale}=\text{parte}:\frac{p}{100}$</div>
-        <div class="ex">esempio: $120:\frac{25}{100}=480$</div>
+        <div class="nome">Tornare al valore prima dell'aumento</div>
+        <div class="frase">Se si conosce il valore <strong>dopo</strong> l'aumento e si vuole quello di partenza, si <strong>divide</strong> per il numero decimale che ha fatto l'aumento. Togliere la percentuale dal valore nuovo dà un numero sbagliato, perché l'aumento si calcolava su un valore più piccolo.</div>
+        <div class="f sx">$\displaystyle \text{valore di partenza}=\text{valore aumentato}:\left(1+\frac{p}{100}\right)$</div>
+        <div class="ex">esempio: $270:1{,}08=250\ \text{€}$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Moltiplicare invece di dividere</div>
+        <div class="nome">Togliere la percentuale dal valore aumentato</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \text{totale}=\text{parte}\cdot\frac{p}{100}$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle n-\frac{p}{100}\cdot n$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \text{totale}=\text{parte}:\frac{p}{100}$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle n:\left(1+\frac{p}{100}\right)$</div></div>
         </div>
-        <div class="why-txt">Il totale è più grande della parte.</div>
+        <div class="why-txt">L'aumento si calcolava sul valore di partenza.</div>
       </div>
     </div>
   </details>
@@ -243,8 +228,8 @@ mjx-container[display]{margin:0!important}
     <summary>
       <div class="n">3</div>
       <div class="cont">
-        <div class="nota">Capovolgiamo la frazione che divide.</div>
-        <div class="f sx">$\displaystyle \text{Prezzo IVA esclusa}=170\cdot\frac{100}{121}=\frac{17000}{121}$</div>
+        <div class="nota">Con la frazione capovolta la divisione diventa una moltiplicazione.</div>
+        <div class="f sx">$\displaystyle \text{Prezzo IVA esclusa}=170\cdot\frac{100}{121}$</div>
       </div>
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
@@ -273,7 +258,42 @@ mjx-container[display]{margin:0!important}
     <div class="fissa">
       <div class="n">4</div>
       <div class="cont">
+        <div class="nota">Eseguiamo il prodotto: centosettanta per cento sopra, centoventuno sotto.</div>
+        <div class="f sx">$\displaystyle \text{Prezzo IVA esclusa}=170\cdot\frac{100}{121}=\frac{17000}{121}$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">5</div>
+      <div class="cont">
         <div class="nota">La divisione non è esatta: in euro si arrotonda al centesimo.</div>
+        <div class="f sx">$\displaystyle \text{Prezzo IVA esclusa}\approx 140{,}50\ \text{€}$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="k">Metodo 2 · dividendo per 1,21</div>
+  <div class="sub">Una sola divisione con la calcolatrice.</div>
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">6</div>
+      <div class="cont">
+        <div class="nota">Il 121% diventa 1,21: dividiamo per quel numero invece di capovolgere la frazione.</div>
+        <div class="f sx">$\displaystyle \text{Prezzo IVA esclusa}=170:1{,}21$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">7</div>
+      <div class="cont">
+        <div class="nota">La divisione dà lo stesso numero di prima, e di nuovo lo arrotondiamo al centesimo.</div>
         <div class="f sx">$\displaystyle \text{Prezzo IVA esclusa}\approx 140{,}50\ \text{€}$</div>
       </div>
       <div></div>
@@ -282,7 +302,7 @@ mjx-container[display]{margin:0!important}
 
   <div class="riga res">
     <div class="fissa">
-      <div class="n">5</div>
+      <div class="n">8</div>
       <div class="cont">
         <div class="nota">La domanda era il prezzo senza IVA: rispondiamo con quello.</div>
         <div class="f sx">$\displaystyle \text{Il prezzo IVA esclusa è } 140{,}50\ \text{€}$</div>

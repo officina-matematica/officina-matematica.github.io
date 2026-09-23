@@ -19,6 +19,10 @@
     "Rational(23,5)",
     "Rational(460,101)",
     null,
+    null,
+    null,
+    null,
+    null,
     null
   ]
 }
@@ -178,6 +182,7 @@ mjx-container[display]{margin:0!important}
   <div class="k">Confronta con il tuo foglio</div>
   <div class="sub">Scorri le righe fino alla prima che non coincide con la tua. Lì apri <b>Regola</b>.</div>
 
+  <div class="k">Metodo 1 · dall'IVA in euro</div>
   <div class="riga">
     <div class="fissa">
       <div class="n">1</div>
@@ -193,18 +198,18 @@ mjx-container[display]{margin:0!important}
     <summary>
       <div class="n">2</div>
       <div class="cont">
-        <div class="nota">Adesso chiediamoci che percentuale è quel numero rispetto al prezzo senza IVA: parte sopra, totale sotto.</div>
+        <div class="nota">L'IVA in euro da sola non dice se è tanta o poca: la confrontiamo con il prezzo di partenza.</div>
         <div class="f sx">$\displaystyle \text{Percentuale}=\frac{4{,}60}{101{,}00}\cdot 100$</div>
       </div>
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">L'IVA si calcola sempre sul prezzo <strong>senza</strong> IVA: è quello che va sotto la linea.</p>
+      <p class="mossa">Il totale, qui, è il prezzo di listino senza IVA.</p>
       <div class="teoria">
         <div class="nome">Che percentuale è una parte del totale</div>
-        <div class="frase">Si scrive la frazione <strong>parte su totale</strong> e la si moltiplica per cento. Moltiplicare per cento è il passaggio che trasforma «quanti su sessanta» in «quanti su cento».</div>
+        <div class="frase">Si scrive la frazione <strong>parte su totale</strong> e la si moltiplica per cento. Moltiplicare per cento è il passaggio che trasforma «quanti su quel totale» in «quanti su cento».</div>
         <div class="f sx">$\displaystyle \%=\frac{\text{parte}}{\text{totale}}\cdot 100$</div>
-        <div class="ex">esempio: $\frac{15}{60}\cdot 100=25$</div>
+        <div class="ex">esempio: $\frac{7}{20}\cdot 100=35$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
@@ -230,9 +235,93 @@ mjx-container[display]{margin:0!important}
     </div>
   </div>
 
-  <div class="riga res">
+  <div class="k">Metodo 2 · dal rapporto fra i due prezzi</div>
+  <div class="sub">Il numero che esce dice di quanto si è passato il 100%.</div>
+  <div class="riga">
     <div class="fissa">
       <div class="n">4</div>
+      <div class="cont">
+        <div class="nota">Cerchiamo quante volte il prezzo con IVA contiene quello senza: quel numero porta dentro anche l'IVA.</div>
+        <div class="f sx">$\displaystyle \text{Rapporto fra i due prezzi}=105{,}60:101{,}00$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">5</div>
+      <div class="cont">
+        <div class="nota">Viene 1,0455: il prezzo con IVA è il 104,55% di quello senza.</div>
+        <div class="f sx">$\displaystyle \text{Rapporto}\approx 1{,}0455$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <details class="riga">
+    <summary>
+      <div class="n">6</div>
+      <div class="cont">
+        <div class="nota">Il prezzo senza IVA è tutto il 100%: quello che avanza sopra l'uno è l'IVA.</div>
+        <div class="f sx">$\displaystyle \text{IVA, in decimale}=1{,}0455-1=0{,}0455$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">Il rapporto vale più di uno perché il prezzo con l'IVA è più alto.</p>
+      <div class="teoria">
+        <div class="nome">Il rapporto meno uno</div>
+        <div class="frase">Dividendo il valore nuovo per quello vecchio si ottiene un numero che contiene già il $100\%$ di partenza: $1{,}1$ vuol dire $110\%$. Togliendo $1$ resta la sola variazione, che moltiplicata per cento diventa la percentuale di aumento.</div>
+        <div class="f sx">$\displaystyle \frac{\text{nuovo}}{\text{vecchio}}-1\qquad\text{oppure}\qquad\frac{\text{nuovo}}{\text{vecchio}}\cdot 100-100$</div>
+        <div class="ex">esempio: $\frac{55}{50}=1{,}1\ \to\ 1{,}1-1=0{,}1\ \to\ 10\%$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Scambiare il rapporto per l'aumento</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{n}{v}\cdot 100$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \left(\frac{n}{v}-1\right)\cdot 100$</div></div>
+        </div>
+        <div class="why-txt">Il rapporto dice quanto è diventato, non di quanto è cresciuto.</div>
+      </div>
+    </div>
+  </details>
+
+  <details class="riga">
+    <summary>
+      <div class="n">7</div>
+      <div class="cont">
+        <div class="nota">La domanda chiede una percentuale, non un numero decimale: moltiplichiamo per cento.</div>
+        <div class="f sx">$\displaystyle \text{Percentuale}=0{,}0455\cdot 100=4{,}55$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">$0{,}0455$ vuol dire $4{,}55$ su cento.</p>
+      <div class="teoria">
+        <div class="nome">Dal numero decimale alla percentuale</div>
+        <div class="frase">Un numero decimale diventa percentuale moltiplicandolo per cento: il numero dice quanti centesimi sono, la percentuale quanti su cento. È la strada inversa di quella che porta dal $p\%$ al numero $\frac{p}{100}$.</div>
+        <div class="f sx">$\displaystyle d\cdot 100=p\quad\to\quad p\%$</div>
+        <div class="ex">esempio: $0{,}6\cdot 100=60\ \to\ 60\%$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Leggere il decimale come se fosse già una percentuale</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle 0{,}6\ \to\ 0{,}6\%$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle 0{,}6\ \to\ 60\%$</div></div>
+        </div>
+        <div class="why-txt">Il numero decimale va moltiplicato per cento.</div>
+      </div>
+    </div>
+  </details>
+
+  <div class="riga res">
+    <div class="fissa">
+      <div class="n">8</div>
       <div class="cont">
         <div class="nota">La domanda era la percentuale di IVA, non quanti euro: rispondiamo con quella.</div>
         <div class="f sx">$\displaystyle \text{L'IVA applicata è circa il } 4{,}55\ \%$</div>

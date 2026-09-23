@@ -19,6 +19,8 @@
     "Integer(25)",
     "Integer(15)",
     "Integer(60)",
+    null,
+    null,
     null
   ]
 }
@@ -178,11 +180,12 @@ mjx-container[display]{margin:0!important}
   <div class="k">Confronta con il tuo foglio</div>
   <div class="sub">Scorri le righe fino alla prima che non coincide con la tua. Lì apri <b>Regola</b>.</div>
 
+  <div class="k">Metodo 1 · con la frazione</div>
   <div class="riga">
     <div class="fissa">
       <div class="n">1</div>
       <div class="cont">
-        <div class="nota">Partiamo dal totale dei candidati: sommiamo tutti i numeri della riga di sotto.</div>
+        <div class="nota">Partiamo dal totale dei candidati: sommiamo i numeri fra parentesi, uno per ogni punteggio.</div>
         <div class="f sx">$\displaystyle \text{Candidati}=1+2+4+1+2+5+4+1+3+2=25$</div>
       </div>
       <div></div>
@@ -193,7 +196,7 @@ mjx-container[display]{margin:0!important}
     <div class="fissa">
       <div class="n">2</div>
       <div class="cont">
-        <div class="nota">Adesso contiamo quelli che passano: hanno preso almeno $80$, cioè le ultime cinque colonne.</div>
+        <div class="nota">Adesso contiamo quelli che passano: hanno preso almeno 80, cioè gli ultimi cinque punteggi dell'elenco.</div>
         <div class="f sx">$\displaystyle \text{Ammessi}=5+4+1+3+2=15$</div>
       </div>
       <div></div>
@@ -204,7 +207,7 @@ mjx-container[display]{margin:0!important}
     <summary>
       <div class="n">3</div>
       <div class="cont">
-        <div class="nota">Adesso trasformiamo in percentuale: parte sopra, totale sotto, e poi per cento.</div>
+        <div class="nota">Adesso passiamo alla percentuale: quindici ammessi sui venticinque candidati di partenza.</div>
         <div class="f sx">$\displaystyle \text{Percentuale}=\frac{15}{25}\cdot 100=60$</div>
       </div>
       <span class="tab">Regola <span class="chev">▼</span></span>
@@ -213,9 +216,9 @@ mjx-container[display]{margin:0!important}
       <p class="mossa">$\frac{15}{25}$ si riduce a $\frac{3}{5}$, e tre quinti di cento sono sessanta.</p>
       <div class="teoria">
         <div class="nome">Che percentuale è una parte del totale</div>
-        <div class="frase">Si scrive la frazione <strong>parte su totale</strong> e la si moltiplica per cento. Moltiplicare per cento è il passaggio che trasforma «quanti su sessanta» in «quanti su cento».</div>
+        <div class="frase">Si scrive la frazione <strong>parte su totale</strong> e la si moltiplica per cento. Moltiplicare per cento è il passaggio che trasforma «quanti su quel totale» in «quanti su cento».</div>
         <div class="f sx">$\displaystyle \%=\frac{\text{parte}}{\text{totale}}\cdot 100$</div>
-        <div class="ex">esempio: $\frac{15}{60}\cdot 100=25$</div>
+        <div class="ex">esempio: $\frac{7}{20}\cdot 100=35$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
@@ -230,9 +233,52 @@ mjx-container[display]{margin:0!important}
     </div>
   </details>
 
+  <div class="k">Metodo 2 · ogni candidato vale il 4%</div>
+  <div class="sub">Si può fare a mente, senza calcolatrice.</div>
+  <details class="riga">
+    <summary>
+      <div class="n">4</div>
+      <div class="cont">
+        <div class="nota">I candidati sono venticinque e cento si divide bene per venticinque: a ciascuno tocca il 4%.</div>
+        <div class="f sx">$\displaystyle \text{Quanto vale un candidato}=100:25=4$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">Cento diviso venticinque: ogni candidato è un venticinquesimo del totale.</p>
+      <div class="teoria">
+        <div class="nome">Quanto vale uno solo</div>
+        <div class="frase">Quando gli elementi sono pochi e il loro numero divide cento, conviene trovare quanto vale <strong>un elemento solo</strong>: si divide $100$ per quanti sono. Poi ogni gruppo vale quel numero moltiplicato per quanti elementi contiene.</div>
+        <div class="f sx">$\displaystyle \text{un elemento fra}\ t\ \text{vale}\ \frac{100}{t}\%$</div>
+        <div class="ex">esempio: $\text{con}\ t=20:\ \frac{100}{20}=5\%\ \text{ciascuno}$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Dividere il totale per cento invece del contrario</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{t}{100}$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{100}{t}$</div></div>
+        </div>
+        <div class="why-txt">Si divide cento per il numero degli elementi.</div>
+      </div>
+    </div>
+  </details>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">5</div>
+      <div class="cont">
+        <div class="nota">Quindici candidati ammessi, ciascuno vale il 4%: il 60%.</div>
+        <div class="f sx">$\displaystyle \text{Percentuale}=15\cdot 4=60$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
   <div class="riga res">
     <div class="fissa">
-      <div class="n">4</div>
+      <div class="n">6</div>
       <div class="cont">
         <div class="nota">La domanda chiedeva una percentuale, non quanti candidati: rispondiamo con quella.</div>
         <div class="f sx">$\displaystyle \text{Può partecipare il } 60\ \% \text{ dei candidati}$</div>
