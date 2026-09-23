@@ -200,18 +200,18 @@ mjx-container[display]{margin:0!important}
       <div class="teoria">
         <div class="nome">Da numero decimale a notazione scientifica</div>
         <div class="frase">Si sposta la virgola fino ad avere una sola cifra diversa da zero davanti, poi si conta di quanti posti l'abbiamo spostata: quello è l'esponente del $10$. Verso destra l'esponente è <strong>negativo</strong>, verso sinistra <strong>positivo</strong>.</div>
-        <div class="f sx">$\displaystyle 0{,}00a=a\cdot 10^{-3}$</div>
-        <div class="ex">esempio: $0{,}0007=7\cdot 10^{-4}$</div>
+        <div class="f sx">$\displaystyle 0{,}\underbrace{0\ldots 0}_{n-1}a=a\cdot 10^{-n}\qquada\underbrace{0\ldots 0}_{n}=a\cdot 10^{n}$</div>
+        <div class="ex">esempio: $0{,}0007=7\cdot 10^{-4}\qquad 52\,000=5{,}2\cdot 10^{4}$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
         <div class="nome">Sbagliare il segno dell'esponente</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle 0{,}0007=7\cdot 10^{4}$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle 0{,}0a=a\cdot 10^{2}$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle 0{,}0007=7\cdot 10^{-4}$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle 0{,}0a=a\cdot 10^{-2}$</div></div>
         </div>
-        <div class="why-txt">Numero piccolo, esponente negativo.</div>
+        <div class="why-txt">Un numero più piccolo di uno ha l'esponente negativo.</div>
       </div>
     </div>
   </details>
@@ -242,17 +242,17 @@ mjx-container[display]{margin:0!important}
         <div class="nome">La notazione scientifica</div>
         <div class="frase">Un numero è scritto in notazione scientifica quando ha la forma $a\cdot 10^{n}$, dove $a$ è un numero <strong>compreso fra 1 e 10</strong> (il 10 escluso) e $n$ è un numero intero, anche negativo. Serve a scrivere numeri molto grandi o molto piccoli senza file di zeri.</div>
         <div class="f sx">$\displaystyle a\cdot 10^{n}\quad\text{con}\ 1\le a<10$</div>
-        <div class="ex">esempio: $3{,}8\cdot 10^{10}\ \text{sì};\quad 15\cdot 10^{-6}\ \text{no}$</div>
+        <div class="ex">esempio: $4{,}7\cdot 10^{9}\ \text{sì};\quad 31\cdot 10^{5}\ \text{no}$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
         <div class="nome">Lasciare davanti un numero fuori da 1 e 10</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle 15\cdot 10^{-6}$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a\cdot 10^{n}\ \text{con}\ a\ge 10\ \text{oppure}\ a<1$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle 1{,}5\cdot 10^{-5}$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a\cdot 10^{n}\ \text{con}\ 1\le a<10$</div></div>
         </div>
-        <div class="why-txt">Davanti va una sola cifra diversa da zero.</div>
+        <div class="why-txt">Prima della virgola deve restare una cifra sola, da 1 a 9.</div>
       </div>
     </div>
   </details>

@@ -203,7 +203,7 @@ mjx-container[display]{margin:0!important}
         <div class="nome">Priorità: prima le potenze</div>
         <div class="frase">Le potenze si svolgono per prime, prima ancora delle moltiplicazioni e delle divisioni. L'esponente riguarda <strong>soltanto</strong> il numero su cui è scritto.</div>
         <div class="f sx">$\displaystyle a\cdot b^{n}=a\cdot\left(b^{n}\right)$</div>
-        <div class="ex">esempio: $2\cdot 3^{2}=2\cdot 9=18$</div>
+        <div class="ex">esempio: $7\cdot 2^{2}=7\cdot 4=28$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
@@ -229,35 +229,16 @@ mjx-container[display]{margin:0!important}
     </div>
   </div>
 
-  <details class="riga">
-    <summary>
+  <div class="riga">
+    <div class="fissa">
       <div class="n">4</div>
       <div class="cont">
         <div class="nota">Svolgo le potenze.</div>
         <div class="f sx">$\displaystyle =3\cdot 6-16+4=$</div>
       </div>
-      <span class="tab">Regola <span class="chev">▼</span></span>
-    </summary>
-    <div class="pannello">
-      <p class="mossa">$4^{2}=16$ e $2^{2}=4$.</p>
-      <div class="teoria">
-        <div class="nome">Priorità: prima le potenze</div>
-        <div class="frase">Le potenze si svolgono per prime, prima ancora delle moltiplicazioni e delle divisioni. L'esponente riguarda <strong>soltanto</strong> il numero su cui è scritto.</div>
-        <div class="f sx">$\displaystyle a\cdot b^{n}=a\cdot\left(b^{n}\right)$</div>
-        <div class="ex">esempio: $2\cdot 3^{2}=2\cdot 9=18$</div>
-      </div>
-      <div class="errore">
-        <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Elevare anche il fattore accanto</div>
-        <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a\cdot b^{n}=\left(a\cdot b\right)^{n}$</div></div>
-          <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a\cdot b^{n}=a\cdot\left(b^{n}\right)$</div></div>
-        </div>
-        <div class="why-txt">L'esponente riguarda un numero solo.</div>
-      </div>
+      <div></div>
     </div>
-  </details>
+  </div>
 
   <details class="riga">
     <summary>
@@ -272,19 +253,19 @@ mjx-container[display]{margin:0!important}
       <p class="mossa">$3\cdot 6=18$ prima di somme e sottrazioni.</p>
       <div class="teoria">
         <div class="nome">Priorità delle operazioni</div>
-        <div class="frase">Prima le potenze, poi le moltiplicazioni e le divisioni, e solo alla fine le addizioni e le sottrazioni.</div>
-        <div class="f sx">$\displaystyle a+b:c=a+\left(b:c\right)$</div>
-        <div class="ex">esempio: $2+12:4=2+3=5$</div>
+        <div class="frase">In un'espressione senza parentesi si eseguono prima tutte le moltiplicazioni e le divisioni. Solo dopo si passa alle addizioni e alle sottrazioni.</div>
+        <div class="f sx">$\displaystyle a+b\cdot c=a+\left(b\cdot c\right)$</div>
+        <div class="ex">esempio: $2+3\cdot 4=2+12=14$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Eseguire l'addizione prima della divisione</div>
+        <div class="nome">Eseguire l'addizione prima della moltiplicazione</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a+b:c=\left(a+b\right):c$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a+b\cdot c=\left(a+b\right)\cdot c$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a+b:c=a+\left(b:c\right)$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a+b\cdot c=a+\left(b\cdot c\right)$</div></div>
         </div>
-        <div class="why-txt">La divisione si chiude per prima.</div>
+        <div class="why-txt">La moltiplicazione non aspetta l'addizione.</div>
       </div>
     </div>
   </details>

@@ -209,8 +209,8 @@ mjx-container[display]{margin:0!important}
       <div class="teoria">
         <div class="nome">Potenza con esponente negativo</div>
         <div class="frase">Un esponente negativo dice di <strong>capovolgere</strong> la base e cambiare il segno dell'esponente. Il risultato non diventa negativo: l'esponente negativo riguarda la posizione, non il segno.</div>
-        <div class="f sx">$\displaystyle a^{-n}=\left(\frac{1}{a}\right)^{n}$</div>
-        <div class="ex">esempio: $\left(\frac{1}{4}\right)^{-2}=4^{2}=16$</div>
+        <div class="f sx">$\displaystyle a^{-n}=\left(\frac{1}{a}\right)^{n}=\frac{1}{a^{n}}$</div>
+        <div class="ex">esempio: $\left(\frac{1}{11}\right)^{-2}=11^{2}=121$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
@@ -315,16 +315,35 @@ mjx-container[display]{margin:0!important}
     </div>
   </details>
 
-  <div class="riga">
-    <div class="fissa">
+  <details class="riga">
+    <summary>
       <div class="n">6</div>
       <div class="cont">
         <div class="nota">I due ottavi sono opposti: si annullano.</div>
         <div class="f sx">$\displaystyle =\left\{\left[-\frac{9}{7}-\frac{5}{7}\right]\left(-\frac{1}{2}\right)^{3}+\frac{1}{4}\right\}^{-3}\cdot\left(-4\right)^{-3}=$</div>
       </div>
-      <div></div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">Stesso denominatore: si sommano o si sottraggono i numeratori.</p>
+      <div class="teoria">
+        <div class="nome">Addizione e sottrazione fra frazioni</div>
+        <div class="frase">Due frazioni si sommano o si sottraggono solo quando hanno lo <strong>stesso denominatore</strong>. Si cerca il minimo comune multiplo dei denominatori, si riscrivono tutte con quel denominatore e poi si sommano o si sottraggono i soli numeratori.</div>
+        <div class="f sx">$\displaystyle \frac{a}{b}+\frac{c}{d}=\frac{a\cdot\left(m:b\right)+c\cdot\left(m:d\right)}{m}\quad\text{con}\ m=\text{mcm}\left(b,d\right)$</div>
+        <div class="ex">esempio: $\frac{1}{4}+\frac{1}{10}=\frac{5}{20}+\frac{2}{20}=\frac{7}{20}$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Sommare anche i denominatori</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{a}{m}+\frac{c}{m}=\frac{a+c}{m+m}$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{a}{m}+\frac{c}{m}=\frac{a+c}{m}$</div></div>
+        </div>
+        <div class="why-txt">Con lo stesso denominatore si sommano solo i numeratori.</div>
+      </div>
     </div>
-  </div>
+  </details>
 
   <details class="riga">
     <summary>
@@ -341,7 +360,7 @@ mjx-container[display]{margin:0!important}
         <div class="nome">Potenza di una frazione</div>
         <div class="frase">Per elevare una frazione a un esponente si elevano <strong>sia il numeratore sia il denominatore</strong>. L'esponente riguarda tutta la frazione, non solo il numero di sopra.</div>
         <div class="f sx">$\displaystyle \left(\frac{a}{b}\right)^{n}=\frac{a^{n}}{b^{n}}$</div>
-        <div class="ex">esempio: $\left(\frac{2}{3}\right)^{3}=\frac{8}{27}$</div>
+        <div class="ex">esempio: $\left(\frac{2}{13}\right)^{2}=\frac{4}{169}$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
@@ -408,7 +427,7 @@ mjx-container[display]{margin:0!important}
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Sommare gli esponenti invece delle basi</div>
+        <div class="nome">Sommare gli esponenti invece di tenerne uno solo</div>
         <div class="compare">
           <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a^{n}\cdot b^{n}=\left(a\cdot b\right)^{2n}$</div></div>
           <div class="arrow">➜</div>

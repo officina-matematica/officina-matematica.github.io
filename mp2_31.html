@@ -196,36 +196,55 @@ mjx-container[display]{margin:0!important}
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">La moltiplicazione viene prima della sottrazione: si svolge $3x^{2}\cdot 2x$ e solo dopo si toglie $4x^{3}$.</p>
+      <p class="mossa">La moltiplicazione viene prima dell'addizione.</p>
       <div class="teoria">
-        <div class="nome">L'ordine delle operazioni</div>
-        <div class="frase">Prima si svolgono le parentesi, poi moltiplicazioni e divisioni, infine addizioni e sottrazioni. Moltiplicazione e divisione hanno la <strong>stessa</strong> priorità: fra loro si eseguono nell'ordine in cui sono scritte, da sinistra a destra.</div>
-        <div class="f sx">$\displaystyle a+b\cdot c=a+\left(b\cdot c\right)$</div>
+        <div class="nome">Priorità delle operazioni</div>
+        <div class="frase">In un'espressione senza parentesi si eseguono prima tutte le moltiplicazioni e le divisioni. Solo dopo si passa alle addizioni e alle sottrazioni.</div>
+        <div class="f sx">$\displaystyle a+b\cdot c=a+(b\cdot c)$</div>
         <div class="ex">esempio: $2+3\cdot 4=2+12=14$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Eseguire la somma prima del prodotto</div>
+        <div class="nome">Eseguire l'addizione prima della moltiplicazione</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a+b\cdot c=\left(a+b\right)\cdot c$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a+b\cdot c=(a+b)\cdot c$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a+b\cdot c=a+\left(b\cdot c\right)$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a+b\cdot c=a+(b\cdot c)$</div></div>
         </div>
-        <div class="why-txt">Il prodotto viene prima della somma.</div>
+        <div class="why-txt">La moltiplicazione non aspetta l'addizione.</div>
       </div>
     </div>
   </details>
 
-  <div class="riga">
-    <div class="fissa">
+  <details class="riga">
+    <summary>
       <div class="n">3</div>
       <div class="cont">
         <div class="nota">Facciamo il prodotto.</div>
         <div class="f sx">$\displaystyle =6x^{3}-4x^{3}=$</div>
       </div>
-      <div></div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">Coefficienti fra loro, e gli esponenti della stessa lettera si sommano.</p>
+      <div class="teoria">
+        <div class="nome">Prodotto di due monomi</div>
+        <div class="frase">Si moltiplicano i coefficienti fra loro e le lettere fra loro. Per ogni lettera uguale gli esponenti si <strong>sommano</strong>; una lettera che compare in un solo fattore si riscrive com'è.</div>
+        <div class="f sx">$\displaystyle ka^{m}\cdot ha^{n}=\left(k\cdot h\right)\cdot a^{m+n}$</div>
+        <div class="ex">esempio: $2a^{2}\cdot 5a^{3}=10a^{5}$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Moltiplicare gli esponenti</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a^{2}\cdot a^{3}=a^{6}$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a^{2}\cdot a^{3}=a^{5}$</div></div>
+        </div>
+        <div class="why-txt">Nel prodotto gli esponenti si sommano.</div>
+      </div>
     </div>
-  </div>
+  </details>
 
   <details class="riga res">
     <summary>

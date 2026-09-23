@@ -201,7 +201,7 @@ mjx-container[display]{margin:0!important}
         <div class="nome">Priorità: prima le potenze</div>
         <div class="frase">Le potenze si svolgono per prime, prima ancora delle moltiplicazioni e delle divisioni. L'esponente riguarda <strong>soltanto</strong> il numero su cui è scritto.</div>
         <div class="f sx">$\displaystyle a\cdot b^{n}=a\cdot\left(b^{n}\right)$</div>
-        <div class="ex">esempio: $2\cdot 3^{2}=2\cdot 9=18$</div>
+        <div class="ex">esempio: $7\cdot 2^{2}=7\cdot 4=28$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
@@ -229,19 +229,19 @@ mjx-container[display]{margin:0!important}
       <p class="mossa">$16\cdot 2=32$ si esegue prima di sommare $3$.</p>
       <div class="teoria">
         <div class="nome">Priorità delle operazioni</div>
-        <div class="frase">Prima le potenze, poi le moltiplicazioni e le divisioni, e solo alla fine le addizioni e le sottrazioni.</div>
-        <div class="f sx">$\displaystyle a+b:c=a+\left(b:c\right)$</div>
-        <div class="ex">esempio: $2+12:4=2+3=5$</div>
+        <div class="frase">In un'espressione senza parentesi si eseguono prima tutte le moltiplicazioni e le divisioni. Solo dopo si passa alle addizioni e alle sottrazioni.</div>
+        <div class="f sx">$\displaystyle a+b\cdot c=a+\left(b\cdot c\right)$</div>
+        <div class="ex">esempio: $2+3\cdot 4=2+12=14$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Eseguire l'addizione prima della divisione</div>
+        <div class="nome">Eseguire l'addizione prima della moltiplicazione</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a+b:c=\left(a+b\right):c$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a+b\cdot c=\left(a+b\right)\cdot c$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a+b:c=a+\left(b:c\right)$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a+b\cdot c=a+\left(b\cdot c\right)$</div></div>
         </div>
-        <div class="why-txt">La divisione si chiude per prima.</div>
+        <div class="why-txt">La moltiplicazione non aspetta l'addizione.</div>
       </div>
     </div>
   </details>

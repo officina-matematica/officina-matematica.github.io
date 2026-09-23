@@ -199,7 +199,7 @@ mjx-container[display]{margin:0!important}
       <div class="teoria">
         <div class="nome">La potenza di una parentesi</div>
         <div class="frase">Quando l'esponente sta <strong>fuori</strong> dalla parentesi si eleva il risultato dell'operazione, non i singoli numeri. Con l'addizione e la sottrazione elevare i numeri uno per uno dà un risultato diverso.</div>
-        <div class="f sx">$\displaystyle \left(a+b\right)^{2}\neq a^{2}+b^{2}$</div>
+        <div class="f sx">$\displaystyle \left(a+b\right)^{n}\neq a^{n}+b^{n}$</div>
         <div class="ex">esempio: $\left(1+2\right)^{2}=9,\quad 1^{2}+2^{2}=5$</div>
       </div>
       <div class="errore">
@@ -225,22 +225,22 @@ mjx-container[display]{margin:0!important}
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">$10^{4}=10\,000$.</p>
+      <p class="mossa">Resta solo la potenza da svolgere.</p>
       <div class="teoria">
-        <div class="nome">Priorità: prima le potenze</div>
-        <div class="frase">Le potenze si svolgono per prime, prima ancora delle moltiplicazioni e delle divisioni. L'esponente riguarda <strong>soltanto</strong> il numero su cui è scritto.</div>
-        <div class="f sx">$\displaystyle a\cdot b^{n}=a\cdot\left(b^{n}\right)$</div>
-        <div class="ex">esempio: $2\cdot 3^{2}=2\cdot 9=18$</div>
+        <div class="nome">La potenza è un prodotto di fattori uguali</div>
+        <div class="frase">Una potenza è una scrittura breve per una moltiplicazione: la <strong>base</strong> è il fattore che si ripete, l'<strong>esponente</strong> dice quante volte lo si scrive. Non è la base moltiplicata per l'esponente.</div>
+        <div class="f sx">$\displaystyle a^{n}=\underbrace{a\cdot a\cdot\ldots\cdot a}_{n\ \text{volte}}$</div>
+        <div class="ex">esempio: $2^{5}=2\cdot 2\cdot 2\cdot 2\cdot 2=32$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Elevare anche il fattore accanto</div>
+        <div class="nome">Moltiplicare la base per l'esponente</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a\cdot b^{n}=\left(a\cdot b\right)^{n}$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a^{n}=a\cdot n$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a\cdot b^{n}=a\cdot\left(b^{n}\right)$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a^{n}=a\cdot a\cdot\ldots\cdot a$</div></div>
         </div>
-        <div class="why-txt">L'esponente riguarda un numero solo.</div>
+        <div class="why-txt">L'esponente conta i fattori, non è un fattore.</div>
       </div>
     </div>
   </details>

@@ -199,22 +199,22 @@ mjx-container[display]{margin:0!important}
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">Divisione e moltiplicazione hanno la stessa priorità: si eseguono nell'ordine in cui sono scritte, quindi prima la divisione.</p>
+      <p class="mossa">Prodotto e divisione hanno la stessa priorità: si va da sinistra.</p>
       <div class="teoria">
-        <div class="nome">L'ordine delle operazioni</div>
-        <div class="frase">Prima si svolgono le parentesi, poi moltiplicazioni e divisioni, infine addizioni e sottrazioni. Moltiplicazione e divisione hanno la <strong>stessa</strong> priorità: fra loro si eseguono nell'ordine in cui sono scritte, da sinistra a destra.</div>
-        <div class="f sx">$\displaystyle a+b\cdot c=a+\left(b\cdot c\right)$</div>
-        <div class="ex">esempio: $2+3\cdot 4=2+12=14$</div>
+        <div class="nome">Divisione e moltiplicazione: stessa priorità</div>
+        <div class="frase">Divisione e moltiplicazione hanno la stessa importanza: quando si susseguono si eseguono nell'ordine in cui sono scritte, da sinistra a destra. Solo una parentesi può cambiare quest'ordine.</div>
+        <div class="f sx">$\displaystyle a:b\cdot c=(a:b)\cdot c$</div>
+        <div class="ex">esempio: $20:5\cdot 2=4\cdot 2=8$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Eseguire la somma prima del prodotto</div>
+        <div class="nome">Eseguire la moltiplicazione prima della divisione</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a+b\cdot c=\left(a+b\right)\cdot c$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a:b\cdot c=a:(b\cdot c)$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a+b\cdot c=a+\left(b\cdot c\right)$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a:b\cdot c=(a:b)\cdot c$</div></div>
         </div>
-        <div class="why-txt">Il prodotto viene prima della somma.</div>
+        <div class="why-txt">Senza parentesi si va da sinistra.</div>
       </div>
     </div>
   </details>
@@ -233,7 +233,7 @@ mjx-container[display]{margin:0!important}
       <div class="teoria">
         <div class="nome">Dividere due numeri decimali</div>
         <div class="frase">In una divisione si possono moltiplicare dividendo e divisore per lo stesso numero senza cambiare il risultato. Si moltiplicano tutti e due per $10$, $100$… finché la virgola sparisce, e poi si divide fra numeri interi.</div>
-        <div class="f sx">$\displaystyle a:b=\left(a\cdot 10\right):\left(b\cdot 10\right)$</div>
+        <div class="f sx">$\displaystyle a:b=\left(a\cdot 10^{n}\right):\left(b\cdot 10^{n}\right)$</div>
         <div class="ex">esempio: $0{,}9:0{,}3=9:3=3$</div>
       </div>
       <div class="errore">
@@ -274,7 +274,7 @@ mjx-container[display]{margin:0!important}
       <div class="teoria">
         <div class="nome">Prodotto di due monomi</div>
         <div class="frase">Si moltiplicano i coefficienti fra loro e le lettere fra loro. Per ogni lettera uguale gli esponenti si <strong>sommano</strong>; una lettera che compare in un solo fattore si riscrive com'è.</div>
-        <div class="f sx">$\displaystyle a^{m}\cdot a^{n}=a^{m+n}$</div>
+        <div class="f sx">$\displaystyle ka^{m}\cdot ha^{n}=\left(k\cdot h\right)\cdot a^{m+n}$</div>
         <div class="ex">esempio: $2a^{2}\cdot 5a^{3}=10a^{5}$</div>
       </div>
       <div class="errore">
@@ -304,7 +304,7 @@ mjx-container[display]{margin:0!important}
       <div class="teoria">
         <div class="nome">Moltiplicare due numeri decimali</div>
         <div class="frase">Si moltiplicano come se fossero interi, senza guardare la virgola. Poi si contano le cifre decimali dei due fattori: quante sono in tutto, tante ne avrà il risultato.</div>
-        <div class="f sx">$\displaystyle 0{,}a\cdot 0{,}b\ \to\ \text{due cifre decimali}$</div>
+        <div class="f sx">$\displaystyle \text{decimali del prodotto}=\text{decimali del primo}+\text{decimali del secondo}$</div>
         <div class="ex">esempio: $1{,}1\cdot 0{,}3=0{,}33$</div>
       </div>
       <div class="errore">

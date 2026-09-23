@@ -234,22 +234,22 @@ mjx-container[display]{margin:0!important}
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">I denominatori sono $4$ e $2$: il minimo comune multiplo è $4$, quindi $\frac{1}{2}$ diventa $\frac{2}{4}$.</p>
+      <p class="mossa">Stesso denominatore: si sommano o si sottraggono i numeratori.</p>
       <div class="teoria">
-        <div class="nome">Somma di frazioni</div>
-        <div class="frase">Per sommare due frazioni serve lo stesso denominatore: si cerca il minimo comune multiplo dei denominatori, si riscrive ogni frazione con quel denominatore, e solo allora si sommano i numeratori.</div>
-        <div class="f sx">$\displaystyle \frac{a}{b}+\frac{c}{d}=\frac{a\cdot d+c\cdot b}{b\cdot d}$</div>
-        <div class="ex">esempio: $\frac{1}{7}+\frac{1}{14}=\frac{2}{14}+\frac{1}{14}=\frac{3}{14}$</div>
+        <div class="nome">Addizione e sottrazione fra frazioni</div>
+        <div class="frase">Due frazioni si sommano o si sottraggono solo quando hanno lo <strong>stesso denominatore</strong>. Si cerca il minimo comune multiplo dei denominatori, si riscrivono tutte con quel denominatore e poi si sommano o si sottraggono i soli numeratori.</div>
+        <div class="f sx">$\displaystyle \frac{a}{b}+\frac{c}{d}=\frac{a\cdot d+b\cdot c}{b\cdot d}$</div>
+        <div class="ex">esempio: $\frac{1}{3}+\frac{1}{6}=\frac{2+1}{6}=\frac{3}{6}$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Sommare numeratori e denominatori</div>
+        <div class="nome">Sommare numeratori con numeratori e denominatori con denominatori</div>
         <div class="compare">
           <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{a}{b}+\frac{c}{d}=\frac{a+c}{b+d}$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{a}{b}+\frac{c}{d}=\frac{a\cdot d+c\cdot b}{b\cdot d}$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{a}{b}+\frac{c}{d}=\frac{a\cdot d+b\cdot c}{b\cdot d}$</div></div>
         </div>
-        <div class="why-txt">I denominatori non si sommano mai.</div>
+        <div class="why-txt">Il denominatore va reso uguale, non sommato.</div>
       </div>
     </div>
   </details>
@@ -301,7 +301,7 @@ mjx-container[display]{margin:0!important}
       <div class="teoria">
         <div class="nome">Divisione di due monomi</div>
         <div class="frase">Si dividono i coefficienti fra loro e per ogni lettera uguale si <strong>sottraggono</strong> gli esponenti: quello del dividendo meno quello del divisore. Una lettera che sta solo nel primo monomio si riscrive com'è.</div>
-        <div class="f sx">$\displaystyle a^{m}:a^{n}=a^{m-n}$</div>
+        <div class="f sx">$\displaystyle ka^{m}:ha^{n}=\left(k:h\right)\cdot a^{m-n}$</div>
         <div class="ex">esempio: $12a^{5}:4a^{2}=3a^{3}$</div>
       </div>
       <div class="errore">
@@ -336,9 +336,9 @@ mjx-container[display]{margin:0!important}
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Capovolgere la frazione sbagliata</div>
+        <div class="nome">Moltiplicare senza capovolgere</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{a}{b}:\frac{c}{d}=\frac{b}{a}\cdot\frac{c}{d}$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{a}{b}:\frac{c}{d}=\frac{a}{b}\cdot\frac{c}{d}$</div></div>
           <div class="arrow">➜</div>
           <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{a}{b}:\frac{c}{d}=\frac{a}{b}\cdot\frac{d}{c}$</div></div>
         </div>
@@ -357,22 +357,22 @@ mjx-container[display]{margin:0!important}
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">Il $16$ e l'$8$ del denominatore si dividono tutti e due per $8$: restano $2$ e $1$, e il prodotto si fa con numeri piccoli.</p>
+      <p class="mossa">Il numero intero si semplifica con il denominatore.</p>
       <div class="teoria">
-        <div class="nome">Semplificare a croce</div>
-        <div class="frase">Prima di moltiplicare due frazioni si semplifica in croce: un numeratore e un denominatore che hanno un divisore comune si dividono <strong>tutti e due</strong> per quel numero. I numeri nuovi si scrivono accanto a quelli barrati, e solo dopo si moltiplica: i conti restano piccoli e il risultato è già ridotto.</div>
-        <div class="f sx">$\displaystyle \frac{a}{b}\cdot\frac{c}{d}\ \text{: si semplifica un sopra con un sotto}$</div>
-        <div class="ex">esempio: $\frac{7}{10}\cdot\frac{5}{14}=\frac{1}{2}\cdot\frac{1}{2}=\frac{1}{4}$</div>
+        <div class="nome">Semplificare prima di moltiplicare</div>
+        <div class="frase">Quando una frazione moltiplica un numero grande, conviene semplificare il numero con il <strong>denominatore</strong> prima di fare il conto: si lavora con numeri piccoli invece che con numeri enormi.</div>
+        <div class="f sx">$\displaystyle \frac{a}{b}\cdot n=a\cdot\frac{n}{b}$</div>
+        <div class="ex">esempio: $\frac{7}{10}\cdot 500=7\cdot 50=350$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Semplificare due numeratori fra loro</div>
+        <div class="nome">Semplificare il numero con il numeratore</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{\cancel{2}a}{b}\cdot\frac{\cancel{2}c}{d}=\frac{ac}{bd}$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{a}{b}\cdot n=\frac{n}{a}\cdot b$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{\cancel{2}a}{b}\cdot\frac{c}{\cancel{2}d}=\frac{ac}{bd}$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{a}{b}\cdot n=a\cdot\frac{n}{b}$</div></div>
         </div>
-        <div class="why-txt">Si semplifica sopra con sotto, mai sopra con sopra.</div>
+        <div class="why-txt">Si semplifica con il denominatore.</div>
       </div>
     </div>
   </details>

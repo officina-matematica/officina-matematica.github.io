@@ -200,18 +200,18 @@ mjx-container[display]{margin:0!important}
       <div class="teoria">
         <div class="nome">Da numero decimale a notazione scientifica</div>
         <div class="frase">Si sposta la virgola fino ad avere una sola cifra diversa da zero davanti, poi si conta di quanti posti l'abbiamo spostata: quello è l'esponente del $10$. Verso destra l'esponente è <strong>negativo</strong>, verso sinistra <strong>positivo</strong>.</div>
-        <div class="f sx">$\displaystyle 0{,}00a=a\cdot 10^{-3}$</div>
-        <div class="ex">esempio: $0{,}0007=7\cdot 10^{-4}$</div>
+        <div class="f sx">$\displaystyle 0{,}\underbrace{0\ldots 0}_{n-1}a=a\cdot 10^{-n}\qquada\underbrace{0\ldots 0}_{n}=a\cdot 10^{n}$</div>
+        <div class="ex">esempio: $0{,}0007=7\cdot 10^{-4}\qquad 52\,000=5{,}2\cdot 10^{4}$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
         <div class="nome">Sbagliare il segno dell'esponente</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle 0{,}0007=7\cdot 10^{4}$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle 0{,}0a=a\cdot 10^{2}$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle 0{,}0007=7\cdot 10^{-4}$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle 0{,}0a=a\cdot 10^{-2}$</div></div>
         </div>
-        <div class="why-txt">Numero piccolo, esponente negativo.</div>
+        <div class="why-txt">Un numero più piccolo di uno ha l'esponente negativo.</div>
       </div>
     </div>
   </details>
@@ -230,8 +230,8 @@ mjx-container[display]{margin:0!important}
       <div class="teoria">
         <div class="nome">Moltiplicare e dividere in notazione scientifica</div>
         <div class="frase">Si lavora separatamente: i numeri davanti si moltiplicano (o si dividono) fra loro, e le potenze di $10$ seguono le proprietà delle potenze, cioè gli esponenti si sommano nel prodotto e si sottraggono nella divisione.</div>
-        <div class="f sx">$\displaystyle \left(a\cdot 10^{m}\right)\cdot\left(b\cdot 10^{n}\right)=\left(a\cdot b\right)\cdot 10^{m+n}$</div>
-        <div class="ex">esempio: $\left(2\cdot 10^{3}\right)\cdot\left(3\cdot 10^{4}\right)=6\cdot 10^{7}$</div>
+        <div class="f sx">$\displaystyle \left(a\cdot 10^{m}\right)\cdot\left(b\cdot 10^{n}\right)=\left(a\cdot b\right)\cdot 10^{m+n}\qquad\left(a\cdot 10^{m}\right):\left(b\cdot 10^{n}\right)=\left(a:b\right)\cdot 10^{m-n}$</div>
+        <div class="ex">esempio: $\left(2\cdot 10^{3}\right)\cdot\left(3\cdot 10^{4}\right)=6\cdot 10^{7}\qquad\left(9\cdot 10^{4}\right):\left(3\cdot 10^{6}\right)=3\cdot 10^{-2}$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>

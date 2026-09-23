@@ -203,8 +203,8 @@ mjx-container[display]{margin:0!important}
       <div class="teoria">
         <div class="nome">Potenza con esponente negativo</div>
         <div class="frase">Un esponente negativo dice di <strong>capovolgere</strong> la base e cambiare il segno dell'esponente. Il risultato non diventa negativo: l'esponente negativo riguarda la posizione, non il segno.</div>
-        <div class="f sx">$\displaystyle a^{-n}=\left(\frac{1}{a}\right)^{n}$</div>
-        <div class="ex">esempio: $\left(\frac{1}{4}\right)^{-2}=4^{2}=16$</div>
+        <div class="f sx">$\displaystyle a^{-n}=\left(\frac{1}{a}\right)^{n}=\frac{1}{a^{n}}$</div>
+        <div class="ex">esempio: $\left(\frac{1}{11}\right)^{-2}=11^{2}=121$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
@@ -238,7 +238,7 @@ mjx-container[display]{margin:0!important}
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Sommare gli esponenti invece delle basi</div>
+        <div class="nome">Sommare gli esponenti invece di tenerne uno solo</div>
         <div class="compare">
           <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a^{n}\cdot b^{n}=\left(a\cdot b\right)^{2n}$</div></div>
           <div class="arrow">➜</div>
@@ -270,22 +270,22 @@ mjx-container[display]{margin:0!important}
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">Con lo stesso esponente si può dividere prima le basi e poi elevare una volta sola.</p>
+      <p class="mossa">Stesso esponente: si dividono le basi e l'esponente resta uno solo.</p>
       <div class="teoria">
-        <div class="nome">Quoziente di potenze con lo stesso esponente</div>
-        <div class="frase">Se due potenze hanno lo <strong>stesso esponente</strong> si possono dividere le basi fra loro e tenere quell'esponente una volta sola.</div>
+        <div class="nome">Divisione di potenze con lo stesso esponente</div>
+        <div class="frase">Quando due potenze hanno lo <strong>stesso esponente</strong> ma basi diverse, si dividono le basi fra loro e l'esponente resta com'è, sul risultato.</div>
         <div class="f sx">$\displaystyle a^{n}:b^{n}=\left(a:b\right)^{n}$</div>
-        <div class="ex">esempio: $6^{4}:3^{4}=\left(6:3\right)^{4}=2^{4}$</div>
+        <div class="ex">esempio: $6^{3}:2^{3}=3^{3}$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Dividere anche gli esponenti</div>
+        <div class="nome">Perdere l'esponente per strada</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a^{n}:b^{n}=\left(a:b\right)^{n:n}$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a^{n}:b^{n}=a:b$</div></div>
           <div class="arrow">➜</div>
           <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a^{n}:b^{n}=\left(a:b\right)^{n}$</div></div>
         </div>
-        <div class="why-txt">L'esponente resta quello, non si divide.</div>
+        <div class="why-txt">L'esponente resta sul risultato.</div>
       </div>
     </div>
   </details>

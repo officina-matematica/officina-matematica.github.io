@@ -206,7 +206,7 @@ mjx-container[display]{margin:0!important}
         <div class="nome">Il coefficiente 1 non si scrive</div>
         <div class="frase">Un monomio senza numero davanti ha coefficiente <strong>1</strong>: $ab$ è $1ab$. Se davanti c'è solo il meno, il coefficiente è $-1$. Conta proprio quando si sommano o si moltiplicano i coefficienti, perché quell'$1$ va messo nel conto.</div>
         <div class="f sx">$\displaystyle a=1\cdot a,\quad -a=-1\cdot a$</div>
-        <div class="ex">esempio: $5b^{2}-b^{2}=5b^{2}-1b^{2}=4b^{2}$</div>
+        <div class="ex">esempio: $9m^{3}-m^{3}=9m^{3}-1m^{3}=8m^{3}$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
@@ -231,36 +231,55 @@ mjx-container[display]{margin:0!important}
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">Dentro la quadra ci sono $\frac{1}{3}$ e $\frac{1}{2}$: il minimo comune multiplo dei denominatori è $6$.</p>
+      <p class="mossa">Stesso denominatore: si sommano o si sottraggono i numeratori.</p>
       <div class="teoria">
-        <div class="nome">Somma di frazioni</div>
-        <div class="frase">Per sommare due frazioni serve lo stesso denominatore: si cerca il minimo comune multiplo dei denominatori, si riscrive ogni frazione con quel denominatore, e solo allora si sommano i numeratori.</div>
-        <div class="f sx">$\displaystyle \frac{a}{b}+\frac{c}{d}=\frac{a\cdot d+c\cdot b}{b\cdot d}$</div>
-        <div class="ex">esempio: $\frac{1}{7}+\frac{1}{14}=\frac{2}{14}+\frac{1}{14}=\frac{3}{14}$</div>
+        <div class="nome">Addizione e sottrazione fra frazioni</div>
+        <div class="frase">Due frazioni si sommano o si sottraggono solo quando hanno lo <strong>stesso denominatore</strong>. Si cerca il minimo comune multiplo dei denominatori, si riscrivono tutte con quel denominatore e poi si sommano o si sottraggono i soli numeratori.</div>
+        <div class="f sx">$\displaystyle \frac{a}{b}+\frac{c}{d}=\frac{a\cdot d+b\cdot c}{b\cdot d}$</div>
+        <div class="ex">esempio: $\frac{1}{3}+\frac{1}{6}=\frac{2+1}{6}=\frac{3}{6}$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Sommare numeratori e denominatori</div>
+        <div class="nome">Sommare numeratori con numeratori e denominatori con denominatori</div>
         <div class="compare">
           <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{a}{b}+\frac{c}{d}=\frac{a+c}{b+d}$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{a}{b}+\frac{c}{d}=\frac{a\cdot d+c\cdot b}{b\cdot d}$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{a}{b}+\frac{c}{d}=\frac{a\cdot d+b\cdot c}{b\cdot d}$</div></div>
         </div>
-        <div class="why-txt">I denominatori non si sommano mai.</div>
+        <div class="why-txt">Il denominatore va reso uguale, non sommato.</div>
       </div>
     </div>
   </details>
 
-  <div class="riga">
-    <div class="fissa">
+  <details class="riga">
+    <summary>
       <div class="n">4</div>
       <div class="cont">
         <div class="nota">Sommiamo dentro la quadra: $2-3=-1$.</div>
         <div class="f sx">$\displaystyle =\frac{1}{2}ab-\left[-\frac{1}{6}ab\right]=$</div>
       </div>
-      <div></div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">Stessa parte letterale: si sommano solo i coefficienti.</p>
+      <div class="teoria">
+        <div class="nome">Somma di monomi simili</div>
+        <div class="frase">Due monomi sono <strong>simili</strong> quando hanno la stessa parte letterale, con gli stessi esponenti. Per sommarli si sommano solo i <strong>coefficienti</strong>, e la parte letterale si riscrive uguale: non cambia e non si somma.</div>
+        <div class="f sx">$\displaystyle ka^{m}+ha^{m}=\left(k+h\right)a^{m}$</div>
+        <div class="ex">esempio: $7b^{3}+2b^{3}=9b^{3}$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Sommare anche la parte letterale</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle 3a+2a=5a^{2}$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle 3a+2a=5a$</div></div>
+        </div>
+        <div class="why-txt">La parte letterale resta com'è.</div>
+      </div>
     </div>
-  </div>
+  </details>
 
   <details class="riga">
     <summary>

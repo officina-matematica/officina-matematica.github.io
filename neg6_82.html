@@ -196,8 +196,8 @@ mjx-container[display]{margin:0!important}
       <div class="teoria">
         <div class="nome">Moltiplicare e dividere in notazione scientifica</div>
         <div class="frase">Si lavora separatamente: i numeri davanti si moltiplicano (o si dividono) fra loro, e le potenze di $10$ seguono le proprietà delle potenze, cioè gli esponenti si sommano nel prodotto e si sottraggono nella divisione.</div>
-        <div class="f sx">$\displaystyle \left(a\cdot 10^{m}\right)\cdot\left(b\cdot 10^{n}\right)=\left(a\cdot b\right)\cdot 10^{m+n}$</div>
-        <div class="ex">esempio: $\left(2\cdot 10^{3}\right)\cdot\left(3\cdot 10^{4}\right)=6\cdot 10^{7}$</div>
+        <div class="f sx">$\displaystyle \left(a\cdot 10^{m}\right)\cdot\left(b\cdot 10^{n}\right)=\left(a\cdot b\right)\cdot 10^{m+n}\qquad\left(a\cdot 10^{m}\right):\left(b\cdot 10^{n}\right)=\left(a:b\right)\cdot 10^{m-n}$</div>
+        <div class="ex">esempio: $\left(2\cdot 10^{3}\right)\cdot\left(3\cdot 10^{4}\right)=6\cdot 10^{7}\qquad\left(9\cdot 10^{4}\right):\left(3\cdot 10^{6}\right)=3\cdot 10^{-2}$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
@@ -226,18 +226,18 @@ mjx-container[display]{margin:0!important}
       <div class="teoria">
         <div class="nome">Rimettere il risultato in notazione scientifica</div>
         <div class="frase">Dopo il calcolo il numero davanti può uscire dall'intervallo fra 1 e 10: allora lo si riscrive in notazione scientifica e si aggiusta l'esponente del $10$, sommando o togliendo quello che serve.</div>
-        <div class="f sx">$\displaystyle 40\cdot 10^{-7}=4\cdot 10^{1}\cdot 10^{-7}=4\cdot 10^{-6}$</div>
-        <div class="ex">esempio: $0{,}5\cdot 10^{3}=5\cdot 10^{-1}\cdot 10^{3}=5\cdot 10^{2}$</div>
+        <div class="f sx">$\displaystyle \left(a\cdot 10^{k}\right)\cdot 10^{n}=a\cdot 10^{k+n}\quad\text{con}\ 1\le a<10$</div>
+        <div class="ex">esempio: $0{,}13\cdot 10^{5}=1{,}3\cdot 10^{-1}\cdot 10^{5}=1{,}3\cdot 10^{4}$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Lasciare il numero fuori dall'intervallo</div>
+        <div class="nome">Dimenticare la potenza che esce dal numero davanti</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle 40\cdot 10^{-7}$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \left(a\cdot 10^{k}\right)\cdot 10^{n}=a\cdot 10^{n}$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle 4\cdot 10^{-6}$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \left(a\cdot 10^{k}\right)\cdot 10^{n}=a\cdot 10^{k+n}$</div></div>
         </div>
-        <div class="why-txt">Davanti deve restare un numero fra 1 e 10.</div>
+        <div class="why-txt">La potenza in più va sommata a quella che c'era già.</div>
       </div>
     </div>
   </details>
@@ -274,22 +274,22 @@ mjx-container[display]{margin:0!important}
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">$1$ mm vale $\frac{1}{1000}$ di metro, cioè $10^{-3}$ m: solo così si possono confrontare le due lunghezze.</p>
+      <p class="mossa">Una frazione con uno sopra si riscrive con l'esponente negativo.</p>
       <div class="teoria">
-        <div class="nome">Da notazione scientifica a numero decimale</div>
-        <div class="frase">Moltiplicare per $10^{-n}$ vuol dire dividere per $10^{n}$: la virgola si sposta verso <strong>sinistra</strong> di $n$ posti, riempiendo di zeri. Con l'esponente positivo si sposta verso destra.</div>
-        <div class="f sx">$\displaystyle a\cdot 10^{-n}=\frac{a}{10^{n}}$</div>
-        <div class="ex">esempio: $4\cdot 10^{-3}=0{,}004$</div>
+        <div class="nome">Potenza con esponente negativo</div>
+        <div class="frase">Un esponente negativo manda la potenza <strong>dall'altra parte della linea di frazione</strong>: $a^{-n}$ vuol dire $\frac{1}{a^{n}}$. Su una frazione la stessa cosa si vede come un capovolgimento. Il risultato non diventa negativo: il segno dell'esponente riguarda la posizione, non il segno del numero.</div>
+        <div class="f sx">$\displaystyle a^{-n}=\left(\frac{1}{a}\right)^{n}=\frac{1}{a^{n}}$</div>
+        <div class="ex">esempio: $\left(\frac{1}{11}\right)^{-2}=11^{2}=121$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Spostare la virgola dalla parte sbagliata</div>
+        <div class="nome">Credere che l'esponente negativo dia un risultato negativo</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle 4\cdot 10^{-3}=4000$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a^{-n}=-a^{n}$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle 4\cdot 10^{-3}=0{,}004$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a^{-n}=\frac{1}{a^{n}}$</div></div>
         </div>
-        <div class="why-txt">Esponente negativo, numero piccolo.</div>
+        <div class="why-txt">Si sposta la potenza sotto la linea, non si cambia segno.</div>
       </div>
     </div>
   </details>

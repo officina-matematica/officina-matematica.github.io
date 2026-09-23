@@ -202,7 +202,7 @@ mjx-container[display]{margin:0!important}
         <div class="nome">Priorità: prima le potenze</div>
         <div class="frase">Le potenze si svolgono per prime, prima ancora delle moltiplicazioni e delle divisioni. L'esponente riguarda <strong>soltanto</strong> il numero su cui è scritto.</div>
         <div class="f sx">$\displaystyle a\cdot b^{n}=a\cdot\left(b^{n}\right)$</div>
-        <div class="ex">esempio: $2\cdot 3^{2}=2\cdot 9=18$</div>
+        <div class="ex">esempio: $7\cdot 2^{2}=7\cdot 4=28$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
@@ -247,16 +247,35 @@ mjx-container[display]{margin:0!important}
     </div>
   </details>
 
-  <div class="riga">
-    <div class="fissa">
+  <details class="riga">
+    <summary>
       <div class="n">4</div>
       <div class="cont">
         <div class="nota">Dentro la tonda, $8+16=24$.</div>
         <div class="f sx">$\displaystyle =24^{0}=$</div>
       </div>
-      <div></div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">Prima si chiude la tonda, poi si eleva il risultato.</p>
+      <div class="teoria">
+        <div class="nome">La potenza di una parentesi</div>
+        <div class="frase">Quando l'esponente sta <strong>fuori</strong> dalla parentesi si eleva il risultato dell'operazione, non i singoli numeri. Con l'addizione e la sottrazione elevare i numeri uno per uno dà un risultato diverso.</div>
+        <div class="f sx">$\displaystyle \left(a+b\right)^{n}\neq a^{n}+b^{n}$</div>
+        <div class="ex">esempio: $\left(1+2\right)^{2}=9,\quad 1^{2}+2^{2}=5$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Elevare i due addendi separatamente</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \left(a+b\right)^{2}=a^{2}+b^{2}$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \left(a+b\right)^{2}=\left(a+b\right)\cdot\left(a+b\right)$</div></div>
+        </div>
+        <div class="why-txt">Prima la somma, poi la potenza.</div>
+      </div>
     </div>
-  </div>
+  </details>
 
   <details class="riga res">
     <summary>

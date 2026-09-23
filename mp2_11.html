@@ -202,7 +202,7 @@ mjx-container[display]{margin:0!important}
         <div class="nome">Il coefficiente 1 non si scrive</div>
         <div class="frase">Un monomio senza numero davanti ha coefficiente <strong>1</strong>: $ab$ è $1ab$. Se davanti c'è solo il meno, il coefficiente è $-1$. Conta proprio quando si sommano o si moltiplicano i coefficienti, perché quell'$1$ va messo nel conto.</div>
         <div class="f sx">$\displaystyle a=1\cdot a,\quad -a=-1\cdot a$</div>
-        <div class="ex">esempio: $5b^{2}-b^{2}=5b^{2}-1b^{2}=4b^{2}$</div>
+        <div class="ex">esempio: $9m^{3}-m^{3}=9m^{3}-1m^{3}=8m^{3}$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
@@ -267,16 +267,35 @@ mjx-container[display]{margin:0!important}
     </div>
   </details>
 
-  <div class="riga res">
-    <div class="fissa">
+  <details class="riga res">
+    <summary>
       <div class="n">5</div>
       <div class="cont">
         <div class="nota">Sommiamo i due monomi simili.</div>
         <div class="f sx">$\displaystyle =8b^{2}$</div>
       </div>
-      <div></div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">Stessa parte letterale: si sommano solo i coefficienti.</p>
+      <div class="teoria">
+        <div class="nome">Somma di monomi simili</div>
+        <div class="frase">Due monomi sono <strong>simili</strong> quando hanno la stessa parte letterale, con gli stessi esponenti. Per sommarli si sommano solo i <strong>coefficienti</strong>, e la parte letterale si riscrive uguale: non cambia e non si somma.</div>
+        <div class="f sx">$\displaystyle ka^{m}+ha^{m}=\left(k+h\right)a^{m}$</div>
+        <div class="ex">esempio: $7b^{3}+2b^{3}=9b^{3}$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Sommare anche la parte letterale</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle 3a+2a=5a^{2}$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle 3a+2a=5a$</div></div>
+        </div>
+        <div class="why-txt">La parte letterale resta com'è.</div>
+      </div>
     </div>
-  </div>
+  </details>
 
 </div>
 

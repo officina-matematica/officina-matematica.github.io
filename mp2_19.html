@@ -201,7 +201,7 @@ mjx-container[display]{margin:0!important}
       <div class="teoria">
         <div class="nome">Prodotto di due monomi</div>
         <div class="frase">Si moltiplicano i coefficienti fra loro e le lettere fra loro. Per ogni lettera uguale gli esponenti si <strong>sommano</strong>; una lettera che compare in un solo fattore si riscrive com'è.</div>
-        <div class="f sx">$\displaystyle a^{m}\cdot a^{n}=a^{m+n}$</div>
+        <div class="f sx">$\displaystyle ka^{m}\cdot ha^{n}=\left(k\cdot h\right)\cdot a^{m+n}$</div>
         <div class="ex">esempio: $2a^{2}\cdot 5a^{3}=10a^{5}$</div>
       </div>
       <div class="errore">
@@ -227,36 +227,55 @@ mjx-container[display]{margin:0!important}
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">Il $3$ sopra e il $9$ sotto si dividono per $3$; l'$8$ sopra e il $4$ sotto si dividono per $4$. Si semplifica in croce, mai sopra con sopra.</p>
+      <p class="mossa">Un numeratore si semplifica con il denominatore dell'altra frazione.</p>
       <div class="teoria">
-        <div class="nome">Semplificare a croce</div>
-        <div class="frase">Prima di moltiplicare due frazioni si semplifica in croce: un numeratore e un denominatore che hanno un divisore comune si dividono <strong>tutti e due</strong> per quel numero. I numeri nuovi si scrivono accanto a quelli barrati, e solo dopo si moltiplica: i conti restano piccoli e il risultato è già ridotto.</div>
-        <div class="f sx">$\displaystyle \frac{a}{b}\cdot\frac{c}{d}\ \text{: si semplifica un sopra con un sotto}$</div>
-        <div class="ex">esempio: $\frac{7}{10}\cdot\frac{5}{14}=\frac{1}{2}\cdot\frac{1}{2}=\frac{1}{4}$</div>
+        <div class="nome">Semplificare a croce prima di moltiplicare</div>
+        <div class="frase">Prima di eseguire il prodotto si semplifica <strong>in croce</strong>: un numeratore con il denominatore dell'<strong>altra</strong> frazione. Si dividono per lo stesso numero e si scrivono i risultati al loro posto. Semplificare dopo aver moltiplicato porta allo stesso risultato, ma passando da numeri molto più grandi — ed è lì che nascono gli errori di calcolo.</div>
+        <div class="f sx">$\displaystyle \frac{a\cdot k}{b}\cdot\frac{c}{d\cdot k}=\frac{a}{b}\cdot\frac{c}{d}$</div>
+        <div class="ex">esempio: $\frac{9}{5}\cdot\frac{5}{6}=\frac{3}{1}\cdot\frac{1}{2}$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
         <div class="nome">Semplificare due numeratori fra loro</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{\cancel{2}a}{b}\cdot\frac{\cancel{2}c}{d}=\frac{ac}{bd}$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{a\cdot k}{b}\cdot\frac{c\cdot k}{d}=\frac{a}{b}\cdot\frac{c}{d}$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{\cancel{2}a}{b}\cdot\frac{c}{\cancel{2}d}=\frac{ac}{bd}$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{a\cdot k}{b}\cdot\frac{c}{d\cdot k}=\frac{a}{b}\cdot\frac{c}{d}$</div></div>
         </div>
-        <div class="why-txt">Si semplifica sopra con sotto, mai sopra con sopra.</div>
+        <div class="why-txt">Sopra con sotto, mai sopra con sopra.</div>
       </div>
     </div>
   </details>
 
-  <div class="riga">
-    <div class="fissa">
+  <details class="riga">
+    <summary>
       <div class="n">4</div>
       <div class="cont">
         <div class="nota">Riscriviamo con i numeri semplificati.</div>
         <div class="f sx">$\displaystyle =-\frac{1\cdot 2}{1\cdot 3}x^{3}y^{4}=$</div>
       </div>
-      <div></div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">Un solo fattore negativo: il risultato è negativo.</p>
+      <div class="teoria">
+        <div class="nome">La regola dei segni</div>
+        <div class="frase">Nel prodotto e nella divisione due segni uguali danno <strong>più</strong>, due segni diversi danno <strong>meno</strong>. Con più di due fattori si contano i meno: se sono in numero dispari il risultato è negativo, se sono pari è positivo.</div>
+        <div class="f sx">$\displaystyle \left(-a\right)\cdot\left(-b\right)=ab,\quad\left(-a\right)\cdot b=-ab$</div>
+        <div class="ex">esempio: $\left(-7\right)\cdot 3=-21,\quad\left(-7\right)\cdot\left(-3\right)=21$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ L'errore che si fa qui</div>
+        <div class="nome">Credere che il prodotto resti positivo</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a\cdot\left(-b\right)=ab$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a\cdot\left(-b\right)=-ab$</div></div>
+        </div>
+        <div class="why-txt">Segni diversi danno meno.</div>
+      </div>
     </div>
-  </div>
+  </details>
 
   <div class="riga res">
     <div class="fissa">

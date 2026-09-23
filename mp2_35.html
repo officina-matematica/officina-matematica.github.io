@@ -198,22 +198,22 @@ mjx-container[display]{margin:0!important}
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">La moltiplicazione viene prima della sottrazione: si svolge il prodotto e solo dopo si toglie $2x^{3}y^{2}$.</p>
+      <p class="mossa">La moltiplicazione viene prima dell'addizione.</p>
       <div class="teoria">
-        <div class="nome">L'ordine delle operazioni</div>
-        <div class="frase">Prima si svolgono le parentesi, poi moltiplicazioni e divisioni, infine addizioni e sottrazioni. Moltiplicazione e divisione hanno la <strong>stessa</strong> priorità: fra loro si eseguono nell'ordine in cui sono scritte, da sinistra a destra.</div>
-        <div class="f sx">$\displaystyle a+b\cdot c=a+\left(b\cdot c\right)$</div>
+        <div class="nome">Priorità delle operazioni</div>
+        <div class="frase">In un'espressione senza parentesi si eseguono prima tutte le moltiplicazioni e le divisioni. Solo dopo si passa alle addizioni e alle sottrazioni.</div>
+        <div class="f sx">$\displaystyle a+b\cdot c=a+(b\cdot c)$</div>
         <div class="ex">esempio: $2+3\cdot 4=2+12=14$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Eseguire la somma prima del prodotto</div>
+        <div class="nome">Eseguire l'addizione prima della moltiplicazione</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a+b\cdot c=\left(a+b\right)\cdot c$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a+b\cdot c=(a+b)\cdot c$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a+b\cdot c=a+\left(b\cdot c\right)$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a+b\cdot c=a+(b\cdot c)$</div></div>
         </div>
-        <div class="why-txt">Il prodotto viene prima della somma.</div>
+        <div class="why-txt">La moltiplicazione non aspetta l'addizione.</div>
       </div>
     </div>
   </details>
@@ -228,22 +228,22 @@ mjx-container[display]{margin:0!important}
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">Il $6$ e il $2$ del denominatore si dividono tutti e due per $2$: restano $3$ e $1$, e il prodotto si fa con numeri piccoli.</p>
+      <p class="mossa">Il numero intero si semplifica con il denominatore.</p>
       <div class="teoria">
-        <div class="nome">Semplificare a croce</div>
-        <div class="frase">Prima di moltiplicare due frazioni si semplifica in croce: un numeratore e un denominatore che hanno un divisore comune si dividono <strong>tutti e due</strong> per quel numero. I numeri nuovi si scrivono accanto a quelli barrati, e solo dopo si moltiplica: i conti restano piccoli e il risultato è già ridotto.</div>
-        <div class="f sx">$\displaystyle \frac{a}{b}\cdot\frac{c}{d}\ \text{: si semplifica un sopra con un sotto}$</div>
-        <div class="ex">esempio: $\frac{7}{10}\cdot\frac{5}{14}=\frac{1}{2}\cdot\frac{1}{2}=\frac{1}{4}$</div>
+        <div class="nome">Semplificare prima di moltiplicare</div>
+        <div class="frase">Quando una frazione moltiplica un numero grande, conviene semplificare il numero con il <strong>denominatore</strong> prima di fare il conto: si lavora con numeri piccoli invece che con numeri enormi.</div>
+        <div class="f sx">$\displaystyle \frac{a}{b}\cdot n=a\cdot\frac{n}{b}$</div>
+        <div class="ex">esempio: $\frac{7}{10}\cdot 500=7\cdot 50=350$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ L'errore che si fa qui</div>
-        <div class="nome">Semplificare due numeratori fra loro</div>
+        <div class="nome">Semplificare il numero con il numeratore</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{\cancel{2}a}{b}\cdot\frac{\cancel{2}c}{d}=\frac{ac}{bd}$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{a}{b}\cdot n=\frac{n}{a}\cdot b$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{\cancel{2}a}{b}\cdot\frac{c}{\cancel{2}d}=\frac{ac}{bd}$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{a}{b}\cdot n=a\cdot\frac{n}{b}$</div></div>
         </div>
-        <div class="why-txt">Si semplifica sopra con sotto, mai sopra con sopra.</div>
+        <div class="why-txt">Si semplifica con il denominatore.</div>
       </div>
     </div>
   </details>
