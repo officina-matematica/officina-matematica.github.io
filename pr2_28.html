@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PR2_28 — Calcolo di proporzioni</title>
+
+<script type="application/json" id="meta">
+{
+  "id": "pr2_28",
+  "titolo": "Calcolo di proporzioni",
+  "tipo": "incognita",
+  "consegna_label": "Risolvi la proporzione",
+  "consegna_tex": "\\frac{8}{21}:\\frac{2}{3}=x:\\left(\\frac{3}{8}-x\\right)",
+  "consegna_sympy": "soluzione(\"(8/21)/(2/3)\", \"x/(3/8-x)\")",
+  "risultato_tex": "x=\\frac{3}{22}",
+  "risultato_sympy": "Rational(3,22)",
+  "righe_sympy": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ]
+}
+</script>
+
+<!-- Output SVG, non CHTML: glifi vettoriali, allineamento identico su ogni
+     dispositivo, nessun rischio di webfont non caricato dentro un iframe.
+     Ogni formula e' scritta con \displaystyle: senza, MathJax rende le frazioni
+     in textstyle e le parentesi non abbracciano la frazione. -->
+<script>
+MathJax = {
+  loader: { load: ['[tex]/cancel'] },
+  tex: {
+    packages: { '[+]': ['cancel'] },
+    inlineMath: [['$','$']],
+    displayMath: [['$$','$$']],
+    processEscapes: true
+  },
+  svg: { fontCache: 'global', scale: 1.06, exFactor: .5 },
+  options: { enableMenu: false }
+};
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-svg.js"></script>
+
+<style>
+:root{
+  --ink:#0f172a; --body:#334155; --muted:#475569; --faint:#94a3b8;
+  --line:#e2e8f0; --paper:#f8fafc;
+  --blu:#12519e; --blubg:#e8f1fb; --blubd:#a8c9ea;
+  --amb:#b45309; --ambbg:#fffbeb; --ambbd:#fcd34d; --sol:#fef08a;
+  --teo:#14532d; --teobg:#f0fdf4; --teobd:#86efac;
+  --err:#9f1239; --errbg:#fff1f2; --errbd:#fda4af;
+  --ko:#b91c1c;  --kobg:#fee2e2;  --kobd:#ef4444;
+  --ok:#15803d;  --okbg:#dcfce7;  --okbd:#22c55e;
+  --sxbg:#ffffff;
+}
+*{box-sizing:border-box}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  background:var(--paper);color:var(--body);line-height:1.5;
+  margin:0;padding:20px 14px 60px;max-width:900px;margin-inline:auto;font-size:16px;
+}
+mjx-container{outline:none}
+mjx-container[display]{margin:0!important}
+
+/* formule scorrevoli, con sfumatura ai bordi quando escono dallo schermo */
+.sx{
+  overflow-x:auto;overflow-y:hidden;scrollbar-width:thin;-webkit-overflow-scrolling:touch;
+  background-image:
+    linear-gradient(to right,var(--sxbg),var(--sxbg)),
+    linear-gradient(to left,var(--sxbg),var(--sxbg)),
+    linear-gradient(to right,rgba(15,23,42,.16),rgba(15,23,42,0)),
+    linear-gradient(to left,rgba(15,23,42,.16),rgba(15,23,42,0));
+  background-position:left center,right center,left center,right center;
+  background-repeat:no-repeat;
+  background-size:22px 100%,22px 100%,13px 100%,13px 100%;
+  background-attachment:local,local,scroll,scroll;
+}
+
+/* ---------------- CONSEGNA ---------------- */
+.consegna{background:var(--blubg);border:2px solid var(--blubd);border-radius:12px;
+  padding:12px 16px;color:#0d47a1;--sxbg:var(--blubg)}
+.consegna .t{font-weight:700;font-size:.9rem}
+.consegna .m{text-align:center;margin-top:4px;padding:4px 0}
+
+/* ---------------- CATENA ---------------- */
+.catena{background:#fff;border:1px solid var(--line);border-radius:14px;
+  padding:14px 16px 10px;margin-top:16px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.catena>.k{font-weight:800;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.catena>.sub{font-size:.85rem;color:var(--faint);margin:2px 0 8px}
+
+.riga{border-top:1px dotted var(--line)}
+.riga:first-of-type{border-top:none}
+.riga>summary,.riga>.fissa{
+  display:grid;grid-template-columns:26px 1fr auto;gap:10px;align-items:center;
+  padding:11px 0;
+}
+.riga>summary{list-style:none;cursor:pointer}
+.riga>summary::-webkit-details-marker{display:none}
+.riga>summary:hover .f,.riga>summary:focus-visible .f{background-color:#f8fafc}
+
+.n{font-size:.72rem;font-weight:800;color:var(--faint);text-align:center;
+  background:#f1f5f9;border-radius:6px;padding:4px 0;align-self:start;margin-top:4px}
+.cont{min-width:0}
+.nota{font-size:.8rem;color:var(--muted);margin-bottom:1px}
+.f{padding:3px 0;border-radius:6px;color:var(--blu)}
+.riga.res>summary .f,.riga.res>.fissa .f{color:var(--ink)}
+/* solo la formula della riga, mai quelle dentro il pannello della tendina */
+.riga.res>summary .f mjx-container,
+.riga.res>.fissa .f mjx-container{background:var(--sol);padding:4px 12px;border-radius:6px}
+
+/* linguetta della tendina */
+.tab{display:inline-flex;align-items:center;gap:5px;align-self:start;margin-top:5px;
+  font-size:.72rem;font-weight:700;letter-spacing:.02em;color:var(--muted);
+  background:#fff;border:1.5px solid var(--line);border-radius:999px;padding:4px 10px;
+  white-space:nowrap}
+.tab .chev{display:inline-block;font-size:.6rem;transition:transform .18s}
+.riga[open]>summary .tab{background:var(--ink);border-color:var(--ink);color:#fff}
+.riga[open]>summary .tab .chev{transform:rotate(180deg)}
+@media(prefers-reduced-motion:reduce){.tab .chev{transition:none}}
+
+/* pannello aperto */
+.pannello{padding:2px 0 16px 36px;display:grid;gap:10px}
+.mossa{font-size:.9rem;margin:0}
+
+.teoria{background:var(--teobg);border:1.5px solid var(--teobd);border-radius:10px;
+  padding:10px 14px;color:var(--teo);--sxbg:var(--teobg)}
+.teoria .nome{font-weight:800;font-size:.88rem;margin-bottom:2px}
+.teoria .frase{font-size:.87rem;line-height:1.45}
+.teoria .f{text-align:center;margin:8px 0 3px;background:rgba(255,255,255,.75);
+  border-radius:6px;padding:6px 8px;color:var(--teo);--sxbg:#f4fdf6}
+.teoria .ex{font-size:.78rem;opacity:.9;text-align:center}
+
+.errore{background:var(--errbg);border:1.5px solid var(--errbd);border-radius:10px;padding:11px 14px}
+.errore .k{font-weight:800;font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;
+  color:var(--err);margin-bottom:5px}
+.errore .nome{font-weight:700;font-size:.9rem;color:var(--err);margin-bottom:8px}
+.compare{display:grid;grid-template-columns:1fr 34px 1fr;align-items:stretch}
+.card{border:2px solid;border-radius:10px;padding:8px 12px;text-align:center}
+.card .tag{font-size:.7rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;margin-bottom:2px}
+.card .f{padding:2px 0;color:inherit}
+.card.ko{background:var(--kobg);border-color:var(--kobd);color:var(--ko);--sxbg:var(--kobg)}
+.card.ok{background:var(--okbg);border-color:var(--okbd);color:var(--ok);--sxbg:var(--okbg)}
+.arrow{display:flex;align-items:center;justify-content:center;font-size:1.2rem;color:var(--faint);font-weight:800}
+.why-txt{font-size:.82rem;color:#7f1d1d;margin-top:6px;text-align:center}
+
+/* fermata di controllo */
+.check{display:flex;flex-wrap:wrap;align-items:center;gap:4px 10px;
+  background:var(--ambbg);border:1.5px dashed var(--ambbd);border-radius:10px;
+  padding:8px 14px;margin:8px 0;font-size:.85rem;color:var(--amb);--sxbg:var(--ambbg)}
+.check b{font-weight:800}
+.check .v{color:var(--ink)}
+
+/* ---------------- MOBILE ---------------- */
+@media(max-width:720px){
+  body{padding:16px 10px 50px;font-size:16px}
+  .catena{padding:12px 12px 8px}
+  .riga>summary,.riga>.fissa{grid-template-columns:24px 1fr;gap:8px}
+  .cont{grid-column:2}
+  .tab{grid-column:2;justify-self:start;margin-top:6px}
+  .pannello{padding-left:0}
+  .compare{grid-template-columns:1fr;gap:6px}
+  .arrow{transform:rotate(90deg);height:22px}
+}
+</style>
+</head>
+<body>
+
+<!-- ===================== CONSEGNA ===================== -->
+<div class="consegna">
+  <div class="t">📌 Risolvi la proporzione</div>
+  <div class="m sx">$\displaystyle \frac{8}{21}:\frac{2}{3}=x:\left(\frac{3}{8}-x\right)$</div>
+</div>
+
+<!-- ===================== CATENA ====================== -->
+<div class="catena">
+  <div class="k">Confronta con il tuo foglio</div>
+  <div class="sub">Scorri le righe fino alla prima che non coincide con la tua. Lì apri <b>Regola</b>.</div>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">1</div>
+      <div class="cont">
+        <div class="nota">Qui il rapporto fra frazioni sta a sinistra e la $x$ a destra.</div>
+        <div class="f sx">$\displaystyle \frac{8}{21}:\frac{2}{3}=x:\left(\frac{3}{8}-x\right)$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <details class="riga">
+    <summary>
+      <div class="n">2</div>
+      <div class="cont">
+        <div class="nota">Capovolgo la seconda frazione: la divisione diventa un prodotto.</div>
+        <div class="f sx">$\displaystyle \frac{8}{21}\cdot\frac{3}{2}=x:\left(\frac{3}{8}-x\right)$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">A sinistra c'è $\frac{8}{21}$ diviso $\frac{2}{3}$: si capovolge la seconda e la divisione diventa un prodotto. Si poteva anche moltiplicare in croce subito, lasciando le due frazioni dove sono: si arriva allo stesso risultato, ma poi la parentesi andrebbe moltiplicata per una frazione invece che per un numero intero.</p>
+      <div class="teoria">
+        <div class="nome">Dividere per una frazione</div>
+        <div class="frase">Dividere per una frazione è lo stesso che moltiplicare per la frazione <strong>capovolta</strong>: il suo numeratore e il suo denominatore si scambiano di posto. Quello che sta prima del segno di divisione non si tocca.</div>
+        <div class="f sx">$\displaystyle n:\frac{a}{b}=n\cdot\frac{b}{a}\qquad \text{con}\ a\neq 0$</div>
+        <div class="ex">esempio: $20:\frac{2}{3}=20\cdot\frac{3}{2}=30$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ Errore da non fare</div>
+        <div class="nome">Moltiplicare senza capovolgere</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle n:\frac{a}{b}=n\cdot\frac{a}{b}$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle n:\frac{a}{b}=n\cdot\frac{b}{a}$</div></div>
+        </div>
+        <div class="why-txt">Senza capovolgere si moltiplica invece di dividere.</div>
+      </div>
+    </div>
+  </details>
+
+  <details class="riga">
+    <summary>
+      <div class="n">3</div>
+      <div class="cont">
+        <div class="nota">Semplifico a croce: $8$ con $2$, $3$ con $21$.</div>
+        <div class="f sx">$\displaystyle \frac{\overset{4}{\cancel{8}}}{\underset{7}{\cancel{21}}}\cdot\frac{\overset{1}{\cancel{3}}}{\underset{1}{\cancel{2}}}=x:\left(\frac{3}{8}-x\right)$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">$8$ sta sopra nella prima frazione e $2$ sotto nella seconda: si dividono tutti e due per $2$. Allo stesso modo $3$ e $21$ si dividono per $3$. Sopra con sotto, sempre in croce.</p>
+      <div class="teoria">
+        <div class="nome">Semplificare a croce prima di moltiplicare</div>
+        <div class="frase">Prima di moltiplicare si semplifica <strong>in croce</strong>: un numeratore con il denominatore dell'altra frazione, divisi tutti e due per lo stesso numero. Semplificare dopo porta allo stesso risultato, ma con numeri molto più grandi, ed è lì che nascono gli errori di calcolo.</div>
+        <div class="f sx">$\displaystyle \frac{a\cdot k}{b}\cdot\frac{c}{d\cdot k}=\frac{a}{b}\cdot\frac{c}{d}$</div>
+        <div class="ex">esempio: $\frac{9}{5}\cdot\frac{5}{6}=\frac{3}{1}\cdot\frac{1}{2}$</div>
+      </div>
+    </div>
+  </details>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">4</div>
+      <div class="cont">
+        <div class="nota">Eseguo il prodotto.</div>
+        <div class="f sx">$\displaystyle \frac{4}{7}=x:\left(\frac{3}{8}-x\right)$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="check">
+    <span>🚩 <b>Fermata di controllo.</b> Se qui hai</span>
+    <span class="v">$\displaystyle \frac{4}{7}$</span>
+    <span>il rapporto di sinistra è ridotto a una frazione sola: da qui restano la moltiplicazione in croce e un'equazione.</span>
+  </div>
+
+  <details class="riga">
+    <summary>
+      <div class="n">5</div>
+      <div class="cont">
+        <div class="nota">Moltiplico in croce: estremi con estremi, medi con medi.</div>
+        <div class="f sx">$\displaystyle 4\cdot\left(\frac{3}{8}-x\right)=7\cdot x$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">A sinistra è rimasta la frazione $\frac{4}{7}$, a destra un rapporto scritto con i due punti: sono la stessa cosa, e la proporzione si legge $4:7=x:\left(\frac{3}{8}-x\right)$. Gli estremi sono $4$ e $\frac{3}{8}-x$, i medi sono $7$ e $x$. Si poteva anche ragionare sulle parti: i due termini di destra messi insieme fanno $\frac{3}{8}$ e stanno fra loro come $4$ sta a $7$, quindi $\frac{3}{8}$ si divide in $4+7=11$ parti e la $x$ ne prende $4$. Si arriva allo stesso risultato, ma solo perché qui la somma dei due termini si conosce; la moltiplicazione in croce non ha bisogno di saperlo.</p>
+      <div class="teoria">
+        <div class="nome">I due punti e la linea di frazione</div>
+        <div class="frase">Scrivere $a:b$ oppure $\frac{a}{b}$ è la stessa cosa: i due punti e la linea di frazione dicono tutti e due una divisione. Per questo una proporzione si può sempre leggere come un'uguaglianza fra due frazioni, e viceversa.</div>
+        <div class="f sx">$\displaystyle a:b=c:d\quad\Longleftrightarrow\quad\frac{a}{b}=\frac{c}{d}$</div>
+        <div class="ex">esempio: $6:9=2:3\quad\Longleftrightarrow\quad\frac{6}{9}=\frac{2}{3}$</div>
+      </div>
+      <div class="teoria">
+        <div class="nome">Il prodotto dei medi è uguale al prodotto degli estremi</div>
+        <div class="frase">In una proporzione il prodotto dei due termini <strong>esterni</strong> è uguale al prodotto dei due <strong>interni</strong>. Scritta con le frazioni è la moltiplicazione in croce: il numeratore di una per il denominatore dell'altra, e da lì sparisce ogni frazione.</div>
+        <div class="f sx">$\displaystyle a:b=c:d\quad\Longrightarrow\quad a\cdot d=b\cdot c\qquad \frac{a}{b}=\frac{c}{d}\quad\Longrightarrow\quad a\cdot d=b\cdot c$</div>
+        <div class="ex">esempio: $10:5=4:2\ \to\ 10\cdot 2=5\cdot 4=20$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ Errore da non fare</div>
+        <div class="nome">Moltiplicare i due numeratori fra loro</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{a}{b}=\frac{c}{d}\ \to\ a\cdot c=b\cdot d$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{a}{b}=\frac{c}{d}\ \to\ a\cdot d=b\cdot c$</div></div>
+        </div>
+        <div class="why-txt">Si incrocia: il sopra di una con il sotto dell'altra.</div>
+      </div>
+    </div>
+  </details>
+
+  <details class="riga">
+    <summary>
+      <div class="n">6</div>
+      <div class="cont">
+        <div class="nota">Il $4$ moltiplica tutti e due i termini della parentesi.</div>
+        <div class="f sx">$\displaystyle 4\cdot\frac{3}{8}-4\cdot x=7\cdot x$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">Il $4$ entra nella parentesi e moltiplica sia $\frac{3}{8}$ sia $x$. Si poteva anche chiudere prima la parentesi, scrivendo $\frac{3}{8}-x$ come una frazione sola: si arriva allo stesso risultato, ma con la $x$ dentro il numeratore e un denominatore in più da trascinare fino alla fine.</p>
+      <div class="teoria">
+        <div class="nome">Proprietà distributiva della moltiplicazione</div>
+        <div class="frase">Per moltiplicare un numero per una somma (o una differenza) si può moltiplicare quel numero per <strong>ciascun</strong> termine e poi sommare (o sottrarre) i risultati; letta al contrario, permette di raccogliere un fattore comune. Quasi sempre si potrebbe anche chiudere prima la parentesi: distribuire conviene quando dentro ci sono frazioni che si semplificano con il fattore, o quando la parentesi non si chiude in un numero solo.</div>
+        <div class="f sx">$\displaystyle a\cdot\left(b+c\right)=a\cdot b+a\cdot c\qquad\left(b+c\right)\cdot a=b\cdot a+c\cdot a$</div>
+        <div class="ex">esempio: $8\cdot\left(5+\frac{1}{4}\right)=8\cdot 5+8\cdot\frac{1}{4}=40+2=42$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ Errore da non fare</div>
+        <div class="nome">Moltiplicare un solo termine</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a\cdot\left(b+c\right)=a\cdot b+c$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a\cdot\left(b+c\right)=a\cdot b+a\cdot c$</div></div>
+        </div>
+        <div class="why-txt">Il fattore moltiplica tutti e due i termini.</div>
+      </div>
+    </div>
+  </details>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">7</div>
+      <div class="cont">
+        <div class="nota">Semplifico $4$ con $8$ prima di moltiplicare.</div>
+        <div class="f sx">$\displaystyle \overset{1}{\cancel{4}}\cdot\frac{3}{\underset{2}{\cancel{8}}}-4\cdot x=7\cdot x$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">8</div>
+      <div class="cont">
+        <div class="nota">Eseguo i prodotti e scrivo il numero davanti alla $x$.</div>
+        <div class="f sx">$\displaystyle \frac{3}{2}-4x=7x$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <details class="riga">
+    <summary>
+      <div class="n">9</div>
+      <div class="cont">
+        <div class="nota">Porto le $x$ tutte a destra: $-4x$ diventa $+4x$.</div>
+        <div class="f sx">$\displaystyle \frac{3}{2}=7x+4x$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">A sinistra c'è $-4x$: portandolo a destra diventa $+4x$. Da quella parte vanno tutte le $x$, da questa il numero.</p>
+      <div class="teoria">
+        <div class="nome">Portare l'incognita da sola</div>
+        <div class="frase">In un'equazione un termine si può spostare da un membro all'altro <strong>cambiandogli il segno</strong>: è come toglierlo da tutti e due i membri. Si portano le incognite da una parte e i numeri dall'altra.</div>
+        <div class="f sx">$\displaystyle a+x=b\ \to\ x=b-a,\qquad x-a=b\ \to\ x=b+a,\qquad a-x=b\ \to\ x=a-b$</div>
+        <div class="ex">esempio: $x-26=31\ \to\ x=31+26=57$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ Errore da non fare</div>
+        <div class="nome">Spostare senza cambiare segno</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle x-a=b\ \to\ x=b-a$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle x-a=b\ \to\ x=b+a$</div></div>
+        </div>
+        <div class="why-txt">Chi cambia membro cambia segno.</div>
+      </div>
+    </div>
+  </details>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">10</div>
+      <div class="cont">
+        <div class="nota">$7x+4x$ sono $11$ volte la $x$.</div>
+        <div class="f sx">$\displaystyle \frac{3}{2}=11x$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <details class="riga">
+    <summary>
+      <div class="n">11</div>
+      <div class="cont">
+        <div class="nota">Divido per il numero che moltiplica la $x$.</div>
+        <div class="f sx">$\displaystyle x=\frac{3}{2}:11$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">Davanti alla $x$ c'è $11$, che la moltiplica: per lasciarla sola si dividono per $11$ tutti e due i membri, e resta $\frac{3}{2}:11$.</p>
+      <div class="teoria">
+        <div class="nome">Dividere tutti e due i membri</div>
+        <div class="frase">Se l'incognita è moltiplicata per un numero, si dividono tutti e due i membri per quel numero: l'uguaglianza resta vera e l'incognita resta sola.</div>
+        <div class="f sx">$\displaystyle a\cdot x=b\quad\Longleftrightarrow\quad x=\frac{b}{a}\qquad \text{con}\ a\neq 0$</div>
+        <div class="ex">esempio: $9k=54\ \to\ k=\frac{54}{9}=6$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ Errore da non fare</div>
+        <div class="nome">Sottrarre invece di dividere</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a\cdot x=b\ \to\ x=b-a$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a\cdot x=b\ \to\ x=\frac{b}{a}$</div></div>
+        </div>
+        <div class="why-txt">Una moltiplicazione si disfa con una divisione.</div>
+      </div>
+    </div>
+  </details>
+
+  <details class="riga">
+    <summary>
+      <div class="n">12</div>
+      <div class="cont">
+        <div class="nota">Dividere per un intero: l'$11$ va sotto la linea.</div>
+        <div class="f sx">$\displaystyle x=\frac{3}{2\cdot 11}$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">$\frac{3}{2}$ diviso $11$: il numeratore non si tocca e l'$11$ va a moltiplicare il denominatore.</p>
+      <div class="teoria">
+        <div class="nome">Dividere una frazione per un numero intero</div>
+        <div class="frase">Dividere per un numero intero vuol dire prenderne una parte: dividere per $n$ è come moltiplicare per $\frac{1}{n}$. Il numero va sotto la linea, con il denominatore, e la frazione diventa più piccola.</div>
+        <div class="f sx">$\displaystyle \frac{a}{b}:n=\frac{a}{b}\cdot\frac{1}{n}=\frac{a}{b\cdot n}$</div>
+        <div class="ex">esempio: $\frac{4}{5}:3=\frac{4}{5}\cdot\frac{1}{3}=\frac{4}{15}$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ Errore da non fare</div>
+        <div class="nome">Moltiplicare invece di dividere</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{a}{b}:n=\frac{a\cdot n}{b}$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{a}{b}:n=\frac{a}{b\cdot n}$</div></div>
+        </div>
+        <div class="why-txt">Dividere rimpicciolisce: il numero va sotto.</div>
+      </div>
+    </div>
+  </details>
+
+  <div class="riga res">
+    <div class="fissa">
+      <div class="n">13</div>
+      <div class="cont">
+        <div class="nota">Sotto $2\cdot 11=22$, e sopra resta $3$.</div>
+        <div class="f sx">$\displaystyle x=\frac{3}{22}$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
