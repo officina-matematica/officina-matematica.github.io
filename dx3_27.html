@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DX3_27 — Numeri decimali e frazioni</title>
+
+<script type="application/json" id="meta">
+{
+  "id": "dx3_27",
+  "titolo": "Numeri decimali e frazioni",
+  "tipo": "aperto",
+  "consegna_label": "Semplifica e stabilisci che numero decimale genera",
+  "consegna_tex": "\\frac{2}{66}",
+  "consegna_sympy": "Rational(2, 66)",
+  "risultato_tex": "\\text{periodico semplice}",
+  "risultato_sympy": "Rational(1, 33)",
+  "righe_sympy": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ]
+}
+</script>
+
+<!-- Output SVG, non CHTML: glifi vettoriali, allineamento identico su ogni
+     dispositivo, nessun rischio di webfont non caricato dentro un iframe.
+     Ogni formula e' scritta con \displaystyle: senza, MathJax rende le frazioni
+     in textstyle e le parentesi non abbracciano la frazione. -->
+<script>
+MathJax = {
+  loader: { load: ['[tex]/cancel'] },
+  tex: {
+    packages: { '[+]': ['cancel'] },
+    inlineMath: [['$','$']],
+    displayMath: [['$$','$$']],
+    processEscapes: true
+  },
+  svg: { fontCache: 'global', scale: 1.06, exFactor: .5 },
+  options: { enableMenu: false }
+};
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-svg.js"></script>
+
+<style>
+:root{
+  --ink:#0f172a; --body:#334155; --muted:#475569; --faint:#94a3b8;
+  --line:#e2e8f0; --paper:#f8fafc;
+  --blu:#12519e; --blubg:#e8f1fb; --blubd:#a8c9ea;
+  --amb:#b45309; --ambbg:#fffbeb; --ambbd:#fcd34d; --sol:#fef08a;
+  --teo:#14532d; --teobg:#f0fdf4; --teobd:#86efac;
+  --err:#9f1239; --errbg:#fff1f2; --errbd:#fda4af;
+  --ko:#b91c1c;  --kobg:#fee2e2;  --kobd:#ef4444;
+  --ok:#15803d;  --okbg:#dcfce7;  --okbd:#22c55e;
+  --sxbg:#ffffff;
+}
+*{box-sizing:border-box}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  background:var(--paper);color:var(--body);line-height:1.5;
+  margin:0;padding:20px 14px 60px;max-width:900px;margin-inline:auto;font-size:16px;
+}
+mjx-container{outline:none}
+mjx-container[display]{margin:0!important}
+
+/* formule scorrevoli, con sfumatura ai bordi quando escono dallo schermo */
+.sx{
+  overflow-x:auto;overflow-y:hidden;scrollbar-width:thin;-webkit-overflow-scrolling:touch;
+  background-image:
+    linear-gradient(to right,var(--sxbg),var(--sxbg)),
+    linear-gradient(to left,var(--sxbg),var(--sxbg)),
+    linear-gradient(to right,rgba(15,23,42,.16),rgba(15,23,42,0)),
+    linear-gradient(to left,rgba(15,23,42,.16),rgba(15,23,42,0));
+  background-position:left center,right center,left center,right center;
+  background-repeat:no-repeat;
+  background-size:22px 100%,22px 100%,13px 100%,13px 100%;
+  background-attachment:local,local,scroll,scroll;
+}
+
+/* ---------------- CONSEGNA ---------------- */
+.consegna{background:var(--blubg);border:2px solid var(--blubd);border-radius:12px;
+  padding:12px 16px;color:#0d47a1;--sxbg:var(--blubg)}
+.consegna .t{font-weight:700;font-size:.9rem}
+.consegna .m{text-align:center;margin-top:4px;padding:4px 0}
+
+/* ---------------- CATENA ---------------- */
+.catena{background:#fff;border:1px solid var(--line);border-radius:14px;
+  padding:14px 16px 10px;margin-top:16px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.catena>.k{font-weight:800;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.catena>.sub{font-size:.85rem;color:var(--faint);margin:2px 0 8px}
+
+.riga{border-top:1px dotted var(--line)}
+.riga:first-of-type{border-top:none}
+.riga>summary,.riga>.fissa{
+  display:grid;grid-template-columns:26px 1fr auto;gap:10px;align-items:center;
+  padding:11px 0;
+}
+.riga>summary{list-style:none;cursor:pointer}
+.riga>summary::-webkit-details-marker{display:none}
+.riga>summary:hover .f,.riga>summary:focus-visible .f{background-color:#f8fafc}
+
+.n{font-size:.72rem;font-weight:800;color:var(--faint);text-align:center;
+  background:#f1f5f9;border-radius:6px;padding:4px 0;align-self:start;margin-top:4px}
+.cont{min-width:0}
+.nota{font-size:.8rem;color:var(--muted);margin-bottom:1px}
+.f{padding:3px 0;border-radius:6px;color:var(--blu)}
+.riga.res>summary .f,.riga.res>.fissa .f{color:var(--ink)}
+/* solo la formula della riga, mai quelle dentro il pannello della tendina */
+.riga.res>summary .f mjx-container,
+.riga.res>.fissa .f mjx-container{background:var(--sol);padding:4px 12px;border-radius:6px}
+
+/* linguetta della tendina */
+.tab{display:inline-flex;align-items:center;gap:5px;align-self:start;margin-top:5px;
+  font-size:.72rem;font-weight:700;letter-spacing:.02em;color:var(--muted);
+  background:#fff;border:1.5px solid var(--line);border-radius:999px;padding:4px 10px;
+  white-space:nowrap}
+.tab .chev{display:inline-block;font-size:.6rem;transition:transform .18s}
+.riga[open]>summary .tab{background:var(--ink);border-color:var(--ink);color:#fff}
+.riga[open]>summary .tab .chev{transform:rotate(180deg)}
+@media(prefers-reduced-motion:reduce){.tab .chev{transition:none}}
+
+/* pannello aperto */
+.pannello{padding:2px 0 16px 36px;display:grid;gap:10px}
+.mossa{font-size:.9rem;margin:0}
+
+.teoria{background:var(--teobg);border:1.5px solid var(--teobd);border-radius:10px;
+  padding:10px 14px;color:var(--teo);--sxbg:var(--teobg)}
+.teoria .nome{font-weight:800;font-size:.88rem;margin-bottom:2px}
+.teoria .frase{font-size:.87rem;line-height:1.45}
+.teoria .f{text-align:center;margin:8px 0 3px;background:rgba(255,255,255,.75);
+  border-radius:6px;padding:6px 8px;color:var(--teo);--sxbg:#f4fdf6}
+.teoria .ex{font-size:.78rem;opacity:.9;text-align:center}
+
+.errore{background:var(--errbg);border:1.5px solid var(--errbd);border-radius:10px;padding:11px 14px}
+.errore .k{font-weight:800;font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;
+  color:var(--err);margin-bottom:5px}
+.errore .nome{font-weight:700;font-size:.9rem;color:var(--err);margin-bottom:8px}
+.compare{display:grid;grid-template-columns:1fr 34px 1fr;align-items:stretch}
+.card{border:2px solid;border-radius:10px;padding:8px 12px;text-align:center}
+.card .tag{font-size:.7rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;margin-bottom:2px}
+.card .f{padding:2px 0;color:inherit}
+.card.ko{background:var(--kobg);border-color:var(--kobd);color:var(--ko);--sxbg:var(--kobg)}
+.card.ok{background:var(--okbg);border-color:var(--okbd);color:var(--ok);--sxbg:var(--okbg)}
+.arrow{display:flex;align-items:center;justify-content:center;font-size:1.2rem;color:var(--faint);font-weight:800}
+.why-txt{font-size:.82rem;color:#7f1d1d;margin-top:6px;text-align:center}
+
+/* fermata di controllo */
+.check{display:flex;flex-wrap:wrap;align-items:center;gap:4px 10px;
+  background:var(--ambbg);border:1.5px dashed var(--ambbd);border-radius:10px;
+  padding:8px 14px;margin:8px 0;font-size:.85rem;color:var(--amb);--sxbg:var(--ambbg)}
+.check b{font-weight:800}
+.check .v{color:var(--ink)}
+
+/* ---------------- MOBILE ---------------- */
+@media(max-width:720px){
+  body{padding:16px 10px 50px;font-size:16px}
+  .catena{padding:12px 12px 8px}
+  .riga>summary,.riga>.fissa{grid-template-columns:24px 1fr;gap:8px}
+  .cont{grid-column:2}
+  .tab{grid-column:2;justify-self:start;margin-top:6px}
+  .pannello{padding-left:0}
+  .compare{grid-template-columns:1fr;gap:6px}
+  .arrow{transform:rotate(90deg);height:22px}
+}
+</style>
+</head>
+<body>
+
+<!-- ===================== CONSEGNA ===================== -->
+<div class="consegna">
+  <div class="t">📌 Semplifica e stabilisci che numero decimale genera</div>
+  <div class="m sx">$\displaystyle \frac{2}{66}$</div>
+</div>
+
+<!-- ===================== CATENA ====================== -->
+<div class="catena">
+  <div class="k">Confronta con il tuo foglio</div>
+  <div class="sub">Scorri le righe fino alla prima che non coincide con la tua. Lì apri <b>Regola</b>.</div>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">1</div>
+      <div class="cont">
+        <div class="nota">Ricopio la frazione: prima di decidere, va guardata ridotta.</div>
+        <div class="f sx">$\displaystyle \frac{2}{66}$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <details class="riga">
+    <summary>
+      <div class="n">2</div>
+      <div class="cont">
+        <div class="nota">Semplifico: sopra e sotto si dividono per $2$.</div>
+        <div class="f sx">$\displaystyle \frac{2}{66}=\frac{\overset{1}{\cancel{2}}}{\underset{33}{\cancel{66}}}$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">Sopra c'è $2$ e sotto c'è $66$, che è pari: si dividono tutti e due per $2$ e restano $1$ e $33$. Qui il $2$ del $66$ se ne va, e cambia la risposta: sul $66$ non ridotto quel due si vedrebbe ancora, e il decimale sembrerebbe periodico misto. Si poteva anche scomporre subito $66=2\cdot 3\cdot 11$ e togliere il $2$ dentro la scomposizione: si arriva allo stesso $\frac{1}{33}$, ma dividere per $2$ a occhio è più corto.</p>
+      <div class="teoria">
+        <div class="nome">Prima si semplifica, poi si guarda il sotto</div>
+        <div class="frase">Il denominatore va letto <strong>dopo</strong> aver ridotto la frazione ai minimi termini: un fattore che sembra un intruso può sparire nella semplificazione, e allora il decimale finisce lo stesso.</div>
+        <div class="f sx">$\displaystyle \frac{a}{b}=\frac{a:k}{b:k}\quad\text{poi si scompone }b:k$</div>
+        <div class="ex">esempio: $\frac{4}{18}=\frac{2}{9}\ \Rightarrow\ \text{il}\ 2\ \text{se ne va dal sotto}$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ Errore da non fare</div>
+        <div class="nome">Scomporre il denominatore di partenza</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{26}{34}\ \to\ \text{scompongo}\ 34$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{26}{34}=\frac{13}{17}\ \to\ \text{scompongo}\ 17$</div></div>
+        </div>
+        <div class="why-txt">Il fattore che se ne va con la semplificazione non sta più sotto la linea: chi lo conta risponde su una frazione che non c'è più.</div>
+      </div>
+    </div>
+  </details>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">3</div>
+      <div class="cont">
+        <div class="nota">Riscrivo la frazione ridotta.</div>
+        <div class="f sx">$\displaystyle \frac{2}{66}=\frac{1}{33}$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <details class="riga">
+    <summary>
+      <div class="n">4</div>
+      <div class="cont">
+        <div class="nota">Scompongo in fattori primi il denominatore.</div>
+        <div class="f sx">$\displaystyle 33=3\cdot 11$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">Adesso guardo <strong>soltanto</strong> il $33$: non è pari, quindi il $2$ non va; si prova il $3$ e viene $33:3=11$, che è primo. Sotto restano un $3$ e un $11$, e nessuno dei due è due o cinque: la divisione non potrà finire.</p>
+      <div class="teoria">
+        <div class="nome">Il denominatore decide che decimale esce</div>
+        <div class="frase">Dieci è $2\cdot 5$, e ogni sua potenza è fatta solo di due e di cinque. Quindi una frazione ridotta diventa un decimale che finisce <strong>soltanto</strong> se sotto la linea, scomposta in fattori primi, non c'è nient'altro che due e cinque. Qualsiasi altro fattore è un intruso.</div>
+        <div class="f sx">$\displaystyle \frac{a}{2^{m}\cdot 5^{n}}\ \text{finito}\qquad\text{altro fattore}\ \Rightarrow\ \text{periodico}$</div>
+        <div class="ex">esempio: $8=2^{3}\ \Rightarrow\ \frac{3}{8}\ \text{finito}\qquad6=2\cdot 3\ \Rightarrow\ \frac{1}{6}\ \text{con intruso}$</div>
+      </div>
+    </div>
+  </details>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">5</div>
+      <div class="cont">
+        <div class="nota">Leggo la scomposizione.</div>
+        <div class="f sx">$\displaystyle 3\ \text{e}\ 11\ \text{sono intrusi, e sotto non c'è né un due né un cinque}$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <details class="riga res">
+    <summary>
+      <div class="n">6</div>
+      <div class="cont">
+        <div class="nota">Concludo: solo intrusi, il periodo parte subito.</div>
+        <div class="f sx">$\displaystyle \text{periodico semplice}$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">Sotto ci sono soltanto intrusi, $3$ e $11$: niente due e niente cinque, quindi non c'è nessuna cifra che si infila fra la virgola e il periodo. Infatti $\frac{1}{33}=0{,}\overline{03}$: il periodo è $03$ e comincia subito. Si poteva anche eseguire la divisione $1:33$ e guardare le cifre che escono: si vede lo stesso $03$ che torna, ma bisogna fare il conto, mentre il denominatore lo diceva prima.</p>
+      <div class="teoria">
+        <div class="nome">Periodico semplice o periodico misto</div>
+        <div class="frase">Quando fra i fattori del denominatore c'è un intruso, il decimale è periodico. Se <strong>oltre</strong> all'intruso non c'è né due né cinque, il periodo parte subito dopo la virgola ed è semplice; se invece l'intruso convive con un due o un cinque, prima del periodo si intrufolano una o più cifre e il periodico è misto.</div>
+        <div class="f sx">$\displaystyle \text{solo intrusi}\Rightarrow\text{semplice}\qquad\text{intrusi}+2\ \text{o}\ 5\Rightarrow\text{misto}$</div>
+        <div class="ex">esempio: $\frac{1}{3}=0{,}\overline{3}\ \text{semplice}\qquad\frac{1}{6}=0{,}1\overline{6}\ \text{misto}$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ Errore da non fare</div>
+        <div class="nome">Chiamare misto un periodico che parte subito</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{1}{9}=0{,}\overline{1}\ \to\ \text{misto}$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{1}{9}=0{,}\overline{1}\ \to\ \text{semplice}$</div></div>
+        </div>
+        <div class="why-txt">Misto vuol dire che <strong>fra la virgola e il periodo</strong> c'è qualcosa; se il periodo comincia subito, di mescolato non c'è niente.</div>
+      </div>
+    </div>
+  </details>
+
+</div>
+
+</body>
+</html>

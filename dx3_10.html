@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DX3_10 — Numeri decimali e frazioni</title>
+
+<script type="application/json" id="meta">
+{
+  "id": "dx3_10",
+  "titolo": "Numeri decimali e frazioni",
+  "tipo": "incognita",
+  "consegna_label": "Scrivi come numero decimale",
+  "consegna_tex": "\\frac{7}{16}",
+  "consegna_sympy": "Rational(7, 16)",
+  "risultato_tex": "0{,}4375",
+  "risultato_sympy": "Rational(7, 16)",
+  "righe_sympy": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ]
+}
+</script>
+
+<!-- Output SVG, non CHTML: glifi vettoriali, allineamento identico su ogni
+     dispositivo, nessun rischio di webfont non caricato dentro un iframe.
+     Ogni formula e' scritta con \displaystyle: senza, MathJax rende le frazioni
+     in textstyle e le parentesi non abbracciano la frazione. -->
+<script>
+MathJax = {
+  loader: { load: ['[tex]/cancel'] },
+  tex: {
+    packages: { '[+]': ['cancel'] },
+    inlineMath: [['$','$']],
+    displayMath: [['$$','$$']],
+    processEscapes: true
+  },
+  svg: { fontCache: 'global', scale: 1.06, exFactor: .5 },
+  options: { enableMenu: false }
+};
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-svg.js"></script>
+
+<style>
+:root{
+  --ink:#0f172a; --body:#334155; --muted:#475569; --faint:#94a3b8;
+  --line:#e2e8f0; --paper:#f8fafc;
+  --blu:#12519e; --blubg:#e8f1fb; --blubd:#a8c9ea;
+  --amb:#b45309; --ambbg:#fffbeb; --ambbd:#fcd34d; --sol:#fef08a;
+  --teo:#14532d; --teobg:#f0fdf4; --teobd:#86efac;
+  --err:#9f1239; --errbg:#fff1f2; --errbd:#fda4af;
+  --ko:#b91c1c;  --kobg:#fee2e2;  --kobd:#ef4444;
+  --ok:#15803d;  --okbg:#dcfce7;  --okbd:#22c55e;
+  --sxbg:#ffffff;
+}
+*{box-sizing:border-box}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  background:var(--paper);color:var(--body);line-height:1.5;
+  margin:0;padding:20px 14px 60px;max-width:900px;margin-inline:auto;font-size:16px;
+}
+mjx-container{outline:none}
+mjx-container[display]{margin:0!important}
+
+/* formule scorrevoli, con sfumatura ai bordi quando escono dallo schermo */
+.sx{
+  overflow-x:auto;overflow-y:hidden;scrollbar-width:thin;-webkit-overflow-scrolling:touch;
+  background-image:
+    linear-gradient(to right,var(--sxbg),var(--sxbg)),
+    linear-gradient(to left,var(--sxbg),var(--sxbg)),
+    linear-gradient(to right,rgba(15,23,42,.16),rgba(15,23,42,0)),
+    linear-gradient(to left,rgba(15,23,42,.16),rgba(15,23,42,0));
+  background-position:left center,right center,left center,right center;
+  background-repeat:no-repeat;
+  background-size:22px 100%,22px 100%,13px 100%,13px 100%;
+  background-attachment:local,local,scroll,scroll;
+}
+
+/* ---------------- CONSEGNA ---------------- */
+.consegna{background:var(--blubg);border:2px solid var(--blubd);border-radius:12px;
+  padding:12px 16px;color:#0d47a1;--sxbg:var(--blubg)}
+.consegna .t{font-weight:700;font-size:.9rem}
+.consegna .m{text-align:center;margin-top:4px;padding:4px 0}
+
+/* ---------------- CATENA ---------------- */
+.catena{background:#fff;border:1px solid var(--line);border-radius:14px;
+  padding:14px 16px 10px;margin-top:16px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.catena>.k{font-weight:800;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.catena>.sub{font-size:.85rem;color:var(--faint);margin:2px 0 8px}
+
+.riga{border-top:1px dotted var(--line)}
+.riga:first-of-type{border-top:none}
+.riga>summary,.riga>.fissa{
+  display:grid;grid-template-columns:26px 1fr auto;gap:10px;align-items:center;
+  padding:11px 0;
+}
+.riga>summary{list-style:none;cursor:pointer}
+.riga>summary::-webkit-details-marker{display:none}
+.riga>summary:hover .f,.riga>summary:focus-visible .f{background-color:#f8fafc}
+
+.n{font-size:.72rem;font-weight:800;color:var(--faint);text-align:center;
+  background:#f1f5f9;border-radius:6px;padding:4px 0;align-self:start;margin-top:4px}
+.cont{min-width:0}
+.nota{font-size:.8rem;color:var(--muted);margin-bottom:1px}
+.f{padding:3px 0;border-radius:6px;color:var(--blu)}
+.riga.res>summary .f,.riga.res>.fissa .f{color:var(--ink)}
+/* solo la formula della riga, mai quelle dentro il pannello della tendina */
+.riga.res>summary .f mjx-container,
+.riga.res>.fissa .f mjx-container{background:var(--sol);padding:4px 12px;border-radius:6px}
+
+/* linguetta della tendina */
+.tab{display:inline-flex;align-items:center;gap:5px;align-self:start;margin-top:5px;
+  font-size:.72rem;font-weight:700;letter-spacing:.02em;color:var(--muted);
+  background:#fff;border:1.5px solid var(--line);border-radius:999px;padding:4px 10px;
+  white-space:nowrap}
+.tab .chev{display:inline-block;font-size:.6rem;transition:transform .18s}
+.riga[open]>summary .tab{background:var(--ink);border-color:var(--ink);color:#fff}
+.riga[open]>summary .tab .chev{transform:rotate(180deg)}
+@media(prefers-reduced-motion:reduce){.tab .chev{transition:none}}
+
+/* pannello aperto */
+.pannello{padding:2px 0 16px 36px;display:grid;gap:10px}
+.mossa{font-size:.9rem;margin:0}
+
+.teoria{background:var(--teobg);border:1.5px solid var(--teobd);border-radius:10px;
+  padding:10px 14px;color:var(--teo);--sxbg:var(--teobg)}
+.teoria .nome{font-weight:800;font-size:.88rem;margin-bottom:2px}
+.teoria .frase{font-size:.87rem;line-height:1.45}
+.teoria .f{text-align:center;margin:8px 0 3px;background:rgba(255,255,255,.75);
+  border-radius:6px;padding:6px 8px;color:var(--teo);--sxbg:#f4fdf6}
+.teoria .ex{font-size:.78rem;opacity:.9;text-align:center}
+
+.errore{background:var(--errbg);border:1.5px solid var(--errbd);border-radius:10px;padding:11px 14px}
+.errore .k{font-weight:800;font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;
+  color:var(--err);margin-bottom:5px}
+.errore .nome{font-weight:700;font-size:.9rem;color:var(--err);margin-bottom:8px}
+.compare{display:grid;grid-template-columns:1fr 34px 1fr;align-items:stretch}
+.card{border:2px solid;border-radius:10px;padding:8px 12px;text-align:center}
+.card .tag{font-size:.7rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;margin-bottom:2px}
+.card .f{padding:2px 0;color:inherit}
+.card.ko{background:var(--kobg);border-color:var(--kobd);color:var(--ko);--sxbg:var(--kobg)}
+.card.ok{background:var(--okbg);border-color:var(--okbd);color:var(--ok);--sxbg:var(--okbg)}
+.arrow{display:flex;align-items:center;justify-content:center;font-size:1.2rem;color:var(--faint);font-weight:800}
+.why-txt{font-size:.82rem;color:#7f1d1d;margin-top:6px;text-align:center}
+
+/* fermata di controllo */
+.check{display:flex;flex-wrap:wrap;align-items:center;gap:4px 10px;
+  background:var(--ambbg);border:1.5px dashed var(--ambbd);border-radius:10px;
+  padding:8px 14px;margin:8px 0;font-size:.85rem;color:var(--amb);--sxbg:var(--ambbg)}
+.check b{font-weight:800}
+.check .v{color:var(--ink)}
+
+/* ---------------- MOBILE ---------------- */
+@media(max-width:720px){
+  body{padding:16px 10px 50px;font-size:16px}
+  .catena{padding:12px 12px 8px}
+  .riga>summary,.riga>.fissa{grid-template-columns:24px 1fr;gap:8px}
+  .cont{grid-column:2}
+  .tab{grid-column:2;justify-self:start;margin-top:6px}
+  .pannello{padding-left:0}
+  .compare{grid-template-columns:1fr;gap:6px}
+  .arrow{transform:rotate(90deg);height:22px}
+}
+</style>
+</head>
+<body>
+
+<!-- ===================== CONSEGNA ===================== -->
+<div class="consegna">
+  <div class="t">📌 Scrivi come numero decimale</div>
+  <div class="m sx">$\displaystyle \frac{7}{16}$</div>
+</div>
+
+<!-- ===================== CATENA ====================== -->
+<div class="catena">
+  <div class="k">Confronta con il tuo foglio</div>
+  <div class="sub">Scorri le righe fino alla prima che non coincide con la tua. Lì apri <b>Regola</b>.</div>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">1</div>
+      <div class="cont">
+        <div class="nota">Ricopio. Prima di leggere il $16$ guardo se la frazione si riduce.</div>
+        <div class="f sx">$\displaystyle \frac{7}{16}$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <details class="riga">
+    <summary>
+      <div class="n">2</div>
+      <div class="cont">
+        <div class="nota">Sopra c'è un numero primo, e sotto non compare.</div>
+        <div class="f sx">$\displaystyle \frac{7}{16}\ \text{è già ridotta}$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">$7$ è primo: si divide solo per $1$ e per sé stesso. Perché si potesse togliere qualcosa, anche $16$ dovrebbe essere multiplo di $7$, e non lo è: $7\cdot 2=14$ e già $7\cdot 3$ passa il $16$. Quindi il denominatore da leggere è proprio il $16$ di partenza. Questo controllo qui non cambia niente, ma va fatto lo stesso: quando un fattore comune c'è, sparisce dal denominatore e la risposta cambia.</p>
+      <div class="teoria">
+        <div class="nome">Prima si semplifica, poi si guarda il sotto</div>
+        <div class="frase">Il denominatore va letto <strong>dopo</strong> aver ridotto la frazione ai minimi termini: un fattore che sembra un intruso può sparire nella semplificazione, e allora il decimale finisce lo stesso.</div>
+        <div class="f sx">$\displaystyle \frac{a}{b}=\frac{a:k}{b:k}\quad\text{poi si scompone }b:k$</div>
+        <div class="ex">esempio: $\frac{4}{18}=\frac{2}{9}\ \Rightarrow\ \text{il}\ 2\ \text{se ne va dal sotto}$</div>
+      </div>
+    </div>
+  </details>
+
+  <details class="riga">
+    <summary>
+      <div class="n">3</div>
+      <div class="cont">
+        <div class="nota">Scompongo il denominatore: è fatto di soli due.</div>
+        <div class="f sx">$\displaystyle 16=2^{4}$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">Il $16$ si spezza in $2\cdot 2\cdot 2\cdot 2$, cioè $2^{4}$: solo due, nemmeno un cinque. Va bene lo stesso, perché il due è uno dei mattoni di dieci: di intrusi non ce n'è e la divisione finisce. Il $7$ di sopra non conta in questa decisione.</p>
+      <div class="teoria">
+        <div class="nome">Il denominatore decide che decimale esce</div>
+        <div class="frase">Dieci è $2\cdot 5$, e ogni sua potenza è fatta solo di due e di cinque. Quindi una frazione ridotta diventa un decimale che finisce <strong>soltanto</strong> se sotto la linea, scomposta in fattori primi, non c'è nient'altro che due e cinque. Qualsiasi altro fattore è un intruso.</div>
+        <div class="f sx">$\displaystyle \frac{a}{2^{m}\cdot 5^{n}}\ \text{finito}\qquad\text{altro fattore}\ \Rightarrow\ \text{periodico}$</div>
+        <div class="ex">esempio: $8=2^{3}\ \Rightarrow\ \frac{3}{8}\ \text{finito}\qquad6=2\cdot 3\ \Rightarrow\ \frac{1}{6}\ \text{con intruso}$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ Errore da non fare</div>
+        <div class="nome">Guardare il numeratore invece del denominatore</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{23}{18}\ \to\ \text{guardo il }23$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{23}{18}\ \to\ \text{guardo il }18$</div></div>
+        </div>
+        <div class="why-txt">Il numeratore dice <strong>quante</strong> parti prendi, il denominatore <strong>come</strong> è tagliata l'unità: è lui che decide se la divisione finisce.</div>
+      </div>
+    </div>
+  </details>
+
+  <details class="riga">
+    <summary>
+      <div class="n">4</div>
+      <div class="cont">
+        <div class="nota">Moltiplico sopra e sotto per $5^{4}$: sotto non c'è nessun cinque.</div>
+        <div class="f sx">$\displaystyle \frac{7}{16}=\frac{7\cdot 5^{4}}{2^{4}\cdot 5^{4}}$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">Sotto ci sono quattro due e zero cinque: per arrivare a una potenza di dieci servono quattro cinque, cioè $5^{4}=625$. Li metto sotto e li metto anche sopra. Si poteva anche eseguire la divisione $7:16$: funziona sempre e dà lo stesso $0{,}4375$, ma non fa vedere perché finisce, e si va avanti a dividere senza sapere quando ci si potrà fermare.</p>
+      <div class="teoria">
+        <div class="nome">Frazioni equivalenti</div>
+        <div class="frase">Moltiplicando numeratore e denominatore per uno stesso numero, diverso da zero, si ottiene una frazione diversa da vedere ma uguale di valore. È così che si riscrivono più frazioni con lo stesso denominatore.</div>
+        <div class="f sx">$\displaystyle \frac{a}{b}=\frac{a\cdot k}{b\cdot k}$</div>
+        <div class="ex">esempio: $\frac{2}{3}=\frac{2\cdot 4}{3\cdot 4}=\frac{8}{12}$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ Errore da non fare</div>
+        <div class="nome">Moltiplicare solo il denominatore</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{a}{b}=\frac{a}{b\cdot k}$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{a}{b}=\frac{a\cdot k}{b\cdot k}$</div></div>
+        </div>
+        <div class="why-txt">Toccando solo il denominatore la frazione cambia valore.</div>
+      </div>
+    </div>
+  </details>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">5</div>
+      <div class="cont">
+        <div class="nota">Eseguo i prodotti: sotto viene $10000$.</div>
+        <div class="f sx">$\displaystyle \frac{7}{16}=\frac{4375}{10000}$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <details class="riga res">
+    <summary>
+      <div class="n">6</div>
+      <div class="cont">
+        <div class="nota">Quattro zeri sotto, quattro cifre dopo la virgola.</div>
+        <div class="f sx">$\displaystyle 0{,}4375$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">Sotto c'è $10000$: la frazione è decimale. Quattro zeri, quattro cifre dopo la virgola, e $4375$ ne ha proprio quattro: davanti alla virgola resta soltanto lo zero.</p>
+      <div class="teoria">
+        <div class="nome">Una frazione decimale</div>
+        <div class="frase">Una frazione si dice decimale quando sotto la linea c'è una potenza di dieci: 10, 100, 1000… Solo queste si leggono subito come numero con la virgola, perché contare i decimi o i centesimi è già contare cifre dopo la virgola.</div>
+        <div class="f sx">$\displaystyle \frac{a}{10^{n}}\quad\text{decimale}\qquad\frac{a}{3},\ \frac{a}{7}\quad\text{no}$</div>
+        <div class="ex">esempio: $\frac{7}{100}=0{,}07\qquad \frac{9}{10}=0{,}9$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ Errore da non fare</div>
+        <div class="nome">Contare gli zeri come zeri da scrivere</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{a}{10^{n}}\ \to\ n\ \text{zeri davanti ad}\ a$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{a}{10^{n}}\ \to\ n\ \text{cifre dopo la virgola in tutto}$</div></div>
+        </div>
+        <div class="why-txt">Gli zeri del denominatore dicono <strong>quante cifre</strong> stanno dopo la virgola in tutto — comprese quelle del numero che c'è sopra — non quanti zeri aggiungere davanti.</div>
+      </div>
+    </div>
+  </details>
+
+</div>
+
+</body>
+</html>
