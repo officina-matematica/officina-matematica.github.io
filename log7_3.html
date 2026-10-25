@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LOG7_3 — Equazioni logaritmiche</title>
+
+<script type="application/json" id="meta">
+{
+  "id": "log7_3",
+  "titolo": "Equazioni logaritmiche",
+  "tipo": "incognita",
+  "consegna_label": "Risolvi l'equazione",
+  "consegna_tex": "\\frac{1}{\\ln x}+\\frac{1}{2\\ln x-1}=2",
+  "consegna_sympy": "soluzioni(1/log(x)+1/(2*log(x)-1), 2)",
+  "risultato_tex": "x=e^{\\frac{1}{4}}\\ \\vee\\ x=e",
+  "risultato_sympy": "FiniteSet(exp(Rational(1,4)), E)",
+  "righe_sympy": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "lettere": {
+    "t": "log(x)",
+    "e": "E"
+  }
+}
+</script>
+
+<!-- Output SVG, non CHTML: glifi vettoriali, allineamento identico su ogni
+     dispositivo, nessun rischio di webfont non caricato dentro un iframe.
+     Ogni formula e' scritta con \displaystyle: senza, MathJax rende le frazioni
+     in textstyle e le parentesi non abbracciano la frazione. -->
+<script>
+MathJax = {
+  loader: { load: ['[tex]/cancel'] },
+  tex: {
+    packages: { '[+]': ['cancel'] },
+    inlineMath: [['$','$']],
+    displayMath: [['$$','$$']],
+    processEscapes: true
+  },
+  svg: { fontCache: 'global', scale: 1.06, exFactor: .5 },
+  options: { enableMenu: false }
+};
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-svg.js"></script>
+
+<style>
+:root{
+  --ink:#0f172a; --body:#334155; --muted:#475569; --faint:#94a3b8;
+  --line:#e2e8f0; --paper:#f8fafc;
+  --blu:#12519e; --blubg:#e8f1fb; --blubd:#a8c9ea;
+  --amb:#b45309; --ambbg:#fffbeb; --ambbd:#fcd34d; --sol:#fef08a;
+  --teo:#14532d; --teobg:#f0fdf4; --teobd:#86efac;
+  --err:#9f1239; --errbg:#fff1f2; --errbd:#fda4af;
+  --ko:#b91c1c;  --kobg:#fee2e2;  --kobd:#ef4444;
+  --ok:#15803d;  --okbg:#dcfce7;  --okbd:#22c55e;
+  --sxbg:#ffffff;
+}
+*{box-sizing:border-box}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  background:var(--paper);color:var(--body);line-height:1.5;
+  margin:0;padding:20px 14px 60px;max-width:900px;margin-inline:auto;font-size:16px;
+}
+mjx-container{outline:none}
+mjx-container[display]{margin:0!important}
+
+/* formule scorrevoli, con sfumatura ai bordi quando escono dallo schermo */
+.sx{
+  overflow-x:auto;overflow-y:hidden;scrollbar-width:thin;-webkit-overflow-scrolling:touch;
+  background-image:
+    linear-gradient(to right,var(--sxbg),var(--sxbg)),
+    linear-gradient(to left,var(--sxbg),var(--sxbg)),
+    linear-gradient(to right,rgba(15,23,42,.16),rgba(15,23,42,0)),
+    linear-gradient(to left,rgba(15,23,42,.16),rgba(15,23,42,0));
+  background-position:left center,right center,left center,right center;
+  background-repeat:no-repeat;
+  background-size:22px 100%,22px 100%,13px 100%,13px 100%;
+  background-attachment:local,local,scroll,scroll;
+}
+
+/* ---------------- CONSEGNA ---------------- */
+.consegna{background:var(--blubg);border:2px solid var(--blubd);border-radius:12px;
+  padding:12px 16px;color:#0d47a1;--sxbg:var(--blubg)}
+.consegna .t{font-weight:700;font-size:.9rem}
+.consegna .m{text-align:center;margin-top:4px;padding:4px 0}
+
+/* ---------------- CATENA ---------------- */
+.catena{background:#fff;border:1px solid var(--line);border-radius:14px;
+  padding:14px 16px 10px;margin-top:16px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.catena>.k{font-weight:800;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.catena>.sub{font-size:.85rem;color:var(--faint);margin:2px 0 8px}
+
+.riga{border-top:1px dotted var(--line)}
+.riga:first-of-type{border-top:none}
+.riga>summary,.riga>.fissa{
+  display:grid;grid-template-columns:26px 1fr auto;gap:10px;align-items:center;
+  padding:11px 0;
+}
+.riga>summary{list-style:none;cursor:pointer}
+.riga>summary::-webkit-details-marker{display:none}
+.riga>summary:hover .f,.riga>summary:focus-visible .f{background-color:#f8fafc}
+
+.n{font-size:.72rem;font-weight:800;color:var(--faint);text-align:center;
+  background:#f1f5f9;border-radius:6px;padding:4px 0;align-self:start;margin-top:4px}
+.cont{min-width:0}
+.nota{font-size:.8rem;color:var(--muted);margin-bottom:1px}
+.f{padding:3px 0;border-radius:6px;color:var(--blu)}
+.riga.res>summary .f,.riga.res>.fissa .f{color:var(--ink)}
+/* solo la formula della riga, mai quelle dentro il pannello della tendina */
+.riga.res>summary .f mjx-container,
+.riga.res>.fissa .f mjx-container{background:var(--sol);padding:4px 12px;border-radius:6px}
+
+/* linguetta della tendina */
+.tab{display:inline-flex;align-items:center;gap:5px;align-self:start;margin-top:5px;
+  font-size:.72rem;font-weight:700;letter-spacing:.02em;color:var(--muted);
+  background:#fff;border:1.5px solid var(--line);border-radius:999px;padding:4px 10px;
+  white-space:nowrap}
+.tab .chev{display:inline-block;font-size:.6rem;transition:transform .18s}
+.riga[open]>summary .tab{background:var(--ink);border-color:var(--ink);color:#fff}
+.riga[open]>summary .tab .chev{transform:rotate(180deg)}
+@media(prefers-reduced-motion:reduce){.tab .chev{transition:none}}
+
+/* pannello aperto */
+.pannello{padding:2px 0 16px 36px;display:grid;gap:10px}
+.mossa{font-size:.9rem;margin:0}
+
+.teoria{background:var(--teobg);border:1.5px solid var(--teobd);border-radius:10px;
+  padding:10px 14px;color:var(--teo);--sxbg:var(--teobg)}
+.teoria .nome{font-weight:800;font-size:.88rem;margin-bottom:2px}
+.teoria .frase{font-size:.87rem;line-height:1.45}
+.teoria .f{text-align:center;margin:8px 0 3px;background:rgba(255,255,255,.75);
+  border-radius:6px;padding:6px 8px;color:var(--teo);--sxbg:#f4fdf6}
+.teoria .ex{font-size:.78rem;opacity:.9;text-align:center}
+
+.errore{background:var(--errbg);border:1.5px solid var(--errbd);border-radius:10px;padding:11px 14px}
+.errore .k{font-weight:800;font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;
+  color:var(--err);margin-bottom:5px}
+.errore .nome{font-weight:700;font-size:.9rem;color:var(--err);margin-bottom:8px}
+.compare{display:grid;grid-template-columns:1fr 34px 1fr;align-items:stretch}
+.card{border:2px solid;border-radius:10px;padding:8px 12px;text-align:center}
+.card .tag{font-size:.7rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;margin-bottom:2px}
+.card .f{padding:2px 0;color:inherit}
+.card.ko{background:var(--kobg);border-color:var(--kobd);color:var(--ko);--sxbg:var(--kobg)}
+.card.ok{background:var(--okbg);border-color:var(--okbd);color:var(--ok);--sxbg:var(--okbg)}
+.arrow{display:flex;align-items:center;justify-content:center;font-size:1.2rem;color:var(--faint);font-weight:800}
+.why-txt{font-size:.82rem;color:#7f1d1d;margin-top:6px;text-align:center}
+
+/* fermata di controllo */
+.check{display:flex;flex-wrap:wrap;align-items:center;gap:4px 10px;
+  background:var(--ambbg);border:1.5px dashed var(--ambbd);border-radius:10px;
+  padding:8px 14px;margin:8px 0;font-size:.85rem;color:var(--amb);--sxbg:var(--ambbg)}
+.check b{font-weight:800}
+.check .v{color:var(--ink)}
+
+/* ---------------- MOBILE ---------------- */
+@media(max-width:720px){
+  body{padding:16px 10px 50px;font-size:16px}
+  .catena{padding:12px 12px 8px}
+  .riga>summary,.riga>.fissa{grid-template-columns:24px 1fr;gap:8px}
+  .cont{grid-column:2}
+  .tab{grid-column:2;justify-self:start;margin-top:6px}
+  .pannello{padding-left:0}
+  .compare{grid-template-columns:1fr;gap:6px}
+  .arrow{transform:rotate(90deg);height:22px}
+}
+</style>
+</head>
+<body>
+
+<!-- ===================== CONSEGNA ===================== -->
+<div class="consegna">
+  <div class="t">📌 Risolvi l'equazione</div>
+  <div class="m sx">$\displaystyle \frac{1}{\ln x}+\frac{1}{2\ln x-1}=2$</div>
+</div>
+
+<!-- ===================== CATENA ====================== -->
+<div class="catena">
+  <div class="k">Confronta con il tuo foglio</div>
+  <div class="sub">Scorri le righe fino alla prima che non coincide con la tua. Lì apri <b>Regola</b>.</div>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">1</div>
+      <div class="cont"><div class="f sx">$\displaystyle \frac{1}{\ln x}+\frac{1}{2\ln x-1}=2$</div></div>
+      <div></div>
+    </div>
+  </div>
+
+  <details class="riga">
+    <summary>
+      <div class="n">2</div>
+      <div class="cont">
+        <div class="nota">L'argomento deve essere positivo e i denominatori diversi da zero.</div>
+        <div class="f sx">$\displaystyle \text{C.E.:}\ x>0\ \wedge\ \ln x\neq 0\ \wedge\ 2\ln x-1\neq 0$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">C'è un solo argomento, $x$. Ma i logaritmi stanno anche sotto la linea di frazione: i due denominatori non devono valere zero.</p>
+      <div class="teoria">
+        <div class="nome">Le condizioni di esistenza</div>
+        <div class="frase">Un logaritmo esiste solo se il suo argomento è <strong>positivo</strong>: né zero, né negativo. Prima di risolvere si scrive «argomento $>0$» per ogni logaritmo della consegna: sono le condizioni di esistenza (C.E.).</div>
+        <div class="f sx">$\displaystyle \log_{a}A\ \text{esiste solo se}\ A>0\qquad \left(a>0,\ a\neq 1\right)$</div>
+        <div class="ex">esempio: $\log_{2}\left(x-7\right)\ \to\ \text{C.E.:}\ x-7>0$</div>
+      </div>
+      <div class="teoria">
+        <div class="nome">Il denominatore non può essere zero</div>
+        <div class="frase">Una divisione per zero non dà nessun risultato: se un denominatore vale $0$, l'espressione non ha significato per quel valore. Per trovare il valore vietato si scrive «denominatore $=0$» e si risolve.</div>
+        <div class="f sx">$\displaystyle \frac{A}{B}\ \text{ha significato solo se}\ B\neq 0$</div>
+        <div class="ex">esempio: $\frac{3}{\ln x-2}\ \to\ \ln x\neq 2$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ Errore da non fare</div>
+        <div class="nome">Dimenticare i denominatori</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{1}{\log_{a}A}\ \to\ \text{C.E.:}\ A>0$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{1}{\log_{a}A}\ \to\ \text{C.E.:}\ A>0\ \wedge\ \log_{a}A\neq 0$</div></div>
+        </div>
+        <div class="why-txt">Anche un logaritmo che sta sotto la linea può valere zero.</div>
+      </div>
+    </div>
+  </details>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">3</div>
+      <div class="cont">
+        <div class="nota">Risolviamo l'ultima: $2\ln x\neq 1$, cioè $\ln x\neq\frac{1}{2}$.</div>
+        <div class="f sx">$\displaystyle \text{C.E.:}\ x>0\ \wedge\ \ln x\neq 0\ \wedge\ \ln x\neq\frac{1}{2}$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <details class="riga">
+    <summary>
+      <div class="n">4</div>
+      <div class="cont">
+        <div class="nota">Il logaritmo compare sempre uguale: poniamo $\ln x=t$. Le C.E. diventano $x>0$, $t\neq 0$ e $t\neq\frac{1}{2}$.</div>
+        <div class="f sx">$\displaystyle \frac{1}{t}+\frac{1}{2t-1}=2$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">Al posto di $\ln x$ si scrive $t$, in tutti e due i posti: resta un'equazione con le frazioni, senza logaritmi. La condizione $x>0$ resta, e si controlla alla fine.</p>
+      <div class="teoria">
+        <div class="nome">L'incognita ausiliaria</div>
+        <div class="frase">Quando la $x$ compare <strong>sempre dentro lo stesso logaritmo</strong>, si dà un nome nuovo a quel logaritmo, per esempio $t$. Si risolve nella $t$, che dà un'equazione o una disequazione di un tipo già noto, e alla fine si torna alla $x$.</div>
+        <div class="f sx">$\displaystyle \log_{a}x=t\quad\to\quad\text{si risolve in}\ t\quad\to\quad\text{si torna alla}\ x$</div>
+        <div class="ex">esempio: $\ln^{2}x-4\ln x=0\ \to\ t^{2}-4t=0$</div>
+      </div>
+    </div>
+  </details>
+
+  <details class="riga">
+    <summary>
+      <div class="n">5</div>
+      <div class="cont">
+        <div class="nota">Denominatore comune: il prodotto $t\left(2t-1\right)$.</div>
+        <div class="f sx">$\displaystyle \frac{2t-1+t}{t\left(2t-1\right)}=2$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">I due denominatori non hanno fattori in comune: il denominatore comune è il loro prodotto. Alla prima frazione manca $2t-1$, alla seconda manca $t$.</p>
+      <div class="teoria">
+        <div class="nome">Addizione e sottrazione fra frazioni</div>
+        <div class="frase">Due frazioni si sommano o si sottraggono solo quando hanno lo <strong>stesso denominatore</strong>: come denominatore comune si prende il minimo comune multiplo, e ogni numeratore si moltiplica per quante volte il suo denominatore sta nel mcm. Si possono anche moltiplicare fra loro i denominatori, e il risultato è lo stesso: ma quando hanno fattori in comune i numeri diventano molto più grandi e alla fine tocca ridurre.</div>
+        <div class="f sx">$\displaystyle \frac{a}{b}\pm\frac{c}{d}=\frac{a\cdot\left(m:b\right)\pm c\cdot\left(m:d\right)}{m}\quad \text{con}\ m=\text{mcm}(b;d)$</div>
+        <div class="ex">esempio: $\frac{1}{y}+\frac{1}{y+2}=\frac{y+2+y}{y\left(y+2\right)}$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ Errore da non fare</div>
+        <div class="nome">Sommare anche i denominatori</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{a}{b}+\frac{c}{d}=\frac{a+c}{b+d}$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{a}{b}+\frac{c}{d}=\frac{a\cdot d+c\cdot b}{b\cdot d}$</div></div>
+        </div>
+        <div class="why-txt">I denominatori non si sommano: si cerca quello comune.</div>
+      </div>
+    </div>
+  </details>
+
+  <details class="riga">
+    <summary>
+      <div class="n">6</div>
+      <div class="cont">
+        <div class="nota">Moltiplichiamo i due membri per $t\left(2t-1\right)$, che nelle C.E. non è zero.</div>
+        <div class="f sx">$\displaystyle 2t-1+t=2t\left(2t-1\right)$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">Il denominatore va a moltiplicare il $2$. Si può fare perché nelle C.E. né $t$ né $2t-1$ valgono zero.</p>
+      <div class="teoria">
+        <div class="nome">Moltiplicare tutti e due i membri</div>
+        <div class="frase">Le soluzioni di un'equazione non cambiano se si moltiplicano <strong>tutti e due i membri</strong> per la stessa quantità, purché non valga zero. Moltiplicando per il denominatore la frazione sparisce, e il denominatore va a moltiplicare <strong>tutto</strong> l'altro membro.</div>
+        <div class="f sx">$\displaystyle \frac{A}{B}=C\quad\Longrightarrow\quad A=B\cdot C\qquad \left(B\neq 0\right)$</div>
+        <div class="ex">esempio: $\frac{x}{x-3}=5\ \to\ x=5\left(x-3\right)$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ Errore da non fare</div>
+        <div class="nome">Far sparire il denominatore senza moltiplicare</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{A}{B}=C\ \to\ A=C$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{A}{B}=C\ \to\ A=B\cdot C$</div></div>
+        </div>
+        <div class="why-txt">Il denominatore non sparisce: va a moltiplicare l'altro membro.</div>
+      </div>
+    </div>
+  </details>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">7</div>
+      <div class="cont">
+        <div class="nota">A sinistra sommiamo i simili, a destra distribuiamo il $2t$.</div>
+        <div class="f sx">$\displaystyle 3t-1=4t^{2}-2t$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <details class="riga">
+    <summary>
+      <div class="n">8</div>
+      <div class="cont">
+        <div class="nota">Portiamo tutto a destra, dove $t^{2}$ ha già il più.</div>
+        <div class="f sx">$\displaystyle 0=4t^{2}-2t-3t+1$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">$3t$ passa a destra e diventa $-3t$; $-1$ passa a destra e diventa $+1$. A sinistra resta zero.</p>
+      <div class="teoria">
+        <div class="nome">Spostare un termine nell'altro membro</div>
+        <div class="frase">Un termine si può spostare da un membro all'altro <strong>cambiandogli il segno</strong>: è come toglierlo da tutti e due i membri. Vale nelle equazioni e nelle disequazioni, dove il verso resta com'è. Così si isola l'incognita, oppure si porta tutto da una parte e si lascia zero dall'altra.</div>
+        <div class="f sx">$\displaystyle A+c=B\quad\Longleftrightarrow\quad A=B-c,\qquad A+c>B\quad\Longleftrightarrow\quad A>B-c$</div>
+        <div class="ex">esempio: $x^{2}+5=3x\ \to\ x^{2}-3x+5=0$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ Errore da non fare</div>
+        <div class="nome">Spostare senza cambiare segno</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle A+c=B\ \to\ A=B+c$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle A+c=B\ \to\ A=B-c$</div></div>
+        </div>
+        <div class="why-txt">Chi cambia membro cambia segno.</div>
+      </div>
+    </div>
+  </details>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">9</div>
+      <div class="cont">
+        <div class="nota">Sommiamo i simili e scambiamo i due membri.</div>
+        <div class="f sx">$\displaystyle 4t^{2}-5t+1=0$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="check">
+    <span>🚩 <b>Fermata di controllo.</b> Se qui hai</span>
+    <span class="v">$\displaystyle 4t^{2}-5t+1=0$</span>
+    <span>le frazioni sono finite: resta un'equazione di secondo grado in $t$.</span>
+  </div>
+
+  <details class="riga">
+    <summary>
+      <div class="n">10</div>
+      <div class="cont">
+        <div class="nota">Formula risolutiva con $a=4$, $b=-5$, $c=1$. Si potrebbe anche scomporre il trinomio.</div>
+        <div class="f sx">$\displaystyle t=\frac{-\left(-5\right)\pm\sqrt{\left(-5\right)^{2}-4\cdot 4\cdot 1}}{2\cdot 4}$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">Al posto di $a$, $b$, $c$ vanno i loro valori, con il segno. Scomponendo, $4t^{2}-5t+1=\left(t-1\right)\left(4t-1\right)$, vengono le stesse soluzioni: ma la scomposizione qui non si vede a occhio.</p>
+      <div class="teoria">
+        <div class="nome">La formula risolutiva</div>
+        <div class="frase">Un'equazione di secondo grado $ax^{2}+bx+c=0$ si risolve con la formula. Sotto la radice c'è il <strong>discriminante</strong> $\Delta=b^{2}-4ac$: se è positivo le soluzioni sono due, una con il più e una con il meno; se è zero ce n'è una sola; se è negativo non ce ne sono.</div>
+        <div class="f sx">$\displaystyle x=\frac{-b\pm\sqrt{b^{2}-4ac}}{2a}$</div>
+        <div class="ex">esempio: $x^{2}-6x+8=0\ \to\ x=\frac{6\pm\sqrt{36-32}}{2}$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ Errore da non fare</div>
+        <div class="nome">Dimenticare il meno davanti alla $b$</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle x=\frac{b\pm\sqrt{b^{2}-4ac}}{2a}$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle x=\frac{-b\pm\sqrt{b^{2}-4ac}}{2a}$</div></div>
+        </div>
+        <div class="why-txt">Davanti alla $b$ c'è il meno: se $b$ è negativo, diventa più.</div>
+      </div>
+    </div>
+  </details>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">11</div>
+      <div class="cont">
+        <div class="nota">Facciamo i conti: $-\left(-5\right)=5$, $\left(-5\right)^{2}=25$, $4\cdot 4\cdot 1=16$, $2\cdot 4=8$.</div>
+        <div class="f sx">$\displaystyle t=\frac{5\pm\sqrt{25-16}}{8}$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">12</div>
+      <div class="cont"><div class="f sx">$\displaystyle t=\frac{5\pm\sqrt{9}}{8}$</div></div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">13</div>
+      <div class="cont"><div class="f sx">$\displaystyle t=\frac{5\pm 3}{8}$</div></div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">14</div>
+      <div class="cont">
+        <div class="nota">Una soluzione con il meno, una con il più.</div>
+        <div class="f sx">$\displaystyle t=\frac{2}{8}\ \vee\ t=\frac{8}{8}$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">15</div>
+      <div class="cont">
+        <div class="nota">Semplifichiamo per $2$; $\frac{8}{8}=1$.</div>
+        <div class="f sx">$\displaystyle t=\frac{\overset{1}{\cancel{2}}}{\underset{4}{\cancel{8}}}\ \vee\ t=1$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">16</div>
+      <div class="cont">
+        <div class="nota">Nessuna delle due è $0$ o $\frac{1}{2}$: rispettano le condizioni su $t$.</div>
+        <div class="f sx">$\displaystyle t=\frac{1}{4}\ \vee\ t=1$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">17</div>
+      <div class="cont">
+        <div class="nota">Torniamo alla $x$: $t$ era $\ln x$.</div>
+        <div class="f sx">$\displaystyle \ln x=\frac{1}{4}\ \vee\ \ln x=1$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <details class="riga res">
+    <summary>
+      <div class="n">18</div>
+      <div class="cont">
+        <div class="nota">Il logaritmo naturale ha base $e$. Tutte e due sono positive: rispettano anche $x>0$.</div>
+        <div class="f sx">$\displaystyle x=e^{\frac{1}{4}}\ \vee\ x=e$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">$\ln x=\frac{1}{4}$ vuol dire $x=e^{\frac{1}{4}}$, che si scrive anche $\sqrt[4]{e}$; $\ln x=1$ vuol dire $x=e^{1}=e$.</p>
+      <div class="teoria">
+        <div class="nome">Il logaritmo naturale</div>
+        <div class="frase">Il logaritmo che ha per base il numero $e\approx 2{,}718$ si chiama <strong>naturale</strong> e si scrive $\ln$: $\ln b$ vuol dire $\log_{e}b$. Come per ogni logaritmo, $\ln b=c$ vuol dire che $e$ elevato a $c$ dà $b$.</div>
+        <div class="f sx">$\displaystyle \ln b=c\quad\Longleftrightarrow\quad e^{c}=b$</div>
+        <div class="ex">esempio: $\ln x=4\ \to\ x=e^{4}$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ Errore da non fare</div>
+        <div class="nome">Fermarsi al valore del logaritmo</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \ln x=k\ \to\ x=k$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \ln x=k\ \to\ x=e^{k}$</div></div>
+        </div>
+        <div class="why-txt">$k$ è il logaritmo, non la $x$: serve la potenza di $e$.</div>
+      </div>
+    </div>
+  </details>
+
+</div>
+
+</body>
+</html>
