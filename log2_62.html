@@ -204,7 +204,7 @@ mjx-container[display]{margin:0!important}
       <p class="mossa">Il secondo logaritmo passa in base $2$: $\log_{4}9=\frac{\log_{2}9}{\log_{2}4}$, così i due logaritmi hanno la stessa base. Si poteva anche vedere che in $\log_{4}9$ base e argomento sono due quadrati, $4=2^{2}$ e $9=3^{2}$: gli esponenti si semplificano e resta $\log_{2}3$, cioè lo stesso valore in un passaggio solo. Qui usiamo il cambiamento di base perché è la strada che funziona anche quando i due esponenti non sono uguali.</p>
       <div class="teoria">
         <div class="nome">Il cambiamento di base</div>
-        <div class="frase">Un logaritmo si può riscrivere in qualunque altra base: si fa il rapporto fra il logaritmo dell'argomento e quello della vecchia base, tutti e due nella base nuova. La base nuova la scegli tu, purché sia positiva e diversa da $1$: quasi sempre conviene $10$.</div>
+        <div class="frase">Un logaritmo si può riscrivere in qualunque altra base: si fa il rapporto fra il logaritmo dell'argomento e quello della vecchia base, tutti e due nella base nuova. La base nuova la scegli tu, purché sia positiva e diversa da $1$: se le basi sono potenze di uno stesso numero conviene quello, altrimenti di solito si sceglie $10$.</div>
         <div class="f sx">$\displaystyle \log_{a}b=\frac{\log_{c}b}{\log_{c}a}$</div>
         <div class="ex">esempio: $\log_{8}5=\frac{\log_{2}5}{\log_{2}8}=\frac{\log_{2}5}{3}$</div>
       </div>
@@ -235,7 +235,7 @@ mjx-container[display]{margin:0!important}
       <div class="teoria">
         <div class="nome">La definizione di logaritmo</div>
         <div class="frase">Il logaritmo di un numero è l'<strong>esponente</strong> che bisogna dare alla base per ottenere quel numero: scrivere $\log_{a}b=c$ vuol dire esattamente $a^{c}=b$, e si passa dall'uno all'altro ogni volta che serve. Quando l'esponente non si vede a occhio si può anche scrivere base e argomento come potenze di uno stesso numero e dividere i due esponenti.</div>
-        <div class="f sx">$\displaystyle \log_{a}b=c\quad\Longleftrightarrow\quad a^{c}=b$</div>
+        <div class="f sx">$\displaystyle \log_{a}b=c\quad\Longleftrightarrow\quad a^{c}=b\qquad \left(a>0,\ a\neq 1\right)$</div>
         <div class="ex">esempio: $\log_{5}125=3\ \text{perché}\ 5^{3}=125$</div>
       </div>
       <div class="errore">
@@ -354,8 +354,8 @@ mjx-container[display]{margin:0!important}
       <p class="mossa">$\log_{2}\frac{48}{3}=\log_{2}16$.</p>
       <div class="teoria">
         <div class="nome">Il logaritmo di un quoziente</div>
-        <div class="frase">Il logaritmo di un quoziente è la <strong>differenza</strong> fra il logaritmo del numeratore e quello del denominatore. Anche questa regola si legge nei due versi.</div>
-        <div class="f sx">$\displaystyle \log\frac{a}{b}=\log a-\log b$</div>
+        <div class="frase">Il logaritmo di un quoziente è la <strong>differenza</strong> fra il logaritmo del numeratore e quello del denominatore, purché tutti e due siano <strong>positivi</strong>. Vale anche al contrario: una differenza di logaritmi con la stessa base si può riunire nel logaritmo del quoziente.</div>
+        <div class="f sx">$\displaystyle \log\frac{a}{b}=\log a-\log b\qquad \left(a>0,\ b>0\right)$</div>
         <div class="ex">esempio: $\log\frac{100}{10}=\log 100-\log 10=1$</div>
       </div>
       <div class="errore">
