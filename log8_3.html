@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LOG8_3 — Disequazioni logaritmiche</title>
+
+<script type="application/json" id="meta">
+{
+  "id": "log8_3",
+  "titolo": "Disequazioni logaritmiche",
+  "tipo": "incognita",
+  "consegna_label": "Risolvi la disequazione",
+  "consegna_tex": "\\log_{2}\\left|x+2\\right|>2",
+  "consegna_sympy": "soluzioni(log(Abs(x+2))/log(2), 2, '>')",
+  "risultato_tex": "x<-6\\ \\vee\\ x>2",
+  "risultato_sympy": "Union(Interval.open(-oo, -6), Interval.open(2, oo))",
+  "righe_sympy": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ]
+}
+</script>
+
+<!-- Output SVG, non CHTML: glifi vettoriali, allineamento identico su ogni
+     dispositivo, nessun rischio di webfont non caricato dentro un iframe.
+     Ogni formula e' scritta con \displaystyle: senza, MathJax rende le frazioni
+     in textstyle e le parentesi non abbracciano la frazione. -->
+<script>
+MathJax = {
+  loader: { load: ['[tex]/cancel'] },
+  tex: {
+    packages: { '[+]': ['cancel'] },
+    inlineMath: [['$','$']],
+    displayMath: [['$$','$$']],
+    processEscapes: true
+  },
+  svg: { fontCache: 'global', scale: 1.06, exFactor: .5 },
+  options: { enableMenu: false }
+};
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-svg.js"></script>
+
+<style>
+:root{
+  --ink:#0f172a; --body:#334155; --muted:#475569; --faint:#94a3b8;
+  --line:#e2e8f0; --paper:#f8fafc;
+  --blu:#12519e; --blubg:#e8f1fb; --blubd:#a8c9ea;
+  --amb:#b45309; --ambbg:#fffbeb; --ambbd:#fcd34d; --sol:#fef08a;
+  --teo:#14532d; --teobg:#f0fdf4; --teobd:#86efac;
+  --err:#9f1239; --errbg:#fff1f2; --errbd:#fda4af;
+  --ko:#b91c1c;  --kobg:#fee2e2;  --kobd:#ef4444;
+  --ok:#15803d;  --okbg:#dcfce7;  --okbd:#22c55e;
+  --sxbg:#ffffff;
+}
+*{box-sizing:border-box}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  background:var(--paper);color:var(--body);line-height:1.5;
+  margin:0;padding:20px 14px 60px;max-width:900px;margin-inline:auto;font-size:16px;
+}
+mjx-container{outline:none}
+mjx-container[display]{margin:0!important}
+
+/* formule scorrevoli, con sfumatura ai bordi quando escono dallo schermo */
+.sx{
+  overflow-x:auto;overflow-y:hidden;scrollbar-width:thin;-webkit-overflow-scrolling:touch;
+  background-image:
+    linear-gradient(to right,var(--sxbg),var(--sxbg)),
+    linear-gradient(to left,var(--sxbg),var(--sxbg)),
+    linear-gradient(to right,rgba(15,23,42,.16),rgba(15,23,42,0)),
+    linear-gradient(to left,rgba(15,23,42,.16),rgba(15,23,42,0));
+  background-position:left center,right center,left center,right center;
+  background-repeat:no-repeat;
+  background-size:22px 100%,22px 100%,13px 100%,13px 100%;
+  background-attachment:local,local,scroll,scroll;
+}
+
+/* ---------------- CONSEGNA ---------------- */
+.consegna{background:var(--blubg);border:2px solid var(--blubd);border-radius:12px;
+  padding:12px 16px;color:#0d47a1;--sxbg:var(--blubg)}
+.consegna .t{font-weight:700;font-size:.9rem}
+.consegna .m{text-align:center;margin-top:4px;padding:4px 0}
+
+/* ---------------- CATENA ---------------- */
+.catena{background:#fff;border:1px solid var(--line);border-radius:14px;
+  padding:14px 16px 10px;margin-top:16px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.catena>.k{font-weight:800;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.catena>.sub{font-size:.85rem;color:var(--faint);margin:2px 0 8px}
+
+.riga{border-top:1px dotted var(--line)}
+.riga:first-of-type{border-top:none}
+.riga>summary,.riga>.fissa{
+  display:grid;grid-template-columns:26px 1fr auto;gap:10px;align-items:center;
+  padding:11px 0;
+}
+.riga>summary{list-style:none;cursor:pointer}
+.riga>summary::-webkit-details-marker{display:none}
+.riga>summary:hover .f,.riga>summary:focus-visible .f{background-color:#f8fafc}
+
+.n{font-size:.72rem;font-weight:800;color:var(--faint);text-align:center;
+  background:#f1f5f9;border-radius:6px;padding:4px 0;align-self:start;margin-top:4px}
+.cont{min-width:0}
+.nota{font-size:.8rem;color:var(--muted);margin-bottom:1px}
+.f{padding:3px 0;border-radius:6px;color:var(--blu)}
+.riga.res>summary .f,.riga.res>.fissa .f{color:var(--ink)}
+/* solo la formula della riga, mai quelle dentro il pannello della tendina */
+.riga.res>summary .f mjx-container,
+.riga.res>.fissa .f mjx-container{background:var(--sol);padding:4px 12px;border-radius:6px}
+
+/* linguetta della tendina */
+.tab{display:inline-flex;align-items:center;gap:5px;align-self:start;margin-top:5px;
+  font-size:.72rem;font-weight:700;letter-spacing:.02em;color:var(--muted);
+  background:#fff;border:1.5px solid var(--line);border-radius:999px;padding:4px 10px;
+  white-space:nowrap}
+.tab .chev{display:inline-block;font-size:.6rem;transition:transform .18s}
+.riga[open]>summary .tab{background:var(--ink);border-color:var(--ink);color:#fff}
+.riga[open]>summary .tab .chev{transform:rotate(180deg)}
+@media(prefers-reduced-motion:reduce){.tab .chev{transition:none}}
+
+/* pannello aperto */
+.pannello{padding:2px 0 16px 36px;display:grid;gap:10px}
+.mossa{font-size:.9rem;margin:0}
+
+.teoria{background:var(--teobg);border:1.5px solid var(--teobd);border-radius:10px;
+  padding:10px 14px;color:var(--teo);--sxbg:var(--teobg)}
+.teoria .nome{font-weight:800;font-size:.88rem;margin-bottom:2px}
+.teoria .frase{font-size:.87rem;line-height:1.45}
+.teoria .f{text-align:center;margin:8px 0 3px;background:rgba(255,255,255,.75);
+  border-radius:6px;padding:6px 8px;color:var(--teo);--sxbg:#f4fdf6}
+.teoria .ex{font-size:.78rem;opacity:.9;text-align:center}
+
+.errore{background:var(--errbg);border:1.5px solid var(--errbd);border-radius:10px;padding:11px 14px}
+.errore .k{font-weight:800;font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;
+  color:var(--err);margin-bottom:5px}
+.errore .nome{font-weight:700;font-size:.9rem;color:var(--err);margin-bottom:8px}
+.compare{display:grid;grid-template-columns:1fr 34px 1fr;align-items:stretch}
+.card{border:2px solid;border-radius:10px;padding:8px 12px;text-align:center}
+.card .tag{font-size:.7rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;margin-bottom:2px}
+.card .f{padding:2px 0;color:inherit}
+.card.ko{background:var(--kobg);border-color:var(--kobd);color:var(--ko);--sxbg:var(--kobg)}
+.card.ok{background:var(--okbg);border-color:var(--okbd);color:var(--ok);--sxbg:var(--okbg)}
+.arrow{display:flex;align-items:center;justify-content:center;font-size:1.2rem;color:var(--faint);font-weight:800}
+.why-txt{font-size:.82rem;color:#7f1d1d;margin-top:6px;text-align:center}
+
+/* fermata di controllo */
+.check{display:flex;flex-wrap:wrap;align-items:center;gap:4px 10px;
+  background:var(--ambbg);border:1.5px dashed var(--ambbd);border-radius:10px;
+  padding:8px 14px;margin:8px 0;font-size:.85rem;color:var(--amb);--sxbg:var(--ambbg)}
+.check b{font-weight:800}
+.check .v{color:var(--ink)}
+
+/* ---------------- MOBILE ---------------- */
+@media(max-width:720px){
+  body{padding:16px 10px 50px;font-size:16px}
+  .catena{padding:12px 12px 8px}
+  .riga>summary,.riga>.fissa{grid-template-columns:24px 1fr;gap:8px}
+  .cont{grid-column:2}
+  .tab{grid-column:2;justify-self:start;margin-top:6px}
+  .pannello{padding-left:0}
+  .compare{grid-template-columns:1fr;gap:6px}
+  .arrow{transform:rotate(90deg);height:22px}
+}
+</style>
+</head>
+<body>
+
+<!-- ===================== CONSEGNA ===================== -->
+<div class="consegna">
+  <div class="t">📌 Risolvi la disequazione</div>
+  <div class="m sx">$\displaystyle \log_{2}\left|x+2\right|>2$</div>
+</div>
+
+<!-- ===================== CATENA ====================== -->
+<div class="catena">
+  <div class="k">Confronta con il tuo foglio</div>
+  <div class="sub">Scorri le righe fino alla prima che non coincide con la tua. Lì apri <b>Regola</b>.</div>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">1</div>
+      <div class="cont"><div class="f sx">$\displaystyle \log_{2}\left|x+2\right|>2$</div></div>
+      <div></div>
+    </div>
+  </div>
+
+  <details class="riga">
+    <summary>
+      <div class="n">2</div>
+      <div class="cont">
+        <div class="nota">Condizione di esistenza: l'argomento, il valore assoluto, deve essere positivo.</div>
+        <div class="f sx">$\displaystyle \text{C.E.:}\ \left|x+2\right|>0$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">L'argomento è $\left|x+2\right|$: è lui che deve essere positivo.</p>
+      <div class="teoria">
+        <div class="nome">Le condizioni di esistenza</div>
+        <div class="frase">Un logaritmo esiste solo se il suo argomento è <strong>positivo</strong>: né zero, né negativo. Prima di risolvere si scrive «argomento $>0$» per ogni logaritmo della consegna: sono le condizioni di esistenza (C.E.).</div>
+        <div class="f sx">$\displaystyle \log_{a}A\ \text{esiste solo se}\ A>0\qquad \left(a>0,\ a\neq 1\right)$</div>
+        <div class="ex">esempio: $\log_{5}\left(8-x\right)\ \to\ \text{C.E.:}\ 8-x>0$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ Errore da non fare</div>
+        <div class="nome">Ammettere anche l'argomento zero</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \log_{a}A\ \to\ \text{C.E.:}\ A\ge 0$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \log_{a}A\ \to\ \text{C.E.:}\ A>0$</div></div>
+        </div>
+        <div class="why-txt">Il logaritmo di zero non esiste: lo zero va escluso.</div>
+      </div>
+    </div>
+  </details>
+
+  <details class="riga">
+    <summary>
+      <div class="n">3</div>
+      <div class="cont">
+        <div class="nota">Un valore assoluto è sempre positivo, tranne quando vale zero: cioè per $x=-2$.</div>
+        <div class="f sx">$\displaystyle \text{C.E.:}\ x\neq -2$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">$\left|x+2\right|$ vale zero solo quando $x+2=0$, cioè per $x=-2$: per tutti gli altri numeri è positivo.</p>
+      <div class="teoria">
+        <div class="nome">Il valore assoluto</div>
+        <div class="frase">Il valore assoluto di un numero è il numero <strong>senza il segno</strong>: è la sua distanza dallo zero sulla retta. Per questo è sempre positivo, tranne quando il numero è zero: allora vale zero.</div>
+        <div class="f sx">$\displaystyle \left|a\right|=a\ \ \text{se}\ a\ge 0,\quad \left|a\right|=-a\ \ \text{se}\ a&lt;0;\qquad \left|a\right|>0\ \ \text{solo se}\ a\neq 0$</div>
+        <div class="ex">esempio: $\left|-7\right|=7,\quad \left|7\right|=7,\quad \left|0\right|=0$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ Errore da non fare</div>
+        <div class="nome">Credere il valore assoluto sempre positivo</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \left|A\right|>0\ \text{per ogni}\ A$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \left|A\right|>0\ \text{solo per}\ A\neq 0$</div></div>
+        </div>
+        <div class="why-txt">Quando dentro c'è zero, vale zero.</div>
+      </div>
+    </div>
+  </details>
+
+  <details class="riga">
+    <summary>
+      <div class="n">4</div>
+      <div class="cont">
+        <div class="nota">Scriviamo $2$ come logaritmo in base $2$, per confrontarlo con l'altro: $2=\log_{2}2^{2}=\log_{2}4$.</div>
+        <div class="f sx">$\displaystyle \log_{2}\left|x+2\right|>\log_{2}4$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">Si può anche usare subito la definizione: l'argomento deve superare $2^{2}$. È la stessa disequazione.</p>
+      <div class="teoria">
+        <div class="nome">Un numero scritto come logaritmo</div>
+        <div class="frase">Ogni numero si può scrivere come logaritmo scegliendo la base che serve: $3$ diventa $\log_{2}2^{3}$, perché $3$ è l'esponente da dare al $2$ per ottenere $8$. Così il numero si può riunire ai logaritmi che ha accanto, oppure confrontare con un logaritmo che ha la stessa base.</div>
+        <div class="f sx">$\displaystyle n=\log_{a}a^{n}\quad \left(a>0,\ a\neq 1\right)$</div>
+        <div class="ex">esempio: $2=\log_{7}49$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ Errore da non fare</div>
+        <div class="nome">Mettere il numero come argomento</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle n=\log_{a}n$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle n=\log_{a}a^{n}$</div></div>
+        </div>
+        <div class="why-txt">Il numero è l'esponente, non l'argomento.</div>
+      </div>
+    </div>
+  </details>
+
+  <details class="riga">
+    <summary>
+      <div class="n">5</div>
+      <div class="cont">
+        <div class="nota">Base $2$ maggiore di $1$: togliendo i logaritmi il verso resta.</div>
+        <div class="f sx">$\displaystyle \left|x+2\right|>4$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">Con base $2$ il logaritmo cresce insieme all'argomento.</p>
+      <div class="teoria">
+        <div class="nome">Il verso nelle disequazioni con i logaritmi</div>
+        <div class="frase">Se la base è <strong>maggiore di 1</strong>, a un argomento più grande corrisponde un logaritmo più grande: togliendo i logaritmi il verso resta. Se la base è <strong>fra 0 e 1</strong> succede il contrario, e il verso si gira. Gli argomenti devono essere positivi: per questo ci sono le C.E.</div>
+        <div class="f sx">$\displaystyle \log_{a}A>\log_{a}B\ \Longleftrightarrow\ A>B\ \ \left(a>1\right)\qquad \log_{a}A>\log_{a}B\ \Longleftrightarrow\ A&lt;B\ \ \left(0&lt;a&lt;1\right)$</div>
+        <div class="ex">esempio: $\log_{\frac{1}{2}}A>\log_{\frac{1}{2}}7\ \to\ A&lt;7,\ \text{con}\ A>0$</div>
+      </div>
+    </div>
+  </details>
+
+  <details class="riga">
+    <summary>
+      <div class="n">6</div>
+      <div class="cont">
+        <div class="nota">$x+2$ deve stare a più di $4$ dallo zero: oltre $4$, oppure prima di $-4$. Si potrebbe anche dividere in due casi.</div>
+        <div class="f sx">$\displaystyle x+2&lt;-4\ \vee\ x+2>4$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">I numeri con valore assoluto maggiore di $4$ sono quelli lontani dallo zero più di $4$, da una parte o dall'altra. Dividendo in due casi, $x\ge -2$ e $x&lt;-2$, e togliendo il valore assoluto in ognuno, vengono gli stessi due tratti, con più conti.</p>
+      <div class="teoria">
+        <div class="nome">Disequazioni con il valore assoluto</div>
+        <div class="frase">$\left|A\right|>k$, con $k$ positivo, vuol dire che $A$ è <strong>lontano dallo zero più di $k$</strong>: o sta oltre $k$, o sta prima di $-k$. Le soluzioni sono due tratti separati, uno a destra e uno a sinistra.</div>
+        <div class="f sx">$\displaystyle \left|A\right|>k\quad\Longleftrightarrow\quad A&lt;-k\ \vee\ A>k\qquad \left(k>0\right)$</div>
+        <div class="ex">esempio: $\left|y\right|>3\ \to\ y&lt;-3\ \vee\ y>3$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ Errore da non fare</div>
+        <div class="nome">Tenere un tratto solo</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \left|A\right|>k\ \to\ A>k$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \left|A\right|>k\ \to\ A&lt;-k\ \vee\ A>k$</div></div>
+        </div>
+        <div class="why-txt">Anche i numeri molto negativi sono lontani dallo zero.</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ E nemmeno questo</div>
+        <div class="nome">Scambiare «maggiore di» con «minore di»</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \left|A\right|>k\ \to\ -k&lt;A&lt;k$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \left|A\right|>k\ \to\ A&lt;-k\ \vee\ A>k$</div></div>
+        </div>
+        <div class="why-txt">Fra $-k$ e $k$ il valore assoluto è minore di $k$, non maggiore.</div>
+      </div>
+    </div>
+  </details>
+
+  <details class="riga res">
+    <summary>
+      <div class="n">7</div>
+      <div class="cont">
+        <div class="nota">In tutte e due il $2$ passa a destra e cambia segno. $-2$ non sta nei due tratti: la C.E. è rispettata.</div>
+        <div class="f sx">$\displaystyle x&lt;-6\ \vee\ x>2$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">$-4-2=-6$ e $4-2=2$. La C.E. $x\neq -2$ non toglie niente, perché $-2$ non sta in nessuno dei due tratti.</p>
+      <div class="teoria">
+        <div class="nome">Spostare un termine nell'altro membro</div>
+        <div class="frase">Un termine si può spostare da un membro all'altro <strong>cambiandogli il segno</strong>: è come toglierlo da tutti e due i membri. Vale nelle equazioni e nelle disequazioni, dove il verso resta com'è. Così si isola l'incognita, oppure si porta tutto da una parte e si lascia zero dall'altra.</div>
+        <div class="f sx">$\displaystyle A+c=B\quad\Longleftrightarrow\quad A=B-c,\qquad A+c>B\quad\Longleftrightarrow\quad A>B-c$</div>
+        <div class="ex">esempio: $x^{2}+4>5x\ \to\ x^{2}-5x+4>0$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ Errore da non fare</div>
+        <div class="nome">Spostare senza cambiare segno</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle A+c>B\ \to\ A>B+c$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle A+c>B\ \to\ A>B-c$</div></div>
+        </div>
+        <div class="why-txt">Chi cambia membro cambia segno.</div>
+      </div>
+    </div>
+  </details>
+
+</div>
+
+</body>
+</html>
