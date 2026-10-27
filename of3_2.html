@@ -3,38 +3,31 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OF3_2 — Espressioni con le frazioni</title>
+<title>OF3_2 — Dividere le frazioni</title>
 
 <script type="application/json" id="meta">
 {
   "id": "of3_2",
-  "titolo": "Espressioni con le frazioni",
+  "titolo": "Dividere le frazioni",
   "tipo": "espressione",
-  "consegna_label": "Calcola la seguente espressione",
-  "consegna_tex": "\\left[\\frac{3}{4}-\\frac{1}{2}+\\left(\\frac{5}{2}\\cdot\\frac{6}{5}:\\frac{3}{2}-\\frac{7}{4}\\right)+\\frac{5}{4}\\cdot\\frac{16}{15}\\right]-\\frac{1}{2}-\\frac{1}{6}",
-  "consegna_sympy": "(Rational(3,4)-Rational(1,2)+(Rational(5,2)*Rational(6,5)/Rational(3,2)-Rational(7,4))+Rational(5,4)*Rational(16,15)) - Rational(1,2) - Rational(1,6)",
-  "risultato_tex": "\\frac{7}{6}",
-  "risultato_sympy": "Rational(7,6)",
+  "consegna_label": "Calcola il valore",
+  "consegna_tex": "\\frac{9}{8}:\\frac{12}{5}:\\frac{5}{8}",
+  "consegna_sympy": "Rational(9,8)/Rational(12,5)/Rational(5,8)",
+  "risultato_tex": "\\frac{3}{4}",
+  "risultato_sympy": "Rational(3,4)",
   "righe_sympy": [
-    "Rational(7,6)",
-    "Rational(7,6)",
-    "Rational(7,6)",
-    "Rational(7,6)",
-    "Rational(7,6)",
-    "Rational(7,6)",
-    "Rational(7,6)",
-    "Rational(7,6)",
-    "Rational(7,6)",
-    "Rational(7,6)",
-    "Rational(7,6)",
-    "Rational(7,6)",
-    "Rational(7,6)",
-    "Rational(7,6)",
-    "Rational(7,6)",
-    "Rational(7,6)",
-    "Rational(7,6)",
-    "Rational(7,6)",
-    "Rational(7,6)"
+    "Rational(3,4)",
+    "Rational(3,4)",
+    "Rational(3,4)",
+    "Rational(3,4)",
+    "Rational(3,4)",
+    "Rational(3,4)",
+    "Rational(3,4)",
+    "Rational(3,4)",
+    "Rational(3,4)",
+    "Rational(3,4)",
+    "Rational(3,4)",
+    "Rational(3,4)"
   ]
 }
 </script>
@@ -184,8 +177,8 @@ mjx-container[display]{margin:0!important}
 
 <!-- ===================== CONSEGNA ===================== -->
 <div class="consegna">
-  <div class="t">📌 Calcola la seguente espressione</div>
-  <div class="m sx">$\displaystyle \left[\frac{3}{4}-\frac{1}{2}+\left(\frac{5}{2}\cdot\frac{6}{5}:\frac{3}{2}-\frac{7}{4}\right)+\frac{5}{4}\cdot\frac{16}{15}\right]-\frac{1}{2}-\frac{1}{6}$</div>
+  <div class="t">📌 Calcola il valore</div>
+  <div class="m sx">$\displaystyle \frac{9}{8}:\frac{12}{5}:\frac{5}{8}$</div>
 </div>
 
 <!-- ===================== CATENA ====================== -->
@@ -196,7 +189,7 @@ mjx-container[display]{margin:0!important}
   <div class="riga">
     <div class="fissa">
       <div class="n">1</div>
-      <div class="cont"><div class="f sx">$\displaystyle \left[\frac{3}{4}-\frac{1}{2}+\left(\frac{5}{2}\cdot\frac{6}{5}:\frac{3}{2}-\frac{7}{4}\right)+\frac{5}{4}\cdot\frac{16}{15}\right]-\frac{1}{2}-\frac{1}{6}=$</div></div>
+      <div class="cont"><div class="f sx">$\displaystyle \frac{9}{8}:\frac{12}{5}:\frac{5}{8}=$</div></div>
       <div></div>
     </div>
   </div>
@@ -205,84 +198,43 @@ mjx-container[display]{margin:0!important}
     <summary>
       <div class="n">2</div>
       <div class="cont">
-        <div class="nota">Nella tonda semplifico a croce il primo prodotto.</div>
-        <div class="f sx">$\displaystyle =\left[\frac{3}{4}-\frac{1}{2}+\left(\frac{\overset{1}{\cancel{5}}}{\underset{1}{\cancel{2}}}\cdot\frac{\overset{3}{\cancel{6}}}{\underset{1}{\cancel{5}}}:\frac{3}{2}-\frac{7}{4}\right)+\frac{5}{4}\cdot\frac{16}{15}\right]-\frac{1}{2}-\frac{1}{6}=$</div>
+        <div class="nota">Due divisioni di seguito: si va da sinistra.</div>
+        <div class="f sx">$\displaystyle =\left(\frac{9}{8}:\frac{12}{5}\right):\frac{5}{8}=$</div>
       </div>
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">Si semplifica un numeratore con il denominatore di un'altra frazione, mai due numeratori fra loro. Dopo, il prodotto viene con numeri piccoli.</p>
+      <p class="mossa">Le due divisioni hanno la stessa priorità, quindi si parte da quella di sinistra, $\frac{9}{8}:\frac{12}{5}$, e solo dopo si divide per $\frac{5}{8}$. Si potevano anche capovolgere subito tutte e due le frazioni che dividono e fare un solo prodotto, $\frac{9}{8}\cdot\frac{5}{12}\cdot\frac{8}{5}$, dove l'$8$ e il $5$ se ne vanno a vista: va bene anche così, si arriva allo stesso $\frac{3}{4}$.</p>
       <div class="teoria">
-        <div class="nome">Semplificare a croce prima di moltiplicare</div>
-        <div class="frase">Prima di moltiplicare si semplifica <strong>in croce</strong>: un numeratore con il denominatore dell'altra frazione, divisi tutti e due per lo stesso numero. Semplificare dopo porta allo stesso risultato, ma con numeri molto più grandi, ed è lì che nascono gli errori di calcolo.</div>
-        <div class="f sx">$\displaystyle \frac{a\cdot k}{b}\cdot\frac{c}{d\cdot k}=\frac{a}{b}\cdot\frac{c}{d}$</div>
-        <div class="ex">esempio: $\frac{9}{5}\cdot\frac{5}{6}=\frac{3}{1}\cdot\frac{1}{2}$</div>
+        <div class="nome">Divisione e moltiplicazione: stessa priorità</div>
+        <div class="frase">Divisione e moltiplicazione hanno la stessa importanza: quando si susseguono si eseguono nell'ordine in cui sono scritte, da sinistra a destra. Solo una parentesi può cambiare quest'ordine.</div>
+        <div class="f sx">$\displaystyle a:b\cdot c=\left(a:b\right)\cdot c\qquad a\cdot b:c=\left(a\cdot b\right):c\qquad a:b:c=\left(a:b\right):c$</div>
+        <div class="ex">esempio: $20:5\cdot 2=4\cdot 2=8\qquad 36:6:3=6:3=2$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ Errore da non fare</div>
-        <div class="nome">Semplificare due numeratori fra loro</div>
+        <div class="nome">Partire dalla divisione di destra</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{a\cdot k}{b}\cdot\frac{c\cdot k}{d}=\frac{a}{b}\cdot\frac{c}{d}$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a:b:c=a:\left(b:c\right)$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{a\cdot k}{b}\cdot\frac{c}{d\cdot k}=\frac{a}{b}\cdot\frac{c}{d}$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a:b:c=\left(a:b\right):c$</div></div>
         </div>
-        <div class="why-txt">Sopra con sotto, mai sopra con sopra.</div>
+        <div class="why-txt">Cambiando l'ordine delle due divisioni il risultato non è più lo stesso.</div>
       </div>
     </div>
   </details>
 
-  <div class="riga">
-    <div class="fissa">
+  <details class="riga">
+    <summary>
       <div class="n">3</div>
       <div class="cont">
-        <div class="nota">Riscrivo pulito.</div>
-        <div class="f sx">$\displaystyle =\left[\frac{3}{4}-\frac{1}{2}+\left(\frac{1}{1}\cdot\frac{3}{1}:\frac{3}{2}-\frac{7}{4}\right)+\frac{5}{4}\cdot\frac{16}{15}\right]-\frac{1}{2}-\frac{1}{6}=$</div>
-      </div>
-      <div></div>
-    </div>
-  </div>
-
-  <details class="riga">
-    <summary>
-      <div class="n">4</div>
-      <div class="cont">
-        <div class="nota">Moltiplico sopra con sopra e sotto con sotto.</div>
-        <div class="f sx">$\displaystyle =\left[\frac{3}{4}-\frac{1}{2}+\left(\frac{3}{1}:\frac{3}{2}-\frac{7}{4}\right)+\frac{5}{4}\cdot\frac{16}{15}\right]-\frac{1}{2}-\frac{1}{6}=$</div>
-      </div>
-      <span class="tab">Regola <span class="chev">▼</span></span>
-    </summary>
-    <div class="pannello">
-      <p class="mossa">Dopo la semplificazione resta $\frac{1}{1}\cdot\frac{3}{1}=\frac{3}{1}$.</p>
-      <div class="teoria">
-        <div class="nome">Moltiplicare due frazioni</div>
-        <div class="frase">Per moltiplicare due frazioni si moltiplicano i <strong>numeratori fra loro</strong> e i <strong>denominatori fra loro</strong>. Non serve il denominatore comune: quello serve solo per addizioni e sottrazioni.</div>
-        <div class="f sx">$\displaystyle \frac{a}{b}\cdot\frac{c}{d}=\frac{a\cdot c}{b\cdot d}$</div>
-        <div class="ex">esempio: $\frac{4}{3}\cdot\frac{8}{11}=\frac{32}{33}$</div>
-      </div>
-      <div class="errore">
-        <div class="k">⚠️ Errore da non fare</div>
-        <div class="nome">Moltiplicare in croce</div>
-        <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{a}{b}\cdot\frac{c}{d}=\frac{a\cdot d}{b\cdot c}$</div></div>
-          <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{a}{b}\cdot\frac{c}{d}=\frac{a\cdot c}{b\cdot d}$</div></div>
-        </div>
-        <div class="why-txt">Sopra con sopra, sotto con sotto.</div>
-      </div>
-    </div>
-  </details>
-
-  <details class="riga">
-    <summary>
-      <div class="n">5</div>
-      <div class="cont">
         <div class="nota">Capovolgo la frazione che divide.</div>
-        <div class="f sx">$\displaystyle =\left[\frac{3}{4}-\frac{1}{2}+\left(\frac{3}{1}\cdot\frac{2}{3}-\frac{7}{4}\right)+\frac{5}{4}\cdot\frac{16}{15}\right]-\frac{1}{2}-\frac{1}{6}=$</div>
+        <div class="f sx">$\displaystyle =\left(\frac{9}{8}\cdot\frac{5}{12}\right):\frac{5}{8}=$</div>
       </div>
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">$\frac{3}{1}:\frac{3}{2}$ diventa $\frac{3}{1}\cdot\frac{2}{3}$.</p>
+      <p class="mossa">$\frac{9}{8}:\frac{12}{5}$ diventa $\frac{9}{8}\cdot\frac{5}{12}$.</p>
       <div class="teoria">
         <div class="nome">Dividere per una frazione</div>
         <div class="frase">Dividere per una frazione è lo stesso che moltiplicare per la frazione <strong>capovolta</strong>: il suo numeratore e il suo denominatore si scambiano di posto. Quello che sta prima del segno di divisione non si tocca.</div>
@@ -302,23 +254,83 @@ mjx-container[display]{margin:0!important}
     </div>
   </details>
 
+  <details class="riga">
+    <summary>
+      <div class="n">4</div>
+      <div class="cont">
+        <div class="nota">Semplifico a croce, prima di moltiplicare.</div>
+        <div class="f sx">$\displaystyle =\left(\frac{\overset{3}{\cancel{9}}}{8}\cdot\frac{5}{\underset{4}{\cancel{12}}}\right):\frac{5}{8}=$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">Si semplifica un numeratore con il denominatore di un'altra frazione, mai due numeratori fra loro. Dopo, il prodotto viene con numeri piccoli.</p>
+      <div class="teoria">
+        <div class="nome">Semplificare a croce prima di moltiplicare</div>
+        <div class="frase">Prima di moltiplicare si semplifica <strong>in croce</strong>: un numeratore con il denominatore dell'altra frazione, divisi tutti e due per lo stesso numero. Semplificare dopo porta allo stesso risultato, ma con numeri molto più grandi, ed è lì che nascono gli errori di calcolo.</div>
+        <div class="f sx">$\displaystyle \frac{a\cdot k}{b}\cdot\frac{c}{d\cdot k}=\frac{a}{b}\cdot\frac{c}{d}$</div>
+        <div class="ex">esempio: $\frac{8}{15}\cdot\frac{5}{6}=\frac{4}{3}\cdot\frac{1}{3}$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ Errore da non fare</div>
+        <div class="nome">Semplificare due numeratori fra loro</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{a\cdot k}{b}\cdot\frac{c\cdot k}{d}=\frac{a}{b}\cdot\frac{c}{d}$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{a\cdot k}{b}\cdot\frac{c}{d\cdot k}=\frac{a}{b}\cdot\frac{c}{d}$</div></div>
+        </div>
+        <div class="why-txt">Sopra con sotto, mai sopra con sopra.</div>
+      </div>
+    </div>
+  </details>
+
   <div class="riga">
     <div class="fissa">
-      <div class="n">6</div>
+      <div class="n">5</div>
       <div class="cont">
-        <div class="nota">Semplifico a croce, come al passaggio 2.</div>
-        <div class="f sx">$\displaystyle =\left[\frac{3}{4}-\frac{1}{2}+\left(\frac{\overset{1}{\cancel{3}}}{1}\cdot\frac{2}{\underset{1}{\cancel{3}}}-\frac{7}{4}\right)+\frac{5}{4}\cdot\frac{16}{15}\right]-\frac{1}{2}-\frac{1}{6}=$</div>
+        <div class="nota">Riscrivo pulito.</div>
+        <div class="f sx">$\displaystyle =\left(\frac{3}{8}\cdot\frac{5}{4}\right):\frac{5}{8}=$</div>
       </div>
       <div></div>
     </div>
   </div>
 
+  <details class="riga">
+    <summary>
+      <div class="n">6</div>
+      <div class="cont">
+        <div class="nota">Moltiplico sopra con sopra e sotto con sotto.</div>
+        <div class="f sx">$\displaystyle =\left(\frac{3\cdot 5}{8\cdot 4}\right):\frac{5}{8}=$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">Numeratori: $3\cdot 5=15$. Denominatori: $8\cdot 4=32$.</p>
+      <div class="teoria">
+        <div class="nome">Moltiplicare due frazioni</div>
+        <div class="frase">Per moltiplicare due frazioni si moltiplicano i <strong>numeratori fra loro</strong> e i <strong>denominatori fra loro</strong>. Non serve il denominatore comune: quello serve solo per addizioni e sottrazioni.</div>
+        <div class="f sx">$\displaystyle \frac{a}{b}\cdot\frac{c}{d}=\frac{a\cdot c}{b\cdot d}$</div>
+        <div class="ex">esempio: $\frac{2}{7}\cdot\frac{3}{5}=\frac{6}{35}$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ Errore da non fare</div>
+        <div class="nome">Moltiplicare in croce</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{a}{b}\cdot\frac{c}{d}=\frac{a\cdot d}{b\cdot c}$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{a}{b}\cdot\frac{c}{d}=\frac{a\cdot c}{b\cdot d}$</div></div>
+        </div>
+        <div class="why-txt">Sopra con sopra, sotto con sotto.</div>
+      </div>
+    </div>
+  </details>
+
   <div class="riga">
     <div class="fissa">
       <div class="n">7</div>
       <div class="cont">
-        <div class="nota">Riscrivo pulito.</div>
-        <div class="f sx">$\displaystyle =\left[\frac{3}{4}-\frac{1}{2}+\left(\frac{1}{1}\cdot\frac{2}{1}-\frac{7}{4}\right)+\frac{5}{4}\cdot\frac{16}{15}\right]-\frac{1}{2}-\frac{1}{6}=$</div>
+        <div class="nota">Chiudo la tonda.</div>
+        <div class="f sx">$\displaystyle =\frac{15}{32}:\frac{5}{8}=$</div>
       </div>
       <div></div>
     </div>
@@ -328,214 +340,52 @@ mjx-container[display]{margin:0!important}
     <div class="fissa">
       <div class="n">8</div>
       <div class="cont">
-        <div class="nota">Moltiplico, come al passaggio 4.</div>
-        <div class="f sx">$\displaystyle =\left[\frac{3}{4}-\frac{1}{2}+\left(\frac{2}{1}-\frac{7}{4}\right)+\frac{5}{4}\cdot\frac{16}{15}\right]-\frac{1}{2}-\frac{1}{6}=$</div>
+        <div class="nota">Capovolgo, come al passaggio 3.</div>
+        <div class="f sx">$\displaystyle =\frac{15}{32}\cdot\frac{8}{5}=$</div>
       </div>
       <div></div>
     </div>
   </div>
 
-  <details class="riga">
-    <summary>
+  <div class="riga">
+    <div class="fissa">
       <div class="n">9</div>
       <div class="cont">
-        <div class="nota">Tonda: mcm $=4$.</div>
-        <div class="f sx">$\displaystyle =\left[\frac{3}{4}-\frac{1}{2}+\frac{8-7}{4}+\frac{5}{4}\cdot\frac{16}{15}\right]-\frac{1}{2}-\frac{1}{6}=$</div>
+        <div class="nota">Semplifico a croce, come al passaggio 4.</div>
+        <div class="f sx">$\displaystyle =\frac{\overset{3}{\cancel{15}}}{\underset{4}{\cancel{32}}}\cdot\frac{\overset{1}{\cancel{8}}}{\underset{1}{\cancel{5}}}=$</div>
       </div>
-      <span class="tab">Regola <span class="chev">▼</span></span>
-    </summary>
-    <div class="pannello">
-      <p class="mossa">$\frac{2}{1}=\frac{8}{4}$, e $\frac{7}{4}$ resta com'è.</p>
-      <div class="teoria">
-        <div class="nome">Addizione e sottrazione fra frazioni</div>
-        <div class="frase">Due frazioni si sommano o si sottraggono solo quando hanno lo <strong>stesso denominatore</strong>: come denominatore comune si prende il minimo comune multiplo, e ogni numeratore si moltiplica per quante volte il suo denominatore sta nel mcm. Si possono anche moltiplicare fra loro i denominatori, e il risultato è lo stesso: ma quando hanno fattori in comune i numeri diventano molto più grandi e alla fine tocca ridurre.</div>
-        <div class="f sx">$\displaystyle \frac{a}{b}\pm\frac{c}{d}=\frac{a\cdot\left(m:b\right)\pm c\cdot\left(m:d\right)}{m}\quad \text{con}\ m=\text{mcm}(b;d)$</div>
-        <div class="ex">esempio: $\frac{1}{4}+\frac{1}{10}=\frac{1\cdot 5+1\cdot 2}{20}=\frac{7}{20}$</div>
-      </div>
-      <div class="errore">
-        <div class="k">⚠️ Errore da non fare</div>
-        <div class="nome">Sommare anche i denominatori</div>
-        <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{a}{b}+\frac{c}{d}=\frac{a+c}{b+d}$</div></div>
-          <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{a}{b}+\frac{c}{d}=\frac{a\cdot\left(m:b\right)+ c\cdot\left(m:d\right)}{m}$</div></div>
-        </div>
-        <div class="why-txt">Il denominatore dice quanto è grande la fetta: non cambia.</div>
-      </div>
+      <div></div>
     </div>
-  </details>
+  </div>
 
   <div class="riga">
     <div class="fissa">
       <div class="n">10</div>
       <div class="cont">
-        <div class="nota">Eseguo la sottrazione.</div>
-        <div class="f sx">$\displaystyle =\left[\frac{3}{4}-\frac{1}{2}+\frac{1}{4}+\frac{5}{4}\cdot\frac{16}{15}\right]-\frac{1}{2}-\frac{1}{6}=$</div>
+        <div class="nota">Riscrivo pulito.</div>
+        <div class="f sx">$\displaystyle =\frac{3}{4}\cdot\frac{1}{1}=$</div>
       </div>
       <div></div>
     </div>
   </div>
 
-  <details class="riga">
-    <summary>
+  <div class="riga">
+    <div class="fissa">
       <div class="n">11</div>
       <div class="cont">
-        <div class="nota">Semplifico a croce l'ultimo prodotto, come al passaggio 2.</div>
-        <div class="f sx">$\displaystyle =\left[\frac{3}{4}-\frac{1}{2}+\frac{1}{4}+\frac{\overset{1}{\cancel{5}}}{\underset{1}{\cancel{4}}}\cdot\frac{\overset{4}{\cancel{16}}}{\underset{3}{\cancel{15}}}\right]-\frac{1}{2}-\frac{1}{6}=$</div>
-      </div>
-      <span class="tab">Regola <span class="chev">▼</span></span>
-    </summary>
-    <div class="pannello">
-      <p class="mossa">Dentro la quadra ci sono tre frazioni da sommare e un prodotto, $\frac{5}{4}\cdot\frac{16}{15}$: il prodotto viene prima, ed è per questo che si semplifica lui mentre la somma resta ferma.</p>
-      <div class="teoria">
-        <div class="nome">Priorità dentro le parentesi</div>
-        <div class="frase">Anche dentro una parentesi valgono le priorità: prima le moltiplicazioni e le divisioni, poi le addizioni e le sottrazioni, e la parentesi si toglie solo quando dentro è rimasto un unico numero. Quando fuori c'è un fattore lo si potrebbe anche distribuire su ogni termine invece di chiudere la parentesi: si arriva allo stesso risultato, ma con più moltiplicazioni e più segni da tenere d'occhio.</div>
-        <div class="f sx">$\displaystyle (a+b\cdot c)=a+(b\cdot c)$</div>
-        <div class="ex">esempio: $(5+2\cdot 3)=5+6=11$</div>
-      </div>
-      <div class="errore">
-        <div class="k">⚠️ Errore da non fare</div>
-        <div class="nome">Sommare prima di moltiplicare dentro la parentesi</div>
-        <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle (a+b\cdot c)=(a+b)\cdot c$</div></div>
-          <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle (a+b\cdot c)=a+(b\cdot c)$</div></div>
-        </div>
-        <div class="why-txt">Anche fra parentesi il prodotto viene prima.</div>
-      </div>
-    </div>
-  </details>
-
-  <div class="riga">
-    <div class="fissa">
-      <div class="n">12</div>
-      <div class="cont">
-        <div class="nota">Riscrivo pulito.</div>
-        <div class="f sx">$\displaystyle =\left[\frac{3}{4}-\frac{1}{2}+\frac{1}{4}+\frac{1}{1}\cdot\frac{4}{3}\right]-\frac{1}{2}-\frac{1}{6}=$</div>
+        <div class="nota">Moltiplico, come al passaggio 6.</div>
+        <div class="f sx">$\displaystyle =\frac{3\cdot 1}{4\cdot 1}=$</div>
       </div>
       <div></div>
     </div>
   </div>
-
-  <div class="riga">
-    <div class="fissa">
-      <div class="n">13</div>
-      <div class="cont">
-        <div class="nota">Moltiplico, come al passaggio 4.</div>
-        <div class="f sx">$\displaystyle =\left[\frac{3}{4}-\frac{1}{2}+\frac{1}{4}+\frac{4}{3}\right]-\frac{1}{2}-\frac{1}{6}=$</div>
-      </div>
-      <div></div>
-    </div>
-  </div>
-
-  <details class="riga">
-    <summary>
-      <div class="n">14</div>
-      <div class="cont">
-        <div class="nota">Quadra: mcm $=12$.</div>
-        <div class="f sx">$\displaystyle =\frac{9-6+3+16}{12}-\frac{1}{2}-\frac{1}{6}=$</div>
-      </div>
-      <span class="tab">Regola <span class="chev">▼</span></span>
-    </summary>
-    <div class="pannello">
-      <p class="mossa">Il minimo comune multiplo di $4$, $2$ e $3$ è $12$.</p>
-      <div class="teoria">
-        <div class="nome">Frazioni equivalenti</div>
-        <div class="frase">Moltiplicando numeratore e denominatore per uno stesso numero, diverso da zero, si ottiene una frazione diversa da vedere ma uguale di valore. È così che si riscrivono più frazioni con lo stesso denominatore.</div>
-        <div class="f sx">$\displaystyle \frac{a}{b}=\frac{a\cdot k}{b\cdot k}$</div>
-        <div class="ex">esempio: $\frac{4}{7}=\frac{4\cdot 8}{7\cdot 8}=\frac{32}{56}$</div>
-      </div>
-      <div class="errore">
-        <div class="k">⚠️ Errore da non fare</div>
-        <div class="nome">Moltiplicare solo il denominatore</div>
-        <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{a}{b}=\frac{a}{b\cdot k}$</div></div>
-          <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{a}{b}=\frac{a\cdot k}{b\cdot k}$</div></div>
-        </div>
-        <div class="why-txt">Toccando solo il denominatore la frazione cambia valore.</div>
-      </div>
-    </div>
-  </details>
-
-  <div class="riga">
-    <div class="fissa">
-      <div class="n">15</div>
-      <div class="cont">
-        <div class="nota">Eseguo la somma algebrica.</div>
-        <div class="f sx">$\displaystyle =\frac{22}{12}-\frac{1}{2}-\frac{1}{6}=$</div>
-      </div>
-      <div></div>
-    </div>
-  </div>
-
-  <details class="riga">
-    <summary>
-      <div class="n">16</div>
-      <div class="cont">
-        <div class="nota">Riduco $\frac{22}{12}$ un fattore alla volta.</div>
-        <div class="f sx">$\displaystyle =\frac{\overset{11}{\cancel{22}}}{\underset{6}{\cancel{12}}}-\frac{1}{2}-\frac{1}{6}=$</div>
-      </div>
-      <span class="tab">Regola <span class="chev">▼</span></span>
-    </summary>
-    <div class="pannello">
-      <p class="mossa">$22$ e $12$ si dividono per $2$.</p>
-      <div class="teoria">
-        <div class="nome">Ridurre una frazione ai minimi termini</div>
-        <div class="frase">Dividendo numeratore e denominatore per lo stesso numero il valore non cambia, ma i numeri diventano più piccoli. Conviene farlo appena si può e andare avanti finché sopra e sotto non hanno più divisori in comune.</div>
-        <div class="f sx">$\displaystyle \frac{a\cdot k}{b\cdot k}=\frac{a}{b}$</div>
-        <div class="ex">esempio: $\frac{9}{12}=\frac{3\cdot 3}{4\cdot 3}=\frac{3}{4}$</div>
-      </div>
-      <div class="errore">
-        <div class="k">⚠️ Errore da non fare</div>
-        <div class="nome">Dividere un solo termine della frazione</div>
-        <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{a\cdot k}{b\cdot k}=\frac{a}{b\cdot k}$</div></div>
-          <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{a\cdot k}{b\cdot k}=\frac{a}{b}$</div></div>
-        </div>
-        <div class="why-txt">Sopra e sotto, per lo stesso numero.</div>
-      </div>
-    </div>
-  </details>
-
-  <div class="riga">
-    <div class="fissa">
-      <div class="n">17</div>
-      <div class="cont">
-        <div class="nota">Riscrivo pulito.</div>
-        <div class="f sx">$\displaystyle =\frac{11}{6}-\frac{1}{2}-\frac{1}{6}=$</div>
-      </div>
-      <div></div>
-    </div>
-  </div>
-
-  <details class="riga">
-    <summary>
-      <div class="n">18</div>
-      <div class="cont">
-        <div class="nota">mcm $=6$: sottraggo da sinistra.</div>
-        <div class="f sx">$\displaystyle =\frac{11-3-1}{6}=$</div>
-      </div>
-      <span class="tab">Regola <span class="chev">▼</span></span>
-    </summary>
-    <div class="pannello">
-      <p class="mossa">Le due sottrazioni si eseguono nell'ordine in cui sono scritte.</p>
-      <div class="teoria">
-        <div class="nome">Stessa priorità: si va da sinistra a destra</div>
-        <div class="frase">Addizione e sottrazione contano allo stesso modo. Quando si susseguono non se ne sceglie una perché sembra più comoda: si eseguono nell'ordine in cui sono scritte, partendo da sinistra.</div>
-        <div class="f sx">$\displaystyle a-b+c=(a-b)+c$</div>
-        <div class="ex">esempio: $10-4+3=6+3=9$</div>
-      </div>
-    </div>
-  </details>
 
   <div class="riga res">
     <div class="fissa">
-      <div class="n">19</div>
+      <div class="n">12</div>
       <div class="cont">
-        <div class="nota">Eseguo la somma algebrica.</div>
-        <div class="f sx">$\displaystyle =\frac{7}{6}$</div>
+        <div class="nota">Eseguo i prodotti.</div>
+        <div class="f sx">$\displaystyle =\frac{3}{4}$</div>
       </div>
       <div></div>
     </div>

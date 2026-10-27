@@ -3,44 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OF3_8 — Espressioni con le frazioni</title>
+<title>OF3_8 — Dividere le frazioni</title>
 
 <script type="application/json" id="meta">
 {
   "id": "of3_8",
-  "titolo": "Espressioni con le frazioni",
+  "titolo": "Dividere le frazioni",
   "tipo": "espressione",
-  "consegna_label": "Calcola la seguente espressione",
-  "consegna_tex": "\\left[\\frac{2}{3}+\\frac{1}{2}\\cdot\\left(\\frac{2}{5}+3\\right)-\\frac{1}{4}\\cdot\\left(\\frac{4}{3}+2\\right)-\\frac{1}{5}\\right]:\\left\\{\\left[\\frac{4}{3}+\\frac{1}{2}\\cdot\\left(\\frac{2}{5}+2\\right)+1\\right]:\\left[\\frac{7}{2}+\\frac{2}{3}\\cdot\\left(2+\\frac{1}{2}+\\frac{2}{5}\\right)-\\frac{2}{15}\\right]\\right\\}",
-  "consegna_sympy": "(Rational(2,3)+Rational(1,2)*(Rational(2,5)+3)-Rational(1,4)*(Rational(4,3)+2)-Rational(1,5)) / ((Rational(4,3)+Rational(1,2)*(Rational(2,5)+2)+1)/(Rational(7,2)+Rational(2,3)*(2+Rational(1,2)+Rational(2,5))-Rational(2,15)))",
-  "risultato_tex": "2",
-  "risultato_sympy": "Integer(2)",
+  "consegna_label": "Completa l'uguaglianza",
+  "consegna_tex": "Trova la frazione da mettere al posto del quadratino per completare l'uguaglianza: $\\displaystyle \\frac{8}{9}:\\square=\\frac{10}{21}$",
+  "consegna_sympy": "Rational(8,9)/Rational(10,21)",
+  "risultato_tex": "\\frac{28}{15}",
+  "risultato_sympy": "Rational(28,15)",
   "righe_sympy": [
-    "Integer(2)",
-    "Integer(2)",
-    "Integer(2)",
-    "Integer(2)",
-    "Integer(2)",
-    "Integer(2)",
-    "Integer(2)",
-    "Integer(2)",
-    "Integer(2)",
-    "Integer(2)",
-    "Integer(2)",
-    "Integer(2)",
-    "Integer(2)",
-    "Integer(2)",
-    "Integer(2)",
-    "Integer(2)",
-    "Integer(2)",
-    "Integer(2)",
-    "Integer(2)",
-    "Integer(2)",
-    "Integer(2)",
-    "Integer(2)",
-    "Integer(2)",
-    "Integer(2)",
-    "Integer(2)"
+    "Rational(28,15)",
+    "Rational(28,15)",
+    "Rational(28,15)",
+    "Rational(28,15)",
+    "Rational(28,15)",
+    "Rational(28,15)"
   ]
 }
 </script>
@@ -190,8 +171,8 @@ mjx-container[display]{margin:0!important}
 
 <!-- ===================== CONSEGNA ===================== -->
 <div class="consegna">
-  <div class="t">📌 Calcola la seguente espressione</div>
-  <div class="m sx">$\displaystyle \left[\frac{2}{3}+\frac{1}{2}\cdot\left(\frac{2}{5}+3\right)-\frac{1}{4}\cdot\left(\frac{4}{3}+2\right)-\frac{1}{5}\right]:\left\{\left[\frac{4}{3}+\frac{1}{2}\cdot\left(\frac{2}{5}+2\right)+1\right]:\left[\frac{7}{2}+\frac{2}{3}\cdot\left(2+\frac{1}{2}+\frac{2}{5}\right)-\frac{2}{15}\right]\right\}$</div>
+  <div class="t">📌 Completa l'uguaglianza</div>
+  <div class="m sx">Trova la frazione da mettere al posto del quadratino per completare l'uguaglianza: $\displaystyle \frac{8}{9}:\square=\frac{10}{21}$</div>
 </div>
 
 <!-- ===================== CATENA ====================== -->
@@ -199,304 +180,47 @@ mjx-container[display]{margin:0!important}
   <div class="k">Confronta con il tuo foglio</div>
   <div class="sub">Scorri le righe fino alla prima che non coincide con la tua. Lì apri <b>Regola</b>.</div>
 
-  <div class="riga">
-    <div class="fissa">
+  <details class="riga">
+    <summary>
       <div class="n">1</div>
-      <div class="cont"><div class="f sx">$\displaystyle \left[\frac{2}{3}+\frac{1}{2}\cdot\left(\frac{2}{5}+3\right)-\frac{1}{4}\cdot\left(\frac{4}{3}+2\right)-\frac{1}{5}\right]:\left\{\left[\frac{4}{3}+\frac{1}{2}\cdot\left(\frac{2}{5}+2\right)+1\right]:\left[\frac{7}{2}+\frac{2}{3}\cdot\left(2+\frac{1}{2}+\frac{2}{5}\right)-\frac{2}{15}\right]\right\}=$</div></div>
-      <div></div>
+      <div class="cont">
+        <div class="nota">Il divisore che manca: divido $\frac{8}{9}$ per $\frac{10}{21}$.</div>
+        <div class="f sx">$\displaystyle \frac{8}{9}:\frac{10}{21}=$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">Il numero di partenza è $\frac{8}{9}$ e il risultato è $\frac{10}{21}$. Il divisore si ritrova dividendo il primo per il secondo, in quest'ordine.</p>
+      <div class="teoria">
+        <div class="nome">Il divisore che manca</div>
+        <div class="frase">Se manca il numero <strong>per cui si divide</strong>, lo si ritrova dividendo il dividendo per il quoziente. Attenzione all'ordine: qui i due numeri non si possono scambiare.</div>
+        <div class="f sx">$\displaystyle a:x=b\ \longrightarrow\ x=a:b$</div>
+        <div class="ex">esempio: $12:x=3\ \longrightarrow\ x=12:3=4$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ Errore da non fare</div>
+        <div class="nome">Scambiare dividendo e quoziente</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a:x=b\ \longrightarrow\ x=b:a$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a:x=b\ \longrightarrow\ x=a:b$</div></div>
+        </div>
+        <div class="why-txt">Dividendo diviso quoziente, in quest'ordine.</div>
+      </div>
     </div>
-  </div>
+  </details>
 
   <details class="riga">
     <summary>
       <div class="n">2</div>
       <div class="cont">
-        <div class="nota">Dentro le tonde scrivo gli interi come frazioni.</div>
-        <div class="f sx">$\displaystyle =\left[\frac{2}{3}+\frac{1}{2}\cdot\frac{2+15}{5}-\frac{1}{4}\cdot\frac{4+6}{3}-\frac{1}{5}\right]:\left\{\left[\frac{4}{3}+\frac{1}{2}\cdot\frac{2+10}{5}+1\right]:\left[\frac{7}{2}+\frac{2}{3}\cdot\frac{20+5+4}{10}-\frac{2}{15}\right]\right\}=$</div>
-      </div>
-      <span class="tab">Regola <span class="chev">▼</span></span>
-    </summary>
-    <div class="pannello">
-      <p class="mossa">Quattro tonde in una volta: $3=\frac{15}{5}$, $2=\frac{6}{3}$, $2=\frac{10}{5}$, e nell'ultima $2=\frac{20}{10}$ e $\frac{1}{2}=\frac{5}{10}$.</p>
-      <div class="teoria">
-        <div class="nome">Un numero intero scritto come frazione</div>
-        <div class="frase">Ogni numero intero si può scrivere come frazione: basta dargli il denominatore che serve e moltiplicare per quello anche il numero stesso. Solo così lo si può sommare o sottrarre a una frazione.</div>
-        <div class="f sx">$\displaystyle a=\frac{a\cdot b}{b}$</div>
-        <div class="ex">esempio: $3=\frac{3\cdot 4}{4}=\frac{12}{4}$</div>
-      </div>
-      <div class="errore">
-        <div class="k">⚠️ Errore da non fare</div>
-        <div class="nome">Mettere l'intero solo al numeratore</div>
-        <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a+\frac{c}{b}=\frac{a+c}{b}$</div></div>
-          <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a+\frac{c}{b}=\frac{a\cdot b+c}{b}$</div></div>
-        </div>
-        <div class="why-txt">L'intero vale $b$ fette, non una: senza moltiplicarlo per $b$ se ne conta molto meno di quello che è.</div>
-      </div>
-    </div>
-  </details>
-
-  <div class="riga">
-    <div class="fissa">
-      <div class="n">3</div>
-      <div class="cont">
-        <div class="nota">Eseguo le somme dentro le tonde.</div>
-        <div class="f sx">$\displaystyle =\left[\frac{2}{3}+\frac{1}{2}\cdot\frac{17}{5}-\frac{1}{4}\cdot\frac{10}{3}-\frac{1}{5}\right]:\left\{\left[\frac{4}{3}+\frac{1}{2}\cdot\frac{12}{5}+1\right]:\left[\frac{7}{2}+\frac{2}{3}\cdot\frac{29}{10}-\frac{2}{15}\right]\right\}=$</div>
-      </div>
-      <div></div>
-    </div>
-  </div>
-
-  <details class="riga">
-    <summary>
-      <div class="n">4</div>
-      <div class="cont">
-        <div class="nota">Semplifico a croce i prodotti che si possono semplificare.</div>
-        <div class="f sx">$\displaystyle =\left[\frac{2}{3}+\frac{1}{2}\cdot\frac{17}{5}-\frac{1}{\underset{2}{\cancel{4}}}\cdot\frac{\overset{5}{\cancel{10}}}{3}-\frac{1}{5}\right]:\left\{\left[\frac{4}{3}+\frac{1}{\underset{1}{\cancel{2}}}\cdot\frac{\overset{6}{\cancel{12}}}{5}+1\right]:\left[\frac{7}{2}+\frac{\overset{1}{\cancel{2}}}{3}\cdot\frac{29}{\underset{5}{\cancel{10}}}-\frac{2}{15}\right]\right\}=$</div>
-      </div>
-      <span class="tab">Regola <span class="chev">▼</span></span>
-    </summary>
-    <div class="pannello">
-      <p class="mossa">Si semplifica un numeratore con il denominatore di un'altra frazione, mai due numeratori fra loro. Dopo, il prodotto viene con numeri piccoli.</p>
-      <div class="teoria">
-        <div class="nome">Semplificare a croce prima di moltiplicare</div>
-        <div class="frase">Prima di moltiplicare si semplifica <strong>in croce</strong>: un numeratore con il denominatore dell'altra frazione, divisi tutti e due per lo stesso numero. Semplificare dopo porta allo stesso risultato, ma con numeri molto più grandi, ed è lì che nascono gli errori di calcolo.</div>
-        <div class="f sx">$\displaystyle \frac{a\cdot k}{b}\cdot\frac{c}{d\cdot k}=\frac{a}{b}\cdot\frac{c}{d}$</div>
-        <div class="ex">esempio: $\frac{9}{5}\cdot\frac{5}{6}=\frac{3}{1}\cdot\frac{1}{2}$</div>
-      </div>
-      <div class="errore">
-        <div class="k">⚠️ Errore da non fare</div>
-        <div class="nome">Semplificare due numeratori fra loro</div>
-        <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{a\cdot k}{b}\cdot\frac{c\cdot k}{d}=\frac{a}{b}\cdot\frac{c}{d}$</div></div>
-          <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{a\cdot k}{b}\cdot\frac{c}{d\cdot k}=\frac{a}{b}\cdot\frac{c}{d}$</div></div>
-        </div>
-        <div class="why-txt">Sopra con sotto, mai sopra con sopra.</div>
-      </div>
-    </div>
-  </details>
-
-  <div class="riga">
-    <div class="fissa">
-      <div class="n">5</div>
-      <div class="cont">
-        <div class="nota">Riscrivo pulito.</div>
-        <div class="f sx">$\displaystyle =\left[\frac{2}{3}+\frac{1}{2}\cdot\frac{17}{5}-\frac{1}{2}\cdot\frac{5}{3}-\frac{1}{5}\right]:\left\{\left[\frac{4}{3}+\frac{1}{1}\cdot\frac{6}{5}+1\right]:\left[\frac{7}{2}+\frac{1}{3}\cdot\frac{29}{5}-\frac{2}{15}\right]\right\}=$</div>
-      </div>
-      <div></div>
-    </div>
-  </div>
-
-  <details class="riga">
-    <summary>
-      <div class="n">6</div>
-      <div class="cont">
-        <div class="nota">Eseguo i quattro prodotti.</div>
-        <div class="f sx">$\displaystyle =\left[\frac{2}{3}+\frac{17}{10}-\frac{5}{6}-\frac{1}{5}\right]:\left\{\left[\frac{4}{3}+\frac{6}{5}+1\right]:\left[\frac{7}{2}+\frac{29}{15}-\frac{2}{15}\right]\right\}=$</div>
-      </div>
-      <span class="tab">Regola <span class="chev">▼</span></span>
-    </summary>
-    <div class="pannello">
-      <p class="mossa">Il primo prodotto non si poteva semplificare: $\frac{1}{2}\cdot\frac{17}{5}=\frac{17}{10}$.</p>
-      <div class="teoria">
-        <div class="nome">Moltiplicare due frazioni</div>
-        <div class="frase">Per moltiplicare due frazioni si moltiplicano i <strong>numeratori fra loro</strong> e i <strong>denominatori fra loro</strong>. Non serve il denominatore comune: quello serve solo per addizioni e sottrazioni.</div>
-        <div class="f sx">$\displaystyle \frac{a}{b}\cdot\frac{c}{d}=\frac{a\cdot c}{b\cdot d}$</div>
-        <div class="ex">esempio: $\frac{4}{3}\cdot\frac{8}{11}=\frac{32}{33}$</div>
-      </div>
-      <div class="errore">
-        <div class="k">⚠️ Errore da non fare</div>
-        <div class="nome">Moltiplicare in croce</div>
-        <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{a}{b}\cdot\frac{c}{d}=\frac{a\cdot d}{b\cdot c}$</div></div>
-          <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{a}{b}\cdot\frac{c}{d}=\frac{a\cdot c}{b\cdot d}$</div></div>
-        </div>
-        <div class="why-txt">Sopra con sopra, sotto con sotto.</div>
-      </div>
-    </div>
-  </details>
-
-  <details class="riga">
-    <summary>
-      <div class="n">7</div>
-      <div class="cont">
-        <div class="nota">Prima quadra: mcm $=30$.</div>
-        <div class="f sx">$\displaystyle =\frac{20+51-25-6}{30}:\left\{\left[\frac{4}{3}+\frac{6}{5}+1\right]:\left[\frac{7}{2}+\frac{29}{15}-\frac{2}{15}\right]\right\}=$</div>
-      </div>
-      <span class="tab">Regola <span class="chev">▼</span></span>
-    </summary>
-    <div class="pannello">
-      <p class="mossa">Il minimo comune multiplo di $3$, $10$, $6$ e $5$ è $30$.</p>
-      <div class="teoria">
-        <div class="nome">Addizione e sottrazione fra frazioni</div>
-        <div class="frase">Due frazioni si sommano o si sottraggono solo quando hanno lo <strong>stesso denominatore</strong>: come denominatore comune si prende il minimo comune multiplo, e ogni numeratore si moltiplica per quante volte il suo denominatore sta nel mcm. Si possono anche moltiplicare fra loro i denominatori, e il risultato è lo stesso: ma quando hanno fattori in comune i numeri diventano molto più grandi e alla fine tocca ridurre.</div>
-        <div class="f sx">$\displaystyle \frac{a}{b}\pm\frac{c}{d}=\frac{a\cdot\left(m:b\right)\pm c\cdot\left(m:d\right)}{m}\quad \text{con}\ m=\text{mcm}(b;d)$</div>
-        <div class="ex">esempio: $\frac{1}{4}+\frac{1}{10}=\frac{1\cdot 5+1\cdot 2}{20}=\frac{7}{20}$</div>
-      </div>
-      <div class="errore">
-        <div class="k">⚠️ Errore da non fare</div>
-        <div class="nome">Sommare anche i denominatori</div>
-        <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{a}{b}+\frac{c}{d}=\frac{a+c}{b+d}$</div></div>
-          <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{a}{b}+\frac{c}{d}=\frac{a\cdot\left(m:b\right)+ c\cdot\left(m:d\right)}{m}$</div></div>
-        </div>
-        <div class="why-txt">Il denominatore dice quanto è grande la fetta: non cambia.</div>
-      </div>
-    </div>
-  </details>
-
-  <div class="riga">
-    <div class="fissa">
-      <div class="n">8</div>
-      <div class="cont">
-        <div class="nota">Eseguo la somma algebrica.</div>
-        <div class="f sx">$\displaystyle =\frac{40}{30}:\left\{\left[\frac{4}{3}+\frac{6}{5}+1\right]:\left[\frac{7}{2}+\frac{29}{15}-\frac{2}{15}\right]\right\}=$</div>
-      </div>
-      <div></div>
-    </div>
-  </div>
-
-  <details class="riga">
-    <summary>
-      <div class="n">9</div>
-      <div class="cont">
-        <div class="nota">Riduco $\frac{40}{30}$ un fattore alla volta.</div>
-        <div class="f sx">$\displaystyle =\frac{\overset{4}{\cancel{40}}}{\underset{3}{\cancel{30}}}:\left\{\left[\frac{4}{3}+\frac{6}{5}+1\right]:\left[\frac{7}{2}+\frac{29}{15}-\frac{2}{15}\right]\right\}=$</div>
-      </div>
-      <span class="tab">Regola <span class="chev">▼</span></span>
-    </summary>
-    <div class="pannello">
-      <p class="mossa">$40$ e $30$ si dividono per $2$ e poi per $5$.</p>
-      <div class="teoria">
-        <div class="nome">Ridurre una frazione ai minimi termini</div>
-        <div class="frase">Dividendo numeratore e denominatore per lo stesso numero il valore non cambia, ma i numeri diventano più piccoli. Conviene farlo appena si può e andare avanti finché sopra e sotto non hanno più divisori in comune.</div>
-        <div class="f sx">$\displaystyle \frac{a\cdot k}{b\cdot k}=\frac{a}{b}$</div>
-        <div class="ex">esempio: $\frac{9}{12}=\frac{3\cdot 3}{4\cdot 3}=\frac{3}{4}$</div>
-      </div>
-      <div class="errore">
-        <div class="k">⚠️ Errore da non fare</div>
-        <div class="nome">Dividere un solo termine della frazione</div>
-        <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{a\cdot k}{b\cdot k}=\frac{a}{b\cdot k}$</div></div>
-          <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{a\cdot k}{b\cdot k}=\frac{a}{b}$</div></div>
-        </div>
-        <div class="why-txt">Sopra e sotto, per lo stesso numero.</div>
-      </div>
-    </div>
-  </details>
-
-  <div class="riga">
-    <div class="fissa">
-      <div class="n">10</div>
-      <div class="cont">
-        <div class="nota">Riscrivo pulito.</div>
-        <div class="f sx">$\displaystyle =\frac{4}{3}:\left\{\left[\frac{4}{3}+\frac{6}{5}+1\right]:\left[\frac{7}{2}+\frac{29}{15}-\frac{2}{15}\right]\right\}=$</div>
-      </div>
-      <div></div>
-    </div>
-  </div>
-
-  <details class="riga">
-    <summary>
-      <div class="n">11</div>
-      <div class="cont">
-        <div class="nota">Prima quadra della graffa: mcm $=15$.</div>
-        <div class="f sx">$\displaystyle =\frac{4}{3}:\left\{\frac{20+18+15}{15}:\left[\frac{7}{2}+\frac{29}{15}-\frac{2}{15}\right]\right\}=$</div>
-      </div>
-      <span class="tab">Regola <span class="chev">▼</span></span>
-    </summary>
-    <div class="pannello">
-      <p class="mossa">$\frac{4}{3}=\frac{20}{15}$, $\frac{6}{5}=\frac{18}{15}$, $1=\frac{15}{15}$.</p>
-      <div class="teoria">
-        <div class="nome">Frazioni equivalenti</div>
-        <div class="frase">Moltiplicando numeratore e denominatore per uno stesso numero, diverso da zero, si ottiene una frazione diversa da vedere ma uguale di valore. È così che si riscrivono più frazioni con lo stesso denominatore.</div>
-        <div class="f sx">$\displaystyle \frac{a}{b}=\frac{a\cdot k}{b\cdot k}$</div>
-        <div class="ex">esempio: $\frac{4}{7}=\frac{4\cdot 8}{7\cdot 8}=\frac{32}{56}$</div>
-      </div>
-      <div class="errore">
-        <div class="k">⚠️ Errore da non fare</div>
-        <div class="nome">Moltiplicare solo il denominatore</div>
-        <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{a}{b}=\frac{a}{b\cdot k}$</div></div>
-          <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{a}{b}=\frac{a\cdot k}{b\cdot k}$</div></div>
-        </div>
-        <div class="why-txt">Toccando solo il denominatore la frazione cambia valore.</div>
-      </div>
-    </div>
-  </details>
-
-  <div class="riga">
-    <div class="fissa">
-      <div class="n">12</div>
-      <div class="cont">
-        <div class="nota">Eseguo la somma.</div>
-        <div class="f sx">$\displaystyle =\frac{4}{3}:\left\{\frac{53}{15}:\left[\frac{7}{2}+\frac{29}{15}-\frac{2}{15}\right]\right\}=$</div>
-      </div>
-      <div></div>
-    </div>
-  </div>
-
-  <div class="riga">
-    <div class="fissa">
-      <div class="n">13</div>
-      <div class="cont">
-        <div class="nota">Seconda quadra: mcm $=30$, come al passaggio 7.</div>
-        <div class="f sx">$\displaystyle =\frac{4}{3}:\left\{\frac{53}{15}:\frac{105+58-4}{30}\right\}=$</div>
-      </div>
-      <div></div>
-    </div>
-  </div>
-
-  <div class="riga">
-    <div class="fissa">
-      <div class="n">14</div>
-      <div class="cont">
-        <div class="nota">Eseguo la somma algebrica.</div>
-        <div class="f sx">$\displaystyle =\frac{4}{3}:\left\{\frac{53}{15}:\frac{159}{30}\right\}=$</div>
-      </div>
-      <div></div>
-    </div>
-  </div>
-
-  <div class="riga">
-    <div class="fissa">
-      <div class="n">15</div>
-      <div class="cont">
-        <div class="nota">Riduco $\frac{159}{30}$ per $3$, come al passaggio 9.</div>
-        <div class="f sx">$\displaystyle =\frac{4}{3}:\left\{\frac{53}{15}:\frac{\overset{53}{\cancel{159}}}{\underset{10}{\cancel{30}}}\right\}=$</div>
-      </div>
-      <div></div>
-    </div>
-  </div>
-
-  <div class="riga">
-    <div class="fissa">
-      <div class="n">16</div>
-      <div class="cont">
-        <div class="nota">Riscrivo pulito.</div>
-        <div class="f sx">$\displaystyle =\frac{4}{3}:\left\{\frac{53}{15}:\frac{53}{10}\right\}=$</div>
-      </div>
-      <div></div>
-    </div>
-  </div>
-
-  <details class="riga">
-    <summary>
-      <div class="n">17</div>
-      <div class="cont">
         <div class="nota">Capovolgo la frazione che divide.</div>
-        <div class="f sx">$\displaystyle =\frac{4}{3}:\left\{\frac{53}{15}\cdot\frac{10}{53}\right\}=$</div>
+        <div class="f sx">$\displaystyle =\frac{8}{9}\cdot\frac{21}{10}=$</div>
       </div>
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">$\frac{53}{15}:\frac{53}{10}$ diventa $\frac{53}{15}\cdot\frac{10}{53}$.</p>
+      <p class="mossa">$\frac{8}{9}:\frac{10}{21}$ diventa $\frac{8}{9}\cdot\frac{21}{10}$.</p>
       <div class="teoria">
         <div class="nome">Dividere per una frazione</div>
         <div class="frase">Dividere per una frazione è lo stesso che moltiplicare per la frazione <strong>capovolta</strong>: il suo numeratore e il suo denominatore si scambiano di posto. Quello che sta prima del segno di divisione non si tocca.</div>
@@ -516,89 +240,83 @@ mjx-container[display]{margin:0!important}
     </div>
   </details>
 
-  <div class="riga">
-    <div class="fissa">
-      <div class="n">18</div>
+  <details class="riga">
+    <summary>
+      <div class="n">3</div>
       <div class="cont">
-        <div class="nota">Semplifico a croce, come al passaggio 4.</div>
-        <div class="f sx">$\displaystyle =\frac{4}{3}:\left\{\frac{\overset{1}{\cancel{53}}}{\underset{3}{\cancel{15}}}\cdot\frac{\overset{2}{\cancel{10}}}{\underset{1}{\cancel{53}}}\right\}=$</div>
+        <div class="nota">Semplifico a croce, prima di moltiplicare.</div>
+        <div class="f sx">$\displaystyle =\frac{\overset{4}{\cancel{8}}}{\underset{3}{\cancel{9}}}\cdot\frac{\overset{7}{\cancel{21}}}{\underset{5}{\cancel{10}}}=$</div>
       </div>
-      <div></div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">Si semplifica un numeratore con il denominatore dell'altra frazione, mai due numeratori fra loro. Dopo, il prodotto viene con numeri piccoli.</p>
+      <div class="teoria">
+        <div class="nome">Semplificare a croce prima di moltiplicare</div>
+        <div class="frase">Prima di moltiplicare si semplifica <strong>in croce</strong>: un numeratore con il denominatore dell'altra frazione, divisi tutti e due per lo stesso numero. Semplificare dopo porta allo stesso risultato, ma con numeri molto più grandi, ed è lì che nascono gli errori di calcolo.</div>
+        <div class="f sx">$\displaystyle \frac{a\cdot k}{b}\cdot\frac{c}{d\cdot k}=\frac{a}{b}\cdot\frac{c}{d}$</div>
+        <div class="ex">esempio: $\frac{8}{15}\cdot\frac{5}{6}=\frac{4}{3}\cdot\frac{1}{3}$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ Errore da non fare</div>
+        <div class="nome">Semplificare due numeratori fra loro</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{a\cdot k}{b}\cdot\frac{c\cdot k}{d}=\frac{a}{b}\cdot\frac{c}{d}$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{a\cdot k}{b}\cdot\frac{c}{d\cdot k}=\frac{a}{b}\cdot\frac{c}{d}$</div></div>
+        </div>
+        <div class="why-txt">Sopra con sotto, mai sopra con sopra.</div>
+      </div>
     </div>
-  </div>
+  </details>
 
   <div class="riga">
     <div class="fissa">
-      <div class="n">19</div>
+      <div class="n">4</div>
       <div class="cont">
         <div class="nota">Riscrivo pulito.</div>
-        <div class="f sx">$\displaystyle =\frac{4}{3}:\left\{\frac{1}{3}\cdot\frac{2}{1}\right\}=$</div>
+        <div class="f sx">$\displaystyle =\frac{4}{3}\cdot\frac{7}{5}=$</div>
       </div>
       <div></div>
     </div>
   </div>
 
-  <div class="riga">
-    <div class="fissa">
-      <div class="n">20</div>
+  <details class="riga">
+    <summary>
+      <div class="n">5</div>
       <div class="cont">
-        <div class="nota">Moltiplico, come al passaggio 6.</div>
-        <div class="f sx">$\displaystyle =\frac{4}{3}:\frac{2}{3}=$</div>
+        <div class="nota">Moltiplico sopra con sopra e sotto con sotto.</div>
+        <div class="f sx">$\displaystyle =\frac{4\cdot 7}{3\cdot 5}=$</div>
       </div>
-      <div></div>
-    </div>
-  </div>
-
-  <div class="riga">
-    <div class="fissa">
-      <div class="n">21</div>
-      <div class="cont">
-        <div class="nota">Capovolgo, come al passaggio 17.</div>
-        <div class="f sx">$\displaystyle =\frac{4}{3}\cdot\frac{3}{2}=$</div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">Numeratori: $4\cdot 7=28$. Denominatori: $3\cdot 5=15$.</p>
+      <div class="teoria">
+        <div class="nome">Moltiplicare due frazioni</div>
+        <div class="frase">Per moltiplicare due frazioni si moltiplicano i <strong>numeratori fra loro</strong> e i <strong>denominatori fra loro</strong>. Non serve il denominatore comune: quello serve solo per addizioni e sottrazioni.</div>
+        <div class="f sx">$\displaystyle \frac{a}{b}\cdot\frac{c}{d}=\frac{a\cdot c}{b\cdot d}$</div>
+        <div class="ex">esempio: $\frac{2}{7}\cdot\frac{3}{5}=\frac{6}{35}$</div>
       </div>
-      <div></div>
-    </div>
-  </div>
-
-  <div class="riga">
-    <div class="fissa">
-      <div class="n">22</div>
-      <div class="cont">
-        <div class="nota">Semplifico a croce, come al passaggio 4.</div>
-        <div class="f sx">$\displaystyle =\frac{\overset{2}{\cancel{4}}}{\underset{1}{\cancel{3}}}\cdot\frac{\overset{1}{\cancel{3}}}{\underset{1}{\cancel{2}}}=$</div>
+      <div class="errore">
+        <div class="k">⚠️ Errore da non fare</div>
+        <div class="nome">Moltiplicare in croce</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{a}{b}\cdot\frac{c}{d}=\frac{a\cdot d}{b\cdot c}$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{a}{b}\cdot\frac{c}{d}=\frac{a\cdot c}{b\cdot d}$</div></div>
+        </div>
+        <div class="why-txt">Sopra con sopra, sotto con sotto.</div>
       </div>
-      <div></div>
     </div>
-  </div>
-
-  <div class="riga">
-    <div class="fissa">
-      <div class="n">23</div>
-      <div class="cont">
-        <div class="nota">Riscrivo pulito.</div>
-        <div class="f sx">$\displaystyle =\frac{2}{1}\cdot\frac{1}{1}=$</div>
-      </div>
-      <div></div>
-    </div>
-  </div>
-
-  <div class="riga">
-    <div class="fissa">
-      <div class="n">24</div>
-      <div class="cont">
-        <div class="nota">Moltiplico, come al passaggio 6.</div>
-        <div class="f sx">$\displaystyle =\frac{2}{1}=$</div>
-      </div>
-      <div></div>
-    </div>
-  </div>
+  </details>
 
   <div class="riga res">
     <div class="fissa">
-      <div class="n">25</div>
+      <div class="n">6</div>
       <div class="cont">
-        <div class="nota">$\frac{2}{1}$ vale $2$.</div>
-        <div class="f sx">$\displaystyle =2$</div>
+        <div class="nota">Eseguo i due prodotti.</div>
+        <div class="f sx">$\displaystyle =\frac{28}{15}$</div>
       </div>
       <div></div>
     </div>

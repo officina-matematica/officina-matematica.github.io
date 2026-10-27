@@ -3,25 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OF2_9 — Moltiplicare e dividere frazioni</title>
+<title>OF2_9 — Moltiplicare le frazioni</title>
 
 <script type="application/json" id="meta">
 {
   "id": "of2_9",
-  "titolo": "Moltiplicare e dividere frazioni",
+  "titolo": "Moltiplicare le frazioni",
   "tipo": "espressione",
   "consegna_label": "Completa l'uguaglianza",
-  "consegna_tex": "Trova la frazione da mettere al posto del quadratino per completare l'uguaglianza: $\\displaystyle \\frac{8}{7}\\cdot\\square=\\frac{12}{7}$",
-  "consegna_sympy": "Rational(12,7)/Rational(8,7)",
-  "risultato_tex": "\\frac{3}{2}",
-  "risultato_sympy": "Rational(3,2)",
+  "consegna_tex": "Trova la frazione da mettere al posto del quadratino per completare l'uguaglianza: $\\displaystyle \\square\\cdot\\frac{25}{3}=\\frac{10}{3}$",
+  "consegna_sympy": "Rational(10,3)/Rational(25,3)",
+  "risultato_tex": "\\frac{2}{5}",
+  "risultato_sympy": "Rational(2,5)",
   "righe_sympy": [
-    "Rational(3,2)",
-    "Rational(3,2)",
-    "Rational(3,2)",
-    "Rational(3,2)",
-    "Rational(3,2)",
-    "Rational(3,2)"
+    "Rational(2,5)",
+    "Rational(2,5)",
+    "Rational(2,5)",
+    "Rational(2,5)",
+    "Rational(2,5)",
+    "Rational(2,5)"
   ]
 }
 </script>
@@ -172,7 +172,7 @@ mjx-container[display]{margin:0!important}
 <!-- ===================== CONSEGNA ===================== -->
 <div class="consegna">
   <div class="t">📌 Completa l'uguaglianza</div>
-  <div class="m sx">Trova la frazione da mettere al posto del quadratino per completare l'uguaglianza: $\displaystyle \frac{8}{7}\cdot\square=\frac{12}{7}$</div>
+  <div class="m sx">Trova la frazione da mettere al posto del quadratino per completare l'uguaglianza: $\displaystyle \square\cdot\frac{25}{3}=\frac{10}{3}$</div>
 </div>
 
 <!-- ===================== CATENA ====================== -->
@@ -184,13 +184,13 @@ mjx-container[display]{margin:0!important}
     <summary>
       <div class="n">1</div>
       <div class="cont">
-        <div class="nota">Il fattore che manca si trova dividendo $\frac{12}{7}$ per $\frac{8}{7}$.</div>
-        <div class="f sx">$\displaystyle \frac{12}{7}:\frac{8}{7}=$</div>
+        <div class="nota">Il fattore che manca si trova dividendo $\frac{10}{3}$ per $\frac{25}{3}$.</div>
+        <div class="f sx">$\displaystyle \frac{10}{3}:\frac{25}{3}=$</div>
       </div>
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">Per trovare il fattore che manca si divide il risultato per il fattore che c'è: $\frac{12}{7}:\frac{8}{7}$. Si poteva anche notare che il denominatore è $7$ in tutte e due e chiedersi solo per quanto va moltiplicato $8$ per ottenere $12$: viene $\frac{12}{8}$, cioè lo stesso $\frac{3}{2}$. La divisione però funziona sempre, anche quando i due denominatori sono diversi.</p>
+      <p class="mossa">Per trovare il fattore che manca si divide il risultato per il fattore che c'è: $\frac{10}{3}:\frac{25}{3}$. Si poteva anche notare che il denominatore è $3$ in tutte e due e chiedersi solo per quanto va moltiplicato $25$ per ottenere $10$: viene $\frac{10}{25}$, cioè lo stesso $\frac{2}{5}$. La divisione però funziona sempre, anche quando i due denominatori sono diversi.</p>
       <div class="teoria">
         <div class="nome">Il fattore che manca in un prodotto</div>
         <div class="frase">Se di un prodotto si conoscono il risultato e uno dei due fattori, l'altro si trova <strong>dividendo</strong> il risultato per il fattore noto. La divisione è l'operazione che disfa la moltiplicazione.</div>
@@ -225,12 +225,12 @@ mjx-container[display]{margin:0!important}
       <div class="n">2</div>
       <div class="cont">
         <div class="nota">Capovolgo la frazione che divide.</div>
-        <div class="f sx">$\displaystyle =\frac{12}{7}\cdot\frac{7}{8}=$</div>
+        <div class="f sx">$\displaystyle =\frac{10}{3}\cdot\frac{3}{25}=$</div>
       </div>
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">$\frac{12}{7}:\frac{8}{7}$ diventa $\frac{12}{7}\cdot\frac{7}{8}$.</p>
+      <p class="mossa">$\frac{10}{3}:\frac{25}{3}$ diventa $\frac{10}{3}\cdot\frac{3}{25}$.</p>
       <div class="teoria">
         <div class="nome">Dividere per una frazione</div>
         <div class="frase">Dividere per una frazione è lo stesso che moltiplicare per la frazione <strong>capovolta</strong>: il suo numeratore e il suo denominatore si scambiano di posto. Quello che sta prima del segno di divisione non si tocca.</div>
@@ -255,7 +255,7 @@ mjx-container[display]{margin:0!important}
       <div class="n">3</div>
       <div class="cont">
         <div class="nota">Semplifico a croce, prima di moltiplicare.</div>
-        <div class="f sx">$\displaystyle =\frac{\overset{3}{\cancel{12}}}{\underset{1}{\cancel{7}}}\cdot\frac{\overset{1}{\cancel{7}}}{\underset{2}{\cancel{8}}}=$</div>
+        <div class="f sx">$\displaystyle =\frac{\overset{2}{\cancel{10}}}{\underset{1}{\cancel{3}}}\cdot\frac{\overset{1}{\cancel{3}}}{\underset{5}{\cancel{25}}}=$</div>
       </div>
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
@@ -285,7 +285,7 @@ mjx-container[display]{margin:0!important}
       <div class="n">4</div>
       <div class="cont">
         <div class="nota">Riscrivo pulito.</div>
-        <div class="f sx">$\displaystyle =\frac{3}{1}\cdot\frac{1}{2}=$</div>
+        <div class="f sx">$\displaystyle =\frac{2}{1}\cdot\frac{1}{5}=$</div>
       </div>
       <div></div>
     </div>
@@ -296,12 +296,12 @@ mjx-container[display]{margin:0!important}
       <div class="n">5</div>
       <div class="cont">
         <div class="nota">Moltiplico sopra con sopra e sotto con sotto.</div>
-        <div class="f sx">$\displaystyle =\frac{3\cdot 1}{1\cdot 2}=$</div>
+        <div class="f sx">$\displaystyle =\frac{2\cdot 1}{1\cdot 5}=$</div>
       </div>
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">Numeratori: $3\cdot 1=3$. Denominatori: $1\cdot 2=2$.</p>
+      <p class="mossa">Numeratori: $2\cdot 1=2$. Denominatori: $1\cdot 5=5$.</p>
       <div class="teoria">
         <div class="nome">Moltiplicare due frazioni</div>
         <div class="frase">Per moltiplicare due frazioni si moltiplicano i <strong>numeratori fra loro</strong> e i <strong>denominatori fra loro</strong>. Non serve il denominatore comune: quello serve solo per addizioni e sottrazioni.</div>
@@ -326,7 +326,7 @@ mjx-container[display]{margin:0!important}
       <div class="n">6</div>
       <div class="cont">
         <div class="nota">Eseguo i due prodotti.</div>
-        <div class="f sx">$\displaystyle =\frac{3}{2}$</div>
+        <div class="f sx">$\displaystyle =\frac{2}{5}$</div>
       </div>
       <div></div>
     </div>
