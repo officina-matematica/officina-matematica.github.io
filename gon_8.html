@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GON_8 — Funzioni seno e coseno</title>
+
+<script type="application/json" id="meta">
+{
+  "id": "gon_8",
+  "titolo": "Funzioni seno e coseno",
+  "tipo": "aperto",
+  "consegna_label": "Test: scegli la risposta giusta",
+  "consegna_tex": "Quanti sono gli angoli compresi tra $0^{\\circ}$ e $360^{\\circ}$ che hanno seno $-1$?<br><b>A</b>&nbsp;$0$&emsp;&emsp;<b>B</b>&nbsp;$1$&emsp;&emsp;<b>C</b>&nbsp;$2$&emsp;&emsp;<b>D</b>&nbsp;$3$",
+  "consegna_sympy": "quanti_angoli(sin(x), -1)",
+  "risultato_tex": "\\text{B}\\quad 1\\ \\text{angolo}",
+  "risultato_sympy": "1",
+  "righe_sympy": [
+    null,
+    null,
+    null,
+    null
+  ]
+}
+</script>
+
+<!-- Output SVG, non CHTML: glifi vettoriali, allineamento identico su ogni
+     dispositivo, nessun rischio di webfont non caricato dentro un iframe.
+     Ogni formula e' scritta con \displaystyle: senza, MathJax rende le frazioni
+     in textstyle e le parentesi non abbracciano la frazione. -->
+<script>
+MathJax = {
+  loader: { load: ['[tex]/cancel'] },
+  tex: {
+    packages: { '[+]': ['cancel'] },
+    inlineMath: [['$','$']],
+    displayMath: [['$$','$$']],
+    processEscapes: true
+  },
+  svg: { fontCache: 'global', scale: 1.06, exFactor: .5 },
+  options: { enableMenu: false }
+};
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-svg.js"></script>
+
+<style>
+:root{
+  --ink:#0f172a; --body:#334155; --muted:#475569; --faint:#94a3b8;
+  --line:#e2e8f0; --paper:#f8fafc;
+  --blu:#12519e; --blubg:#e8f1fb; --blubd:#a8c9ea;
+  --amb:#b45309; --ambbg:#fffbeb; --ambbd:#fcd34d; --sol:#fef08a;
+  --teo:#14532d; --teobg:#f0fdf4; --teobd:#86efac;
+  --err:#9f1239; --errbg:#fff1f2; --errbd:#fda4af;
+  --ko:#b91c1c;  --kobg:#fee2e2;  --kobd:#ef4444;
+  --ok:#15803d;  --okbg:#dcfce7;  --okbd:#22c55e;
+  --sxbg:#ffffff;
+}
+*{box-sizing:border-box}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  background:var(--paper);color:var(--body);line-height:1.5;
+  margin:0;padding:20px 14px 60px;max-width:900px;margin-inline:auto;font-size:16px;
+}
+mjx-container{outline:none}
+mjx-container[display]{margin:0!important}
+
+/* formule scorrevoli, con sfumatura ai bordi quando escono dallo schermo */
+.sx{
+  overflow-x:auto;overflow-y:hidden;scrollbar-width:thin;-webkit-overflow-scrolling:touch;
+  background-image:
+    linear-gradient(to right,var(--sxbg),var(--sxbg)),
+    linear-gradient(to left,var(--sxbg),var(--sxbg)),
+    linear-gradient(to right,rgba(15,23,42,.16),rgba(15,23,42,0)),
+    linear-gradient(to left,rgba(15,23,42,.16),rgba(15,23,42,0));
+  background-position:left center,right center,left center,right center;
+  background-repeat:no-repeat;
+  background-size:22px 100%,22px 100%,13px 100%,13px 100%;
+  background-attachment:local,local,scroll,scroll;
+}
+
+/* ---------------- CONSEGNA ---------------- */
+.consegna{background:var(--blubg);border:2px solid var(--blubd);border-radius:12px;
+  padding:12px 16px;color:#0d47a1;--sxbg:var(--blubg)}
+.consegna .t{font-weight:700;font-size:.9rem}
+.consegna .m{text-align:center;margin-top:4px;padding:4px 0}
+
+/* ---------------- CATENA ---------------- */
+.catena{background:#fff;border:1px solid var(--line);border-radius:14px;
+  padding:14px 16px 10px;margin-top:16px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.catena>.k{font-weight:800;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.catena>.sub{font-size:.85rem;color:var(--faint);margin:2px 0 8px}
+
+.riga{border-top:1px dotted var(--line)}
+.riga:first-of-type{border-top:none}
+.riga>summary,.riga>.fissa{
+  display:grid;grid-template-columns:26px 1fr auto;gap:10px;align-items:center;
+  padding:11px 0;
+}
+.riga>summary{list-style:none;cursor:pointer}
+.riga>summary::-webkit-details-marker{display:none}
+.riga>summary:hover .f,.riga>summary:focus-visible .f{background-color:#f8fafc}
+
+.n{font-size:.72rem;font-weight:800;color:var(--faint);text-align:center;
+  background:#f1f5f9;border-radius:6px;padding:4px 0;align-self:start;margin-top:4px}
+.cont{min-width:0}
+.nota{font-size:.8rem;color:var(--muted);margin-bottom:1px}
+.f{padding:3px 0;border-radius:6px;color:var(--blu)}
+.riga.res>summary .f,.riga.res>.fissa .f{color:var(--ink)}
+/* solo la formula della riga, mai quelle dentro il pannello della tendina */
+.riga.res>summary .f mjx-container,
+.riga.res>.fissa .f mjx-container{background:var(--sol);padding:4px 12px;border-radius:6px}
+
+/* linguetta della tendina */
+.tab{display:inline-flex;align-items:center;gap:5px;align-self:start;margin-top:5px;
+  font-size:.72rem;font-weight:700;letter-spacing:.02em;color:var(--muted);
+  background:#fff;border:1.5px solid var(--line);border-radius:999px;padding:4px 10px;
+  white-space:nowrap}
+.tab .chev{display:inline-block;font-size:.6rem;transition:transform .18s}
+.riga[open]>summary .tab{background:var(--ink);border-color:var(--ink);color:#fff}
+.riga[open]>summary .tab .chev{transform:rotate(180deg)}
+@media(prefers-reduced-motion:reduce){.tab .chev{transition:none}}
+
+/* pannello aperto */
+.pannello{padding:2px 0 16px 36px;display:grid;gap:10px}
+.mossa{font-size:.9rem;margin:0}
+
+.teoria{background:var(--teobg);border:1.5px solid var(--teobd);border-radius:10px;
+  padding:10px 14px;color:var(--teo);--sxbg:var(--teobg)}
+.teoria .nome{font-weight:800;font-size:.88rem;margin-bottom:2px}
+.teoria .frase{font-size:.87rem;line-height:1.45}
+.teoria .f{text-align:center;margin:8px 0 3px;background:rgba(255,255,255,.75);
+  border-radius:6px;padding:6px 8px;color:var(--teo);--sxbg:#f4fdf6}
+.teoria .ex{font-size:.78rem;opacity:.9;text-align:center}
+
+.errore{background:var(--errbg);border:1.5px solid var(--errbd);border-radius:10px;padding:11px 14px}
+.errore .k{font-weight:800;font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;
+  color:var(--err);margin-bottom:5px}
+.errore .nome{font-weight:700;font-size:.9rem;color:var(--err);margin-bottom:8px}
+.compare{display:grid;grid-template-columns:1fr 34px 1fr;align-items:stretch}
+.card{border:2px solid;border-radius:10px;padding:8px 12px;text-align:center}
+.card .tag{font-size:.7rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;margin-bottom:2px}
+.card .f{padding:2px 0;color:inherit}
+.card.ko{background:var(--kobg);border-color:var(--kobd);color:var(--ko);--sxbg:var(--kobg)}
+.card.ok{background:var(--okbg);border-color:var(--okbd);color:var(--ok);--sxbg:var(--okbg)}
+.arrow{display:flex;align-items:center;justify-content:center;font-size:1.2rem;color:var(--faint);font-weight:800}
+.why-txt{font-size:.82rem;color:#7f1d1d;margin-top:6px;text-align:center}
+
+/* fermata di controllo */
+.check{display:flex;flex-wrap:wrap;align-items:center;gap:4px 10px;
+  background:var(--ambbg);border:1.5px dashed var(--ambbd);border-radius:10px;
+  padding:8px 14px;margin:8px 0;font-size:.85rem;color:var(--amb);--sxbg:var(--ambbg)}
+.check b{font-weight:800}
+.check .v{color:var(--ink)}
+
+/* ---------------- MOBILE ---------------- */
+@media(max-width:720px){
+  body{padding:16px 10px 50px;font-size:16px}
+  .catena{padding:12px 12px 8px}
+  .riga>summary,.riga>.fissa{grid-template-columns:24px 1fr;gap:8px}
+  .cont{grid-column:2}
+  .tab{grid-column:2;justify-self:start;margin-top:6px}
+  .pannello{padding-left:0}
+  .compare{grid-template-columns:1fr;gap:6px}
+  .arrow{transform:rotate(90deg);height:22px}
+}
+</style>
+</head>
+<body>
+
+<!-- ===================== CONSEGNA ===================== -->
+<div class="consegna">
+  <div class="t">📌 Test: scegli la risposta giusta</div>
+  <div class="m sx">Quanti sono gli angoli compresi tra $0^{\circ}$ e $360^{\circ}$ che hanno seno $-1$?<br><b>A</b>&nbsp;$0$&emsp;&emsp;<b>B</b>&nbsp;$1$&emsp;&emsp;<b>C</b>&nbsp;$2$&emsp;&emsp;<b>D</b>&nbsp;$3$</div>
+</div>
+
+<!-- ===================== CATENA ====================== -->
+<div class="catena">
+  <div class="k">Confronta con il tuo foglio</div>
+  <div class="sub">Scorri le righe fino alla prima che non coincide con la tua. Lì apri <b>Regola</b>.</div>
+
+  <details class="riga">
+    <summary>
+      <div class="n">1</div>
+      <div class="cont">
+        <div class="nota">Il seno è l'ordinata di $B$: i punti con ordinata $-1$ stanno sulla retta orizzontale $y=-1$.</div>
+        <div class="f sx">$\displaystyle \sin\alpha=-1\ \to\ \text{retta}\ y=-1$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">Contare gli angoli vuol dire contare i punti $B$ possibili: sono quelli in cui la retta $y=-1$ incontra la circonferenza.</p>
+      <div class="teoria">
+        <div class="nome">Dal seno o dal coseno al punto $B$</div>
+        <div class="frase">Il punto $B$ è dove il lato termine dell'angolo incontra la circonferenza goniometrica: il coseno è la sua ascissa, il seno la sua ordinata. Se conosci il coseno, lo segni sull'asse $x$ e tracci la retta <strong>verticale</strong> che passa di lì; se conosci il seno, lo segni sull'asse $y$ e tracci la retta <strong>orizzontale</strong>. I punti $B$ sono dove la retta incontra la circonferenza.</div>
+        <div class="f sx">$\displaystyle \cos\alpha=k\ \to\ \text{retta}\ x=k\qquad\sin\alpha=k\ \to\ \text{retta}\ y=k$</div>
+        <div class="ex">esempio: $\sin\alpha=\frac{1}{2}\ \to\ \text{retta}\ y=\frac{1}{2}$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ Errore da non fare</div>
+        <div class="nome">Tracciare la retta verticale per il seno</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \sin\alpha=k\ \to\ \text{retta}\ x=k$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \sin\alpha=k\ \to\ \text{retta}\ y=k$</div></div>
+        </div>
+        <div class="why-txt">Con la retta verticale si trovano gli angoli con quel coseno, non con quel seno.</div>
+      </div>
+    </div>
+  </details>
+
+  <details class="riga">
+    <summary>
+      <div class="n">2</div>
+      <div class="cont">
+        <div class="nota">La retta $y=-1$ non entra nella circonferenza: la tocca solo nel punto più in basso.</div>
+        <div class="f sx">$\displaystyle \text{retta}\ y=-1\ \to\ 1\ \text{punto:}\ B\left(0;-1\right)$</div>
+        <div class="f sx"><svg viewBox="0 0 250 226" role="img" aria-label="Retta y uguale a meno uno: tocca la circonferenza in un punto solo" style="display:block;width:100%;max-width:280px;height:auto;margin:6px 0 2px"><line x1="6" y1="113.0" x2="242.0" y2="113.0" style="stroke:var(--faint);stroke-width:1.2"/><path d="M246.0,113.0 L239.0,116.6 L239.0,109.4 Z" style="fill:var(--faint)"/><line x1="118.0" y1="222.0" x2="118.0" y2="10" style="stroke:var(--faint);stroke-width:1.2"/><path d="M118.0,5.0 L121.6,12.0 L114.4,12.0 Z" style="fill:var(--faint)"/><text x="241.0" y="129.0" text-anchor="middle" style="font-size:13px;fill:var(--muted)">x</text><text x="128.0" y="16.0" text-anchor="middle" style="font-size:13px;fill:var(--muted)">y</text><text x="108.0" y="129.0" text-anchor="middle" style="font-size:13px;fill:var(--muted)">O</text><text x="206.0" y="107.0" text-anchor="middle" style="font-size:13px;fill:var(--muted)">1</text><circle cx="118" cy="113" r="82" style="fill:none;stroke:var(--ink);stroke-width:1.6"/><line x1="22" y1="195.0" x2="214" y2="195.0" style="stroke:var(--blu);stroke-width:1.5;stroke-dasharray:5 4"/><circle cx="118" cy="195.0" r="2.6" style="fill:var(--blu)"/><text x="112.0" y="210.0" text-anchor="end" style="font-size:13px;font-weight:700;fill:var(--blu)">−1</text><line x1="118" y1="113" x2="118.0" y2="195.0" style="stroke:var(--ok);stroke-width:2.6"/><circle cx="118.0" cy="195.0" r="5" style="fill:var(--ok)"/><text x="127.0" y="212.0" text-anchor="start" style="font-size:14px;font-weight:800;fill:var(--ink)">B</text></svg></div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">$-1$ è proprio il bordo: la retta sfiora la circonferenza in un punto solo, quindi c'è un angolo solo.</p>
+      <div class="teoria">
+        <div class="nome">Quanti punti sulla circonferenza</div>
+        <div class="frase">Una retta $x=k$ o $y=k$ taglia la circonferenza goniometrica in <strong>due punti</strong> se $k$ è fra $-1$ e $1$. La tocca in <strong>un punto solo</strong> se $k=1$ o $k=-1$, e non la incontra se $k$ è più grande di $1$ o più piccolo di $-1$. Ogni punto, unito a $O$, dà il lato termine di un angolo fra $0^{\circ}$ e $360^{\circ}$; $360^{\circ}$ non si conta a parte, perché ha lo stesso lato termine di $0^{\circ}$.</div>
+        <div class="f sx">$\displaystyle -1&lt;k&lt;1\ \to\ 2\ \text{punti}\qquad k=\pm 1\ \to\ 1\ \text{punto}\qquad k>1\ \text{o}\ k&lt;-1\ \to\ \text{nessuno}$</div>
+        <div class="ex">esempio: $\sin\alpha=1\ \to\ 1\ \text{angolo}$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ Errore da non fare</div>
+        <div class="nome">Contare due angoli anche quando la retta tocca soltanto</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle k=\pm 1\ \to\ 2\ \text{angoli}$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle k=\pm 1\ \to\ 1\ \text{angolo}$</div></div>
+        </div>
+        <div class="why-txt">Lo stesso punto $B$ verrebbe contato come due angoli.</div>
+      </div>
+    </div>
+  </details>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">3</div>
+      <div class="cont">
+        <div class="nota">È l'angolo di $270^{\circ}$: il lato termine è il semiasse negativo delle $y$.</div>
+        <div class="f sx">$\displaystyle \sin 270^{\circ}=-1$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="riga res">
+    <div class="fissa">
+      <div class="n">4</div>
+      <div class="cont"><div class="f sx">$\displaystyle \text{B}\quad 1\ \text{angolo}$</div></div>
+      <div></div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

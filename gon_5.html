@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GON_5 — Funzioni seno e coseno</title>
+
+<script type="application/json" id="meta">
+{
+  "id": "gon_5",
+  "titolo": "Funzioni seno e coseno",
+  "tipo": "aperto",
+  "consegna_label": "Completa con i simboli $>$, $<$ e $=$ senza utilizzare la calcolatrice",
+  "consegna_tex": "\\begin{array}{ll}\\text{a. }\\ \\sin 3^{\\circ}\\ \\square\\ \\sin 5^{\\circ}&\\qquad\\text{b. }\\ \\cos 12^{\\circ}\\ \\square\\ \\cos 17^{\\circ}\\\\[8pt]\\text{c. }\\ \\sin 190^{\\circ}\\ \\square\\ \\sin 200^{\\circ}&\\qquad\\text{d. }\\ \\cos 350^{\\circ}\\ \\square\\ \\cos 10^{\\circ}\\end{array}",
+  "consegna_sympy": "[sign(sin(3*pi/180)-sin(5*pi/180)), sign(cos(12*pi/180)-cos(17*pi/180)), sign(sin(190*pi/180)-sin(200*pi/180)), sign(cos(350*pi/180)-cos(10*pi/180))]",
+  "risultato_tex": "\\cos 350^{\\circ}=\\cos 10^{\\circ}",
+  "risultato_sympy": "[-1, 1, 1, 0]",
+  "righe_sympy": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ]
+}
+</script>
+
+<!-- Output SVG, non CHTML: glifi vettoriali, allineamento identico su ogni
+     dispositivo, nessun rischio di webfont non caricato dentro un iframe.
+     Ogni formula e' scritta con \displaystyle: senza, MathJax rende le frazioni
+     in textstyle e le parentesi non abbracciano la frazione. -->
+<script>
+MathJax = {
+  loader: { load: ['[tex]/cancel'] },
+  tex: {
+    packages: { '[+]': ['cancel'] },
+    inlineMath: [['$','$']],
+    displayMath: [['$$','$$']],
+    processEscapes: true
+  },
+  svg: { fontCache: 'global', scale: 1.06, exFactor: .5 },
+  options: { enableMenu: false }
+};
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-svg.js"></script>
+
+<style>
+:root{
+  --ink:#0f172a; --body:#334155; --muted:#475569; --faint:#94a3b8;
+  --line:#e2e8f0; --paper:#f8fafc;
+  --blu:#12519e; --blubg:#e8f1fb; --blubd:#a8c9ea;
+  --amb:#b45309; --ambbg:#fffbeb; --ambbd:#fcd34d; --sol:#fef08a;
+  --teo:#14532d; --teobg:#f0fdf4; --teobd:#86efac;
+  --err:#9f1239; --errbg:#fff1f2; --errbd:#fda4af;
+  --ko:#b91c1c;  --kobg:#fee2e2;  --kobd:#ef4444;
+  --ok:#15803d;  --okbg:#dcfce7;  --okbd:#22c55e;
+  --sxbg:#ffffff;
+}
+*{box-sizing:border-box}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  background:var(--paper);color:var(--body);line-height:1.5;
+  margin:0;padding:20px 14px 60px;max-width:900px;margin-inline:auto;font-size:16px;
+}
+mjx-container{outline:none}
+mjx-container[display]{margin:0!important}
+
+/* formule scorrevoli, con sfumatura ai bordi quando escono dallo schermo */
+.sx{
+  overflow-x:auto;overflow-y:hidden;scrollbar-width:thin;-webkit-overflow-scrolling:touch;
+  background-image:
+    linear-gradient(to right,var(--sxbg),var(--sxbg)),
+    linear-gradient(to left,var(--sxbg),var(--sxbg)),
+    linear-gradient(to right,rgba(15,23,42,.16),rgba(15,23,42,0)),
+    linear-gradient(to left,rgba(15,23,42,.16),rgba(15,23,42,0));
+  background-position:left center,right center,left center,right center;
+  background-repeat:no-repeat;
+  background-size:22px 100%,22px 100%,13px 100%,13px 100%;
+  background-attachment:local,local,scroll,scroll;
+}
+
+/* ---------------- CONSEGNA ---------------- */
+.consegna{background:var(--blubg);border:2px solid var(--blubd);border-radius:12px;
+  padding:12px 16px;color:#0d47a1;--sxbg:var(--blubg)}
+.consegna .t{font-weight:700;font-size:.9rem}
+.consegna .m{text-align:center;margin-top:4px;padding:4px 0}
+
+/* ---------------- CATENA ---------------- */
+.catena{background:#fff;border:1px solid var(--line);border-radius:14px;
+  padding:14px 16px 10px;margin-top:16px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.catena>.k{font-weight:800;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.catena>.sub{font-size:.85rem;color:var(--faint);margin:2px 0 8px}
+
+.riga{border-top:1px dotted var(--line)}
+.riga:first-of-type{border-top:none}
+.riga>summary,.riga>.fissa{
+  display:grid;grid-template-columns:26px 1fr auto;gap:10px;align-items:center;
+  padding:11px 0;
+}
+.riga>summary{list-style:none;cursor:pointer}
+.riga>summary::-webkit-details-marker{display:none}
+.riga>summary:hover .f,.riga>summary:focus-visible .f{background-color:#f8fafc}
+
+.n{font-size:.72rem;font-weight:800;color:var(--faint);text-align:center;
+  background:#f1f5f9;border-radius:6px;padding:4px 0;align-self:start;margin-top:4px}
+.cont{min-width:0}
+.nota{font-size:.8rem;color:var(--muted);margin-bottom:1px}
+.f{padding:3px 0;border-radius:6px;color:var(--blu)}
+.riga.res>summary .f,.riga.res>.fissa .f{color:var(--ink)}
+/* solo la formula della riga, mai quelle dentro il pannello della tendina */
+.riga.res>summary .f mjx-container,
+.riga.res>.fissa .f mjx-container{background:var(--sol);padding:4px 12px;border-radius:6px}
+
+/* linguetta della tendina */
+.tab{display:inline-flex;align-items:center;gap:5px;align-self:start;margin-top:5px;
+  font-size:.72rem;font-weight:700;letter-spacing:.02em;color:var(--muted);
+  background:#fff;border:1.5px solid var(--line);border-radius:999px;padding:4px 10px;
+  white-space:nowrap}
+.tab .chev{display:inline-block;font-size:.6rem;transition:transform .18s}
+.riga[open]>summary .tab{background:var(--ink);border-color:var(--ink);color:#fff}
+.riga[open]>summary .tab .chev{transform:rotate(180deg)}
+@media(prefers-reduced-motion:reduce){.tab .chev{transition:none}}
+
+/* pannello aperto */
+.pannello{padding:2px 0 16px 36px;display:grid;gap:10px}
+.mossa{font-size:.9rem;margin:0}
+
+.teoria{background:var(--teobg);border:1.5px solid var(--teobd);border-radius:10px;
+  padding:10px 14px;color:var(--teo);--sxbg:var(--teobg)}
+.teoria .nome{font-weight:800;font-size:.88rem;margin-bottom:2px}
+.teoria .frase{font-size:.87rem;line-height:1.45}
+.teoria .f{text-align:center;margin:8px 0 3px;background:rgba(255,255,255,.75);
+  border-radius:6px;padding:6px 8px;color:var(--teo);--sxbg:#f4fdf6}
+.teoria .ex{font-size:.78rem;opacity:.9;text-align:center}
+
+.errore{background:var(--errbg);border:1.5px solid var(--errbd);border-radius:10px;padding:11px 14px}
+.errore .k{font-weight:800;font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;
+  color:var(--err);margin-bottom:5px}
+.errore .nome{font-weight:700;font-size:.9rem;color:var(--err);margin-bottom:8px}
+.compare{display:grid;grid-template-columns:1fr 34px 1fr;align-items:stretch}
+.card{border:2px solid;border-radius:10px;padding:8px 12px;text-align:center}
+.card .tag{font-size:.7rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;margin-bottom:2px}
+.card .f{padding:2px 0;color:inherit}
+.card.ko{background:var(--kobg);border-color:var(--kobd);color:var(--ko);--sxbg:var(--kobg)}
+.card.ok{background:var(--okbg);border-color:var(--okbd);color:var(--ok);--sxbg:var(--okbg)}
+.arrow{display:flex;align-items:center;justify-content:center;font-size:1.2rem;color:var(--faint);font-weight:800}
+.why-txt{font-size:.82rem;color:#7f1d1d;margin-top:6px;text-align:center}
+
+/* fermata di controllo */
+.check{display:flex;flex-wrap:wrap;align-items:center;gap:4px 10px;
+  background:var(--ambbg);border:1.5px dashed var(--ambbd);border-radius:10px;
+  padding:8px 14px;margin:8px 0;font-size:.85rem;color:var(--amb);--sxbg:var(--ambbg)}
+.check b{font-weight:800}
+.check .v{color:var(--ink)}
+
+/* ---------------- MOBILE ---------------- */
+@media(max-width:720px){
+  body{padding:16px 10px 50px;font-size:16px}
+  .catena{padding:12px 12px 8px}
+  .riga>summary,.riga>.fissa{grid-template-columns:24px 1fr;gap:8px}
+  .cont{grid-column:2}
+  .tab{grid-column:2;justify-self:start;margin-top:6px}
+  .pannello{padding-left:0}
+  .compare{grid-template-columns:1fr;gap:6px}
+  .arrow{transform:rotate(90deg);height:22px}
+}
+</style>
+</head>
+<body>
+
+<!-- ===================== CONSEGNA ===================== -->
+<div class="consegna">
+  <div class="t">📌 Completa con i simboli $>$, $&lt;$ e $=$ senza utilizzare la calcolatrice</div>
+  <div class="m sx">$\displaystyle \begin{array}{ll}\text{a. }\ \sin 3^{\circ}\ \square\ \sin 5^{\circ}&\qquad\text{b. }\ \cos 12^{\circ}\ \square\ \cos 17^{\circ}\\[8pt]\text{c. }\ \sin 190^{\circ}\ \square\ \sin 200^{\circ}&\qquad\text{d. }\ \cos 350^{\circ}\ \square\ \cos 10^{\circ}\end{array}$</div>
+</div>
+
+<!-- ===================== CATENA ====================== -->
+<div class="catena">
+  <div class="k">Confronta con il tuo foglio</div>
+  <div class="sub">Scorri le righe fino alla prima che non coincide con la tua. Lì apri <b>Regola</b>.</div>
+
+  <details class="riga">
+    <summary>
+      <div class="n">1</div>
+      <div class="cont">
+        <div class="nota">a. Tutti e due nel I quadrante: lì, più l'angolo è grande, più $B$ sta in alto.</div>
+        <div class="f sx">$\displaystyle \text{a)}\quad\sin 3^{\circ}&lt;\sin 5^{\circ}$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">$3^{\circ}$ e $5^{\circ}$ sono appena sopra l'asse $x$. Passando da $3^{\circ}$ a $5^{\circ}$ il punto $B$ sale un poco: il seno cresce.</p>
+      <div class="teoria">
+        <div class="nome">Il seno nel I quadrante</div>
+        <div class="frase">Nel I quadrante, mentre l'angolo cresce da $0^{\circ}$ a $90^{\circ}$, il punto $B$ sale lungo la circonferenza. Il seno è la sua altezza: cresce da $0$ a $1$. Più grande l'angolo, più grande il seno.</div>
+        <div class="f sx">$\displaystyle 0^{\circ}\le\alpha&lt;\beta\le 90^{\circ}\ \Rightarrow\ \sin\alpha&lt;\sin\beta$</div>
+        <div class="ex">esempio: $\sin 20^{\circ}&lt;\sin 70^{\circ}$</div>
+      </div>
+    </div>
+  </details>
+
+  <details class="riga">
+    <summary>
+      <div class="n">2</div>
+      <div class="cont">
+        <div class="nota">b. Ancora I quadrante, ma col coseno: l'angolo cresce e $B$ va verso sinistra.</div>
+        <div class="f sx">$\displaystyle \text{b)}\quad\cos 12^{\circ}>\cos 17^{\circ}$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">Da $12^{\circ}$ a $17^{\circ}$ il punto $B$ sale e intanto si sposta a sinistra: la sua $x$, cioè il coseno, diminuisce.</p>
+      <div class="teoria">
+        <div class="nome">Il coseno nel I quadrante</div>
+        <div class="frase">Nel I quadrante, mentre l'angolo cresce da $0^{\circ}$ a $90^{\circ}$, il punto $B$ si sposta verso sinistra. Il coseno è la sua ascissa: cala da $1$ a $0$. Più grande l'angolo, più piccolo il coseno.</div>
+        <div class="f sx">$\displaystyle 0^{\circ}\le\alpha&lt;\beta\le 90^{\circ}\ \Rightarrow\ \cos\alpha>\cos\beta$</div>
+        <div class="ex">esempio: $\cos 25^{\circ}>\cos 65^{\circ}$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ Errore da non fare</div>
+        <div class="nome">Pensare che il coseno cresca come il seno</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle 0^{\circ}\le\alpha&lt;\beta\le 90^{\circ}\ \Rightarrow\ \cos\alpha&lt;\cos\beta$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle 0^{\circ}\le\alpha&lt;\beta\le 90^{\circ}\ \Rightarrow\ \cos\alpha>\cos\beta$</div></div>
+        </div>
+        <div class="why-txt">Nel I quadrante il coseno cala.</div>
+      </div>
+    </div>
+  </details>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">3</div>
+      <div class="cont">
+        <div class="nota">c. Tutti e due appena sotto l'asse $x$, a sinistra.</div>
+        <div class="f sx">$\displaystyle \text{c)}\quad 190^{\circ}\ \text{e}\ 200^{\circ}\ \text{nel III quadrante}$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <details class="riga">
+    <summary>
+      <div class="n">4</div>
+      <div class="cont">
+        <div class="nota">Nel III quadrante $B$ scende: il seno diventa sempre più negativo.</div>
+        <div class="f sx">$\displaystyle \sin 190^{\circ}>\sin 200^{\circ}$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">Tutti e due i seni sono negativi, e $\sin 200^{\circ}$ è più in basso: è il più piccolo. Chi conosce gli angoli associati può scrivere $\sin 190^{\circ}=-\sin 10^{\circ}$ e $\sin 200^{\circ}=-\sin 20^{\circ}$: il confronto viene uguale.</p>
+      <div class="teoria">
+        <div class="nome">Il seno nel III quadrante</div>
+        <div class="frase">Da $180^{\circ}$ a $270^{\circ}$ il punto $B$ scende dall'asse $x$ fino al punto più basso della circonferenza: il seno passa da $0$ a $-1$. Più grande l'angolo, più il seno è negativo, cioè più piccolo.</div>
+        <div class="f sx">$\displaystyle 180^{\circ}\le\alpha&lt;\beta\le 270^{\circ}\ \Rightarrow\ \sin\alpha>\sin\beta$</div>
+        <div class="ex">esempio: $\sin 210^{\circ}>\sin 240^{\circ}$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ Errore da non fare</div>
+        <div class="nome">Pensare che il seno cresca sempre con l'angolo</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle 180^{\circ}\le\alpha&lt;\beta\le 270^{\circ}\ \Rightarrow\ \sin\alpha&lt;\sin\beta$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle 180^{\circ}\le\alpha&lt;\beta\le 270^{\circ}\ \Rightarrow\ \sin\alpha>\sin\beta$</div></div>
+        </div>
+        <div class="why-txt">Qui $B$ scende: il seno cala.</div>
+      </div>
+    </div>
+  </details>
+
+  <details class="riga">
+    <summary>
+      <div class="n">5</div>
+      <div class="cont">
+        <div class="nota">d. $350^{\circ}$ è un giro meno $10^{\circ}$: stesso lato termine di $-10^{\circ}$.</div>
+        <div class="f sx">$\displaystyle \text{d)}\quad\cos 350^{\circ}=\cos\left(-10^{\circ}\right)$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">Qui conviene togliere un giro anche se $350^{\circ}$ è già dentro il giro: si arriva a $-10^{\circ}$, che è lo specchio di $10^{\circ}$. Con $\gamma=-10^{\circ}$ e $k=1$ il coseno non cambia.</p>
+      <div class="teoria">
+        <div class="nome">Angoli che differiscono di giri interi</div>
+        <div class="frase">Un giro intero, cioè $360^{\circ}$ o $2\pi$, riporta il lato termine esattamente dove era: per questo seno e coseno non cambiano se all'angolo si aggiungono o si tolgono giri interi. Di solito si tolgono giri per riportare un angolo grande fra $0^{\circ}$ e $360^{\circ}$; a volte conviene toglierne uno per arrivare a un angolo negativo più comodo. Qui $\gamma$ è un angolo qualsiasi e $k$ il numero dei giri, un intero.</div>
+        <div class="f sx">$\displaystyle \cos\left(\gamma+k\ \text{giri}\right)=\cos\gamma\qquad\sin\left(\gamma+k\ \text{giri}\right)=\sin\gamma$</div>
+        <div class="ex">esempio: $\cos 395^{\circ}=\cos 35^{\circ}$</div>
+      </div>
+    </div>
+  </details>
+
+  <details class="riga res">
+    <summary>
+      <div class="n">6</div>
+      <div class="cont">
+        <div class="nota">$-10^{\circ}$ e $10^{\circ}$ sono simmetrici rispetto all'asse $x$: stessa ascissa, stesso coseno.</div>
+        <div class="f sx">$\displaystyle \cos 350^{\circ}=\cos 10^{\circ}$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">$-10^{\circ}$ sta $10^{\circ}$ sotto l'asse $x$, $10^{\circ}$ sta $10^{\circ}$ sopra: i due punti $B$ sono uno sopra l'altro, con la stessa $x$.</p>
+      <div class="teoria">
+        <div class="nome">Angoli opposti</div>
+        <div class="frase">Gli angoli $\alpha$ e $-\alpha$ sono simmetrici rispetto all'asse $x$: i loro punti $B$ hanno la stessa ascissa e ordinate opposte. Per questo hanno lo <strong>stesso coseno</strong> e seni opposti.</div>
+        <div class="f sx">$\displaystyle \cos\left(-\alpha\right)=\cos\alpha\qquad\sin\left(-\alpha\right)=-\sin\alpha$</div>
+        <div class="ex">esempio: $\cos\left(-40^{\circ}\right)=\cos 40^{\circ}$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ Errore da non fare</div>
+        <div class="nome">Cambiare segno anche al coseno</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \cos\left(-\alpha\right)=-\cos\alpha$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \cos\left(-\alpha\right)=\cos\alpha$</div></div>
+        </div>
+        <div class="why-txt">Il meno cambia la $y$ di $B$, non la $x$.</div>
+      </div>
+    </div>
+  </details>
+
+</div>
+
+</body>
+</html>
