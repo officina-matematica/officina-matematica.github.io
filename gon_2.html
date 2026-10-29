@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GON_2 — Funzioni seno e coseno</title>
+
+<script type="application/json" id="meta">
+{
+  "id": "gon_2",
+  "titolo": "Funzioni seno e coseno",
+  "tipo": "aperto",
+  "consegna_label": "Completa la tabella con i segni del coseno e del seno degli angoli assegnati, dopo averli rappresentati sulla circonferenza goniometrica",
+  "consegna_tex": "\\begin{array}{c|c|c|c|c|c|c|c|c|c|c}\\alpha&30^{\\circ}&145^{\\circ}&220^{\\circ}&-28^{\\circ}&380^{\\circ}&460^{\\circ}&\\dfrac{\\pi}{3}&\\dfrac{13}{6}\\pi&-\\dfrac{\\pi}{8}&\\dfrac{17}{3}\\pi\\\\[3pt]\\hline\\cos\\alpha&+&\\square&\\square&\\square&\\square&\\square&\\square&\\square&\\square&\\square\\\\[3pt]\\hline\\sin\\alpha&+&\\square&\\square&\\square&\\square&\\square&\\square&\\square&\\square&\\square\\end{array}",
+  "consegna_sympy": "[sign(cos(145*pi/180)), sign(sin(145*pi/180)), sign(cos(220*pi/180)), sign(sin(220*pi/180)), sign(cos(-28*pi/180)), sign(sin(-28*pi/180)), sign(cos(380*pi/180)), sign(sin(380*pi/180)), sign(cos(460*pi/180)), sign(sin(460*pi/180)), sign(cos(pi/3)), sign(sin(pi/3)), sign(cos(Rational(13,6)*pi)), sign(sin(Rational(13,6)*pi)), sign(cos(-pi/8)), sign(sin(-pi/8)), sign(cos(Rational(17,3)*pi)), sign(sin(Rational(17,3)*pi))]",
+  "risultato_tex": "\\text{la tabella completa}",
+  "risultato_sympy": "[-1, 1, -1, -1, 1, -1, 1, 1, -1, 1, 1, 1, 1, 1, 1, -1, 1, -1]",
+  "righe_sympy": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ]
+}
+</script>
+
+<!-- Output SVG, non CHTML: glifi vettoriali, allineamento identico su ogni
+     dispositivo, nessun rischio di webfont non caricato dentro un iframe.
+     Ogni formula e' scritta con \displaystyle: senza, MathJax rende le frazioni
+     in textstyle e le parentesi non abbracciano la frazione. -->
+<script>
+MathJax = {
+  loader: { load: ['[tex]/cancel'] },
+  tex: {
+    packages: { '[+]': ['cancel'] },
+    inlineMath: [['$','$']],
+    displayMath: [['$$','$$']],
+    processEscapes: true
+  },
+  svg: { fontCache: 'global', scale: 1.06, exFactor: .5 },
+  options: { enableMenu: false }
+};
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-svg.js"></script>
+
+<style>
+:root{
+  --ink:#0f172a; --body:#334155; --muted:#475569; --faint:#94a3b8;
+  --line:#e2e8f0; --paper:#f8fafc;
+  --blu:#12519e; --blubg:#e8f1fb; --blubd:#a8c9ea;
+  --amb:#b45309; --ambbg:#fffbeb; --ambbd:#fcd34d; --sol:#fef08a;
+  --teo:#14532d; --teobg:#f0fdf4; --teobd:#86efac;
+  --err:#9f1239; --errbg:#fff1f2; --errbd:#fda4af;
+  --ko:#b91c1c;  --kobg:#fee2e2;  --kobd:#ef4444;
+  --ok:#15803d;  --okbg:#dcfce7;  --okbd:#22c55e;
+  --sxbg:#ffffff;
+}
+*{box-sizing:border-box}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  background:var(--paper);color:var(--body);line-height:1.5;
+  margin:0;padding:20px 14px 60px;max-width:900px;margin-inline:auto;font-size:16px;
+}
+mjx-container{outline:none}
+mjx-container[display]{margin:0!important}
+
+/* formule scorrevoli, con sfumatura ai bordi quando escono dallo schermo */
+.sx{
+  overflow-x:auto;overflow-y:hidden;scrollbar-width:thin;-webkit-overflow-scrolling:touch;
+  background-image:
+    linear-gradient(to right,var(--sxbg),var(--sxbg)),
+    linear-gradient(to left,var(--sxbg),var(--sxbg)),
+    linear-gradient(to right,rgba(15,23,42,.16),rgba(15,23,42,0)),
+    linear-gradient(to left,rgba(15,23,42,.16),rgba(15,23,42,0));
+  background-position:left center,right center,left center,right center;
+  background-repeat:no-repeat;
+  background-size:22px 100%,22px 100%,13px 100%,13px 100%;
+  background-attachment:local,local,scroll,scroll;
+}
+
+/* ---------------- CONSEGNA ---------------- */
+.consegna{background:var(--blubg);border:2px solid var(--blubd);border-radius:12px;
+  padding:12px 16px;color:#0d47a1;--sxbg:var(--blubg)}
+.consegna .t{font-weight:700;font-size:.9rem}
+.consegna .m{text-align:center;margin-top:4px;padding:4px 0}
+
+/* ---------------- CATENA ---------------- */
+.catena{background:#fff;border:1px solid var(--line);border-radius:14px;
+  padding:14px 16px 10px;margin-top:16px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.catena>.k{font-weight:800;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.catena>.sub{font-size:.85rem;color:var(--faint);margin:2px 0 8px}
+
+.riga{border-top:1px dotted var(--line)}
+.riga:first-of-type{border-top:none}
+.riga>summary,.riga>.fissa{
+  display:grid;grid-template-columns:26px 1fr auto;gap:10px;align-items:center;
+  padding:11px 0;
+}
+.riga>summary{list-style:none;cursor:pointer}
+.riga>summary::-webkit-details-marker{display:none}
+.riga>summary:hover .f,.riga>summary:focus-visible .f{background-color:#f8fafc}
+
+.n{font-size:.72rem;font-weight:800;color:var(--faint);text-align:center;
+  background:#f1f5f9;border-radius:6px;padding:4px 0;align-self:start;margin-top:4px}
+.cont{min-width:0}
+.nota{font-size:.8rem;color:var(--muted);margin-bottom:1px}
+.f{padding:3px 0;border-radius:6px;color:var(--blu)}
+.riga.res>summary .f,.riga.res>.fissa .f{color:var(--ink)}
+/* solo la formula della riga, mai quelle dentro il pannello della tendina */
+.riga.res>summary .f mjx-container,
+.riga.res>.fissa .f mjx-container{background:var(--sol);padding:4px 12px;border-radius:6px}
+
+/* linguetta della tendina */
+.tab{display:inline-flex;align-items:center;gap:5px;align-self:start;margin-top:5px;
+  font-size:.72rem;font-weight:700;letter-spacing:.02em;color:var(--muted);
+  background:#fff;border:1.5px solid var(--line);border-radius:999px;padding:4px 10px;
+  white-space:nowrap}
+.tab .chev{display:inline-block;font-size:.6rem;transition:transform .18s}
+.riga[open]>summary .tab{background:var(--ink);border-color:var(--ink);color:#fff}
+.riga[open]>summary .tab .chev{transform:rotate(180deg)}
+@media(prefers-reduced-motion:reduce){.tab .chev{transition:none}}
+
+/* pannello aperto */
+.pannello{padding:2px 0 16px 36px;display:grid;gap:10px}
+.mossa{font-size:.9rem;margin:0}
+
+.teoria{background:var(--teobg);border:1.5px solid var(--teobd);border-radius:10px;
+  padding:10px 14px;color:var(--teo);--sxbg:var(--teobg)}
+.teoria .nome{font-weight:800;font-size:.88rem;margin-bottom:2px}
+.teoria .frase{font-size:.87rem;line-height:1.45}
+.teoria .f{text-align:center;margin:8px 0 3px;background:rgba(255,255,255,.75);
+  border-radius:6px;padding:6px 8px;color:var(--teo);--sxbg:#f4fdf6}
+.teoria .ex{font-size:.78rem;opacity:.9;text-align:center}
+
+.errore{background:var(--errbg);border:1.5px solid var(--errbd);border-radius:10px;padding:11px 14px}
+.errore .k{font-weight:800;font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;
+  color:var(--err);margin-bottom:5px}
+.errore .nome{font-weight:700;font-size:.9rem;color:var(--err);margin-bottom:8px}
+.compare{display:grid;grid-template-columns:1fr 34px 1fr;align-items:stretch}
+.card{border:2px solid;border-radius:10px;padding:8px 12px;text-align:center}
+.card .tag{font-size:.7rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;margin-bottom:2px}
+.card .f{padding:2px 0;color:inherit}
+.card.ko{background:var(--kobg);border-color:var(--kobd);color:var(--ko);--sxbg:var(--kobg)}
+.card.ok{background:var(--okbg);border-color:var(--okbd);color:var(--ok);--sxbg:var(--okbg)}
+.arrow{display:flex;align-items:center;justify-content:center;font-size:1.2rem;color:var(--faint);font-weight:800}
+.why-txt{font-size:.82rem;color:#7f1d1d;margin-top:6px;text-align:center}
+
+/* fermata di controllo */
+.check{display:flex;flex-wrap:wrap;align-items:center;gap:4px 10px;
+  background:var(--ambbg);border:1.5px dashed var(--ambbd);border-radius:10px;
+  padding:8px 14px;margin:8px 0;font-size:.85rem;color:var(--amb);--sxbg:var(--ambbg)}
+.check b{font-weight:800}
+.check .v{color:var(--ink)}
+
+/* ---------------- MOBILE ---------------- */
+@media(max-width:720px){
+  body{padding:16px 10px 50px;font-size:16px}
+  .catena{padding:12px 12px 8px}
+  .riga>summary,.riga>.fissa{grid-template-columns:24px 1fr;gap:8px}
+  .cont{grid-column:2}
+  .tab{grid-column:2;justify-self:start;margin-top:6px}
+  .pannello{padding-left:0}
+  .compare{grid-template-columns:1fr;gap:6px}
+  .arrow{transform:rotate(90deg);height:22px}
+}
+</style>
+</head>
+<body>
+
+<!-- ===================== CONSEGNA ===================== -->
+<div class="consegna">
+  <div class="t">📌 Completa la tabella con i segni del coseno e del seno degli angoli assegnati, dopo averli rappresentati sulla circonferenza goniometrica</div>
+  <div class="m sx">$\displaystyle \begin{array}{c|c|c|c|c|c|c|c|c|c|c}\alpha&30^{\circ}&145^{\circ}&220^{\circ}&-28^{\circ}&380^{\circ}&460^{\circ}&\dfrac{\pi}{3}&\dfrac{13}{6}\pi&-\dfrac{\pi}{8}&\dfrac{17}{3}\pi\\[3pt]\hline\cos\alpha&+&\square&\square&\square&\square&\square&\square&\square&\square&\square\\[3pt]\hline\sin\alpha&+&\square&\square&\square&\square&\square&\square&\square&\square&\square\end{array}$</div>
+</div>
+
+<!-- ===================== CATENA ====================== -->
+<div class="catena">
+  <div class="k">Confronta con il tuo foglio</div>
+  <div class="sub">Scorri le righe fino alla prima che non coincide con la tua. Lì apri <b>Regola</b>.</div>
+
+  <details class="riga">
+    <summary>
+      <div class="n">1</div>
+      <div class="cont">
+        <div class="nota">$145^{\circ}$ è fra $90^{\circ}$ e $180^{\circ}$: il lato termine sta in alto a sinistra.</div>
+        <div class="f sx">$\displaystyle 145^{\circ}\ \to\ \text{II quadrante}$</div>
+        <div class="f sx"><svg viewBox="0 0 124 112" role="img" aria-label="Lato termine di 145 gradi, nel II quadrante" style="display:block;width:100%;max-width:140px;height:auto;margin:4px 0 0"><line x1="6" y1="56" x2="116" y2="56" style="stroke:var(--faint);stroke-width:1"/><path d="M120.0,56.0 L115.0,58.6 L115.0,53.4 Z" style="fill:var(--faint)"/><line x1="58" y1="108" x2="58" y2="9" style="stroke:var(--faint);stroke-width:1"/><path d="M58.0,5.0 L60.6,10.0 L55.4,10.0 Z" style="fill:var(--faint)"/><text x="117.0" y="68.0" text-anchor="middle" style="font-size:10px;fill:var(--muted)">x</text><text x="65.0" y="11.0" text-anchor="middle" style="font-size:10px;fill:var(--muted)">y</text><circle cx="58" cy="56" r="38" style="fill:none;stroke:var(--ink);stroke-width:1.3"/><path d="M73.0,55.7 L72.9,54.6 L72.8,53.6 L72.6,52.6 L72.3,51.5 L72.0,50.5 L71.5,49.6 L71.1,48.6 L70.5,47.7 L69.9,46.9 L69.2,46.0 L68.5,45.3 L67.7,44.6 L66.9,43.9 L66.0,43.3 L65.1,42.8 L64.1,42.3 L63.2,41.9 L62.1,41.6 L61.1,41.3 L60.1,41.1 L59.0,41.0 L58.0,41.0 L56.9,41.0 L55.9,41.2 L54.8,41.3 L53.8,41.6 L52.8,41.9 L51.8,42.3 L50.9,42.8 L49.9,43.3 L49.1,43.9 L48.2,44.6 L47.5,45.3 L46.7,46.1 L46.1,46.9" style="stroke:var(--amb);stroke-width:1.3;fill:none"/><path d="M46.1,46.9 L47.5,40.4 L52.2,44.2 Z" style="fill:var(--amb)"/><line x1="58" y1="56" x2="26.9" y2="34.2" style="stroke:var(--ok);stroke-width:2.2"/><circle cx="26.9" cy="34.2" r="3.6" style="fill:var(--ok)"/></svg></div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">Partendo da destra e girando in senso antiorario, si passa l'asse $y$ a $90^{\circ}$ e ci si ferma prima del semiasse negativo delle $x$, che è a $180^{\circ}$: II quadrante.</p>
+      <div class="teoria">
+        <div class="nome">I quadranti</div>
+        <div class="frase">Gli assi dividono il piano in quattro quadranti, e si contano come si misurano gli angoli: partendo dal semiasse positivo delle $x$ e girando in senso antiorario. Il I quadrante va da $0^{\circ}$ a $90^{\circ}$, il II da $90^{\circ}$ a $180^{\circ}$, il III da $180^{\circ}$ a $270^{\circ}$, il IV da $270^{\circ}$ a $360^{\circ}$. In radianti i confini sono $\frac{\pi}{2}$, $\pi$, $\frac{3}{2}\pi$ e $2\pi$. Sui confini il lato termine sta su un asse.</div>
+        <div class="f sx">$\displaystyle 0^{\circ}\ \xrightarrow{\ \text{I}\ }\ 90^{\circ}\ \xrightarrow{\ \text{II}\ }\ 180^{\circ}\ \xrightarrow{\ \text{III}\ }\ 270^{\circ}\ \xrightarrow{\ \text{IV}\ }\ \text{un giro}$</div>
+        <div class="ex">esempio: $305^{\circ}\ \to\ \text{IV quadrante}$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ Errore da non fare</div>
+        <div class="nome">Contare i quadranti in senso orario</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \text{II quadrante: in basso a destra}$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \text{II quadrante: in alto a sinistra}$</div></div>
+        </div>
+        <div class="why-txt">Contati in senso orario, il II e il IV si scambiano: i segni escono sbagliati.</div>
+      </div>
+    </div>
+  </details>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">2</div>
+      <div class="cont">
+        <div class="nota">Fra $180^{\circ}$ e $270^{\circ}$: in basso a sinistra.</div>
+        <div class="f sx">$\displaystyle 220^{\circ}\ \to\ \text{III quadrante}$</div>
+        <div class="f sx"><svg viewBox="0 0 124 112" role="img" aria-label="Lato termine di 220 gradi, nel III quadrante" style="display:block;width:100%;max-width:140px;height:auto;margin:4px 0 0"><line x1="6" y1="56" x2="116" y2="56" style="stroke:var(--faint);stroke-width:1"/><path d="M120.0,56.0 L115.0,58.6 L115.0,53.4 Z" style="fill:var(--faint)"/><line x1="58" y1="108" x2="58" y2="9" style="stroke:var(--faint);stroke-width:1"/><path d="M58.0,5.0 L60.6,10.0 L55.4,10.0 Z" style="fill:var(--faint)"/><text x="117.0" y="68.0" text-anchor="middle" style="font-size:10px;fill:var(--muted)">x</text><text x="65.0" y="11.0" text-anchor="middle" style="font-size:10px;fill:var(--muted)">y</text><circle cx="58" cy="56" r="38" style="fill:none;stroke:var(--ink);stroke-width:1.3"/><path d="M73.0,55.7 L72.9,54.7 L72.8,53.6 L72.6,52.6 L72.3,51.6 L72.0,50.6 L71.6,49.6 L71.1,48.7 L70.5,47.8 L69.9,46.9 L69.3,46.1 L68.6,45.3 L67.8,44.6 L67.0,44.0 L66.1,43.4 L65.2,42.8 L64.3,42.4 L63.3,42.0 L62.3,41.6 L61.3,41.4 L60.3,41.2 L59.2,41.0 L58.2,41.0 L57.1,41.0 L56.1,41.1 L55.0,41.3 L54.0,41.5 L53.0,41.9 L52.0,42.2 L51.1,42.7 L50.2,43.2 L49.3,43.8 L48.5,44.4 L47.7,45.1 L46.9,45.9 L46.3,46.7 L45.6,47.5 L45.1,48.4 L44.6,49.3 L44.1,50.3 L43.8,51.3 L43.5,52.3 L43.2,53.3 L43.1,54.3 L43.0,55.4 L43.0,56.4 L43.1,57.5 L43.2,58.5 L43.4,59.5 L43.7,60.5 L44.1,61.5 L44.5,62.5 L45.0,63.4 L45.5,64.3 L46.1,65.2" style="stroke:var(--amb);stroke-width:1.3;fill:none"/><path d="M46.1,65.2 L40.2,62.1 L45.1,58.6 Z" style="fill:var(--amb)"/><line x1="58" y1="56" x2="28.9" y2="80.4" style="stroke:var(--ok);stroke-width:2.2"/><circle cx="28.9" cy="80.4" r="3.6" style="fill:var(--ok)"/></svg></div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <details class="riga">
+    <summary>
+      <div class="n">3</div>
+      <div class="cont">
+        <div class="nota">Angolo negativo: si gira di $28^{\circ}$ in senso orario e si finisce sotto l'asse $x$, a destra.</div>
+        <div class="f sx">$\displaystyle -28^{\circ}\ \to\ \text{IV quadrante}$</div>
+        <div class="f sx"><svg viewBox="0 0 124 112" role="img" aria-label="Lato termine di meno 28 gradi, nel IV quadrante" style="display:block;width:100%;max-width:140px;height:auto;margin:4px 0 0"><line x1="6" y1="56" x2="116" y2="56" style="stroke:var(--faint);stroke-width:1"/><path d="M120.0,56.0 L115.0,58.6 L115.0,53.4 Z" style="fill:var(--faint)"/><line x1="58" y1="108" x2="58" y2="9" style="stroke:var(--faint);stroke-width:1"/><path d="M58.0,5.0 L60.6,10.0 L55.4,10.0 Z" style="fill:var(--faint)"/><text x="117.0" y="68.0" text-anchor="middle" style="font-size:10px;fill:var(--muted)">x</text><text x="65.0" y="11.0" text-anchor="middle" style="font-size:10px;fill:var(--muted)">y</text><circle cx="58" cy="56" r="38" style="fill:none;stroke:var(--ink);stroke-width:1.3"/><path d="M85.0,56.5 L84.9,58.0 L84.8,59.4 L84.6,60.9 L84.3,62.3 L83.9,63.7 L83.4,65.0 L82.9,66.4 L82.3,67.7" style="stroke:var(--amb);stroke-width:1.3;fill:none"/><path d="M82.3,67.7 L82.0,61.0 L87.5,63.5 Z" style="fill:var(--amb)"/><line x1="58" y1="56" x2="91.6" y2="73.8" style="stroke:var(--ok);stroke-width:2.2"/><circle cx="91.6" cy="73.8" r="3.6" style="fill:var(--ok)"/></svg></div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">Il meno dice di girare in senso orario: $28^{\circ}$ sotto il semiasse positivo delle $x$. Si può anche aggiungere un giro: $-28^{\circ}+360^{\circ}=332^{\circ}$, sempre IV quadrante.</p>
+      <div class="teoria">
+        <div class="nome">Gli angoli negativi</div>
+        <div class="frase">Un angolo negativo si misura in <strong>senso orario</strong>: si parte dal semiasse positivo delle $x$ e si gira all'indietro, verso il basso, di quanto dice il numero senza il meno. Qui $\beta$ è quel numero, positivo.</div>
+        <div class="f sx">$\displaystyle -\beta\ \to\ \text{si gira di}\ \beta\ \text{in senso orario}$</div>
+        <div class="ex">esempio: $-35^{\circ}\ \to\ 35^{\circ}\ \text{in senso orario, IV quadrante}$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ Errore da non fare</div>
+        <div class="nome">Girare in senso antiorario un angolo negativo</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \alpha&lt;0\ \to\ \text{senso antiorario}$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \alpha&lt;0\ \to\ \text{senso orario}$</div></div>
+        </div>
+        <div class="why-txt">In senso antiorario si finisce dall'altra parte dell'asse $x$.</div>
+      </div>
+    </div>
+  </details>
+
+  <details class="riga">
+    <summary>
+      <div class="n">4</div>
+      <div class="cont">
+        <div class="nota">Più di un giro: tolgo un giro intero.</div>
+        <div class="f sx">$\displaystyle 380^{\circ}-360^{\circ}=20^{\circ}$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">$380^{\circ}$ è un giro intero più $20^{\circ}$: il lato termine è lo stesso di $20^{\circ}$, e così anche seno e coseno.</p>
+      <div class="teoria">
+        <div class="nome">Angoli che differiscono di giri interi</div>
+        <div class="frase">Un giro intero, cioè $360^{\circ}$ o $2\pi$, riporta il lato termine esattamente dove era: per questo seno e coseno non cambiano se all'angolo si aggiungono o si tolgono giri interi. Di solito si tolgono giri per riportare un angolo grande fra $0^{\circ}$ e $360^{\circ}$; a volte conviene toglierne uno per arrivare a un angolo negativo più comodo. Qui $\gamma$ è un angolo qualsiasi e $k$ il numero dei giri, un intero.</div>
+        <div class="f sx">$\displaystyle \cos\left(\gamma+k\ \text{giri}\right)=\cos\gamma\qquad\sin\left(\gamma+k\ \text{giri}\right)=\sin\gamma$</div>
+        <div class="ex">esempio: $\sin 410^{\circ}=\sin 50^{\circ}$</div>
+      </div>
+    </div>
+  </details>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">5</div>
+      <div class="cont">
+        <div class="nota">Resta $20^{\circ}$: in alto a destra.</div>
+        <div class="f sx">$\displaystyle 20^{\circ}\ \to\ \text{I quadrante}$</div>
+        <div class="f sx"><svg viewBox="0 0 124 112" role="img" aria-label="Lato termine di 380 gradi: un giro e 20 gradi, nel I quadrante" style="display:block;width:100%;max-width:140px;height:auto;margin:4px 0 0"><line x1="6" y1="56" x2="116" y2="56" style="stroke:var(--faint);stroke-width:1"/><path d="M120.0,56.0 L115.0,58.6 L115.0,53.4 Z" style="fill:var(--faint)"/><line x1="58" y1="108" x2="58" y2="9" style="stroke:var(--faint);stroke-width:1"/><path d="M58.0,5.0 L60.6,10.0 L55.4,10.0 Z" style="fill:var(--faint)"/><text x="117.0" y="68.0" text-anchor="middle" style="font-size:10px;fill:var(--muted)">x</text><text x="65.0" y="11.0" text-anchor="middle" style="font-size:10px;fill:var(--muted)">y</text><circle cx="58" cy="56" r="38" style="fill:none;stroke:var(--ink);stroke-width:1.3"/><path d="M65.0,56.0 L65.1,55.5 L65.2,55.0 L65.3,54.4 L65.3,53.9 L65.3,53.3 L65.2,52.8 L65.1,52.2 L64.9,51.7 L64.7,51.1 L64.5,50.5 L64.2,50.0 L63.9,49.5 L63.5,49.0 L63.1,48.5 L62.6,48.0 L62.1,47.6 L61.6,47.2 L61.0,46.8 L60.4,46.5 L59.7,46.2 L59.0,45.9 L58.3,45.7 L57.6,45.6 L56.9,45.5 L56.1,45.4 L55.3,45.5 L54.6,45.5 L53.8,45.7 L53.0,45.8 L52.2,46.1 L51.5,46.4 L50.7,46.8 L50.0,47.2 L49.3,47.7 L48.6,48.2 L48.0,48.8 L47.4,49.4 L46.8,50.1 L46.3,50.8 L45.8,51.6 L45.4,52.4 L45.0,53.3 L44.7,54.2 L44.5,55.1 L44.3,56.1 L44.2,57.0 L44.1,58.0 L44.2,59.0 L44.3,60.0 L44.5,61.0 L44.7,62.0 L45.0,63.0 L45.4,64.0 L45.9,64.9 L46.4,65.8 L47.0,66.7 L47.7,67.6 L48.4,68.4 L49.3,69.1 L50.1,69.9 L51.0,70.5 L52.0,71.1 L53.0,71.6 L54.1,72.1 L55.2,72.4 L56.4,72.7 L57.5,73.0 L58.7,73.1 L59.9,73.2 L61.2,73.1 L62.4,73.0 L63.6,72.8 L64.8,72.5 L66.0,72.1 L67.2,71.7 L68.4,71.1 L69.5,70.5 L70.6,69.7 L71.6,68.9 L72.6,68.0 L73.5,67.1 L74.4,66.0 L75.2,64.9 L75.9,63.8 L76.5,62.6 L77.1,61.3 L77.6,60.0 L77.9,58.6 L78.2,57.2 L78.4,55.8 L78.5,54.4 L78.5,52.9 L78.4,51.5 L78.1,50.0" style="stroke:var(--amb);stroke-width:1.3;fill:none"/><path d="M78.1,50.0 L82.0,55.5 L76.1,56.4 Z" style="fill:var(--amb)"/><line x1="58" y1="56" x2="93.7" y2="43.0" style="stroke:var(--ok);stroke-width:2.2"/><circle cx="93.7" cy="43.0" r="3.6" style="fill:var(--ok)"/></svg></div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">6</div>
+      <div class="cont">
+        <div class="nota">Anche qui tolgo un giro.</div>
+        <div class="f sx">$\displaystyle 460^{\circ}-360^{\circ}=100^{\circ}$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">7</div>
+      <div class="cont">
+        <div class="nota">Resta $100^{\circ}$, appena oltre l'asse $y$: in alto a sinistra.</div>
+        <div class="f sx">$\displaystyle 100^{\circ}\ \to\ \text{II quadrante}$</div>
+        <div class="f sx"><svg viewBox="0 0 124 112" role="img" aria-label="Lato termine di 460 gradi: un giro e 100 gradi, nel II quadrante" style="display:block;width:100%;max-width:140px;height:auto;margin:4px 0 0"><line x1="6" y1="56" x2="116" y2="56" style="stroke:var(--faint);stroke-width:1"/><path d="M120.0,56.0 L115.0,58.6 L115.0,53.4 Z" style="fill:var(--faint)"/><line x1="58" y1="108" x2="58" y2="9" style="stroke:var(--faint);stroke-width:1"/><path d="M58.0,5.0 L60.6,10.0 L55.4,10.0 Z" style="fill:var(--faint)"/><text x="117.0" y="68.0" text-anchor="middle" style="font-size:10px;fill:var(--muted)">x</text><text x="65.0" y="11.0" text-anchor="middle" style="font-size:10px;fill:var(--muted)">y</text><circle cx="58" cy="56" r="38" style="fill:none;stroke:var(--ink);stroke-width:1.3"/><path d="M65.0,56.0 L65.1,55.5 L65.2,55.0 L65.2,54.5 L65.2,53.9 L65.2,53.4 L65.1,52.8 L64.9,52.3 L64.8,51.8 L64.6,51.2 L64.3,50.7 L64.0,50.2 L63.7,49.7 L63.3,49.2 L62.9,48.8 L62.4,48.3 L61.9,47.9 L61.4,47.6 L60.8,47.2 L60.2,46.9 L59.6,46.7 L59.0,46.5 L58.3,46.3 L57.6,46.2 L56.9,46.1 L56.2,46.1 L55.5,46.1 L54.8,46.2 L54.1,46.3 L53.3,46.5 L52.6,46.8 L51.9,47.1 L51.2,47.4 L50.6,47.8 L49.9,48.3 L49.3,48.8 L48.7,49.3 L48.2,49.9 L47.7,50.6 L47.2,51.2 L46.8,52.0 L46.4,52.7 L46.1,53.5 L45.8,54.3 L45.6,55.2 L45.5,56.0 L45.4,56.9 L45.4,57.8 L45.4,58.7 L45.5,59.6 L45.7,60.5 L45.9,61.4 L46.2,62.3 L46.6,63.2 L47.0,64.1 L47.5,64.9 L48.1,65.7 L48.7,66.4 L49.4,67.2 L50.1,67.9 L50.9,68.5 L51.7,69.1 L52.6,69.6 L53.5,70.0 L54.5,70.4 L55.5,70.8 L56.5,71.0 L57.6,71.2 L58.6,71.3 L59.7,71.4 L60.8,71.3 L61.9,71.2 L63.0,71.0 L64.1,70.8 L65.1,70.4 L66.2,70.0 L67.2,69.5 L68.2,68.9 L69.2,68.2 L70.1,67.5 L71.0,66.7 L71.8,65.9 L72.5,64.9 L73.2,64.0 L73.9,62.9 L74.4,61.8 L74.9,60.7 L75.3,59.5 L75.7,58.3 L75.9,57.1 L76.1,55.9 L76.1,54.6 L76.1,53.3 L76.0,52.0 L75.8,50.7 L75.5,49.5 L75.1,48.2 L74.6,47.0 L74.1,45.8 L73.4,44.6 L72.7,43.5 L71.8,42.4 L70.9,41.4 L70.0,40.4 L68.9,39.5 L67.8,38.7 L66.6,37.9 L65.4,37.3 L64.1,36.7 L62.7,36.2 L61.4,35.8 L60.0,35.5 L58.5,35.3 L57.1,35.1 L55.6,35.1" style="stroke:var(--amb);stroke-width:1.3;fill:none"/><path d="M55.6,35.1 L61.6,32.2 L61.6,38.2 Z" style="fill:var(--amb)"/><line x1="58" y1="56" x2="51.4" y2="18.6" style="stroke:var(--ok);stroke-width:2.2"/><circle cx="51.4" cy="18.6" r="3.6" style="fill:var(--ok)"/></svg></div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <details class="riga">
+    <summary>
+      <div class="n">8</div>
+      <div class="cont">
+        <div class="nota">Ora i radianti: passo ai gradi, mettendo $180^{\circ}$ al posto di $\pi$.</div>
+        <div class="f sx">$\displaystyle \frac{\pi}{3}=60^{\circ}$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">$\frac{\pi}{3}$ diventa $\frac{180^{\circ}}{3}=60^{\circ}$. Si può anche restare in radianti: $\frac{\pi}{3}$ è meno di $\frac{\pi}{2}$, quindi I quadrante. La strada cambia, la risposta no.</p>
+      <div class="teoria">
+        <div class="nome">Dai radianti ai gradi</div>
+        <div class="frase">$\pi$ radianti sono mezzo giro, cioè $180^{\circ}$. Per passare ai gradi si mette $180^{\circ}$ al posto di $\pi$ e si fa il conto.</div>
+        <div class="f sx">$\displaystyle \pi\ \text{rad}=180^{\circ}$</div>
+        <div class="ex">esempio: $\frac{3}{4}\pi=\frac{3}{4}\cdot 180^{\circ}=135^{\circ}$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ Errore da non fare</div>
+        <div class="nome">Prendere $\pi$ per un giro intero</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \pi=\text{un giro}$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \pi=\text{mezzo giro}$</div></div>
+        </div>
+        <div class="why-txt">Così ogni angolo raddoppia e il lato termine finisce nel posto sbagliato.</div>
+      </div>
+    </div>
+  </details>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">9</div>
+      <div class="cont">
+        <div class="f sx">$\displaystyle 60^{\circ}\ \to\ \text{I quadrante}$</div>
+        <div class="f sx"><svg viewBox="0 0 124 112" role="img" aria-label="Lato termine di 60 gradi, nel I quadrante" style="display:block;width:100%;max-width:140px;height:auto;margin:4px 0 0"><line x1="6" y1="56" x2="116" y2="56" style="stroke:var(--faint);stroke-width:1"/><path d="M120.0,56.0 L115.0,58.6 L115.0,53.4 Z" style="fill:var(--faint)"/><line x1="58" y1="108" x2="58" y2="9" style="stroke:var(--faint);stroke-width:1"/><path d="M58.0,5.0 L60.6,10.0 L55.4,10.0 Z" style="fill:var(--faint)"/><text x="117.0" y="68.0" text-anchor="middle" style="font-size:10px;fill:var(--muted)">x</text><text x="65.0" y="11.0" text-anchor="middle" style="font-size:10px;fill:var(--muted)">y</text><circle cx="58" cy="56" r="38" style="fill:none;stroke:var(--ink);stroke-width:1.3"/><path d="M85.0,55.5 L84.9,53.6 L84.7,51.7 L84.3,49.8 L83.8,48.0 L83.1,46.2 L82.4,44.4 L81.5,42.7 L80.5,41.1 L79.4,39.6 L78.2,38.1 L76.9,36.7 L75.5,35.4 L74.0,34.2 L72.4,33.2" style="stroke:var(--amb);stroke-width:1.3;fill:none"/><path d="M72.4,33.2 L79.1,34.1 L75.7,39.0 Z" style="fill:var(--amb)"/><line x1="58" y1="56" x2="77.0" y2="23.1" style="stroke:var(--ok);stroke-width:2.2"/><circle cx="77.0" cy="23.1" r="3.6" style="fill:var(--ok)"/></svg></div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">10</div>
+      <div class="cont">
+        <div class="nota">Stessa conversione: $\frac{13}{6}$ di $180^{\circ}$.</div>
+        <div class="f sx">$\displaystyle \frac{13}{6}\pi=390^{\circ}$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">11</div>
+      <div class="cont">
+        <div class="nota">Più di un giro: tolgo un giro intero.</div>
+        <div class="f sx">$\displaystyle 390^{\circ}-360^{\circ}=30^{\circ}$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">12</div>
+      <div class="cont">
+        <div class="f sx">$\displaystyle 30^{\circ}\ \to\ \text{I quadrante}$</div>
+        <div class="f sx"><svg viewBox="0 0 124 112" role="img" aria-label="Lato termine di 390 gradi: un giro e 30 gradi, nel I quadrante" style="display:block;width:100%;max-width:140px;height:auto;margin:4px 0 0"><line x1="6" y1="56" x2="116" y2="56" style="stroke:var(--faint);stroke-width:1"/><path d="M120.0,56.0 L115.0,58.6 L115.0,53.4 Z" style="fill:var(--faint)"/><line x1="58" y1="108" x2="58" y2="9" style="stroke:var(--faint);stroke-width:1"/><path d="M58.0,5.0 L60.6,10.0 L55.4,10.0 Z" style="fill:var(--faint)"/><text x="117.0" y="68.0" text-anchor="middle" style="font-size:10px;fill:var(--muted)">x</text><text x="65.0" y="11.0" text-anchor="middle" style="font-size:10px;fill:var(--muted)">y</text><circle cx="58" cy="56" r="38" style="fill:none;stroke:var(--ink);stroke-width:1.3"/><path d="M65.0,56.0 L65.1,55.5 L65.2,55.0 L65.3,54.4 L65.3,53.9 L65.3,53.3 L65.2,52.8 L65.1,52.2 L64.9,51.6 L64.7,51.1 L64.5,50.5 L64.2,50.0 L63.8,49.5 L63.4,49.0 L63.0,48.5 L62.5,48.0 L62.0,47.6 L61.5,47.2 L60.9,46.8 L60.3,46.5 L59.6,46.2 L59.0,46.0 L58.3,45.8 L57.5,45.7 L56.8,45.6 L56.0,45.5 L55.3,45.6 L54.5,45.6 L53.7,45.8 L52.9,46.0 L52.2,46.2 L51.4,46.5 L50.7,46.9 L50.0,47.3 L49.3,47.8 L48.6,48.4 L48.0,49.0 L47.4,49.6 L46.8,50.3 L46.3,51.1 L45.9,51.8 L45.5,52.7 L45.1,53.5 L44.8,54.4 L44.6,55.3 L44.4,56.3 L44.3,57.2 L44.3,58.2 L44.4,59.2 L44.5,60.2 L44.7,61.2 L45.0,62.2 L45.3,63.2 L45.7,64.1 L46.2,65.0 L46.7,65.9 L47.4,66.8 L48.1,67.6 L48.8,68.4 L49.6,69.2 L50.5,69.9 L51.4,70.5 L52.4,71.0 L53.5,71.5 L54.5,72.0 L55.6,72.3 L56.8,72.6 L57.9,72.8 L59.1,72.9 L60.3,72.9 L61.5,72.8 L62.8,72.7 L64.0,72.5 L65.2,72.1 L66.3,71.7 L67.5,71.2 L68.6,70.6 L69.7,70.0 L70.8,69.2 L71.8,68.4 L72.7,67.5 L73.6,66.5 L74.4,65.4 L75.2,64.3 L75.9,63.1 L76.5,61.9 L77.0,60.6 L77.4,59.3 L77.7,58.0 L78.0,56.6 L78.1,55.2 L78.1,53.7 L78.1,52.3 L77.9,50.9 L77.6,49.4 L77.3,48.0 L76.8,46.6" style="stroke:var(--amb);stroke-width:1.3;fill:none"/><path d="M76.8,46.6 L81.6,51.3 L75.9,53.3 Z" style="fill:var(--amb)"/><line x1="58" y1="56" x2="90.9" y2="37.0" style="stroke:var(--ok);stroke-width:2.2"/><circle cx="90.9" cy="37.0" r="3.6" style="fill:var(--ok)"/></svg></div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">13</div>
+      <div class="cont">
+        <div class="nota">Stessa conversione, col meno: un ottavo di $180^{\circ}$.</div>
+        <div class="f sx">$\displaystyle -\frac{\pi}{8}=-22{,}5^{\circ}$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">14</div>
+      <div class="cont">
+        <div class="nota">Negativo e piccolo: in senso orario si resta appena sotto l'asse $x$.</div>
+        <div class="f sx">$\displaystyle -22{,}5^{\circ}\ \to\ \text{IV quadrante}$</div>
+        <div class="f sx"><svg viewBox="0 0 124 112" role="img" aria-label="Lato termine di meno 22,5 gradi, nel IV quadrante" style="display:block;width:100%;max-width:140px;height:auto;margin:4px 0 0"><line x1="6" y1="56" x2="116" y2="56" style="stroke:var(--faint);stroke-width:1"/><path d="M120.0,56.0 L115.0,58.6 L115.0,53.4 Z" style="fill:var(--faint)"/><line x1="58" y1="108" x2="58" y2="9" style="stroke:var(--faint);stroke-width:1"/><path d="M58.0,5.0 L60.6,10.0 L55.4,10.0 Z" style="fill:var(--faint)"/><text x="117.0" y="68.0" text-anchor="middle" style="font-size:10px;fill:var(--muted)">x</text><text x="65.0" y="11.0" text-anchor="middle" style="font-size:10px;fill:var(--muted)">y</text><circle cx="58" cy="56" r="38" style="fill:none;stroke:var(--ink);stroke-width:1.3"/><path d="M85.0,56.5 L84.9,57.7 L84.9,58.8 L84.7,59.9 L84.5,61.0 L84.3,62.1 L84.0,63.2 L83.7,64.3 L83.3,65.3" style="stroke:var(--amb);stroke-width:1.3;fill:none"/><path d="M83.3,65.3 L82.5,58.7 L88.1,60.6 Z" style="fill:var(--amb)"/><line x1="58" y1="56" x2="93.1" y2="70.5" style="stroke:var(--ok);stroke-width:2.2"/><circle cx="93.1" cy="70.5" r="3.6" style="fill:var(--ok)"/></svg></div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">15</div>
+      <div class="cont">
+        <div class="nota">Stessa conversione: $\frac{17}{3}$ di $180^{\circ}$.</div>
+        <div class="f sx">$\displaystyle \frac{17}{3}\pi=1020^{\circ}$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">16</div>
+      <div class="cont">
+        <div class="nota">Qui i giri interi sono due: li tolgo tutti e due.</div>
+        <div class="f sx">$\displaystyle 1020^{\circ}-2\cdot 360^{\circ}=300^{\circ}$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">17</div>
+      <div class="cont">
+        <div class="nota">Fra $270^{\circ}$ e $360^{\circ}$: in basso a destra.</div>
+        <div class="f sx">$\displaystyle 300^{\circ}\ \to\ \text{IV quadrante}$</div>
+        <div class="f sx"><svg viewBox="0 0 124 112" role="img" aria-label="Lato termine di 1020 gradi: due giri e 300 gradi, nel IV quadrante" style="display:block;width:100%;max-width:140px;height:auto;margin:4px 0 0"><line x1="6" y1="56" x2="116" y2="56" style="stroke:var(--faint);stroke-width:1"/><path d="M120.0,56.0 L115.0,58.6 L115.0,53.4 Z" style="fill:var(--faint)"/><line x1="58" y1="108" x2="58" y2="9" style="stroke:var(--faint);stroke-width:1"/><path d="M58.0,5.0 L60.6,10.0 L55.4,10.0 Z" style="fill:var(--faint)"/><text x="117.0" y="68.0" text-anchor="middle" style="font-size:10px;fill:var(--muted)">x</text><text x="65.0" y="11.0" text-anchor="middle" style="font-size:10px;fill:var(--muted)">y</text><circle cx="58" cy="56" r="38" style="fill:none;stroke:var(--ink);stroke-width:1.3"/><path d="M65.0,56.0 L65.0,55.5 L65.0,55.0 L65.0,54.5 L64.9,54.0 L64.8,53.5 L64.7,53.0 L64.5,52.5 L64.3,52.1 L64.1,51.6 L63.8,51.1 L63.5,50.7 L63.1,50.3 L62.7,49.9 L62.3,49.6 L61.9,49.2 L61.5,48.9 L61.0,48.6 L60.5,48.4 L59.9,48.2 L59.4,48.0 L58.8,47.9 L58.3,47.8 L57.7,47.7 L57.1,47.7 L56.5,47.8 L56.0,47.8 L55.4,47.9 L54.8,48.1 L54.2,48.3 L53.7,48.5 L53.1,48.8 L52.6,49.1 L52.1,49.5 L51.6,49.8 L51.2,50.3 L50.7,50.7 L50.3,51.2 L50.0,51.7 L49.6,52.3 L49.3,52.9 L49.1,53.5 L48.9,54.1 L48.7,54.7 L48.6,55.4 L48.5,56.0 L48.5,56.7 L48.5,57.4 L48.6,58.0 L48.7,58.7 L48.8,59.4 L49.0,60.0 L49.3,60.6 L49.6,61.3 L49.9,61.9 L50.3,62.5 L50.8,63.0 L51.2,63.6 L51.7,64.0 L52.3,64.5 L52.9,64.9 L53.5,65.3 L54.1,65.7 L54.8,66.0 L55.5,66.2 L56.2,66.4 L56.9,66.6 L57.7,66.7 L58.4,66.7 L59.2,66.7 L59.9,66.7 L60.7,66.6 L61.4,66.4 L62.2,66.2 L62.9,65.9 L63.6,65.6 L64.3,65.3 L64.9,64.8 L65.6,64.4 L66.2,63.9 L66.8,63.3 L67.3,62.7 L67.8,62.1 L68.2,61.4 L68.6,60.7 L69.0,60.0 L69.3,59.2 L69.5,58.4 L69.7,57.6 L69.9,56.8 L70.0,56.0 L70.0,55.1 L69.9,54.3 L69.9,53.4 L69.7,52.6 L69.5,51.8 L69.2,51.0 L68.9,50.2 L68.5,49.4 L68.0,48.6 L67.6,47.9 L67.0,47.2 L66.4,46.6 L65.8,46.0 L65.1,45.4 L64.3,44.9 L63.6,44.4 L62.8,44.0 L62.0,43.7 L61.1,43.4 L60.2,43.1 L59.3,42.9 L58.4,42.8 L57.5,42.8 L56.6,42.8 L55.6,42.9 L54.7,43.0 L53.8,43.2 L52.9,43.5 L52.0,43.8 L51.1,44.2 L50.3,44.7 L49.5,45.2 L48.7,45.8 L48.0,46.4 L47.3,47.1 L46.7,47.9 L46.1,48.6 L45.6,49.5 L45.1,50.3 L44.7,51.2 L44.3,52.1 L44.0,53.1 L43.8,54.1 L43.6,55.1 L43.6,56.1 L43.5,57.1 L43.6,58.1 L43.7,59.1 L43.9,60.1 L44.2,61.1 L44.5,62.1 L44.9,63.0 L45.4,64.0 L46.0,64.8 L46.6,65.7 L47.2,66.5 L48.0,67.3 L48.7,68.0 L49.6,68.7 L50.4,69.3 L51.4,69.8 L52.3,70.3 L53.3,70.7 L54.3,71.1 L55.4,71.3 L56.5,71.5 L57.5,71.6 L58.6,71.7 L59.7,71.7 L60.8,71.6 L61.9,71.4 L63.0,71.1 L64.1,70.8 L65.1,70.4 L66.1,69.9 L67.1,69.3 L68.1,68.7 L69.0,68.0 L69.8,67.3 L70.6,66.4 L71.4,65.6 L72.0,64.6 L72.7,63.7 L73.2,62.6 L73.7,61.6 L74.1,60.5 L74.4,59.4 L74.7,58.2 L74.8,57.1 L74.9,55.9 L74.9,54.7 L74.8,53.5 L74.7,52.3 L74.4,51.2 L74.1,50.0 L73.7,48.9 L73.2,47.8 L72.7,46.7 L72.0,45.7 L71.3,44.7 L70.5,43.7 L69.7,42.8 L68.8,42.0 L67.8,41.3 L66.8,40.6 L65.7,39.9 L64.6,39.4 L63.4,38.9 L62.2,38.5 L61.0,38.2 L59.8,38.0 L58.5,37.9 L57.2,37.8 L56.0,37.9 L54.7,38.0 L53.4,38.2 L52.2,38.5 L50.9,38.9 L49.7,39.4 L48.6,40.0 L47.5,40.6 L46.4,41.4 L45.3,42.2 L44.4,43.1 L43.5,44.0 L42.6,45.0 L41.8,46.1 L41.1,47.2 L40.5,48.4 L40.0,49.6 L39.5,50.9 L39.2,52.2 L38.9,53.5 L38.7,54.8 L38.6,56.2 L38.6,57.5 L38.7,58.9 L38.9,60.2 L39.2,61.6 L39.6,62.9 L40.0,64.2 L40.6,65.4 L41.3,66.7 L42.0,67.8 L42.8,69.0 L43.7,70.0 L44.7,71.0 L45.8,72.0 L46.9,72.8 L48.0,73.6 L49.3,74.3 L50.6,74.9 L51.9,75.5 L53.2,75.9 L54.6,76.2 L56.0,76.5 L57.5,76.6 L58.9,76.6 L60.4,76.6 L61.8,76.4 L63.2,76.2 L64.6,75.8 L66.0,75.3 L67.4,74.8" style="stroke:var(--amb);stroke-width:1.3;fill:none"/><path d="M67.4,74.8 L63.0,79.8 L60.7,74.3 Z" style="fill:var(--amb)"/><line x1="58" y1="56" x2="77.0" y2="88.9" style="stroke:var(--ok);stroke-width:2.2"/><circle cx="77.0" cy="88.9" r="3.6" style="fill:var(--ok)"/></svg></div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="check">
+    <span>🚩 <b>Fermata di controllo.</b> Se qui hai</span>
+    <span class="v">$\displaystyle \text{II, III, IV, I, II, I, I, IV, IV}$</span>
+    <span>come quadranti, dal $145^{\circ}$ al $\frac{17}{3}\pi$ nell'ordine della tabella, la parte difficile è finita: restano i segni.</span>
+  </div>
+
+  <details class="riga">
+    <summary>
+      <div class="n">18</div>
+      <div class="cont">
+        <div class="nota">Ora i segni. Nel II quadrante ci sono $145^{\circ}$ e $460^{\circ}$.</div>
+        <div class="f sx">$\displaystyle \text{II quadrante:}\quad\cos\alpha&lt;0\qquad\sin\alpha>0$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">Nel II quadrante $B$ sta a sinistra dell'asse $y$, quindi ha la $x$ negativa, e sopra l'asse $x$, quindi ha la $y$ positiva.<svg viewBox="0 0 220 170" role="img" aria-label="I segni di coseno e seno nei quattro quadranti" style="display:block;width:100%;max-width:260px;height:auto;margin:10px auto 2px"><line x1="14" y1="84" x2="208" y2="84" style="stroke:var(--faint);stroke-width:1.1"/><path d="M212.0,84.0 L206.0,87.0 L206.0,81.0 Z" style="fill:var(--faint)"/><line x1="110" y1="166" x2="110" y2="10" style="stroke:var(--faint);stroke-width:1.1"/><path d="M110.0,5.0 L113.0,11.0 L107.0,11.0 Z" style="fill:var(--faint)"/><text x="210.0" y="99.0" text-anchor="middle" style="font-size:12px;fill:var(--muted)">x</text><text x="119.0" y="14.0" text-anchor="middle" style="font-size:12px;fill:var(--muted)">y</text><circle cx="110" cy="84" r="62" style="fill:none;stroke:var(--ink);stroke-width:1.4"/><text x="140.0" y="56.0" text-anchor="middle" style="font-size:11px;fill:var(--muted)">I</text><text x="140.0" y="71.0" text-anchor="middle" style="font-size:13px;font-weight:700;fill:var(--teo)">(+;+)</text><text x="80.0" y="56.0" text-anchor="middle" style="font-size:11px;fill:var(--muted)">II</text><text x="80.0" y="71.0" text-anchor="middle" style="font-size:13px;font-weight:700;fill:var(--teo)">(−;+)</text><text x="80.0" y="108.0" text-anchor="middle" style="font-size:11px;fill:var(--muted)">III</text><text x="80.0" y="123.0" text-anchor="middle" style="font-size:13px;font-weight:700;fill:var(--teo)">(−;−)</text><text x="140.0" y="108.0" text-anchor="middle" style="font-size:11px;fill:var(--muted)">IV</text><text x="140.0" y="123.0" text-anchor="middle" style="font-size:13px;font-weight:700;fill:var(--teo)">(+;−)</text><text x="110.0" y="168.0" text-anchor="middle" style="font-size:10px;fill:var(--muted)">fra parentesi: (coseno; seno)</text></svg></p>
+      <div class="teoria">
+        <div class="nome">I segni di seno e coseno nei quadranti</div>
+        <div class="frase">Il punto $B$ è dove il lato termine dell'angolo incontra la circonferenza goniometrica. Il coseno ha il segno della sua ascissa: è positivo a destra dell'asse $y$, nel I e nel IV quadrante. Il seno ha il segno della sua ordinata: è positivo sopra l'asse $x$, nel I e nel II quadrante. Negli altri due quadranti sono negativi.</div>
+        <div class="f sx">$\displaystyle \cos\alpha:\ +\ \text{nel I e IV},\ -\ \text{nel II e III}\qquad\sin\alpha:\ +\ \text{nel I e II},\ -\ \text{nel III e IV}$</div>
+        <div class="ex">esempio: $250^{\circ}\ \text{nel III quadrante:}\ \cos 250^{\circ}&lt;0,\ \sin 250^{\circ}&lt;0$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ Errore da non fare</div>
+        <div class="nome">Dare al coseno il segno dell'ordinata</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \cos\alpha\ \text{ha il segno della}\ y$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \cos\alpha\ \text{ha il segno della}\ x$</div></div>
+        </div>
+        <div class="why-txt">Con la $y$ il segno del coseno esce sbagliato nel II e nel IV quadrante.</div>
+      </div>
+    </div>
+  </details>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">19</div>
+      <div class="cont">
+        <div class="nota">Nel III quadrante c'è $220^{\circ}$: a sinistra e sotto.</div>
+        <div class="f sx">$\displaystyle \text{III quadrante:}\quad\cos\alpha&lt;0\qquad\sin\alpha&lt;0$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">20</div>
+      <div class="cont">
+        <div class="nota">Nel IV quadrante ci sono $-28^{\circ}$, $-\frac{\pi}{8}$ e $\frac{17}{3}\pi$: a destra e sotto.</div>
+        <div class="f sx">$\displaystyle \text{IV quadrante:}\quad\cos\alpha>0\qquad\sin\alpha&lt;0$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">21</div>
+      <div class="cont">
+        <div class="nota">Nel I quadrante ci sono $380^{\circ}$, $\frac{\pi}{3}$ e $\frac{13}{6}\pi$: a destra e sopra.</div>
+        <div class="f sx">$\displaystyle \text{I quadrante:}\quad\cos\alpha>0\qquad\sin\alpha>0$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="riga res">
+    <div class="fissa">
+      <div class="n">22</div>
+      <div class="cont">
+        <div class="nota">Mettiamo ogni segno nella sua casella.</div>
+        <div class="f sx">$\displaystyle \text{la tabella completa}$</div>
+        <div class="f sx"><svg viewBox="0 0 604 92" role="img" aria-label="La tabella dei segni completata" style="display:block;width:100%;max-width:604px;min-width:440px;height:auto;margin:6px 0 2px"><rect x="1" y="1" width="602" height="90" style="fill:none;stroke:var(--faint)"/><line x1="1" y1="31" x2="603" y2="31" style="stroke:var(--faint)"/><line x1="1" y1="61" x2="603" y2="61" style="stroke:var(--faint)"/><line x1="63" y1="1" x2="63" y2="91" style="stroke:var(--faint)"/><line x1="117" y1="1" x2="117" y2="91" style="stroke:var(--faint)"/><line x1="171" y1="1" x2="171" y2="91" style="stroke:var(--faint)"/><line x1="225" y1="1" x2="225" y2="91" style="stroke:var(--faint)"/><line x1="279" y1="1" x2="279" y2="91" style="stroke:var(--faint)"/><line x1="333" y1="1" x2="333" y2="91" style="stroke:var(--faint)"/><line x1="387" y1="1" x2="387" y2="91" style="stroke:var(--faint)"/><line x1="441" y1="1" x2="441" y2="91" style="stroke:var(--faint)"/><line x1="495" y1="1" x2="495" y2="91" style="stroke:var(--faint)"/><line x1="549" y1="1" x2="549" y2="91" style="stroke:var(--faint)"/><text x="32.0" y="21.0" text-anchor="middle" style="font-size:14px;font-style:italic;fill:var(--muted)">α</text><text x="32.0" y="51.0" text-anchor="middle" style="font-size:14px;font-style:italic;fill:var(--muted)">cos α</text><text x="32.0" y="81.0" text-anchor="middle" style="font-size:14px;font-style:italic;fill:var(--muted)">sin α</text><text x="90.0" y="21.0" text-anchor="middle" style="font-size:13px;fill:var(--ink)">30°</text><text x="90.0" y="52.0" text-anchor="middle" style="font-size:18px;font-weight:800;fill:var(--muted)">+</text><text x="90.0" y="82.0" text-anchor="middle" style="font-size:18px;font-weight:800;fill:var(--muted)">+</text><text x="144.0" y="21.0" text-anchor="middle" style="font-size:13px;fill:var(--ink)">145°</text><text x="144.0" y="52.0" text-anchor="middle" style="font-size:18px;font-weight:800;fill:var(--blu)">−</text><text x="144.0" y="82.0" text-anchor="middle" style="font-size:18px;font-weight:800;fill:var(--blu)">+</text><text x="198.0" y="21.0" text-anchor="middle" style="font-size:13px;fill:var(--ink)">220°</text><text x="198.0" y="52.0" text-anchor="middle" style="font-size:18px;font-weight:800;fill:var(--blu)">−</text><text x="198.0" y="82.0" text-anchor="middle" style="font-size:18px;font-weight:800;fill:var(--blu)">−</text><text x="252.0" y="21.0" text-anchor="middle" style="font-size:13px;fill:var(--ink)">−28°</text><text x="252.0" y="52.0" text-anchor="middle" style="font-size:18px;font-weight:800;fill:var(--blu)">+</text><text x="252.0" y="82.0" text-anchor="middle" style="font-size:18px;font-weight:800;fill:var(--blu)">−</text><text x="306.0" y="21.0" text-anchor="middle" style="font-size:13px;fill:var(--ink)">380°</text><text x="306.0" y="52.0" text-anchor="middle" style="font-size:18px;font-weight:800;fill:var(--blu)">+</text><text x="306.0" y="82.0" text-anchor="middle" style="font-size:18px;font-weight:800;fill:var(--blu)">+</text><text x="360.0" y="21.0" text-anchor="middle" style="font-size:13px;fill:var(--ink)">460°</text><text x="360.0" y="52.0" text-anchor="middle" style="font-size:18px;font-weight:800;fill:var(--blu)">−</text><text x="360.0" y="82.0" text-anchor="middle" style="font-size:18px;font-weight:800;fill:var(--blu)">+</text><text x="414.0" y="21.0" text-anchor="middle" style="font-size:13px;fill:var(--ink)">π/3</text><text x="414.0" y="52.0" text-anchor="middle" style="font-size:18px;font-weight:800;fill:var(--blu)">+</text><text x="414.0" y="82.0" text-anchor="middle" style="font-size:18px;font-weight:800;fill:var(--blu)">+</text><text x="468.0" y="21.0" text-anchor="middle" style="font-size:13px;fill:var(--ink)">13π/6</text><text x="468.0" y="52.0" text-anchor="middle" style="font-size:18px;font-weight:800;fill:var(--blu)">+</text><text x="468.0" y="82.0" text-anchor="middle" style="font-size:18px;font-weight:800;fill:var(--blu)">+</text><text x="522.0" y="21.0" text-anchor="middle" style="font-size:13px;fill:var(--ink)">−π/8</text><text x="522.0" y="52.0" text-anchor="middle" style="font-size:18px;font-weight:800;fill:var(--blu)">+</text><text x="522.0" y="82.0" text-anchor="middle" style="font-size:18px;font-weight:800;fill:var(--blu)">−</text><text x="576.0" y="21.0" text-anchor="middle" style="font-size:13px;fill:var(--ink)">17π/3</text><text x="576.0" y="52.0" text-anchor="middle" style="font-size:18px;font-weight:800;fill:var(--blu)">+</text><text x="576.0" y="82.0" text-anchor="middle" style="font-size:18px;font-weight:800;fill:var(--blu)">−</text></svg></div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

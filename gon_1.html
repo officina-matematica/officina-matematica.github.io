@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GON_1 — Funzioni seno e coseno</title>
+
+<script type="application/json" id="meta">
+{
+  "id": "gon_1",
+  "titolo": "Funzioni seno e coseno",
+  "tipo": "aperto",
+  "consegna_label": "Completa",
+  "consegna_tex": "Completa con i valori del seno e del coseno di ogni angolo $\\alpha$.<br><span style=\"display:inline-block;vertical-align:top;margin:6px 10px;text-align:center\"><svg viewBox=\"0 0 150 156\" role=\"img\" aria-label=\"Circonferenza goniometrica, figura a\" style=\"display:block;width:9.5em;height:auto;margin:0 auto\"><line x1=\"4\" y1=\"80\" x2=\"143\" y2=\"80\" style=\"stroke:currentColor;stroke-opacity:.5;stroke-width:1.1;fill:none\"/><path d=\"M147.0,80.0 L141.0,83.0 L141.0,77.0 Z\" style=\"fill:currentColor;fill-opacity:.6\"/><line x1=\"66\" y1=\"153\" x2=\"66\" y2=\"10\" style=\"stroke:currentColor;stroke-opacity:.5;stroke-width:1.1;fill:none\"/><path d=\"M66.0,5.0 L69.0,11.0 L63.0,11.0 Z\" style=\"fill:currentColor;fill-opacity:.6\"/><circle cx=\"66\" cy=\"80\" r=\"46\" style=\"fill:none;stroke:currentColor;stroke-width:1.6\"/><text x=\"144.0\" y=\"93.0\" text-anchor=\"middle\" style=\"font-size:11px;fill:currentColor\">x</text><text x=\"75.0\" y=\"13.0\" text-anchor=\"middle\" style=\"font-size:11px;fill:currentColor\">y</text><text x=\"58.0\" y=\"91.0\" text-anchor=\"middle\" style=\"font-size:11px;fill:currentColor\">O</text><text x=\"117.0\" y=\"93.0\" text-anchor=\"middle\" style=\"font-size:11px;fill:currentColor\">1</text><line x1=\"66\" y1=\"80\" x2=\"96.7\" y2=\"45.7\" style=\"stroke:currentColor;stroke-width:1.6;fill:none\"/><line x1=\"96.7\" y1=\"45.7\" x2=\"108.3\" y2=\"32.7\" style=\"stroke:currentColor;stroke-width:1.1;stroke-dasharray:2 3;fill:none\"/><path d=\"M81.0,79.1 L80.9,78.1 L80.7,77.0 L80.5,76.0 L80.1,75.0 L79.8,74.0 L79.3,73.1 L78.8,72.2 L78.2,71.3 L77.6,70.4 L76.9,69.7\" style=\"stroke:currentColor;stroke-width:1.1;fill:none\"/><path d=\"M76.9,69.7 L83.1,72.1 L78.6,76.1 Z\" style=\"fill:currentColor\"/><text x=\"88.8\" y=\"73.8\" text-anchor=\"middle\" style=\"font-size:12px;font-style:italic;fill:currentColor\">α</text><text x=\"105.7\" y=\"41.7\" text-anchor=\"start\" style=\"font-size:12px;font-weight:700;fill:currentColor\">B</text><circle cx=\"96.7\" cy=\"45.7\" r=\"3.3\" style=\"fill:currentColor\"/></svg><b>a.</b> $B\\left(\\frac{2}{3};\\frac{\\sqrt{5}}{3}\\right)$</span><span style=\"display:inline-block;vertical-align:top;margin:6px 10px;text-align:center\"><svg viewBox=\"0 0 150 156\" role=\"img\" aria-label=\"Circonferenza goniometrica, figura b\" style=\"display:block;width:9.5em;height:auto;margin:0 auto\"><line x1=\"4\" y1=\"80\" x2=\"143\" y2=\"80\" style=\"stroke:currentColor;stroke-opacity:.5;stroke-width:1.1;fill:none\"/><path d=\"M147.0,80.0 L141.0,83.0 L141.0,77.0 Z\" style=\"fill:currentColor;fill-opacity:.6\"/><line x1=\"66\" y1=\"153\" x2=\"66\" y2=\"10\" style=\"stroke:currentColor;stroke-opacity:.5;stroke-width:1.1;fill:none\"/><path d=\"M66.0,5.0 L69.0,11.0 L63.0,11.0 Z\" style=\"fill:currentColor;fill-opacity:.6\"/><circle cx=\"66\" cy=\"80\" r=\"46\" style=\"fill:none;stroke:currentColor;stroke-width:1.6\"/><text x=\"144.0\" y=\"93.0\" text-anchor=\"middle\" style=\"font-size:11px;fill:currentColor\">x</text><text x=\"75.0\" y=\"13.0\" text-anchor=\"middle\" style=\"font-size:11px;fill:currentColor\">y</text><text x=\"58.0\" y=\"91.0\" text-anchor=\"middle\" style=\"font-size:11px;fill:currentColor\">O</text><text x=\"117.0\" y=\"93.0\" text-anchor=\"middle\" style=\"font-size:11px;fill:currentColor\">1</text><line x1=\"66\" y1=\"80\" x2=\"43.0\" y2=\"40.2\" style=\"stroke:currentColor;stroke-width:1.6;fill:none\"/><line x1=\"43.0\" y1=\"40.2\" x2=\"34.3\" y2=\"25.0\" style=\"stroke:currentColor;stroke-width:1.1;stroke-dasharray:2 3;fill:none\"/><path d=\"M81.0,79.1 L80.9,78.0 L80.7,76.9 L80.4,75.9 L80.1,74.9 L79.7,73.9 L79.2,72.9 L78.7,71.9 L78.0,71.1 L77.4,70.2 L76.6,69.4 L75.8,68.7 L75.0,68.0 L74.1,67.4 L73.2,66.8 L72.2,66.3 L71.2,65.9 L70.1,65.6 L69.1,65.3 L68.0,65.1 L66.9,65.0 L65.9,65.0 L64.8,65.1 L63.7,65.2 L62.6,65.4 L61.6,65.7 L60.6,66.0 L59.6,66.5\" style=\"stroke:currentColor;stroke-width:1.1;fill:none\"/><path d=\"M59.6,66.5 L63.9,61.3 L66.3,66.8 Z\" style=\"fill:currentColor\"/><text x=\"78.5\" y=\"62.3\" text-anchor=\"middle\" style=\"font-size:12px;font-style:italic;fill:currentColor\">α</text><text x=\"34.0\" y=\"36.2\" text-anchor=\"end\" style=\"font-size:12px;font-weight:700;fill:currentColor\">B</text><circle cx=\"43.0\" cy=\"40.2\" r=\"3.3\" style=\"fill:currentColor\"/></svg><b>b.</b> $B\\left(-\\frac{1}{2};\\frac{\\sqrt{3}}{2}\\right)$</span><span style=\"display:inline-block;vertical-align:top;margin:6px 10px;text-align:center\"><svg viewBox=\"0 0 150 156\" role=\"img\" aria-label=\"Circonferenza goniometrica, figura c\" style=\"display:block;width:9.5em;height:auto;margin:0 auto\"><line x1=\"4\" y1=\"80\" x2=\"143\" y2=\"80\" style=\"stroke:currentColor;stroke-opacity:.5;stroke-width:1.1;fill:none\"/><path d=\"M147.0,80.0 L141.0,83.0 L141.0,77.0 Z\" style=\"fill:currentColor;fill-opacity:.6\"/><line x1=\"66\" y1=\"153\" x2=\"66\" y2=\"10\" style=\"stroke:currentColor;stroke-opacity:.5;stroke-width:1.1;fill:none\"/><path d=\"M66.0,5.0 L69.0,11.0 L63.0,11.0 Z\" style=\"fill:currentColor;fill-opacity:.6\"/><circle cx=\"66\" cy=\"80\" r=\"46\" style=\"fill:none;stroke:currentColor;stroke-width:1.6\"/><text x=\"144.0\" y=\"93.0\" text-anchor=\"middle\" style=\"font-size:11px;fill:currentColor\">x</text><text x=\"75.0\" y=\"13.0\" text-anchor=\"middle\" style=\"font-size:11px;fill:currentColor\">y</text><text x=\"70.0\" y=\"91.0\" text-anchor=\"start\" style=\"font-size:11px;fill:currentColor\">O</text><text x=\"117.0\" y=\"93.0\" text-anchor=\"middle\" style=\"font-size:11px;fill:currentColor\">1</text><line x1=\"66\" y1=\"80\" x2=\"66\" y2=\"126\" style=\"stroke:currentColor;stroke-width:1.6;fill:none\"/><path d=\"M86.0,78.8 L85.8,77.4 L85.6,76.0 L85.3,74.7 L84.9,73.3 L84.3,72.0 L83.7,70.8 L83.0,69.5 L82.3,68.4 L81.4,67.3 L80.5,66.2 L79.5,65.2 L78.4,64.3 L77.3,63.5 L76.1,62.7 L74.9,62.1 L73.6,61.5 L72.3,61.0 L71.0,60.6 L69.6,60.3 L68.2,60.1 L66.8,60.0 L65.4,60.0 L64.0,60.1 L62.6,60.3 L61.2,60.6 L59.9,61.0 L58.6,61.4 L57.3,62.0 L56.1,62.6 L54.9,63.4 L53.7,64.2 L52.7,65.1 L51.6,66.1 L50.7,67.1 L49.8,68.2 L49.1,69.4 L48.4,70.6 L47.7,71.8 L47.2,73.1 L46.8,74.5 L46.4,75.8 L46.2,77.2 L46.0,78.6 L46.0,80.0 L46.0,81.4 L46.2,82.8 L46.4,84.2 L46.8,85.5 L47.2,86.9 L47.7,88.2 L48.4,89.4 L49.1,90.6 L49.8,91.8 L50.7,92.9 L51.6,93.9 L52.7,94.9 L53.7,95.8 L54.9,96.6 L56.1,97.4 L57.3,98.0 L58.6,98.6 L59.9,99.0 L61.2,99.4 L62.6,99.7 L64.0,99.9\" style=\"stroke:currentColor;stroke-width:1.1;fill:none\"/><path d=\"M64.0,99.9 L57.7,102.1 L58.5,96.1 Z\" style=\"fill:currentColor\"/><text x=\"44.0\" y=\"62.0\" text-anchor=\"middle\" style=\"font-size:12px;font-style:italic;fill:currentColor\">α</text><text x=\"58.0\" y=\"140.0\" text-anchor=\"end\" style=\"font-size:12px;font-weight:700;fill:currentColor\">B</text><circle cx=\"66\" cy=\"126\" r=\"3.3\" style=\"fill:currentColor\"/></svg><b>c.</b> </span><span style=\"display:inline-block;vertical-align:top;margin:6px 10px;text-align:center\"><svg viewBox=\"0 0 150 156\" role=\"img\" aria-label=\"Circonferenza goniometrica, figura d\" style=\"display:block;width:9.5em;height:auto;margin:0 auto\"><line x1=\"4\" y1=\"80\" x2=\"143\" y2=\"80\" style=\"stroke:currentColor;stroke-opacity:.5;stroke-width:1.1;fill:none\"/><path d=\"M147.0,80.0 L141.0,83.0 L141.0,77.0 Z\" style=\"fill:currentColor;fill-opacity:.6\"/><line x1=\"66\" y1=\"153\" x2=\"66\" y2=\"10\" style=\"stroke:currentColor;stroke-opacity:.5;stroke-width:1.1;fill:none\"/><path d=\"M66.0,5.0 L69.0,11.0 L63.0,11.0 Z\" style=\"fill:currentColor;fill-opacity:.6\"/><circle cx=\"66\" cy=\"80\" r=\"46\" style=\"fill:none;stroke:currentColor;stroke-width:1.6\"/><text x=\"144.0\" y=\"93.0\" text-anchor=\"middle\" style=\"font-size:11px;fill:currentColor\">x</text><text x=\"75.0\" y=\"13.0\" text-anchor=\"middle\" style=\"font-size:11px;fill:currentColor\">y</text><text x=\"70.0\" y=\"91.0\" text-anchor=\"start\" style=\"font-size:11px;fill:currentColor\">O</text><text x=\"117.0\" y=\"93.0\" text-anchor=\"middle\" style=\"font-size:11px;fill:currentColor\">1</text><line x1=\"66\" y1=\"80\" x2=\"20\" y2=\"80\" style=\"stroke:currentColor;stroke-width:1.6;fill:none\"/><path d=\"M81.0,80.0 L81.1,78.9 L81.1,77.9 L81.0,76.8 L80.9,75.7 L80.6,74.6 L80.3,73.6 L80.0,72.5 L79.5,71.5 L79.0,70.5 L78.4,69.5 L77.7,68.6 L76.9,67.7 L76.1,66.9 L75.2,66.1 L74.3,65.4 L73.3,64.7 L72.3,64.1 L71.2,63.6 L70.0,63.2 L68.9,62.8 L67.7,62.6 L66.4,62.4 L65.2,62.3 L63.9,62.2 L62.7,62.3 L61.4,62.5 L60.2,62.7 L58.9,63.1 L57.7,63.5 L56.5,64.0 L55.3,64.6 L54.2,65.3 L53.1,66.1 L52.1,66.9 L51.1,67.9 L50.2,68.9 L49.3,70.0 L48.6,71.1 L47.9,72.3 L47.3,73.6 L46.7,74.9 L46.3,76.2 L46.0,77.6 L45.7,79.0 L45.6,80.4 L45.6,81.9 L45.6,83.3 L45.8,84.8 L46.0,86.2 L46.4,87.6 L46.9,89.0 L47.5,90.4 L48.1,91.8 L48.9,93.1 L49.8,94.3 L50.7,95.5 L51.8,96.6 L52.9,97.7 L54.1,98.6 L55.4,99.5 L56.8,100.3 L58.2,101.0 L59.6,101.7 L61.1,102.2 L62.7,102.6 L64.3,102.9 L65.9,103.1 L67.5,103.1 L69.2,103.1 L70.8,102.9 L72.4,102.6 L74.0,102.3 L75.6,101.7 L77.2,101.1 L78.7,100.4 L80.2,99.5 L81.6,98.6 L82.9,97.5 L84.2,96.4 L85.4,95.1 L86.5,93.8 L87.6,92.4 L88.5,90.9 L89.3,89.3 L90.0,87.7 L90.6,86.0 L91.1,84.3 L91.5,82.6 L91.7,80.8 L91.8,79.0 L91.8,77.1 L91.6,75.3 L91.4,73.5 L91.0,71.7 L90.4,69.9 L89.8,68.2 L89.0,66.5 L88.1,64.8 L87.0,63.2 L85.9,61.7 L84.7,60.3 L83.3,58.9 L81.8,57.7 L80.3,56.5 L78.7,55.4 L77.0,54.5 L75.2,53.7 L73.4,53.0 L71.5,52.4 L69.5,52.0 L67.6,51.7 L65.6,51.5 L63.6,51.5 L61.5,51.6 L59.5,51.9 L57.5,52.3 L55.6,52.9 L53.6,53.5 L51.8,54.4 L49.9,55.3 L48.2,56.4 L46.5,57.6 L44.9,59.0 L43.4,60.4 L41.9,62.0 L40.6,63.7 L39.5,65.4 L38.4,67.3 L37.4,69.2 L36.6,71.2 L36.0,73.3 L35.5,75.4 L35.1,77.5\" style=\"stroke:currentColor;stroke-width:1.1;fill:none\"/><path d=\"M35.1,77.5 L33.2,71.1 L39.1,72.1 Z\" style=\"fill:currentColor\"/><text x=\"88.0\" y=\"50.0\" text-anchor=\"middle\" style=\"font-size:12px;font-style:italic;fill:currentColor\">α</text><text x=\"16.0\" y=\"95.0\" text-anchor=\"end\" style=\"font-size:12px;font-weight:700;fill:currentColor\">B</text><circle cx=\"20\" cy=\"80\" r=\"3.3\" style=\"fill:currentColor\"/></svg><b>d.</b> </span>",
+  "consegna_sympy": "[Rational(2,3), sqrt(5)/3, -Rational(1,2), sqrt(3)/2, cos(3*pi/2), sin(3*pi/2), cos(3*pi), sin(3*pi)]",
+  "risultato_tex": "\\cos\\alpha=-1\\qquad\\sin\\alpha=0",
+  "risultato_sympy": "[Rational(2,3), sqrt(5)/3, -Rational(1,2), sqrt(3)/2, 0, -1, -1, 0]",
+  "righe_sympy": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ]
+}
+</script>
+
+<!-- Output SVG, non CHTML: glifi vettoriali, allineamento identico su ogni
+     dispositivo, nessun rischio di webfont non caricato dentro un iframe.
+     Ogni formula e' scritta con \displaystyle: senza, MathJax rende le frazioni
+     in textstyle e le parentesi non abbracciano la frazione. -->
+<script>
+MathJax = {
+  loader: { load: ['[tex]/cancel'] },
+  tex: {
+    packages: { '[+]': ['cancel'] },
+    inlineMath: [['$','$']],
+    displayMath: [['$$','$$']],
+    processEscapes: true
+  },
+  svg: { fontCache: 'global', scale: 1.06, exFactor: .5 },
+  options: { enableMenu: false }
+};
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-svg.js"></script>
+
+<style>
+:root{
+  --ink:#0f172a; --body:#334155; --muted:#475569; --faint:#94a3b8;
+  --line:#e2e8f0; --paper:#f8fafc;
+  --blu:#12519e; --blubg:#e8f1fb; --blubd:#a8c9ea;
+  --amb:#b45309; --ambbg:#fffbeb; --ambbd:#fcd34d; --sol:#fef08a;
+  --teo:#14532d; --teobg:#f0fdf4; --teobd:#86efac;
+  --err:#9f1239; --errbg:#fff1f2; --errbd:#fda4af;
+  --ko:#b91c1c;  --kobg:#fee2e2;  --kobd:#ef4444;
+  --ok:#15803d;  --okbg:#dcfce7;  --okbd:#22c55e;
+  --sxbg:#ffffff;
+}
+*{box-sizing:border-box}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  background:var(--paper);color:var(--body);line-height:1.5;
+  margin:0;padding:20px 14px 60px;max-width:900px;margin-inline:auto;font-size:16px;
+}
+mjx-container{outline:none}
+mjx-container[display]{margin:0!important}
+
+/* formule scorrevoli, con sfumatura ai bordi quando escono dallo schermo */
+.sx{
+  overflow-x:auto;overflow-y:hidden;scrollbar-width:thin;-webkit-overflow-scrolling:touch;
+  background-image:
+    linear-gradient(to right,var(--sxbg),var(--sxbg)),
+    linear-gradient(to left,var(--sxbg),var(--sxbg)),
+    linear-gradient(to right,rgba(15,23,42,.16),rgba(15,23,42,0)),
+    linear-gradient(to left,rgba(15,23,42,.16),rgba(15,23,42,0));
+  background-position:left center,right center,left center,right center;
+  background-repeat:no-repeat;
+  background-size:22px 100%,22px 100%,13px 100%,13px 100%;
+  background-attachment:local,local,scroll,scroll;
+}
+
+/* ---------------- CONSEGNA ---------------- */
+.consegna{background:var(--blubg);border:2px solid var(--blubd);border-radius:12px;
+  padding:12px 16px;color:#0d47a1;--sxbg:var(--blubg)}
+.consegna .t{font-weight:700;font-size:.9rem}
+.consegna .m{text-align:center;margin-top:4px;padding:4px 0}
+
+/* ---------------- CATENA ---------------- */
+.catena{background:#fff;border:1px solid var(--line);border-radius:14px;
+  padding:14px 16px 10px;margin-top:16px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.catena>.k{font-weight:800;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.catena>.sub{font-size:.85rem;color:var(--faint);margin:2px 0 8px}
+
+.riga{border-top:1px dotted var(--line)}
+.riga:first-of-type{border-top:none}
+.riga>summary,.riga>.fissa{
+  display:grid;grid-template-columns:26px 1fr auto;gap:10px;align-items:center;
+  padding:11px 0;
+}
+.riga>summary{list-style:none;cursor:pointer}
+.riga>summary::-webkit-details-marker{display:none}
+.riga>summary:hover .f,.riga>summary:focus-visible .f{background-color:#f8fafc}
+
+.n{font-size:.72rem;font-weight:800;color:var(--faint);text-align:center;
+  background:#f1f5f9;border-radius:6px;padding:4px 0;align-self:start;margin-top:4px}
+.cont{min-width:0}
+.nota{font-size:.8rem;color:var(--muted);margin-bottom:1px}
+.f{padding:3px 0;border-radius:6px;color:var(--blu)}
+.riga.res>summary .f,.riga.res>.fissa .f{color:var(--ink)}
+/* solo la formula della riga, mai quelle dentro il pannello della tendina */
+.riga.res>summary .f mjx-container,
+.riga.res>.fissa .f mjx-container{background:var(--sol);padding:4px 12px;border-radius:6px}
+
+/* linguetta della tendina */
+.tab{display:inline-flex;align-items:center;gap:5px;align-self:start;margin-top:5px;
+  font-size:.72rem;font-weight:700;letter-spacing:.02em;color:var(--muted);
+  background:#fff;border:1.5px solid var(--line);border-radius:999px;padding:4px 10px;
+  white-space:nowrap}
+.tab .chev{display:inline-block;font-size:.6rem;transition:transform .18s}
+.riga[open]>summary .tab{background:var(--ink);border-color:var(--ink);color:#fff}
+.riga[open]>summary .tab .chev{transform:rotate(180deg)}
+@media(prefers-reduced-motion:reduce){.tab .chev{transition:none}}
+
+/* pannello aperto */
+.pannello{padding:2px 0 16px 36px;display:grid;gap:10px}
+.mossa{font-size:.9rem;margin:0}
+
+.teoria{background:var(--teobg);border:1.5px solid var(--teobd);border-radius:10px;
+  padding:10px 14px;color:var(--teo);--sxbg:var(--teobg)}
+.teoria .nome{font-weight:800;font-size:.88rem;margin-bottom:2px}
+.teoria .frase{font-size:.87rem;line-height:1.45}
+.teoria .f{text-align:center;margin:8px 0 3px;background:rgba(255,255,255,.75);
+  border-radius:6px;padding:6px 8px;color:var(--teo);--sxbg:#f4fdf6}
+.teoria .ex{font-size:.78rem;opacity:.9;text-align:center}
+
+.errore{background:var(--errbg);border:1.5px solid var(--errbd);border-radius:10px;padding:11px 14px}
+.errore .k{font-weight:800;font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;
+  color:var(--err);margin-bottom:5px}
+.errore .nome{font-weight:700;font-size:.9rem;color:var(--err);margin-bottom:8px}
+.compare{display:grid;grid-template-columns:1fr 34px 1fr;align-items:stretch}
+.card{border:2px solid;border-radius:10px;padding:8px 12px;text-align:center}
+.card .tag{font-size:.7rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;margin-bottom:2px}
+.card .f{padding:2px 0;color:inherit}
+.card.ko{background:var(--kobg);border-color:var(--kobd);color:var(--ko);--sxbg:var(--kobg)}
+.card.ok{background:var(--okbg);border-color:var(--okbd);color:var(--ok);--sxbg:var(--okbg)}
+.arrow{display:flex;align-items:center;justify-content:center;font-size:1.2rem;color:var(--faint);font-weight:800}
+.why-txt{font-size:.82rem;color:#7f1d1d;margin-top:6px;text-align:center}
+
+/* fermata di controllo */
+.check{display:flex;flex-wrap:wrap;align-items:center;gap:4px 10px;
+  background:var(--ambbg);border:1.5px dashed var(--ambbd);border-radius:10px;
+  padding:8px 14px;margin:8px 0;font-size:.85rem;color:var(--amb);--sxbg:var(--ambbg)}
+.check b{font-weight:800}
+.check .v{color:var(--ink)}
+
+/* ---------------- MOBILE ---------------- */
+@media(max-width:720px){
+  body{padding:16px 10px 50px;font-size:16px}
+  .catena{padding:12px 12px 8px}
+  .riga>summary,.riga>.fissa{grid-template-columns:24px 1fr;gap:8px}
+  .cont{grid-column:2}
+  .tab{grid-column:2;justify-self:start;margin-top:6px}
+  .pannello{padding-left:0}
+  .compare{grid-template-columns:1fr;gap:6px}
+  .arrow{transform:rotate(90deg);height:22px}
+}
+</style>
+</head>
+<body>
+
+<!-- ===================== CONSEGNA ===================== -->
+<div class="consegna">
+  <div class="t">📌 Completa</div>
+  <div class="m sx">Completa con i valori del seno e del coseno di ogni angolo $\alpha$.<br><span style="display:inline-block;vertical-align:top;margin:6px 10px;text-align:center"><svg viewBox="0 0 150 156" role="img" aria-label="Circonferenza goniometrica, figura a" style="display:block;width:9.5em;height:auto;margin:0 auto"><line x1="4" y1="80" x2="143" y2="80" style="stroke:currentColor;stroke-opacity:.5;stroke-width:1.1;fill:none"/><path d="M147.0,80.0 L141.0,83.0 L141.0,77.0 Z" style="fill:currentColor;fill-opacity:.6"/><line x1="66" y1="153" x2="66" y2="10" style="stroke:currentColor;stroke-opacity:.5;stroke-width:1.1;fill:none"/><path d="M66.0,5.0 L69.0,11.0 L63.0,11.0 Z" style="fill:currentColor;fill-opacity:.6"/><circle cx="66" cy="80" r="46" style="fill:none;stroke:currentColor;stroke-width:1.6"/><text x="144.0" y="93.0" text-anchor="middle" style="font-size:11px;fill:currentColor">x</text><text x="75.0" y="13.0" text-anchor="middle" style="font-size:11px;fill:currentColor">y</text><text x="58.0" y="91.0" text-anchor="middle" style="font-size:11px;fill:currentColor">O</text><text x="117.0" y="93.0" text-anchor="middle" style="font-size:11px;fill:currentColor">1</text><line x1="66" y1="80" x2="96.7" y2="45.7" style="stroke:currentColor;stroke-width:1.6;fill:none"/><line x1="96.7" y1="45.7" x2="108.3" y2="32.7" style="stroke:currentColor;stroke-width:1.1;stroke-dasharray:2 3;fill:none"/><path d="M81.0,79.1 L80.9,78.1 L80.7,77.0 L80.5,76.0 L80.1,75.0 L79.8,74.0 L79.3,73.1 L78.8,72.2 L78.2,71.3 L77.6,70.4 L76.9,69.7" style="stroke:currentColor;stroke-width:1.1;fill:none"/><path d="M76.9,69.7 L83.1,72.1 L78.6,76.1 Z" style="fill:currentColor"/><text x="88.8" y="73.8" text-anchor="middle" style="font-size:12px;font-style:italic;fill:currentColor">α</text><text x="105.7" y="41.7" text-anchor="start" style="font-size:12px;font-weight:700;fill:currentColor">B</text><circle cx="96.7" cy="45.7" r="3.3" style="fill:currentColor"/></svg><b>a.</b> $B\left(\frac{2}{3};\frac{\sqrt{5}}{3}\right)$</span><span style="display:inline-block;vertical-align:top;margin:6px 10px;text-align:center"><svg viewBox="0 0 150 156" role="img" aria-label="Circonferenza goniometrica, figura b" style="display:block;width:9.5em;height:auto;margin:0 auto"><line x1="4" y1="80" x2="143" y2="80" style="stroke:currentColor;stroke-opacity:.5;stroke-width:1.1;fill:none"/><path d="M147.0,80.0 L141.0,83.0 L141.0,77.0 Z" style="fill:currentColor;fill-opacity:.6"/><line x1="66" y1="153" x2="66" y2="10" style="stroke:currentColor;stroke-opacity:.5;stroke-width:1.1;fill:none"/><path d="M66.0,5.0 L69.0,11.0 L63.0,11.0 Z" style="fill:currentColor;fill-opacity:.6"/><circle cx="66" cy="80" r="46" style="fill:none;stroke:currentColor;stroke-width:1.6"/><text x="144.0" y="93.0" text-anchor="middle" style="font-size:11px;fill:currentColor">x</text><text x="75.0" y="13.0" text-anchor="middle" style="font-size:11px;fill:currentColor">y</text><text x="58.0" y="91.0" text-anchor="middle" style="font-size:11px;fill:currentColor">O</text><text x="117.0" y="93.0" text-anchor="middle" style="font-size:11px;fill:currentColor">1</text><line x1="66" y1="80" x2="43.0" y2="40.2" style="stroke:currentColor;stroke-width:1.6;fill:none"/><line x1="43.0" y1="40.2" x2="34.3" y2="25.0" style="stroke:currentColor;stroke-width:1.1;stroke-dasharray:2 3;fill:none"/><path d="M81.0,79.1 L80.9,78.0 L80.7,76.9 L80.4,75.9 L80.1,74.9 L79.7,73.9 L79.2,72.9 L78.7,71.9 L78.0,71.1 L77.4,70.2 L76.6,69.4 L75.8,68.7 L75.0,68.0 L74.1,67.4 L73.2,66.8 L72.2,66.3 L71.2,65.9 L70.1,65.6 L69.1,65.3 L68.0,65.1 L66.9,65.0 L65.9,65.0 L64.8,65.1 L63.7,65.2 L62.6,65.4 L61.6,65.7 L60.6,66.0 L59.6,66.5" style="stroke:currentColor;stroke-width:1.1;fill:none"/><path d="M59.6,66.5 L63.9,61.3 L66.3,66.8 Z" style="fill:currentColor"/><text x="78.5" y="62.3" text-anchor="middle" style="font-size:12px;font-style:italic;fill:currentColor">α</text><text x="34.0" y="36.2" text-anchor="end" style="font-size:12px;font-weight:700;fill:currentColor">B</text><circle cx="43.0" cy="40.2" r="3.3" style="fill:currentColor"/></svg><b>b.</b> $B\left(-\frac{1}{2};\frac{\sqrt{3}}{2}\right)$</span><span style="display:inline-block;vertical-align:top;margin:6px 10px;text-align:center"><svg viewBox="0 0 150 156" role="img" aria-label="Circonferenza goniometrica, figura c" style="display:block;width:9.5em;height:auto;margin:0 auto"><line x1="4" y1="80" x2="143" y2="80" style="stroke:currentColor;stroke-opacity:.5;stroke-width:1.1;fill:none"/><path d="M147.0,80.0 L141.0,83.0 L141.0,77.0 Z" style="fill:currentColor;fill-opacity:.6"/><line x1="66" y1="153" x2="66" y2="10" style="stroke:currentColor;stroke-opacity:.5;stroke-width:1.1;fill:none"/><path d="M66.0,5.0 L69.0,11.0 L63.0,11.0 Z" style="fill:currentColor;fill-opacity:.6"/><circle cx="66" cy="80" r="46" style="fill:none;stroke:currentColor;stroke-width:1.6"/><text x="144.0" y="93.0" text-anchor="middle" style="font-size:11px;fill:currentColor">x</text><text x="75.0" y="13.0" text-anchor="middle" style="font-size:11px;fill:currentColor">y</text><text x="70.0" y="91.0" text-anchor="start" style="font-size:11px;fill:currentColor">O</text><text x="117.0" y="93.0" text-anchor="middle" style="font-size:11px;fill:currentColor">1</text><line x1="66" y1="80" x2="66" y2="126" style="stroke:currentColor;stroke-width:1.6;fill:none"/><path d="M86.0,78.8 L85.8,77.4 L85.6,76.0 L85.3,74.7 L84.9,73.3 L84.3,72.0 L83.7,70.8 L83.0,69.5 L82.3,68.4 L81.4,67.3 L80.5,66.2 L79.5,65.2 L78.4,64.3 L77.3,63.5 L76.1,62.7 L74.9,62.1 L73.6,61.5 L72.3,61.0 L71.0,60.6 L69.6,60.3 L68.2,60.1 L66.8,60.0 L65.4,60.0 L64.0,60.1 L62.6,60.3 L61.2,60.6 L59.9,61.0 L58.6,61.4 L57.3,62.0 L56.1,62.6 L54.9,63.4 L53.7,64.2 L52.7,65.1 L51.6,66.1 L50.7,67.1 L49.8,68.2 L49.1,69.4 L48.4,70.6 L47.7,71.8 L47.2,73.1 L46.8,74.5 L46.4,75.8 L46.2,77.2 L46.0,78.6 L46.0,80.0 L46.0,81.4 L46.2,82.8 L46.4,84.2 L46.8,85.5 L47.2,86.9 L47.7,88.2 L48.4,89.4 L49.1,90.6 L49.8,91.8 L50.7,92.9 L51.6,93.9 L52.7,94.9 L53.7,95.8 L54.9,96.6 L56.1,97.4 L57.3,98.0 L58.6,98.6 L59.9,99.0 L61.2,99.4 L62.6,99.7 L64.0,99.9" style="stroke:currentColor;stroke-width:1.1;fill:none"/><path d="M64.0,99.9 L57.7,102.1 L58.5,96.1 Z" style="fill:currentColor"/><text x="44.0" y="62.0" text-anchor="middle" style="font-size:12px;font-style:italic;fill:currentColor">α</text><text x="58.0" y="140.0" text-anchor="end" style="font-size:12px;font-weight:700;fill:currentColor">B</text><circle cx="66" cy="126" r="3.3" style="fill:currentColor"/></svg><b>c.</b> </span><span style="display:inline-block;vertical-align:top;margin:6px 10px;text-align:center"><svg viewBox="0 0 150 156" role="img" aria-label="Circonferenza goniometrica, figura d" style="display:block;width:9.5em;height:auto;margin:0 auto"><line x1="4" y1="80" x2="143" y2="80" style="stroke:currentColor;stroke-opacity:.5;stroke-width:1.1;fill:none"/><path d="M147.0,80.0 L141.0,83.0 L141.0,77.0 Z" style="fill:currentColor;fill-opacity:.6"/><line x1="66" y1="153" x2="66" y2="10" style="stroke:currentColor;stroke-opacity:.5;stroke-width:1.1;fill:none"/><path d="M66.0,5.0 L69.0,11.0 L63.0,11.0 Z" style="fill:currentColor;fill-opacity:.6"/><circle cx="66" cy="80" r="46" style="fill:none;stroke:currentColor;stroke-width:1.6"/><text x="144.0" y="93.0" text-anchor="middle" style="font-size:11px;fill:currentColor">x</text><text x="75.0" y="13.0" text-anchor="middle" style="font-size:11px;fill:currentColor">y</text><text x="70.0" y="91.0" text-anchor="start" style="font-size:11px;fill:currentColor">O</text><text x="117.0" y="93.0" text-anchor="middle" style="font-size:11px;fill:currentColor">1</text><line x1="66" y1="80" x2="20" y2="80" style="stroke:currentColor;stroke-width:1.6;fill:none"/><path d="M81.0,80.0 L81.1,78.9 L81.1,77.9 L81.0,76.8 L80.9,75.7 L80.6,74.6 L80.3,73.6 L80.0,72.5 L79.5,71.5 L79.0,70.5 L78.4,69.5 L77.7,68.6 L76.9,67.7 L76.1,66.9 L75.2,66.1 L74.3,65.4 L73.3,64.7 L72.3,64.1 L71.2,63.6 L70.0,63.2 L68.9,62.8 L67.7,62.6 L66.4,62.4 L65.2,62.3 L63.9,62.2 L62.7,62.3 L61.4,62.5 L60.2,62.7 L58.9,63.1 L57.7,63.5 L56.5,64.0 L55.3,64.6 L54.2,65.3 L53.1,66.1 L52.1,66.9 L51.1,67.9 L50.2,68.9 L49.3,70.0 L48.6,71.1 L47.9,72.3 L47.3,73.6 L46.7,74.9 L46.3,76.2 L46.0,77.6 L45.7,79.0 L45.6,80.4 L45.6,81.9 L45.6,83.3 L45.8,84.8 L46.0,86.2 L46.4,87.6 L46.9,89.0 L47.5,90.4 L48.1,91.8 L48.9,93.1 L49.8,94.3 L50.7,95.5 L51.8,96.6 L52.9,97.7 L54.1,98.6 L55.4,99.5 L56.8,100.3 L58.2,101.0 L59.6,101.7 L61.1,102.2 L62.7,102.6 L64.3,102.9 L65.9,103.1 L67.5,103.1 L69.2,103.1 L70.8,102.9 L72.4,102.6 L74.0,102.3 L75.6,101.7 L77.2,101.1 L78.7,100.4 L80.2,99.5 L81.6,98.6 L82.9,97.5 L84.2,96.4 L85.4,95.1 L86.5,93.8 L87.6,92.4 L88.5,90.9 L89.3,89.3 L90.0,87.7 L90.6,86.0 L91.1,84.3 L91.5,82.6 L91.7,80.8 L91.8,79.0 L91.8,77.1 L91.6,75.3 L91.4,73.5 L91.0,71.7 L90.4,69.9 L89.8,68.2 L89.0,66.5 L88.1,64.8 L87.0,63.2 L85.9,61.7 L84.7,60.3 L83.3,58.9 L81.8,57.7 L80.3,56.5 L78.7,55.4 L77.0,54.5 L75.2,53.7 L73.4,53.0 L71.5,52.4 L69.5,52.0 L67.6,51.7 L65.6,51.5 L63.6,51.5 L61.5,51.6 L59.5,51.9 L57.5,52.3 L55.6,52.9 L53.6,53.5 L51.8,54.4 L49.9,55.3 L48.2,56.4 L46.5,57.6 L44.9,59.0 L43.4,60.4 L41.9,62.0 L40.6,63.7 L39.5,65.4 L38.4,67.3 L37.4,69.2 L36.6,71.2 L36.0,73.3 L35.5,75.4 L35.1,77.5" style="stroke:currentColor;stroke-width:1.1;fill:none"/><path d="M35.1,77.5 L33.2,71.1 L39.1,72.1 Z" style="fill:currentColor"/><text x="88.0" y="50.0" text-anchor="middle" style="font-size:12px;font-style:italic;fill:currentColor">α</text><text x="16.0" y="95.0" text-anchor="end" style="font-size:12px;font-weight:700;fill:currentColor">B</text><circle cx="20" cy="80" r="3.3" style="fill:currentColor"/></svg><b>d.</b> </span></div>
+</div>
+
+<!-- ===================== CATENA ====================== -->
+<div class="catena">
+  <div class="k">Confronta con il tuo foglio</div>
+  <div class="sub">Scorri le righe fino alla prima che non coincide con la tua. Lì apri <b>Regola</b>.</div>
+
+  <details class="riga">
+    <summary>
+      <div class="n">1</div>
+      <div class="cont">
+        <div class="nota">a. Le coordinate di $B$ sono scritte nella figura: il coseno è la prima, il seno la seconda.</div>
+        <div class="f sx">$\displaystyle \text{a)}\quad\cos\alpha=\frac{2}{3}\qquad\sin\alpha=\frac{\sqrt{5}}{3}$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">$B\left(\frac{2}{3};\frac{\sqrt{5}}{3}\right)$: la $x$ di $B$ è il coseno, la $y$ è il seno. Non c'è niente da calcolare, solo da leggere nell'ordine giusto.<svg viewBox="0 0 250 210" role="img" aria-label="Il punto B: il coseno e' la sua x, il seno la sua y" style="display:block;width:100%;max-width:280px;height:auto;margin:10px auto 2px"><line x1="10" y1="112" x2="238" y2="112" style="stroke:var(--faint);stroke-width:1.1"/><path d="M242.0,112.0 L236.0,115.0 L236.0,109.0 Z" style="fill:var(--faint)"/><line x1="96" y1="206" x2="96" y2="10" style="stroke:var(--faint);stroke-width:1.1"/><path d="M96.0,5.0 L99.0,11.0 L93.0,11.0 Z" style="fill:var(--faint)"/><text x="240.0" y="127.0" text-anchor="middle" style="font-size:12px;fill:var(--muted)">x</text><text x="105.0" y="14.0" text-anchor="middle" style="font-size:12px;fill:var(--muted)">y</text><text x="87.0" y="127.0" text-anchor="middle" style="font-size:12px;fill:var(--muted)">O</text><circle cx="96" cy="112" r="76" style="fill:none;stroke:var(--ink);stroke-width:1.5"/><line x1="96" y1="112" x2="142.8" y2="52.1" style="stroke:var(--ink);stroke-width:1.8"/><line x1="142.8" y1="52.1" x2="142.8" y2="112" style="stroke:var(--faint);stroke-dasharray:3 3"/><line x1="142.8" y1="52.1" x2="96" y2="52.1" style="stroke:var(--faint);stroke-dasharray:3 3"/><line x1="96" y1="112" x2="142.8" y2="112" style="stroke:var(--blu);stroke-width:4"/><line x1="96" y1="112" x2="96" y2="52.1" style="stroke:var(--amb);stroke-width:4"/><path d="M114.0,111.5 L113.9,110.1 L113.7,108.8 L113.4,107.4 L113.0,106.2 L112.5,104.9 L112.0,103.7 L111.3,102.5 L110.5,101.4 L109.7,100.3 L108.8,99.3 L107.8,98.4" style="stroke:var(--muted);stroke-width:1.2;fill:none"/><path d="M107.8,98.4 L114.2,100.3 L110.1,104.7 Z" style="fill:var(--muted)"/><text x="122.0" y="104.0" text-anchor="middle" style="font-size:13px;font-style:italic;fill:var(--muted)">α</text><circle cx="142.8" cy="52.1" r="4.5" style="fill:var(--ink)"/><text x="150.8" y="44.1" text-anchor="start" style="font-size:14px;font-weight:800;fill:var(--ink)">B</text><text x="119.4" y="130.0" text-anchor="middle" style="font-size:13px;font-weight:700;fill:var(--blu)">cos α</text><text x="90.0" y="86.1" text-anchor="end" style="font-size:13px;font-weight:700;fill:var(--amb)">sin α</text></svg></p>
+      <div class="teoria">
+        <div class="nome">Seno e coseno sulla circonferenza goniometrica</div>
+        <div class="frase">La circonferenza goniometrica ha il centro nell'origine $O$ e raggio $1$. L'angolo $\alpha$ parte dal semiasse positivo delle $x$ e gira in senso antiorario (in senso orario, se è negativo) fino al lato termine, che incontra la circonferenza in un punto $B$: il <strong>coseno</strong> di $\alpha$ è l'ascissa di $B$, il <strong>seno</strong> è la sua ordinata. Prima il coseno, poi il seno, come $x$ e $y$.</div>
+        <div class="f sx">$\displaystyle B\left(\cos\alpha;\ \sin\alpha\right)$</div>
+        <div class="ex">esempio: $B\left(\frac{3}{5};\frac{4}{5}\right)\ \to\ \cos\alpha=\frac{3}{5},\ \sin\alpha=\frac{4}{5}$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ Errore da non fare</div>
+        <div class="nome">Scambiare il seno con il coseno</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle B\left(p;\ q\right)\ \to\ \cos\alpha=q$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle B\left(p;\ q\right)\ \to\ \cos\alpha=p$</div></div>
+        </div>
+        <div class="why-txt">Così il coseno prende il valore del seno, e viceversa.</div>
+      </div>
+    </div>
+  </details>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">2</div>
+      <div class="cont">
+        <div class="nota">b. Stessa lettura. $B$ è nel II quadrante: il coseno viene negativo, il seno positivo.</div>
+        <div class="f sx">$\displaystyle \text{b)}\quad\cos\alpha=-\frac{1}{2}\qquad\sin\alpha=\frac{\sqrt{3}}{2}$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <details class="riga">
+    <summary>
+      <div class="n">3</div>
+      <div class="cont">
+        <div class="nota">c. Qui le coordinate non sono scritte: $B$ è il punto più in basso, sull'asse $y$.</div>
+        <div class="f sx">$\displaystyle \text{c)}\quad B\left(0;-1\right)$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">Il lato termine è il semiasse negativo delle $y$, quindi $B$ sta in basso: la $x$ è $0$, la $y$ è $-1$, perché il raggio è $1$ e $B$ è sotto l'asse $x$.</p>
+      <div class="teoria">
+        <div class="nome">Gli angoli che finiscono su un asse</div>
+        <div class="frase">Il punto $B$ è dove il lato termine incontra la circonferenza goniometrica. Partendo dal semiasse positivo delle $x$ e girando in senso antiorario, ogni quarto di giro porta il lato termine su un asse: in alto, poi a sinistra, poi in basso. Lì $B$ ha una coordinata uguale a $0$ e l'altra uguale a $1$ o $-1$, perché il raggio è $1$.</div>
+        <div class="f sx">$\displaystyle \text{destra}\ (1;0)\qquad\text{alto}\ (0;1)\qquad\text{sinistra}\ (-1;0)\qquad\text{basso}\ (0;-1)$</div>
+        <div class="ex">esempio: $\alpha=0^{\circ}\ \to\ \text{destra}\ \to\ B\left(1;0\right)$</div>
+      </div>
+    </div>
+  </details>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">4</div>
+      <div class="cont">
+        <div class="nota">Coseno: la prima coordinata. Seno: la seconda.</div>
+        <div class="f sx">$\displaystyle \cos\alpha=0\qquad\sin\alpha=-1$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">5</div>
+      <div class="cont">
+        <div class="nota">d. La spirale fa mezzo giro e poi ancora un giro intero.</div>
+        <div class="f sx">$\displaystyle \text{d)}\quad\alpha=180^{\circ}+360^{\circ}$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <details class="riga">
+    <summary>
+      <div class="n">6</div>
+      <div class="cont">
+        <div class="nota">Il giro intero in più non conta.</div>
+        <div class="f sx">$\displaystyle \cos\alpha=\cos 180^{\circ}\qquad\sin\alpha=\sin 180^{\circ}$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">Aggiungere un giro intero riporta il lato termine dove era: seno e coseno di $\alpha$ sono quelli di $180^{\circ}$. Si arriva allo stesso punto anche leggendo $B$ direttamente dalla figura, come in c.</p>
+      <div class="teoria">
+        <div class="nome">Angoli che differiscono di giri interi</div>
+        <div class="frase">Un giro intero, cioè $360^{\circ}$ o $2\pi$, riporta il lato termine esattamente dove era: per questo seno e coseno non cambiano se all'angolo si aggiungono o si tolgono giri interi. Di solito si tolgono giri per riportare un angolo grande fra $0^{\circ}$ e $360^{\circ}$; a volte conviene toglierne uno per arrivare a un angolo negativo più comodo. Qui $\gamma$ è un angolo qualsiasi e $k$ il numero dei giri, un intero.</div>
+        <div class="f sx">$\displaystyle \cos\left(\gamma+k\ \text{giri}\right)=\cos\gamma\qquad\sin\left(\gamma+k\ \text{giri}\right)=\sin\gamma$</div>
+        <div class="ex">esempio: $\cos 400^{\circ}=\cos 40^{\circ}$</div>
+      </div>
+    </div>
+  </details>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">7</div>
+      <div class="cont">
+        <div class="nota">Mezzo giro: $B$ è sul semiasse negativo delle $x$, come si vede nella figura.</div>
+        <div class="f sx">$\displaystyle 180^{\circ}\ \to\ B\left(-1;0\right)$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="riga res">
+    <div class="fissa">
+      <div class="n">8</div>
+      <div class="cont">
+        <div class="nota">Coseno: la prima coordinata. Seno: la seconda.</div>
+        <div class="f sx">$\displaystyle \cos\alpha=-1\qquad\sin\alpha=0$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

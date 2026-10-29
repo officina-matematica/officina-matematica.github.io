@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GON_3 — Funzioni seno e coseno</title>
+
+<script type="application/json" id="meta">
+{
+  "id": "gon_3",
+  "titolo": "Funzioni seno e coseno",
+  "tipo": "aperto",
+  "consegna_label": "Fai un esempio",
+  "consegna_tex": "Fai un esempio di un angolo che abbia:<br><b>a.</b> seno positivo e coseno negativo;&emsp;<b>b.</b> seno e coseno entrambi positivi.",
+  "consegna_sympy": "[sign(sin(120*pi/180)), sign(cos(120*pi/180)), sign(sin(60*pi/180)), sign(cos(60*pi/180))]",
+  "risultato_tex": "\\alpha=60^{\\circ}\\ \\text{nel I quadrante}",
+  "risultato_sympy": "[1, -1, 1, 1]",
+  "righe_sympy": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ]
+}
+</script>
+
+<!-- Output SVG, non CHTML: glifi vettoriali, allineamento identico su ogni
+     dispositivo, nessun rischio di webfont non caricato dentro un iframe.
+     Ogni formula e' scritta con \displaystyle: senza, MathJax rende le frazioni
+     in textstyle e le parentesi non abbracciano la frazione. -->
+<script>
+MathJax = {
+  loader: { load: ['[tex]/cancel'] },
+  tex: {
+    packages: { '[+]': ['cancel'] },
+    inlineMath: [['$','$']],
+    displayMath: [['$$','$$']],
+    processEscapes: true
+  },
+  svg: { fontCache: 'global', scale: 1.06, exFactor: .5 },
+  options: { enableMenu: false }
+};
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-svg.js"></script>
+
+<style>
+:root{
+  --ink:#0f172a; --body:#334155; --muted:#475569; --faint:#94a3b8;
+  --line:#e2e8f0; --paper:#f8fafc;
+  --blu:#12519e; --blubg:#e8f1fb; --blubd:#a8c9ea;
+  --amb:#b45309; --ambbg:#fffbeb; --ambbd:#fcd34d; --sol:#fef08a;
+  --teo:#14532d; --teobg:#f0fdf4; --teobd:#86efac;
+  --err:#9f1239; --errbg:#fff1f2; --errbd:#fda4af;
+  --ko:#b91c1c;  --kobg:#fee2e2;  --kobd:#ef4444;
+  --ok:#15803d;  --okbg:#dcfce7;  --okbd:#22c55e;
+  --sxbg:#ffffff;
+}
+*{box-sizing:border-box}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  background:var(--paper);color:var(--body);line-height:1.5;
+  margin:0;padding:20px 14px 60px;max-width:900px;margin-inline:auto;font-size:16px;
+}
+mjx-container{outline:none}
+mjx-container[display]{margin:0!important}
+
+/* formule scorrevoli, con sfumatura ai bordi quando escono dallo schermo */
+.sx{
+  overflow-x:auto;overflow-y:hidden;scrollbar-width:thin;-webkit-overflow-scrolling:touch;
+  background-image:
+    linear-gradient(to right,var(--sxbg),var(--sxbg)),
+    linear-gradient(to left,var(--sxbg),var(--sxbg)),
+    linear-gradient(to right,rgba(15,23,42,.16),rgba(15,23,42,0)),
+    linear-gradient(to left,rgba(15,23,42,.16),rgba(15,23,42,0));
+  background-position:left center,right center,left center,right center;
+  background-repeat:no-repeat;
+  background-size:22px 100%,22px 100%,13px 100%,13px 100%;
+  background-attachment:local,local,scroll,scroll;
+}
+
+/* ---------------- CONSEGNA ---------------- */
+.consegna{background:var(--blubg);border:2px solid var(--blubd);border-radius:12px;
+  padding:12px 16px;color:#0d47a1;--sxbg:var(--blubg)}
+.consegna .t{font-weight:700;font-size:.9rem}
+.consegna .m{text-align:center;margin-top:4px;padding:4px 0}
+
+/* ---------------- CATENA ---------------- */
+.catena{background:#fff;border:1px solid var(--line);border-radius:14px;
+  padding:14px 16px 10px;margin-top:16px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.catena>.k{font-weight:800;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.catena>.sub{font-size:.85rem;color:var(--faint);margin:2px 0 8px}
+
+.riga{border-top:1px dotted var(--line)}
+.riga:first-of-type{border-top:none}
+.riga>summary,.riga>.fissa{
+  display:grid;grid-template-columns:26px 1fr auto;gap:10px;align-items:center;
+  padding:11px 0;
+}
+.riga>summary{list-style:none;cursor:pointer}
+.riga>summary::-webkit-details-marker{display:none}
+.riga>summary:hover .f,.riga>summary:focus-visible .f{background-color:#f8fafc}
+
+.n{font-size:.72rem;font-weight:800;color:var(--faint);text-align:center;
+  background:#f1f5f9;border-radius:6px;padding:4px 0;align-self:start;margin-top:4px}
+.cont{min-width:0}
+.nota{font-size:.8rem;color:var(--muted);margin-bottom:1px}
+.f{padding:3px 0;border-radius:6px;color:var(--blu)}
+.riga.res>summary .f,.riga.res>.fissa .f{color:var(--ink)}
+/* solo la formula della riga, mai quelle dentro il pannello della tendina */
+.riga.res>summary .f mjx-container,
+.riga.res>.fissa .f mjx-container{background:var(--sol);padding:4px 12px;border-radius:6px}
+
+/* linguetta della tendina */
+.tab{display:inline-flex;align-items:center;gap:5px;align-self:start;margin-top:5px;
+  font-size:.72rem;font-weight:700;letter-spacing:.02em;color:var(--muted);
+  background:#fff;border:1.5px solid var(--line);border-radius:999px;padding:4px 10px;
+  white-space:nowrap}
+.tab .chev{display:inline-block;font-size:.6rem;transition:transform .18s}
+.riga[open]>summary .tab{background:var(--ink);border-color:var(--ink);color:#fff}
+.riga[open]>summary .tab .chev{transform:rotate(180deg)}
+@media(prefers-reduced-motion:reduce){.tab .chev{transition:none}}
+
+/* pannello aperto */
+.pannello{padding:2px 0 16px 36px;display:grid;gap:10px}
+.mossa{font-size:.9rem;margin:0}
+
+.teoria{background:var(--teobg);border:1.5px solid var(--teobd);border-radius:10px;
+  padding:10px 14px;color:var(--teo);--sxbg:var(--teobg)}
+.teoria .nome{font-weight:800;font-size:.88rem;margin-bottom:2px}
+.teoria .frase{font-size:.87rem;line-height:1.45}
+.teoria .f{text-align:center;margin:8px 0 3px;background:rgba(255,255,255,.75);
+  border-radius:6px;padding:6px 8px;color:var(--teo);--sxbg:#f4fdf6}
+.teoria .ex{font-size:.78rem;opacity:.9;text-align:center}
+
+.errore{background:var(--errbg);border:1.5px solid var(--errbd);border-radius:10px;padding:11px 14px}
+.errore .k{font-weight:800;font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;
+  color:var(--err);margin-bottom:5px}
+.errore .nome{font-weight:700;font-size:.9rem;color:var(--err);margin-bottom:8px}
+.compare{display:grid;grid-template-columns:1fr 34px 1fr;align-items:stretch}
+.card{border:2px solid;border-radius:10px;padding:8px 12px;text-align:center}
+.card .tag{font-size:.7rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;margin-bottom:2px}
+.card .f{padding:2px 0;color:inherit}
+.card.ko{background:var(--kobg);border-color:var(--kobd);color:var(--ko);--sxbg:var(--kobg)}
+.card.ok{background:var(--okbg);border-color:var(--okbd);color:var(--ok);--sxbg:var(--okbg)}
+.arrow{display:flex;align-items:center;justify-content:center;font-size:1.2rem;color:var(--faint);font-weight:800}
+.why-txt{font-size:.82rem;color:#7f1d1d;margin-top:6px;text-align:center}
+
+/* fermata di controllo */
+.check{display:flex;flex-wrap:wrap;align-items:center;gap:4px 10px;
+  background:var(--ambbg);border:1.5px dashed var(--ambbd);border-radius:10px;
+  padding:8px 14px;margin:8px 0;font-size:.85rem;color:var(--amb);--sxbg:var(--ambbg)}
+.check b{font-weight:800}
+.check .v{color:var(--ink)}
+
+/* ---------------- MOBILE ---------------- */
+@media(max-width:720px){
+  body{padding:16px 10px 50px;font-size:16px}
+  .catena{padding:12px 12px 8px}
+  .riga>summary,.riga>.fissa{grid-template-columns:24px 1fr;gap:8px}
+  .cont{grid-column:2}
+  .tab{grid-column:2;justify-self:start;margin-top:6px}
+  .pannello{padding-left:0}
+  .compare{grid-template-columns:1fr;gap:6px}
+  .arrow{transform:rotate(90deg);height:22px}
+}
+</style>
+</head>
+<body>
+
+<!-- ===================== CONSEGNA ===================== -->
+<div class="consegna">
+  <div class="t">📌 Fai un esempio</div>
+  <div class="m sx">Fai un esempio di un angolo che abbia:<br><b>a.</b> seno positivo e coseno negativo;&emsp;<b>b.</b> seno e coseno entrambi positivi.</div>
+</div>
+
+<!-- ===================== CATENA ====================== -->
+<div class="catena">
+  <div class="k">Confronta con il tuo foglio</div>
+  <div class="sub">Scorri le righe fino alla prima che non coincide con la tua. Lì apri <b>Regola</b>.</div>
+
+  <details class="riga">
+    <summary>
+      <div class="n">1</div>
+      <div class="cont">
+        <div class="nota">a. Seno positivo: il punto $B$ del lato termine sta sopra l'asse $x$.</div>
+        <div class="f sx">$\displaystyle \text{a)}\quad\sin\alpha>0\ \to\ \text{I o II quadrante}$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">Il seno è l'ordinata di $B$: è positivo quando $B$ sta sopra l'asse $x$, cioè nel I o nel II quadrante.<svg viewBox="0 0 220 170" role="img" aria-label="I segni di coseno e seno nei quattro quadranti" style="display:block;width:100%;max-width:260px;height:auto;margin:10px auto 2px"><line x1="14" y1="84" x2="208" y2="84" style="stroke:var(--faint);stroke-width:1.1"/><path d="M212.0,84.0 L206.0,87.0 L206.0,81.0 Z" style="fill:var(--faint)"/><line x1="110" y1="166" x2="110" y2="10" style="stroke:var(--faint);stroke-width:1.1"/><path d="M110.0,5.0 L113.0,11.0 L107.0,11.0 Z" style="fill:var(--faint)"/><text x="210.0" y="99.0" text-anchor="middle" style="font-size:12px;fill:var(--muted)">x</text><text x="119.0" y="14.0" text-anchor="middle" style="font-size:12px;fill:var(--muted)">y</text><circle cx="110" cy="84" r="62" style="fill:none;stroke:var(--ink);stroke-width:1.4"/><text x="140.0" y="56.0" text-anchor="middle" style="font-size:11px;fill:var(--muted)">I</text><text x="140.0" y="71.0" text-anchor="middle" style="font-size:13px;font-weight:700;fill:var(--teo)">(+;+)</text><text x="80.0" y="56.0" text-anchor="middle" style="font-size:11px;fill:var(--muted)">II</text><text x="80.0" y="71.0" text-anchor="middle" style="font-size:13px;font-weight:700;fill:var(--teo)">(−;+)</text><text x="80.0" y="108.0" text-anchor="middle" style="font-size:11px;fill:var(--muted)">III</text><text x="80.0" y="123.0" text-anchor="middle" style="font-size:13px;font-weight:700;fill:var(--teo)">(−;−)</text><text x="140.0" y="108.0" text-anchor="middle" style="font-size:11px;fill:var(--muted)">IV</text><text x="140.0" y="123.0" text-anchor="middle" style="font-size:13px;font-weight:700;fill:var(--teo)">(+;−)</text><text x="110.0" y="168.0" text-anchor="middle" style="font-size:10px;fill:var(--muted)">fra parentesi: (coseno; seno)</text></svg></p>
+      <div class="teoria">
+        <div class="nome">I segni di seno e coseno nei quadranti</div>
+        <div class="frase">Il punto $B$ è dove il lato termine dell'angolo incontra la circonferenza goniometrica. Il coseno ha il segno della sua ascissa: è positivo a destra dell'asse $y$, nel I e nel IV quadrante. Il seno ha il segno della sua ordinata: è positivo sopra l'asse $x$, nel I e nel II quadrante. Negli altri due quadranti sono negativi.</div>
+        <div class="f sx">$\displaystyle \cos\alpha:\ +\ \text{nel I e IV},\ -\ \text{nel II e III}\qquad\sin\alpha:\ +\ \text{nel I e II},\ -\ \text{nel III e IV}$</div>
+        <div class="ex">esempio: $310^{\circ}\ \text{nel IV quadrante:}\ \cos 310^{\circ}>0,\ \sin 310^{\circ}&lt;0$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ Errore da non fare</div>
+        <div class="nome">Dare al seno il segno dell'ascissa</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \sin\alpha\ \text{ha il segno della}\ x$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \sin\alpha\ \text{ha il segno della}\ y$</div></div>
+        </div>
+        <div class="why-txt">Con la $x$ il segno del seno esce sbagliato nel II e nel IV quadrante.</div>
+      </div>
+    </div>
+  </details>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">2</div>
+      <div class="cont">
+        <div class="nota">Coseno negativo: $B$ sta a sinistra dell'asse $y$.</div>
+        <div class="f sx">$\displaystyle \cos\alpha&lt;0\ \to\ \text{II o III quadrante}$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">3</div>
+      <div class="cont">
+        <div class="nota">Tutte e due le condizioni insieme: l'unico quadrante comune è il II.</div>
+        <div class="f sx">$\displaystyle \text{II quadrante}$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <details class="riga">
+    <summary>
+      <div class="n">4</div>
+      <div class="cont">
+        <div class="nota">Basta un angolo fra $90^{\circ}$ e $180^{\circ}$, estremi esclusi: per esempio $120^{\circ}$, cioè $\frac{2}{3}\pi$.</div>
+        <div class="f sx">$\displaystyle \alpha=120^{\circ}\ \text{nel II quadrante}$</div>
+        <div class="f sx"><svg viewBox="0 0 124 112" role="img" aria-label="Lato termine di 120 gradi, nel II quadrante" style="display:block;width:100%;max-width:140px;height:auto;margin:4px 0 0"><line x1="6" y1="56" x2="116" y2="56" style="stroke:var(--faint);stroke-width:1"/><path d="M120.0,56.0 L115.0,58.6 L115.0,53.4 Z" style="fill:var(--faint)"/><line x1="58" y1="108" x2="58" y2="9" style="stroke:var(--faint);stroke-width:1"/><path d="M58.0,5.0 L60.6,10.0 L55.4,10.0 Z" style="fill:var(--faint)"/><text x="117.0" y="68.0" text-anchor="middle" style="font-size:10px;fill:var(--muted)">x</text><text x="65.0" y="11.0" text-anchor="middle" style="font-size:10px;fill:var(--muted)">y</text><circle cx="58" cy="56" r="38" style="fill:none;stroke:var(--ink);stroke-width:1.3"/><path d="M73.0,55.7 L72.9,54.6 L72.8,53.6 L72.6,52.6 L72.3,51.6 L72.0,50.6 L71.6,49.6 L71.1,48.7 L70.5,47.8 L69.9,46.9 L69.3,46.1 L68.5,45.3 L67.8,44.6 L66.9,44.0 L66.1,43.4 L65.2,42.8 L64.2,42.4 L63.3,42.0 L62.3,41.6 L61.2,41.4 L60.2,41.2 L59.2,41.0 L58.1,41.0 L57.1,41.0 L56.0,41.1 L55.0,41.3 L54.0,41.6 L53.0,41.9 L52.0,42.3 L51.0,42.7" style="stroke:var(--amb);stroke-width:1.3;fill:none"/><path d="M51.0,42.7 L55.1,37.4 L57.7,42.8 Z" style="fill:var(--amb)"/><line x1="58" y1="56" x2="39.0" y2="23.1" style="stroke:var(--ok);stroke-width:2.2"/><circle cx="39.0" cy="23.1" r="3.6" style="fill:var(--ok)"/></svg></div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">I confini non vanno bene: a $90^{\circ}$ il coseno vale $0$ e a $180^{\circ}$ il seno vale $0$, e zero non è né positivo né negativo. Vanno bene anche angoli con giri in più, come $480^{\circ}$, o negativi, come $-240^{\circ}$: hanno lo stesso lato termine.</p>
+      <div class="teoria">
+        <div class="nome">I quadranti</div>
+        <div class="frase">Gli assi dividono il piano in quattro quadranti, e si contano come si misurano gli angoli: partendo dal semiasse positivo delle $x$ e girando in senso antiorario. Il I quadrante va da $0^{\circ}$ a $90^{\circ}$, il II da $90^{\circ}$ a $180^{\circ}$, il III da $180^{\circ}$ a $270^{\circ}$, il IV da $270^{\circ}$ a $360^{\circ}$. In radianti i confini sono $\frac{\pi}{2}$, $\pi$, $\frac{3}{2}\pi$ e $2\pi$. Sui confini il lato termine sta su un asse.</div>
+        <div class="f sx">$\displaystyle 0^{\circ}\ \xrightarrow{\ \text{I}\ }\ 90^{\circ}\ \xrightarrow{\ \text{II}\ }\ 180^{\circ}\ \xrightarrow{\ \text{III}\ }\ 270^{\circ}\ \xrightarrow{\ \text{IV}\ }\ \text{un giro}$</div>
+        <div class="ex">esempio: $200^{\circ}\ \to\ \text{III quadrante}$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ Errore da non fare</div>
+        <div class="nome">Contare lo zero come positivo</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \sin\alpha=0\ \to\ \sin\alpha>0$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \sin\alpha=0\ \to\ \text{né positivo né negativo}$</div></div>
+        </div>
+        <div class="why-txt">Su un asse il seno o il coseno vale zero: l'esempio non va bene.</div>
+      </div>
+    </div>
+  </details>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">5</div>
+      <div class="cont">
+        <div class="nota">b. Seno positivo, come prima: $B$ sopra l'asse $x$.</div>
+        <div class="f sx">$\displaystyle \text{b)}\quad\sin\alpha>0\ \to\ \text{I o II quadrante}$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">6</div>
+      <div class="cont">
+        <div class="nota">Coseno positivo: $B$ a destra dell'asse $y$.</div>
+        <div class="f sx">$\displaystyle \cos\alpha>0\ \to\ \text{I o IV quadrante}$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">7</div>
+      <div class="cont">
+        <div class="nota">L'unico quadrante comune è il I.</div>
+        <div class="f sx">$\displaystyle \text{I quadrante}$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="riga res">
+    <div class="fissa">
+      <div class="n">8</div>
+      <div class="cont">
+        <div class="nota">Un angolo fra $0^{\circ}$ e $90^{\circ}$, estremi esclusi: per esempio $60^{\circ}$, cioè $\frac{\pi}{3}$.</div>
+        <div class="f sx">$\displaystyle \alpha=60^{\circ}\ \text{nel I quadrante}$</div>
+        <div class="f sx"><svg viewBox="0 0 124 112" role="img" aria-label="Lato termine di 60 gradi, nel I quadrante" style="display:block;width:100%;max-width:140px;height:auto;margin:4px 0 0"><line x1="6" y1="56" x2="116" y2="56" style="stroke:var(--faint);stroke-width:1"/><path d="M120.0,56.0 L115.0,58.6 L115.0,53.4 Z" style="fill:var(--faint)"/><line x1="58" y1="108" x2="58" y2="9" style="stroke:var(--faint);stroke-width:1"/><path d="M58.0,5.0 L60.6,10.0 L55.4,10.0 Z" style="fill:var(--faint)"/><text x="117.0" y="68.0" text-anchor="middle" style="font-size:10px;fill:var(--muted)">x</text><text x="65.0" y="11.0" text-anchor="middle" style="font-size:10px;fill:var(--muted)">y</text><circle cx="58" cy="56" r="38" style="fill:none;stroke:var(--ink);stroke-width:1.3"/><path d="M85.0,55.5 L84.9,53.6 L84.7,51.7 L84.3,49.8 L83.8,48.0 L83.1,46.2 L82.4,44.4 L81.5,42.7 L80.5,41.1 L79.4,39.6 L78.2,38.1 L76.9,36.7 L75.5,35.4 L74.0,34.2 L72.4,33.2" style="stroke:var(--amb);stroke-width:1.3;fill:none"/><path d="M72.4,33.2 L79.1,34.1 L75.7,39.0 Z" style="fill:var(--amb)"/><line x1="58" y1="56" x2="77.0" y2="23.1" style="stroke:var(--ok);stroke-width:2.2"/><circle cx="77.0" cy="23.1" r="3.6" style="fill:var(--ok)"/></svg></div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
