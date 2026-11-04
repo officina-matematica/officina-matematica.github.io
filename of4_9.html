@@ -138,7 +138,7 @@ mjx-container[display]{margin:0!important}
 @media(prefers-reduced-motion:reduce){.tab .chev{transition:none}}
 
 /* pannello aperto */
-.pannello{padding:2px 0 16px 36px;display:grid;gap:10px}
+.pannello{padding:2px 0 16px 36px;display:grid;grid-template-columns:minmax(0,1fr);gap:10px}
 .mossa{font-size:.9rem;margin:0}
 
 .teoria{background:var(--teobg);border:1.5px solid var(--teobd);border-radius:10px;
@@ -147,13 +147,13 @@ mjx-container[display]{margin:0!important}
 .teoria .frase{font-size:.87rem;line-height:1.45}
 .teoria .f{text-align:center;margin:8px 0 3px;background:rgba(255,255,255,.75);
   border-radius:6px;padding:6px 8px;color:var(--teo);--sxbg:#f4fdf6}
-.teoria .ex{font-size:.78rem;opacity:.9;text-align:center}
+.teoria .ex{font-size:.78rem;opacity:.9;text-align:center;overflow-x:auto;overflow-y:hidden}
 
 .errore{background:var(--errbg);border:1.5px solid var(--errbd);border-radius:10px;padding:11px 14px}
 .errore .k{font-weight:800;font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;
   color:var(--err);margin-bottom:5px}
 .errore .nome{font-weight:700;font-size:.9rem;color:var(--err);margin-bottom:8px}
-.compare{display:grid;grid-template-columns:1fr 34px 1fr;align-items:stretch}
+.compare{display:grid;grid-template-columns:minmax(0,1fr) 34px minmax(0,1fr);align-items:stretch}
 .card{border:2px solid;border-radius:10px;padding:8px 12px;text-align:center}
 .card .tag{font-size:.7rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;margin-bottom:2px}
 .card .f{padding:2px 0;color:inherit}
@@ -180,7 +180,7 @@ mjx-container[display]{margin:0!important}
   .cont{grid-column:2}
   .tab{grid-column:2;justify-self:start;margin-top:6px}
   .pannello{padding-left:0}
-  .compare{grid-template-columns:1fr;gap:6px}
+  .compare{grid-template-columns:minmax(0,1fr);gap:6px}
   .arrow{transform:rotate(90deg);height:22px}
 }
 </style>
