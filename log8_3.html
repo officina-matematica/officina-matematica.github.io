@@ -139,7 +139,9 @@ mjx-container[display]{margin:0!important}
 .errore .k{font-weight:800;font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;
   color:var(--err);margin-bottom:5px}
 .errore .nome{font-weight:700;font-size:.9rem;color:var(--err);margin-bottom:8px}
-.compare{display:grid;grid-template-columns:minmax(0,1fr) 34px minmax(0,1fr);align-items:stretch}
+.compare{display:flex;flex-wrap:wrap;align-items:stretch;row-gap:6px}
+.compare .card{flex:1 1 0;max-width:100%}
+.compare .arrow{flex:0 0 34px}
 .card{border:2px solid;border-radius:10px;padding:8px 12px;text-align:center}
 .card .tag{font-size:.7rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;margin-bottom:2px}
 .card .f{padding:2px 0;color:inherit}
@@ -166,7 +168,7 @@ mjx-container[display]{margin:0!important}
   .cont{grid-column:2}
   .tab{grid-column:2;justify-self:start;margin-top:6px}
   .pannello{padding-left:0}
-  .compare{grid-template-columns:minmax(0,1fr);gap:6px}
+  .compare{display:grid;grid-template-columns:minmax(0,1fr);gap:6px}
   .arrow{transform:rotate(90deg);height:22px}
 }
 </style>
