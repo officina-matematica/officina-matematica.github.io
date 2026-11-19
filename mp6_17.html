@@ -11,12 +11,11 @@
   "titolo": "Prodotti notevoli",
   "tipo": "espressione",
   "consegna_label": "Calcola il prodotto",
-  "consegna_tex": "\\left(0{,}2x^{2}-y^{3}\\right)\\left(0{,}2x^{2}+y^{2}\\right)",
-  "consegna_sympy": "(Rational(1,5)*x**2-y**3)*(Rational(1,5)*x**2+y**2)",
-  "risultato_tex": "0{,}04x^{4}+0{,}2x^{2}y^{2}-0{,}2x^{2}y^{3}-y^{5}",
-  "risultato_sympy": "Rational(1,25)*x**4+Rational(1,5)*x**2*y**2-Rational(1,5)*x**2*y**3-y**5",
+  "consegna_tex": "\\left(0{,}2x^{2}-y^{3}\\right)\\left(0{,}2x^{2}+y^{3}\\right)",
+  "consegna_sympy": "(Rational(1,5)*x**2-y**3)*(Rational(1,5)*x**2+y**3)",
+  "risultato_tex": "0{,}04x^{4}-y^{6}",
+  "risultato_sympy": "Rational(1,25)*x**4-y**6",
   "righe_sympy": [
-    null,
     null,
     null,
     null
@@ -178,7 +177,7 @@ mjx-container[display]{margin:0!important}
 <!-- ===================== CONSEGNA ===================== -->
 <div class="consegna">
   <div class="t">📌 Calcola il prodotto</div>
-  <div class="m sx">$\displaystyle \left(0{,}2x^{2}-y^{3}\right)\left(0{,}2x^{2}+y^{2}\right)$</div>
+  <div class="m sx">$\displaystyle \left(0{,}2x^{2}-y^{3}\right)\left(0{,}2x^{2}+y^{3}\right)$</div>
 </div>
 
 <!-- ===================== CATENA ====================== -->
@@ -189,7 +188,7 @@ mjx-container[display]{margin:0!important}
   <div class="riga">
     <div class="fissa">
       <div class="n">1</div>
-      <div class="cont"><div class="f sx">$\displaystyle \left(0{,}2x^{2}-y^{3}\right)\left(0{,}2x^{2}+y^{2}\right)=$</div></div>
+      <div class="cont"><div class="f sx">$\displaystyle \left(0{,}2x^{2}-y^{3}\right)\left(0{,}2x^{2}+y^{3}\right)=$</div></div>
       <div></div>
     </div>
   </div>
@@ -198,57 +197,67 @@ mjx-container[display]{margin:0!important}
     <summary>
       <div class="n">2</div>
       <div class="cont">
-        <div class="nota">Attenzione: $y^{3}$ e $y^{2}$ sono diversi, non è somma per differenza.</div>
-        <div class="f sx">$\displaystyle =0{,}2x^{2}\cdot 0{,}2x^{2}+0{,}2x^{2}\cdot y^{2}-y^{3}\cdot 0{,}2x^{2}-y^{3}\cdot y^{2}=$</div>
+        <div class="nota">$0{,}2x^{2}$ è uguale nei due binomi, $y^{3}$ cambia segno.</div>
+        <div class="f sx">$\displaystyle =\left(0{,}2x^{2}\right)^{2}-\left(y^{3}\right)^{2}=$</div>
       </div>
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">Il secondo termine non è lo stesso nei due binomi, quindi la formula non vale: si moltiplica ogni termine per ogni termine.</p>
+      <p class="mossa">Il termine uguale è $0{,}2x^{2}$, quello opposto è $y^{3}$. Si potrebbe anche moltiplicare termine per termine: i due prodotti in croce si annullano e resta lo stesso risultato.</p>
       <div class="teoria">
-        <div class="nome">Moltiplicare due polinomi</div>
-        <div class="frase">Per moltiplicare due polinomi si moltiplica <strong>ogni</strong> termine del primo per <strong>ogni</strong> termine del secondo, ciascuno con il suo segno, e poi si scrivono tutti i prodotti in fila.</div>
-        <div class="f sx">$\displaystyle \left(P+Q\right)\left(R+S\right)=PR+PS+QR+QS$</div>
-        <div class="ex">esempio: $\left(2+k\right)\left(k+5\right)=2k+10+k^{2}+5k$</div>
+        <div class="nome">Somma per differenza</div>
+        <div class="frase">Se due binomi hanno un termine <strong>uguale</strong> e l'altro <strong>opposto</strong>, il loro prodotto è il quadrato del termine uguale meno il quadrato di quello opposto. I prodotti in croce si annullano fra loro, e non si scrivono.</div>
+        <div class="f sx">$\displaystyle \left(A+B\right)\left(A-B\right)=A^{2}-B^{2}$</div>
+        <div class="ex">esempio: $\left(k+7\right)\left(k-7\right)=k^{2}-49$</div>
       </div>
       <div class="errore">
         <div class="k">⚠️ Errore da non fare</div>
-        <div class="nome">Usare la somma per differenza con termini diversi</div>
+        <div class="nome">Mettere il più fra i due quadrati</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \left(A-B\right)\left(A+C\right)=A^{2}-B^{2}$</div></div>
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \left(A+B\right)\left(A-B\right)=A^{2}+B^{2}$</div></div>
           <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \left(A-B\right)\left(A+C\right)=A^{2}+AC-AB-BC$</div></div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \left(A+B\right)\left(A-B\right)=A^{2}-B^{2}$</div></div>
         </div>
-        <div class="why-txt">Con $C$ diverso da $B$ i prodotti in croce non si annullano.</div>
+        <div class="why-txt">Il secondo quadrato viene da $B\cdot\left(-B\right)$: è negativo.</div>
       </div>
     </div>
   </details>
 
-  <details class="riga">
+  <details class="riga res">
     <summary>
       <div class="n">3</div>
       <div class="cont">
-        <div class="nota">$0{,}2\cdot 0{,}2=0{,}04$; nel terzo prodotto il numero passa davanti.</div>
-        <div class="f sx">$\displaystyle =0{,}04x^{2}\cdot x^{2}+0{,}2x^{2}y^{2}-0{,}2x^{2}y^{3}-y^{3}\cdot y^{2}=$</div>
+        <div class="nota">$\left(0{,}2x^{2}\right)^{2}=0{,}04x^{4}$ e $\left(y^{3}\right)^{2}=y^{6}$.</div>
+        <div class="f sx">$\displaystyle =0{,}04x^{4}-y^{6}$</div>
       </div>
       <span class="tab">Regola <span class="chev">▼</span></span>
     </summary>
     <div class="pannello">
-      <p class="mossa">Due cifre decimali in tutto: $0{,}04$. In $-y^{3}\cdot 0{,}2x^{2}$ i fattori si scambiano: prima il numero, poi le lettere in ordine.</p>
+      <p class="mossa">$0{,}2\cdot 0{,}2=0{,}04$: due cifre decimali in tutto. Gli esponenti si moltiplicano per $2$.</p>
+      <div class="teoria">
+        <div class="nome">Potenza di un monomio</div>
+        <div class="frase">Per elevare a potenza un monomio si eleva il coefficiente, con il suo segno, e si moltiplica per l'esponente l'esponente di ogni lettera. Se il coefficiente è una frazione si elevano il numeratore e il denominatore.</div>
+        <div class="f sx">$\displaystyle \left(5k^{m}h\right)^{n}=5^{n}k^{m\cdot n}h^{n}\qquad\left(\frac{3}{7}k^{m}\right)^{n}=\frac{3^{n}}{7^{n}}k^{m\cdot n}$</div>
+        <div class="ex">esempio: $\left(\frac{2}{7}k^{3}h\right)^{2}=\frac{4}{49}k^{6}h^{2}$</div>
+      </div>
       <div class="teoria">
         <div class="nome">Moltiplicare due numeri decimali</div>
         <div class="frase">Si moltiplicano come se fossero interi, senza guardare la virgola. Poi si contano le cifre decimali dei due fattori: quante sono in tutto, tante ne avrà il risultato.</div>
         <div class="f sx">$\displaystyle \text{decimali del prodotto}=\text{decimali del primo}+\text{decimali del secondo}$</div>
         <div class="ex">esempio: $0{,}3\cdot 0{,}7=0{,}21$</div>
       </div>
-      <div class="teoria">
-        <div class="nome">Scambiare i fattori di un prodotto</div>
-        <div class="frase">In un prodotto si può cambiare l'ordine dei fattori: il risultato non cambia. Vale per le lettere di un monomio, che di solito si scrivono in ordine, e anche per i fattori fra parentesi.</div>
-        <div class="f sx">$\displaystyle P\cdot Q=Q\cdot P$</div>
-        <div class="ex">esempio: $m\cdot 7=7m$</div>
-      </div>
       <div class="errore">
         <div class="k">⚠️ Errore da non fare</div>
+        <div class="nome">Non elevare il coefficiente</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \left(7k^{m}\right)^{n}=7k^{m\cdot n}$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \left(7k^{m}\right)^{n}=7^{n}k^{m\cdot n}$</div></div>
+        </div>
+        <div class="why-txt">Con $n=2$ il coefficiente diventa $49$, non resta $7$.</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ E nemmeno questo</div>
         <div class="nome">Contare male le cifre decimali</div>
         <div class="compare">
           <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle 0{,}3^{2}=0{,}9$</div></div>
@@ -256,36 +265,6 @@ mjx-container[display]{margin:0!important}
           <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle 0{,}3^{2}=0{,}09$</div></div>
         </div>
         <div class="why-txt">$0{,}3\cdot 0{,}3$ ha due cifre decimali, non una.</div>
-      </div>
-    </div>
-  </details>
-
-  <details class="riga res">
-    <summary>
-      <div class="n">4</div>
-      <div class="cont">
-        <div class="nota">Lettere uguali: si sommano gli esponenti.</div>
-        <div class="f sx">$\displaystyle =0{,}04x^{4}+0{,}2x^{2}y^{2}-0{,}2x^{2}y^{3}-y^{5}$</div>
-      </div>
-      <span class="tab">Regola <span class="chev">▼</span></span>
-    </summary>
-    <div class="pannello">
-      <p class="mossa">$x^{2}\cdot x^{2}=x^{4}$ e $y^{3}\cdot y^{2}=y^{5}$.</p>
-      <div class="teoria">
-        <div class="nome">Prodotto di potenze con la stessa base</div>
-        <div class="frase">Quando due potenze hanno la <strong>stessa base</strong>, per moltiplicarle si sommano gli esponenti. La base resta quella di partenza e non si tocca mai.</div>
-        <div class="f sx">$\displaystyle k^{m}\cdot k^{n}=k^{m+n}$</div>
-        <div class="ex">esempio: $k^{4}\cdot k^{5}=k^{9}$</div>
-      </div>
-      <div class="errore">
-        <div class="k">⚠️ Errore da non fare</div>
-        <div class="nome">Moltiplicare gli esponenti invece di sommarli</div>
-        <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle k^{m}\cdot k^{n}=k^{m\cdot n}$</div></div>
-          <div class="arrow">➜</div>
-          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle k^{m}\cdot k^{n}=k^{m+n}$</div></div>
-        </div>
-        <div class="why-txt">Con $k^{2}\cdot k^{4}$ le $k$ in fila sono sei, non otto.</div>
       </div>
     </div>
   </details>
