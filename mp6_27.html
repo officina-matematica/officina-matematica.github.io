@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MP6_27 — Prodotti notevoli</title>
+
+<script type="application/json" id="meta">
+{
+  "id": "mp6_27",
+  "titolo": "Prodotti notevoli",
+  "tipo": "espressione",
+  "consegna_label": "Calcola il valore per $A=\\dfrac{1}{2}x-2y$",
+  "consegna_tex": "A^{3}-3A^{2}+A^{2}\\left(5-A\\right)",
+  "consegna_sympy": "2*(Rational(1,2)*x-2*y)**2",
+  "risultato_tex": "\\frac{1}{2}x^{2}-4xy+8y^{2}",
+  "risultato_sympy": "Rational(1,2)*x**2-4*x*y+8*y**2",
+  "righe_sympy": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "lettere": {
+    "A": "Rational(1,2)*x-2*y"
+  }
+}
+</script>
+
+<!-- Output SVG, non CHTML: glifi vettoriali, allineamento identico su ogni
+     dispositivo, nessun rischio di webfont non caricato dentro un iframe.
+     Ogni formula e' scritta con \displaystyle: senza, MathJax rende le frazioni
+     in textstyle e le parentesi non abbracciano la frazione. -->
+<script>
+MathJax = {
+  loader: { load: ['[tex]/cancel'] },
+  tex: {
+    packages: { '[+]': ['cancel'] },
+    inlineMath: [['$','$']],
+    displayMath: [['$$','$$']],
+    processEscapes: true
+  },
+  svg: { fontCache: 'global', scale: 1.06, exFactor: .5 },
+  options: { enableMenu: false }
+};
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-svg.js"></script>
+
+<style>
+:root{
+  --ink:#0f172a; --body:#334155; --muted:#475569; --faint:#94a3b8;
+  --line:#e2e8f0; --paper:#f8fafc;
+  --blu:#12519e; --blubg:#e8f1fb; --blubd:#a8c9ea;
+  --amb:#b45309; --ambbg:#fffbeb; --ambbd:#fcd34d; --sol:#fef08a;
+  --teo:#14532d; --teobg:#f0fdf4; --teobd:#86efac;
+  --err:#9f1239; --errbg:#fff1f2; --errbd:#fda4af;
+  --ko:#b91c1c;  --kobg:#fee2e2;  --kobd:#ef4444;
+  --ok:#15803d;  --okbg:#dcfce7;  --okbd:#22c55e;
+  --sxbg:#ffffff;
+}
+*{box-sizing:border-box}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  background:var(--paper);color:var(--body);line-height:1.5;
+  margin:0;padding:20px 14px 60px;max-width:900px;margin-inline:auto;font-size:16px;
+}
+mjx-container{outline:none}
+mjx-container[display]{margin:0!important}
+
+/* formule scorrevoli, con sfumatura ai bordi quando escono dallo schermo */
+.sx{
+  overflow-x:auto;overflow-y:hidden;scrollbar-width:thin;-webkit-overflow-scrolling:touch;
+  background-image:
+    linear-gradient(to right,var(--sxbg),var(--sxbg)),
+    linear-gradient(to left,var(--sxbg),var(--sxbg)),
+    linear-gradient(to right,rgba(15,23,42,.16),rgba(15,23,42,0)),
+    linear-gradient(to left,rgba(15,23,42,.16),rgba(15,23,42,0));
+  background-position:left center,right center,left center,right center;
+  background-repeat:no-repeat;
+  background-size:22px 100%,22px 100%,13px 100%,13px 100%;
+  background-attachment:local,local,scroll,scroll;
+}
+
+/* ---------------- CONSEGNA ---------------- */
+.consegna{background:var(--blubg);border:2px solid var(--blubd);border-radius:12px;
+  padding:12px 16px;color:#0d47a1;--sxbg:var(--blubg)}
+.consegna .t{font-weight:700;font-size:.9rem}
+.consegna .m{text-align:center;margin-top:4px;padding:4px 0}
+
+/* ---------------- CATENA ---------------- */
+.catena{background:#fff;border:1px solid var(--line);border-radius:14px;
+  padding:14px 16px 10px;margin-top:16px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.catena>.k{font-weight:800;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.catena>.sub{font-size:.85rem;color:var(--faint);margin:2px 0 8px}
+
+.riga{border-top:1px dotted var(--line)}
+.riga:first-of-type{border-top:none}
+.riga>summary,.riga>.fissa{
+  display:grid;grid-template-columns:26px 1fr auto;gap:10px;align-items:center;
+  padding:11px 0;
+}
+.riga>summary{list-style:none;cursor:pointer}
+.riga>summary::-webkit-details-marker{display:none}
+.riga>summary:hover .f,.riga>summary:focus-visible .f{background-color:#f8fafc}
+
+.n{font-size:.72rem;font-weight:800;color:var(--faint);text-align:center;
+  background:#f1f5f9;border-radius:6px;padding:4px 0;align-self:start;margin-top:4px}
+.cont{min-width:0}
+.nota{font-size:.8rem;color:var(--muted);margin-bottom:1px}
+.f{padding:3px 0;border-radius:6px;color:var(--blu)}
+.riga.res>summary .f,.riga.res>.fissa .f{color:var(--ink)}
+/* solo la formula della riga, mai quelle dentro il pannello della tendina */
+.riga.res>summary .f mjx-container,
+.riga.res>.fissa .f mjx-container{background:var(--sol);padding:4px 12px;border-radius:6px}
+
+/* linguetta della tendina */
+.tab{display:inline-flex;align-items:center;gap:5px;align-self:start;margin-top:5px;
+  font-size:.72rem;font-weight:700;letter-spacing:.02em;color:var(--muted);
+  background:#fff;border:1.5px solid var(--line);border-radius:999px;padding:4px 10px;
+  white-space:nowrap}
+.tab .chev{display:inline-block;font-size:.6rem;transition:transform .18s}
+.riga[open]>summary .tab{background:var(--ink);border-color:var(--ink);color:#fff}
+.riga[open]>summary .tab .chev{transform:rotate(180deg)}
+@media(prefers-reduced-motion:reduce){.tab .chev{transition:none}}
+
+/* pannello aperto */
+.pannello{padding:2px 0 16px 36px;display:grid;grid-template-columns:minmax(0,1fr);gap:10px}
+.mossa{font-size:.9rem;margin:0}
+
+.teoria{background:var(--teobg);border:1.5px solid var(--teobd);border-radius:10px;
+  padding:10px 14px;color:var(--teo);--sxbg:var(--teobg)}
+.teoria .nome{font-weight:800;font-size:.88rem;margin-bottom:2px}
+.teoria .frase{font-size:.87rem;line-height:1.45}
+.teoria .f{text-align:center;margin:8px 0 3px;background:rgba(255,255,255,.75);
+  border-radius:6px;padding:6px 8px;color:var(--teo);--sxbg:#f4fdf6}
+.teoria .ex{font-size:.78rem;opacity:.9;text-align:center;overflow-x:auto;overflow-y:hidden}
+
+.errore{background:var(--errbg);border:1.5px solid var(--errbd);border-radius:10px;padding:11px 14px}
+.errore .k{font-weight:800;font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;
+  color:var(--err);margin-bottom:5px}
+.errore .nome{font-weight:700;font-size:.9rem;color:var(--err);margin-bottom:8px}
+.compare{display:flex;flex-flow:row-reverse wrap-reverse;align-items:stretch;row-gap:6px}
+.compare .card{flex:1 1 0;max-width:100%}
+.compare .card.ok{order:1}
+.compare .arrow{order:2;flex:0 0 34px}
+.compare .card.ko{order:3}
+.card{border:2px solid;border-radius:10px;padding:8px 12px;text-align:center}
+.card .tag{font-size:.7rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;margin-bottom:2px}
+.card .f{padding:2px 0;color:inherit}
+.card.ko{background:var(--kobg);border-color:var(--kobd);color:var(--ko);--sxbg:var(--kobg)}
+.card.ok{background:var(--okbg);border-color:var(--okbd);color:var(--ok);--sxbg:var(--okbg)}
+.arrow{display:flex;align-items:center;justify-content:center;font-size:1.2rem;color:var(--faint);font-weight:800}
+.why-txt{font-size:.82rem;color:#7f1d1d;margin-top:6px;text-align:center}
+
+/* fermata di controllo */
+.check{display:flex;flex-wrap:wrap;align-items:center;gap:4px 10px;
+  background:var(--ambbg);border:1.5px dashed var(--ambbd);border-radius:10px;
+  padding:8px 14px;margin:8px 0;font-size:.85rem;color:var(--amb);--sxbg:var(--ambbg)}
+.check b{font-weight:800}
+.check .v{color:var(--ink)}
+
+/* dicitura in fondo alla pagina, sotto la catena */
+.dicitura{margin-top:14px;text-align:center;font-size:.8rem;color:#444}
+
+/* ---------------- MOBILE ---------------- */
+@media(max-width:720px){
+  body{padding:16px 10px 50px;font-size:16px}
+  .catena{padding:12px 12px 8px}
+  .riga>summary,.riga>.fissa{grid-template-columns:24px 1fr;gap:8px}
+  .cont{grid-column:2}
+  .tab{grid-column:2;justify-self:start;margin-top:6px}
+  .pannello{padding-left:0}
+  .compare{display:grid;grid-template-columns:minmax(0,1fr);gap:6px}
+  .compare .card.ok,.compare .arrow,.compare .card.ko{order:0}
+  .arrow{transform:rotate(90deg);height:22px}
+}
+</style>
+</head>
+<body>
+
+<!-- ===================== CONSEGNA ===================== -->
+<div class="consegna">
+  <div class="t">📌 Calcola il valore per $A=\dfrac{1}{2}x-2y$</div>
+  <div class="m sx">$\displaystyle A^{3}-3A^{2}+A^{2}\left(5-A\right)$</div>
+</div>
+
+<!-- ===================== CATENA ====================== -->
+<div class="catena">
+  <div class="k">Confronta con il tuo foglio</div>
+  <div class="sub">Scorri le righe fino alla prima che non coincide con la tua. Lì apri <b>Regola</b>.</div>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">1</div>
+      <div class="cont"><div class="f sx">$\displaystyle A^{3}-3A^{2}+A^{2}\left(5-A\right)=$</div></div>
+      <div></div>
+    </div>
+  </div>
+
+  <details class="riga">
+    <summary>
+      <div class="n">2</div>
+      <div class="cont">
+        <div class="nota">Prima si lavora con la lettera $A$: $A^{2}$ moltiplica la tonda.</div>
+        <div class="f sx">$\displaystyle =A^{3}-3A^{2}+A^{2}\cdot 5-A^{2}\cdot A=$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">Conviene semplificare prima di sostituire. Si potrebbe sostituire subito: il risultato è lo stesso, ma con un cubo e tre quadrati da sviluppare.</p>
+      <div class="teoria">
+        <div class="nome">Moltiplicare un monomio per un polinomio</div>
+        <div class="frase">Il monomio moltiplica <strong>tutti</strong> i termini del polinomio, uno per uno, e ogni termine entra nel prodotto con il suo segno; un termine negativo si può scrivere fra parentesi. È la proprietà distributiva, e vale anche con il monomio scritto dopo la parentesi.</div>
+        <div class="f sx">$\displaystyle P\left(Q+R-S\right)=PQ+PR-PS$</div>
+        <div class="ex">esempio: $5k\left(2k-3m\right)=10k^{2}-15km$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ Errore da non fare</div>
+        <div class="nome">Perdere il meno di un termine</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle P\left(Q-R\right)=PQ+PR$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle P\left(Q-R\right)=PQ-PR$</div></div>
+        </div>
+        <div class="why-txt">Con il più, quel prodotto si aggiunge invece di togliersi.</div>
+      </div>
+    </div>
+  </details>
+
+  <details class="riga">
+    <summary>
+      <div class="n">3</div>
+      <div class="cont">
+        <div class="nota">$A^{2}\cdot 5=5A^{2}$ e $A^{2}\cdot A=A^{3}$.</div>
+        <div class="f sx">$\displaystyle =A^{3}-3A^{2}+5A^{2}-A^{3}=$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">$A$ senza esponente è $A^{1}$: $A^{2}\cdot A=A^{2+1}=A^{3}$.</p>
+      <div class="teoria">
+        <div class="nome">L'esponente 1 non si scrive</div>
+        <div class="frase">Una lettera senza esponente ha esponente <strong>1</strong>: $y$ è $y^{1}$. Conta quando si sommano o si sottraggono gli esponenti, perché quell'$1$ va messo nel conto come tutti gli altri.</div>
+        <div class="f sx">$\displaystyle k=k^{1}$</div>
+        <div class="ex">esempio: $m^{3}\cdot m=m^{3+1}=m^{4}$</div>
+      </div>
+      <div class="teoria">
+        <div class="nome">Prodotto di potenze con la stessa base</div>
+        <div class="frase">Quando due potenze hanno la <strong>stessa base</strong>, per moltiplicarle si sommano gli esponenti. La base resta quella di partenza e non si tocca mai.</div>
+        <div class="f sx">$\displaystyle k^{m}\cdot k^{n}=k^{m+n}$</div>
+        <div class="ex">esempio: $k^{4}\cdot k^{5}=k^{9}$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ Errore da non fare</div>
+        <div class="nome">Moltiplicare gli esponenti invece di sommarli</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle k^{m}\cdot k^{n}=k^{m\cdot n}$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle k^{m}\cdot k^{n}=k^{m+n}$</div></div>
+        </div>
+        <div class="why-txt">Con $k^{2}\cdot k^{4}$ le $k$ in fila sono sei, non otto.</div>
+      </div>
+    </div>
+  </details>
+
+  <details class="riga">
+    <summary>
+      <div class="n">4</div>
+      <div class="cont">
+        <div class="nota">$A^{3}$ e $-A^{3}$ sono opposti: spariscono.</div>
+        <div class="f sx">$\displaystyle =-3A^{2}+5A^{2}=$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">La loro somma fa zero.</p>
+      <div class="teoria">
+        <div class="nome">Due monomi opposti</div>
+        <div class="frase">Due monomi con le stesse lettere, gli stessi esponenti, lo stesso numero e il <strong>segno opposto</strong> si cancellano: la loro somma fa zero.</div>
+        <div class="f sx">$\displaystyle P-P=0$</div>
+        <div class="ex">esempio: $9k-9k=0$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ Errore da non fare</div>
+        <div class="nome">Lasciare in piedi quello che si è annullato</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle 5k-5k=k$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle 5k-5k=0$</div></div>
+        </div>
+        <div class="why-txt">Zero volte una lettera fa zero.</div>
+      </div>
+    </div>
+  </details>
+
+  <details class="riga">
+    <summary>
+      <div class="n">5</div>
+      <div class="cont">
+        <div class="nota">Monomi simili: $-3+5=2$.</div>
+        <div class="f sx">$\displaystyle =2A^{2}=$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">Tutti e due hanno $A^{2}$: si sommano i coefficienti.</p>
+      <div class="teoria">
+        <div class="nome">Somma di monomi simili</div>
+        <div class="frase">Due monomi sono <strong>simili</strong> quando hanno la stessa parte letterale, con gli stessi esponenti. Per sommarli si sommano solo i <strong>coefficienti</strong>, e la parte letterale si riscrive uguale: non cambia e non si somma.</div>
+        <div class="f sx">$\displaystyle 4k^{m}+3k^{m}=\left(4+3\right)k^{m}=7k^{m}$</div>
+        <div class="ex">esempio: $\frac{2}{11}k+\frac{3}{11}k=\frac{5}{11}k$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ Errore da non fare</div>
+        <div class="nome">Sommare anche la parte letterale</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle 3k+2k=5k^{2}$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle 3k+2k=5k$</div></div>
+        </div>
+        <div class="why-txt">Le $k$ restano le stesse: cambia solo quante sono.</div>
+      </div>
+    </div>
+  </details>
+
+  <details class="riga">
+    <summary>
+      <div class="n">6</div>
+      <div class="cont">
+        <div class="nota">Ora sostituiamo $A$, fra parentesi.</div>
+        <div class="f sx">$\displaystyle =2\left(\frac{1}{2}x-2y\right)^{2}=$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">$A$ è un binomio: va tutto fra parentesi, e l'esponente vale per tutto.</p>
+      <div class="teoria">
+        <div class="nome">Sostituire un polinomio a una lettera</div>
+        <div class="frase">Al posto della lettera si scrive tutto il polinomio, <strong>fra parentesi</strong>: così l'esponente e il numero davanti valgono per tutto il polinomio, non solo per un suo termine.</div>
+        <div class="f sx">$\displaystyle 5T^{2}\ \text{con}\ T=P-Q\ \to\ 5\left(P-Q\right)^{2}$</div>
+        <div class="ex">esempio: $3T^{2}\ \text{con}\ T=m+5\ \to\ 3\left(m+5\right)^{2}$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ Errore da non fare</div>
+        <div class="nome">Sostituire senza parentesi</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle 5T^{2}\ \text{con}\ T=P-Q\ \to\ 5P-Q^{2}$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle 5T^{2}\ \text{con}\ T=P-Q\ \to\ 5\left(P-Q\right)^{2}$</div></div>
+        </div>
+        <div class="why-txt">Senza parentesi l'esponente va solo a $Q$ e il $5$ solo a $P$.</div>
+      </div>
+    </div>
+  </details>
+
+  <details class="riga">
+    <summary>
+      <div class="n">7</div>
+      <div class="cont">
+        <div class="nota">Il quadrato del binomio, con $-2y$ e il suo meno.</div>
+        <div class="f sx">$\displaystyle =2\left[\left(\frac{1}{2}x\right)^{2}+2\cdot\frac{1}{2}x\cdot\left(-2y\right)+\left(-2y\right)^{2}\right]=$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">Primo termine $\frac{1}{2}x$, secondo $-2y$. Il $2$ davanti aspetta: prima la potenza.</p>
+      <div class="teoria">
+        <div class="nome">Il quadrato di un binomio</div>
+        <div class="frase">Il quadrato di un binomio è il quadrato del primo termine, più il <strong>doppio prodotto</strong> del primo per il secondo, più il quadrato del secondo. Ogni termine si prende con il suo segno: il doppio prodotto viene negativo se i due termini hanno segni diversi, positivo se hanno lo stesso segno.</div>
+        <div class="f sx">$\displaystyle \left(P+Q\right)^{2}=P^{2}+2PQ+Q^{2}$</div>
+        <div class="ex">esempio: $\left(k-5\right)^{2}=k^{2}-10k+25$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ Errore da non fare</div>
+        <div class="nome">Dare il più al doppio prodotto</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \left(P-Q\right)^{2}=P^{2}+2PQ+Q^{2}$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \left(P-Q\right)^{2}=P^{2}-2PQ+Q^{2}$</div></div>
+        </div>
+        <div class="why-txt">Il doppio prodotto contiene $-Q$: un fattore negativo, viene negativo.</div>
+      </div>
+    </div>
+  </details>
+
+  <details class="riga">
+    <summary>
+      <div class="n">8</div>
+      <div class="cont">
+        <div class="nota">I due quadrati.</div>
+        <div class="f sx">$\displaystyle =2\left[\frac{1}{4}x^{2}+2\cdot\frac{1}{2}x\cdot\left(-2y\right)+4y^{2}\right]=$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">$\left(\frac{1}{2}x\right)^{2}=\frac{1}{4}x^{2}$ e $\left(-2y\right)^{2}=4y^{2}$.</p>
+      <div class="teoria">
+        <div class="nome">Potenza di un monomio</div>
+        <div class="frase">Per elevare a potenza un monomio si eleva il coefficiente, con il suo segno, e si moltiplica per l'esponente l'esponente di ogni lettera. Se il coefficiente è una frazione si elevano il numeratore e il denominatore.</div>
+        <div class="f sx">$\displaystyle \left(5k^{m}h\right)^{n}=5^{n}k^{m\cdot n}h^{n}\qquad\left(\frac{3}{7}k^{m}\right)^{n}=\frac{3^{n}}{7^{n}}k^{m\cdot n}$</div>
+        <div class="ex">esempio: $\left(\frac{2}{7}k^{3}h\right)^{2}=\frac{4}{49}k^{6}h^{2}$</div>
+      </div>
+      <div class="teoria">
+        <div class="nome">Potenza di un numero negativo</div>
+        <div class="frase">Se l'esponente è <strong>pari</strong> il risultato è positivo, perché i segni meno si accoppiano; se è <strong>dispari</strong> ne resta uno spaiato e il risultato è negativo. Attenzione alle parentesi: $\left(-a\right)^{2}$ e $-a^{2}$ non sono la stessa cosa.</div>
+        <div class="f sx">$\displaystyle (-a)^{2}=+a^{2},\quad (-a)^{3}=-a^{3}$</div>
+        <div class="ex">esempio: $\left(-5\right)^{2}=25,\quad\left(-5\right)^{3}=-125$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ Errore da non fare</div>
+        <div class="nome">Elevare solo il numeratore</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \left(\frac{3}{7}k\right)^{n}=\frac{3^{n}}{7}k^{n}$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \left(\frac{3}{7}k\right)^{n}=\frac{3^{n}}{7^{n}}k^{n}$</div></div>
+        </div>
+        <div class="why-txt">Anche il denominatore è un fattore: va elevato come il numeratore.</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ E nemmeno questo</div>
+        <div class="nome">Tenere il meno nel quadrato</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \left(-k\right)^{2}=-k^{2}$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \left(-k\right)^{2}=+k^{2}$</div></div>
+        </div>
+        <div class="why-txt">$\left(-7\right)\cdot\left(-7\right)$ fa $49$, non $-49$.</div>
+      </div>
+    </div>
+  </details>
+
+  <details class="riga">
+    <summary>
+      <div class="n">9</div>
+      <div class="cont">
+        <div class="nota">Nel doppio prodotto semplifichiamo $2$ con $2$.</div>
+        <div class="f sx">$\displaystyle =2\left[\frac{1}{4}x^{2}+\overset{1}{\cancel{2}}\cdot\frac{1}{\underset{1}{\cancel{2}}}x\cdot\left(-2y\right)+4y^{2}\right]=$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">Il $2$ intero e il $2$ sotto si dividono per $2$.</p>
+      <div class="teoria">
+        <div class="nome">Semplificare prima di moltiplicare</div>
+        <div class="frase">Quando un numero intero e una frazione si moltiplicano, si semplifica il numero con il <strong>denominatore</strong> prima di fare il prodotto: si dividono tutti e due per un divisore comune. Farlo dopo porta allo stesso risultato, ma passando da numeri molto più grandi.</div>
+        <div class="f sx">$\displaystyle \frac{p}{d\cdot k}\cdot\left(n\cdot k\right)=\frac{p\cdot n}{d}$</div>
+        <div class="ex">esempio: $\frac{5}{8}\cdot 32=5\cdot 4=20$</div>
+      </div>
+    </div>
+  </details>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">10</div>
+      <div class="cont">
+        <div class="nota">Restano due fattori $1$, che non si scrivono.</div>
+        <div class="f sx">$\displaystyle =2\left[\frac{1}{4}x^{2}+x\cdot\left(-2y\right)+4y^{2}\right]=$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <details class="riga">
+    <summary>
+      <div class="n">11</div>
+      <div class="cont">
+        <div class="nota">$x\cdot\left(-2y\right)=-2xy$.</div>
+        <div class="f sx">$\displaystyle =2\left[\frac{1}{4}x^{2}-2xy+4y^{2}\right]=$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">Un fattore negativo: il prodotto è negativo.</p>
+      <div class="teoria">
+        <div class="nome">La regola dei segni</div>
+        <div class="frase">Nel prodotto e nella divisione due segni uguali danno <strong>più</strong>, due segni diversi danno <strong>meno</strong>. Con più di due fattori si contano i meno: se sono in numero dispari il risultato è negativo, se sono pari è positivo.</div>
+        <div class="f sx">$\displaystyle \left(-P\right)\cdot\left(-Q\right)=+PQ\qquad P\cdot\left(-Q\right)=-PQ$</div>
+        <div class="ex">esempio: $\left(-4\right)\cdot\left(-5\right)=20,\quad\left(-4\right)\cdot 5=-20$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ Errore da non fare</div>
+        <div class="nome">Credere che il prodotto resti positivo</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle P\cdot\left(-Q\right)=PQ$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle P\cdot\left(-Q\right)=-PQ$</div></div>
+        </div>
+        <div class="why-txt">$4\cdot\left(-5\right)$ fa $-20$, non $20$.</div>
+      </div>
+    </div>
+  </details>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">12</div>
+      <div class="cont">
+        <div class="nota">Il $2$ moltiplica tutti e tre i termini, come al passaggio 2.</div>
+        <div class="f sx">$\displaystyle =2\cdot\frac{1}{4}x^{2}-2\cdot 2xy+2\cdot 4y^{2}=$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">13</div>
+      <div class="cont">
+        <div class="nota">Gli interi: $2\cdot 2=4$ e $2\cdot 4=8$.</div>
+        <div class="f sx">$\displaystyle =2\cdot\frac{1}{4}x^{2}-4xy+8y^{2}=$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">14</div>
+      <div class="cont">
+        <div class="nota">Semplifichiamo $2$ con $4$, come al passaggio 9.</div>
+        <div class="f sx">$\displaystyle =\overset{1}{\cancel{2}}\cdot\frac{1}{\underset{2}{\cancel{4}}}x^{2}-4xy+8y^{2}=$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="riga res">
+    <div class="fissa">
+      <div class="n">15</div>
+      <div class="cont">
+        <div class="nota">Il fattore $1$ non si scrive.</div>
+        <div class="f sx">$\displaystyle =\frac{1}{2}x^{2}-4xy+8y^{2}$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+</div>
+
+<div class="dicitura">Materiale creato con il supporto dell'Intelligenza Artificiale</div>
+
+</body>
+</html>

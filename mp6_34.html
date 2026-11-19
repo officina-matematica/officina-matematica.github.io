@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MP6_34 — Prodotti notevoli</title>
+
+<script type="application/json" id="meta">
+{
+  "id": "mp6_34",
+  "titolo": "Prodotti notevoli",
+  "tipo": "espressione",
+  "consegna_label": "Semplifica l'espressione",
+  "consegna_tex": "\\left(a+2b\\right)^{3}-\\left(a-2b\\right)^{3}-3b\\left(-2a\\right)^{2}",
+  "consegna_sympy": "(a+2*b)**3-(a-2*b)**3-3*b*(-2*a)**2",
+  "risultato_tex": "16b^{3}",
+  "risultato_sympy": "16*b**3",
+  "righe_sympy": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ]
+}
+</script>
+
+<!-- Output SVG, non CHTML: glifi vettoriali, allineamento identico su ogni
+     dispositivo, nessun rischio di webfont non caricato dentro un iframe.
+     Ogni formula e' scritta con \displaystyle: senza, MathJax rende le frazioni
+     in textstyle e le parentesi non abbracciano la frazione. -->
+<script>
+MathJax = {
+  loader: { load: ['[tex]/cancel'] },
+  tex: {
+    packages: { '[+]': ['cancel'] },
+    inlineMath: [['$','$']],
+    displayMath: [['$$','$$']],
+    processEscapes: true
+  },
+  svg: { fontCache: 'global', scale: 1.06, exFactor: .5 },
+  options: { enableMenu: false }
+};
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-svg.js"></script>
+
+<style>
+:root{
+  --ink:#0f172a; --body:#334155; --muted:#475569; --faint:#94a3b8;
+  --line:#e2e8f0; --paper:#f8fafc;
+  --blu:#12519e; --blubg:#e8f1fb; --blubd:#a8c9ea;
+  --amb:#b45309; --ambbg:#fffbeb; --ambbd:#fcd34d; --sol:#fef08a;
+  --teo:#14532d; --teobg:#f0fdf4; --teobd:#86efac;
+  --err:#9f1239; --errbg:#fff1f2; --errbd:#fda4af;
+  --ko:#b91c1c;  --kobg:#fee2e2;  --kobd:#ef4444;
+  --ok:#15803d;  --okbg:#dcfce7;  --okbd:#22c55e;
+  --sxbg:#ffffff;
+}
+*{box-sizing:border-box}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  background:var(--paper);color:var(--body);line-height:1.5;
+  margin:0;padding:20px 14px 60px;max-width:900px;margin-inline:auto;font-size:16px;
+}
+mjx-container{outline:none}
+mjx-container[display]{margin:0!important}
+
+/* formule scorrevoli, con sfumatura ai bordi quando escono dallo schermo */
+.sx{
+  overflow-x:auto;overflow-y:hidden;scrollbar-width:thin;-webkit-overflow-scrolling:touch;
+  background-image:
+    linear-gradient(to right,var(--sxbg),var(--sxbg)),
+    linear-gradient(to left,var(--sxbg),var(--sxbg)),
+    linear-gradient(to right,rgba(15,23,42,.16),rgba(15,23,42,0)),
+    linear-gradient(to left,rgba(15,23,42,.16),rgba(15,23,42,0));
+  background-position:left center,right center,left center,right center;
+  background-repeat:no-repeat;
+  background-size:22px 100%,22px 100%,13px 100%,13px 100%;
+  background-attachment:local,local,scroll,scroll;
+}
+
+/* ---------------- CONSEGNA ---------------- */
+.consegna{background:var(--blubg);border:2px solid var(--blubd);border-radius:12px;
+  padding:12px 16px;color:#0d47a1;--sxbg:var(--blubg)}
+.consegna .t{font-weight:700;font-size:.9rem}
+.consegna .m{text-align:center;margin-top:4px;padding:4px 0}
+
+/* ---------------- CATENA ---------------- */
+.catena{background:#fff;border:1px solid var(--line);border-radius:14px;
+  padding:14px 16px 10px;margin-top:16px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.catena>.k{font-weight:800;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.catena>.sub{font-size:.85rem;color:var(--faint);margin:2px 0 8px}
+
+.riga{border-top:1px dotted var(--line)}
+.riga:first-of-type{border-top:none}
+.riga>summary,.riga>.fissa{
+  display:grid;grid-template-columns:26px 1fr auto;gap:10px;align-items:center;
+  padding:11px 0;
+}
+.riga>summary{list-style:none;cursor:pointer}
+.riga>summary::-webkit-details-marker{display:none}
+.riga>summary:hover .f,.riga>summary:focus-visible .f{background-color:#f8fafc}
+
+.n{font-size:.72rem;font-weight:800;color:var(--faint);text-align:center;
+  background:#f1f5f9;border-radius:6px;padding:4px 0;align-self:start;margin-top:4px}
+.cont{min-width:0}
+.nota{font-size:.8rem;color:var(--muted);margin-bottom:1px}
+.f{padding:3px 0;border-radius:6px;color:var(--blu)}
+.riga.res>summary .f,.riga.res>.fissa .f{color:var(--ink)}
+/* solo la formula della riga, mai quelle dentro il pannello della tendina */
+.riga.res>summary .f mjx-container,
+.riga.res>.fissa .f mjx-container{background:var(--sol);padding:4px 12px;border-radius:6px}
+
+/* linguetta della tendina */
+.tab{display:inline-flex;align-items:center;gap:5px;align-self:start;margin-top:5px;
+  font-size:.72rem;font-weight:700;letter-spacing:.02em;color:var(--muted);
+  background:#fff;border:1.5px solid var(--line);border-radius:999px;padding:4px 10px;
+  white-space:nowrap}
+.tab .chev{display:inline-block;font-size:.6rem;transition:transform .18s}
+.riga[open]>summary .tab{background:var(--ink);border-color:var(--ink);color:#fff}
+.riga[open]>summary .tab .chev{transform:rotate(180deg)}
+@media(prefers-reduced-motion:reduce){.tab .chev{transition:none}}
+
+/* pannello aperto */
+.pannello{padding:2px 0 16px 36px;display:grid;grid-template-columns:minmax(0,1fr);gap:10px}
+.mossa{font-size:.9rem;margin:0}
+
+.teoria{background:var(--teobg);border:1.5px solid var(--teobd);border-radius:10px;
+  padding:10px 14px;color:var(--teo);--sxbg:var(--teobg)}
+.teoria .nome{font-weight:800;font-size:.88rem;margin-bottom:2px}
+.teoria .frase{font-size:.87rem;line-height:1.45}
+.teoria .f{text-align:center;margin:8px 0 3px;background:rgba(255,255,255,.75);
+  border-radius:6px;padding:6px 8px;color:var(--teo);--sxbg:#f4fdf6}
+.teoria .ex{font-size:.78rem;opacity:.9;text-align:center;overflow-x:auto;overflow-y:hidden}
+
+.errore{background:var(--errbg);border:1.5px solid var(--errbd);border-radius:10px;padding:11px 14px}
+.errore .k{font-weight:800;font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;
+  color:var(--err);margin-bottom:5px}
+.errore .nome{font-weight:700;font-size:.9rem;color:var(--err);margin-bottom:8px}
+.compare{display:flex;flex-flow:row-reverse wrap-reverse;align-items:stretch;row-gap:6px}
+.compare .card{flex:1 1 0;max-width:100%}
+.compare .card.ok{order:1}
+.compare .arrow{order:2;flex:0 0 34px}
+.compare .card.ko{order:3}
+.card{border:2px solid;border-radius:10px;padding:8px 12px;text-align:center}
+.card .tag{font-size:.7rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;margin-bottom:2px}
+.card .f{padding:2px 0;color:inherit}
+.card.ko{background:var(--kobg);border-color:var(--kobd);color:var(--ko);--sxbg:var(--kobg)}
+.card.ok{background:var(--okbg);border-color:var(--okbd);color:var(--ok);--sxbg:var(--okbg)}
+.arrow{display:flex;align-items:center;justify-content:center;font-size:1.2rem;color:var(--faint);font-weight:800}
+.why-txt{font-size:.82rem;color:#7f1d1d;margin-top:6px;text-align:center}
+
+/* fermata di controllo */
+.check{display:flex;flex-wrap:wrap;align-items:center;gap:4px 10px;
+  background:var(--ambbg);border:1.5px dashed var(--ambbd);border-radius:10px;
+  padding:8px 14px;margin:8px 0;font-size:.85rem;color:var(--amb);--sxbg:var(--ambbg)}
+.check b{font-weight:800}
+.check .v{color:var(--ink)}
+
+/* dicitura in fondo alla pagina, sotto la catena */
+.dicitura{margin-top:14px;text-align:center;font-size:.8rem;color:#444}
+
+/* ---------------- MOBILE ---------------- */
+@media(max-width:720px){
+  body{padding:16px 10px 50px;font-size:16px}
+  .catena{padding:12px 12px 8px}
+  .riga>summary,.riga>.fissa{grid-template-columns:24px 1fr;gap:8px}
+  .cont{grid-column:2}
+  .tab{grid-column:2;justify-self:start;margin-top:6px}
+  .pannello{padding-left:0}
+  .compare{display:grid;grid-template-columns:minmax(0,1fr);gap:6px}
+  .compare .card.ok,.compare .arrow,.compare .card.ko{order:0}
+  .arrow{transform:rotate(90deg);height:22px}
+}
+</style>
+</head>
+<body>
+
+<!-- ===================== CONSEGNA ===================== -->
+<div class="consegna">
+  <div class="t">📌 Semplifica l'espressione</div>
+  <div class="m sx">$\displaystyle \left(a+2b\right)^{3}-\left(a-2b\right)^{3}-3b\left(-2a\right)^{2}$</div>
+</div>
+
+<!-- ===================== CATENA ====================== -->
+<div class="catena">
+  <div class="k">Confronta con il tuo foglio</div>
+  <div class="sub">Scorri le righe fino alla prima che non coincide con la tua. Lì apri <b>Regola</b>.</div>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">1</div>
+      <div class="cont"><div class="f sx">$\displaystyle \left(a+2b\right)^{3}-\left(a-2b\right)^{3}-3b\left(-2a\right)^{2}=$</div></div>
+      <div></div>
+    </div>
+  </div>
+
+  <details class="riga">
+    <summary>
+      <div class="n">2</div>
+      <div class="cont">
+        <div class="nota">Due cubi di binomio con la formula.</div>
+        <div class="f sx">$\displaystyle =\left[a^{3}+3a^{2}\cdot 2b+3a\cdot\left(2b\right)^{2}+\left(2b\right)^{3}\right]-\left[a^{3}+3a^{2}\cdot\left(-2b\right)+3a\cdot\left(-2b\right)^{2}+\left(-2b\right)^{3}\right]-3b\left(-2a\right)^{2}=$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">Nel secondo cubo il secondo termine è $-2b$, con il suo meno.</p>
+      <div class="teoria">
+        <div class="nome">Il cubo di un binomio</div>
+        <div class="frase">Il cubo di un binomio ha quattro termini: il cubo del primo, il <strong>triplo</strong> prodotto del quadrato del primo per il secondo, il triplo prodotto del primo per il quadrato del secondo, il cubo del secondo. Ogni termine si prende con il suo segno, fra parentesi.</div>
+        <div class="f sx">$\displaystyle \left(A+B\right)^{3}=A^{3}+3A^{2}B+3AB^{2}+B^{3}$</div>
+        <div class="ex">esempio: $\left(k+5\right)^{3}=k^{3}+15k^{2}+75k+125$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ Errore da non fare</div>
+        <div class="nome">Dimenticare i tripli prodotti</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \left(A+B\right)^{3}=A^{3}+B^{3}$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \left(A+B\right)^{3}=A^{3}+3A^{2}B+3AB^{2}+B^{3}$</div></div>
+        </div>
+        <div class="why-txt">Con $A=B=1$ verrebbe $2$ invece di $8$.</div>
+      </div>
+    </div>
+  </details>
+
+  <details class="riga">
+    <summary>
+      <div class="n">3</div>
+      <div class="cont">
+        <div class="nota">Le potenze: il quadrato toglie il meno, il cubo lo tiene.</div>
+        <div class="f sx">$\displaystyle =\left[a^{3}+3a^{2}\cdot 2b+3a\cdot 4b^{2}+8b^{3}\right]-\left[a^{3}+3a^{2}\cdot\left(-2b\right)+3a\cdot 4b^{2}-8b^{3}\right]-3b\cdot 4a^{2}=$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">$\left(2b\right)^{2}=4b^{2}$, $\left(2b\right)^{3}=8b^{3}$, $\left(-2b\right)^{3}=-8b^{3}$, $\left(-2a\right)^{2}=4a^{2}$.</p>
+      <div class="teoria">
+        <div class="nome">Potenza di un monomio</div>
+        <div class="frase">Per elevare a potenza un monomio si eleva il coefficiente, con il suo segno, e si moltiplica per l'esponente l'esponente di ogni lettera. Se il coefficiente è una frazione si elevano il numeratore e il denominatore.</div>
+        <div class="f sx">$\displaystyle \left(5k^{m}h\right)^{n}=5^{n}k^{m\cdot n}h^{n}\qquad\left(\frac{3}{7}k^{m}\right)^{n}=\frac{3^{n}}{7^{n}}k^{m\cdot n}$</div>
+        <div class="ex">esempio: $\left(\frac{2}{7}k^{3}h\right)^{2}=\frac{4}{49}k^{6}h^{2}$</div>
+      </div>
+      <div class="teoria">
+        <div class="nome">Potenza di un numero negativo</div>
+        <div class="frase">Se l'esponente è <strong>pari</strong> il risultato è positivo, perché i segni meno si accoppiano; se è <strong>dispari</strong> ne resta uno spaiato e il risultato è negativo. Attenzione alle parentesi: $\left(-a\right)^{2}$ e $-a^{2}$ non sono la stessa cosa.</div>
+        <div class="f sx">$\displaystyle (-a)^{2}=+a^{2},\quad (-a)^{3}=-a^{3}$</div>
+        <div class="ex">esempio: $\left(-5\right)^{2}=25,\quad\left(-5\right)^{3}=-125$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ Errore da non fare</div>
+        <div class="nome">Perdere il meno nel cubo</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \left(-k\right)^{3}=+k^{3}$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \left(-k\right)^{3}=-k^{3}$</div></div>
+        </div>
+        <div class="why-txt">Tre fattori negativi: il prodotto resta negativo.</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ E nemmeno questo</div>
+        <div class="nome">Non elevare il coefficiente</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \left(7k^{m}\right)^{n}=7k^{m\cdot n}$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \left(7k^{m}\right)^{n}=7^{n}k^{m\cdot n}$</div></div>
+        </div>
+        <div class="why-txt">Con $n=2$ il coefficiente diventa $49$, non resta $7$.</div>
+      </div>
+    </div>
+  </details>
+
+  <details class="riga">
+    <summary>
+      <div class="n">4</div>
+      <div class="cont">
+        <div class="nota">I prodotti, ognuno con il suo segno.</div>
+        <div class="f sx">$\displaystyle =\left[a^{3}+6a^{2}b+12ab^{2}+8b^{3}\right]-\left[a^{3}-6a^{2}b+12ab^{2}-8b^{3}\right]-12a^{2}b=$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">$3a^{2}\cdot\left(-2b\right)=-6a^{2}b$: un fattore negativo. $3a\cdot 4b^{2}=12ab^{2}$ e $3b\cdot 4a^{2}=12a^{2}b$, con le lettere in ordine.</p>
+      <div class="teoria">
+        <div class="nome">La regola dei segni</div>
+        <div class="frase">Nel prodotto e nella divisione due segni uguali danno <strong>più</strong>, due segni diversi danno <strong>meno</strong>. Con più di due fattori si contano i meno: se sono in numero dispari il risultato è negativo, se sono pari è positivo.</div>
+        <div class="f sx">$\displaystyle \left(-P\right)\cdot\left(-Q\right)=+PQ\qquad P\cdot\left(-Q\right)=-PQ$</div>
+        <div class="ex">esempio: $\left(-4\right)\cdot\left(-5\right)=20,\quad\left(-4\right)\cdot 5=-20$</div>
+      </div>
+      <div class="teoria">
+        <div class="nome">Prodotto di due monomi</div>
+        <div class="frase">Si moltiplicano i coefficienti fra loro e le lettere fra loro. Per ogni lettera uguale gli esponenti si <strong>sommano</strong>; una lettera che compare in un solo fattore si riscrive com'è.</div>
+        <div class="f sx">$\displaystyle 5k^{m}h\cdot 3k^{n}=\left(5\cdot 3\right)k^{m+n}h=15\,k^{m+n}h$</div>
+        <div class="ex">esempio: $4h^{2}\cdot 7h^{3}=28h^{5}$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ Errore da non fare</div>
+        <div class="nome">Credere che il prodotto resti positivo</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle P\cdot\left(-Q\right)=PQ$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle P\cdot\left(-Q\right)=-PQ$</div></div>
+        </div>
+        <div class="why-txt">$4\cdot\left(-5\right)$ fa $-20$, non $20$.</div>
+      </div>
+    </div>
+  </details>
+
+  <details class="riga">
+    <summary>
+      <div class="n">5</div>
+      <div class="cont">
+        <div class="nota">Il meno davanti cambia segno a tutti i termini della seconda quadra.</div>
+        <div class="f sx">$\displaystyle =a^{3}+6a^{2}b+12ab^{2}+8b^{3}-a^{3}+6a^{2}b-12ab^{2}+8b^{3}-12a^{2}b=$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">Tutti e quattro cambiano segno.</p>
+      <div class="teoria">
+        <div class="nome">Il meno davanti alla parentesi</div>
+        <div class="frase">Quando davanti a una parentesi c'è il segno meno, togliendo la parentesi <strong>tutti</strong> i termini che stanno dentro cambiano segno: il più diventa meno e il meno diventa più. Con il più davanti, invece, non cambia niente.</div>
+        <div class="f sx">$\displaystyle -\left(P+Q\right)=-P-Q\qquad -\left(P-Q\right)=-P+Q\qquad -\left(-P\right)=+P$</div>
+        <div class="ex">esempio: $-\left(3k-5\right)=-3k+5$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ Errore da non fare</div>
+        <div class="nome">Cambiare segno solo al primo termine</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle -\left(P-Q\right)=-P-Q$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle -\left(P-Q\right)=-P+Q$</div></div>
+        </div>
+        <div class="why-txt">Con $-Q$ il termine si toglie invece di aggiungersi.</div>
+      </div>
+    </div>
+  </details>
+
+  <details class="riga">
+    <summary>
+      <div class="n">6</div>
+      <div class="cont">
+        <div class="nota">Avviciniamo i simili, ognuno con il suo segno.</div>
+        <div class="f sx">$\displaystyle =a^{3}-a^{3}+6a^{2}b+6a^{2}b-12a^{2}b+12ab^{2}-12ab^{2}+8b^{3}+8b^{3}=$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">Quattro gruppi: $a^{3}$, $a^{2}b$, $ab^{2}$, $b^{3}$.</p>
+      <div class="teoria">
+        <div class="nome">Avvicinare i monomi simili</div>
+        <div class="frase">In una somma algebrica si può cambiare l'ordine dei termini, purché ognuno si porti dietro il proprio segno. Così i monomi simili finiscono vicini, pronti per essere sommati.</div>
+        <div class="f sx">$\displaystyle P-Q+R=P+R-Q$</div>
+        <div class="ex">esempio: $5k-2m+3k=5k+3k-2m$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ Errore da non fare</div>
+        <div class="nome">Spostare un termine lasciando indietro il segno</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle P-Q+R=P+R+Q$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle P-Q+R=P+R-Q$</div></div>
+        </div>
+        <div class="why-txt">Con $+Q$ il termine si aggiunge invece di togliersi.</div>
+      </div>
+    </div>
+  </details>
+
+  <details class="riga res">
+    <summary>
+      <div class="n">7</div>
+      <div class="cont">
+        <div class="nota">Si annullano tre gruppi; $8+8=16$.</div>
+        <div class="f sx">$\displaystyle =16b^{3}$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">$a^{3}$ e $ab^{2}$ sono coppie di opposti; $6+6-12=0$; restano $8b^{3}+8b^{3}$.</p>
+      <div class="teoria">
+        <div class="nome">Due monomi opposti</div>
+        <div class="frase">Due monomi con le stesse lettere, gli stessi esponenti, lo stesso numero e il <strong>segno opposto</strong> si cancellano: la loro somma fa zero.</div>
+        <div class="f sx">$\displaystyle P-P=0$</div>
+        <div class="ex">esempio: $9k-9k=0$</div>
+      </div>
+      <div class="teoria">
+        <div class="nome">Somma di monomi simili</div>
+        <div class="frase">Due monomi sono <strong>simili</strong> quando hanno la stessa parte letterale, con gli stessi esponenti. Per sommarli si sommano solo i <strong>coefficienti</strong>, e la parte letterale si riscrive uguale: non cambia e non si somma.</div>
+        <div class="f sx">$\displaystyle 4k^{m}+3k^{m}=\left(4+3\right)k^{m}=7k^{m}$</div>
+        <div class="ex">esempio: $\frac{2}{11}k+\frac{3}{11}k=\frac{5}{11}k$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ Errore da non fare</div>
+        <div class="nome">Lasciare in piedi quello che si è annullato</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle 5k-5k=k$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle 5k-5k=0$</div></div>
+        </div>
+        <div class="why-txt">Zero volte una lettera fa zero.</div>
+      </div>
+    </div>
+  </details>
+
+</div>
+
+<div class="dicitura">Materiale creato con il supporto dell'Intelligenza Artificiale</div>
+
+</body>
+</html>
