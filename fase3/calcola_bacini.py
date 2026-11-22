@@ -47,6 +47,19 @@ PASSAGGI_MARATONA = 12
 # prima; qui l'attivita' indicata la tiene comunque (Simone, 22/11/2026: le 11
 # espressioni di P4 restano a P4 e si tolgono da P3)
 TIENE_DOPPIONE = {frozenset({"p3", "p4"}): "p4"}
+# livello 1 scritto apposta per la fase 3 (Simone, 22/11/2026): queste guide
+# sono il livello 1; il livello 1 di prima diventa il 2; il 2 e il 3 di prima
+# si fondono nel 3
+L1_SCRITTO = {
+    "neg5": ["neg5_34", "neg5_35", "neg5_36"],
+    "odx1": ["odx1_8", "odx1_9", "odx1_10"],
+    "odx2": ["odx2_7", "odx2_8", "odx2_9"],
+    "of4": ["of4_52", "of4_53", "of4_54"],
+    "p4": ["p4_12", "p4_13", "p4_14"],
+    "log7": ["log7_7", "log7_8", "log7_9"],
+    "log8": ["log8_6", "log8_7", "log8_8"],
+}
+PARTE_L1_SCRITTO = "Fase 3 · livello 1 scritto apposta"
 
 
 # ------------------------------------------------- progressione per tipo
@@ -113,39 +126,9 @@ FASCE = {
 # Proposte per le attivita' in cui anche il livello 1 e' lungo: consegna piu'
 # corta, una sola parentesi. NON sono guide: le decide Simone. Risultati
 # controllati con SymPy (vedi controlla_proposte in fondo).
-PROPOSTE_L1 = {
-    "neg5": [(r"\left(-\frac{2}{3}\right)^{2}-\frac{1}{9}", r"\frac{1}{3}",
-              "una potenza di base negativa e una sottrazione"),
-             (r"\left(-\frac{1}{2}+\frac{3}{4}\right)^{2}\cdot 8", r"\frac{1}{2}",
-              "prima la parentesi, poi la potenza"),
-             (r"-2^{2}+\left(-3\right)^{2}:3", r"-1",
-              r"la differenza fra $-2^{2}$ e $\left(-3\right)^{2}$")],
-    "odx1": [(r"\left(0{,}5+0{,}25\right)\cdot 4", r"3", "solo decimali finiti"),
-             (r"0{,}\overline{3}\cdot 1{,}2-0{,}1", r"0{,}3",
-              "un solo periodico da trasformare in frazione"),
-             (r"\left(1{,}5-0{,}\overline{6}\right):0{,}5", r"1{,}\overline{6}",
-              "un periodico dentro una parentesi")],
-    "odx2": [(r"\left(0{,}3\right)^{2}+0{,}91", r"1", "una potenza di un decimale"),
-             (r"\left(0{,}5\right)^{3}\cdot 4", r"0{,}5", "cubo di un decimale, poi un prodotto"),
-             (r"\left(1{,}2\right)^{2}-0{,}44", r"1", "quadrato di un decimale maggiore di 1")],
-    "of4": [(r"\left(\frac{1}{2}+\frac{1}{3}\right)\cdot\frac{6}{5}", r"1",
-             "una somma in parentesi, poi un prodotto"),
-            (r"\left(\frac{2}{3}\right)^{2}\cdot\frac{3}{2}", r"\frac{2}{3}",
-             "una potenza di frazione e una semplificazione"),
-            (r"\frac{3}{4}-\left(\frac{1}{2}\right)^{2}", r"\frac{1}{2}",
-             "prima la potenza, poi la sottrazione")],
-    "p4": [(r"\left(2^{3}+2^{2}\right):3", r"4", "potenze da calcolare, poi una divisione"),
-           (r"5^{2}-\left(3^{2}-2^{3}\right)", r"24", "una parentesi con due potenze"),
-           (r"\left(2^{5}:2^{3}\right)^{2}+1", r"17",
-            "quoziente di potenze con la stessa base, poi il quadrato")],
-    "log7": [(r"\log_{2}\left(x-1\right)=3", r"x=9", "un solo logaritmo, si passa all'esponenziale"),
-             (r"\log_{3}x+\log_{3}2=2", r"x=\frac{9}{2}",
-              "la proprietà del prodotto, poi come sopra"),
-             (r"\ln\left(2x+1\right)=\ln 5", r"x=2", "stessa base ai due membri")],
-    "log8": [(r"\log_{2}\left(x-1\right)<3", r"1<x<9", "base maggiore di 1, con il dominio"),
-             (r"\log_{\frac{1}{3}}x>2", r"0<x<\frac{1}{9}", "base minore di 1: il verso si gira"),
-             (r"\ln\left(x+2\right)\ge 0", r"x\ge -1", r"confronto con $\ln 1=0$")],
-}
+# Le proposte del 22/11 (NEG5, ODX1, ODX2, OF4, P4, LOG7, LOG8) sono diventate
+# guide vere: stanno in L1_SCRITTO. Qui restano solo eventuali proposte nuove.
+PROPOSTE_L1 = {}
 
 
 # ---------------------------------------------------------------- ingredienti
@@ -480,6 +463,17 @@ def main():
         for i, e in enumerate(ex):
             e["punteggio"] = round(100 * sum(PESI[k] * pos[k][i] for k in PESI), 1)
         assegna_livelli(ex, cod)
+        if cod in L1_SCRITTO:
+            # i livelli di prima si calcolano sugli esercizi di prima, poi
+            # scalano di uno; le guide nuove sono il livello 1
+            nuovi = set(L1_SCRITTO[cod])
+            vecchi = [e for e in ex if e["id"] not in nuovi]
+            assegna_livelli(vecchi, cod)
+            for e in vecchi:
+                e["livello"] = {1: 2, 2: 3, 3: 3}[e["livello"]]
+            for e in ex:
+                if e["id"] in nuovi:
+                    e["livello"], e["ammessi"], e["parte"] = 1, (1,), PARTE_L1_SCRITTO
         tutti[cod] = ex
 
     # --- 2. doppioni: la consegna resta nell'attivita' che viene prima nel percorso
@@ -674,6 +668,8 @@ def scrivi_riepilogo(attivita, bacini, conteggi, note, titoli, escluse_build, fa
            "scientifica e tornare al numero → 1 o 2; calcolare in notazione scientifica e "
            "trovare l'errore → 2; espressioni e problemi di realtà → 3.",
            "- **FMDC2, FMDC3**: due numeri piccoli → 1; due numeri più grandi → 2; tre numeri → 3.",
+           "- **NEG5, ODX1, ODX2, OF4, P4, LOG7, LOG8**: il livello 1 sono le tre guide "
+           "scritte per la fase 3; il livello 1 di prima è il 2; il 2 e il 3 di prima sono il 3.",
            "- **OF2**: i prodotti che si semplificano subito (of2_3, of2_4) → 1; completare "
            "l'uguaglianza → 2; i prodotti con un intero da trasformare o con quattro fattori "
            "(of2_1, of2_2, of2_5) → 3 (confermato da Simone il 22/11).",
@@ -740,23 +736,27 @@ def scrivi_riepilogo(attivita, bacini, conteggi, note, titoli, escluse_build, fa
         out.append(f"- **{cod.upper()}** (tolti dal bacino): " + ", ".join(
             f"{e['id']} = {t['id']}" for e, t in coppie))
 
-    # --- livello 1 non basico
-    lunghe = [cod for cod in bacini if conteggi[cod]["l1"] > 6]
-    out += ["", "## Livello 1 non basico", "",
-            "Attività in cui anche il livello 1 supera i 6 passaggi (mediana dei passaggi del "
-            "livello 1). Per ognuna, 2-3 esercizi di "
-            "livello 1 da scrivere apposta: consegna più corta, una sola parentesi. **Sono solo "
-            "proposte, le guide non sono state scritte.** I risultati sono controllati con SymPy.",
-            ""]
-    for cod in lunghe:
-        out.append(f"**{cod.upper()} — {titoli.get(cod, '')}** · livello 1 di oggi: mediana "
-                   f"{conteggi[cod]['l1']:g} passaggi")
+    # --- livello 1 scritto per la fase 3
+    out += ["", "## Livello 1 scritto per la fase 3", "",
+            "In queste sette attività anche il livello 1 superava i 6 passaggi. Il 22/11 Simone "
+            "ha approvato tre consegne corte per ciascuna (una sola parentesi), e sono diventate "
+            "guide con il procedimento di sempre (prompt, `verifica.py`, validatore "
+            "indipendente), con origine «scritto per la fase 3». Nei bacini **le guide nuove "
+            "sono il livello 1, il livello 1 di prima è diventato il 2, il 2 e il 3 di prima si "
+            "sono fusi nel 3** (scelti con la stessa soglia dei passaggi).", ""]
+    for cod in L1_SCRITTO:
+        if cod not in bacini:
+            continue
+        out.append(f"**{cod.upper()} — {titoli.get(cod, '')}**")
         out.append("")
-        for tex, ris, perche in PROPOSTE_L1.get(cod, []):
-            out.append(f"- ${tex}$ → ${ris}$ — {perche}")
-        if cod not in PROPOSTE_L1:
-            out.append("- (nessuna proposta: da fare)")
+        for e in bacini[cod][1]:
+            out.append(f"- {e['id']}: ${e['tex']}$ → ${e['ris']}$ ({e['passaggi']} passaggi)")
         out.append("")
+    lunghe = [cod for cod in bacini if conteggi[cod]["l1"] > 6 and cod not in L1_SCRITTO]
+    if lunghe:
+        out += ["## Livello 1 non basico", "",
+                "Attività in cui il livello 1 supera ancora i 6 passaggi: "
+                + ", ".join(c.upper() for c in lunghe) + ".", ""]
 
     out += ["## Casi dubbi", ""]
     for cod in bacini:
@@ -841,7 +841,7 @@ def scrivi_anteprima(bacini, conteggi, titoli, sito):
         </div>
         <details><summary>Regole</summary><p>{regole}</p></details>
       </article>""")
-            if L == 1 and conteggi[cod]["l1"] > 6:
+            if L == 1 and conteggi[cod]["l1"] > 6 and cod not in L1_SCRITTO:
                 for tex, ris, perche in PROPOSTE_L1.get(cod, []):
                     schede.append(f"""
       <article class="scheda proposta">

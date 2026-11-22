@@ -22,6 +22,7 @@ Dentro ogni attività ciascuna quantità diventa una posizione in classifica da 
 - **LOG1**: gli esercizi che hanno una radice come risultato (come log1_93, $\log_x 64=5$) non stanno al livello 1.
 - **NEG6**: potenze con esponente negativo, proprietà, scrivere in notazione scientifica e tornare al numero → 1 o 2; calcolare in notazione scientifica e trovare l'errore → 2; espressioni e problemi di realtà → 3.
 - **FMDC2, FMDC3**: due numeri piccoli → 1; due numeri più grandi → 2; tre numeri → 3.
+- **NEG5, ODX1, ODX2, OF4, P4, LOG7, LOG8**: il livello 1 sono le tre guide scritte per la fase 3; il livello 1 di prima è il 2; il 2 e il 3 di prima sono il 3.
 - **OF2**: i prodotti che si semplificano subito (of2_3, of2_4) → 1; completare l'uguaglianza → 2; i prodotti con un intero da trasformare o con quattro fattori (of2_1, of2_2, of2_5) → 3 (confermato da Simone il 22/11).
 
 **Bacino**: 5 esercizi per livello (3 se l'attività ha meno di 15 esercizi). Lo script sceglie prima esercizi di parti diverse dell'attività, poi esercizi che portano regole nuove, poi tipi di consegna diversi; a parità, quelli vicini al centro del livello. Poi tre filtri:
@@ -53,8 +54,8 @@ Passaggi: la mediana dei passaggi degli esercizi del bacino, livello per livello
 | FMDC4 — Problemi con MCD e mcm | 14 | 5 / 5 / 4 | 3 / 3 / 3 | 5 / 6 / 10 | 12 | 1 |
 | LOG1 — Calcolo logaritmi | 113 | 35 / 39 / 39 | 5 / 5 / 5 | 2 / 4 / 5 | 12 | 5 |
 | LOG2 — Proprietà dei logaritmi | 64 | 22 / 21 / 21 | 5 / 5 / 5 | 3 / 5 / 9 | 12 | 6 |
-| LOG7 — Equazioni logaritmiche | 6 | 2 / 2 / 2 | 2 / 2 / 2 | 11.5 / 15 / 17.5 | 20 | 1 |
-| LOG8 — Disequazioni logaritmiche | 5 | 2 / 2 / 1 | 2 / 2 / 1 | 8 / 12.5 / 15 | 15 | 1 |
+| LOG7 — Equazioni logaritmiche | 9 | 3 / 2 / 4 | 3 / 2 / 3 | 7 / 11.5 / 17 | 20 | 2 |
+| LOG8 — Disequazioni logaritmiche | 8 | 3 / 2 / 3 | 3 / 2 / 3 | 7 / 8 / 15 | 15 | 2 |
 | MP1 — I monomi | 75 | 25 / 25 / 25 | 5 / 5 / 5 | 2 / 3 / 9 | 12 | 7 |
 | MP2 — Operazioni con i monomi | 77 | 26 / 26 / 25 | 5 / 5 / 5 | 3 / 4 / 8 | 12 | 9 |
 | MP3 — MCD e mcm con i monomi | 35 | 12 / 12 / 11 | 5 / 5 / 5 | 3 / 3 / 4 | 12 | 4 |
@@ -62,21 +63,21 @@ Passaggi: la mediana dei passaggi degli esercizi del bacino, livello per livello
 | MP5 — Somme algebriche e moltiplicazioni di polinomi | 18 | 6 / 6 / 6 | 5 / 5 / 5 | 5 / 7 / 9 | 12 | 3 |
 | MP6 — Prodotti notevoli | 39 | 13 / 13 / 13 | 5 / 5 / 5 | 2 / 4 / 10 | 12 | 4 |
 | NEG4 — Espressioni con i numeri negativi | 30 | 10 / 10 / 10 | 5 / 5 / 5 | 4 / 5 / 13 | 14 | 2 |
-| NEG5 — Numeri negativi, potenze ed espressioni | 33 | 11 / 11 / 11 | 5 / 5 / 5 | 9 / 10 / 12 | 16 | 1 |
+| NEG5 — Numeri negativi, potenze ed espressioni | 36 | 3 / 11 / 22 | 3 / 5 / 5 | 6 / 9 / 10 | 16 | 2 |
 | NEG6 — Espressioni con potenze negative e notazione scientifica | 82 | 24 / 44 / 14 | 5 / 5 / 5 | 2 / 4 / 9 | 12 | 8 |
-| ODX1 — Espressioni con i numeri decimali | 7 | 3 / 2 / 2 | 3 / 2 / 2 | 15 / 17.5 / 23.5 | 29 | 1 |
-| ODX2 — Numeri decimali e potenze | 6 | 2 / 2 / 2 | 2 / 2 / 2 | 8 / 11.5 / 20 | 21 | 1 |
+| ODX1 — Espressioni con i numeri decimali | 10 | 3 / 3 / 4 | 3 / 3 / 3 | 10 / 15 / 18 | 18 | 2 |
+| ODX2 — Numeri decimali e potenze | 9 | 3 / 2 / 4 | 3 / 2 / 3 | 8 / 8 / 19 | 21 | 2 |
 | OF1 — Addizioni e sottrazioni con le frazioni | 11 | 4 / 4 / 3 | 3 / 3 / 2 | 5 / 9 / 12 | 13 | 1 |
 | OF2 — Moltiplicare le frazioni | 11 | 2 / 6 / 3 | 2 / 3 / 3 | 4.5 / 5 / 6 | 12 | 2 |
 | OF3 — Dividere le frazioni | 8 | 3 / 3 / 2 | 3 / 3 / 2 | 4 / 5 / 10.5 | 12 | 2 |
-| OF4 — Frazioni, potenze ed espressioni | 18 | 6 / 6 / 6 | 5 / 5 / 5 | 7 / 12 / 20 | 23 | 2 |
+| OF4 — Frazioni, potenze ed espressioni | 21 | 3 / 6 / 12 | 3 / 5 / 5 | 5 / 8 / 17 | 20 | 3 |
 | OF5 — Problemi con frazioni | 52 | 18 / 17 / 17 | 5 / 5 / 5 | 4 / 5 / 7 | 12 | 15 |
 | ON2 — Proprietà delle operazioni | 54 | 18 / 18 / 18 | 5 / 5 / 5 | 3 / 3 / 4 | 12 | 6 |
 | ON3 — Espressioni con i numeri naturali | 10 | 4 / 3 / 3 | 3 / 3 / 3 | 5 / 7 / 9 | 12 | 1 |
 | P1 — Alla scoperta delle potenze | 74 | 25 / 25 / 24 | 5 / 5 / 5 | 2 / 2 / 3 | 12 | 5 |
 | P2 — Potenze con la stessa base | 60 | 20 / 20 / 20 | 5 / 5 / 5 | 3 / 4 / 5 | 12 | 4 |
 | P3 — Potenze con lo stesso esponente | 50 | 15 / 18 / 17 | 5 / 5 / 5 | 4 / 7 / 9 | 13 | 2 |
-| P4 — Espressioni con le potenze | 11 | 4 / 4 / 3 | 3 / 3 / 2 | 8 / 13 / 14 | 14 | 1 |
+| P4 — Espressioni con le potenze | 14 | 3 / 4 / 7 | 3 / 3 / 3 | 3 / 8 / 14 | 14 | 2 |
 | PR2 — Calcolo di proporzioni | 33 | 11 / 11 / 11 | 5 / 5 / 5 | 5 / 6 / 12 | 18 | 1 |
 | PR4 — Problemi con le proporzioni | 40 | 18 / 15 / 7 | 5 / 5 / 5 | 2 / 4 / 5 | 12 | 2 |
 | PX1 — Alla scoperta delle percentuali | 12 | 4 / 4 / 4 | 3 / 3 / 3 | 6 / 7 / 8 | 12 | 2 |
@@ -90,51 +91,51 @@ La stessa consegna (stessa etichetta, stessa formula) sta in due attività. Rest
 - **NEG5** (tolti dal bacino): neg5_19 = neg4_29
 - **P3** (tolti dal bacino): p3_1 = p4_2, p3_11 = p4_1, p3_18 = p4_11, p3_20 = p4_7, p3_27 = p4_3, p3_28 = p4_6, p3_30 = p4_4, p3_31 = p4_9, p3_32 = p4_8, p3_34 = p4_10, p3_35 = p4_5
 
-## Livello 1 non basico
+## Livello 1 scritto per la fase 3
 
-Attività in cui anche il livello 1 supera i 6 passaggi (mediana dei passaggi del livello 1). Per ognuna, 2-3 esercizi di livello 1 da scrivere apposta: consegna più corta, una sola parentesi. **Sono solo proposte, le guide non sono state scritte.** I risultati sono controllati con SymPy.
+In queste sette attività anche il livello 1 superava i 6 passaggi. Il 22/11 Simone ha approvato tre consegne corte per ciascuna (una sola parentesi), e sono diventate guide con il procedimento di sempre (prompt, `verifica.py`, validatore indipendente), con origine «scritto per la fase 3». Nei bacini **le guide nuove sono il livello 1, il livello 1 di prima è diventato il 2, il 2 e il 3 di prima si sono fusi nel 3** (scelti con la stessa soglia dei passaggi).
 
-**LOG7 — Equazioni logaritmiche** · livello 1 di oggi: mediana 11.5 passaggi
+**NEG5 — Numeri negativi, potenze ed espressioni**
 
-- $\log_{2}\left(x-1\right)=3$ → $x=9$ — un solo logaritmo, si passa all'esponenziale
-- $\log_{3}x+\log_{3}2=2$ → $x=\frac{9}{2}$ — la proprietà del prodotto, poi come sopra
-- $\ln\left(2x+1\right)=\ln 5$ → $x=2$ — stessa base ai due membri
+- neg5_34: $\left(-\frac{2}{3}\right)^{2}-\frac{1}{9}$ → $\frac{1}{3}$ (6 passaggi)
+- neg5_35: $\left(-\frac{1}{2}+\frac{3}{4}\right)^{2}\cdot 8$ → $\frac{1}{2}$ (8 passaggi)
+- neg5_36: $-2^{2}+\left(-3\right)^{2}:3$ → $-1$ (4 passaggi)
 
-**LOG8 — Disequazioni logaritmiche** · livello 1 di oggi: mediana 8 passaggi
+**ODX1 — Espressioni con i numeri decimali**
 
-- $\log_{2}\left(x-1\right)<3$ → $1<x<9$ — base maggiore di 1, con il dominio
-- $\log_{\frac{1}{3}}x>2$ → $0<x<\frac{1}{9}$ — base minore di 1: il verso si gira
-- $\ln\left(x+2\right)\ge 0$ → $x\ge -1$ — confronto con $\ln 1=0$
+- odx1_8: $\left(0{,}5+0{,}25\right)\cdot 4$ → $3$ (10 passaggi)
+- odx1_9: $0{,}\overline{3}\cdot 1{,}2-0{,}1$ → $\frac{3}{10}$ (9 passaggi)
+- odx1_10: $\left(1{,}5-0{,}\overline{6}\right):0{,}5$ → $\frac{5}{3}$ (10 passaggi)
 
-**NEG5 — Numeri negativi, potenze ed espressioni** · livello 1 di oggi: mediana 9 passaggi
+**ODX2 — Numeri decimali e potenze**
 
-- $\left(-\frac{2}{3}\right)^{2}-\frac{1}{9}$ → $\frac{1}{3}$ — una potenza di base negativa e una sottrazione
-- $\left(-\frac{1}{2}+\frac{3}{4}\right)^{2}\cdot 8$ → $\frac{1}{2}$ — prima la parentesi, poi la potenza
-- $-2^{2}+\left(-3\right)^{2}:3$ → $-1$ — la differenza fra $-2^{2}$ e $\left(-3\right)^{2}$
+- odx2_7: $\left(0{,}3\right)^{2}+0{,}41$ → $\frac{1}{2}$ (6 passaggi)
+- odx2_8: $\left(0{,}5\right)^{3}\cdot 4$ → $\frac{1}{2}$ (8 passaggi)
+- odx2_9: $\left(1{,}2\right)^{2}-0{,}24$ → $\frac{6}{5}$ (8 passaggi)
 
-**ODX1 — Espressioni con i numeri decimali** · livello 1 di oggi: mediana 15 passaggi
+**OF4 — Frazioni, potenze ed espressioni**
 
-- $\left(0{,}5+0{,}25\right)\cdot 4$ → $3$ — solo decimali finiti
-- $0{,}\overline{3}\cdot 1{,}2-0{,}1$ → $0{,}3$ — un solo periodico da trasformare in frazione
-- $\left(1{,}5-0{,}\overline{6}\right):0{,}5$ → $1{,}\overline{6}$ — un periodico dentro una parentesi
+- of4_52: $\left(\frac{1}{2}+\frac{1}{3}\right)\cdot\frac{2}{5}$ → $\frac{1}{3}$ (5 passaggi)
+- of4_53: $\left(\frac{2}{3}\right)^{2}\cdot\frac{3}{2}$ → $\frac{2}{3}$ (4 passaggi)
+- of4_54: $\frac{3}{4}-\left(\frac{1}{2}\right)^{2}$ → $\frac{1}{2}$ (5 passaggi)
 
-**ODX2 — Numeri decimali e potenze** · livello 1 di oggi: mediana 8 passaggi
+**P4 — Espressioni con le potenze**
 
-- $\left(0{,}3\right)^{2}+0{,}91$ → $1$ — una potenza di un decimale
-- $\left(0{,}5\right)^{3}\cdot 4$ → $0{,}5$ — cubo di un decimale, poi un prodotto
-- $\left(1{,}2\right)^{2}-0{,}44$ → $1$ — quadrato di un decimale maggiore di 1
+- p4_12: $\left(2^{3}+2^{2}\right):3$ → $4$ (3 passaggi)
+- p4_13: $5^{2}-\left(3^{2}-2^{3}\right)$ → $24$ (3 passaggi)
+- p4_14: $\left(2^{5}:2^{3}\right)^{2}+1$ → $17$ (4 passaggi)
 
-**OF4 — Frazioni, potenze ed espressioni** · livello 1 di oggi: mediana 7 passaggi
+**LOG7 — Equazioni logaritmiche**
 
-- $\left(\frac{1}{2}+\frac{1}{3}\right)\cdot\frac{6}{5}$ → $1$ — una somma in parentesi, poi un prodotto
-- $\left(\frac{2}{3}\right)^{2}\cdot\frac{3}{2}$ → $\frac{2}{3}$ — una potenza di frazione e una semplificazione
-- $\frac{3}{4}-\left(\frac{1}{2}\right)^{2}$ → $\frac{1}{2}$ — prima la potenza, poi la sottrazione
+- log7_7: $\log_{2}\left(x-1\right)=3$ → $x=9$ (7 passaggi)
+- log7_8: $\log_{3}x+\log_{3}2=2$ → $x=\frac{9}{2}$ (6 passaggi)
+- log7_9: $\ln\left(2x+1\right)=\ln 5$ → $x=2$ (9 passaggi)
 
-**P4 — Espressioni con le potenze** · livello 1 di oggi: mediana 8 passaggi
+**LOG8 — Disequazioni logaritmiche**
 
-- $\left(2^{3}+2^{2}\right):3$ → $4$ — potenze da calcolare, poi una divisione
-- $5^{2}-\left(3^{2}-2^{3}\right)$ → $24$ — una parentesi con due potenze
-- $\left(2^{5}:2^{3}\right)^{2}+1$ → $17$ — quoziente di potenze con la stessa base, poi il quadrato
+- log8_6: $\log_{2}\left(x-1\right)<3$ → $1<x<9$ (7 passaggi)
+- log8_7: $\log_{\frac{1}{3}}x>2$ → $0<x<\frac{1}{9}$ (5 passaggi)
+- log8_8: $\ln\left(x+2\right)\ge 0$ → $x\ge -1$ (7 passaggi)
 
 ## Casi dubbi
 
@@ -161,10 +162,10 @@ Attività in cui anche il livello 1 supera i 6 passaggi (mediana dei passaggi de
 - fuori dal livello 3 perché oltre il 90° percentile dei passaggi (9) e oltre 12 passaggi: log2_34 (14)
 
 **LOG7**
-- attività piccola: il livello 1 ha 2 esercizi, il livello 2 ha 2 esercizi, il livello 3 ha 2 esercizi. Chi resta su quel livello rivede presto lo stesso esercizio: servono esercizi nuovi o un bacino unico per più livelli
+- attività piccola: il livello 2 ha 2 esercizi. Chi resta su quel livello rivede presto lo stesso esercizio: servono esercizi nuovi o un bacino unico per più livelli
 
 **LOG8**
-- attività piccola: il livello 1 ha 2 esercizi, il livello 2 ha 2 esercizi, il livello 3 ha 1 esercizio. Chi resta su quel livello rivede presto lo stesso esercizio: servono esercizi nuovi o un bacino unico per più livelli
+- attività piccola: il livello 2 ha 2 esercizi. Chi resta su quel livello rivede presto lo stesso esercizio: servono esercizi nuovi o un bacino unico per più livelli
 
 **MP1**
 - fuori dal livello 3 perché oltre il 90° percentile dei passaggi (10) e oltre 12 passaggi: mp1_41 (13), mp1_43 (15), mp1_44 (21), mp1_45 (18)
@@ -199,10 +200,11 @@ Attività in cui anche il livello 1 supera i 6 passaggi (mediana dei passaggi de
 - fuori dal livello 3 perché oltre il 90° percentile dei passaggi (8) e oltre 12 passaggi: neg6_33 (18), neg6_35 (17), neg6_36 (13)
 
 **ODX1**
-- attività piccola: il livello 2 ha 2 esercizi, il livello 3 ha 2 esercizi. Chi resta su quel livello rivede presto lo stesso esercizio: servono esercizi nuovi o un bacino unico per più livelli
+- fuori dal livello 3 perché oltre il 90° percentile dei passaggi (18) e oltre 12 passaggi: odx1_6 (29)
 
 **ODX2**
-- attività piccola: il livello 1 ha 2 esercizi, il livello 2 ha 2 esercizi, il livello 3 ha 2 esercizi. Chi resta su quel livello rivede presto lo stesso esercizio: servono esercizi nuovi o un bacino unico per più livelli
+- la mediana dei passaggi non cresce dal livello 1 (8) al livello 2 (8) e con gli esercizi disponibili non si può sistemare
+- attività piccola: il livello 2 ha 2 esercizi. Chi resta su quel livello rivede presto lo stesso esercizio: servono esercizi nuovi o un bacino unico per più livelli
 
 **OF1**
 - fuori dal livello 3 perché oltre il 90° percentile dei passaggi (13) e oltre 12 passaggi: of1_8 (16)
@@ -217,7 +219,7 @@ Attività in cui anche il livello 1 supera i 6 passaggi (mediana dei passaggi de
 - stesso punteggio ma livelli diversi (il taglio li separa per passaggi e lunghezza; si possono scambiare): of3_4/of3_3 (1|2)
 
 **OF4**
-- fuori dal livello 3 perché oltre il 90° percentile dei passaggi (23) e oltre 12 passaggi: of4_17 (24)
+- fuori dal livello 3 perché oltre il 90° percentile dei passaggi (20) e oltre 12 passaggi: of4_11 (23), of4_17 (24)
 
 **OF5**
 - parti senza nessun esercizio nel bacino: Parte 10 · Dalla frazione di una frazione all'intero
@@ -237,7 +239,6 @@ Attività in cui anche il livello 1 supera i 6 passaggi (mediana dei passaggi de
 
 **P4**
 - fuori dal livello 3 perché oltre il 90° percentile dei passaggi (14) e oltre 12 passaggi: p4_7 (16)
-- attività piccola: il livello 3 ha 2 esercizi. Chi resta su quel livello rivede presto lo stesso esercizio: servono esercizi nuovi o un bacino unico per più livelli
 
 **PR2**
 - fuori dal livello 3 perché oltre il 90° percentile dei passaggi (18) e oltre 12 passaggi: pr2_31 (20), pr2_32 (26)
