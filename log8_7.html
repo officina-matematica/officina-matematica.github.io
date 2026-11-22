@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LOG8_7 — Disequazioni logaritmiche</title>
+
+<script type="application/json" id="meta">
+{
+  "id": "log8_7",
+  "titolo": "Disequazioni logaritmiche",
+  "tipo": "incognita",
+  "consegna_label": "Risolvi la disequazione",
+  "consegna_tex": "\\log_{\\frac{1}{3}}x>2",
+  "consegna_sympy": "soluzioni(log(x)/log(Rational(1,3)), 2, '>')",
+  "risultato_tex": "0<x<\\frac{1}{9}",
+  "risultato_sympy": "Interval.open(0, Rational(1,9))",
+  "righe_sympy": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ]
+}
+</script>
+
+<!-- Output SVG, non CHTML: glifi vettoriali, allineamento identico su ogni
+     dispositivo, nessun rischio di webfont non caricato dentro un iframe.
+     Ogni formula e' scritta con \displaystyle: senza, MathJax rende le frazioni
+     in textstyle e le parentesi non abbracciano la frazione. -->
+<script>
+MathJax = {
+  loader: { load: ['[tex]/cancel'] },
+  tex: {
+    packages: { '[+]': ['cancel'] },
+    inlineMath: [['$','$']],
+    displayMath: [['$$','$$']],
+    processEscapes: true
+  },
+  svg: { fontCache: 'global', scale: 1.06, exFactor: .5 },
+  options: { enableMenu: false }
+};
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-svg.js"></script>
+
+<style>
+:root{
+  --ink:#0f172a; --body:#334155; --muted:#475569; --faint:#94a3b8;
+  --line:#e2e8f0; --paper:#f8fafc;
+  --blu:#12519e; --blubg:#e8f1fb; --blubd:#a8c9ea;
+  --amb:#b45309; --ambbg:#fffbeb; --ambbd:#fcd34d; --sol:#fef08a;
+  --teo:#14532d; --teobg:#f0fdf4; --teobd:#86efac;
+  --err:#9f1239; --errbg:#fff1f2; --errbd:#fda4af;
+  --ko:#b91c1c;  --kobg:#fee2e2;  --kobd:#ef4444;
+  --ok:#15803d;  --okbg:#dcfce7;  --okbd:#22c55e;
+  --sxbg:#ffffff;
+}
+*{box-sizing:border-box}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  background:var(--paper);color:var(--body);line-height:1.5;
+  margin:0;padding:20px 14px 60px;max-width:900px;margin-inline:auto;font-size:16px;
+}
+mjx-container{outline:none}
+mjx-container[display]{margin:0!important}
+
+/* formule scorrevoli, con sfumatura ai bordi quando escono dallo schermo */
+.sx{
+  overflow-x:auto;overflow-y:hidden;scrollbar-width:thin;-webkit-overflow-scrolling:touch;
+  background-image:
+    linear-gradient(to right,var(--sxbg),var(--sxbg)),
+    linear-gradient(to left,var(--sxbg),var(--sxbg)),
+    linear-gradient(to right,rgba(15,23,42,.16),rgba(15,23,42,0)),
+    linear-gradient(to left,rgba(15,23,42,.16),rgba(15,23,42,0));
+  background-position:left center,right center,left center,right center;
+  background-repeat:no-repeat;
+  background-size:22px 100%,22px 100%,13px 100%,13px 100%;
+  background-attachment:local,local,scroll,scroll;
+}
+
+/* ---------------- CONSEGNA ---------------- */
+.consegna{background:var(--blubg);border:2px solid var(--blubd);border-radius:12px;
+  padding:12px 16px;color:#0d47a1;--sxbg:var(--blubg)}
+.consegna .t{font-weight:700;font-size:.9rem}
+.consegna .m{text-align:center;margin-top:4px;padding:4px 0}
+
+/* ---------------- CATENA ---------------- */
+.catena{background:#fff;border:1px solid var(--line);border-radius:14px;
+  padding:14px 16px 10px;margin-top:16px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.catena>.k{font-weight:800;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.catena>.sub{font-size:.85rem;color:var(--faint);margin:2px 0 8px}
+
+.riga{border-top:1px dotted var(--line)}
+.riga:first-of-type{border-top:none}
+.riga>summary,.riga>.fissa{
+  display:grid;grid-template-columns:26px 1fr auto;gap:10px;align-items:center;
+  padding:11px 0;
+}
+.riga>summary{list-style:none;cursor:pointer}
+.riga>summary::-webkit-details-marker{display:none}
+.riga>summary:hover .f,.riga>summary:focus-visible .f{background-color:#f8fafc}
+
+.n{font-size:.72rem;font-weight:800;color:var(--faint);text-align:center;
+  background:#f1f5f9;border-radius:6px;padding:4px 0;align-self:start;margin-top:4px}
+.cont{min-width:0}
+.nota{font-size:.8rem;color:var(--muted);margin-bottom:1px}
+.f{padding:3px 0;border-radius:6px;color:var(--blu)}
+.riga.res>summary .f,.riga.res>.fissa .f{color:var(--ink)}
+/* solo la formula della riga, mai quelle dentro il pannello della tendina */
+.riga.res>summary .f mjx-container,
+.riga.res>.fissa .f mjx-container{background:var(--sol);padding:4px 12px;border-radius:6px}
+
+/* linguetta della tendina */
+.tab{display:inline-flex;align-items:center;gap:5px;align-self:start;margin-top:5px;
+  font-size:.72rem;font-weight:700;letter-spacing:.02em;color:var(--muted);
+  background:#fff;border:1.5px solid var(--line);border-radius:999px;padding:4px 10px;
+  white-space:nowrap}
+.tab .chev{display:inline-block;font-size:.6rem;transition:transform .18s}
+.riga[open]>summary .tab{background:var(--ink);border-color:var(--ink);color:#fff}
+.riga[open]>summary .tab .chev{transform:rotate(180deg)}
+@media(prefers-reduced-motion:reduce){.tab .chev{transition:none}}
+
+/* pannello aperto */
+.pannello{padding:2px 0 16px 36px;display:grid;grid-template-columns:minmax(0,1fr);gap:10px}
+.mossa{font-size:.9rem;margin:0}
+
+.teoria{background:var(--teobg);border:1.5px solid var(--teobd);border-radius:10px;
+  padding:10px 14px;color:var(--teo);--sxbg:var(--teobg)}
+.teoria .nome{font-weight:800;font-size:.88rem;margin-bottom:2px}
+.teoria .frase{font-size:.87rem;line-height:1.45}
+.teoria .f{text-align:center;margin:8px 0 3px;background:rgba(255,255,255,.75);
+  border-radius:6px;padding:6px 8px;color:var(--teo);--sxbg:#f4fdf6}
+.teoria .ex{font-size:.78rem;opacity:.9;text-align:center;overflow-x:auto;overflow-y:hidden}
+
+.errore{background:var(--errbg);border:1.5px solid var(--errbd);border-radius:10px;padding:11px 14px}
+.errore .k{font-weight:800;font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;
+  color:var(--err);margin-bottom:5px}
+.errore .nome{font-weight:700;font-size:.9rem;color:var(--err);margin-bottom:8px}
+.compare{display:flex;flex-flow:row-reverse wrap-reverse;align-items:stretch;row-gap:6px}
+.compare .card{flex:1 1 0;max-width:100%}
+.compare .card.ok{order:1}
+.compare .arrow{order:2;flex:0 0 34px}
+.compare .card.ko{order:3}
+.card{border:2px solid;border-radius:10px;padding:8px 12px;text-align:center}
+.card .tag{font-size:.7rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;margin-bottom:2px}
+.card .f{padding:2px 0;color:inherit}
+.card.ko{background:var(--kobg);border-color:var(--kobd);color:var(--ko);--sxbg:var(--kobg)}
+.card.ok{background:var(--okbg);border-color:var(--okbd);color:var(--ok);--sxbg:var(--okbg)}
+.arrow{display:flex;align-items:center;justify-content:center;font-size:1.2rem;color:var(--faint);font-weight:800}
+.why-txt{font-size:.82rem;color:#7f1d1d;margin-top:6px;text-align:center}
+
+/* fermata di controllo */
+.check{display:flex;flex-wrap:wrap;align-items:center;gap:4px 10px;
+  background:var(--ambbg);border:1.5px dashed var(--ambbd);border-radius:10px;
+  padding:8px 14px;margin:8px 0;font-size:.85rem;color:var(--amb);--sxbg:var(--ambbg)}
+.check b{font-weight:800}
+.check .v{color:var(--ink)}
+
+/* dicitura in fondo alla pagina, sotto la catena */
+.dicitura{margin-top:14px;text-align:center;font-size:.8rem;color:#444}
+
+/* ---------------- MOBILE ---------------- */
+@media(max-width:720px){
+  body{padding:16px 10px 50px;font-size:16px}
+  .catena{padding:12px 12px 8px}
+  .riga>summary,.riga>.fissa{grid-template-columns:24px 1fr;gap:8px}
+  .cont{grid-column:2}
+  .tab{grid-column:2;justify-self:start;margin-top:6px}
+  .pannello{padding-left:0}
+  .compare{display:grid;grid-template-columns:minmax(0,1fr);gap:6px}
+  .compare .card.ok,.compare .arrow,.compare .card.ko{order:0}
+  .arrow{transform:rotate(90deg);height:22px}
+}
+</style>
+</head>
+<body>
+
+<!-- ===================== CONSEGNA ===================== -->
+<div class="consegna">
+  <div class="t">📌 Risolvi la disequazione</div>
+  <div class="m sx">$\displaystyle \log_{\frac{1}{3}}x>2$</div>
+</div>
+
+<!-- ===================== CATENA ====================== -->
+<div class="catena">
+  <div class="k">Confronta con il tuo foglio</div>
+  <div class="sub">Scorri le righe fino alla prima che non coincide con la tua. Lì apri <b>Regola</b>.</div>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">1</div>
+      <div class="cont"><div class="f sx">$\displaystyle \log_{\frac{1}{3}}x>2$</div></div>
+      <div></div>
+    </div>
+  </div>
+
+  <details class="riga">
+    <summary>
+      <div class="n">2</div>
+      <div class="cont">
+        <div class="nota">Prima di tutto la condizione di esistenza: l'argomento deve essere positivo.</div>
+        <div class="f sx">$\displaystyle \text{C.E.:}\ x>0$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">L'argomento è $x$: è lui che deve essere positivo.</p>
+      <div class="teoria">
+        <div class="nome">Le condizioni di esistenza</div>
+        <div class="frase">Un logaritmo esiste solo se il suo argomento è <strong>positivo</strong>: né zero, né negativo. Prima di risolvere si scrive «argomento $>0$» per ogni logaritmo della consegna: sono le condizioni di esistenza (C.E.).</div>
+        <div class="f sx">$\displaystyle \log_{a}A\ \text{esiste solo se}\ A>0\qquad \left(a>0,\ a\neq 1\right)$</div>
+        <div class="ex">esempio: $\log_{5}\left(8-x\right)\ \to\ \text{C.E.:}\ 8-x>0$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ Errore da non fare</div>
+        <div class="nome">Ammettere anche l'argomento zero</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \log_{a}A\ \to\ \text{C.E.:}\ A\ge 0$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \log_{a}A\ \to\ \text{C.E.:}\ A>0$</div></div>
+        </div>
+        <div class="why-txt">Così si accetta un valore per cui il logaritmo non esiste.</div>
+      </div>
+    </div>
+  </details>
+
+  <details class="riga">
+    <summary>
+      <div class="n">3</div>
+      <div class="cont">
+        <div class="nota">Scriviamo $2$ come logaritmo in base $\frac{1}{3}$. Con la definizione, girando il verso, si arriva allo stesso punto.</div>
+        <div class="f sx">$\displaystyle \log_{\frac{1}{3}}x>\log_{\frac{1}{3}}\left(\frac{1}{3}\right)^{2}$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">Per confrontare i due membri serve un logaritmo anche a destra, con la stessa base $\frac{1}{3}$: $2$ è l'esponente, quindi $2=\log_{\frac{1}{3}}\left(\frac{1}{3}\right)^{2}$.</p>
+      <div class="teoria">
+        <div class="nome">Un numero scritto come logaritmo</div>
+        <div class="frase">Ogni numero si può scrivere come logaritmo scegliendo la base che serve: $4$ diventa $\log_{5}5^{4}$, perché $4$ è l'esponente da dare al $5$ per ottenere $625$. Così il numero si può riunire ai logaritmi che ha accanto, oppure confrontare con un logaritmo che ha la stessa base.</div>
+        <div class="f sx">$\displaystyle n=\log_{a}a^{n}\quad \left(a>0,\ a\neq 1\right)$</div>
+        <div class="ex">esempio: $5=\log_{2}32$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ Errore da non fare</div>
+        <div class="nome">Mettere il numero come argomento</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle n=\log_{a}n$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle n=\log_{a}a^{n}$</div></div>
+        </div>
+        <div class="why-txt">Così si confronta con un logaritmo diverso: la disequazione cambia.</div>
+      </div>
+    </div>
+  </details>
+
+  <details class="riga">
+    <summary>
+      <div class="n">4</div>
+      <div class="cont">
+        <div class="nota">Numeratore e denominatore al quadrato.</div>
+        <div class="f sx">$\displaystyle \log_{\frac{1}{3}}x>\log_{\frac{1}{3}}\frac{1}{9}$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">$1^{2}=1$ e $3^{2}=9$.</p>
+      <div class="teoria">
+        <div class="nome">Potenza di una frazione</div>
+        <div class="frase">Per elevare una frazione a un esponente si elevano <strong>sia il numeratore sia il denominatore</strong>. L'esponente riguarda tutta la frazione, non solo il numero di sopra.</div>
+        <div class="f sx">$\displaystyle \left(\frac{a}{b}\right)^{n}=\frac{a^{n}}{b^{n}}$</div>
+        <div class="ex">esempio: $\left(\frac{2}{5}\right)^{3}=\frac{8}{125}$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ Errore da non fare</div>
+        <div class="nome">Elevare solo il numeratore</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \left(\frac{a}{b}\right)^{n}=\frac{a^{n}}{b}$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \left(\frac{a}{b}\right)^{n}=\frac{a^{n}}{b^{n}}$</div></div>
+        </div>
+        <div class="why-txt">Il denominatore resta piccolo: la frazione vale più del giusto.</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ E nemmeno questo</div>
+        <div class="nome">Moltiplicare per l'esponente</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \left(\frac{a}{b}\right)^{n}=\frac{a\cdot n}{b\cdot n}$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \left(\frac{a}{b}\right)^{n}=\frac{a^{n}}{b^{n}}$</div></div>
+        </div>
+        <div class="why-txt">$\frac{a\cdot n}{b\cdot n}$ si semplifica e torna $\frac{a}{b}$: la potenza sparisce.</div>
+      </div>
+    </div>
+  </details>
+
+  <details class="riga">
+    <summary>
+      <div class="n">5</div>
+      <div class="cont">
+        <div class="nota">Base $\frac{1}{3}$ fra $0$ e $1$: togliendo i logaritmi il verso si gira.</div>
+        <div class="f sx">$\displaystyle x&lt;\frac{1}{9}$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">Con base $\frac{1}{3}$ il logaritmo scende quando l'argomento sale: il verso $>$ diventa $&lt;$.</p>
+      <div class="teoria">
+        <div class="nome">Il verso nelle disequazioni con i logaritmi</div>
+        <div class="frase">Se la base è <strong>maggiore di 1</strong>, a un argomento più grande corrisponde un logaritmo più grande: togliendo i logaritmi il verso resta. Se la base è <strong>fra 0 e 1</strong> succede il contrario, e il verso si gira. Gli argomenti devono essere positivi: per questo ci sono le C.E.</div>
+        <div class="f sx">$\displaystyle \log_{a}A>\log_{a}B\ \Longleftrightarrow\ A>B\ \ \left(a>1\right)\qquad \log_{a}A>\log_{a}B\ \Longleftrightarrow\ A&lt;B\ \ \left(0&lt;a&lt;1\right)$</div>
+        <div class="ex">esempio: $\log_{\frac{1}{2}}A>\log_{\frac{1}{2}}7\ \to\ A&lt;7,\ \text{con}\ A>0$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ Errore da non fare</div>
+        <div class="nome">Tenere il verso con la base fra 0 e 1</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \log_{a}A>\log_{a}B\ \to\ A>B\quad \left(0&lt;a&lt;1\right)$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \log_{a}A>\log_{a}B\ \to\ A&lt;B\quad \left(0&lt;a&lt;1\right)$</div></div>
+        </div>
+        <div class="why-txt">Tenendo il verso si prendono proprio i numeri che non vanno bene.</div>
+      </div>
+    </div>
+  </details>
+
+  <details class="riga res">
+    <summary>
+      <div class="n">6</div>
+      <div class="cont">
+        <div class="nota">Deve valere anche la C.E. $x>0$: restano i numeri fra $0$ e $\frac{1}{9}$.</div>
+        <div class="f sx">$\displaystyle 0&lt;x&lt;\frac{1}{9}$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">$x&lt;\frac{1}{9}$ e la C.E. $x>0$ devono valere insieme: restano solo i numeri compresi fra $0$ e $\frac{1}{9}$.</p>
+      <div class="teoria">
+        <div class="nome">Due condizioni insieme</div>
+        <div class="frase">Quando due condizioni devono valere <strong>insieme</strong> (il simbolo $\wedge$ si legge «e»), si tengono solo i numeri che le rispettano tutte e due: sulla retta è il tratto dove le soluzioni si sovrappongono. Se vanno nello stesso verso vince la più stretta. Se vanno in versi opposti resta il tratto fra i due numeri, ma solo se il numero da superare è il più piccolo: altrimenti non resta <strong>nessun</strong> numero. Se una condizione è fatta di più tratti, uniti da $\vee$, si confronta l'altra con ciascun tratto.</div>
+        <div class="f sx">$\displaystyle x>a\ \wedge\ x>b\ \to\ x>b,\qquad x>a\ \wedge\ x&lt;b\ \to\ a&lt;x&lt;b,\qquad x&lt;a\ \wedge\ x>b\ \to\ \text{nessun numero}\qquad \left(a&lt;b\right)$</div>
+        <div class="ex">esempio: $x>-4\ \wedge\ x&lt;1\ \to\ -4&lt;x&lt;1,\qquad x&lt;-4\ \wedge\ x>1\ \to\ \text{nessun numero}$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ Errore da non fare</div>
+        <div class="nome">Dimenticare le condizioni di esistenza</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle x>a\ \wedge\ x&lt;b\ \to\ x&lt;b$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle x>a\ \wedge\ x&lt;b\ \to\ a&lt;x&lt;b$</div></div>
+        </div>
+        <div class="why-txt">Così restano numeri per cui il logaritmo non esiste.</div>
+      </div>
+    </div>
+  </details>
+
+</div>
+
+<div class="dicitura">Materiale creato con il supporto dell'Intelligenza Artificiale</div>
+
+</body>
+</html>
