@@ -22,13 +22,13 @@ Dentro ogni attività ciascuna quantità diventa una posizione in classifica da 
 - **LOG1**: gli esercizi che hanno una radice come risultato (come log1_93, $\log_x 64=5$) non stanno al livello 1.
 - **NEG6**: potenze con esponente negativo, proprietà, scrivere in notazione scientifica e tornare al numero → 1 o 2; calcolare in notazione scientifica e trovare l'errore → 2; espressioni e problemi di realtà → 3.
 - **FMDC2, FMDC3**: due numeri piccoli → 1; due numeri più grandi → 2; tre numeri → 3.
-- **OF2**: i prodotti che si semplificano subito (of2_3, of2_4) → 1; completare l'uguaglianza → 2; i prodotti con un intero da trasformare o con quattro fattori (of2_1, of2_2, of2_5) → 3. Avevo provato tre fattori → 1, quattro → 2, completare → 3, ma così il livello 1 aveva guide più lunghe del livello 2, contro la regola dei passaggi.
+- **OF2**: i prodotti che si semplificano subito (of2_3, of2_4) → 1; completare l'uguaglianza → 2; i prodotti con un intero da trasformare o con quattro fattori (of2_1, of2_2, of2_5) → 3 (confermato da Simone il 22/11).
 
 **Bacino**: 5 esercizi per livello (3 se l'attività ha meno di 15 esercizi). Lo script sceglie prima esercizi di parti diverse dell'attività, poi esercizi che portano regole nuove, poi tipi di consegna diversi; a parità, quelli vicini al centro del livello. Poi tre filtri:
 
-- **livello 3 senza maratone**: fuori gli esercizi oltre il 90° percentile dei passaggi della loro attività (restano nei punteggi, non nel bacino), e dentro solo esercizi con almeno due regole diverse;
+- **livello 3 senza maratone**: fuori gli esercizi che superano *sia* il 90° percentile dei passaggi della loro attività *sia* i 12 passaggi (restano nei punteggi, non nel bacino), e dentro solo esercizi con almeno due regole diverse;
 - **coerenza fra livelli**: la mediana dei passaggi deve crescere dal livello 1 al 3, e nessun esercizio del livello 1 può avere più passaggi della mediana del livello 2. Dove non succede, lo script scambia con un altro esercizio *dello stesso livello* (così la progressione per tipo resta) e lo scrive nei casi dubbi;
-- **doppioni**: una consegna presente in due attività resta solo in quella che viene prima nel percorso.
+- **doppioni**: una consegna presente in due attività resta solo in quella che viene prima nel percorso, tranne P3/P4: lì resta a P4.
 
 ## Cosa è stato escluso
 
@@ -40,67 +40,59 @@ Dentro ogni attività ciascuna quantità diventa una posizione in classifica da 
 
 ## Attività per attività
 
-Passaggi: la mediana dei passaggi degli esercizi del bacino, livello per livello. Soglia: oltre questo numero di passaggi un esercizio non entra nel livello 3.
+Passaggi: la mediana dei passaggi degli esercizi del bacino, livello per livello. Soglia: oltre questo numero di passaggi un esercizio non entra nel livello 3 (il più grande fra il 90° percentile dell'attività e 12).
 
 | Attività | Esercizi | Liv. 1 / 2 / 3 | Bacino 1 / 2 / 3 | Passaggi 1 / 2 / 3 | Soglia | Parti |
 |---|---:|---|---|---|---:|---:|
-| DX3 — Numeri decimali e frazioni | 34 | 12 / 11 / 11 | 5 / 5 / 5 | 3 / 4 / 5 | 5 | 5 |
-| F1 — Introduzione alle frazioni | 8 | 3 / 3 / 2 | 3 / 3 / 2 | 3 / 4 / 5 | 5 | 1 |
-| F2 — Frazioni e numeri misti | 88 | 30 / 29 / 29 | 5 / 5 / 5 | 2 / 3 / 5 | 6 | 8 |
-| FMDC1 — Fattorizzazione | 14 | 5 / 5 / 4 | 3 / 3 / 3 | 3 / 5 / 6 | 8 | 1 |
-| FMDC2 — Massimo Comun Divisore | 17 | 4 / 4 / 9 | 4 / 4 / 5 | 3 / 3 / 4 | 4 | 1 |
-| FMDC3 — Minimo Comune Multiplo | 17 | 4 / 4 / 9 | 4 / 4 / 5 | 3 / 3 / 4 | 4 | 1 |
-| FMDC4 — Problemi con MCD e mcm | 14 | 5 / 5 / 4 | 3 / 3 / 3 | 5 / 6 / 8 | 10 | 1 |
-| LOG1 — Calcolo logaritmi | 113 | 35 / 39 / 39 | 5 / 5 / 5 | 2 / 4 / 5 | 5 | 5 |
-| LOG2 — Proprietà dei logaritmi | 64 | 22 / 21 / 21 | 5 / 5 / 5 | 3 / 5 / 9 | 9 | 6 |
+| DX3 — Numeri decimali e frazioni | 34 | 12 / 11 / 11 | 5 / 5 / 5 | 3 / 4 / 5 | 12 | 5 |
+| F1 — Introduzione alle frazioni | 8 | 3 / 3 / 2 | 3 / 3 / 2 | 3 / 4 / 5 | 12 | 1 |
+| F2 — Frazioni e numeri misti | 88 | 30 / 29 / 29 | 5 / 5 / 5 | 2 / 3 / 5 | 12 | 8 |
+| FMDC1 — Fattorizzazione | 14 | 5 / 5 / 4 | 3 / 3 / 3 | 3 / 5 / 6 | 12 | 1 |
+| FMDC2 — Massimo Comun Divisore | 17 | 4 / 4 / 9 | 4 / 4 / 5 | 3 / 3 / 4 | 12 | 1 |
+| FMDC3 — Minimo Comune Multiplo | 17 | 4 / 4 / 9 | 4 / 4 / 5 | 3 / 3 / 4 | 12 | 1 |
+| FMDC4 — Problemi con MCD e mcm | 14 | 5 / 5 / 4 | 3 / 3 / 3 | 5 / 6 / 10 | 12 | 1 |
+| LOG1 — Calcolo logaritmi | 113 | 35 / 39 / 39 | 5 / 5 / 5 | 2 / 4 / 5 | 12 | 5 |
+| LOG2 — Proprietà dei logaritmi | 64 | 22 / 21 / 21 | 5 / 5 / 5 | 3 / 5 / 9 | 12 | 6 |
 | LOG7 — Equazioni logaritmiche | 6 | 2 / 2 / 2 | 2 / 2 / 2 | 11.5 / 15 / 17.5 | 20 | 1 |
 | LOG8 — Disequazioni logaritmiche | 5 | 2 / 2 / 1 | 2 / 2 / 1 | 8 / 12.5 / 15 | 15 | 1 |
-| MP1 — I monomi | 75 | 25 / 25 / 25 | 5 / 5 / 5 | 2 / 3 / 9 | 10 | 7 |
-| MP2 — Operazioni con i monomi | 77 | 26 / 26 / 25 | 5 / 5 / 5 | 3 / 4 / 8 | 8 | 9 |
-| MP3 — MCD e mcm con i monomi | 35 | 12 / 12 / 11 | 5 / 5 / 5 | 3 / 3 / 4 | 4 | 4 |
-| MP4 — Polinomi | 25 | 9 / 8 / 8 | 5 / 5 / 5 | 1 / 4 / 5 | 6 | 4 |
+| MP1 — I monomi | 75 | 25 / 25 / 25 | 5 / 5 / 5 | 2 / 3 / 9 | 12 | 7 |
+| MP2 — Operazioni con i monomi | 77 | 26 / 26 / 25 | 5 / 5 / 5 | 3 / 4 / 8 | 12 | 9 |
+| MP3 — MCD e mcm con i monomi | 35 | 12 / 12 / 11 | 5 / 5 / 5 | 3 / 3 / 4 | 12 | 4 |
+| MP4 — Polinomi | 25 | 9 / 8 / 8 | 5 / 5 / 5 | 1 / 4 / 6 | 12 | 4 |
 | MP5 — Somme algebriche e moltiplicazioni di polinomi | 18 | 6 / 6 / 6 | 5 / 5 / 5 | 5 / 7 / 9 | 12 | 3 |
-| MP6 — Prodotti notevoli | 39 | 13 / 13 / 13 | 5 / 5 / 5 | 2 / 4 / 8 | 11 | 4 |
+| MP6 — Prodotti notevoli | 39 | 13 / 13 / 13 | 5 / 5 / 5 | 2 / 4 / 10 | 12 | 4 |
 | NEG4 — Espressioni con i numeri negativi | 30 | 10 / 10 / 10 | 5 / 5 / 5 | 4 / 5 / 13 | 14 | 2 |
 | NEG5 — Numeri negativi, potenze ed espressioni | 33 | 11 / 11 / 11 | 5 / 5 / 5 | 9 / 10 / 12 | 16 | 1 |
-| NEG6 — Espressioni con potenze negative e notazione scientifica | 82 | 24 / 44 / 14 | 5 / 5 / 5 | 2 / 4 / 7 | 8 | 8 |
+| NEG6 — Espressioni con potenze negative e notazione scientifica | 82 | 24 / 44 / 14 | 5 / 5 / 5 | 2 / 4 / 9 | 12 | 8 |
 | ODX1 — Espressioni con i numeri decimali | 7 | 3 / 2 / 2 | 3 / 2 / 2 | 15 / 17.5 / 23.5 | 29 | 1 |
 | ODX2 — Numeri decimali e potenze | 6 | 2 / 2 / 2 | 2 / 2 / 2 | 8 / 11.5 / 20 | 21 | 1 |
 | OF1 — Addizioni e sottrazioni con le frazioni | 11 | 4 / 4 / 3 | 3 / 3 / 2 | 5 / 9 / 12 | 13 | 1 |
-| OF2 — Moltiplicare le frazioni | 11 | 2 / 6 / 3 | 2 / 3 / 2 | 4.5 / 5 / 6 | 6 | 2 |
-| OF3 — Dividere le frazioni | 8 | 3 / 3 / 2 | 3 / 3 / 2 | 4 / 5 / 10.5 | 11 | 2 |
+| OF2 — Moltiplicare le frazioni | 11 | 2 / 6 / 3 | 2 / 3 / 3 | 4.5 / 5 / 6 | 12 | 2 |
+| OF3 — Dividere le frazioni | 8 | 3 / 3 / 2 | 3 / 3 / 2 | 4 / 5 / 10.5 | 12 | 2 |
 | OF4 — Frazioni, potenze ed espressioni | 18 | 6 / 6 / 6 | 5 / 5 / 5 | 7 / 12 / 20 | 23 | 2 |
-| OF5 — Problemi con frazioni | 52 | 18 / 17 / 17 | 5 / 5 / 5 | 4 / 5 / 7 | 8 | 15 |
-| ON2 — Proprietà delle operazioni | 54 | 18 / 18 / 18 | 5 / 5 / 5 | 3 / 3 / 4 | 4 | 6 |
-| ON3 — Espressioni con i numeri naturali | 10 | 4 / 3 / 3 | 3 / 3 / 3 | 5 / 7 / 9 | 9 | 1 |
-| P1 — Alla scoperta delle potenze | 74 | 25 / 25 / 24 | 5 / 5 / 5 | 2 / 2 / 3 | 4 | 5 |
-| P2 — Potenze con la stessa base | 60 | 20 / 20 / 20 | 5 / 5 / 5 | 3 / 4 / 5 | 6 | 4 |
-| P3 — Potenze con lo stesso esponente | 50 | 15 / 18 / 17 | 5 / 5 / 5 | 4 / 7 / 11 | 13 | 2 |
-| P4 — Espressioni con le potenze | 11 | 4 / 4 / 3 | 0 / 0 / 0 | — / — / — | 14 | 1 |
+| OF5 — Problemi con frazioni | 52 | 18 / 17 / 17 | 5 / 5 / 5 | 4 / 5 / 7 | 12 | 15 |
+| ON2 — Proprietà delle operazioni | 54 | 18 / 18 / 18 | 5 / 5 / 5 | 3 / 3 / 4 | 12 | 6 |
+| ON3 — Espressioni con i numeri naturali | 10 | 4 / 3 / 3 | 3 / 3 / 3 | 5 / 7 / 9 | 12 | 1 |
+| P1 — Alla scoperta delle potenze | 74 | 25 / 25 / 24 | 5 / 5 / 5 | 2 / 2 / 3 | 12 | 5 |
+| P2 — Potenze con la stessa base | 60 | 20 / 20 / 20 | 5 / 5 / 5 | 3 / 4 / 5 | 12 | 4 |
+| P3 — Potenze con lo stesso esponente | 50 | 15 / 18 / 17 | 5 / 5 / 5 | 4 / 7 / 9 | 13 | 2 |
+| P4 — Espressioni con le potenze | 11 | 4 / 4 / 3 | 3 / 3 / 2 | 8 / 13 / 14 | 14 | 1 |
 | PR2 — Calcolo di proporzioni | 33 | 11 / 11 / 11 | 5 / 5 / 5 | 5 / 6 / 12 | 18 | 1 |
-| PR4 — Problemi con le proporzioni | 40 | 18 / 15 / 7 | 5 / 5 / 5 | 2 / 4 / 5 | 6 | 2 |
-| PX1 — Alla scoperta delle percentuali | 12 | 4 / 4 / 4 | 3 / 3 / 3 | 6 / 7 / 8 | 8 | 2 |
+| PR4 — Problemi con le proporzioni | 40 | 18 / 15 / 7 | 5 / 5 / 5 | 2 / 4 / 5 | 12 | 2 |
+| PX1 — Alla scoperta delle percentuali | 12 | 4 / 4 / 4 | 3 / 3 / 3 | 6 / 7 / 8 | 12 | 2 |
 | PX2 — Problemi con le percentuali | 51 | 17 / 17 / 17 | 5 / 5 / 5 | 4 / 5 / 7 | 12 | 9 |
-| SCO1 — Scomposizioni in fattori | 17 | 6 / 6 / 5 | 5 / 5 / 4 | 2 / 3 / 4 | 4 | 1 |
+| SCO1 — Scomposizioni in fattori | 17 | 6 / 6 / 5 | 5 / 5 / 5 | 2 / 3 / 4 | 12 | 1 |
 
 ## Doppioni fra attività
 
-La stessa consegna (stessa etichetta, stessa formula) sta in due attività. Resta nel bacino solo dell'attività che viene prima nel percorso; nell'altra conta nei punteggi ma non entra nel bacino.
+La stessa consegna (stessa etichetta, stessa formula) sta in due attività. Resta nel bacino solo dell'attività che viene prima nel percorso; nell'altra conta nei punteggi ma non entra nel bacino. Eccezione decisa da Simone il 22/11: le 11 espressioni comuni a P3 e P4 restano a P4 e si tolgono da P3, che fa il bacino con le altre.
 
 - **NEG5** (tolti dal bacino): neg5_19 = neg4_29
-- **P4** (tolti dal bacino): p4_1 = p3_11, p4_2 = p3_1, p4_3 = p3_27, p4_4 = p3_30, p4_5 = p3_35, p4_6 = p3_28, p4_7 = p3_20, p4_8 = p3_32, p4_9 = p3_31, p4_10 = p3_34, p4_11 = p3_18
-
-**P4 resta senza esercizi propri**: tutte le sue 11 consegne sono espressioni di P3, quindi con questa regola il suo bacino è vuoto. Le strade:
-
-1. scrivere esercizi nuovi per P4 (per il livello 1 ci sono le proposte qui sotto);
-2. fare il contrario solo per P4: lasciare le 11 espressioni a P4 e toglierle dal bacino di P3, che ne ha comunque altre 24 di suo;
-3. considerare P4 un ripasso di P3 e usare per la fase 3 il bacino di P3.
-
-Finché non decidi, P4 non ha bacino (è l'unica attività senza).
+- **P3** (tolti dal bacino): p3_1 = p4_2, p3_11 = p4_1, p3_18 = p4_11, p3_20 = p4_7, p3_27 = p4_3, p3_28 = p4_6, p3_30 = p4_4, p3_31 = p4_9, p3_32 = p4_8, p3_34 = p4_10, p3_35 = p4_5
 
 ## Livello 1 non basico
 
-Attività in cui anche il livello 1 supera i 6 passaggi (mediana dei passaggi del livello 1; per P4 quella delle sue espressioni). Per ognuna, 2-3 esercizi di livello 1 da scrivere apposta: consegna più corta, una sola parentesi. **Sono solo proposte, le guide non sono state scritte.** I risultati sono controllati con SymPy.
+Attività in cui anche il livello 1 supera i 6 passaggi (mediana dei passaggi del livello 1). Per ognuna, 2-3 esercizi di livello 1 da scrivere apposta: consegna più corta, una sola parentesi. **Sono solo proposte, le guide non sono state scritte.** I risultati sono controllati con SymPy.
 
 **LOG7 — Equazioni logaritmiche** · livello 1 di oggi: mediana 11.5 passaggi
 
@@ -138,7 +130,7 @@ Attività in cui anche il livello 1 supera i 6 passaggi (mediana dei passaggi de
 - $\left(\frac{2}{3}\right)^{2}\cdot\frac{3}{2}$ → $\frac{2}{3}$ — una potenza di frazione e una semplificazione
 - $\frac{3}{4}-\left(\frac{1}{2}\right)^{2}$ → $\frac{1}{2}$ — prima la potenza, poi la sottrazione
 
-**P4 — Espressioni con le potenze** · livello 1 di oggi: mediana 7.5 passaggi
+**P4 — Espressioni con le potenze** · livello 1 di oggi: mediana 8 passaggi
 
 - $\left(2^{3}+2^{2}\right):3$ → $4$ — potenze da calcolare, poi una divisione
 - $5^{2}-\left(3^{2}-2^{3}\right)$ → $24$ — una parentesi con due potenze
@@ -147,16 +139,14 @@ Attività in cui anche il livello 1 supera i 6 passaggi (mediana dei passaggi de
 ## Casi dubbi
 
 **DX3**
-- fuori dal livello 3 perché oltre il 90° percentile dei passaggi (5): dx3_28 (6), dx3_29 (6)
 - scambi per la coerenza fra livelli: liv. 1: dx3_16 (4 pass.) → dx3_2 (3 pass.)
-- risposta da spiegare a parole o da scrivere liberamente, l'autovalutazione è meno netta: dx3_21 (liv. 1), dx3_23 (liv. 1), dx3_13 (liv. 2), dx3_20 (liv. 2), dx3_22 (liv. 2), dx3_18 (liv. 3), dx3_19 (liv. 3)
+- risposta da spiegare a parole o da scrivere liberamente, l'autovalutazione è meno netta: dx3_21 (liv. 1), dx3_23 (liv. 1), dx3_13 (liv. 2), dx3_20 (liv. 2), dx3_22 (liv. 2), dx3_18 (liv. 3), dx3_19 (liv. 3), dx3_29 (liv. 3)
 - stesso punteggio ma livelli diversi (il taglio li separa per passaggi e lunghezza; si possono scambiare): dx3_16/dx3_15 (1|2), dx3_20/dx3_19 (2|3)
 
 **F1**
 - attività piccola: il livello 3 ha 2 esercizi. Chi resta su quel livello rivede presto lo stesso esercizio: servono esercizi nuovi o un bacino unico per più livelli
 
 **F2**
-- fuori dal livello 3 perché oltre il 90° percentile dei passaggi (6): f2_47 (7)
 - scambi per la coerenza fra livelli: liv. 1: f2_25 (3 pass.) → f2_12 (2 pass.)
 - consegna con un disegno, che la fase 3 deve mostrare insieme al testo: f2_8 (liv. 1), f2_5 (liv. 3)
 - stesso punteggio ma livelli diversi (il taglio li separa per passaggi e lunghezza; si possono scambiare): f2_25/f2_24 (1|2)
@@ -167,15 +157,8 @@ Attività in cui anche il livello 1 supera i 6 passaggi (mediana dei passaggi de
 **FMDC3**
 - la mediana dei passaggi non cresce dal livello 1 (3) al livello 2 (3) e con gli esercizi disponibili non si può sistemare: qui conta il tipo di esercizio, non la lunghezza
 
-**FMDC4**
-- fuori dal livello 3 perché oltre il 90° percentile dei passaggi (10): fmdc4_14 (12)
-
-**LOG1**
-- fuori dal livello 3 perché oltre il 90° percentile dei passaggi (5): log1_17 (6), log1_36 (7), log1_43 (7), log1_44 (7), log1_107 (7), log1_108 (7), log1_111 (6), log1_112 (7), log1_113 (8)
-- parti senza nessun esercizio nel bacino: Parte 5 · Dimostrare un'identità
-
 **LOG2**
-- fuori dal livello 3 perché oltre il 90° percentile dei passaggi (9): log2_34 (14), log2_46 (11), log2_64 (11)
+- fuori dal livello 3 perché oltre il 90° percentile dei passaggi (9) e oltre 12 passaggi: log2_34 (14)
 
 **LOG7**
 - attività piccola: il livello 1 ha 2 esercizi, il livello 2 ha 2 esercizi, il livello 3 ha 2 esercizi. Chi resta su quel livello rivede presto lo stesso esercizio: servono esercizi nuovi o un bacino unico per più livelli
@@ -184,11 +167,10 @@ Attività in cui anche il livello 1 supera i 6 passaggi (mediana dei passaggi de
 - attività piccola: il livello 1 ha 2 esercizi, il livello 2 ha 2 esercizi, il livello 3 ha 1 esercizio. Chi resta su quel livello rivede presto lo stesso esercizio: servono esercizi nuovi o un bacino unico per più livelli
 
 **MP1**
-- fuori dal livello 3 perché oltre il 90° percentile dei passaggi (10): mp1_24 (12), mp1_36 (12), mp1_41 (13), mp1_42 (12), mp1_43 (15), mp1_44 (21), mp1_45 (18)
+- fuori dal livello 3 perché oltre il 90° percentile dei passaggi (10) e oltre 12 passaggi: mp1_41 (13), mp1_43 (15), mp1_44 (21), mp1_45 (18)
 - risposta da spiegare a parole o da scrivere liberamente, l'autovalutazione è meno netta: mp1_55 (liv. 2)
 
 **MP2**
-- fuori dal livello 3 perché oltre il 90° percentile dei passaggi (8): mp2_38 (9), mp2_46 (9), mp2_49 (9), mp2_51 (11), mp2_59 (11), mp2_76 (10)
 - risposta da spiegare a parole o da scrivere liberamente, l'autovalutazione è meno netta: mp2_68 (liv. 1), mp2_70 (liv. 2)
 
 **MP3**
@@ -197,25 +179,24 @@ Attività in cui anche il livello 1 supera i 6 passaggi (mediana dei passaggi de
 - stesso punteggio ma livelli diversi (il taglio li separa per passaggi e lunghezza; si possono scambiare): mp3_20/mp3_5 (1|2), mp3_28/mp3_14 (2|3)
 
 **MP4**
-- fuori dal livello 3 perché oltre il 90° percentile dei passaggi (6): mp4_1 (8), mp4_4 (7)
 - risposta da spiegare a parole o da scrivere liberamente, l'autovalutazione è meno netta: mp4_21 (liv. 1), mp4_23 (liv. 1), mp4_20 (liv. 2), mp4_25 (liv. 2), mp4_19 (liv. 3), mp4_22 (liv. 3)
 
 **MP5**
-- fuori dal livello 3 perché oltre il 90° percentile dei passaggi (12): mp5_16 (13)
+- fuori dal livello 3 perché oltre il 90° percentile dei passaggi (12) e oltre 12 passaggi: mp5_16 (13)
 - guide con due metodi uno dopo l'altro, quindi passaggi contati due volte e punteggio un po' gonfiato: mp5_18 (liv. 3)
 
 **MP6**
-- fuori dal livello 3 perché oltre il 90° percentile dei passaggi (11): mp6_27 (14), mp6_29 (12), mp6_30 (16)
-- guide con due metodi uno dopo l'altro, quindi passaggi contati due volte e punteggio un po' gonfiato: mp6_31 (liv. 3)
+- fuori dal livello 3 perché oltre il 90° percentile dei passaggi (11) e oltre 12 passaggi: mp6_27 (14), mp6_30 (16)
+- guide con due metodi uno dopo l'altro, quindi passaggi contati due volte e punteggio un po' gonfiato: mp6_29 (liv. 3), mp6_31 (liv. 3)
 
 **NEG4**
-- fuori dal livello 3 perché oltre il 90° percentile dei passaggi (14): neg4_24 (15), neg4_29 (16), neg4_30 (17)
+- fuori dal livello 3 perché oltre il 90° percentile dei passaggi (14) e oltre 12 passaggi: neg4_24 (15), neg4_29 (16), neg4_30 (17)
 
 **NEG5**
-- fuori dal livello 3 perché oltre il 90° percentile dei passaggi (16): neg5_18 (19), neg5_23 (17), neg5_24 (18)
+- fuori dal livello 3 perché oltre il 90° percentile dei passaggi (16) e oltre 12 passaggi: neg5_18 (19), neg5_23 (17), neg5_24 (18)
 
 **NEG6**
-- fuori dal livello 3 perché oltre il 90° percentile dei passaggi (8): neg6_30 (11), neg6_31 (12), neg6_32 (9), neg6_33 (18), neg6_34 (11), neg6_35 (17), neg6_36 (13), neg6_37 (12)
+- fuori dal livello 3 perché oltre il 90° percentile dei passaggi (8) e oltre 12 passaggi: neg6_33 (18), neg6_35 (17), neg6_36 (13)
 
 **ODX1**
 - attività piccola: il livello 2 ha 2 esercizi, il livello 3 ha 2 esercizi. Chi resta su quel livello rivede presto lo stesso esercizio: servono esercizi nuovi o un bacino unico per più livelli
@@ -224,23 +205,21 @@ Attività in cui anche il livello 1 supera i 6 passaggi (mediana dei passaggi de
 - attività piccola: il livello 1 ha 2 esercizi, il livello 2 ha 2 esercizi, il livello 3 ha 2 esercizi. Chi resta su quel livello rivede presto lo stesso esercizio: servono esercizi nuovi o un bacino unico per più livelli
 
 **OF1**
-- fuori dal livello 3 perché oltre il 90° percentile dei passaggi (13): of1_8 (16)
+- fuori dal livello 3 perché oltre il 90° percentile dei passaggi (13) e oltre 12 passaggi: of1_8 (16)
 - attività piccola: il livello 3 ha 2 esercizi. Chi resta su quel livello rivede presto lo stesso esercizio: servono esercizi nuovi o un bacino unico per più livelli
 - stesso punteggio ma livelli diversi (il taglio li separa per passaggi e lunghezza; si possono scambiare): of1_6/of1_4 (1|2)
 
 **OF2**
-- fuori dal livello 3 perché oltre il 90° percentile dei passaggi (6): of2_5 (7)
-- attività piccola: il livello 1 ha 2 esercizi, il livello 3 ha 2 esercizi. Chi resta su quel livello rivede presto lo stesso esercizio: servono esercizi nuovi o un bacino unico per più livelli
+- attività piccola: il livello 1 ha 2 esercizi. Chi resta su quel livello rivede presto lo stesso esercizio: servono esercizi nuovi o un bacino unico per più livelli
 
 **OF3**
 - attività piccola: il livello 3 ha 2 esercizi. Chi resta su quel livello rivede presto lo stesso esercizio: servono esercizi nuovi o un bacino unico per più livelli
 - stesso punteggio ma livelli diversi (il taglio li separa per passaggi e lunghezza; si possono scambiare): of3_4/of3_3 (1|2)
 
 **OF4**
-- fuori dal livello 3 perché oltre il 90° percentile dei passaggi (23): of4_17 (24)
+- fuori dal livello 3 perché oltre il 90° percentile dei passaggi (23) e oltre 12 passaggi: of4_17 (24)
 
 **OF5**
-- fuori dal livello 3 perché oltre il 90° percentile dei passaggi (8): of5_46 (10), of5_52 (9), of5_36 (9), of5_39 (10), of5_41 (11)
 - parti senza nessun esercizio nel bacino: Parte 10 · Dalla frazione di una frazione all'intero
 - stesso punteggio ma livelli diversi (il taglio li separa per passaggi e lunghezza; si possono scambiare): of5_27/of5_12 (1|2)
 
@@ -249,41 +228,35 @@ Attività in cui anche il livello 1 supera i 6 passaggi (mediana dei passaggi de
 - stesso punteggio ma livelli diversi (il taglio li separa per passaggi e lunghezza; si possono scambiare): on2_35/on2_25 (2|3)
 
 **P1**
-- fuori dal livello 3 perché oltre il 90° percentile dei passaggi (4): p1_71 (5), p1_72 (5), p1_74 (5)
 - la mediana dei passaggi non cresce dal livello 1 (2) al livello 2 (2) e con gli esercizi disponibili non si può sistemare
 - scambi per la coerenza fra livelli: liv. 1: p1_14 (2 pass.) → p1_16 (1 pass.); liv. 1: p1_19 (2 pass.) → p1_17 (1 pass.); liv. 2: p1_4 (2 pass.) → p1_55 (3 pass.)
 - parti senza nessun esercizio nel bacino: Parte 1 · Scrivere una potenza e calcolarla
 
-**P2**
-- fuori dal livello 3 perché oltre il 90° percentile dei passaggi (6): p2_52 (7), p2_53 (7), p2_56 (7), p2_57 (7), p2_58 (7)
-
 **P3**
-- fuori dal livello 3 perché oltre il 90° percentile dei passaggi (13): p3_20 (16), p3_27 (14), p3_32 (14), p3_35 (14)
 - scambi per la coerenza fra livelli: liv. 1: p3_49 (8 pass.) → p3_36 (2 pass.)
 
 **P4**
-- **tutte le 11 consegne sono doppioni** di un'attività che viene prima: il bacino resta vuoto finché non si decide (vedi «Doppioni»)
+- fuori dal livello 3 perché oltre il 90° percentile dei passaggi (14) e oltre 12 passaggi: p4_7 (16)
+- attività piccola: il livello 3 ha 2 esercizi. Chi resta su quel livello rivede presto lo stesso esercizio: servono esercizi nuovi o un bacino unico per più livelli
 
 **PR2**
-- fuori dal livello 3 perché oltre il 90° percentile dei passaggi (18): pr2_31 (20), pr2_32 (26)
+- fuori dal livello 3 perché oltre il 90° percentile dei passaggi (18) e oltre 12 passaggi: pr2_31 (20), pr2_32 (26)
 
 **PR4**
 - scambi per la coerenza fra livelli: liv. 2: pr4_9 (6 pass.) → pr4_25 (4 pass.); liv. 2: pr4_15 (6 pass.) → pr4_26 (4 pass.); liv. 2: pr4_22 (6 pass.) → pr4_29 (4 pass.); liv. 2: pr4_23 (6 pass.) → pr4_32 (4 pass.); liv. 3: pr4_38 (3 pass.) → pr4_27 (5 pass.); liv. 1: pr4_12 (6 pass.) → pr4_33 (2 pass.)
 - risposta da spiegare a parole o da scrivere liberamente, l'autovalutazione è meno netta: pr4_5 (liv. 1), pr4_7 (liv. 1)
 
 **PX1**
-- fuori dal livello 3 perché oltre il 90° percentile dei passaggi (8): px1_3 (10)
-- guide con due metodi uno dopo l'altro, quindi passaggi contati due volte e punteggio un po' gonfiato: px1_10 (liv. 1), px1_1 (liv. 3), px1_2 (liv. 3)
-- consegna con un disegno, che la fase 3 deve mostrare insieme al testo: px1_4 (liv. 1), px1_5 (liv. 2), px1_6 (liv. 2), px1_1 (liv. 3), px1_2 (liv. 3)
+- guide con due metodi uno dopo l'altro, quindi passaggi contati due volte e punteggio un po' gonfiato: px1_10 (liv. 1), px1_1 (liv. 3), px1_2 (liv. 3), px1_3 (liv. 3)
+- consegna con un disegno, che la fase 3 deve mostrare insieme al testo: px1_4 (liv. 1), px1_5 (liv. 2), px1_6 (liv. 2), px1_1 (liv. 3), px1_2 (liv. 3), px1_3 (liv. 3)
 
 **PX2**
-- fuori dal livello 3 perché oltre il 90° percentile dei passaggi (12): px2_15 (13), px2_28 (15), px2_39 (13), px2_40 (13)
+- fuori dal livello 3 perché oltre il 90° percentile dei passaggi (12) e oltre 12 passaggi: px2_15 (13), px2_28 (15), px2_39 (13), px2_40 (13)
 - parti senza nessun esercizio nel bacino: Parte F · Al supermercato
 - guide con due metodi uno dopo l'altro, quindi passaggi contati due volte e punteggio un po' gonfiato: px2_22 (liv. 1), px2_2 (liv. 2), px2_7 (liv. 2), px2_20 (liv. 2), px2_6 (liv. 3), px2_13 (liv. 3)
 - consegna con un disegno, che la fase 3 deve mostrare insieme al testo: px2_31 (liv. 1)
 
 **SCO1**
-- fuori dal livello 3 perché oltre il 90° percentile dei passaggi (4): sco1_8 (5)
 - stesso punteggio ma livelli diversi (il taglio li separa per passaggi e lunghezza; si possono scambiare): sco1_12/sco1_9 (1|2)
 
 ## Codici delle guide e foglio Argomenti

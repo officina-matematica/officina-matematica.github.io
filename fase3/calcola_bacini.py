@@ -16,8 +16,9 @@ posizione). Il punteggio, su 100, e':
 LIVELLI: la classifica dell'attivita' tagliata in tre parti uguali, salvo le
 attivita' in FASCE, dove il tipo di esercizio decide a quali livelli puo' stare.
 BACINO: livello 3 senza esercizi-maratona (oltre il 90° percentile dei
-passaggi), passaggi che crescono da un livello all'altro, nessun doppione fra
-attivita' (la consegna resta nell'attivita' che viene prima).
+passaggi E oltre 12 passaggi), passaggi che crescono da un livello all'altro,
+nessun doppione fra attivita' (la consegna resta nell'attivita' che viene
+prima, salvo le eccezioni in TIENE_DOPPIONE).
 """
 
 import csv
@@ -39,6 +40,13 @@ PESI = {"passaggi": 0.50, "regole": 0.25, "annidamento": 0.15, "lunghezza": 0.10
 ESCLUSE = {"gon"}          # eserciziario aperto: cresce a ogni invio
 SCARTA_FILE = ("prima_del_riordino", "riserva")
 PERCENTILE_MARATONA = 0.90
+# un esercizio e' una maratona solo se supera il 90° percentile della sua
+# attivita' E anche questo numero di passaggi (decisione di Simone, 22/11/2026)
+PASSAGGI_MARATONA = 12
+# doppioni fra attivita': di norma la consegna resta nell'attivita' che viene
+# prima; qui l'attivita' indicata la tiene comunque (Simone, 22/11/2026: le 11
+# espressioni di P4 restano a P4 e si tolgono da P3)
+TIENE_DOPPIONE = {frozenset({"p3", "p4"}): "p4"}
 
 
 # ------------------------------------------------- progressione per tipo
@@ -485,6 +493,10 @@ def main():
             continue
         gruppo.sort(key=lambda e: (ordine.get(e["cod"], 999), e["ordine"]))
         tiene = gruppo[0]
+        chi = TIENE_DOPPIONE.get(frozenset(e["cod"] for e in gruppo))
+        if chi:
+            tiene = next(e for e in gruppo if e["cod"] == chi)
+        gruppo = [tiene] + [e for e in gruppo if e is not tiene]
         for e in gruppo[1:]:
             e["doppione"] = tiene["id"]
             doppioni.append((e, tiene))
@@ -495,7 +507,8 @@ def main():
         n = len(ex)
         per_livello = {L: [e for e in ex if e["livello"] == L] for L in (1, 2, 3)}
         k = 5 if n >= 15 else 3
-        maratona = percentile([e["passaggi"] for e in ex], PERCENTILE_MARATONA)
+        p90 = percentile([e["passaggi"] for e in ex], PERCENTILE_MARATONA)
+        maratona = max(p90, PASSAGGI_MARATONA)
 
         cand = {}
         for L in (1, 2, 3):
@@ -504,7 +517,7 @@ def main():
                 lunghi = [e for e in c if e["passaggi"] > maratona]
                 if lunghi:
                     dubbi.append(f"fuori dal livello 3 perché oltre il 90° percentile dei "
-                                 f"passaggi ({maratona}): "
+                                 f"passaggi ({p90}) e oltre {PASSAGGI_MARATONA} passaggi: "
                                  + ", ".join(f"{e['id']} ({e['passaggi']})" for e in lunghi))
                 c = [e for e in c if e["passaggi"] <= maratona]
                 buoni = [e for e in c if e["regole"] >= 2]
@@ -663,21 +676,20 @@ def scrivi_riepilogo(attivita, bacini, conteggi, note, titoli, escluse_build, fa
            "- **FMDC2, FMDC3**: due numeri piccoli → 1; due numeri più grandi → 2; tre numeri → 3.",
            "- **OF2**: i prodotti che si semplificano subito (of2_3, of2_4) → 1; completare "
            "l'uguaglianza → 2; i prodotti con un intero da trasformare o con quattro fattori "
-           "(of2_1, of2_2, of2_5) → 3. Avevo provato tre fattori → 1, quattro → 2, completare → 3, "
-           "ma così il livello 1 aveva guide più lunghe del livello 2, contro la regola dei passaggi.",
+           "(of2_1, of2_2, of2_5) → 3 (confermato da Simone il 22/11).",
            "", "**Bacino**: 5 esercizi per livello (3 se l'attività ha meno di 15 esercizi). "
            "Lo script sceglie prima esercizi di parti diverse dell'attività, poi esercizi che "
            "portano regole nuove, poi tipi di consegna diversi; a parità, quelli vicini al centro "
            "del livello. Poi tre filtri:", "",
-           "- **livello 3 senza maratone**: fuori gli esercizi oltre il 90° percentile dei "
-           "passaggi della loro attività (restano nei punteggi, non nel bacino), e dentro solo "
-           "esercizi con almeno due regole diverse;",
+           "- **livello 3 senza maratone**: fuori gli esercizi che superano *sia* il 90° "
+           "percentile dei passaggi della loro attività *sia* i 12 passaggi (restano nei "
+           "punteggi, non nel bacino), e dentro solo esercizi con almeno due regole diverse;",
            "- **coerenza fra livelli**: la mediana dei passaggi deve crescere dal livello 1 al 3, "
            "e nessun esercizio del livello 1 può avere più passaggi della mediana del livello 2. "
            "Dove non succede, lo script scambia con un altro esercizio *dello stesso livello* "
            "(così la progressione per tipo resta) e lo scrive nei casi dubbi;",
            "- **doppioni**: una consegna presente in due attività resta solo in quella che "
-           "viene prima nel percorso.",
+           "viene prima nel percorso, tranne P3/P4: lì resta a P4.",
            "", "## Cosa è stato escluso", "",
            "- **GON — Eserciziario**: escluso perché è aperto (si allunga a ogni invio di "
            "esercizi). Ha 9 guide: un bacino andrebbe fatto quando l'eserciziario sarà fermo.",
@@ -699,7 +711,8 @@ def scrivi_riepilogo(attivita, bacini, conteggi, note, titoli, escluse_build, fa
                                    f"entrati nel bacino" for c in sorted(n_f3)) + ".",
             "", "## Attività per attività", "",
             "Passaggi: la mediana dei passaggi degli esercizi del bacino, livello per livello. "
-            "Soglia: oltre questo numero di passaggi un esercizio non entra nel livello 3.", "",
+            "Soglia: oltre questo numero di passaggi un esercizio non entra nel livello 3 (il "
+            "più grande fra il 90° percentile dell'attività e 12).", "",
             "| Attività | Esercizi | Liv. 1 / 2 / 3 | Bacino 1 / 2 / 3 | Passaggi 1 / 2 / 3 "
             "| Soglia | Parti |",
             "|---|---:|---|---|---|---:|---:|"]
@@ -716,7 +729,9 @@ def scrivi_riepilogo(attivita, bacini, conteggi, note, titoli, escluse_build, fa
     out += ["", "## Doppioni fra attività", "",
             "La stessa consegna (stessa etichetta, stessa formula) sta in due attività. "
             "Resta nel bacino solo dell'attività che viene prima nel percorso; nell'altra conta "
-            "nei punteggi ma non entra nel bacino.", ""]
+            "nei punteggi ma non entra nel bacino. Eccezione decisa da Simone il 22/11: le 11 "
+            "espressioni comuni a P3 e P4 restano a P4 e si tolgono da P3, che fa il bacino "
+            "con le altre.", ""]
     per_att = defaultdict(list)
     for e, tiene in doppioni:
         per_att[e["cod"]].append((e, tiene))
@@ -724,21 +739,12 @@ def scrivi_riepilogo(attivita, bacini, conteggi, note, titoli, escluse_build, fa
         coppie = sorted(per_att[cod], key=lambda x: x[0]["ordine"])
         out.append(f"- **{cod.upper()}** (tolti dal bacino): " + ", ".join(
             f"{e['id']} = {t['id']}" for e, t in coppie))
-    if "p4" in per_att and len(per_att["p4"]) == conteggi["p4"]["n"]:
-        out += ["", "**P4 resta senza esercizi propri**: tutte le sue 11 consegne sono "
-                "espressioni di P3, quindi con questa regola il suo bacino è vuoto. Le strade:",
-                "", "1. scrivere esercizi nuovi per P4 (per il livello 1 ci sono le proposte "
-                "qui sotto);",
-                "2. fare il contrario solo per P4: lasciare le 11 espressioni a P4 e toglierle "
-                "dal bacino di P3, che ne ha comunque altre 24 di suo;",
-                "3. considerare P4 un ripasso di P3 e usare per la fase 3 il bacino di P3.",
-                "", "Finché non decidi, P4 non ha bacino (è l'unica attività senza)."]
 
     # --- livello 1 non basico
     lunghe = [cod for cod in bacini if conteggi[cod]["l1"] > 6]
     out += ["", "## Livello 1 non basico", "",
             "Attività in cui anche il livello 1 supera i 6 passaggi (mediana dei passaggi del "
-            "livello 1; per P4 quella delle sue espressioni). Per ognuna, 2-3 esercizi di "
+            "livello 1). Per ognuna, 2-3 esercizi di "
             "livello 1 da scrivere apposta: consegna più corta, una sola parentesi. **Sono solo "
             "proposte, le guide non sono state scritte.** I risultati sono controllati con SymPy.",
             ""]
