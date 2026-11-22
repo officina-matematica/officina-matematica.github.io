@@ -12,13 +12,18 @@ Uso (dalla cartella principale):  python fase3/calcola_bacini.py
 PUNTEGGIO. Ogni ingrediente diventa la posizione in classifica dentro
 l'attivita' (0 = il valore piu' basso, 1 = il piu' alto, pari merito = stessa
 posizione). Il punteggio, su 100, e':
-    40% passaggi  +  35% regole diverse  +  15% parentesi annidate  +  10% lunghezza
-LIVELLI: la classifica dell'attivita' tagliata in tre parti uguali.
+    50% passaggi  +  25% regole diverse  +  15% parentesi annidate  +  10% lunghezza
+LIVELLI: la classifica dell'attivita' tagliata in tre parti uguali, salvo le
+attivita' in FASCE, dove il tipo di esercizio decide a quali livelli puo' stare.
+BACINO: livello 3 senza esercizi-maratona (oltre il 90° percentile dei
+passaggi), passaggi che crescono da un livello all'altro, nessun doppione fra
+attivita' (la consegna resta nell'attivita' che viene prima).
 """
 
 import csv
 import html
 import json
+import math
 import re
 from collections import Counter, defaultdict
 from pathlib import Path
@@ -30,9 +35,109 @@ ESERCIZI = RADICE / "esercizi"
 USCITA = RADICE / "fase3"
 FOGLIO_ARGOMENTI = RADICE.parent / "OM_DASHBOARD" / "test" / "dati" / "argomenti.csv"
 
-PESI = {"passaggi": 0.40, "regole": 0.35, "annidamento": 0.15, "lunghezza": 0.10}
+PESI = {"passaggi": 0.50, "regole": 0.25, "annidamento": 0.15, "lunghezza": 0.10}
 ESCLUSE = {"gon"}          # eserciziario aperto: cresce a ogni invio
 SCARTA_FILE = ("prima_del_riordino", "riserva")
+PERCENTILE_MARATONA = 0.90
+
+
+# ------------------------------------------------- progressione per tipo
+# Dove il punteggio non basta (guide che citano molte regole per conti
+# semplici, esercizi dello stesso tipo a pari punteggio), e' il tipo di
+# esercizio a dire a quali livelli puo' stare. Il primo criterio che vale
+# decide. Dentro un gruppo con piu' livelli, il gruppo si divide in parti
+# uguali secondo il punteggio (o secondo la "chiave" indicata).
+
+def _parte(*prefissi):
+    return lambda e: e["parte"].startswith(prefissi)
+
+
+def _ids(*ii):
+    return lambda e: e["id"] in ii
+
+
+def _tutti(e):
+    return True
+
+
+def _numeri(e):
+    m = re.search(r"numeri\s+([\d,\s]+)", e["tex"])
+    return [int(x) for x in re.findall(r"\d+", m.group(1))] if m else []
+
+
+FASCE = {
+    # PR4: riconoscere il tipo -> 1; una proporzione semplice, diretta o
+    # inversa -> 1 o 2; dividere in due parti, il rettangolo con due domande -> 2;
+    # problemi composti (operai e giorni insieme), divisione in tre parti o con
+    # un passo in piu', percentuale all'indietro -> 3
+    "pr4": [(lambda e: e["label"].startswith("Stabilisci"), (1,)),
+            (_ids("pr4_34", "pr4_39", "pr4_27", "pr4_30", "pr4_31", "pr4_40", "pr4_38"), (3,)),
+            (_ids("pr4_24", "pr4_25", "pr4_26", "pr4_28", "pr4_29", "pr4_32"), (2,)),
+            (_tutti, (1, 2))],
+    # MP6: somma per differenza -> 1; quadrato -> 1 o 2; cubo -> 2; espressioni -> 3
+    "mp6": [(_parte("Parte 2"), (1,)), (_parte("Parte 1"), (1, 2)),
+            (_parte("Parte 3"), (2,)), (_parte("Parte 4"), (3,))],
+    # P3: le semplificazioni brevi scritte per la fase 3 -> 1; le espressioni -> 2 o 3
+    "p3": [(_parte("Fase 3"), (1,)), (_tutti, (2, 3))],
+    # LOG1: quando il risultato e' una radice (log_x 64 = 5) non e' livello 1
+    "log1": [(lambda e: r"\sqrt" in e["ris"], (2, 3)), (_tutti, (1, 2, 3))],
+    # NEG6: potenze, proprieta', scrivere in notazione scientifica e tornare
+    # indietro -> 1 o 2; calcolare in notazione e trovare l'errore -> 2;
+    # espressioni e problemi di realta' -> 3
+    "neg6": [(_parte("Parte 1", "Parte 2", "Parte 4", "Parte 5"), (1, 2)),
+             (_parte("Parte 6", "Parte 7"), (2,)),
+             (_parte("Parte 3", "Parte 8"), (3,))],
+    # MCD e mcm: due numeri piccoli -> 1, due numeri piu' grandi -> 2, tre numeri -> 3
+    "fmdc2": [(lambda e: len(_numeri(e)) >= 3, (3,)),
+              (_tutti, (1, 2), lambda e: max(_numeri(e)))],
+    "fmdc3": [(lambda e: len(_numeri(e)) >= 3, (3,)),
+              (_tutti, (1, 2), lambda e: max(_numeri(e)))],
+    # OF2: i prodotti che si semplificano subito -> 1; completare l'uguaglianza
+    # (si ragiona all'indietro, ma la guida e' breve) -> 2; i prodotti con un
+    # intero da trasformare o quattro fattori da semplificare in croce -> 3.
+    # (Tre fattori -> 1, quattro -> 2, completa -> 3 metteva al livello 1
+    # guide piu' lunghe di quelle del livello 2.)
+    "of2": [(_parte("Parte 2"), (2,)), (_ids("of2_3", "of2_4"), (1,)), (_tutti, (3,))],
+}
+
+
+# ------------------------------------------------ livello 1 da scrivere apposta
+# Proposte per le attivita' in cui anche il livello 1 e' lungo: consegna piu'
+# corta, una sola parentesi. NON sono guide: le decide Simone. Risultati
+# controllati con SymPy (vedi controlla_proposte in fondo).
+PROPOSTE_L1 = {
+    "neg5": [(r"\left(-\frac{2}{3}\right)^{2}-\frac{1}{9}", r"\frac{1}{3}",
+              "una potenza di base negativa e una sottrazione"),
+             (r"\left(-\frac{1}{2}+\frac{3}{4}\right)^{2}\cdot 8", r"\frac{1}{2}",
+              "prima la parentesi, poi la potenza"),
+             (r"-2^{2}+\left(-3\right)^{2}:3", r"-1",
+              r"la differenza fra $-2^{2}$ e $\left(-3\right)^{2}$")],
+    "odx1": [(r"\left(0{,}5+0{,}25\right)\cdot 4", r"3", "solo decimali finiti"),
+             (r"0{,}\overline{3}\cdot 1{,}2-0{,}1", r"0{,}3",
+              "un solo periodico da trasformare in frazione"),
+             (r"\left(1{,}5-0{,}\overline{6}\right):0{,}5", r"1{,}\overline{6}",
+              "un periodico dentro una parentesi")],
+    "odx2": [(r"\left(0{,}3\right)^{2}+0{,}91", r"1", "una potenza di un decimale"),
+             (r"\left(0{,}5\right)^{3}\cdot 4", r"0{,}5", "cubo di un decimale, poi un prodotto"),
+             (r"\left(1{,}2\right)^{2}-0{,}44", r"1", "quadrato di un decimale maggiore di 1")],
+    "of4": [(r"\left(\frac{1}{2}+\frac{1}{3}\right)\cdot\frac{6}{5}", r"1",
+             "una somma in parentesi, poi un prodotto"),
+            (r"\left(\frac{2}{3}\right)^{2}\cdot\frac{3}{2}", r"\frac{2}{3}",
+             "una potenza di frazione e una semplificazione"),
+            (r"\frac{3}{4}-\left(\frac{1}{2}\right)^{2}", r"\frac{1}{2}",
+             "prima la potenza, poi la sottrazione")],
+    "p4": [(r"\left(2^{3}+2^{2}\right):3", r"4", "potenze da calcolare, poi una divisione"),
+           (r"5^{2}-\left(3^{2}-2^{3}\right)", r"24", "una parentesi con due potenze"),
+           (r"\left(2^{5}:2^{3}\right)^{2}+1", r"17",
+            "quoziente di potenze con la stessa base, poi il quadrato")],
+    "log7": [(r"\log_{2}\left(x-1\right)=3", r"x=9", "un solo logaritmo, si passa all'esponenziale"),
+             (r"\log_{3}x+\log_{3}2=2", r"x=\frac{9}{2}",
+              "la proprietà del prodotto, poi come sopra"),
+             (r"\ln\left(2x+1\right)=\ln 5", r"x=2", "stessa base ai due membri")],
+    "log8": [(r"\log_{2}\left(x-1\right)<3", r"1<x<9", "base maggiore di 1, con il dominio"),
+             (r"\log_{\frac{1}{3}}x>2", r"0<x<\frac{1}{9}", "base minore di 1: il verso si gira"),
+             (r"\ln\left(x+2\right)\ge 0", r"x\ge -1", r"confronto con $\ln 1=0$")],
+}
 
 
 # ---------------------------------------------------------------- ingredienti
@@ -190,6 +295,9 @@ def carica():
     base = yaml.safe_load((RADICE / "tassonomia.yaml").read_text(encoding="utf-8"))
     titoli = {a["codice"].lower(): a["titolo"]
               for arg in base["argomenti"] for a in arg["attivita"]}
+    # l'ordine delle attivita' nel percorso: decide chi tiene un doppione
+    ordine = {a["codice"].lower(): i for i, a in
+              enumerate(a for arg in base["argomenti"] for a in arg["attivita"])}
     sito = base["sito"]["github_pages"].rstrip("/")
 
     attivita = {}
@@ -204,16 +312,126 @@ def carica():
         cod = f.name.replace("_fase3.json", "")
         for e in json.loads(f.read_text(encoding="utf-8"))["esercizi"]:
             fase3[e["id"]] = dict(e, _attivita=cod)
-    return attivita, fase3, titoli, sito
+    return attivita, fase3, titoli, ordine, sito
 
 
-def ordina_id(i):
-    cod, n = i.rsplit("_", 1)
-    return (cod, int(n))
+def firma(label, tex):
+    """La consegna ridotta all'osso, per riconoscere i doppioni: stessa
+    etichetta e stessa formula, a meno di spazi e \\left/\\right."""
+    t = re.sub(r"\\(left|right|displaystyle|,|;|!)", "", tex).replace(r"\dfrac", r"\frac")
+    return (label.strip().lower(), re.sub(r"\s+", "", t))
+
+
+def mediana(v):
+    v = sorted(v)
+    if not v:
+        return 0
+    n = len(v)
+    return v[n // 2] if n % 2 else (v[n // 2 - 1] + v[n // 2]) / 2
+
+
+def percentile(v, q):
+    """Percentile «al rango più vicino»: il valore sotto cui sta la quota q."""
+    v = sorted(v)
+    return v[max(0, math.ceil(q * len(v)) - 1)] if v else 0
+
+
+def assegna_livelli(ex, cod):
+    """Senza FASCE: la classifica in tre parti uguali. Con FASCE: ogni gruppo
+    di esercizi va nei livelli che il suo tipo ammette, diviso in parti uguali."""
+    regole = FASCE.get(cod, [(_tutti, (1, 2, 3))])
+    gruppi = defaultdict(list)
+    for e in ex:
+        for r in regole:
+            if r[0](e):
+                e["ammessi"] = r[1]
+                chiave = r[2] if len(r) > 2 else None
+                gruppi[(r[1], id(r))].append((e, chiave))
+                break
+        else:
+            e["ammessi"] = (1, 2, 3)
+            gruppi[((1, 2, 3), 0)].append((e, None))
+    for (livelli, _), membri in gruppi.items():
+        def chiave(m):
+            e, k = m
+            base = (e["punteggio"], e["passaggi"], e["regole"], e["lunghezza"], -e["ordine"])
+            return ((k(e),) + base) if k else base
+        membri.sort(key=chiave)
+        n = len(membri)
+        for i, (e, _) in enumerate(membri):
+            e["livello"] = livelli[(len(livelli) * i) // n]
+
+
+def sistema_coerenza(scelta, cand, cod, dubbi):
+    """Mediana dei passaggi crescente da 1 a 3, e nessun esercizio di livello 1
+    oltre la mediana del livello 2. Si scambia solo con esercizi dello stesso
+    livello, cosi' la progressione per tipo resta com'e'."""
+    scambi = []
+
+    def p(L):
+        return [e["passaggi"] for e in scelta[L]]
+
+    def sostituisci(L, vecchio, filtro, preferisci):
+        liberi = [c for c in cand[L] if c not in scelta[L] and filtro(c)]
+        if not liberi:
+            return False
+        nuovo = max(liberi, key=lambda c: (c["parte"] == vecchio["parte"],
+                                           c["parte"] not in {x["parte"] for x in scelta[L]},
+                                           preferisci(c), -c["ordine"]))
+        scelta[L][scelta[L].index(vecchio)] = nuovo
+        scambi.append(f"liv. {L}: {vecchio['id']} ({vecchio['passaggi']} pass.) → "
+                      f"{nuovo['id']} ({nuovo['passaggi']} pass.)")
+        return True
+
+    # si ripete finche' non cambia piu' niente: uno scambio fra i livelli 2 e 3
+    # puo' abbassare la mediana del livello 2 e rimettere in gioco il livello 1
+    avvisi = {}
+    for _giro in range(6):
+        prima = len(scambi)
+        avvisi = {}
+        # 1. livello 1: niente oltre la mediana del livello 2
+        if scelta[1] and scelta[2]:
+            tetto = mediana(p(2))
+            for e in sorted(scelta[1], key=lambda e: -e["passaggi"]):
+                if e["passaggi"] > tetto and not sostituisci(
+                        1, e, lambda c: c["passaggi"] <= tetto, lambda c: -c["passaggi"]):
+                    avvisi[e["id"]] = (
+                        f"{e['id']} (liv. 1) ha {e['passaggi']} passaggi, più della mediana "
+                        f"del livello 2 ({tetto:g}), e al livello 1 non c'è un esercizio più "
+                        "corto con cui scambiarlo")
+
+        # 2. mediane crescenti: prima si accorcia il livello basso, poi si allunga l'alto
+        for basso, alto in ((1, 2), (2, 3)):
+            for _ in range(12):
+                if not scelta[basso] or not scelta[alto] or mediana(p(basso)) < mediana(p(alto)):
+                    break
+                lungo = max(scelta[basso], key=lambda e: e["passaggi"])
+                corto = min(scelta[alto], key=lambda e: e["passaggi"])
+                if sostituisci(basso, lungo, lambda c: c["passaggi"] < lungo["passaggi"],
+                               lambda c: -c["passaggi"]):
+                    continue
+                if sostituisci(alto, corto, lambda c: c["passaggi"] > corto["passaggi"],
+                               lambda c: c["passaggi"]):
+                    continue
+                break
+            if scelta[basso] and scelta[alto] and mediana(p(basso)) >= mediana(p(alto)):
+                avvisi[basso] = (
+                    f"la mediana dei passaggi non cresce dal livello {basso} "
+                    f"({mediana(p(basso)):g}) al livello {alto} ({mediana(p(alto)):g}) "
+                    "e con gli esercizi disponibili non si può sistemare"
+                    + (": qui conta il tipo di esercizio, non la lunghezza"
+                       if cod in FASCE else ""))
+        if len(scambi) == prima:
+            break
+    dubbi.extend(avvisi.values())
+    if scambi:
+        dubbi.append("scambi per la coerenza fra livelli: " + "; ".join(scambi))
+    for L in scelta:
+        scelta[L].sort(key=lambda c: c["ordine"])
 
 
 def main():
-    attivita, fase3, titoli, sito = carica()
+    attivita, fase3, titoli, ordine, sito = carica()
     righe_tutte, bacini, note, conteggi = [], {}, {}, {}
 
     # gli esercizi dei file *_fase3.json che non sono nei contenuti
@@ -222,11 +440,11 @@ def main():
             note.setdefault(e["_attivita"], []).append(
                 f"{i} sta in {e['_attivita']}_fase3.json ma non ha la guida nei contenuti: escluso")
 
-    escluse_build = []
+    # --- 1. ingredienti e punteggio, attivita' per attivita'
+    escluse_build, tutti = [], {}
     for cod, guide in attivita.items():
         if cod in ESCLUSE:
             continue
-        dubbi = note.setdefault(cod, [])
         # solo le guide finite: il file sta nella cartella principale
         pronte = []
         for g in guide:
@@ -235,13 +453,12 @@ def main():
             else:
                 escluse_build.append(g["id"])
         assegna_parti(pronte, fase3)
-
         ex = []
         for n, g in enumerate(pronte):
             nomi = nomi_regole(g)
             ex.append({
-                "id": g["id"], "ordine": n, "label": g["consegna_label"],
-                "tex": g["consegna_tex"],
+                "id": g["id"], "cod": cod, "ordine": n, "label": g["consegna_label"],
+                "tex": g["consegna_tex"], "ris": g.get("risultato_tex", ""),
                 "prosa": bool(g.get("consegna_prosa")) or g.get("tipo") == "problema",
                 "tipo": g.get("tipo", ""), "parte": g["_parte"], "nomi": nomi,
                 "passaggi": passaggi(g), "regole": len(nomi),
@@ -249,42 +466,74 @@ def main():
                 "lunghezza": lunghezza(g["consegna_tex"]),
                 "metodi": sum(1 for r in g["righe"] if r.get("metodo")),
                 "figura": "<svg" in g["consegna_tex"],
-                "fase3": g["id"] in fase3,
+                "fase3": g["id"] in fase3, "doppione": None,
             })
         pos = {k: posizioni([e[k] for e in ex]) for k in PESI}
         for i, e in enumerate(ex):
             e["punteggio"] = round(100 * sum(PESI[k] * pos[k][i] for k in PESI), 1)
+        assegna_livelli(ex, cod)
+        tutti[cod] = ex
 
-        # livelli: la classifica tagliata in tre parti uguali
-        classifica = sorted(ex, key=lambda e: (e["punteggio"], e["passaggi"],
-                                               e["regole"], e["lunghezza"], -e["ordine"]))
-        n = len(classifica)
-        for i, e in enumerate(classifica):
-            e["livello"] = 1 + (3 * i) // n
+    # --- 2. doppioni: la consegna resta nell'attivita' che viene prima nel percorso
+    per_firma = defaultdict(list)
+    for cod, ex in tutti.items():
+        for e in ex:
+            per_firma[firma(e["label"], e["tex"])].append(e)
+    doppioni = []
+    for gruppo in per_firma.values():
+        if len(gruppo) < 2:
+            continue
+        gruppo.sort(key=lambda e: (ordine.get(e["cod"], 999), e["ordine"]))
+        tiene = gruppo[0]
+        for e in gruppo[1:]:
+            e["doppione"] = tiene["id"]
+            doppioni.append((e, tiene))
+
+    # --- 3. bacini
+    for cod, ex in tutti.items():
+        dubbi = note.setdefault(cod, [])
+        n = len(ex)
         per_livello = {L: [e for e in ex if e["livello"] == L] for L in (1, 2, 3)}
-
         k = 5 if n >= 15 else 3
+        maratona = percentile([e["passaggi"] for e in ex], PERCENTILE_MARATONA)
+
+        cand = {}
+        for L in (1, 2, 3):
+            c = [e for e in per_livello[L] if not e["doppione"]]
+            if L == 3:
+                lunghi = [e for e in c if e["passaggi"] > maratona]
+                if lunghi:
+                    dubbi.append(f"fuori dal livello 3 perché oltre il 90° percentile dei "
+                                 f"passaggi ({maratona}): "
+                                 + ", ".join(f"{e['id']} ({e['passaggi']})" for e in lunghi))
+                c = [e for e in c if e["passaggi"] <= maratona]
+                buoni = [e for e in c if e["regole"] >= 2]
+                if len(buoni) < min(k, len(c)):
+                    dubbi.append(
+                        f"livello 3: solo {len(buoni)} esercizi su {len(c)} usano almeno due "
+                        "regole diverse"
+                        + ("" if buoni else ": il livello 3 resta vuoto, va deciso a mano"))
+                c = buoni
+            cand[L] = c
+
         usate, scelta = set(), {}
         for L in (3, 1, 2):          # il 3 per primo: e' quello col vincolo
-            cand = per_livello[L]
-            if L == 3:
-                buoni = [e for e in cand if e["regole"] >= 2]
-                if len(buoni) < min(k, len(cand)):
-                    dubbi.append(
-                        f"livello 3: solo {len(buoni)} esercizi su {len(cand)} usano almeno due "
-                        f"regole diverse"
-                        + ("" if buoni else ": il livello 3 resta vuoto, va deciso a mano"))
-                cand = buoni
-            scelta[L] = scegli(cand, min(k, len(cand)), usate)
+            scelta[L] = scegli(cand[L], min(k, len(cand[L])), usate)
             usate |= {e["parte"] for e in scelta[L]}
-            if len(scelta[L]) < min(k, len(per_livello[L])) and L != 3:
-                dubbi.append(f"livello {L}: solo {len(scelta[L])} esercizi scelti")
+        sistema_coerenza(scelta, cand, cod, dubbi)
 
         bacini[cod] = scelta
         conteggi[cod] = {"n": n, "k": k, "livelli": {L: len(per_livello[L]) for L in (1, 2, 3)},
-                         "parti": Counter(e["parte"] for e in ex)}
+                         "parti": Counter(e["parte"] for e in ex), "maratona": maratona,
+                         "mediane": {L: mediana([e["passaggi"] for e in scelta[L]])
+                                     for L in (1, 2, 3)},
+                         "doppioni": sum(1 for e in ex if e["doppione"]),
+                         "l1": mediana([e["passaggi"] for e in (scelta[1] or per_livello[1])])}
 
         # casi dubbi
+        if conteggi[cod]["doppioni"] == n:
+            dubbi.insert(0, f"**tutte le {n} consegne sono doppioni** di un'attività che viene "
+                            "prima: il bacino resta vuoto finché non si decide (vedi «Doppioni»)")
         tutte_parti = set(conteggi[cod]["parti"])
         coperte = {e["parte"] for L in scelta for e in scelta[L]}
         if len(tutte_parti) > 1 and tutte_parti - coperte:
@@ -293,10 +542,11 @@ def main():
         if max(e["regole"] for e in ex) <= 1:
             dubbi.append("nessun esercizio usa piu' di una regola: la difficolta' la fanno "
                          "solo i passaggi e la lunghezza")
-        corti = [L for L in (1, 2, 3) if len(scelta[L]) < 3]
+        corti = [L for L in (1, 2, 3) if 0 < len(scelta[L]) < 3]
         if corti:
             dubbi.append("attività piccola: " + ", ".join(
-                f"il livello {L} ha {len(scelta[L])} esercizi" for L in corti)
+                f"il livello {L} ha {len(scelta[L])} "
+                + ("esercizio" if len(scelta[L]) == 1 else "esercizi") for L in corti)
                 + ". Chi resta su quel livello rivede presto lo stesso esercizio: "
                 "servono esercizi nuovi o un bacino unico per più livelli")
         nel_bacino = [(L, e) for L in (1, 2, 3) for e in scelta[L]]
@@ -312,25 +562,29 @@ def main():
         if aperti:
             dubbi.append("risposta da spiegare a parole o da scrivere liberamente, "
                          "l'autovalutazione è meno netta: " + ", ".join(aperti))
-        # pari merito spezzati dal taglio fra due livelli
-        spezzati = [f"{a['id']}/{b['id']} ({a['livello']}|{b['livello']})"
-                    for a, b in zip(classifica, classifica[1:])
-                    if a["livello"] != b["livello"] and a["punteggio"] == b["punteggio"]]
-        if spezzati:
-            dubbi.append("stesso punteggio ma livelli diversi (il taglio li separa per passaggi "
-                         "e lunghezza; si possono scambiare): " + ", ".join(spezzati))
+        if cod not in FASCE:
+            classifica = sorted(ex, key=lambda e: (e["punteggio"], e["passaggi"], e["regole"],
+                                                   e["lunghezza"], -e["ordine"]))
+            spezzati = [f"{a['id']}/{b['id']} ({a['livello']}|{b['livello']})"
+                        for a, b in zip(classifica, classifica[1:])
+                        if a["livello"] != b["livello"] and a["punteggio"] == b["punteggio"]]
+            if spezzati:
+                dubbi.append("stesso punteggio ma livelli diversi (il taglio li separa per "
+                             "passaggi e lunghezza; si possono scambiare): " + ", ".join(spezzati))
 
         for e in ex:
             righe_tutte.append((cod.upper(), e))
 
     scrivi_csv(bacini)
     scrivi_tutti(righe_tutte)
-    scrivi_riepilogo(attivita, bacini, conteggi, note, titoli, escluse_build, fase3)
+    scrivi_riepilogo(attivita, bacini, conteggi, note, titoli, escluse_build, fase3, doppioni)
     scrivi_anteprima(bacini, conteggi, titoli, sito)
     print(f"Attivita' con bacino: {len(bacini)}")
     for cod in bacini:
+        m = conteggi[cod]["mediane"]
         print(f"  {cod.upper():6} {conteggi[cod]['n']:4} esercizi  ->  "
-              + "  ".join(f"L{L}:{len(bacini[cod][L])}" for L in (1, 2, 3)))
+              + "  ".join(f"L{L}:{len(bacini[cod][L])}" for L in (1, 2, 3))
+              + f"   mediane passaggi {m[1]} / {m[2]} / {m[3]}")
 
 
 # ------------------------------------------------------------------ scrittura
@@ -370,7 +624,7 @@ def foglio_argomenti():
     return {row[1].strip(): (row[0].strip(), row[2].strip()) for row in r[1:] if len(row) > 2}
 
 
-def scrivi_riepilogo(attivita, bacini, conteggi, note, titoli, escluse_build, fase3):
+def scrivi_riepilogo(attivita, bacini, conteggi, note, titoli, escluse_build, fase3, doppioni):
     out = ["# Fase 3 — proposta dei bacini", "",
            "Proposta da controllare: nessuna guida, nessun file di contenuto, nessun prompt "
            "è stato modificato. I file sono in `fase3/`:", "",
@@ -386,16 +640,44 @@ def scrivi_riepilogo(attivita, bacini, conteggi, note, titoli, escluse_build, fa
            "la **profondità delle parentesi** della consegna e la sua **lunghezza** (simboli "
            "della formula, parole nei problemi).",
            "Dentro ogni attività ciascuna quantità diventa una posizione in classifica da 0 a 1; "
-           "il punteggio (su 100) è **40% passaggi + 35% regole + 15% parentesi + 10% lunghezza**: "
-           "pesano soprattutto quanti passaggi servono e quante regole si mescolano.",
+           "il punteggio (su 100) è **50% passaggi + 25% regole + 15% parentesi + 10% lunghezza**. "
+           "Le regole pesano meno di prima (erano al 35%) perché alcune guide citano molte regole "
+           "anche per conti semplici.",
            "", "**Livelli**: la classifica dell'attività divisa in tre parti con lo stesso numero "
-           "di esercizi (1 = il terzo più facile, 3 = il più complesso). Dividere invece in tre "
-           "fasce uguali di punteggio lascerebbe pochissimi esercizi ai livelli 1 e 3, perché i "
-           "punteggi si addensano al centro.",
+           "di esercizi (1 = il terzo più facile, 3 = il più complesso).",
+           "", "**Progressione per tipo** — in alcune attività il punteggio non basta, e decide "
+           "il tipo di esercizio (dentro un tipo che può stare su due livelli, si divide a metà "
+           "secondo il punteggio):", "",
+           "- **PR4**: riconoscere se la proporzionalità è diretta o inversa → 1; un problema "
+           "con una sola proporzione, diretta o inversa → 1 o 2; dividere in due parti secondo "
+           "un rapporto, e il rettangolo con due domande → 2; problemi composti (operai *e* "
+           "giorni), divisioni in tre parti o con un passo in più, percentuale all'indietro → 3.",
+           "- **MP6**: somma per differenza → 1; quadrato di binomio → 1 o 2; cubo → 2; "
+           "espressioni → 3.",
+           "- **P3**: le semplificazioni brevi scritte per la fase 3 → 1; le espressioni → 2 o 3.",
+           "- **LOG1**: gli esercizi che hanno una radice come risultato (come log1_93, "
+           "$\\log_x 64=5$) non stanno al livello 1.",
+           "- **NEG6**: potenze con esponente negativo, proprietà, scrivere in notazione "
+           "scientifica e tornare al numero → 1 o 2; calcolare in notazione scientifica e "
+           "trovare l'errore → 2; espressioni e problemi di realtà → 3.",
+           "- **FMDC2, FMDC3**: due numeri piccoli → 1; due numeri più grandi → 2; tre numeri → 3.",
+           "- **OF2**: i prodotti che si semplificano subito (of2_3, of2_4) → 1; completare "
+           "l'uguaglianza → 2; i prodotti con un intero da trasformare o con quattro fattori "
+           "(of2_1, of2_2, of2_5) → 3. Avevo provato tre fattori → 1, quattro → 2, completare → 3, "
+           "ma così il livello 1 aveva guide più lunghe del livello 2, contro la regola dei passaggi.",
            "", "**Bacino**: 5 esercizi per livello (3 se l'attività ha meno di 15 esercizi). "
            "Lo script sceglie prima esercizi di parti diverse dell'attività, poi esercizi che "
            "portano regole nuove, poi tipi di consegna diversi; a parità, quelli vicini al centro "
-           "del livello. Al livello 3 entrano solo esercizi con almeno due regole diverse.",
+           "del livello. Poi tre filtri:", "",
+           "- **livello 3 senza maratone**: fuori gli esercizi oltre il 90° percentile dei "
+           "passaggi della loro attività (restano nei punteggi, non nel bacino), e dentro solo "
+           "esercizi con almeno due regole diverse;",
+           "- **coerenza fra livelli**: la mediana dei passaggi deve crescere dal livello 1 al 3, "
+           "e nessun esercizio del livello 1 può avere più passaggi della mediana del livello 2. "
+           "Dove non succede, lo script scambia con un altro esercizio *dello stesso livello* "
+           "(così la progressione per tipo resta) e lo scrive nei casi dubbi;",
+           "- **doppioni**: una consegna presente in due attività resta solo in quella che "
+           "viene prima nel percorso.",
            "", "## Cosa è stato escluso", "",
            "- **GON — Eserciziario**: escluso perché è aperto (si allunga a ogni invio di "
            "esercizi). Ha 9 guide: un bacino andrebbe fatto quando l'eserciziario sarà fermo.",
@@ -416,15 +698,61 @@ def scrivi_riepilogo(attivita, bacini, conteggi, note, titoli, escluse_build, fa
             "altri. " + "; ".join(f"{c.upper()}: {n_f3[c]} esercizi, {scelti_f3.get(c, 0)} "
                                    f"entrati nel bacino" for c in sorted(n_f3)) + ".",
             "", "## Attività per attività", "",
-            "| Attività | Esercizi | Liv. 1 / 2 / 3 | Bacino 1 / 2 / 3 | Parti |",
-            "|---|---:|---|---|---:|"]
+            "Passaggi: la mediana dei passaggi degli esercizi del bacino, livello per livello. "
+            "Soglia: oltre questo numero di passaggi un esercizio non entra nel livello 3.", "",
+            "| Attività | Esercizi | Liv. 1 / 2 / 3 | Bacino 1 / 2 / 3 | Passaggi 1 / 2 / 3 "
+            "| Soglia | Parti |",
+            "|---|---:|---|---|---|---:|---:|"]
     for cod, s in bacini.items():
         c = conteggi[cod]
-        lv = c["livelli"]
+        lv, m = c["livelli"], c["mediane"]
+        med = " / ".join(f"{m[L]:g}" if s[L] else "—" for L in (1, 2, 3))
         out.append(f"| {cod.upper()} — {titoli.get(cod, '')} | {c['n']} | "
                    f"{lv[1]} / {lv[2]} / {lv[3]} | "
-                   f"{len(s[1])} / {len(s[2])} / {len(s[3])} | {len(c['parti'])} |")
-    out += ["", "## Casi dubbi", ""]
+                   f"{len(s[1])} / {len(s[2])} / {len(s[3])} | {med} | {c['maratona']} | "
+                   f"{len(c['parti'])} |")
+
+    # --- doppioni
+    out += ["", "## Doppioni fra attività", "",
+            "La stessa consegna (stessa etichetta, stessa formula) sta in due attività. "
+            "Resta nel bacino solo dell'attività che viene prima nel percorso; nell'altra conta "
+            "nei punteggi ma non entra nel bacino.", ""]
+    per_att = defaultdict(list)
+    for e, tiene in doppioni:
+        per_att[e["cod"]].append((e, tiene))
+    for cod in sorted(per_att, key=lambda c: c):
+        coppie = sorted(per_att[cod], key=lambda x: x[0]["ordine"])
+        out.append(f"- **{cod.upper()}** (tolti dal bacino): " + ", ".join(
+            f"{e['id']} = {t['id']}" for e, t in coppie))
+    if "p4" in per_att and len(per_att["p4"]) == conteggi["p4"]["n"]:
+        out += ["", "**P4 resta senza esercizi propri**: tutte le sue 11 consegne sono "
+                "espressioni di P3, quindi con questa regola il suo bacino è vuoto. Le strade:",
+                "", "1. scrivere esercizi nuovi per P4 (per il livello 1 ci sono le proposte "
+                "qui sotto);",
+                "2. fare il contrario solo per P4: lasciare le 11 espressioni a P4 e toglierle "
+                "dal bacino di P3, che ne ha comunque altre 24 di suo;",
+                "3. considerare P4 un ripasso di P3 e usare per la fase 3 il bacino di P3.",
+                "", "Finché non decidi, P4 non ha bacino (è l'unica attività senza)."]
+
+    # --- livello 1 non basico
+    lunghe = [cod for cod in bacini if conteggi[cod]["l1"] > 6]
+    out += ["", "## Livello 1 non basico", "",
+            "Attività in cui anche il livello 1 supera i 6 passaggi (mediana dei passaggi del "
+            "livello 1; per P4 quella delle sue espressioni). Per ognuna, 2-3 esercizi di "
+            "livello 1 da scrivere apposta: consegna più corta, una sola parentesi. **Sono solo "
+            "proposte, le guide non sono state scritte.** I risultati sono controllati con SymPy.",
+            ""]
+    for cod in lunghe:
+        out.append(f"**{cod.upper()} — {titoli.get(cod, '')}** · livello 1 di oggi: mediana "
+                   f"{conteggi[cod]['l1']:g} passaggi")
+        out.append("")
+        for tex, ris, perche in PROPOSTE_L1.get(cod, []):
+            out.append(f"- ${tex}$ → ${ris}$ — {perche}")
+        if cod not in PROPOSTE_L1:
+            out.append("- (nessuna proposta: da fare)")
+        out.append("")
+
+    out += ["## Casi dubbi", ""]
     for cod in bacini:
         d = note.get(cod) or []
         if d:
@@ -507,12 +835,28 @@ def scrivi_anteprima(bacini, conteggi, titoli, sito):
         </div>
         <details><summary>Regole</summary><p>{regole}</p></details>
       </article>""")
+            if L == 1 and conteggi[cod]["l1"] > 6:
+                for tex, ris, perche in PROPOSTE_L1.get(cod, []):
+                    schede.append(f"""
+      <article class="scheda proposta">
+        <header><span class="tag">proposta da scrivere</span>
+          <span class="dati">risultato ${ris}$</span></header>
+        <div class="consegna">
+          <div class="m">$\\displaystyle {html.escape(tex, quote=False)}$</div>
+        </div>
+        <p class="perche">{perche}</p>
+      </article>""")
             vuoto = '<p class="vuoto">Nessun esercizio: da decidere a mano.</p>' if not schede else ""
             colonne.append(f'<div class="col"><h3 class="l{L}">{nome}</h3>{"".join(schede)}{vuoto}</div>')
         c = conteggi[cod]
+        avviso = (f'<p class="avviso">Tutte le {c["n"]} consegne sono uguali a esercizi di '
+                  "un'attività che viene prima (P3): il bacino è vuoto finché non decidi. "
+                  "Le strade sono nel riepilogo, alla voce «Doppioni».</p>"
+                  if c["doppioni"] == c["n"] else "")
         sez.append(f"""
   <section id="{cod}">
     <h2>{C} — {html.escape(titoli.get(cod, ''))}</h2>
+    {avviso}
     <p class="sotto">{c['n']} esercizi · per livello {c['livelli'][1]} / {c['livelli'][2]} / {c['livelli'][3]} · {len(c['parti'])} {'parte' if len(c['parti']) == 1 else 'parti'}</p>
     <div class="griglia">{''.join(colonne)}</div>
   </section>""")
@@ -579,6 +923,10 @@ h3.l1{{color:var(--l1)}} h3.l2{{color:var(--l2)}} h3.l3{{color:var(--l3)}}
 details{{margin-top:6px;font-size:12px;color:var(--muted)}}
 details p{{margin:4px 0 0}}
 .vuoto{{color:var(--l3);font-style:italic}}
+.avviso{{margin:6px 0;padding:8px 12px;border-left:4px solid var(--l3);background:var(--card);color:var(--ink);font-size:14px}}
+.proposta{{border-style:dashed;border-width:2px;background:transparent}}
+.proposta .tag{{font-size:12px;font-weight:600;color:var(--l2);text-transform:uppercase;letter-spacing:.04em}}
+.perche{{margin:6px 0 0;font-size:12px;color:var(--muted)}}
 </style>
 </head>
 <body>

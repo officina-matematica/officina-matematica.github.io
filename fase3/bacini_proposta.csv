@@ -1,479 +1,462 @@
 ﻿codice attività;livello;id esercizio;punteggio;passaggi;regole;parte;consegna in LaTeX
-DX3;1;dx3_1;18,2;3;2;Scrivi come frazione ridotta ai minimi termini;0{,}35
-DX3;1;dx3_16;41,7;4;3;Stabilisci se si può scrivere come frazione decimale;\frac{7}{28}
-DX3;1;dx3_21;41,7;4;3;Semplifica e stabilisci che numero decimale genera;\frac{9}{5}
-DX3;1;dx3_23;41,7;4;3;Semplifica e stabilisci che numero decimale genera;\frac{5}{14}
-DX3;1;dx3_34;19,7;2;2;Trova il valore;\frac{13}{x}=0{,}013
-DX3;2;dx3_13;41,7;4;3;Stabilisci se si può scrivere come frazione decimale;\frac{21}{120}
-DX3;2;dx3_20;57,5;5;3;Semplifica e stabilisci che numero decimale genera;\frac{6}{22}
-DX3;2;dx3_22;57,5;5;3;Semplifica e stabilisci che numero decimale genera;\frac{3}{6}
-DX3;2;dx3_31;46,9;4;3;Trova il valore;\frac{x}{4}=1{,}25
-DX3;2;dx3_32;46,9;4;3;Trova il valore;\frac{9}{x}=0{,}36
-DX3;3;dx3_5;57,5;5;3;Scrivi come frazione ridotta ai minimi termini;0{,}0016
-DX3;3;dx3_7;71,8;5;4;Scrivi come numero decimale;\frac{3}{5}
-DX3;3;dx3_18;71,8;5;4;Stabilisci se si può scrivere come frazione decimale;\frac{33}{275}
-DX3;3;dx3_19;57,5;5;3;Semplifica e stabilisci che numero decimale genera;\frac{8}{30}
-DX3;3;dx3_29;86,3;6;5;Semplifica e stabilisci che numero decimale genera;\frac{3}{40}
-F1;1;f1_1;31,8;4;2;Risolvi il problema;La mamma esce per fare degli acquisti ed ha nella borsa € 225. Se spende i $\displaystyle\frac{2}{5}$ di tale somma in un supermercato e i $\displaystyle\frac{2}{3}$ della rimanenza in una profumeria, con quanto denaro torna a casa?
-F1;1;f1_3;23,6;3;3;Risolvi il problema;In un ufficio sono presenti 24 impiegati, corrispondenti ai $\displaystyle\frac{4}{5}$ dell'intero personale. Quanti sono gli impiegati assenti?
-F1;1;f1_4;23,6;3;3;Risolvi il problema;Se dopo 150 km si sono percorsi i $\displaystyle\frac{2}{5}$ dell'intero viaggio, quanti km restano ancora da percorrere?
-F1;2;f1_5;40,0;4;3;Risolvi il problema;Di un libro di 500 pagine leggo prima i $\displaystyle\frac{3}{50}$ e poi i $\displaystyle\frac{7}{10}$. Quante pagine ho letto in tutto?
-F1;2;f1_7;64,6;4;4;Risolvi il problema;Nella classe di Matteo ci sono 24 alunni. I $\displaystyle\frac{2}{3}$ di questi tifano per la Roma, $\displaystyle\frac{1}{6}$ tifano per il Milan e il resto degli alunni non tifa per alcuna squadra. Quanti sono i romanisti, i milanisti e i non tifosi?
-F1;2;f1_8;60,0;5;3;Risolvi il problema;Ho acquistato un lettore di compact disc ed ho versato € 60 di anticipo, che corrispondono ai $\displaystyle\frac{2}{5}$ dell'intero costo. Dopo due mesi verso i $\displaystyle\frac{2}{3}$ della rimanenza. Quanto mi rimane ancora da pagare?
+DX3;1;dx3_1;18,3;3;2;Scrivi come frazione ridotta ai minimi termini;0{,}35
+DX3;1;dx3_2;18,3;3;2;Scrivi come frazione ridotta ai minimi termini;2{,}4
+DX3;1;dx3_21;40,7;4;3;Semplifica e stabilisci che numero decimale genera;\frac{9}{5}
+DX3;1;dx3_23;40,7;4;3;Semplifica e stabilisci che numero decimale genera;\frac{5}{14}
+DX3;1;dx3_34;18,9;2;2;Trova il valore;\frac{13}{x}=0{,}013
+DX3;2;dx3_13;40,7;4;3;Stabilisci se si può scrivere come frazione decimale;\frac{21}{120}
+DX3;2;dx3_20;60,4;5;3;Semplifica e stabilisci che numero decimale genera;\frac{6}{22}
+DX3;2;dx3_22;60,4;5;3;Semplifica e stabilisci che numero decimale genera;\frac{3}{6}
+DX3;2;dx3_31;45,8;4;3;Trova il valore;\frac{x}{4}=1{,}25
+DX3;2;dx3_32;45,8;4;3;Trova il valore;\frac{9}{x}=0{,}36
+DX3;3;dx3_5;60,4;5;3;Scrivi come frazione ridotta ai minimi termini;0{,}0016
+DX3;3;dx3_7;70,6;5;4;Scrivi come numero decimale;\frac{3}{5}
+DX3;3;dx3_8;70,6;5;4;Scrivi come numero decimale;\frac{7}{20}
+DX3;3;dx3_18;70,6;5;4;Stabilisci se si può scrivere come frazione decimale;\frac{33}{275}
+DX3;3;dx3_19;60,4;5;3;Semplifica e stabilisci che numero decimale genera;\frac{8}{30}
+F1;1;f1_1;36,1;4;2;Risolvi il problema;La mamma esce per fare degli acquisti ed ha nella borsa € 225. Se spende i $\displaystyle\frac{2}{5}$ di tale somma in un supermercato e i $\displaystyle\frac{2}{3}$ della rimanenza in una profumeria, con quanto denaro torna a casa?
+F1;1;f1_3;20,7;3;3;Risolvi il problema;In un ufficio sono presenti 24 impiegati, corrispondenti ai $\displaystyle\frac{4}{5}$ dell'intero personale. Quanti sono gli impiegati assenti?
+F1;1;f1_4;20,7;3;3;Risolvi il problema;Se dopo 150 km si sono percorsi i $\displaystyle\frac{2}{5}$ dell'intero viaggio, quanti km restano ancora da percorrere?
+F1;2;f1_5;40,7;4;3;Risolvi il problema;Di un libro di 500 pagine leggo prima i $\displaystyle\frac{3}{50}$ e poi i $\displaystyle\frac{7}{10}$. Quante pagine ho letto in tutto?
+F1;2;f1_7;60,4;4;4;Risolvi il problema;Nella classe di Matteo ci sono 24 alunni. I $\displaystyle\frac{2}{3}$ di questi tifano per la Roma, $\displaystyle\frac{1}{6}$ tifano per il Milan e il resto degli alunni non tifa per alcuna squadra. Quanti sono i romanisti, i milanisti e i non tifosi?
+F1;2;f1_8;65,0;5;3;Risolvi il problema;Ho acquistato un lettore di compact disc ed ho versato € 60 di anticipo, che corrispondono ai $\displaystyle\frac{2}{5}$ dell'intero costo. Dopo due mesi verso i $\displaystyle\frac{2}{3}$ della rimanenza. Quanto mi rimane ancora da pagare?
 F1;3;f1_2;76,1;5;4;Risolvi il problema;Una scatola contiene 150 cioccolatini. Se, in giorni diversi, ne mangiamo $\displaystyle\frac{1}{2}$, $\displaystyle\frac{1}{3}$ e $\displaystyle\frac{1}{15}$ del totale, quanti cioccolatini restano per i nostri amici?
 F1;3;f1_6;80,4;5;4;Risolvi il problema;Il signor Rossi ha acquistato una automobile a rate. Se finora ha pagato i $\displaystyle\frac{3}{4}$ dell'importo, corrispondenti a 15 rate di € 1000 ciascuna, qual è il costo della macchina e quante rate deve ancora versare per estinguere il suo debito?
-F2;1;f2_1;32,6;2;3;Parte 1 · Leggere la figura;"Scrivi come numero misto la quantità colorata in figura.<svg viewBox=""0 0 192 96"" role=""img"" aria-label=""5 parti colorate su interi divisi in 4 parti"" style=""width:100%;max-width:192px;height:auto;color:var(--blu);display:block;margin:6px auto""><path d=""M48.0,48.0 L48.0,8.0 A40,40 0 0 1 88.0,48.0 Z"" fill=""currentColor"" fill-opacity="".78"" stroke=""currentColor"" stroke-width=""2.5""/><path d=""M48.0,48.0 L88.0,48.0 A40,40 0 0 1 48.0,88.0 Z"" fill=""currentColor"" fill-opacity="".78"" stroke=""currentColor"" stroke-width=""2.5""/><path d=""M48.0,48.0 L48.0,88.0 A40,40 0 0 1 8.0,48.0 Z"" fill=""currentColor"" fill-opacity="".78"" stroke=""currentColor"" stroke-width=""2.5""/><path d=""M48.0,48.0 L8.0,48.0 A40,40 0 0 1 48.0,8.0 Z"" fill=""currentColor"" fill-opacity="".78"" stroke=""currentColor"" stroke-width=""2.5""/><path d=""M144.0,48.0 L144.0,8.0 A40,40 0 0 1 184.0,48.0 Z"" fill=""currentColor"" fill-opacity="".78"" stroke=""currentColor"" stroke-width=""2.5""/><path d=""M144.0,48.0 L184.0,48.0 A40,40 0 0 1 144.0,88.0 Z"" fill=""none"" stroke=""currentColor"" stroke-width=""2.5""/><path d=""M144.0,48.0 L144.0,88.0 A40,40 0 0 1 104.0,48.0 Z"" fill=""none"" stroke=""currentColor"" stroke-width=""2.5""/><path d=""M144.0,48.0 L104.0,48.0 A40,40 0 0 1 144.0,8.0 Z"" fill=""none"" stroke=""currentColor"" stroke-width=""2.5""/></svg>"
-F2;1;f2_25;36,8;3;3;Parte 3 · Dal numero misto alla frazione;4\frac{1}{5}
+F2;1;f2_8;30,0;2;3;Parte 1 · Leggere la figura;"Scrivi quale numero rappresenta la parte colorata in figura.<svg viewBox=""0 0 192 96"" role=""img"" aria-label=""12 parti colorate su interi divisi in 6 parti"" style=""width:100%;max-width:192px;height:auto;color:var(--blu);display:block;margin:6px auto""><path d=""M48.0,48.0 L48.0,8.0 A40,40 0 0 1 82.6,28.0 Z"" fill=""currentColor"" fill-opacity="".78"" stroke=""currentColor"" stroke-width=""2.5""/><path d=""M48.0,48.0 L82.6,28.0 A40,40 0 0 1 82.6,68.0 Z"" fill=""currentColor"" fill-opacity="".78"" stroke=""currentColor"" stroke-width=""2.5""/><path d=""M48.0,48.0 L82.6,68.0 A40,40 0 0 1 48.0,88.0 Z"" fill=""currentColor"" fill-opacity="".78"" stroke=""currentColor"" stroke-width=""2.5""/><path d=""M48.0,48.0 L48.0,88.0 A40,40 0 0 1 13.4,68.0 Z"" fill=""currentColor"" fill-opacity="".78"" stroke=""currentColor"" stroke-width=""2.5""/><path d=""M48.0,48.0 L13.4,68.0 A40,40 0 0 1 13.4,28.0 Z"" fill=""currentColor"" fill-opacity="".78"" stroke=""currentColor"" stroke-width=""2.5""/><path d=""M48.0,48.0 L13.4,28.0 A40,40 0 0 1 48.0,8.0 Z"" fill=""currentColor"" fill-opacity="".78"" stroke=""currentColor"" stroke-width=""2.5""/><path d=""M144.0,48.0 L144.0,8.0 A40,40 0 0 1 178.6,28.0 Z"" fill=""currentColor"" fill-opacity="".78"" stroke=""currentColor"" stroke-width=""2.5""/><path d=""M144.0,48.0 L178.6,28.0 A40,40 0 0 1 178.6,68.0 Z"" fill=""currentColor"" fill-opacity="".78"" stroke=""currentColor"" stroke-width=""2.5""/><path d=""M144.0,48.0 L178.6,68.0 A40,40 0 0 1 144.0,88.0 Z"" fill=""currentColor"" fill-opacity="".78"" stroke=""currentColor"" stroke-width=""2.5""/><path d=""M144.0,48.0 L144.0,88.0 A40,40 0 0 1 109.4,68.0 Z"" fill=""currentColor"" fill-opacity="".78"" stroke=""currentColor"" stroke-width=""2.5""/><path d=""M144.0,48.0 L109.4,68.0 A40,40 0 0 1 109.4,28.0 Z"" fill=""currentColor"" fill-opacity="".78"" stroke=""currentColor"" stroke-width=""2.5""/><path d=""M144.0,48.0 L109.4,28.0 A40,40 0 0 1 144.0,8.0 Z"" fill=""currentColor"" fill-opacity="".78"" stroke=""currentColor"" stroke-width=""2.5""/></svg>"
+F2;1;f2_12;16,1;2;2;Parte 2 · L'intero e le sue parti;1-\frac{5}{6}
 F2;1;f2_28;35,6;3;3;Parte 4 · Dalla frazione al numero misto;\frac{21}{5}
-F2;1;f2_39;29,2;3;2;Parte 5 · Addizioni fra numeri misti;1+1\frac{1}{2}
-F2;1;f2_60;17,3;2;2;Parte 6 · Sottrazioni fra numeri misti;7\frac{3}{5}-7
-F2;2;f2_9;45,9;3;4;Parte 2 · L'intero e le sue parti;\frac{3}{8}
+F2;1;f2_39;32,0;3;2;Parte 5 · Addizioni fra numeri misti;1+1\frac{1}{2}
+F2;1;f2_60;17,0;2;2;Parte 6 · Sottrazioni fra numeri misti;7\frac{3}{5}-7
+F2;2;f2_9;42,9;3;4;Parte 2 · L'intero e le sue parti;\frac{3}{8}
 F2;2;f2_22;36,8;3;3;Parte 3 · Dal numero misto alla frazione;2\frac{3}{5}
 F2;2;f2_65;41,7;3;3;Parte 6 · Sottrazioni fra numeri misti;2\frac{1}{3}-1\frac{2}{3}
-F2;2;f2_75;65,3;4;4;Parte 7 · Il numero che manca;\square-\frac{1}{3}=1\frac{2}{3}
+F2;2;f2_75;65,4;4;4;Parte 7 · Il numero che manca;\square-\frac{1}{3}=1\frac{2}{3}
 F2;2;f2_88;44,1;3;3;Parte 8 · Problemi;Vado al mercato con una damigiana piena di vino da $6\frac{3}{4}$ litri e lo vendo tutto. Se un litro di vino costa 12 €, quanto guadagno?
-F2;3;f2_5;89,5;6;6;Parte 1 · Leggere la figura;"Scrivi come numero misto la quantità colorata in figura.<svg viewBox=""0 0 288 96"" role=""img"" aria-label=""16 parti colorate su interi divisi in 6 parti"" style=""width:100%;max-width:288px;height:auto;color:var(--blu);display:block;margin:6px auto""><path d=""M48.0,48.0 L48.0,8.0 A40,40 0 0 1 82.6,28.0 Z"" fill=""currentColor"" fill-opacity="".78"" stroke=""currentColor"" stroke-width=""2.5""/><path d=""M48.0,48.0 L82.6,28.0 A40,40 0 0 1 82.6,68.0 Z"" fill=""currentColor"" fill-opacity="".78"" stroke=""currentColor"" stroke-width=""2.5""/><path d=""M48.0,48.0 L82.6,68.0 A40,40 0 0 1 48.0,88.0 Z"" fill=""currentColor"" fill-opacity="".78"" stroke=""currentColor"" stroke-width=""2.5""/><path d=""M48.0,48.0 L48.0,88.0 A40,40 0 0 1 13.4,68.0 Z"" fill=""currentColor"" fill-opacity="".78"" stroke=""currentColor"" stroke-width=""2.5""/><path d=""M48.0,48.0 L13.4,68.0 A40,40 0 0 1 13.4,28.0 Z"" fill=""currentColor"" fill-opacity="".78"" stroke=""currentColor"" stroke-width=""2.5""/><path d=""M48.0,48.0 L13.4,28.0 A40,40 0 0 1 48.0,8.0 Z"" fill=""currentColor"" fill-opacity="".78"" stroke=""currentColor"" stroke-width=""2.5""/><path d=""M144.0,48.0 L144.0,8.0 A40,40 0 0 1 178.6,28.0 Z"" fill=""currentColor"" fill-opacity="".78"" stroke=""currentColor"" stroke-width=""2.5""/><path d=""M144.0,48.0 L178.6,28.0 A40,40 0 0 1 178.6,68.0 Z"" fill=""currentColor"" fill-opacity="".78"" stroke=""currentColor"" stroke-width=""2.5""/><path d=""M144.0,48.0 L178.6,68.0 A40,40 0 0 1 144.0,88.0 Z"" fill=""currentColor"" fill-opacity="".78"" stroke=""currentColor"" stroke-width=""2.5""/><path d=""M144.0,48.0 L144.0,88.0 A40,40 0 0 1 109.4,68.0 Z"" fill=""currentColor"" fill-opacity="".78"" stroke=""currentColor"" stroke-width=""2.5""/><path d=""M144.0,48.0 L109.4,68.0 A40,40 0 0 1 109.4,28.0 Z"" fill=""currentColor"" fill-opacity="".78"" stroke=""currentColor"" stroke-width=""2.5""/><path d=""M144.0,48.0 L109.4,28.0 A40,40 0 0 1 144.0,8.0 Z"" fill=""currentColor"" fill-opacity="".78"" stroke=""currentColor"" stroke-width=""2.5""/><path d=""M240.0,48.0 L240.0,8.0 A40,40 0 0 1 274.6,28.0 Z"" fill=""currentColor"" fill-opacity="".78"" stroke=""currentColor"" stroke-width=""2.5""/><path d=""M240.0,48.0 L274.6,28.0 A40,40 0 0 1 274.6,68.0 Z"" fill=""currentColor"" fill-opacity="".78"" stroke=""currentColor"" stroke-width=""2.5""/><path d=""M240.0,48.0 L274.6,68.0 A40,40 0 0 1 240.0,88.0 Z"" fill=""currentColor"" fill-opacity="".78"" stroke=""currentColor"" stroke-width=""2.5""/><path d=""M240.0,48.0 L240.0,88.0 A40,40 0 0 1 205.4,68.0 Z"" fill=""currentColor"" fill-opacity="".78"" stroke=""currentColor"" stroke-width=""2.5""/><path d=""M240.0,48.0 L205.4,68.0 A40,40 0 0 1 205.4,28.0 Z"" fill=""none"" stroke=""currentColor"" stroke-width=""2.5""/><path d=""M240.0,48.0 L205.4,28.0 A40,40 0 0 1 240.0,8.0 Z"" fill=""none"" stroke=""currentColor"" stroke-width=""2.5""/></svg>"
-F2;3;f2_16;74,0;5;5;Parte 2 · L'intero e le sue parti;5-\frac{5}{6}
-F2;3;f2_49;72,2;5;4;Parte 5 · Addizioni fra numeri misti;1\frac{3}{4}+1\frac{1}{4}+1\frac{3}{4}
-F2;3;f2_79;88,1;6;6;Parte 7 · Il numero che manca;3\frac{5}{7}+4\frac{\square}{7}=8
-F2;3;f2_87;79,9;5;5;Parte 8 · Problemi;La mattina Anna cammina $2\frac{3}{4}$ km, il pomeriggio altri $1\frac{3}{4}$ km. Quanti chilometri percorre in tutto?
-FMDC1;1;fmdc1_3;40,4;3;4;Scomponi in fattori primi;Scomponi in fattori primi il numero 195.
-FMDC1;1;fmdc1_9;45,0;4;4;Scomponi in fattori primi;Scomponi in fattori primi il numero 825.
-FMDC1;1;fmdc1_10;40,4;3;4;Scomponi in fattori primi;Scomponi in fattori primi il numero 642.
-FMDC1;2;fmdc1_1;52,7;5;4;Scomponi in fattori primi;Scomponi in fattori primi il numero 1026.
-FMDC1;2;fmdc1_5;52,7;5;4;Scomponi in fattori primi;Scomponi in fattori primi il numero 252.
-FMDC1;2;fmdc1_7;52,7;5;4;Scomponi in fattori primi;Scomponi in fattori primi il numero 168.
-FMDC1;3;fmdc1_4;67,5;5;5;Scomponi in fattori primi;Scomponi in fattori primi il numero 450.
-FMDC1;3;fmdc1_8;66,5;7;4;Scomponi in fattori primi;Scomponi in fattori primi il numero 1056.
-FMDC1;3;fmdc1_12;71,2;8;4;Scomponi in fattori primi;Scomponi in fattori primi il numero 1344.
-FMDC2;1;fmdc2_3;23,9;3;2;Calcola il MCD;Scomponi in fattori primi e calcola il MCD dei numeri 105, 175.
-FMDC2;1;fmdc2_4;42,5;3;3;Calcola il MCD;Scomponi in fattori primi e calcola il MCD dei numeri 54, 81.
-FMDC2;1;fmdc2_6;42,5;3;3;Calcola il MCD;Scomponi in fattori primi e calcola il MCD dei numeri 112, 252.
-FMDC2;1;fmdc2_7;42,5;3;3;Calcola il MCD;Scomponi in fattori primi e calcola il MCD dei numeri 156, 234.
-FMDC2;1;fmdc2_8;42,5;3;3;Calcola il MCD;Scomponi in fattori primi e calcola il MCD dei numeri 360, 432.
-FMDC2;2;fmdc2_1;42,5;3;3;Calcola il MCD;Scomponi in fattori primi e calcola il MCD dei numeri 56, 84.
-FMDC2;2;fmdc2_10;50,5;4;2;Calcola il MCD;Scomponi in fattori primi e calcola il MCD dei numeri 66, 120, 450.
-FMDC2;2;fmdc2_12;50,5;4;2;Calcola il MCD;Scomponi in fattori primi e calcola il MCD dei numeri 35, 20, 15.
-FMDC2;2;fmdc2_14;50,5;4;2;Calcola il MCD;Scomponi in fattori primi e calcola il MCD dei numeri 21, 45, 84.
-FMDC2;2;fmdc2_16;50,5;4;2;Calcola il MCD;Scomponi in fattori primi e calcola il MCD dei numeri 30, 75, 25.
-FMDC2;3;fmdc2_9;69,1;4;3;Calcola il MCD;Scomponi in fattori primi e calcola il MCD dei numeri 45, 150, 4500.
-FMDC2;3;fmdc2_11;69,1;4;3;Calcola il MCD;Scomponi in fattori primi e calcola il MCD dei numeri 18, 75, 180.
-FMDC2;3;fmdc2_13;69,1;4;3;Calcola il MCD;Scomponi in fattori primi e calcola il MCD dei numeri 24, 48, 36.
-FMDC2;3;fmdc2_15;69,1;4;3;Calcola il MCD;Scomponi in fattori primi e calcola il MCD dei numeri 49, 63, 42.
-FMDC2;3;fmdc2_17;69,1;4;3;Calcola il MCD;Scomponi in fattori primi e calcola il MCD dei numeri 90, 120, 180.
-FMDC3;1;fmdc3_3;35,9;3;2;Calcola il mcm;Scomponi in fattori primi e calcola il mcm dei numeri 65, 104.
-FMDC3;1;fmdc3_4;35,9;3;2;Calcola il mcm;Scomponi in fattori primi e calcola il mcm dei numeri 28, 70.
-FMDC3;1;fmdc3_5;35,9;3;2;Calcola il mcm;Scomponi in fattori primi e calcola il mcm dei numeri 52, 78.
-FMDC3;1;fmdc3_6;35,9;3;2;Calcola il mcm;Scomponi in fattori primi e calcola il mcm dei numeri 75, 125.
-FMDC3;1;fmdc3_7;35,9;3;2;Calcola il mcm;Scomponi in fattori primi e calcola il mcm dei numeri 324, 144.
-FMDC3;2;fmdc3_1;35,9;3;2;Calcola il mcm;Scomponi in fattori primi e calcola il mcm dei numeri 48, 56.
-FMDC3;2;fmdc3_14;62,5;4;2;Calcola il mcm;Scomponi in fattori primi e calcola il mcm dei numeri 21, 45, 84.
-FMDC3;2;fmdc3_15;62,5;4;2;Calcola il mcm;Scomponi in fattori primi e calcola il mcm dei numeri 49, 63, 42.
-FMDC3;2;fmdc3_16;62,5;4;2;Calcola il mcm;Scomponi in fattori primi e calcola il mcm dei numeri 30, 75, 25.
-FMDC3;2;fmdc3_17;62,5;4;2;Calcola il mcm;Scomponi in fattori primi e calcola il mcm dei numeri 90, 120, 180.
-FMDC3;3;fmdc3_9;62,5;4;2;Calcola il mcm;Scomponi in fattori primi e calcola il mcm dei numeri 45, 150, 4500.
-FMDC3;3;fmdc3_10;62,5;4;2;Calcola il mcm;Scomponi in fattori primi e calcola il mcm dei numeri 66, 120, 450.
-FMDC3;3;fmdc3_11;62,5;4;2;Calcola il mcm;Scomponi in fattori primi e calcola il mcm dei numeri 18, 75, 180.
-FMDC3;3;fmdc3_12;62,5;4;2;Calcola il mcm;Scomponi in fattori primi e calcola il mcm dei numeri 35, 20, 15.
-FMDC3;3;fmdc3_13;62,5;4;2;Calcola il mcm;Scomponi in fattori primi e calcola il mcm dei numeri 24, 48, 36.
-FMDC4;1;fmdc4_2;17,1;4;3;Risolvi il problema;Un fiorista ha a disposizione 24 garofani e 16 rose. Se vuole confezionare il maggior numero di mazzi di fiori contenenti ciascuno lo stesso numero di fiori, quanti mazzi potrà confezionare?
-FMDC4;1;fmdc4_7;29,4;5;3;Risolvi il problema;"Tre negozi che si trovano affiancati hanno ciascuno un'insegna luminosa lampeggiante, ognuna delle quali si accende rispettivamente ogni 4, 5 e 6 secondi; ogni quanti secondi si accendono contemporaneamente?"
-FMDC4;1;fmdc4_8;27,1;5;3;Risolvi il problema;"In un ingranaggio vi sono tre ruote dentate. La prima compie uno scatto ogni 5 secondi, la seconda ogni 6 e la terza ogni 8; ogni quanti secondi ruoteranno contemporaneamente?"
-FMDC4;2;fmdc4_4;33,3;5;3;Risolvi il problema;Un commerciante vuole preparare dei cesti regalo. Ha a disposizione 12 bottiglie di amaro, 18 di brandy e 36 di grappa. Se in ogni cesto ci deve essere lo stesso numero di bottiglie dei tre tipi di liquore, calcola quanti cesti potrà preparare al massimo quel commerciante.
-FMDC4;2;fmdc4_6;68,1;6;5;Risolvi il problema;Per raggiungere una località turistica sono disponibili una funivia ed un autobus. La funivia parte ogni 15 minuti e l'autobus ogni 40. Se alle 8 di mattina partono contemporaneamente, a che ora partiranno di nuovo insieme?
-FMDC4;2;fmdc4_11;67,9;9;4;Risolvi il problema;Dei quattro fornitori di un ristorante il primo passa ogni 2 giorni, il secondo ogni 3 giorni, il terzo ogni 4 e il quarto ogni 5. Se si incontrano tutti insieme il 3 di maggio, quando si incontreranno di nuovo?
-FMDC4;3;fmdc4_12;70,2;8;4;Risolvi il problema;Federica per il suo compleanno ha a disposizione 168 caramelle alla menta, 56 alla liquirizia e 84 alla frutta. Li vuole confezionare nel maggior numero possibile di sacchettini, disponendo in ciascun sacchettino lo stesso numero dei tre gusti di caramelle. Quanti sacchettini riesce a confezionare? Quante caramelle di ciascun tipo vi sono in ogni sacchettino?
-FMDC4;3;fmdc4_13;76,3;10;4;Risolvi il problema;Durante le feste di Natale il proprietario di un bar vuole preparare delle confezioni regalo avendo a disposizione 36 bottiglie di amaro, 60 di spumante, 24 di whisky e 12 di cognac. Volendo formare il maggior numero di confezioni tutte uguali, quante ne potrà preparare? Quale sarà la composizione di ciascuna cassetta regalo?
-FMDC4;3;fmdc4_14;91,2;12;5;Risolvi il problema;Un'enoteca deve sistemare 48 bottiglie di vino rosso, 36 di vino bianco e 24 di vino rosato nel maggior numero possibile di casse in modo che ciascuna di esse contenga lo stesso numero di bottiglie dei tre tipi di vino. Quante casse si possono preparare? Se dalla vendita di tutte le casse si ricavano € 436,20 qual è il prezzo di ogni cassa? Quanto costa una bottiglia di vino rosso se una bottiglia di vino bianco e una di vino rosato costano rispettivamente € 3,75 e € 4,05?
-LOG1;1;log1_16;21,2;2;2;Parte 1 · Calcolare un logaritmo;\log_{6}\frac{1}{36}
-LOG1;1;log1_55;21,2;2;2;Parte 2 · Trovare l'argomento;\log_{2}x=1
-LOG1;1;log1_56;21,2;2;2;Parte 2 · Trovare l'argomento;\log_{3}x=0
-LOG1;1;log1_93;21,2;2;2;Parte 3 · Trovare la base;\log_{x}64=5
-LOG1;1;log1_98;19,5;2;2;Parte 4 · Espressioni con i logaritmi;10^{\log 2}
-LOG1;2;log1_18;62,3;4;4;Parte 1 · Calcolare un logaritmo;\log_{0{,}1}10
-LOG1;2;log1_25;61,7;3;4;Parte 1 · Calcolare un logaritmo;\log_{7}\left(7\sqrt{7}\right)
-LOG1;2;log1_66;56,2;4;3;Parte 2 · Trovare l'argomento;\log_{\sqrt{3}}x=4
-LOG1;2;log1_82;63,7;4;4;Parte 3 · Trovare la base;\log_{x}9=-2
-LOG1;2;log1_102;40,0;3;2;Parte 4 · Espressioni con i logaritmi;3^{\log_{3}\frac{1}{3}}-\log_{3}1
-LOG1;3;log1_41;67,3;4;5;Parte 1 · Calcolare un logaritmo;\log_{2\sqrt{2}}2
-LOG1;3;log1_72;84,9;5;5;Parte 2 · Trovare l'argomento;\log\left(1-x\right)=-1
-LOG1;3;log1_87;77,7;5;5;Parte 3 · Trovare la base;\log_{x}\frac{8}{27}=-3
-LOG1;3;log1_109;83,7;5;6;Parte 4 · Espressioni con i logaritmi;\frac{1}{3}\log 8-\frac{3}{4}\log 16+2\log 3
-LOG1;3;log1_113;96,3;8;6;Parte 5 · Dimostrare un'identità;\log\sqrt[5]{a^{3}\sqrt{\frac{a}{2}}}=\frac{7}{10}\log a-\frac{1}{10}\log 2
-LOG2;1;log2_4;22,7;3;3;Parte 1 · Sviluppare un logaritmo;\log\frac{3}{5a}
-LOG2;1;log2_18;26,2;3;3;Parte 2 · Un numero scritto come logaritmo;Scrivi il numero $-1$ come logaritmo in base $2$.
-LOG2;1;log2_25;27,0;3;3;Parte 3 · Un unico logaritmo, con i numeri;\log_{2}3+2-\log_{2}12
-LOG2;1;log2_48;34,0;3;3;Parte 5 · Un logaritmo all'esponente;\log_{2}\left(5^{\log_{5}8}\right)
-LOG2;1;log2_60;29,9;4;2;Parte 6 · Il cambiamento di base;\log_{2}3\cdot\log_{3}4\cdot\log_{4}5\cdot\log_{5}6
-LOG2;2;log2_9;62,9;5;6;Parte 1 · Sviluppare un logaritmo;\log_{2}\frac{2\cdot\sqrt[3]{2}}{\sqrt{2}}
-LOG2;2;log2_28;54,0;6;4;Parte 3 · Un unico logaritmo, con i numeri;\log_{3}a+\log_{3}b-\log_{3}5+\log_{3}\frac{1}{b}
-LOG2;2;log2_40;67,5;5;6;Parte 4 · Un unico logaritmo, con le lettere;\log_{7}a-2\log_{7}b+\frac{1}{2}\log_{7}c-3\left(\log_{7}a-\frac{1}{2}\log_{7}c\right)
-LOG2;2;log2_51;46,6;5;5;Parte 5 · Un logaritmo all'esponente;8^{-\log_{2}5}
-LOG2;2;log2_61;59,7;6;6;Parte 6 · Il cambiamento di base;\log_{3}5+\log_{9}4
-LOG2;3;log2_12;88,1;9;9;Parte 1 · Sviluppare un logaritmo;\log_{3}\frac{a^{2}\sqrt{b}}{9\sqrt[3]{ab}}
-LOG2;3;log2_34;95,1;14;11;Parte 3 · Un unico logaritmo, con i numeri;\log_{5}100\left(\log_{3}\frac{9}{7}-\log_{3}\frac{27}{7}+\log_{3}\sqrt{3}\right)
-LOG2;3;log2_46;91,6;11;10;Parte 4 · Un unico logaritmo, con le lettere;\log\left(20x\right)+\log x-2\log\sqrt{x^{2}+x}-1
-LOG2;3;log2_55;67,7;7;7;Parte 5 · Un logaritmo all'esponente;4^{3-\log_{2}7}
-LOG2;3;log2_63;74,9;8;8;Parte 6 · Il cambiamento di base;\log_{25}36+\log_{5}\frac{1}{6}
+F2;3;f2_5;89,1;6;6;Parte 1 · Leggere la figura;"Scrivi come numero misto la quantità colorata in figura.<svg viewBox=""0 0 288 96"" role=""img"" aria-label=""16 parti colorate su interi divisi in 6 parti"" style=""width:100%;max-width:288px;height:auto;color:var(--blu);display:block;margin:6px auto""><path d=""M48.0,48.0 L48.0,8.0 A40,40 0 0 1 82.6,28.0 Z"" fill=""currentColor"" fill-opacity="".78"" stroke=""currentColor"" stroke-width=""2.5""/><path d=""M48.0,48.0 L82.6,28.0 A40,40 0 0 1 82.6,68.0 Z"" fill=""currentColor"" fill-opacity="".78"" stroke=""currentColor"" stroke-width=""2.5""/><path d=""M48.0,48.0 L82.6,68.0 A40,40 0 0 1 48.0,88.0 Z"" fill=""currentColor"" fill-opacity="".78"" stroke=""currentColor"" stroke-width=""2.5""/><path d=""M48.0,48.0 L48.0,88.0 A40,40 0 0 1 13.4,68.0 Z"" fill=""currentColor"" fill-opacity="".78"" stroke=""currentColor"" stroke-width=""2.5""/><path d=""M48.0,48.0 L13.4,68.0 A40,40 0 0 1 13.4,28.0 Z"" fill=""currentColor"" fill-opacity="".78"" stroke=""currentColor"" stroke-width=""2.5""/><path d=""M48.0,48.0 L13.4,28.0 A40,40 0 0 1 48.0,8.0 Z"" fill=""currentColor"" fill-opacity="".78"" stroke=""currentColor"" stroke-width=""2.5""/><path d=""M144.0,48.0 L144.0,8.0 A40,40 0 0 1 178.6,28.0 Z"" fill=""currentColor"" fill-opacity="".78"" stroke=""currentColor"" stroke-width=""2.5""/><path d=""M144.0,48.0 L178.6,28.0 A40,40 0 0 1 178.6,68.0 Z"" fill=""currentColor"" fill-opacity="".78"" stroke=""currentColor"" stroke-width=""2.5""/><path d=""M144.0,48.0 L178.6,68.0 A40,40 0 0 1 144.0,88.0 Z"" fill=""currentColor"" fill-opacity="".78"" stroke=""currentColor"" stroke-width=""2.5""/><path d=""M144.0,48.0 L144.0,88.0 A40,40 0 0 1 109.4,68.0 Z"" fill=""currentColor"" fill-opacity="".78"" stroke=""currentColor"" stroke-width=""2.5""/><path d=""M144.0,48.0 L109.4,68.0 A40,40 0 0 1 109.4,28.0 Z"" fill=""currentColor"" fill-opacity="".78"" stroke=""currentColor"" stroke-width=""2.5""/><path d=""M144.0,48.0 L109.4,28.0 A40,40 0 0 1 144.0,8.0 Z"" fill=""currentColor"" fill-opacity="".78"" stroke=""currentColor"" stroke-width=""2.5""/><path d=""M240.0,48.0 L240.0,8.0 A40,40 0 0 1 274.6,28.0 Z"" fill=""currentColor"" fill-opacity="".78"" stroke=""currentColor"" stroke-width=""2.5""/><path d=""M240.0,48.0 L274.6,28.0 A40,40 0 0 1 274.6,68.0 Z"" fill=""currentColor"" fill-opacity="".78"" stroke=""currentColor"" stroke-width=""2.5""/><path d=""M240.0,48.0 L274.6,68.0 A40,40 0 0 1 240.0,88.0 Z"" fill=""currentColor"" fill-opacity="".78"" stroke=""currentColor"" stroke-width=""2.5""/><path d=""M240.0,48.0 L240.0,88.0 A40,40 0 0 1 205.4,68.0 Z"" fill=""currentColor"" fill-opacity="".78"" stroke=""currentColor"" stroke-width=""2.5""/><path d=""M240.0,48.0 L205.4,68.0 A40,40 0 0 1 205.4,28.0 Z"" fill=""none"" stroke=""currentColor"" stroke-width=""2.5""/><path d=""M240.0,48.0 L205.4,28.0 A40,40 0 0 1 240.0,8.0 Z"" fill=""none"" stroke=""currentColor"" stroke-width=""2.5""/></svg>"
+F2;3;f2_16;73,5;5;5;Parte 2 · L'intero e le sue parti;5-\frac{5}{6}
+F2;3;f2_49;73,9;5;4;Parte 5 · Addizioni fra numeri misti;1\frac{3}{4}+1\frac{1}{4}+1\frac{3}{4}
+F2;3;f2_79;87,7;6;6;Parte 7 · Il numero che manca;3\frac{5}{7}+4\frac{\square}{7}=8
+F2;3;f2_85;67,6;4;4;Parte 8 · Problemi;Max oggi ha passato un'ora e un quarto nel traffico, due ore e un quarto ad aspettare un cliente e tre quarti d'ora in fila alle poste. Quanto tempo ha sprecato in contrattempi?
+FMDC1;1;fmdc1_3;36,5;3;4;Scomponi in fattori primi;Scomponi in fattori primi il numero 195.
+FMDC1;1;fmdc1_9;42,3;4;4;Scomponi in fattori primi;Scomponi in fattori primi il numero 825.
+FMDC1;1;fmdc1_10;36,5;3;4;Scomponi in fattori primi;Scomponi in fattori primi il numero 642.
+FMDC1;2;fmdc1_1;51,9;5;4;Scomponi in fattori primi;Scomponi in fattori primi il numero 1026.
+FMDC1;2;fmdc1_4;62,5;5;5;Scomponi in fattori primi;Scomponi in fattori primi il numero 450.
+FMDC1;2;fmdc1_5;51,9;5;4;Scomponi in fattori primi;Scomponi in fattori primi il numero 252.
+FMDC1;3;fmdc1_2;63,5;6;4;Scomponi in fattori primi;Scomponi in fattori primi il numero 912.
+FMDC1;3;fmdc1_8;69,2;7;4;Scomponi in fattori primi;Scomponi in fattori primi il numero 1056.
+FMDC1;3;fmdc1_14;63,5;6;4;Scomponi in fattori primi;Scomponi in fattori primi il numero 1215.
+FMDC2;1;fmdc2_1;37,8;3;3;Calcola il MCD;Scomponi in fattori primi e calcola il MCD dei numeri 56, 84.
+FMDC2;1;fmdc2_3;24,5;3;2;Calcola il MCD;Scomponi in fattori primi e calcola il MCD dei numeri 105, 175.
+FMDC2;1;fmdc2_4;37,8;3;3;Calcola il MCD;Scomponi in fattori primi e calcola il MCD dei numeri 54, 81.
+FMDC2;1;fmdc2_5;24,5;3;2;Calcola il MCD;Scomponi in fattori primi e calcola il MCD dei numeri 42, 54.
+FMDC2;2;fmdc2_2;37,8;3;3;Calcola il MCD;Scomponi in fattori primi e calcola il MCD dei numeri 125, 225.
+FMDC2;2;fmdc2_6;37,8;3;3;Calcola il MCD;Scomponi in fattori primi e calcola il MCD dei numeri 112, 252.
+FMDC2;2;fmdc2_7;37,8;3;3;Calcola il MCD;Scomponi in fattori primi e calcola il MCD dei numeri 156, 234.
+FMDC2;2;fmdc2_8;37,8;3;3;Calcola il MCD;Scomponi in fattori primi e calcola il MCD dei numeri 360, 432.
+FMDC2;3;fmdc2_9;69,7;4;3;Calcola il MCD;Scomponi in fattori primi e calcola il MCD dei numeri 45, 150, 4500.
+FMDC2;3;fmdc2_11;69,7;4;3;Calcola il MCD;Scomponi in fattori primi e calcola il MCD dei numeri 18, 75, 180.
+FMDC2;3;fmdc2_13;69,7;4;3;Calcola il MCD;Scomponi in fattori primi e calcola il MCD dei numeri 24, 48, 36.
+FMDC2;3;fmdc2_15;69,7;4;3;Calcola il MCD;Scomponi in fattori primi e calcola il MCD dei numeri 49, 63, 42.
+FMDC2;3;fmdc2_17;69,7;4;3;Calcola il MCD;Scomponi in fattori primi e calcola il MCD dei numeri 90, 120, 180.
+FMDC3;1;fmdc3_1;33,1;3;2;Calcola il mcm;Scomponi in fattori primi e calcola il mcm dei numeri 48, 56.
+FMDC3;1;fmdc3_2;33,1;3;2;Calcola il mcm;Scomponi in fattori primi e calcola il mcm dei numeri 84, 96.
+FMDC3;1;fmdc3_4;33,1;3;2;Calcola il mcm;Scomponi in fattori primi e calcola il mcm dei numeri 28, 70.
+FMDC3;1;fmdc3_5;33,1;3;2;Calcola il mcm;Scomponi in fattori primi e calcola il mcm dei numeri 52, 78.
+FMDC3;2;fmdc3_3;33,1;3;2;Calcola il mcm;Scomponi in fattori primi e calcola il mcm dei numeri 65, 104.
+FMDC3;2;fmdc3_6;33,1;3;2;Calcola il mcm;Scomponi in fattori primi e calcola il mcm dei numeri 75, 125.
+FMDC3;2;fmdc3_7;33,1;3;2;Calcola il mcm;Scomponi in fattori primi e calcola il mcm dei numeri 324, 144.
+FMDC3;2;fmdc3_8;33,1;3;2;Calcola il mcm;Scomponi in fattori primi e calcola il mcm dei numeri 256, 384.
+FMDC3;3;fmdc3_9;65,0;4;2;Calcola il mcm;Scomponi in fattori primi e calcola il mcm dei numeri 45, 150, 4500.
+FMDC3;3;fmdc3_10;65,0;4;2;Calcola il mcm;Scomponi in fattori primi e calcola il mcm dei numeri 66, 120, 450.
+FMDC3;3;fmdc3_11;65,0;4;2;Calcola il mcm;Scomponi in fattori primi e calcola il mcm dei numeri 18, 75, 180.
+FMDC3;3;fmdc3_12;65,0;4;2;Calcola il mcm;Scomponi in fattori primi e calcola il mcm dei numeri 35, 20, 15.
+FMDC3;3;fmdc3_13;65,0;4;2;Calcola il mcm;Scomponi in fattori primi e calcola il mcm dei numeri 24, 48, 36.
+FMDC4;1;fmdc4_2;14,8;4;3;Risolvi il problema;Un fiorista ha a disposizione 24 garofani e 16 rose. Se vuole confezionare il maggior numero di mazzi di fiori contenenti ciascuno lo stesso numero di fiori, quanti mazzi potrà confezionare?
+FMDC4;1;fmdc4_7;29,8;5;3;Risolvi il problema;"Tre negozi che si trovano affiancati hanno ciascuno un'insegna luminosa lampeggiante, ognuna delle quali si accende rispettivamente ogni 4, 5 e 6 secondi; ogni quanti secondi si accendono contemporaneamente?"
+FMDC4;1;fmdc4_8;27,5;5;3;Risolvi il problema;"In un ingranaggio vi sono tre ruote dentate. La prima compie uno scatto ogni 5 secondi, la seconda ogni 6 e la terza ogni 8; ogni quanti secondi ruoteranno contemporaneamente?"
+FMDC4;2;fmdc4_4;33,7;5;3;Risolvi il problema;Un commerciante vuole preparare dei cesti regalo. Ha a disposizione 12 bottiglie di amaro, 18 di brandy e 36 di grappa. Se in ogni cesto ci deve essere lo stesso numero di bottiglie dei tre tipi di liquore, calcola quanti cesti potrà preparare al massimo quel commerciante.
+FMDC4;2;fmdc4_6;64,2;6;5;Risolvi il problema;Per raggiungere una località turistica sono disponibili una funivia ed un autobus. La funivia parte ogni 15 minuti e l'autobus ogni 40. Se alle 8 di mattina partono contemporaneamente, a che ora partiranno di nuovo insieme?
+FMDC4;2;fmdc4_11;69,4;9;4;Risolvi il problema;Dei quattro fornitori di un ristorante il primo passa ogni 2 giorni, il secondo ogni 3 giorni, il terzo ogni 4 e il quarto ogni 5. Se si incontrano tutti insieme il 3 di maggio, quando si incontreranno di nuovo?
+FMDC4;3;fmdc4_10;69,8;8;4;Risolvi il problema;I 20 alunni della classe prima, i 25 della classe seconda e i 15 della classe terza di una scuola vengono radunati nel cortile e suddivisi nel maggior numero possibile di gruppi ognuno dei quali contiene lo stesso numero di alunni delle tre classi. Calcola quanti gruppi si formano e quanti alunni di ogni classe sono presenti in ciascun gruppo.
+FMDC4;3;fmdc4_12;70,6;8;4;Risolvi il problema;Federica per il suo compleanno ha a disposizione 168 caramelle alla menta, 56 alla liquirizia e 84 alla frutta. Li vuole confezionare nel maggior numero possibile di sacchettini, disponendo in ciascun sacchettino lo stesso numero dei tre gusti di caramelle. Quanti sacchettini riesce a confezionare? Quante caramelle di ciascun tipo vi sono in ogni sacchettino?
+FMDC4;3;fmdc4_13;78,7;10;4;Risolvi il problema;Durante le feste di Natale il proprietario di un bar vuole preparare delle confezioni regalo avendo a disposizione 36 bottiglie di amaro, 60 di spumante, 24 di whisky e 12 di cognac. Volendo formare il maggior numero di confezioni tutte uguali, quante ne potrà preparare? Quale sarà la composizione di ciascuna cassetta regalo?
+LOG1;1;log1_16;20,7;2;2;Parte 1 · Calcolare un logaritmo;\log_{6}\frac{1}{36}
+LOG1;1;log1_55;20,7;2;2;Parte 2 · Trovare l'argomento;\log_{2}x=1
+LOG1;1;log1_56;20,7;2;2;Parte 2 · Trovare l'argomento;\log_{3}x=0
+LOG1;1;log1_77;35,9;3;2;Parte 3 · Trovare la base;\log_{x}125=3
+LOG1;1;log1_98;19,0;2;2;Parte 4 · Espressioni con i logaritmi;10^{\log 2}
+LOG1;2;log1_18;62,1;4;4;Parte 1 · Calcolare un logaritmo;\log_{0{,}1}10
+LOG1;2;log1_25;58,9;3;4;Parte 1 · Calcolare un logaritmo;\log_{7}\left(7\sqrt{7}\right)
+LOG1;2;log1_66;58,1;4;3;Parte 2 · Trovare l'argomento;\log_{\sqrt{3}}x=4
+LOG1;2;log1_82;63,5;4;4;Parte 3 · Trovare la base;\log_{x}9=-2
+LOG1;2;log1_102;42,5;3;2;Parte 4 · Espressioni con i logaritmi;3^{\log_{3}\frac{1}{3}}-\log_{3}1
+LOG1;3;log1_41;65,7;4;5;Parte 1 · Calcolare un logaritmo;\log_{2\sqrt{2}}2
+LOG1;3;log1_72;84,8;5;5;Parte 2 · Trovare l'argomento;\log\left(1-x\right)=-1
+LOG1;3;log1_87;77,6;5;5;Parte 3 · Trovare la base;\log_{x}\frac{8}{27}=-3
+LOG1;3;log1_106;84,2;5;4;Parte 4 · Espressioni con i logaritmi;5^{\log_{5}3}+\log\left(\log_{4}4\right)+\log_{3}9
+LOG1;3;log1_109;82,7;5;6;Parte 4 · Espressioni con i logaritmi;\frac{1}{3}\log 8-\frac{3}{4}\log 16+2\log 3
+LOG2;1;log2_4;22,2;3;3;Parte 1 · Sviluppare un logaritmo;\log\frac{3}{5a}
+LOG2;1;log2_18;25,7;3;3;Parte 2 · Un numero scritto come logaritmo;Scrivi il numero $-1$ come logaritmo in base $2$.
+LOG2;1;log2_25;26,5;3;3;Parte 3 · Un unico logaritmo, con i numeri;\log_{2}3+2-\log_{2}12
+LOG2;1;log2_48;33,5;3;3;Parte 5 · Un logaritmo all'esponente;\log_{2}\left(5^{\log_{5}8}\right)
+LOG2;1;log2_60;32,5;4;2;Parte 6 · Il cambiamento di base;\log_{2}3\cdot\log_{3}4\cdot\log_{4}5\cdot\log_{5}6
+LOG2;2;log2_9;60,5;5;6;Parte 1 · Sviluppare un logaritmo;\log_{2}\frac{2\cdot\sqrt[3]{2}}{\sqrt{2}}
+LOG2;2;log2_28;56,3;6;4;Parte 3 · Un unico logaritmo, con i numeri;\log_{3}a+\log_{3}b-\log_{3}5+\log_{3}\frac{1}{b}
+LOG2;2;log2_40;65,1;5;6;Parte 4 · Un unico logaritmo, con le lettere;\log_{7}a-2\log_{7}b+\frac{1}{2}\log_{7}c-3\left(\log_{7}a-\frac{1}{2}\log_{7}c\right)
+LOG2;2;log2_51;45,8;5;5;Parte 5 · Un logaritmo all'esponente;8^{-\log_{2}5}
+LOG2;2;log2_61;58,9;6;6;Parte 6 · Il cambiamento di base;\log_{3}5+\log_{9}4
+LOG2;3;log2_12;87,8;9;9;Parte 1 · Sviluppare un logaritmo;\log_{3}\frac{a^{2}\sqrt{b}}{9\sqrt[3]{ab}}
+LOG2;3;log2_30;81,5;9;8;Parte 3 · Un unico logaritmo, con i numeri;\frac{1}{4}\log 81+2\log\frac{1}{3}-\frac{1}{2}\log\frac{1}{9}+\log 2
+LOG2;3;log2_43;88,1;9;9;Parte 4 · Un unico logaritmo, con le lettere;\frac{1}{2}\left(\log 7+\log x-\log 3\right)+\log\sqrt{3x}
+LOG2;3;log2_55;67,1;7;7;Parte 5 · Un logaritmo all'esponente;4^{3-\log_{2}7}
+LOG2;3;log2_63;74,5;8;8;Parte 6 · Il cambiamento di base;\log_{25}36+\log_{5}\frac{1}{6}
 LOG7;1;log7_4;6,0;9;7;Risolvi l'equazione;\ln^{3}x-\ln^{2}x-9\ln x+9=0
-LOG7;1;log7_5;39,5;14;9;Risolvi l'equazione;2^{2\log_{2}x}-4^{\log_{2}\sqrt{x}}=2
-LOG7;2;log7_1;45,5;13;9;Risolvi l'equazione;\log_{2}\left(2x+1\right)-\log_{2}\left(x+1\right)=2
-LOG7;2;log7_3;42,0;17;8;Risolvi l'equazione;\frac{1}{\ln x}+\frac{1}{2\ln x-1}=2
-LOG7;3;log7_2;70,0;15;11;Risolvi l'equazione;\log_{3}\left(4-x\right)+\log_{3}\left(x+6\right)=2
+LOG7;1;log7_5;38,5;14;9;Risolvi l'equazione;2^{2\log_{2}x}-4^{\log_{2}\sqrt{x}}=2
+LOG7;2;log7_1;42,5;13;9;Risolvi l'equazione;\log_{2}\left(2x+1\right)-\log_{2}\left(x+1\right)=2
+LOG7;2;log7_3;48,0;17;8;Risolvi l'equazione;\frac{1}{\ln x}+\frac{1}{2\ln x-1}=2
+LOG7;3;log7_2;68,0;15;11;Risolvi l'equazione;\log_{3}\left(4-x\right)+\log_{3}\left(x+6\right)=2
 LOG7;3;log7_6;97,0;20;12;Risolvi l'equazione;2\log_{\frac{1}{25}}\left(x-2\right)+\log_{25}\left(x^{2}-4\right)=\log_{5}\left(x+2\right)
-LOG8;1;log8_1;32,5;10;7;Risolvi la disequazione;\log_{3}\frac{x}{3-x}\ge 1
+LOG8;1;log8_1;33,8;10;7;Risolvi la disequazione;\log_{3}\frac{x}{3-x}\ge 1
 LOG8;1;log8_3;8,8;6;6;Risolvi la disequazione;\log_{2}\left|x+2\right|>2
-LOG8;2;log8_2;45,0;10;10;Risolvi la disequazione;\ln\frac{x+2}{2x-1}>0
+LOG8;2;log8_2;43,8;10;10;Risolvi la disequazione;\ln\frac{x+2}{2x-1}>0
 LOG8;2;log8_5;80,6;15;13;Risolvi la disequazione;\frac{1}{\ln x}+\frac{2}{\ln^{2}x}\le 3
 LOG8;3;log8_4;83,1;15;13;Risolvi la disequazione;\frac{1}{\log^{2}x+\log x}-\frac{2}{\log^{2}x-1}>\frac{1}{\log^{2}x-\log x}
-MP1;1;mp1_6;30,4;2;3;Parte 1 · Sostituire i numeri alle lettere;a^{2}b^{3}
-MP1;1;mp1_27;23,0;2;2;Parte 3 · Le lettere con esponente negativo;a^{3}b^{-2}
-MP1;1;mp1_49;30,4;2;3;Parte 5 · Quando un'espressione perde significato;\frac{7}{3x-6}
-MP1;1;mp1_60;23,0;2;2;Parte 6 · Ridurre un monomio a forma normale;a^{2}ba^{3}
-MP1;1;mp1_71;24,6;2;2;Parte 7 · Dalle parole alle lettere;Il triplo di $x$ aumentato di $5$, per $x=-4$.
-MP1;2;mp1_8;40,0;3;3;Parte 1 · Sostituire i numeri alle lettere;5x^{2}+2xy^{2}z
+MP1;1;mp1_6;28,7;2;3;Parte 1 · Sostituire i numeri alle lettere;a^{2}b^{3}
+MP1;1;mp1_27;23,7;2;2;Parte 3 · Le lettere con esponente negativo;a^{3}b^{-2}
+MP1;1;mp1_49;28,7;2;3;Parte 5 · Quando un'espressione perde significato;\frac{7}{3x-6}
+MP1;1;mp1_62;31,7;2;3;Parte 6 · Ridurre un monomio a forma normale;x^{2}yzxy^{3}z^{2}x
+MP1;1;mp1_71;25,2;2;2;Parte 7 · Dalle parole alle lettere;Il triplo di $x$ aumentato di $5$, per $x=-4$.
+MP1;2;mp1_8;40,3;3;3;Parte 1 · Sostituire i numeri alle lettere;5x^{2}+2xy^{2}z
 MP1;2;mp1_15;61,6;7;6;Parte 2 · Il valore con frazioni e decimali;a+\frac{a+b}{b}-b
-MP1;2;mp1_55;36,0;2;2;Parte 5 · Quando un'espressione perde significato;\left(2+a^{2}\right)\left(a-1\right)^{0}+2\left(a^{2}+1\right)
-MP1;2;mp1_66;62,0;4;5;Parte 6 · Ridurre un monomio a forma normale;-\frac{2}{5}a^{3}b\cdot\left(-\frac{5}{6}\right)ab^{2}
-MP1;2;mp1_72;34,8;2;3;Parte 7 · Dalle parole alle lettere;Il quadrato della somma di $a$ e $b$, per $a=3$ e $b=-5$.
-MP1;3;mp1_12;67,2;5;6;Parte 2 · Il valore con frazioni e decimali;x^{2}\left(x-1\right)+2-x^{3}
-MP1;3;mp1_21;81,2;9;8;Parte 2 · Il valore con frazioni e decimali;a^{2}\left(1-a^{2}\right):\left(-2a\right)^{2}
-MP1;3;mp1_34;74,8;7;6;Parte 4 · Il valore con gli esponenti negativi;2a^{-1}+\frac{a}{a+3}+\left(4a+3\right)\left(a^{2}+3a\right)^{-1}
-MP1;3;mp1_44;99,6;21;12;Parte 4 · Il valore con gli esponenti negativi;\left[\frac{5}{2}-a^{2}\left(a-1\right)^{-1}\right]\cdot\left[-\frac{1}{2}-\frac{6}{a-2}\right]^{-1}:\frac{\left(a-2\right)^{2}}{a^{2}-1}
-MP1;3;mp1_75;79,9;10;8;Parte 7 · Dalle parole alle lettere;"Aggiungi alla somma dei quadrati di $x$ e di $y$ il quadrato del reciproco di $z$ e, di tale somma, considera il reciproco; da questo risultato sottrai il reciproco della somma di $x$ con $z$. Calcola il valore per $x=\frac{1}{2}$, $y=-1$ e $z=-\frac{2}{3}$."
-MP2;1;mp2_8;30,4;3;3;Parte 1 · Addizione e sottrazione;5xy^{2}-3x^{2}y+2xy^{2}+7x^{2}y
-MP2;1;mp2_16;25,7;2;3;Parte 3 · Moltiplicazione;\left(-2a^{3}b\right)\cdot\left(5ab^{2}\right)
-MP2;1;mp2_25;33,9;3;3;Parte 4 · Divisione;\left(-18x^{3}y^{2}\right):\left(-9xy^{2}\right)
-MP2;1;mp2_58;32,1;4;3;Fase 3, parte 1 · Calcola perimetro e area;Un triangolo ha base $14m$ e altezza $9m$. Calcola l'area.
-MP2;1;mp2_67;29,7;3;2;Fase 3, parte 3 · Trova l'errore e scrivi il risultato corretto;\left(15x^{5}y^{2}\right):\left(3x^{2}y\right)=5x^{3}y^{2}
-MP2;2;mp2_11;57,7;4;4;Parte 2 · Mini espressioni;6b^{2}-\left[2b^{2}-\left(5b^{2}-b^{2}\right)\right]
-MP2;2;mp2_18;50,3;4;4;Parte 3 · Moltiplicazione;\left(-\frac{2}{3}a^{2}b\right)\cdot\left(9ab^{3}\right)
-MP2;2;mp2_28;52,8;4;4;Parte 4 · Divisione;\left(-\frac{9}{4}x^{3}z^{2}\right):\left(\frac{3}{2}x^{2}z\right)
-MP2;2;mp2_40;57,5;5;4;Parte 5 · Espressioni;\left(-0{,}75x^{2}y\right):\left(0{,}25xy\right)+2x
+MP1;2;mp1_55;36,7;2;2;Parte 5 · Quando un'espressione perde significato;\left(2+a^{2}\right)\left(a-1\right)^{0}+2\left(a^{2}+1\right)
+MP1;2;mp1_66;61,1;4;5;Parte 6 · Ridurre un monomio a forma normale;-\frac{2}{5}a^{3}b\cdot\left(-\frac{5}{6}\right)ab^{2}
+MP1;2;mp1_72;33,1;2;3;Parte 7 · Dalle parole alle lettere;Il quadrato della somma di $a$ e $b$, per $a=3$ e $b=-5$.
+MP1;3;mp1_12;66,1;5;6;Parte 2 · Il valore con frazioni e decimali;x^{2}\left(x-1\right)+2-x^{3}
+MP1;3;mp1_20;77,5;8;7;Parte 2 · Il valore con frazioni e decimali;\left(a^{2}+3b^{2}\right)\left(2ab-a^{2}\right)
+MP1;3;mp1_35;87,3;10;10;Parte 4 · Il valore con gli esponenti negativi;\frac{x^{2}}{y}-xy\left(x+y\right)^{-1}-y^{-3}
+MP1;3;mp1_39;85,4;9;9;Parte 4 · Il valore con gli esponenti negativi;\left(\frac{x}{y}+1\right)^{2}\cdot\frac{y}{x-y}\cdot\left(\frac{x}{y}-1\right)^{2}\cdot\left(\frac{x}{y}+1\right)^{-1}
+MP1;3;mp1_75;80,3;10;8;Parte 7 · Dalle parole alle lettere;"Aggiungi alla somma dei quadrati di $x$ e di $y$ il quadrato del reciproco di $z$ e, di tale somma, considera il reciproco; da questo risultato sottrai il reciproco della somma di $x$ con $z$. Calcola il valore per $x=\frac{1}{2}$, $y=-1$ e $z=-\frac{2}{3}$."
+MP2;1;mp2_8;29,2;3;3;Parte 1 · Addizione e sottrazione;5xy^{2}-3x^{2}y+2xy^{2}+7x^{2}y
+MP2;1;mp2_20;23,6;2;3;Parte 3 · Moltiplicazione;\left(2x\right)\cdot\left(-3x^{2}\right)\cdot\left(x^{3}\right)
+MP2;1;mp2_24;23,6;2;3;Parte 4 · Divisione;\left(-24a^{4}b^{3}\right):\left(6a^{2}b\right)
+MP2;1;mp2_58;32,6;4;3;Fase 3, parte 1 · Calcola perimetro e area;Un triangolo ha base $14m$ e altezza $9m$. Calcola l'area.
+MP2;1;mp2_68;20,6;3;2;Fase 3, parte 3 · Trova l'errore e scrivi il risultato corretto;7m^{2}n+3m^{2}n=10m^{4}n^{2}
+MP2;2;mp2_11;55,2;4;4;Parte 2 · Mini espressioni;6b^{2}-\left[2b^{2}-\left(5b^{2}-b^{2}\right)\right]
+MP2;2;mp2_28;50,3;4;4;Parte 4 · Divisione;\left(-\frac{9}{4}x^{3}z^{2}\right):\left(\frac{3}{2}x^{2}z\right)
+MP2;2;mp2_35;48,7;5;4;Parte 5 · Espressioni;\frac{1}{2}x^{2}y\cdot 6xy-2x^{3}y^{2}
 MP2;2;mp2_53;52,0;6;4;Fase 3, parte 1 · Calcola perimetro e area;Un quadrato ha il lato di $6x$. Calcola perimetro e area.
-MP2;3;mp2_12;86,1;8;5;Parte 2 · Mini espressioni;\frac{1}{2}ab-\left[\frac{1}{3}ab-\left(ab-\frac{1}{2}ab\right)\right]
-MP2;3;mp2_47;88,0;8;7;Parte 5 · Espressioni;\left(-\frac{2}{5}x^{3}y^{2}\right):\left(-\frac{4}{15}x^{2}y\right):\left(\frac{3}{2}y\right)
-MP2;3;mp2_59;79,7;11;7;Fase 3, parte 1 · Calcola perimetro e area;Un rettangolo ha base $\frac{5}{2}x$ e altezza $\frac{4}{3}x$. Calcola perimetro e area.
-MP2;3;mp2_63;63,2;7;4;Fase 3, parte 2 · Trova la misura mancante;L'area di un rettangolo è $\frac{45}{4}b^{2}$ e la base misura $\frac{5}{2}b$. Quanto misura l'altezza?
-MP2;3;mp2_77;88,6;8;5;Fase 3, parte 4 · Calcola l'espressione;\left(\left(12a^{4}b^{2}:4a^{2}b\right)+5a^{2}b\right):\left(2a^{2}b\right)
-MP3;1;mp3_1;13,2;1;2;Calcola il MCD;Calcola il MCD dei monomi $x^{5}$ e $x^{3}$.
-MP3;1;mp3_4;31,5;3;2;Calcola il MCD;Calcola il MCD dei monomi $10a^{3}b$ e $15a^{2}b^{2}$.
-MP3;1;mp3_6;30,6;3;2;Calcola il MCD;Calcola il MCD dei monomi $8ab^{2}c$ e $12a^{2}b$.
-MP3;1;mp3_19;31,5;3;2;Calcola il mcm;Calcola il mcm dei monomi $10a^{3}b$ e $15a^{2}b^{2}$.
-MP3;1;mp3_21;30,6;3;2;Calcola il mcm;Calcola il mcm dei monomi $8ab^{2}c$ e $12a^{2}b$.
-MP3;2;mp3_8;62,9;4;3;Calcola il MCD;Calcola il MCD dei monomi $4x^{2}$, $6xy$ e $8x^{3}$.
-MP3;2;mp3_9;66,7;4;3;Calcola il MCD;Calcola il MCD dei monomi $9a^{3}b^{2}$, $12a^{2}b^{3}$ e $15ab^{4}$.
-MP3;2;mp3_13;66,9;3;4;Trova il monomio mancante;"Di due monomi $A$ e $B$ si sa che $\text{MCD}(A;B)=5xy$, $\text{mcm}(A;B)=30x^{3}y^{2}$ e $A=15x^{3}y$. Trova $B$."
-MP3;2;mp3_23;62,9;4;3;Calcola il mcm;Calcola il mcm dei monomi $4x^{2}$, $6xy$ e $8x^{3}$.
-MP3;2;mp3_33;66,1;4;3;Trova il denominatore comune;Trova il denominatore comune delle frazioni $\dfrac{1}{2x^{2}}$, $\dfrac{3}{5xy}$ e $\dfrac{7}{10y^{2}}$.
-MP3;3;mp3_10;67,4;4;3;Calcola il MCD;Calcola il MCD dei monomi $24a^{4}b^{3}c^{2}$, $36a^{2}b^{5}c$ e $60a^{3}bc^{3}$.
-MP3;3;mp3_27;67,6;3;4;Trova il monomio mancante;"Di due monomi $A$ e $B$ si sa che $\text{MCD}(A;B)=3ab$, $\text{mcm}(A;B)=45a^{2}b^{3}$ e $B=9a^{2}b^{3}$. Trova $A$."
-MP3;3;mp3_29;67,6;3;4;Trova il monomio mancante;"Di due monomi $A$ e $B$ si sa che $\text{MCD}(A;B)=7ab$, $\text{mcm}(A;B)=42a^{3}b^{2}c$ e $B=14a^{3}bc$. Trova $A$."
-MP3;3;mp3_34;67,1;4;3;Trova il denominatore comune;Trova il denominatore comune delle frazioni $\dfrac{1}{8x^{2}y}$, $\dfrac{5}{12xy^{3}z}$ e $\dfrac{7}{18y^{2}z^{2}}$.
-MP3;3;mp3_35;67,7;4;3;Trova il denominatore comune;Trova il denominatore comune delle frazioni $\dfrac{2}{6x^{3}y^{2}}$, $\dfrac{1}{8xy^{4}z}$ e $\dfrac{5}{9x^{2}z^{3}}$.
-MP4;1;mp4_7;40,8;4;2;Determina il grado del polinomio;4abc-7a+3bc
-MP4;1;mp4_12;29,2;1;2;Ordina secondo le potenze decrescenti;4a^{5}b+7a^{2}b^{3}-4a^{4}b^{3}+5a
-MP4;1;mp4_13;30,4;1;2;Ordina secondo le potenze decrescenti;-\frac{1}{4}a^{3}x^{2}+3a^{4}x^{3}-5a+7a^{8}
-MP4;1;mp4_21;31,7;2;2;Scrivi il polinomio richiesto;Scrivi un polinomio di quinto grado ordinato secondo le potenze crescenti di $a$ e completo.
-MP4;1;mp4_24;28,6;3;1;Scrivi il polinomio richiesto;Aggiungi al polinomio $x^{5}+3x^{3}$ dei monomi non nulli in modo da ottenere un polinomio completo e ordinato rispetto alla lettera $x$.
-MP4;2;mp4_6;55,4;4;3;Determina il grado del polinomio;-3a^{2}b^{3}c-7ab^{5}c^{4}+18
-MP4;2;mp4_8;45,8;4;2;Determina il grado del polinomio;5axy^{3}-3a^{2}x^{5}+5^{2}a^{4}b^{7}
-MP4;2;mp4_9;46,7;4;2;Determina il grado del polinomio;23x^{2}y^{2}a^{4}-7xy^{5}+17x^{4}y^{2}z
-MP4;2;mp4_20;50,0;4;2;Scrivi il polinomio richiesto;Aggiungi al polinomio $5a^{7}+\frac{1}{2}a^{6}b+7a^{2}b^{5}$ dei monomi non nulli in modo da ottenere un polinomio completo e ordinato rispetto alla lettera $a$.
-MP4;2;mp4_23;44,8;3;3;Scrivi il polinomio richiesto;Scrivi un trinomio di terzo grado ordinato secondo le potenze crescenti di $a$.
-MP4;3;mp4_1;99,7;8;8;Riduci a forma normale il polinomio;5x^{2}y^{3}+3x^{3}y^{2}-\left(-3x\right)\cdot xy^{3}+0{,}4x^{2}y^{3}+\frac{1}{3}x^{3}y^{2}+\frac{8}{3}x^{3}y^{2}
-MP4;3;mp4_2;78,3;5;5;Riduci a forma normale il polinomio;\frac{8}{3}b^{2}-\frac{1}{4}b-1-b^{3}+\frac{1}{5}b^{3}-\frac{5}{3}b^{2}+b+1
-MP4;3;mp4_17;59,6;4;3;Scrivi il polinomio richiesto;Scrivi un binomio di primo grado.
-MP4;3;mp4_19;76,8;6;4;Scrivi il polinomio richiesto;Scrivi un trinomio di quarto grado che sia di terzo grado rispetto alla lettera $x$ e di secondo grado rispetto alla lettera $y$.
-MP4;3;mp4_22;75,9;6;4;Scrivi il polinomio richiesto;Scrivi un polinomio di quarto grado omogeneo e ordinato rispetto alla lettera $a$, che contenga le lettere $a$, $b$ e $c$.
-MP5;1;mp5_2;11,9;3;4;Parte 1 · Monomio per polinomio;-\left(2y^{2}-7xy\right)\left(-y\right)
+MP2;2;mp2_70;52,9;4;4;Fase 3, parte 3 · Trova l'errore e scrivi il risultato corretto;\left(-24a^{5}b^{3}\right):\left(-6a^{2}b^{3}\right)=-4a^{3}
+MP2;3;mp2_12;86,3;8;5;Parte 2 · Mini espressioni;\frac{1}{2}ab-\left[\frac{1}{3}ab-\left(ab-\frac{1}{2}ab\right)\right]
+MP2;3;mp2_47;86,9;8;7;Parte 5 · Espressioni;\left(-\frac{2}{5}x^{3}y^{2}\right):\left(-\frac{4}{15}x^{2}y\right):\left(\frac{3}{2}y\right)
+MP2;3;mp2_56;76,7;8;5;Fase 3, parte 1 · Calcola perimetro e area;Un trapezio ha le basi di $10x$ e $6x$, l'altezza di $4x$ e i lati obliqui di $5x$ ciascuno. Calcola perimetro e area.
+MP2;3;mp2_63;64,4;7;4;Fase 3, parte 2 · Trova la misura mancante;L'area di un rettangolo è $\frac{45}{4}b^{2}$ e la base misura $\frac{5}{2}b$. Quanto misura l'altezza?
+MP2;3;mp2_75;76,8;8;4;Fase 3, parte 4 · Calcola l'espressione;\left(\frac{1}{2}ab\cdot 8a^{2}b\right)-\left(2a^{3}b^{2}\cdot 2\right)
+MP3;1;mp3_1;11,3;1;2;Calcola il MCD;Calcola il MCD dei monomi $x^{5}$ e $x^{3}$.
+MP3;1;mp3_6;32,5;3;2;Calcola il MCD;Calcola il MCD dei monomi $8ab^{2}c$ e $12a^{2}b$.
+MP3;1;mp3_16;11,3;1;2;Calcola il mcm;Calcola il mcm dei monomi $x^{5}$ e $x^{3}$.
+MP3;1;mp3_19;33,4;3;2;Calcola il mcm;Calcola il mcm dei monomi $10a^{3}b$ e $15a^{2}b^{2}$.
+MP3;1;mp3_21;32,5;3;2;Calcola il mcm;Calcola il mcm dei monomi $8ab^{2}c$ e $12a^{2}b$.
+MP3;2;mp3_12;62,2;3;4;Trova il monomio mancante;"Di due monomi $A$ e $B$ si sa che $\text{MCD}(A;B)=4ab$, $\text{mcm}(A;B)=24a^{3}b^{2}$ e $B=8a^{3}b$. Trova $A$."
+MP3;2;mp3_13;62,2;3;4;Trova il monomio mancante;"Di due monomi $A$ e $B$ si sa che $\text{MCD}(A;B)=5xy$, $\text{mcm}(A;B)=30x^{3}y^{2}$ e $A=15x^{3}y$. Trova $B$."
+MP3;2;mp3_24;60,6;4;2;Calcola il mcm;Calcola il mcm dei monomi $9a^{3}b^{2}$, $12a^{2}b^{3}$ e $15ab^{4}$.
+MP3;2;mp3_25;60,0;4;2;Calcola il mcm;Calcola il mcm dei monomi $6x^{2}y$, $10xy^{3}z$ e $15y^{2}z^{2}$.
+MP3;2;mp3_32;44,5;3;3;Trova il denominatore comune;Trova il denominatore comune delle frazioni $\dfrac{3}{4a^{3}b}$ e $\dfrac{7}{10ab^{2}c}$.
+MP3;3;mp3_8;66,0;4;3;Calcola il MCD;Calcola il MCD dei monomi $4x^{2}$, $6xy$ e $8x^{3}$.
+MP3;3;mp3_15;64,4;3;4;Trova il monomio mancante;"Di due monomi $A$ e $B$ si sa che $\text{MCD}(A;B)=10xy^{2}$, $\text{mcm}(A;B)=60x^{3}y^{2}z$ e $A=20x^{3}y^{2}z$. Trova $B$."
+MP3;3;mp3_23;66,0;4;3;Calcola il mcm;Calcola il mcm dei monomi $4x^{2}$, $6xy$ e $8x^{3}$.
+MP3;3;mp3_30;64,4;3;4;Trova il monomio mancante;"Di due monomi $A$ e $B$ si sa che $\text{MCD}(A;B)=8xy^{2}$, $\text{mcm}(A;B)=48x^{3}y^{2}z$ e $A=24x^{3}y^{2}z$. Trova $B$."
+MP3;3;mp3_33;69,2;4;3;Trova il denominatore comune;Trova il denominatore comune delle frazioni $\dfrac{1}{2x^{2}}$, $\dfrac{3}{5xy}$ e $\dfrac{7}{10y^{2}}$.
+MP4;1;mp4_12;26,5;1;2;Ordina secondo le potenze decrescenti;4a^{5}b+7a^{2}b^{3}-4a^{4}b^{3}+5a
+MP4;1;mp4_13;27,7;1;2;Ordina secondo le potenze decrescenti;-\frac{1}{4}a^{3}x^{2}+3a^{4}x^{3}-5a+7a^{8}
+MP4;1;mp4_14;29,4;1;2;Ordina secondo le potenze decrescenti;\frac{1}{7}a^{2}b^{3}-\frac{1}{4}a^{4}b+7a^{7}b^{4}-b^{2}
+MP4;1;mp4_21;30,4;2;2;Scrivi il polinomio richiesto;Scrivi un polinomio di quinto grado ordinato secondo le potenze crescenti di $a$ e completo.
+MP4;1;mp4_23;40,8;3;3;Scrivi il polinomio richiesto;Scrivi un trinomio di terzo grado ordinato secondo le potenze crescenti di $a$.
+MP4;2;mp4_6;53,5;4;3;Determina il grado del polinomio;-3a^{2}b^{3}c-7ab^{5}c^{4}+18
+MP4;2;mp4_8;47,3;4;2;Determina il grado del polinomio;5axy^{3}-3a^{2}x^{5}+5^{2}a^{4}b^{7}
+MP4;2;mp4_9;48,1;4;2;Determina il grado del polinomio;23x^{2}y^{2}a^{4}-7xy^{5}+17x^{4}y^{2}z
+MP4;2;mp4_20;51,5;4;2;Scrivi il polinomio richiesto;Aggiungi al polinomio $5a^{7}+\frac{1}{2}a^{6}b+7a^{2}b^{5}$ dei monomi non nulli in modo da ottenere un polinomio completo e ordinato rispetto alla lettera $a$.
+MP4;2;mp4_25;44,6;4;2;Scrivi il polinomio richiesto;Scrivi un trinomio di quinto grado, che sia di terzo grado rispetto alle lettere $a$ e $b$.
+MP4;3;mp4_2;76,9;5;5;Riduci a forma normale il polinomio;\frac{8}{3}b^{2}-\frac{1}{4}b-1-b^{3}+\frac{1}{5}b^{3}-\frac{5}{3}b^{2}+b+1
+MP4;3;mp4_3;71,7;5;3;Riduci a forma normale il polinomio;\frac{3}{5}x^{2}-\frac{2}{3}-\frac{3}{4}x+\frac{7}{5}x^{2}+\frac{1}{3}+\frac{3}{2}x+\frac{5}{6}
+MP4;3;mp4_10;59,8;5;2;Determina il grado del polinomio;-\frac{3}{5}xy^{2}-4x^{2}y-5x^{2}-4y^{2}
+MP4;3;mp4_19;77,2;6;4;Scrivi il polinomio richiesto;Scrivi un trinomio di quarto grado che sia di terzo grado rispetto alla lettera $x$ e di secondo grado rispetto alla lettera $y$.
+MP4;3;mp4_22;76,4;6;4;Scrivi il polinomio richiesto;Scrivi un polinomio di quarto grado omogeneo e ordinato rispetto alla lettera $a$, che contenga le lettere $a$, $b$ e $c$.
+MP5;1;mp5_2;11,3;3;4;Parte 1 · Monomio per polinomio;-\left(2y^{2}-7xy\right)\left(-y\right)
 MP5;1;mp5_3;25,9;5;5;Parte 1 · Monomio per polinomio;\frac{1}{2}b\left(2b+\frac{3}{2}x^{2}-a\right)
 MP5;1;mp5_4;26,5;5;5;Parte 1 · Monomio per polinomio;\left(2bx+\frac{4}{3}b-x\right)\left(-\frac{1}{4}b\right)
 MP5;1;mp5_6;28,2;5;5;Parte 1 · Monomio per polinomio;\left(\frac{1}{3}xz^{3}-\frac{3}{2}x^{3}z+\frac{1}{3}\right)\left(\frac{4}{3}xz^{3}\right)
-MP5;1;mp5_9;26,9;5;4;Parte 2 · Somme algebriche di polinomi;\left(\frac{3}{2}x^{2}y^{3}-2xy^{3}+\frac{3}{4}\right)-\left(+\frac{3}{4}-2xy^{3}+\frac{3}{4}x^{2}y^{3}\right)
-MP5;2;mp5_5;32,8;5;6;Parte 1 · Monomio per polinomio;\left(-2a^{2}b\right)\left(\frac{2}{3}b-\frac{3}{2}a^{2}+\frac{1}{2}ab\right)
-MP5;2;mp5_7;53,7;8;7;Parte 2 · Somme algebriche di polinomi;\left(\frac{4}{3}ab-\frac{1}{2}bc\right)+\left(2bc-\frac{1}{3}ab\right)
-MP5;2;mp5_8;50,4;8;6;Parte 2 · Somme algebriche di polinomi;\left(\frac{2}{5}xy+\frac{3}{2}a^{2}b^{3}\right)+\left(\frac{8}{5}xy-\frac{1}{2}a^{2}b^{3}\right)
-MP5;2;mp5_12;56,0;7;8;Parte 2 · Somme algebriche di polinomi;\left(\frac{2}{3}b+\frac{2}{5}ax\right)-\left(b-\frac{3}{5}ax\right)+\left(\frac{1}{3}b-ax\right)
-MP5;2;mp5_13;50,4;6;7;Parte 3 · Espressioni con somme e prodotti;-\left(\frac{1}{3}x^{2}y+x^{2}\right)-\left(2x^{2}-\frac{1}{4}x^{2}y\right)+\left(-\frac{4}{3}x^{2}y-x^{2}\right)
-MP5;3;mp5_11;65,7;9;7;Parte 2 · Somme algebriche di polinomi;\left(\frac{1}{2}xy-\frac{1}{2}x+2\right)-\left(\frac{1}{3}x-6\right)+\left(\frac{1}{6}x-\frac{1}{2}xy-1\right)+\frac{1}{2}xy
-MP5;3;mp5_14;79,0;8;9;Parte 3 · Espressioni con somme e prodotti;\left(\frac{11}{7}x^{2}+\frac{2}{3}x^{3}-\frac{3}{4}xy\right)-\left[-\left(\frac{3}{14}x^{2}+\frac{7}{6}x^{3}-xy\right)-2xy-\left(\frac{3}{2}x^{3}+xy\right)\right]-\left(\frac{2}{7}x^{2}-xy\right)
-MP5;3;mp5_15;84,1;10;12;Parte 3 · Espressioni con somme e prodotti;-x\left(\frac{1}{2}x^{2}y-\frac{2}{3}xy+\frac{1}{4}\right)+x^{2}y\left(-\frac{1}{3}x+2\right)-\frac{2}{3}x\left(4+\frac{1}{6}x^{2}\right)
-MP5;3;mp5_16;89,4;13;14;Parte 3 · Espressioni con somme e prodotti;\frac{2}{3}x\left(-\frac{3}{2}x-1\right)+\left(\frac{1}{2}-\frac{3}{4}x\right)\left(-\frac{2}{3}x\right)+2x\left(\frac{1}{2}x+\frac{1}{2}\right)
-MP5;3;mp5_18;69,0;9;8;Parte 3 · Espressioni con somme e prodotti;x^{2}\left(x-y\right)+y^{2}\left(x-y\right)-\left(x^{2}+y^{2}\right)\left(x-y\right)
-MP6;1;mp6_1;29,1;3;3;Parte 1 · Il quadrato di un binomio;\left(\frac{3}{5}x^{2}+y\right)^{2}
-MP6;1;mp6_5;32,0;3;4;Parte 1 · Il quadrato di un binomio;\left(x^{3}-3\right)^{2}
-MP6;1;mp6_13;24,4;2;3;Parte 2 · Somma per differenza;\left(-\frac{1}{3}a+b\right)\left(-\frac{1}{3}a-b\right)
-MP6;1;mp6_17;25,5;2;3;Parte 2 · Somma per differenza;\left(0{,}2x^{2}-y^{3}\right)\left(0{,}2x^{2}+y^{3}\right)
-MP6;1;mp6_26;32,0;3;4;Parte 3 · Il cubo di un binomio;\left(1-a^{4}\right)^{3}
-MP6;2;mp6_4;37,0;4;3;Parte 1 · Il quadrato di un binomio;\left(0{,}2+1{,}2x\right)^{2}
-MP6;2;mp6_6;33,6;3;4;Parte 1 · Il quadrato di un binomio;\left(x^{2}-y^{2}\right)^{2}
-MP6;2;mp6_23;47,2;4;6;Parte 3 · Il cubo di un binomio;\left(2a^{2}-a\right)^{3}
-MP6;2;mp6_25;63,9;6;8;Parte 3 · Il cubo di un binomio;\left(2a-\frac{1}{2}a^{3}\right)^{3}
-MP6;2;mp6_28;62,9;5;8;Parte 4 · Espressioni;\left(x-1\right)\left(x-3\right)+1-\left(x-2\right)^{2}
-MP6;3;mp6_7;67,1;6;8;Parte 1 · Il quadrato di un binomio;\left(-\frac{3}{4}ab^{2}+\frac{1}{6}a^{2}b\right)^{2}
-MP6;3;mp6_19;64,9;6;8;Parte 3 · Il cubo di un binomio;\left(2x^{2}-\frac{2}{3}xy\right)^{3}
-MP6;3;mp6_29;86,4;12;12;Parte 4 · Espressioni;\left(a+b\right)^{2}-\left(a-2b\right)^{2}-3b\left(2a-b\right)
-MP6;3;mp6_30;91,6;16;13;Parte 4 · Espressioni;a^{2}\left(2a-3\right)^{2}-\left(2a^{2}+a\right)^{2}+a\left(4a-1\right)^{2}
-MP6;3;mp6_38;82,9;8;12;Parte 4 · Espressioni;\left(a-1\right)\left(a+1\right)\left(a+2\right)-\left(a-1\right)^{3}-\left(2a-1\right)^{2}
-NEG4;1;neg4_5;23,4;4;2;Parte 1 · Espressioni con i numeri interi;-21:\left[-5-\left(-23+17\right):\left(-2\right)+\left(41-25+2\right):6-2\right]
-NEG4;1;neg4_7;34,7;4;3;Parte 1 · Espressioni con i numeri interi;\left[-7-24:\left(-8+15-13\right)+8\right]:\left[16:\left(-4\right)+11\left(-2\right)-7\left(-3\right)\right]
-NEG4;1;neg4_11;36,9;5;2;Parte 1 · Espressioni con i numeri interi;\left[4+\left(-9+4\right)\cdot\left(-5+7\right)\right]:\left[\left(14-7\cdot 3+29\right):2-\left(-2+32:4+7\right)\right]
-NEG4;1;neg4_15;33,6;4;2;Parte 1 · Espressioni con i numeri interi;-7+32:\left(-15+7\right)+\left\{\left(45-3\cdot 8+5\right):\left[-16:\left(4\cdot 6-2\cdot 4\right)-5+\left(3-10\right)\right]\right\}+7
-NEG4;1;neg4_22;34,9;5;3;Parte 2 · Espressioni con le frazioni;\left(-\frac{2}{3}+\frac{1}{2}\right)\cdot\left(\frac{1}{2}-\frac{3}{4}\right)
-NEG4;2;neg4_6;52,2;5;4;Parte 1 · Espressioni con i numeri interi;2\left(10-12-4\right)+\left[13+\left(25+2-5\right):\left(17-6-22\right)-4\right]:\left(-7\right)+7
-NEG4;2;neg4_12;53,4;5;4;Parte 1 · Espressioni con i numeri interi;-\left(18:9-5\right):\left[7-2\cdot\left(-3+7\right)\right]-4+\left[25-7+4\cdot\left(12:6-1\right)\right]:11
-NEG4;2;neg4_16;46,7;4;4;Parte 1 · Espressioni con i numeri interi;-8+\left(-5\right)\cdot\left(3-7+20:5\right)-\left[\left(29-3\cdot 7\right):\left(-4\right)+\left(17\cdot 2-5\cdot 4\right):\left(-9+3-1\right)\right]
-NEG4;2;neg4_17;50,6;5;3;Parte 1 · Espressioni con i numeri interi;-\left(61-3\cdot 7-25\right):\left(18:6-3\cdot 2-2\right)-\left[\left(29-5+3\cdot 8\right):\left(6\cdot 3-3+9\right)+\left(-12\right):\left(5-8:4\right)\right]
-NEG4;2;neg4_23;59,7;8;5;Parte 2 · Espressioni con le frazioni;\frac{1}{2}\cdot\left(-\frac{1}{4}+\frac{3}{2}\right):\left(\frac{3}{2}-\frac{3}{4}\right)
-NEG4;3;neg4_8;61,9;6;4;Parte 1 · Espressioni con i numeri interi;2\left(-15+10\right)+\left[5+\left(-7\cdot 2-4\right):\left(4+5\right)\cdot\left(-5\right)\right]:\left(-3\right)+18
-NEG4;3;neg4_14;62,8;6;3;Parte 1 · Espressioni con i numeri interi;\left(-6\right)\cdot 3+6-12-\left\{10+34:\left(-10+2\cdot 4\right)-\left[11-\left(2-4\cdot 5+2\right):\left(-4\right)\right]-4\right\}:\left(-3\right)
-NEG4;3;neg4_24;75,6;15;9;Parte 2 · Espressioni con le frazioni;\frac{5}{6}\cdot\frac{2}{3}\cdot\frac{12}{5}-\frac{3}{4}:\left(0{,}75-\frac{5}{6}\right)
-NEG4;3;neg4_26;67,6;13;7;Parte 2 · Espressioni con le frazioni;\frac{63}{55}\cdot\frac{44}{45}+\frac{14}{75}\cdot\frac{15}{35}+\frac{2}{25}\cdot 10-\frac{16}{25}:\frac{3}{5}+\frac{1}{15}
-NEG4;3;neg4_29;90,7;16;7;Parte 2 · Espressioni con le frazioni;\left\{\left[\left(-\frac{13}{5}+\frac{7}{3}\right)^{2}-4^{2}\cdot\left(-0{,}1\right)^{2}\right]-\left(\frac{4}{15}\right)^{2}\right\}-\left(1-\frac{6}{5}\right)^{2}
-NEG5;1;neg5_1;23,0;8;7;Calcola la seguente espressione;\left[\left(-\frac{4}{5}\right)^{2}\right]^{2}:\left(-\frac{4}{5}\right)^{3}+\left(-\frac{3}{5}\right)^{2}+\frac{1}{25}
-NEG5;1;neg5_2;24,7;10;6;Calcola la seguente espressione;\left(1-\frac{1}{7}+\frac{3}{14}\right)\cdot\frac{7}{3^{2}}+\left(\frac{1}{3}\right)^{3}\cdot\left(\frac{1}{3}\right)^{2}:\left(\frac{1}{3}\right)^{4}
-NEG5;1;neg5_3;24,1;9;7;Calcola la seguente espressione;\left(1-\frac{1}{3}\right)^{3}\cdot\left(\frac{5}{2}-\frac{1}{4}\right)^{2}-\left(1+\frac{3}{2}\right):\left(\frac{6}{11}-1\right)-13
-NEG5;1;neg5_6;30,8;9;7;Calcola la seguente espressione;\left[\left(-\frac{3}{2^{2}}+\frac{3^{2}}{2}-2\right)\cdot\frac{2^{2}}{7}\right]^{4}-\left(\frac{1}{5}-\frac{3}{10}\right)^{2}\cdot\frac{10^{2}}{3}
-NEG5;1;neg5_26;23,9;8;7;Calcola la seguente espressione;\left(1{,}5+1{,}25\right)^{4}:\left(0{,}75+2\right)^{3}-3+\left(1{,}\overline{3}-0{,}1\overline{3}\right)^{5}:\left(2-0{,}8\right)^{4}-1-\left(1{,}75-1{,}\overline{6}\right)^{2}:\left(1-0{,}91\overline{6}\right)^{2}
-NEG5;2;neg5_5;44,9;9;9;Calcola la seguente espressione;\frac{5}{8}\cdot\left[-4\left(-\frac{1}{3}\right)^{2}\left(-\frac{3}{2}\right)+\frac{1}{3}\right]^{3}-\left(\frac{1}{2}\right)^{3}-1^{2}
-NEG5;2;neg5_9;55,7;10;9;Calcola la seguente espressione;2\left[-3^{2}\left(-\frac{1}{2}\right)^{2}\right]^{2}-2\left[\left(1-\frac{3}{4}\right)^{2}+\left(\frac{7}{4}\right)^{0}-\left(-\frac{3}{2}\right)^{3}\right]+\left(-\frac{1}{2}\right)^{3}:\left(-\frac{1}{2}\right)
-NEG5;2;neg5_14;53,1;8;9;Calcola la seguente espressione;\left\{\left[\left(\frac{1}{2}\right)^{5}:\left(\frac{1}{2}\right)^{2}\cdot\left(1-\frac{1}{2}\right)^{3}\right]^{3}\right\}^{2}:\left[\left(-7+\frac{15}{2}\right)^{3}\right]^{10}:\left(3-\frac{5}{2}\right)^{3}-\left[\left(-\frac{4}{9}\right)^{7}:\left(\frac{5}{9}-1\right)^{6}-5\cdot\left(1-\frac{2}{3}\right)^{2}\right]
-NEG5;2;neg5_20;49,2;11;8;Calcola la seguente espressione;\left(\frac{1}{4}\right)^{-2}-\left(\frac{1}{2}\right)^{-2}+\frac{2^{2}}{3}\cdot\left(\frac{2}{3}\right)^{-3}-\frac{\left(-2\right)^{-2}}{5}-2^{4}
-NEG5;2;neg5_32;39,7;10;7;Calcola la seguente espressione;\frac{\left[\left(1+\frac{1}{5}\right)-\left(2+\frac{3}{40}\right)\cdot\left(-\frac{1}{2}\right)+\left(\frac{1}{5}+\frac{1}{8}\right):\left(-2\right)\right]^{4}}{\left(\frac{6}{5}+\frac{7}{8}\right)^{3}}-\frac{41}{20}
-NEG5;3;neg5_17;74,3;14;8;Calcola la seguente espressione;-\left(-\frac{1}{2}\right):\left\{\left(\frac{1}{4}-\frac{1}{10}\right)^{3}:\left(2-\frac{1}{2}\right)^{3}-\left(\frac{1}{10}\right)^{3}+\left[\left(1-\frac{7}{13}\right):\frac{5}{13}\cdot\frac{3}{4}\right]\left(-\frac{2}{3}\right)^{2}-\frac{1}{4}\right\}
-NEG5;3;neg5_18;96,5;19;11;Calcola la seguente espressione;\frac{5}{8}\left\{\left(\frac{1}{2}\right)^{2}:\left(\frac{5}{4}\right)^{2}-\left(\frac{1}{3}\right)^{2}:\left[\left(-\frac{1}{4}+\frac{2}{3}\right)^{2}:\left(1-\frac{1}{6}\right)^{2}-\left(\frac{1}{6}\right)^{2}:\left(1-\frac{1}{2}\right)^{2}\right]\right\}+\frac{1}{3}+\left[\left(2-\frac{8}{5}\right)^{5}\left(\frac{7}{5}-1\right)^{3}\right]:\left[\left(\frac{2}{5}\right)^{2}\right]^{4}
-NEG5;3;neg5_23;78,3;17;11;Calcola la seguente espressione;\left[\left(0{,}4-1\right)^{2}:0{,}01-\left(-\frac{2}{3}\right)^{-2}\right]\cdot\left(-\frac{1}{2}\right)^{-4}
-NEG5;3;neg5_25;77,0;12;11;Calcola la seguente espressione;\left[1{,}\overline{3}^{2}\left(1-0{,}625\right)^{2}\right]^{4}:\left(-0{,}5\right)^{2}+0{,}5^{7}-\left(1{,}5-0{,}25-2\right)^{2}\cdot\left(0{,}\overline{6}-2\right)^{2}-\left(-3+3{,}5\right)^{3}
-NEG5;3;neg5_28;70,5;11;10;Calcola la seguente espressione;\left[\left(2^{2}-3{,}\overline{6}-0{,}58\overline{3}-1{,}25\right)^{3}+2^{3}\left(0{,}5+0{,}25\right)^{3}\right]-\left(0{,}\overline{5}-1\right)^{4}:\left[\left(3-0{,}\overline{3}\right)^{2}\left(-0{,}1\overline{6}\right)^{2}\right]^{2}-5\left(1-0{,}\overline{6}\right)^{2}
-NEG6;1;neg6_4;35,0;2;2;Parte 1 · Potenze con esponente negativo;\left(\frac{3}{5}\right)^{-1}
-NEG6;1;neg6_20;36,1;2;2;Parte 2 · Le proprietà delle potenze;\left(3^{-2}\right)^{-2}
-NEG6;1;neg6_58;17,0;2;1;Parte 5 · Dalla notazione scientifica al numero;2{,}1\cdot 10^{3}
-NEG6;1;neg6_73;40,1;3;2;Parte 6 · Calcolare in notazione scientifica;6000:0{,}3
-NEG6;1;neg6_81;30,1;2;2;Parte 7 · Riconoscere e correggere;Il numero $1{,}5$ è scritto in notazione scientifica? Motiva la tua risposta.
-NEG6;2;neg6_3;44,8;2;3;Parte 1 · Potenze con esponente negativo;\left(-5\right)^{-2}
-NEG6;2;neg6_40;49,9;3;3;Parte 4 · La notazione scientifica;0{,}004
-NEG6;2;neg6_49;43,0;3;2;Parte 5 · Dalla notazione scientifica al numero;1{,}5\cdot 10^{-3}
-NEG6;2;neg6_71;41,7;3;2;Parte 6 · Calcolare in notazione scientifica;0{,}0004:0{,}002
-NEG6;2;neg6_76;47,1;5;1;Parte 7 · Riconoscere e correggere;Cerchia solo i numeri scritti in notazione scientifica: $0{,}014\cdot 10^{2}$, $6\cdot 10^{-2}$, $3{,}8\cdot 10^{10}$, $15\cdot 10^{-6}$, $0{,}2\cdot 10^{-12}$.
-NEG6;3;neg6_24;81,9;6;4;Parte 2 · Le proprietà delle potenze;\left(\frac{1}{13}\right)^{-6}\cdot\left(-\frac{1}{26}\right)^{6}:\left(-\frac{5}{4}\right)^{-6}
-NEG6;3;neg6_30;95,1;11;9;Parte 3 · Espressioni con le potenze;-3^{2}\cdot\left[\left(-1-\frac{2}{3}+\frac{3}{4}\right)^{-4}\cdot\left(-2+\frac{1}{3}+\frac{67}{33}\right)^{-4}:\left(-\frac{1}{3}\right)^{-6}+\left(-\frac{1}{3}\right)^{2}-\frac{1}{2}\right]+\frac{3}{2}
-NEG6;3;neg6_38;49,9;3;3;Parte 4 · La notazione scientifica;0{,}0009
-NEG6;3;neg6_68;69,2;6;4;Parte 6 · Calcolare in notazione scientifica;0{,}008\cdot 500
-NEG6;3;neg6_77;70,6;4;4;Parte 7 · Riconoscere e correggere;Eva ha scritto: $3\,500\,000\,000\,000=35\cdot 100\,000\,000\,000=35\cdot 10^{11}$. Trova l'errore e correggilo.
-ODX1;1;odx1_1;39,2;16;8;Calcola la seguente espressione;\left(0{,}4+0{,}\overline{7}-0{,}15\right)\cdot 1{,}2-0{,}8\overline{3}
+MP5;1;mp5_9;28,4;5;4;Parte 2 · Somme algebriche di polinomi;\left(\frac{3}{2}x^{2}y^{3}-2xy^{3}+\frac{3}{4}\right)-\left(+\frac{3}{4}-2xy^{3}+\frac{3}{4}x^{2}y^{3}\right)
+MP5;2;mp5_5;31,3;5;6;Parte 1 · Monomio per polinomio;\left(-2a^{2}b\right)\left(\frac{2}{3}b-\frac{3}{2}a^{2}+\frac{1}{2}ab\right)
+MP5;2;mp5_7;54,3;8;7;Parte 2 · Somme algebriche di polinomi;\left(\frac{4}{3}ab-\frac{1}{2}bc\right)+\left(2bc-\frac{1}{3}ab\right)
+MP5;2;mp5_8;52,8;8;6;Parte 2 · Somme algebriche di polinomi;\left(\frac{2}{5}xy+\frac{3}{2}a^{2}b^{3}\right)+\left(\frac{8}{5}xy-\frac{1}{2}a^{2}b^{3}\right)
+MP5;2;mp5_12;53,4;7;8;Parte 2 · Somme algebriche di polinomi;\left(\frac{2}{3}b+\frac{2}{5}ax\right)-\left(b-\frac{3}{5}ax\right)+\left(\frac{1}{3}b-ax\right)
+MP5;2;mp5_13;49,0;6;7;Parte 3 · Espressioni con somme e prodotti;-\left(\frac{1}{3}x^{2}y+x^{2}\right)-\left(2x^{2}-\frac{1}{4}x^{2}y\right)+\left(-\frac{4}{3}x^{2}y-x^{2}\right)
+MP5;3;mp5_11;68,1;9;7;Parte 2 · Somme algebriche di polinomi;\left(\frac{1}{2}xy-\frac{1}{2}x+2\right)-\left(\frac{1}{3}x-6\right)+\left(\frac{1}{6}x-\frac{1}{2}xy-1\right)+\frac{1}{2}xy
+MP5;3;mp5_14;76,6;8;9;Parte 3 · Espressioni con somme e prodotti;\left(\frac{11}{7}x^{2}+\frac{2}{3}x^{3}-\frac{3}{4}xy\right)-\left[-\left(\frac{3}{14}x^{2}+\frac{7}{6}x^{3}-xy\right)-2xy-\left(\frac{3}{2}x^{3}+xy\right)\right]-\left(\frac{2}{7}x^{2}-xy\right)
+MP5;3;mp5_15;83,5;10;12;Parte 3 · Espressioni con somme e prodotti;-x\left(\frac{1}{2}x^{2}y-\frac{2}{3}xy+\frac{1}{4}\right)+x^{2}y\left(-\frac{1}{3}x+2\right)-\frac{2}{3}x\left(4+\frac{1}{6}x^{2}\right)
+MP5;3;mp5_17;85,4;12;9;Parte 3 · Espressioni con somme e prodotti;-\frac{1}{2}x\left(\frac{3}{2}x^{2}y^{2}-\frac{3}{2}x\right)-\left(-\frac{3}{8}xy\right)\left(\frac{4}{9}x\right)\left(-\frac{2}{3}x^{2}-\frac{3}{2}xy\right)-\left(-\frac{3}{4}x^{2}\right)\left(\frac{4}{27}x^{2}y+xy^{2}-1\right)
+MP5;3;mp5_18;69,6;9;8;Parte 3 · Espressioni con somme e prodotti;x^{2}\left(x-y\right)+y^{2}\left(x-y\right)-\left(x^{2}+y^{2}\right)\left(x-y\right)
+MP6;1;mp6_1;30,2;3;3;Parte 1 · Il quadrato di un binomio;\left(\frac{3}{5}x^{2}+y\right)^{2}
+MP6;1;mp6_5;31,6;3;4;Parte 1 · Il quadrato di un binomio;\left(x^{3}-3\right)^{2}
+MP6;1;mp6_11;19,3;2;2;Parte 2 · Somma per differenza;\left(\frac{1}{3}x+y\right)\left(\frac{1}{3}x-y\right)
+MP6;1;mp6_13;23,4;2;3;Parte 2 · Somma per differenza;\left(-\frac{1}{3}a+b\right)\left(-\frac{1}{3}a-b\right)
+MP6;1;mp6_17;24,4;2;3;Parte 2 · Somma per differenza;\left(0{,}2x^{2}-y^{3}\right)\left(0{,}2x^{2}+y^{3}\right)
+MP6;2;mp6_3;47,6;4;5;Parte 1 · Il quadrato di un binomio;\left(3x^{3}-2x^{2}\right)^{2}
+MP6;2;mp6_7;67,5;6;8;Parte 1 · Il quadrato di un binomio;\left(-\frac{3}{4}ab^{2}+\frac{1}{6}a^{2}b\right)^{2}
+MP6;2;mp6_18;45,3;4;5;Parte 3 · Il cubo di un binomio;\left(2x-0{,}2\right)^{3}
+MP6;2;mp6_20;32,5;3;4;Parte 3 · Il cubo di un binomio;\left(-x+y^{2}\right)^{3}
+MP6;2;mp6_25;64,3;6;8;Parte 3 · Il cubo di un binomio;\left(2a-\frac{1}{2}a^{3}\right)^{3}
+MP6;3;mp6_31;81,2;11;9;Parte 4 · Espressioni;\left(2a+b-1\right)^{2}-\left(2a-b-1\right)^{2}-4b\left(2a+1\right)
+MP6;3;mp6_32;64,1;5;8;Parte 4 · Espressioni;4\left(a+b\right)^{2}+\left(2a-b\right)^{2}-\left(a+2b\right)^{2}-b^{2}
+MP6;3;mp6_36;84,1;10;12;Parte 4 · Espressioni;\left(2a+b\right)^{3}-\left(2a-b\right)^{3}+4\left(6a^{2}+\frac{1}{2}b^{2}\right)\left(-b\right)
+MP6;3;mp6_38;81,7;8;12;Parte 4 · Espressioni;\left(a-1\right)\left(a+1\right)\left(a+2\right)-\left(a-1\right)^{3}-\left(2a-1\right)^{2}
+MP6;3;mp6_39;80,0;8;10;Parte 4 · Espressioni;\left(2ax^{2}-\frac{1}{2}y^{3}\right)^{3}-\left(-xy^{3}+\frac{1}{2}a\right)^{3}+\left(x^{3}-\frac{1}{8}\right)\left(-y^{3}\right)^{3}
+NEG4;1;neg4_7;32,8;4;3;Parte 1 · Espressioni con i numeri interi;\left[-7-24:\left(-8+15-13\right)+8\right]:\left[16:\left(-4\right)+11\left(-2\right)-7\left(-3\right)\right]
+NEG4;1;neg4_11;40,2;5;2;Parte 1 · Espressioni con i numeri interi;\left[4+\left(-9+4\right)\cdot\left(-5+7\right)\right]:\left[\left(14-7\cdot 3+29\right):2-\left(-2+32:4+7\right)\right]
+NEG4;1;neg4_15;34,3;4;2;Parte 1 · Espressioni con i numeri interi;-7+32:\left(-15+7\right)+\left\{\left(45-3\cdot 8+5\right):\left[-16:\left(4\cdot 6-2\cdot 4\right)-5+\left(3-10\right)\right]\right\}+7
+NEG4;1;neg4_16;42,6;4;4;Parte 1 · Espressioni con i numeri interi;-8+\left(-5\right)\cdot\left(3-7+20:5\right)-\left[\left(29-3\cdot 7\right):\left(-4\right)+\left(17\cdot 2-5\cdot 4\right):\left(-9+3-1\right)\right]
+NEG4;1;neg4_22;35,6;5;3;Parte 2 · Espressioni con le frazioni;\left(-\frac{2}{3}+\frac{1}{2}\right)\cdot\left(\frac{1}{2}-\frac{3}{4}\right)
+NEG4;2;neg4_6;50,7;5;4;Parte 1 · Espressioni con i numeri interi;2\left(10-12-4\right)+\left[13+\left(25+2-5\right):\left(17-6-22\right)-4\right]:\left(-7\right)+7
+NEG4;2;neg4_12;51,9;5;4;Parte 1 · Espressioni con i numeri interi;-\left(18:9-5\right):\left[7-2\cdot\left(-3+7\right)\right]-4+\left[25-7+4\cdot\left(12:6-1\right)\right]:11
+NEG4;2;neg4_17;51,3;5;3;Parte 1 · Espressioni con i numeri interi;-\left(61-3\cdot 7-25\right):\left(18:6-3\cdot 2-2\right)-\left[\left(29-5+3\cdot 8\right):\left(6\cdot 3-3+9\right)+\left(-12\right):\left(5-8:4\right)\right]
+NEG4;2;neg4_19;54,1;5;4;Parte 1 · Espressioni con i numeri interi;\left[\left(3\cdot 5+3-21\right)\cdot\left(6\cdot 5-4\cdot 7-6\right):\left(-22+3+7\right)\right]\cdot\left(-6+24:8+12:4\right)-9
+NEG4;2;neg4_21;59,4;7;6;Parte 2 · Espressioni con le frazioni;\left(-1+\frac{1}{2}\right):\left(\frac{3}{2}+\frac{5}{4}\right)
+NEG4;3;neg4_8;62,6;6;4;Parte 1 · Espressioni con i numeri interi;2\left(-15+10\right)+\left[5+\left(-7\cdot 2-4\right):\left(4+5\right)\cdot\left(-5\right)\right]:\left(-3\right)+18
+NEG4;3;neg4_14;65,8;6;3;Parte 1 · Espressioni con i numeri interi;\left(-6\right)\cdot 3+6-12-\left\{10+34:\left(-10+2\cdot 4\right)-\left[11-\left(2-4\cdot 5+2\right):\left(-4\right)\right]-4\right\}:\left(-3\right)
+NEG4;3;neg4_25;66,6;13;6;Parte 2 · Espressioni con le frazioni;\left(\frac{2}{3}-\frac{7}{6}\right)-\left(1+\frac{5}{6}\right):\left(2-\frac{1}{3}\right)
+NEG4;3;neg4_26;67,2;13;7;Parte 2 · Espressioni con le frazioni;\frac{63}{55}\cdot\frac{44}{45}+\frac{14}{75}\cdot\frac{15}{35}+\frac{2}{25}\cdot 10-\frac{16}{25}:\frac{3}{5}+\frac{1}{15}
+NEG4;3;neg4_28;84,7;14;9;Parte 2 · Espressioni con le frazioni;2-\left[3+1-\left(2-\frac{1}{2}\right)\right]-\left(-2-\frac{1}{2}\right)\cdot\left(\frac{1}{2}-\frac{3}{4}+\frac{1}{6}\right):\left(-\frac{1}{2}\right)
+NEG5;1;neg5_3;23,3;9;7;Calcola la seguente espressione;\left(1-\frac{1}{3}\right)^{3}\cdot\left(\frac{5}{2}-\frac{1}{4}\right)^{2}-\left(1+\frac{3}{2}\right):\left(\frac{6}{11}-1\right)-13
+NEG5;1;neg5_6;30,0;9;7;Calcola la seguente espressione;\left[\left(-\frac{3}{2^{2}}+\frac{3^{2}}{2}-2\right)\cdot\frac{2^{2}}{7}\right]^{4}-\left(\frac{1}{5}-\frac{3}{10}\right)^{2}\cdot\frac{10^{2}}{3}
+NEG5;1;neg5_13;36,5;7;8;Calcola la seguente espressione;\left[\left(1-\frac{7}{5}\right)^{3}:\left(-\frac{2}{5}\right)^{2}\right]^{4}:\left[\left(-\frac{2}{5}\right)^{3}\cdot\left(-1+\frac{3}{5}\right)\right]+\left\{\left[-2^{2}:\left(1+\frac{1}{4}\right)^{2}:\left(-\frac{2}{5}\right)^{2}\right]+\left(-3\right)^{3}\cdot\left(-\frac{1}{3}\right)^{3}\right\}
+NEG5;1;neg5_26;21,7;8;7;Calcola la seguente espressione;\left(1{,}5+1{,}25\right)^{4}:\left(0{,}75+2\right)^{3}-3+\left(1{,}\overline{3}-0{,}1\overline{3}\right)^{5}:\left(2-0{,}8\right)^{4}-1-\left(1{,}75-1{,}\overline{6}\right)^{2}:\left(1-0{,}91\overline{6}\right)^{2}
+NEG5;1;neg5_30;27,2;9;6;Calcola la seguente espressione;\frac{\left[\left(\frac{1}{2}-\frac{1}{5}\right)^{2}:\left(\frac{3}{4}+\frac{1}{5}\right)\right]\cdot\left[\frac{2}{7}\left(-3+\frac{5}{4}\right)\right]}{\left[1:\left(7-\frac{2}{3}\right)\right]\cdot\left(\frac{2}{3}-\frac{1}{2}-\frac{3}{5}\right)}
+NEG5;2;neg5_5;39,9;9;9;Calcola la seguente espressione;\frac{5}{8}\cdot\left[-4\left(-\frac{1}{3}\right)^{2}\left(-\frac{3}{2}\right)+\frac{1}{3}\right]^{3}-\left(\frac{1}{2}\right)^{3}-1^{2}
+NEG5;2;neg5_9;52,6;10;9;Calcola la seguente espressione;2\left[-3^{2}\left(-\frac{1}{2}\right)^{2}\right]^{2}-2\left[\left(1-\frac{3}{4}\right)^{2}+\left(\frac{7}{4}\right)^{0}-\left(-\frac{3}{2}\right)^{3}\right]+\left(-\frac{1}{2}\right)^{3}:\left(-\frac{1}{2}\right)
+NEG5;2;neg5_14;46,7;8;9;Calcola la seguente espressione;\left\{\left[\left(\frac{1}{2}\right)^{5}:\left(\frac{1}{2}\right)^{2}\cdot\left(1-\frac{1}{2}\right)^{3}\right]^{3}\right\}^{2}:\left[\left(-7+\frac{15}{2}\right)^{3}\right]^{10}:\left(3-\frac{5}{2}\right)^{3}-\left[\left(-\frac{4}{9}\right)^{7}:\left(\frac{5}{9}-1\right)^{6}-5\cdot\left(1-\frac{2}{3}\right)^{2}\right]
+NEG5;2;neg5_20;49,7;11;8;Calcola la seguente espressione;\left(\frac{1}{4}\right)^{-2}-\left(\frac{1}{2}\right)^{-2}+\frac{2^{2}}{3}\cdot\left(\frac{2}{3}\right)^{-3}-\frac{\left(-2\right)^{-2}}{5}-2^{4}
+NEG5;2;neg5_32;40,8;10;7;Calcola la seguente espressione;\frac{\left[\left(1+\frac{1}{5}\right)-\left(2+\frac{3}{40}\right)\cdot\left(-\frac{1}{2}\right)+\left(\frac{1}{5}+\frac{1}{8}\right):\left(-2\right)\right]^{4}}{\left(\frac{6}{5}+\frac{7}{8}\right)^{3}}-\frac{41}{20}
+NEG5;3;neg5_12;71,2;12;9;Calcola la seguente espressione;\left[\left(\frac{5}{2}-\frac{9}{4}\right)^{2}:\left(-\frac{1}{3}\cdot\frac{1}{4}\right)\right]^{2}:\frac{1}{2}+\frac{1}{\left(-2\right)^{3}}+\left[\frac{\left(-3\right)^{2}}{5}\cdot\left(-\frac{1}{4}\right)\right]:\left(-\frac{2}{5}\right)^{2}-\left(-\frac{3}{2}\right)^{3}\cdot\frac{1}{2}
+NEG5;3;neg5_15;66,2;11;8;Calcola la seguente espressione;\left\{1:\left[\left(\frac{7}{8}\right)^{2}\cdot\left(1-\frac{1}{8}\right)^{5}:\left(2-\frac{9}{8}\right)^{6}\right]\right\}:\left(3-\frac{13}{3}\right)^{2}-\left[-\frac{2}{3}\cdot\left(-\frac{3}{4}\right)\cdot\left(\frac{1}{2}\right)^{3}\right]^{2}:\left[\left(\frac{1}{2}\right)^{2}\right]^{3}
+NEG5;3;neg5_17;77,3;14;8;Calcola la seguente espressione;-\left(-\frac{1}{2}\right):\left\{\left(\frac{1}{4}-\frac{1}{10}\right)^{3}:\left(2-\frac{1}{2}\right)^{3}-\left(\frac{1}{10}\right)^{3}+\left[\left(1-\frac{7}{13}\right):\frac{5}{13}\cdot\frac{3}{4}\right]\left(-\frac{2}{3}\right)^{2}-\frac{1}{4}\right\}
+NEG5;3;neg5_25;75,2;12;11;Calcola la seguente espressione;\left[1{,}\overline{3}^{2}\left(1-0{,}625\right)^{2}\right]^{4}:\left(-0{,}5\right)^{2}+0{,}5^{7}-\left(1{,}5-0{,}25-2\right)^{2}\cdot\left(0{,}\overline{6}-2\right)^{2}-\left(-3+3{,}5\right)^{3}
+NEG5;3;neg5_28;68,1;11;10;Calcola la seguente espressione;\left[\left(2^{2}-3{,}\overline{6}-0{,}58\overline{3}-1{,}25\right)^{3}+2^{3}\left(0{,}5+0{,}25\right)^{3}\right]-\left(0{,}\overline{5}-1\right)^{4}:\left[\left(3-0{,}\overline{3}\right)^{2}\left(-0{,}1\overline{6}\right)^{2}\right]^{2}-5\left(1-0{,}\overline{6}\right)^{2}
+NEG6;1;neg6_3;39,4;2;3;Parte 1 · Potenze con esponente negativo;\left(-5\right)^{-2}
+NEG6;1;neg6_20;33,9;2;2;Parte 2 · Le proprietà delle potenze;\left(3^{-2}\right)^{-2}
+NEG6;1;neg6_22;28,4;2;1;Parte 2 · Le proprietà delle potenze;\left(\frac{1}{7}\right)^{2}\cdot\left(\frac{1}{7}\right)^{-5}\cdot\left(\frac{1}{7}\right)^{3}
+NEG6;1;neg6_47;22,1;2;2;Parte 4 · La notazione scientifica;9\,000\,000
+NEG6;1;neg6_58;17,7;2;1;Parte 5 · Dalla notazione scientifica al numero;2{,}1\cdot 10^{3}
+NEG6;2;neg6_10;41,8;2;3;Parte 1 · Potenze con esponente negativo;\left(-\frac{3}{2}\right)^{-3}
+NEG6;2;neg6_24;81,9;6;4;Parte 2 · Le proprietà delle potenze;\left(\frac{1}{13}\right)^{-6}\cdot\left(-\frac{1}{26}\right)^{6}:\left(-\frac{5}{4}\right)^{-6}
+NEG6;2;neg6_49;44,4;3;2;Parte 5 · Dalla notazione scientifica al numero;1{,}5\cdot 10^{-3}
+NEG6;2;neg6_68;69,2;6;4;Parte 6 · Calcolare in notazione scientifica;0{,}008\cdot 500
+NEG6;2;neg6_77;69,5;4;4;Parte 7 · Riconoscere e correggere;Eva ha scritto: $3\,500\,000\,000\,000=35\cdot 100\,000\,000\,000=35\cdot 10^{11}$. Trova l'errore e correggilo.
+NEG6;3;neg6_25;79,2;5;4;Parte 3 · Espressioni con le potenze;-\frac{2}{5}+\left(-1+\frac{2}{5}\right)^{2}\cdot\left(-\frac{3}{5}\right)^{3}:\left(-\frac{3}{5}\right)^{4}
+NEG6;3;neg6_26;86,8;8;6;Parte 3 · Espressioni con le potenze;-1+\left(\frac{5}{6}-\frac{1}{3}\cdot\frac{1}{2}\right)^{2}:\frac{2}{3}-\left(\frac{2}{3}\right)^{2}
+NEG6;3;neg6_27;85,6;7;7;Parte 3 · Espressioni con le potenze;\left(-2+\frac{4}{3}\right)^{2}\cdot\left(-\frac{3}{4}\right)^{2}-\frac{3}{2}
+NEG6;3;neg6_29;89,5;8;5;Parte 3 · Espressioni con le potenze;\left[\frac{1}{3}:\left(-\frac{1}{5}\right)^{-1}\right]:\left[\frac{3}{2}\cdot\left(-3\right)^{-2}\right]+\left[\left(\frac{3}{7}\right)^{-1}\cdot\left(-7\right)^{-2}\right]:\left[\frac{1}{2}:\left(-\frac{1}{3}\right)^{-1}\right]
+NEG6;3;neg6_82;77,4;7;4;Parte 8 · Matematica e realtà;Lo streptococco è un batterio che ha un diametro di $7\cdot 10^{-7}$ m. <b>a.</b> Quale lunghezza hanno 4 streptococchi allineati? <b>b.</b> E 100 allineati? <b>c.</b> Quanti ce ne vogliono per raggiungere la lunghezza di 1 mm?
+ODX1;1;odx1_1;35,8;16;8;Calcola la seguente espressione;\left(0{,}4+0{,}\overline{7}-0{,}15\right)\cdot 1{,}2-0{,}8\overline{3}
 ODX1;1;odx1_2;18,3;15;7;Calcola la seguente espressione;\left(0{,}24\cdot 2{,}\overline{3}+1{,}8\cdot 0{,}0\overline{5}+0{,}45\cdot 4{,}\overline{6}\right):4{,}6
-ODX1;1;odx1_4;10,0;14;7;Calcola la seguente espressione;\left[0{,}75:0{,}\overline{6}-0{,}8\overline{3}:2{,}\overline{6}\right]:0{,}125
-ODX1;2;odx1_3;62,1;17;8;Calcola la seguente espressione;\left(2-0{,}\overline{3}\right)-\left\{2{,}\overline{3}-\left[1{,}\overline{3}-\left(1{,}5-0{,}\overline{3}\right)\right]-1+0{,}\overline{3}\right\}
-ODX1;2;odx1_7;54,6;18;7;Calcola la seguente espressione;\left[\left(0{,}5+0{,}\overline{3}-0{,}25\right):0{,}8\overline{3}\right]:\left[\left(0{,}75+0{,}\overline{6}-0{,}8\overline{3}\right)\cdot 0{,}375\right]-2{,}2
-ODX1;3;odx1_5;68,8;18;8;Calcola la seguente espressione;0{,}\overline{6}-\left[\left(9{,}\overline{3}\cdot 0{,}1\overline{6}-0{,}3\overline{7}\cdot 2{,}5\right)\cdot 1{,}\overline{63}\right]\cdot\left(2{,}5\overline{6}-1{,}9\right)
+ODX1;1;odx1_4;8,3;14;7;Calcola la seguente espressione;\left[0{,}75:0{,}\overline{6}-0{,}8\overline{3}:2{,}\overline{6}\right]:0{,}125
+ODX1;2;odx1_3;60,4;17;8;Calcola la seguente espressione;\left(2-0{,}\overline{3}\right)-\left\{2{,}\overline{3}-\left[1{,}\overline{3}-\left(1{,}5-0{,}\overline{3}\right)\right]-1+0{,}\overline{3}\right\}
+ODX1;2;odx1_7;60,4;18;7;Calcola la seguente espressione;\left[\left(0{,}5+0{,}\overline{3}-0{,}25\right):0{,}8\overline{3}\right]:\left[\left(0{,}75+0{,}\overline{6}-0{,}8\overline{3}\right)\cdot 0{,}375\right]-2{,}2
+ODX1;3;odx1_5;69,6;18;8;Calcola la seguente espressione;0{,}\overline{6}-\left[\left(9{,}\overline{3}\cdot 0{,}1\overline{6}-0{,}3\overline{7}\cdot 2{,}5\right)\cdot 1{,}\overline{63}\right]\cdot\left(2{,}5\overline{6}-1{,}9\right)
 ODX1;3;odx1_6;97,1;29;13;Calcola la seguente espressione;\left(2-0{,}5\right)-\left\{\left[3\cdot\left(1{,}8\overline{3}-1{,}75\right)\right]:\left[1-\left(2{,}5-0{,}75\right):4{,}2\right]\right\}\cdot 1{,}4
 ODX2;1;odx2_1;13,0;8;6;Calcola la seguente espressione;\left(0{,}2\right)^{5}\cdot\left(0{,}2\right)^{3}:\left(0{,}2\right)^{7}+0{,}8
 ODX2;1;odx2_3;15,5;8;6;Calcola la seguente espressione;\left[\left(0{,}4\right)^{2}\right]^{3}:\left(0{,}4\right)^{4}+0{,}84
 ODX2;2;odx2_2;31,5;10;7;Calcola la seguente espressione;\left(2{,}5\right)^{2}\cdot\left(0{,}4\right)^{2}-0{,}5
 ODX2;2;odx2_5;65,0;13;8;Calcola la seguente espressione;\left\{\left[\left(0{,}\overline{6}\right)^{3}\cdot\left(0{,}\overline{6}\right)^{4}\right]^{2}:\left(0{,}\overline{6}\right)^{11}\right\}^{3}:\left(0{,}\overline{6}\right)^{7}+0{,}\overline{5}
-ODX2;3;odx2_4;85,0;19;13;Calcola la seguente espressione;\left\{\left[\left(2{,}4\right)^{3}:\left(0{,}8\right)^{3}\cdot\left(0{,}\overline{3}\right)^{3}\right]^{2}:\left(0{,}5\right)^{2}\right\}-3{,}5
-ODX2;3;odx2_6;90,0;21;11;Calcola la seguente espressione;\left\{\left[\left(2{,}5\right)^{2}\cdot\left(1{,}2\right)^{2}\right]:\left(1{,}5\right)^{2}\right\}\cdot\left(0{,}25\right)^{2}+\left[\left(1{,}\overline{6}\right)^{3}:\left(0{,}8\overline{3}\right)^{3}\right]\cdot\left(0{,}5\right)^{3}
-OF1;1;of1_3;21,8;5;3;Calcola la seguente espressione;\frac{7}{2}+\frac{5}{36}-\frac{17}{6}+\frac{4}{9}
-OF1;1;of1_5;21,8;5;3;Calcola la seguente espressione;\frac{59}{45}-\frac{2}{5}-\frac{4}{9}+\frac{4}{15}
-OF1;1;of1_6;32,2;5;4;Calcola la seguente espressione;\frac{5}{28}+\frac{4}{7}-\frac{1}{2}+\frac{1}{12}
-OF1;2;of1_2;32,2;5;4;Calcola la seguente espressione;\frac{7}{4}-\frac{7}{16}-\frac{3}{10}-\frac{3}{40}
+ODX2;3;odx2_4;83,0;19;13;Calcola la seguente espressione;\left\{\left[\left(2{,}4\right)^{3}:\left(0{,}8\right)^{3}\cdot\left(0{,}\overline{3}\right)^{3}\right]^{2}:\left(0{,}5\right)^{2}\right\}-3{,}5
+ODX2;3;odx2_6;92,0;21;11;Calcola la seguente espressione;\left\{\left[\left(2{,}5\right)^{2}\cdot\left(1{,}2\right)^{2}\right]:\left(1{,}5\right)^{2}\right\}\cdot\left(0{,}25\right)^{2}+\left[\left(1{,}\overline{6}\right)^{3}:\left(0{,}8\overline{3}\right)^{3}\right]\cdot\left(0{,}5\right)^{3}
+OF1;1;of1_3;23,8;5;3;Calcola la seguente espressione;\frac{7}{2}+\frac{5}{36}-\frac{17}{6}+\frac{4}{9}
+OF1;1;of1_5;23,8;5;3;Calcola la seguente espressione;\frac{59}{45}-\frac{2}{5}-\frac{4}{9}+\frac{4}{15}
+OF1;1;of1_6;31,2;5;4;Calcola la seguente espressione;\frac{5}{28}+\frac{4}{7}-\frac{1}{2}+\frac{1}{12}
+OF1;2;of1_2;31,2;5;4;Calcola la seguente espressione;\frac{7}{4}-\frac{7}{16}-\frac{3}{10}-\frac{3}{40}
 OF1;2;of1_7;74,2;11;6;Calcola la seguente espressione;\left(1+\frac{1}{2}\right)-\left[\frac{3}{4}+\left(\frac{1}{5}+\frac{1}{4}\right)\right]
-OF1;2;of1_11;71,7;9;6;Calcola la seguente espressione;\left(7-\frac{3}{5}\right)-\left[\frac{4}{3}-\left(1-\frac{1}{3}\right)+5-\left(2+\frac{4}{3}\right)-\frac{1}{5}\right]+\frac{26}{15}
-OF1;3;of1_8;80,0;16;5;Calcola la seguente espressione;\left[\left(\frac{1}{2}+\frac{3}{4}\right)-\left(\frac{1}{3}+\frac{3}{4}-\frac{2}{6}\right)\right]+\frac{1}{2}
-OF1;3;of1_9;83,0;11;7;Calcola la seguente espressione;1-\left[\left(\frac{2}{3}-\frac{1}{6}\right)+\left(\frac{1}{3}-\frac{1}{4}\right)+\left(2-\frac{1}{3}\right)-\left(2-\frac{3}{4}\right)\right]
-OF1;3;of1_10;91,0;13;8;Calcola la seguente espressione;\left(\frac{9}{8}-\frac{5}{40}+\frac{2}{5}\right)-\left[2-\left(2-\frac{1}{8}\right)\right]-\left(\frac{7}{5}-\frac{1}{8}\right)
-OF2;1;of2_1;49,0;6;3;Parte 1 · Moltiplicare frazioni e interi;\frac{2}{3}\cdot 6\cdot\frac{9}{2}
-OF2;1;of2_2;49,0;6;3;Parte 1 · Moltiplicare frazioni e interi;\frac{5}{4}\cdot\frac{1}{2}\cdot 16
-OF2;1;of2_3;32,5;5;3;Parte 1 · Moltiplicare frazioni e interi;\frac{5}{4}\cdot 8\cdot\frac{1}{2}\cdot\frac{5}{3}
-OF2;2;of2_8;53,8;5;4;Parte 2 · Completa l'uguaglianza;Trova la frazione da mettere al posto del quadratino per completare l'uguaglianza: $\displaystyle \square\cdot\frac{12}{11}=\frac{15}{11}$
-OF2;2;of2_9;53,8;5;4;Parte 2 · Completa l'uguaglianza;Trova la frazione da mettere al posto del quadratino per completare l'uguaglianza: $\displaystyle \square\cdot\frac{25}{3}=\frac{10}{3}$
-OF2;2;of2_10;53,8;5;4;Parte 2 · Completa l'uguaglianza;Trova la frazione da mettere al posto del quadratino per completare l'uguaglianza: $\displaystyle \frac{22}{9}\cdot\square=\frac{10}{9}$
-OF2;3;of2_5;86,0;7;5;Parte 1 · Moltiplicare frazioni e interi;\frac{5}{7}\cdot\frac{21}{3}\cdot\frac{1}{2}\cdot\frac{4}{3}
-OF2;3;of2_6;53,8;5;4;Parte 2 · Completa l'uguaglianza;Trova la frazione da mettere al posto del quadratino per completare l'uguaglianza: $\displaystyle \frac{6}{5}\cdot\square=\frac{9}{5}$
-OF2;3;of2_7;53,8;5;4;Parte 2 · Completa l'uguaglianza;Trova la frazione da mettere al posto del quadratino per completare l'uguaglianza: $\displaystyle \frac{8}{7}\cdot\square=\frac{12}{7}$
-OF3;1;of3_4;32,9;4;3;Parte 2 · Completa l'uguaglianza;Trova la frazione da mettere al posto del quadratino per completare l'uguaglianza: $\displaystyle \square:\frac{15}{11}=\frac{11}{5}$
-OF3;1;of3_5;32,9;4;3;Parte 2 · Completa l'uguaglianza;Trova la frazione da mettere al posto del quadratino per completare l'uguaglianza: $\displaystyle \square:\frac{5}{27}=\frac{3}{5}$
-OF3;1;of3_6;21,4;3;3;Parte 2 · Completa l'uguaglianza;Trova la frazione da mettere al posto del quadratino per completare l'uguaglianza: $\displaystyle \frac{4}{3}:\square=\frac{5}{2}$
-OF3;2;of3_3;32,9;4;3;Parte 2 · Completa l'uguaglianza;Trova la frazione da mettere al posto del quadratino per completare l'uguaglianza: $\displaystyle \square:\frac{4}{9}=\frac{5}{4}$
-OF3;2;of3_7;64,6;5;4;Parte 2 · Completa l'uguaglianza;Trova la frazione da mettere al posto del quadratino per completare l'uguaglianza: $\displaystyle \frac{3}{5}:\square=\frac{7}{10}$
-OF3;2;of3_8;64,6;5;4;Parte 2 · Completa l'uguaglianza;Trova la frazione da mettere al posto del quadratino per completare l'uguaglianza: $\displaystyle \frac{8}{9}:\square=\frac{10}{21}$
-OF3;3;of3_1;77,5;10;5;Parte 1 · Divisioni una dopo l'altra;\frac{21}{5}:\frac{14}{10}:\frac{5}{9}
-OF3;3;of3_2;73,2;11;4;Parte 1 · Divisioni una dopo l'altra;\frac{9}{8}:\frac{12}{5}:\frac{5}{8}
-OF4;1;of4_2;27,4;11;5;Parte 1 · Espressioni senza potenze;\frac{3}{4}\cdot\frac{16}{9}+\left(\frac{2}{3}-\frac{1}{4}\right)
-OF4;1;of4_3;20,7;7;6;Parte 1 · Espressioni senza potenze;\left(\frac{1}{2}+1\right):\left(1-\frac{1}{2}\right)
-OF4;1;of4_4;20,3;8;5;Parte 1 · Espressioni senza potenze;\left(1-\frac{3}{5}\right)-\left(3-\frac{8}{3}\right):2
-OF4;1;of4_5;25,3;9;5;Parte 1 · Espressioni senza potenze;\left(\frac{1}{2}+\frac{5}{3}\right):2-\left(5-\frac{19}{4}\right)\cdot\frac{1}{3}
-OF4;1;of4_12;29,6;7;5;Parte 2 · Espressioni con le potenze;\left[\left(\frac{3}{7}\right)^{4}\right]^{2}:\left[\left(\frac{3}{7}\right)^{3}\right]^{2}\cdot\left\{\left[\left(\frac{3}{7}\right)^{4}\right]^{3}:\left[\left(\frac{3}{7}\right)^{2}\right]^{6}\right\}\cdot\left(\frac{3}{7}\right)^{0}
-OF4;2;of4_7;52,2;11;8;Parte 1 · Espressioni senza potenze;\frac{15}{2}:\left[\left(1+\frac{1}{2}\right)\cdot\left(\frac{3}{4}+1\right)-2\right]
-OF4;2;of4_8;60,9;13;7;Parte 1 · Espressioni senza potenze;\left\{\left[\frac{2}{7}\cdot\left(\frac{3}{5}+1\right)\right]:\frac{8}{7}\right\}\cdot\frac{15}{4}-1
-OF4;2;of4_10;52,8;12;7;Parte 2 · Espressioni con le potenze;\left(\frac{1}{2}\right)^{5}\cdot\left(\frac{1}{2}\right)^{3}:\left(\frac{1}{2}\right)^{4}+\left(\frac{5}{4}\right)^{3}:\left(\frac{5}{4}\right)^{2}\cdot\frac{5}{4}-\frac{7}{6}\cdot\left(\frac{7}{6}\right)^{2}:\left(\frac{7}{6}\right)^{2}
-OF4;2;of4_14;35,6;8;6;Parte 2 · Espressioni con le potenze;\left[\left(1+\frac{1}{3}\right)^{2}\cdot\left(1+\frac{1}{3}\right)^{3}\right]:\left(2-\frac{2}{3}\right)^{4}+\frac{2}{3}
-OF4;2;of4_18;32,2;7;7;Parte 2 · Espressioni con le potenze;\frac{\left(\frac{1}{2}\right)^{2}\cdot\left(\frac{1}{2}\right)^{3}\cdot\left(\frac{1}{2}\right)^{4}:\left(\frac{1}{2}\right)^{6}}{\left(\frac{2}{3}\right)^{2}\cdot\frac{2}{3}}
-OF4;3;of4_9;75,4;20;8;Parte 1 · Espressioni senza potenze;\left\{\left[\left(\frac{1}{3}+\frac{1}{4}\right):\frac{7}{6}\right]\cdot\frac{4}{3}+\frac{1}{4}\right\}-\left(\frac{1}{6}\cdot\frac{12}{5}-\frac{2}{15}\right)
+OF1;2;of1_11;70,2;9;6;Calcola la seguente espressione;\left(7-\frac{3}{5}\right)-\left[\frac{4}{3}-\left(1-\frac{1}{3}\right)+5-\left(2+\frac{4}{3}\right)-\frac{1}{5}\right]+\frac{26}{15}
+OF1;3;of1_9;81,5;11;7;Calcola la seguente espressione;1-\left[\left(\frac{2}{3}-\frac{1}{6}\right)+\left(\frac{1}{3}-\frac{1}{4}\right)+\left(2-\frac{1}{3}\right)-\left(2-\frac{3}{4}\right)\right]
+OF1;3;of1_10;90,0;13;8;Calcola la seguente espressione;\left(\frac{9}{8}-\frac{5}{40}+\frac{2}{5}\right)-\left[2-\left(2-\frac{1}{8}\right)\right]-\left(\frac{7}{5}-\frac{1}{8}\right)
+OF2;1;of2_3;34,5;5;3;Parte 1 · Moltiplicare frazioni e interi;\frac{5}{4}\cdot 8\cdot\frac{1}{2}\cdot\frac{5}{3}
+OF2;1;of2_4;11,0;4;2;Parte 1 · Moltiplicare frazioni e interi;\frac{13}{20}\cdot\frac{2}{13}\cdot\frac{1}{8}\cdot\frac{8}{3}
+OF2;2;of2_6;51,3;5;4;Parte 2 · Completa l'uguaglianza;Trova la frazione da mettere al posto del quadratino per completare l'uguaglianza: $\displaystyle \frac{6}{5}\cdot\square=\frac{9}{5}$
+OF2;2;of2_7;51,3;5;4;Parte 2 · Completa l'uguaglianza;Trova la frazione da mettere al posto del quadratino per completare l'uguaglianza: $\displaystyle \frac{8}{7}\cdot\square=\frac{12}{7}$
+OF2;2;of2_8;51,3;5;4;Parte 2 · Completa l'uguaglianza;Trova la frazione da mettere al posto del quadratino per completare l'uguaglianza: $\displaystyle \square\cdot\frac{12}{11}=\frac{15}{11}$
+OF2;3;of2_1;55,5;6;3;Parte 1 · Moltiplicare frazioni e interi;\frac{2}{3}\cdot 6\cdot\frac{9}{2}
+OF2;3;of2_2;55,5;6;3;Parte 1 · Moltiplicare frazioni e interi;\frac{5}{4}\cdot\frac{1}{2}\cdot 16
+OF3;1;of3_4;33,6;4;3;Parte 2 · Completa l'uguaglianza;Trova la frazione da mettere al posto del quadratino per completare l'uguaglianza: $\displaystyle \square:\frac{15}{11}=\frac{11}{5}$
+OF3;1;of3_5;33,6;4;3;Parte 2 · Completa l'uguaglianza;Trova la frazione da mettere al posto del quadratino per completare l'uguaglianza: $\displaystyle \square:\frac{5}{27}=\frac{3}{5}$
+OF3;1;of3_6;19,3;3;3;Parte 2 · Completa l'uguaglianza;Trova la frazione da mettere al posto del quadratino per completare l'uguaglianza: $\displaystyle \frac{4}{3}:\square=\frac{5}{2}$
+OF3;2;of3_3;33,6;4;3;Parte 2 · Completa l'uguaglianza;Trova la frazione da mettere al posto del quadratino per completare l'uguaglianza: $\displaystyle \square:\frac{4}{9}=\frac{5}{4}$
+OF3;2;of3_7;63,9;5;4;Parte 2 · Completa l'uguaglianza;Trova la frazione da mettere al posto del quadratino per completare l'uguaglianza: $\displaystyle \frac{3}{5}:\square=\frac{7}{10}$
+OF3;2;of3_8;63,9;5;4;Parte 2 · Completa l'uguaglianza;Trova la frazione da mettere al posto del quadratino per completare l'uguaglianza: $\displaystyle \frac{8}{9}:\square=\frac{10}{21}$
+OF3;3;of3_1;76,1;10;5;Parte 1 · Divisioni una dopo l'altra;\frac{21}{5}:\frac{14}{10}:\frac{5}{9}
+OF3;3;of3_2;76,1;11;4;Parte 1 · Divisioni una dopo l'altra;\frac{9}{8}:\frac{12}{5}:\frac{5}{8}
+OF4;1;of4_3;18,4;7;6;Parte 1 · Espressioni senza potenze;\left(\frac{1}{2}+1\right):\left(1-\frac{1}{2}\right)
+OF4;1;of4_4;21,5;8;5;Parte 1 · Espressioni senza potenze;\left(1-\frac{3}{5}\right)-\left(3-\frac{8}{3}\right):2
+OF4;1;of4_5;27,4;9;5;Parte 1 · Espressioni senza potenze;\left(\frac{1}{2}+\frac{5}{3}\right):2-\left(5-\frac{19}{4}\right)\cdot\frac{1}{3}
+OF4;1;of4_12;29,3;7;5;Parte 2 · Espressioni con le potenze;\left[\left(\frac{3}{7}\right)^{4}\right]^{2}:\left[\left(\frac{3}{7}\right)^{3}\right]^{2}\cdot\left\{\left[\left(\frac{3}{7}\right)^{4}\right]^{3}:\left[\left(\frac{3}{7}\right)^{2}\right]^{6}\right\}\cdot\left(\frac{3}{7}\right)^{0}
+OF4;1;of4_18;28,1;7;7;Parte 2 · Espressioni con le potenze;\frac{\left(\frac{1}{2}\right)^{2}\cdot\left(\frac{1}{2}\right)^{3}\cdot\left(\frac{1}{2}\right)^{4}:\left(\frac{1}{2}\right)^{6}}{\left(\frac{2}{3}\right)^{2}\cdot\frac{2}{3}}
+OF4;2;of4_6;42,8;12;6;Parte 1 · Espressioni senza potenze;\left(3-\frac{3}{5}\right):\left(4-\frac{2}{5}\right)\cdot\left(2-\frac{1}{5}\right)
+OF4;2;of4_7;49,9;11;8;Parte 1 · Espressioni senza potenze;\frac{15}{2}:\left[\left(1+\frac{1}{2}\right)\cdot\left(\frac{3}{4}+1\right)-2\right]
+OF4;2;of4_8;62,1;13;7;Parte 1 · Espressioni senza potenze;\left\{\left[\frac{2}{7}\cdot\left(\frac{3}{5}+1\right)\right]:\frac{8}{7}\right\}\cdot\frac{15}{4}-1
+OF4;2;of4_10;53,1;12;7;Parte 2 · Espressioni con le potenze;\left(\frac{1}{2}\right)^{5}\cdot\left(\frac{1}{2}\right)^{3}:\left(\frac{1}{2}\right)^{4}+\left(\frac{5}{4}\right)^{3}:\left(\frac{5}{4}\right)^{2}\cdot\frac{5}{4}-\frac{7}{6}\cdot\left(\frac{7}{6}\right)^{2}:\left(\frac{7}{6}\right)^{2}
+OF4;2;of4_14;34,7;8;6;Parte 2 · Espressioni con le potenze;\left[\left(1+\frac{1}{3}\right)^{2}\cdot\left(1+\frac{1}{3}\right)^{3}\right]:\left(2-\frac{2}{3}\right)^{4}+\frac{2}{3}
+OF4;3;of4_9;77,2;20;8;Parte 1 · Espressioni senza potenze;\left\{\left[\left(\frac{1}{3}+\frac{1}{4}\right):\frac{7}{6}\right]\cdot\frac{4}{3}+\frac{1}{4}\right\}-\left(\frac{1}{6}\cdot\frac{12}{5}-\frac{2}{15}\right)
 OF4;3;of4_11;87,4;23;12;Parte 2 · Espressioni con le potenze;\left[\left(\frac{1}{2}\right)^{3}\cdot\frac{1}{2}\right]:\left[\left(\frac{5}{6}\right)^{6}:\left(\frac{5}{6}\right)^{4}\right]^{2}:\left[\left(\frac{10}{3}\right)^{3}:\left(\frac{10}{3}\right)^{2}-\frac{41}{15}\right]:\left(\frac{2}{5}\right)^{3}
-OF4;3;of4_13;73,8;14;9;Parte 2 · Espressioni con le potenze;\left\{\left[\left(\frac{12}{5}\right)^{3}:\left(\frac{4}{5}\right)^{3}\right]^{8}:\left[\left(12\right)^{4}\cdot\left(\frac{1}{4}\right)^{4}\right]^{5}\right\}^{3}\cdot\left[\left(\frac{1}{3}\right)^{2}\right]^{6}
-OF4;3;of4_16;89,4;20;12;Parte 2 · Espressioni con le potenze;\left\{\left[\left(\frac{4}{5}\right)^{2}\right]^{3}\cdot\left(\frac{4}{5}\right)^{4}:\left[\left(\frac{4}{5}\right)^{2}\right]^{5}\right\}^{4}\cdot\left[\left(\frac{7}{5}\right)^{2}\right]^{3}:\left(\frac{7}{5}\right)^{5}+2\cdot\left(\frac{1}{2}\right)^{3}:\left(\frac{1}{4}\right)^{2}
-OF4;3;of4_17;90,0;24;11;Parte 2 · Espressioni con le potenze;\left\{\left(\frac{2}{3}\right)^{5}\cdot\left(\frac{2}{3}\right)^{8}:\left[\left(\frac{2}{3}\right)^{2}\right]^{6}\right\}^{2}+\left[\frac{1}{2}+\frac{1}{8}\cdot\left(\frac{7}{10}+\frac{12}{5}\cdot\frac{15}{8}-\frac{21}{16}:\frac{35}{32}\right)\right]
-OF5;1;of5_1;31,5;3;3;Parte 1 · Quanto resta dell'intero;Giovanni ha speso un terzo della sua paga settimanale per andare al cinema e un quinto per comprare una lampadina. Il resto l'ha messo da parte. Quale frazione della paga settimanale ha messo da parte?
-OF5;1;of5_17;30,5;3;3;Parte 6 · Dalla parte che resta all'intero;Due terzi delle mele sono state mangiate. Le mele rimaste sono 3. Quante erano le mele all'inizio?
-OF5;1;of5_21;32,8;4;3;Parte 7 · Una frazione divisa in parti uguali;Una bottiglia contiene $\displaystyle\frac{3}{4}$ di litro di vino. Il vino viene versato in 6 bicchieri in parti uguali. Quanto vino contiene ciascun bicchiere?
-OF5;1;of5_27;34,9;4;3;Parte 9 · La frazione di una frazione;In una ditta lavorano 240 persone. $\displaystyle\frac{1}{4}$ dei lavoratori sono stranieri e di questi $\displaystyle\frac{3}{5}$ provengono dal continente africano. Quanti sono i lavoratori di provenienza africana?
-OF5;1;of5_47;32,0;4;3;Parte 13 · Differenza e frazione;"La differenza di due numeri è 28; il numero minore è i $\displaystyle\frac{3}{7}$ del maggiore. Determina i due numeri."
-OF5;2;of5_10;53,4;8;3;Parte 3 · La frazione di un numero;Quanti minuti di differenza ci sono tra $\displaystyle\frac{3}{4}$ d'ora e $\displaystyle\frac{7}{10}$ di ora?
-OF5;2;of5_13;59,3;5;4;Parte 4 · Prima la parte che resta, poi quanto vale;I pazienti di un dentista sono $\displaystyle\frac{1}{4}$ uomini, $\displaystyle\frac{3}{8}$ donne e il resto bambini. Se in totale i pazienti sono 216, quanti sono i pazienti bambini?
-OF5;2;of5_16;45,7;5;3;Parte 5 · Dalla parte all'intero;Dopo aver comprato una bicicletta, a Elisa sono rimasti 45 €, ovvero $\displaystyle\frac{3}{11}$ dei soldi che aveva prima. a) Quanti soldi aveva prima? b) Quanto costava la bicicletta?
-OF5;2;of5_25;36,2;4;3;Parte 8 · Quante volte ci sta;La mamma porta il piccolo Carletto a fare una passeggiata. I passi di Carletto sono lunghi $\displaystyle\frac{2}{5}$ dei passi della mamma. Quanti passi fa Carletto, quando la mamma fa 10 passi?
-OF5;2;of5_28;50,7;4;4;Parte 9 · La frazione di una frazione;$\displaystyle\frac{2}{3}$ degli alunni di una classe possiede un animale domestico e di questi $\displaystyle\frac{3}{4}$ possiedono un gatto. Quanti sono gli alunni che hanno un gatto, se in quella classe ci sono 28 alunni?
-OF5;3;of5_5;69,8;5;5;Parte 2 · Mettere insieme quantità;A una gara di pesca sportiva Marco aveva pescato tre pesci: il primo pesava mezzo kilogrammo, il secondo pesava $\displaystyle 1\frac{1}{4}$ kg, il terzo $\displaystyle\frac{9}{20}$ kg. Quanto pesavano in tutto i pesci pescati da Marco?
-OF5;3;of5_34;68,4;7;4;Parte 11 · Problemi a più passaggi;Anna ha 120 €. Spende $\displaystyle\frac{5}{12}$ dei soldi in vestiti. $\displaystyle\frac{7}{10}$ dei soldi spesi in vestiti li ha usati per acquistare 4 vestiti dello stesso prezzo. Quanto costava ogni vestito?
-OF5;3;of5_46;85,8;10;5;Parte 12 · Somma e frazione;L'età della mamma è i $\displaystyle\frac{7}{8}$ di quella del papà. Insieme essi totalizzano 75 anni. L'età di Giulia è i $\displaystyle\frac{2}{7}$ dell'età della mamma e quella di Luca è i $\displaystyle\frac{3}{20}$ di quella del papà. Quanti anni ha Giulia e quanti Luca?
-OF5;3;of5_51;67,2;7;4;Parte 14 · Tre quantità;In una serra sono coltivate 1800 piante. Le rose sono i $\displaystyle\frac{3}{4}$ dei gerani, le petunie sono la metà dei gerani. Quante sono le piante di ogni tipo?
-OF5;3;of5_40;84,8;8;7;Parte 15 · Rompicapi;In un sacchetto ci sono delle palline colorate. $\displaystyle\frac{4}{9}$ delle palline sono gialle, $\displaystyle\frac{3}{5}$ delle rimanenti sono blu. Tutte le altre sono rosse. Le palline rosse sono 5 meno di quelle blu. Quante sono le palline nel sacchetto?
-ON2;1;on2_8;30,7;3;1;Parte 1 · Addizione;68+7
-ON2;1;on2_11;30,7;3;1;Parte 2 · Sottrazione;87-29
-ON2;1;on2_29;30,7;3;1;Parte 4 · Divisione;84:14
-ON2;1;on2_38;30,7;3;1;Parte 5 · Calcolo veloce;1000-397
-ON2;1;on2_47;37,2;3;1;Parte 6 · Quanto vale x?;7\cdot x=7\cdot 5\cdot 4
-ON2;2;on2_23;44,9;3;2;Parte 3 · Moltiplicazione;35\cdot 18
-ON2;2;on2_30;44,9;3;2;Parte 4 · Divisione;750:25
-ON2;2;on2_44;43,5;3;1;Parte 5 · Calcolo veloce;\left(420+280\right):70
-ON2;2;on2_45;50,1;3;2;Parte 6 · Quanto vale x?;34+x=x+34
-ON2;2;on2_46;46,0;3;1;Parte 6 · Quanto vale x?;\left(15+8\right)+x=15+\left(8+12\right)
-ON2;3;on2_2;70,5;4;2;Parte 1 · Addizione;25+78+75+22
-ON2;3;on2_27;77,2;4;4;Parte 3 · Moltiplicazione;23\cdot 99
+OF4;3;of4_13;73,2;14;9;Parte 2 · Espressioni con le potenze;\left\{\left[\left(\frac{12}{5}\right)^{3}:\left(\frac{4}{5}\right)^{3}\right]^{8}:\left[\left(12\right)^{4}\cdot\left(\frac{1}{4}\right)^{4}\right]^{5}\right\}^{3}\cdot\left[\left(\frac{1}{3}\right)^{2}\right]^{6}
+OF4;3;of4_15;81,5;17;12;Parte 2 · Espressioni con le potenze;\left\{\left[\left(\frac{1}{2}\right)^{2}\right]^{6}\cdot\left(\frac{1}{2}\right)^{3}:\left[\left(\frac{1}{2}\right)^{2}\right]^{7}\right\}^{4}\cdot\left(\frac{4}{3}\right)^{4}:\left[\left(\frac{4}{9}\right)^{2}\right]^{2}-5
+OF4;3;of4_16;88,5;20;12;Parte 2 · Espressioni con le potenze;\left\{\left[\left(\frac{4}{5}\right)^{2}\right]^{3}\cdot\left(\frac{4}{5}\right)^{4}:\left[\left(\frac{4}{5}\right)^{2}\right]^{5}\right\}^{4}\cdot\left[\left(\frac{7}{5}\right)^{2}\right]^{3}:\left(\frac{7}{5}\right)^{5}+2\cdot\left(\frac{1}{2}\right)^{3}:\left(\frac{1}{4}\right)^{2}
+OF5;1;of5_2;29,5;3;3;Parte 1 · Quanto resta dell'intero;Pietro è partito da casa per andare in gelateria. A due quinti del percorso incontra Chiara, che decide di accompagnarlo. Dopo un altro quarto del percorso Matteo si unisce al gruppo. Qual è la parte di percorso che percorrono insieme i tre ragazzi?
+OF5;1;of5_17;28,3;3;3;Parte 6 · Dalla parte che resta all'intero;Due terzi delle mele sono state mangiate. Le mele rimaste sono 3. Quante erano le mele all'inizio?
+OF5;1;of5_21;33,1;4;3;Parte 7 · Una frazione divisa in parti uguali;Una bottiglia contiene $\displaystyle\frac{3}{4}$ di litro di vino. Il vino viene versato in 6 bicchieri in parti uguali. Quanto vino contiene ciascun bicchiere?
+OF5;1;of5_27;35,2;4;3;Parte 9 · La frazione di una frazione;In una ditta lavorano 240 persone. $\displaystyle\frac{1}{4}$ dei lavoratori sono stranieri e di questi $\displaystyle\frac{3}{5}$ provengono dal continente africano. Quanti sono i lavoratori di provenienza africana?
+OF5;1;of5_42;32,0;4;3;Parte 12 · Somma e frazione;"La somma di due numeri è 9; il numero minore è $\displaystyle\frac{1}{2}$ del maggiore. Determina i due numeri."
+OF5;2;of5_10;59,2;8;3;Parte 3 · La frazione di un numero;Quanti minuti di differenza ci sono tra $\displaystyle\frac{3}{4}$ d'ora e $\displaystyle\frac{7}{10}$ di ora?
+OF5;2;of5_13;58,7;5;4;Parte 4 · Prima la parte che resta, poi quanto vale;I pazienti di un dentista sono $\displaystyle\frac{1}{4}$ uomini, $\displaystyle\frac{3}{8}$ donne e il resto bambini. Se in totale i pazienti sono 216, quanti sono i pazienti bambini?
+OF5;2;of5_16;48,8;5;3;Parte 5 · Dalla parte all'intero;Dopo aver comprato una bicicletta, a Elisa sono rimasti 45 €, ovvero $\displaystyle\frac{3}{11}$ dei soldi che aveva prima. a) Quanti soldi aveva prima? b) Quanto costava la bicicletta?
+OF5;2;of5_28;47,3;4;4;Parte 9 · La frazione di una frazione;$\displaystyle\frac{2}{3}$ degli alunni di una classe possiede un animale domestico e di questi $\displaystyle\frac{3}{4}$ possiedono un gatto. Quanti sono gli alunni che hanno un gatto, se in quella classe ci sono 28 alunni?
+OF5;2;of5_49;53,9;5;3;Parte 13 · Differenza e frazione;Su uno scaffale della biblioteca ci sono romanzi storici e gialli. La differenza tra il numero dei romanzi storici e quello dei romanzi gialli è 60 e i romanzi storici sono i $\displaystyle\frac{7}{4}$ di quelli gialli. Quanti sono i romanzi di ciascun tipo?
+OF5;3;of5_5;67,1;5;5;Parte 2 · Mettere insieme quantità;A una gara di pesca sportiva Marco aveva pescato tre pesci: il primo pesava mezzo kilogrammo, il secondo pesava $\displaystyle 1\frac{1}{4}$ kg, il terzo $\displaystyle\frac{9}{20}$ kg. Quanto pesavano in tutto i pesci pescati da Marco?
+OF5;3;of5_26;69,5;6;5;Parte 8 · Quante volte ci sta;Per riempire una bottiglia di vino si usano $\displaystyle\frac{3}{4}$ di litro. a) Quante bottiglie si riescono a riempire con 5 litri? b) Quanto vino avanza?
+OF5;3;of5_34;69,8;7;4;Parte 11 · Problemi a più passaggi;Anna ha 120 €. Spende $\displaystyle\frac{5}{12}$ dei soldi in vestiti. $\displaystyle\frac{7}{10}$ dei soldi spesi in vestiti li ha usati per acquistare 4 vestiti dello stesso prezzo. Quanto costava ogni vestito?
+OF5;3;of5_51;68,5;7;4;Parte 14 · Tre quantità;In una serra sono coltivate 1800 piante. Le rose sono i $\displaystyle\frac{3}{4}$ dei gerani, le petunie sono la metà dei gerani. Quante sono le piante di ogni tipo?
+OF5;3;of5_40;83,7;8;7;Parte 15 · Rompicapi;In un sacchetto ci sono delle palline colorate. $\displaystyle\frac{4}{9}$ delle palline sono gialle, $\displaystyle\frac{3}{5}$ delle rimanenti sono blu. Tutte le altre sono rosse. Le palline rosse sono 5 meno di quelle blu. Quante sono le palline nel sacchetto?
+ON2;1;on2_8;32,0;3;1;Parte 1 · Addizione;68+7
+ON2;1;on2_11;32,0;3;1;Parte 2 · Sottrazione;87-29
+ON2;1;on2_29;32,0;3;1;Parte 4 · Divisione;84:14
+ON2;1;on2_38;32,0;3;1;Parte 5 · Calcolo veloce;1000-397
+ON2;1;on2_47;38,5;3;1;Parte 6 · Quanto vale x?;7\cdot x=7\cdot 5\cdot 4
+ON2;2;on2_17;45,3;3;2;Parte 3 · Moltiplicazione;4\cdot 17\cdot 25
+ON2;2;on2_19;45,3;3;2;Parte 3 · Moltiplicazione;5\cdot 8\cdot 13
+ON2;2;on2_30;42,2;3;2;Parte 4 · Divisione;750:25
+ON2;2;on2_44;44,9;3;1;Parte 5 · Calcolo veloce;\left(420+280\right):70
+ON2;2;on2_45;47,4;3;2;Parte 6 · Quanto vale x?;34+x=x+34
+ON2;3;on2_2;72,8;4;2;Parte 1 · Addizione;25+78+75+22
+ON2;3;on2_27;76,1;4;4;Parte 3 · Moltiplicazione;23\cdot 99
 ON2;3;on2_40;73,5;4;3;Parte 5 · Calcolo veloce;48\cdot 125
-ON2;3;on2_53;83,7;4;4;Parte 6 · Quanto vale x?;x\cdot 101=x\cdot 100+x
-ON2;3;on2_54;59,7;3;2;Parte 6 · Quanto vale x?;\left(500-260\right):20=500:20-x
-ON3;1;on3_1;13,1;5;2;Risolvi l'espressione;9\cdot 8+16:8-36:12-80:2+4
-ON3;1;on3_3;36,4;6;3;Risolvi l'espressione;56\cdot 2-72:8+8\cdot 4-216:36-9:3-7\cdot 6
-ON3;1;on3_4;14,2;5;2;Risolvi l'espressione;16:2-16:8+2\cdot 3-144:36-12:3
-ON3;2;on3_5;45,0;6;3;Risolvi l'espressione;(2+1)\cdot(2+3)-\left[(16+2\cdot 4):6\cdot 4-(16+2\cdot 4):(6\cdot 4)\right]
-ON3;2;on3_9;69,4;9;3;Risolvi l'espressione;\left\{130-12\cdot 9-\left[13+8\cdot 2\cdot(28-19+2\cdot 15):3\right]:13\right\}\cdot 2
-ON3;2;on3_10;68,9;7;4;Risolvi l'espressione;\left\{\left[(21-10\cdot 2+9)+5\cdot 2+(95-25\cdot 3-2\cdot 7)\right]\cdot 3-35\cdot 2\right\}\cdot 3
-ON3;3;on3_6;93,3;9;5;Risolvi l'espressione;12-\left\{\left[5\cdot(3+4\cdot 5)-9\cdot 10-2\cdot 4-14+2\right]+(20-3\cdot 6+1)\right\}+7-2\cdot 5
+ON2;3;on2_53;82,6;4;4;Parte 6 · Quanto vale x?;x\cdot 101=x\cdot 100+x
+ON2;3;on2_54;57,0;3;2;Parte 6 · Quanto vale x?;\left(500-260\right):20=500:20-x
+ON3;1;on3_1;13,6;5;2;Risolvi l'espressione;9\cdot 8+16:8-36:12-80:2+4
+ON3;1;on3_3;35,8;6;3;Risolvi l'espressione;56\cdot 2-72:8+8\cdot 4-216:36-9:3-7\cdot 6
+ON3;1;on3_4;14,7;5;2;Risolvi l'espressione;16:2-16:8+2\cdot 3-144:36-12:3
+ON3;2;on3_5;44,4;6;3;Risolvi l'espressione;(2+1)\cdot(2+3)-\left[(16+2\cdot 4):6\cdot 4-(16+2\cdot 4):(6\cdot 4)\right]
+ON3;2;on3_8;68,9;7;4;Risolvi l'espressione;\left\{155-25:5+\left[12-30:(18-7+4)\right]\right\}:4+\left[25+5\cdot(12+16-23)\right]-81
+ON3;2;on3_10;67,2;7;4;Risolvi l'espressione;\left\{\left[(21-10\cdot 2+9)+5\cdot 2+(95-25\cdot 3-2\cdot 7)\right]\cdot 3-35\cdot 2\right\}\cdot 3
+ON3;3;on3_6;92,8;9;5;Risolvi l'espressione;12-\left\{\left[5\cdot(3+4\cdot 5)-9\cdot 10-2\cdot 4-14+2\right]+(20-3\cdot 6+1)\right\}+7-2\cdot 5
 ON3;3;on3_7;80,0;8;4;Risolvi l'espressione;\left\{3\cdot\left[2+2\cdot(4+3\cdot 4-11)\right]+5\cdot\left[5+3\cdot 6-2\cdot(3\cdot 5-18:3\cdot 2+1)-2\right]\right\}-9\cdot 11
-ON3;3;on3_8;70,6;7;4;Risolvi l'espressione;\left\{155-25:5+\left[12-30:(18-7+4)\right]\right\}:4+\left[25+5\cdot(12+16-23)\right]-81
-P1;1;p1_14;31,5;2;1;Parte 1 · Scrivere una potenza e calcolarla;Scrivi sotto forma di potenza e calcola 3 alla quarta.
-P1;1;p1_19;38,8;2;2;Parte 2 · La potenza con esponente zero;3\cdot 4^{0}
-P1;1;p1_22;41,1;2;2;Parte 2 · La potenza con esponente zero;3^{4}:3^{4}
-P1;1;p1_36;24,4;2;1;Parte 3 · Calcolare con le potenze;100-9^{2}
-P1;1;p1_61;44,6;2;2;Parte 4 · Dal testo all'espressione;Scrivi l'espressione e calcola il valore: al cubo di $3$ si sottrae il numero $9$.
-P1;2;p1_4;47,4;2;2;Parte 1 · Scrivere una potenza e calcolarla;Scrivi sotto forma di potenza e calcola il quadrato del numero 12.
-P1;2;p1_18;48,7;2;2;Parte 2 · La potenza con esponente zero;\left(7-5\right)^{0}
-P1;2;p1_29;48,7;2;2;Parte 2 · La potenza con esponente zero;\left(13^{0}\right)^{712}
-P1;2;p1_55;55,5;3;2;Parte 3 · Calcolare con le potenze;\frac{6^{2}}{9}
-P1;2;p1_60;45,2;2;2;Parte 4 · Dal testo all'espressione;Scrivi l'espressione e calcola il valore: al quadrato del numero $5$ si aggiunge il numero $7$.
-P1;3;p1_28;79,9;3;3;Parte 2 · La potenza con esponente zero;\left(4-4^{0}\right)^{2}
-P1;3;p1_54;68,2;3;3;Parte 3 · Calcolare con le potenze;\frac{8}{2^{3}}
-P1;3;p1_58;81,7;4;4;Parte 3 · Calcolare con le potenze;20^{2}-2\cdot 0^{3}
-P1;3;p1_67;74,9;3;3;Parte 4 · Dal testo all'espressione;Scrivi l'espressione e calcola il valore: il quadrato della somma dei quadrati dei numeri $3$ e $4$.
-P1;3;p1_70;74,3;4;2;Parte 5 · Espressioni;2^{4}-3^{2}+\left(3^{2}-2\right)
-P2;1;p2_5;27,1;3;2;Parte 1 · Semplificare con le lettere;\frac{a^{18}}{a^{10}}
-P2;1;p2_14;18,3;2;2;Parte 1 · Semplificare con le lettere;x^{10}\cdot x^{n}
-P2;1;p2_45;27,1;3;2;Parte 3 · Trovare la base;2^{12}=x^{4}
-P2;1;p2_46;28,8;3;2;Fase 3 · Semplifica;3^{4}\cdot 3^{2}\cdot 3
-P2;1;p2_54;11,1;2;1;Fase 3 · Semplifica;2^{3}+2^{3}
-P2;2;p2_17;52,9;4;3;Parte 1 · Semplificare con le lettere;\frac{x^{4}\cdot x^{4}}{x^{6}}
-P2;2;p2_24;52,9;4;3;Parte 2 · Trovare l'esponente;8^{22}:8^{x}=8^{16}
-P2;2;p2_37;57,9;4;4;Parte 2 · Trovare l'esponente;3^{10}=9^{x}
-P2;2;p2_44;52,9;4;3;Parte 3 · Trovare la base;\frac{10^{15}}{10^{2}}=x^{13}
-P2;2;p2_47;51,9;5;2;Fase 3 · Semplifica;2^{9}:2^{3}:2^{2}
-P2;3;p2_16;71,2;5;4;Parte 1 · Semplificare con le lettere;\frac{x^{40}\cdot x^{5}}{x^{44}}
-P2;3;p2_35;74,6;5;5;Parte 2 · Trovare l'esponente;\frac{10^{x}}{10^{3}}=10\,000
-P2;3;p2_41;90,1;5;5;Parte 2 · Trovare l'esponente;\left[\left(4^{x}\right)^{3}\right]^{x}=4^{48}
-P2;3;p2_49;61,7;5;3;Fase 3 · Semplifica;7^{4}:7^{4}\cdot 7^{3}
-P2;3;p2_59;78,2;6;4;Fase 3 · Semplifica;2^{6}:2^{2}-2^{3}+2^{0}
-P3;1;p3_2;36,7;5;5;Risolvi l'espressione con le potenze;\left(4^{2}+3\cdot 2^{2}-5^{2}\right)^{3}:3^{2}
-P3;1;p3_4;37,9;6;5;Risolvi l'espressione con le potenze;\frac{2^{3}\cdot 3^{3}}{6^{2}}+\frac{5^{2}\cdot 2^{2}}{10^{2}}
-P3;1;p3_39;14,4;4;2;Fase 3 · Semplifica;20^{5}:2^{5}:5^{5}
-P3;1;p3_41;14,4;4;2;Fase 3 · Semplifica;3^{4}\cdot 3^{2}\cdot 2^{6}
-P3;1;p3_44;16,4;4;3;Fase 3 · Semplifica;25^{3}:5^{4}
-P3;2;p3_9;52,7;7;6;Risolvi l'espressione con le potenze;1+\left(2+3^{3}\cdot 2^{3}:6^{2}+2\right)^{2}:10
-P3;2;p3_10;50,1;8;4;Risolvi l'espressione con le potenze;4^{0}+\left[\left(6^{2}-2^{2}\cdot 3\right):2^{3}\right]^{2}
-P3;2;p3_15;66,9;9;6;Risolvi l'espressione con le potenze;10^{2}-\left[\frac{\left(2^{3}\right)^{6}}{4^{9}}\cdot\left(9+1\right)\right]^{2}
-P3;2;p3_17;61,0;7;7;Risolvi l'espressione con le potenze;\frac{\left(3^{4}\right)^{2}:3}{3^{3}\cdot 3^{2}}-\frac{\left(2^{4}\right)^{2}:2}{2^{3}\cdot 2^{2}}+7^{2}
-P3;2;p3_49;44,3;8;5;Fase 3 · Semplifica;49^{2}:7^{3}\cdot 7
-P3;3;p3_20;97,4;16;9;Risolvi l'espressione con le potenze;\left(16^{2}:4^{2}\right)^{2}:\left(8^{2}:4^{2}\right)^{2}+\left\{\left[\left(6^{6}:6^{6}\right)^{5}\cdot\left(3^{2}\right)^{2}-9^{2}\right]:\left(4^{5}:4^{4}\right)\right\}
-P3;3;p3_23;69,6;8;6;Risolvi l'espressione con le potenze;\left\{\left[\left(12^{3}\right)^{3}\right]^{2}:\left[\left(4^{3}\cdot 4^{2}\right)^{3}\cdot\left(3^{9}\cdot 3^{6}\right)\right]\right\}:\left(4^{4}\cdot 4^{6}:4^{7}\right)
-P3;3;p3_27;92,7;14;10;Risolvi l'espressione con le potenze;\left[40-40:5-\left(2^{2}\cdot 3:6\right)^{5}\right]^{2}+\left(5^{2}\right)^{4}\cdot\left(5^{4}\right)^{2}:\left(5^{2}\cdot 5^{3}\right)^{3}+\left(7^{3}\right)^{3}:49^{4}
-P3;3;p3_29;80,9;12;8;Risolvi l'espressione con le potenze;\frac{\left(5^{3}\cdot 2-2\cdot 10^{2}\right):5}{\left(10^{3}\right)^{2}:10^{5}}+\left(7^{3}:7^{2}\right)\cdot 2^{2}
-P3;3;p3_33;88,1;13;8;Risolvi l'espressione con le potenze;\frac{\left[1+2^{2}+3^{2}\right]^{2}:\left[\left(7^{3}\right)^{4}:7^{11}\right]^{2}+\left(2^{3}\right)^{2}}{\left[\left(2^{5}:2\right)\cdot 2^{3}\right]^{2}:\left(2^{3}\right)^{4}}
-P4;1;p4_1;13,5;7;5;Risolvi l'espressione con le potenze;\left[3^{0}+\left(2^{4}-2^{3}\right)^{2}:\left(4^{3}:4^{2}\right)+3\right]:2^{2}
-P4;1;p4_6;45,5;10;8;Risolvi l'espressione con le potenze;\left[5^{3}:5^{0}-\left(2^{3}\cdot 2^{2}:8\right)^{2}+11^{3}:121\right]:\left(2^{3}\cdot 5\right)+9^{6}:27^{3}:3
-P4;1;p4_11;20,5;8;5;Risolvi l'espressione con le potenze;\left[\left(132^{2}:22^{2}\cdot 2^{2}\right):\left(10^{2}:5^{2}\right)\right]:2^{2}-\left(5^{3}\cdot 5^{2}\right):5^{4}
-P4;2;p4_4;55,5;13;8;Risolvi l'espressione con le potenze;\left(3\cdot 2-2^{2}:2\cdot 3\right)^{4}+5^{9}\cdot 5^{12}:\left[\left(15:3\right)^{4}\right]^{5}-2+2^{3}:2\cdot 2^{2}
-P4;2;p4_8;67,3;14;7;Risolvi l'espressione con le potenze;\left\{\left[\left(3^{2}\cdot 3^{2}\right)^{2}:3^{3}\right]:3^{2}-3\cdot 6\right\}:\left(3^{10}:3^{6}:3^{2}\right)+\left\{\left[\left(5^{2}\cdot 2-5\cdot 4\right):10\right]^{2}+1\right\}:5
-P4;2;p4_9;54,5;10;8;Risolvi l'espressione con le potenze;\left\{\left[3^{2}+4^{2}-\left(5^{4}\cdot 5^{5}:5^{7}\right)\right]^{4}:\left[\left(3^{2}\right)^{4}\right]^{5}+7^{0}\cdot\left[\left(2^{3}\right)^{4}\right]^{0}\right\}^{5}
-P4;3;p4_3;78,8;14;10;Risolvi l'espressione con le potenze;\left[40-40:5-\left(2^{2}\cdot 3:6\right)^{5}\right]^{2}+\left(5^{2}\right)^{4}\cdot\left(5^{4}\right)^{2}:\left(5^{2}\cdot 5^{3}\right)^{3}+\left(7^{3}\right)^{3}:49^{4}
-P4;3;p4_5;68,5;14;8;Risolvi l'espressione con le potenze;2+\left(2^{10}\cdot 2^{2}\right)^{2}:\left(2^{3}\right)^{8}-\left[5\cdot\left(12-2\cdot 8:4\right):2^{2}\right]^{2}:\left[\left(2\cdot 3\right)^{2}+\left(2^{2}+6:3\cdot 2\right)^{2}\right]
-P4;3;p4_7;90,8;16;9;Risolvi l'espressione con le potenze;\left(16^{2}:4^{2}\right)^{2}:\left(8^{2}:4^{2}\right)^{2}+\left\{\left[\left(6^{6}:6^{6}\right)^{5}\cdot\left(3^{2}\right)^{2}-9^{2}\right]:\left(4^{5}:4^{4}\right)\right\}
-PR2;1;pr2_3;22,3;5;4;Risolvi la proporzione;\frac{x}{0{,}4}=\frac{5}{8}
-PR2;1;pr2_4;27,5;5;4;Risolvi la proporzione;\frac{0{,}6}{0{,}02}=\frac{x}{0{,}1}
-PR2;1;pr2_5;10,1;4;3;Risolvi la proporzione;\frac{3x}{6}=\frac{12}{3}
-PR2;1;pr2_6;16,3;5;3;Risolvi la proporzione;\frac{x}{4}=\frac{3}{0{,}3}
-PR2;1;pr2_10;20,2;5;3;Risolvi la proporzione;\frac{5{,}6}{0{,}1}=\frac{7x}{2}
-PR2;2;pr2_9;54,1;8;5;Risolvi la proporzione;\frac{0{,}2}{x}=\frac{0{,}5}{3{,}5}
-PR2;2;pr2_13;47,5;6;5;Risolvi la proporzione;\left(10-x\right):x=3:2
+ON3;3;on3_9;74,4;9;3;Risolvi l'espressione;\left\{130-12\cdot 9-\left[13+8\cdot 2\cdot(28-19+2\cdot 15):3\right]:13\right\}\cdot 2
+P1;1;p1_16;8,8;1;1;Parte 2 · La potenza con esponente zero;200^{0}
+P1;1;p1_17;9,9;1;1;Parte 2 · La potenza con esponente zero;3{,}04^{0}
+P1;1;p1_22;39,3;2;2;Parte 2 · La potenza con esponente zero;3^{4}:3^{4}
+P1;1;p1_36;26,7;2;1;Parte 3 · Calcolare con le potenze;100-9^{2}
+P1;1;p1_61;42,7;2;2;Parte 4 · Dal testo all'espressione;Scrivi l'espressione e calcola il valore: al cubo di $3$ si sottrae il numero $9$.
+P1;2;p1_18;46,9;2;2;Parte 2 · La potenza con esponente zero;\left(7-5\right)^{0}
+P1;2;p1_29;46,9;2;2;Parte 2 · La potenza con esponente zero;\left(13^{0}\right)^{712}
+P1;2;p1_50;57,7;2;3;Parte 3 · Calcolare con le potenze;\left(2\cdot 0{,}1\right)^{2}
+P1;2;p1_55;57,8;3;2;Parte 3 · Calcolare con le potenze;\frac{6^{2}}{9}
+P1;2;p1_60;43,3;2;2;Parte 4 · Dal testo all'espressione;Scrivi l'espressione e calcola il valore: al quadrato del numero $5$ si aggiunge il numero $7$.
+P1;3;p1_28;78,6;3;3;Parte 2 · La potenza con esponente zero;\left(4-4^{0}\right)^{2}
+P1;3;p1_54;66,9;3;3;Parte 3 · Calcolare con le potenze;\frac{8}{2^{3}}
+P1;3;p1_58;81,0;4;4;Parte 3 · Calcolare con le potenze;20^{2}-2\cdot 0^{3}
+P1;3;p1_67;73,6;3;3;Parte 4 · Dal testo all'espressione;Scrivi l'espressione e calcola il valore: il quadrato della somma dei quadrati dei numeri $3$ e $4$.
+P1;3;p1_69;73,3;3;3;Parte 5 · Espressioni;2^{2}+3^{2}\cdot 2+5^{2}-3^{3}
+P2;1;p2_5;27,4;3;2;Parte 1 · Semplificare con le lettere;\frac{a^{18}}{a^{10}}
+P2;1;p2_14;16,4;2;2;Parte 1 · Semplificare con le lettere;x^{10}\cdot x^{n}
+P2;1;p2_21;38,9;3;3;Parte 2 · Trovare l'esponente;4^{7}\cdot 4^{x}=4^{15}
+P2;1;p2_45;27,4;3;2;Parte 3 · Trovare la base;2^{12}=x^{4}
+P2;1;p2_46;29,1;3;2;Fase 3 · Semplifica;3^{4}\cdot 3^{2}\cdot 3
+P2;2;p2_17;53,3;4;3;Parte 1 · Semplificare con le lettere;\frac{x^{4}\cdot x^{4}}{x^{6}}
+P2;2;p2_39;51,1;4;3;Parte 2 · Trovare l'esponente;400\cdot 900\,000=36\cdot 10^{x}
+P2;2;p2_40;53,1;3;4;Parte 2 · Trovare l'esponente;\left(7^{x}\right)^{x}=7^{64}
+P2;2;p2_44;53,3;4;3;Parte 3 · Trovare la base;\frac{10^{15}}{10^{2}}=x^{13}
+P2;2;p2_47;57,3;5;2;Fase 3 · Semplifica;2^{9}:2^{3}:2^{2}
+P2;3;p2_19;71,7;5;3;Parte 1 · Semplificare con le lettere;\left(\frac{x^{6}}{x^{2}}\right)^{3}
+P2;3;p2_33;70,6;5;5;Parte 2 · Trovare l'esponente;2\cdot 2^{x}=32
+P2;3;p2_41;88,4;5;5;Parte 2 · Trovare l'esponente;\left[\left(4^{x}\right)^{3}\right]^{x}=4^{48}
+P2;3;p2_49;64,3;5;3;Fase 3 · Semplifica;7^{4}:7^{4}\cdot 7^{3}
+P2;3;p2_59;79,2;6;4;Fase 3 · Semplifica;2^{6}:2^{2}-2^{3}+2^{0}
+P3;1;p3_36;5,1;2;1;Fase 3 · Semplifica;2^{4}\cdot 5^{4}
+P3;1;p3_39;14,6;4;2;Fase 3 · Semplifica;20^{5}:2^{5}:5^{5}
+P3;1;p3_40;22,8;5;3;Fase 3 · Semplifica;4^{3}\cdot 2^{3}:8^{3}
+P3;1;p3_46;5,1;2;1;Fase 3 · Semplifica;2^{2}\cdot 3^{3}
+P3;1;p3_47;14,6;4;2;Fase 3 · Semplifica;10^{4}:5^{4}+2^{3}
+P3;2;p3_5;49,9;6;6;Risolvi l'espressione con le potenze;\left[\left(7^{2}\cdot 7\right)^{2}:\left(7^{2}\cdot 7^{3}\right)-5\right]^{4}
+P3;2;p3_9;50,6;7;6;Risolvi l'espressione con le potenze;1+\left(2+3^{3}\cdot 2^{3}:6^{2}+2\right)^{2}:10
+P3;2;p3_10;52,6;8;4;Risolvi l'espressione con le potenze;4^{0}+\left[\left(6^{2}-2^{2}\cdot 3\right):2^{3}\right]^{2}
+P3;2;p3_15;67,2;9;6;Risolvi l'espressione con le potenze;10^{2}-\left[\frac{\left(2^{3}\right)^{6}}{4^{9}}\cdot\left(9+1\right)\right]^{2}
+P3;2;p3_17;57,3;7;7;Risolvi l'espressione con le potenze;\frac{\left(3^{4}\right)^{2}:3}{3^{3}\cdot 3^{2}}-\frac{\left(2^{4}\right)^{2}:2}{2^{3}\cdot 2^{2}}+7^{2}
+P3;3;p3_22;70,3;9;6;Risolvi l'espressione con le potenze;\frac{\left[\left(10\cdot 10\right)^{2}\right]^{4}:\left(10^{2}\cdot 10^{3}\cdot 10\right)^{2}}{\left(5^{6}:5^{2}\right)^{3}:\left[\left(5^{2}\right)^{2}\right]^{2}}
+P3;3;p3_29;80,4;12;8;Risolvi l'espressione con le potenze;\frac{\left(5^{3}\cdot 2-2\cdot 10^{2}\right):5}{\left(10^{3}\right)^{2}:10^{5}}+\left(7^{3}:7^{2}\right)\cdot 2^{2}
+P3;3;p3_30;86,6;13;8;Risolvi l'espressione con le potenze;\left(3\cdot 2-2^{2}:2\cdot 3\right)^{4}+5^{9}\cdot 5^{12}:\left[\left(15:3\right)^{4}\right]^{5}-2+2^{3}:2\cdot 2^{2}
+P3;3;p3_31;83,9;10;7;Risolvi l'espressione con le potenze;\left\{\left[3^{2}+4^{2}-\left(5^{4}\cdot 5^{5}:5^{7}\right)\right]^{4}:\left[\left(3^{2}\right)^{4}\right]^{5}+7^{0}\cdot\left[\left(2^{3}\right)^{4}\right]^{0}\right\}^{5}
+P3;3;p3_34;79,0;11;5;Risolvi l'espressione con le potenze;\left\{\left(8^{5}\right)^{5}:\left[\left(8^{3}\right)^{4}\right]^{2}\cdot\left[\left(8^{2}\right)^{3}\right]^{0}\right\}^{0}+\left\{\left[\left(2^{6}\right)^{6}\right]^{2}\cdot\left[\left(2^{2}\right)^{5}\right]^{3}:\left[\left(2^{8}\right)^{6}\right]^{2}\right\}^{3}:\left(4^{3}\right)^{3}
+PR2;1;pr2_3;20,9;5;4;Risolvi la proporzione;\frac{x}{0{,}4}=\frac{5}{8}
+PR2;1;pr2_4;26,1;5;4;Risolvi la proporzione;\frac{0{,}6}{0{,}02}=\frac{x}{0{,}1}
+PR2;1;pr2_5;9,0;4;3;Risolvi la proporzione;\frac{3x}{6}=\frac{12}{3}
+PR2;1;pr2_6;16,6;5;3;Risolvi la proporzione;\frac{x}{4}=\frac{3}{0{,}3}
+PR2;1;pr2_10;20,5;5;3;Risolvi la proporzione;\frac{5{,}6}{0{,}1}=\frac{7x}{2}
+PR2;2;pr2_9;55,8;8;5;Risolvi la proporzione;\frac{0{,}2}{x}=\frac{0{,}5}{3{,}5}
+PR2;2;pr2_13;46,6;6;5;Risolvi la proporzione;\left(10-x\right):x=3:2
 PR2;2;pr2_20;57,1;8;6;Risolvi la proporzione;\frac{7x-5}{4}=\frac{4x}{8}
-PR2;2;pr2_21;43,4;6;5;Risolvi la proporzione;\frac{9x-13}{12}=\frac{2x-3}{3}
-PR2;2;pr2_23;42,2;6;5;Risolvi la proporzione;\frac{5}{6}=\frac{2x-7}{x-7}
-PR2;3;pr2_16;60,4;7;6;Risolvi la proporzione;x:18=\left(15-x\right):27
+PR2;2;pr2_21;42,5;6;5;Risolvi la proporzione;\frac{9x-13}{12}=\frac{2x-3}{3}
+PR2;2;pr2_23;41,2;6;5;Risolvi la proporzione;\frac{5}{6}=\frac{2x-7}{x-7}
+PR2;3;pr2_16;59,5;7;6;Risolvi la proporzione;x:18=\left(15-x\right):27
+PR2;3;pr2_22;65,9;10;7;Risolvi la proporzione;\frac{2x+4}{2}=\frac{12-x}{5}
 PR2;3;pr2_25;81,4;12;8;Risolvi la proporzione;x:\left(\frac{19}{15}-x\right)=\frac{2}{3}:\frac{3}{5}
 PR2;3;pr2_28;81,4;12;8;Risolvi la proporzione;\frac{8}{21}:\frac{2}{3}=x:\left(\frac{3}{8}-x\right)
-PR2;3;pr2_32;100,0;26;14;Risolvi la proporzione;\left(\frac{22}{3}+x\right):\left(\frac{5}{2}-\frac{1}{4}+\frac{2}{16}\right)=x:\left\{\frac{4}{7}\cdot\left[\left(1-\frac{5}{12}\right):\left(1-\frac{1}{12}\right)\right]+\frac{7}{11}\right\}
-PR2;3;pr2_33;94,1;18;13;Risolvi la proporzione;\left(\frac{7}{4}-x\right):x=\left[\left(1+\frac{3}{4}\right)+\frac{7}{2}\right]:\frac{7}{8}
-PR4;1;pr4_5;21,5;3;1;Stabilisci il tipo di proporzionalità;Numero di persone a tavola e grandezza della fetta di torta per ciascuno.
-PR4;1;pr4_7;21,1;3;1;Stabilisci il tipo di proporzionalità;Numero di litri di benzina e chilometri percorsi da una stessa auto.
-PR4;1;pr4_26;37,9;4;2;Risolvi il problema;Dividi 180 € in due parti che stiano nel rapporto 4 : 5.
-PR4;1;pr4_36;25,1;2;2;Risolvi il problema;Una ricetta per 6 persone richiede 450 g di riso. Quanto riso serve per 10 persone?
-PR4;1;pr4_37;31,2;2;2;Risolvi il problema;Un rubinetto che versa 12 litri al minuto riempie una vasca in 25 minuti. Quanto impiega uno da 15 litri al minuto?
-PR4;2;pr4_18;65,5;6;4;Risolvi il problema;Una stampante stampa 36 pagine in 3 minuti. Quante pagine stampa in 11 minuti?
-PR4;2;pr4_21;68,6;6;4;Risolvi il problema;Una scala ha 24 gradini alti 15 cm. Quanti gradini avrebbe la stessa scala con gradini alti 18 cm?
-PR4;2;pr4_31;65,1;6;3;Risolvi il problema;Il perimetro di un rettangolo misura 96 cm e i lati stanno nel rapporto 5 : 7. Calcola l'area.
-PR4;2;pr4_39;51,3;4;3;Risolvi il problema;Quattro stampanti uguali in 3 ore producono 2.400 copie. Quante copie producono 6 stampanti in 5 ore?
-PR4;2;pr4_40;42,2;5;1;Risolvi il problema;Un guadagno di 2.100 € va diviso tra tre soci che possiedono il 20%, il 30% e il 50% delle quote. Quanto riceve ciascuno?
-PR4;3;pr4_9;74,0;6;5;Risolvi il problema;Otto quaderni costano 10,40 €. Quanto si spende per quattordici quaderni dello stesso tipo?
-PR4;3;pr4_10;73,3;6;5;Risolvi il problema;Sei operai finiscono un lavoro in 15 giorni. In quanti giorni lo finirebbero 10 operai?
-PR4;3;pr4_13;75,3;6;5;Risolvi il problema;Un'automobile percorre 84 km con 6 litri di benzina. Quanti chilometri percorre con 14 litri?
-PR4;3;pr4_22;74,6;6;5;Risolvi il problema;Tre barattoli uguali contengono in tutto 1,2 kg di miele. Quanti barattoli servono per 3,2 kg?
-PR4;3;pr4_23;76,3;6;5;Risolvi il problema;Su una carta geografica 2 cm corrispondono a 5 km reali. A quanti chilometri corrispondono 13,4 cm?
-PX1;1;px1_7;36,8;7;3;Parte 1 · Percentuali nelle figure;"Quante figure si devono togliere, perché il 25% delle figure siano triangoli e il 50% siano cerchi? Togline il meno possibile.<svg viewBox=""0 0 282 174"" role=""img"" aria-label=""gruppo di figure"" style=""width:100%;max-width:282px;height:auto;color:var(--blu);display:block;margin:8px auto""><rect x=""3"" y=""3"" width=""276"" height=""168"" rx=""10"" fill=""none"" stroke=""currentColor"" stroke-width=""2"" opacity="".45""/><path d=""M33.0,16.0 L50.0,50.0 L16.0,50.0 Z"" fill=""none"" stroke=""currentColor"" stroke-width=""2.4""/><path d=""M87.0,16.0 L104.0,50.0 L70.0,50.0 Z"" fill=""none"" stroke=""currentColor"" stroke-width=""2.4""/><path d=""M141.0,16.0 L158.0,50.0 L124.0,50.0 Z"" fill=""none"" stroke=""currentColor"" stroke-width=""2.4""/><circle cx=""33.0"" cy=""87.0"" r=""17.0"" fill=""none"" stroke=""currentColor"" stroke-width=""2.4""/><circle cx=""87.0"" cy=""87.0"" r=""17.0"" fill=""none"" stroke=""currentColor"" stroke-width=""2.4""/><circle cx=""141.0"" cy=""87.0"" r=""17.0"" fill=""none"" stroke=""currentColor"" stroke-width=""2.4""/><circle cx=""195.0"" cy=""87.0"" r=""17.0"" fill=""none"" stroke=""currentColor"" stroke-width=""2.4""/><circle cx=""249.0"" cy=""87.0"" r=""17.0"" fill=""none"" stroke=""currentColor"" stroke-width=""2.4""/><rect x=""16.0"" y=""124.0"" width=""34"" height=""34"" rx=""3"" fill=""none"" stroke=""currentColor"" stroke-width=""2.4""/><rect x=""70.0"" y=""124.0"" width=""34"" height=""34"" rx=""3"" fill=""none"" stroke=""currentColor"" stroke-width=""2.4""/><rect x=""124.0"" y=""124.0"" width=""34"" height=""34"" rx=""3"" fill=""none"" stroke=""currentColor"" stroke-width=""2.4""/><rect x=""178.0"" y=""124.0"" width=""34"" height=""34"" rx=""3"" fill=""none"" stroke=""currentColor"" stroke-width=""2.4""/></svg>"
-PX1;1;px1_10;27,7;6;3;Parte 2 · Ragionare con le percentuali;"L'interesse annuo applicato sui prestiti è del 10%. Prendendo in prestito 4800 €, quanti euro di interesse si devono pagare dopo a) un anno; b) tre mesi; c) sei mesi; d) un mese?"
-PX1;1;px1_11;31,4;6;3;Parte 2 · Ragionare con le percentuali;A un pranzo c'erano 10 invitati. Dopo mangiato tutti hanno preso il caffè: il 60% degli invitati ha aggiunto lo zucchero e il 30% ha aggiunto un goccio di latte. a) Qual è il numero minimo di invitati che non hanno messo né zucchero né latte? E il massimo? b) Se due invitati hanno preso il caffè senza zucchero e senza latte, quanti hanno messo sia lo zucchero sia il latte?
-PX1;2;px1_5;55,7;7;5;Parte 1 · Percentuali nelle figure;"Aggiungi cerchi e quadrati, in modo che le frasi siano vere: «il 20% delle figure sono quadrati» e «il 60% sono cerchi». Quante figure bisogna aggiungere?<svg viewBox=""0 0 228 174"" role=""img"" aria-label=""gruppo di figure"" style=""width:100%;max-width:228px;height:auto;color:var(--blu);display:block;margin:8px auto""><rect x=""3"" y=""3"" width=""222"" height=""168"" rx=""10"" fill=""none"" stroke=""currentColor"" stroke-width=""2"" opacity="".45""/><rect x=""16.0"" y=""16.0"" width=""34"" height=""34"" rx=""3"" fill=""none"" stroke=""currentColor"" stroke-width=""2.4""/><rect x=""70.0"" y=""16.0"" width=""34"" height=""34"" rx=""3"" fill=""none"" stroke=""currentColor"" stroke-width=""2.4""/><circle cx=""33.0"" cy=""87.0"" r=""17.0"" fill=""none"" stroke=""currentColor"" stroke-width=""2.4""/><circle cx=""87.0"" cy=""87.0"" r=""17.0"" fill=""none"" stroke=""currentColor"" stroke-width=""2.4""/><circle cx=""141.0"" cy=""87.0"" r=""17.0"" fill=""none"" stroke=""currentColor"" stroke-width=""2.4""/><circle cx=""195.0"" cy=""87.0"" r=""17.0"" fill=""none"" stroke=""currentColor"" stroke-width=""2.4""/><path d=""M33.0,124.0 L50.0,158.0 L16.0,158.0 Z"" fill=""none"" stroke=""currentColor"" stroke-width=""2.4""/><path d=""M87.0,124.0 L104.0,158.0 L70.0,158.0 Z"" fill=""none"" stroke=""currentColor"" stroke-width=""2.4""/><path d=""M141.0,124.0 L158.0,158.0 L124.0,158.0 Z"" fill=""none"" stroke=""currentColor"" stroke-width=""2.4""/></svg>"
-PX1;2;px1_6;47,5;7;4;Parte 1 · Percentuali nelle figure;"Aggiungi cerchi e quadrati, in modo che la frase sia vera: «il 60% delle figure sono quadrati». Le soluzioni sono più d'una: trova quella con meno figure possibili.<svg viewBox=""0 0 174 174"" role=""img"" aria-label=""gruppo di figure"" style=""width:100%;max-width:174px;height:auto;color:var(--blu);display:block;margin:8px auto""><rect x=""3"" y=""3"" width=""168"" height=""168"" rx=""10"" fill=""none"" stroke=""currentColor"" stroke-width=""2"" opacity="".45""/><circle cx=""33.0"" cy=""33.0"" r=""17.0"" fill=""none"" stroke=""currentColor"" stroke-width=""2.4""/><circle cx=""87.0"" cy=""33.0"" r=""17.0"" fill=""none"" stroke=""currentColor"" stroke-width=""2.4""/><rect x=""16.0"" y=""70.0"" width=""34"" height=""34"" rx=""3"" fill=""none"" stroke=""currentColor"" stroke-width=""2.4""/><rect x=""70.0"" y=""70.0"" width=""34"" height=""34"" rx=""3"" fill=""none"" stroke=""currentColor"" stroke-width=""2.4""/><rect x=""124.0"" y=""70.0"" width=""34"" height=""34"" rx=""3"" fill=""none"" stroke=""currentColor"" stroke-width=""2.4""/><rect x=""16.0"" y=""124.0"" width=""34"" height=""34"" rx=""3"" fill=""none"" stroke=""currentColor"" stroke-width=""2.4""/></svg>"
-PX1;2;px1_8;58,9;7;5;Parte 1 · Percentuali nelle figure;Disegna un gruppo di figure con queste regole: il 40% sono cerchi, il 15% sono quadrati, il 25% sono triangoli, e il 75% delle figure sono nere. Qual è il numero più piccolo di figure che il gruppo può avere?
-PX1;3;px1_1;65,2;8;5;Parte 1 · Percentuali nelle figure;"Aggiungi dei cerchi, in modo che la frase sia vera: «il 50% delle figure sono cerchi». Quanti cerchi bisogna aggiungere?<svg viewBox=""0 0 282 120"" role=""img"" aria-label=""gruppo di figure"" style=""width:100%;max-width:282px;height:auto;color:var(--blu);display:block;margin:8px auto""><rect x=""3"" y=""3"" width=""276"" height=""114"" rx=""10"" fill=""none"" stroke=""currentColor"" stroke-width=""2"" opacity="".45""/><circle cx=""33.0"" cy=""33.0"" r=""17.0"" fill=""none"" stroke=""currentColor"" stroke-width=""2.4""/><circle cx=""87.0"" cy=""33.0"" r=""17.0"" fill=""none"" stroke=""currentColor"" stroke-width=""2.4""/><circle cx=""141.0"" cy=""33.0"" r=""17.0"" fill=""none"" stroke=""currentColor"" stroke-width=""2.4""/><rect x=""178.0"" y=""16.0"" width=""34"" height=""34"" rx=""3"" fill=""none"" stroke=""currentColor"" stroke-width=""2.4""/><rect x=""232.0"" y=""16.0"" width=""34"" height=""34"" rx=""3"" fill=""none"" stroke=""currentColor"" stroke-width=""2.4""/><rect x=""16.0"" y=""70.0"" width=""34"" height=""34"" rx=""3"" fill=""none"" stroke=""currentColor"" stroke-width=""2.4""/><rect x=""70.0"" y=""70.0"" width=""34"" height=""34"" rx=""3"" fill=""none"" stroke=""currentColor"" stroke-width=""2.4""/><rect x=""124.0"" y=""70.0"" width=""34"" height=""34"" rx=""3"" fill=""none"" stroke=""currentColor"" stroke-width=""2.4""/><rect x=""178.0"" y=""70.0"" width=""34"" height=""34"" rx=""3"" fill=""none"" stroke=""currentColor"" stroke-width=""2.4""/><rect x=""232.0"" y=""70.0"" width=""34"" height=""34"" rx=""3"" fill=""none"" stroke=""currentColor"" stroke-width=""2.4""/></svg>"
-PX1;3;px1_3;83,4;10;7;Parte 1 · Percentuali nelle figure;"Aggiungi dei cerchi, in modo che la frase sia vera: «il 20% delle figure sono cerchi». Quanti cerchi bisogna aggiungere?<svg viewBox=""0 0 174 174"" role=""img"" aria-label=""gruppo di figure"" style=""width:100%;max-width:174px;height:auto;color:var(--blu);display:block;margin:8px auto""><rect x=""3"" y=""3"" width=""168"" height=""168"" rx=""10"" fill=""none"" stroke=""currentColor"" stroke-width=""2"" opacity="".45""/><circle cx=""33.0"" cy=""33.0"" r=""17.0"" fill=""none"" stroke=""currentColor"" stroke-width=""2.4""/><rect x=""70.0"" y=""16.0"" width=""34"" height=""34"" rx=""3"" fill=""none"" stroke=""currentColor"" stroke-width=""2.4""/><rect x=""124.0"" y=""16.0"" width=""34"" height=""34"" rx=""3"" fill=""none"" stroke=""currentColor"" stroke-width=""2.4""/><rect x=""16.0"" y=""70.0"" width=""34"" height=""34"" rx=""3"" fill=""none"" stroke=""currentColor"" stroke-width=""2.4""/><rect x=""70.0"" y=""70.0"" width=""34"" height=""34"" rx=""3"" fill=""none"" stroke=""currentColor"" stroke-width=""2.4""/><rect x=""124.0"" y=""70.0"" width=""34"" height=""34"" rx=""3"" fill=""none"" stroke=""currentColor"" stroke-width=""2.4""/><rect x=""16.0"" y=""124.0"" width=""34"" height=""34"" rx=""3"" fill=""none"" stroke=""currentColor"" stroke-width=""2.4""/><rect x=""70.0"" y=""124.0"" width=""34"" height=""34"" rx=""3"" fill=""none"" stroke=""currentColor"" stroke-width=""2.4""/><rect x=""124.0"" y=""124.0"" width=""34"" height=""34"" rx=""3"" fill=""none"" stroke=""currentColor"" stroke-width=""2.4""/></svg>"
-PX1;3;px1_9;69,3;7;6;Parte 1 · Percentuali nelle figure;In un parco crescono betulle, abeti e pini. La figura del libro mostra il 10% delle betulle, il 5% dei pini e il 60% degli abeti: nel disegno si contano 3 betulle, 1 pino e 3 abeti. Quanti sono in tutto le betulle, gli abeti e i pini?
+PR2;3;pr2_33;93,7;18;13;Risolvi la proporzione;\left(\frac{7}{4}-x\right):x=\left[\left(1+\frac{3}{4}\right)+\frac{7}{2}\right]:\frac{7}{8}
+PR4;1;pr4_5;22,5;3;1;Stabilisci il tipo di proporzionalità;Numero di persone a tavola e grandezza della fetta di torta per ciascuno.
+PR4;1;pr4_7;22,1;3;1;Stabilisci il tipo di proporzionalità;Numero di litri di benzina e chilometri percorsi da una stessa auto.
+PR4;1;pr4_33;25,3;2;2;Risolvi il problema;Un'automobile consuma 6 litri di benzina ogni 80 km. Quanti litri consuma in un viaggio di 340 km?
+PR4;1;pr4_35;23,1;2;2;Risolvi il problema;In una scuola il 45% degli studenti sono maschi e sono 270. Quanti studenti ci sono in tutto?
+PR4;1;pr4_37;27,8;2;2;Risolvi il problema;Un rubinetto che versa 12 litri al minuto riempie una vasca in 25 minuti. Quanto impiega uno da 15 litri al minuto?
+PR4;2;pr4_25;43,8;4;2;Risolvi il problema;Due amici si dividono 84 € in parti direttamente proporzionali a 2 e 5. Quanto riceve ciascuno?
+PR4;2;pr4_26;38,3;4;2;Risolvi il problema;Dividi 180 € in due parti che stiano nel rapporto 4 : 5.
+PR4;2;pr4_28;47,1;4;2;Risolvi il problema;Un'asse lunga 2,4 m viene tagliata in due pezzi le cui lunghezze stanno nel rapporto 1 : 3. Quanto misura ciascun pezzo?
+PR4;2;pr4_29;46,8;4;2;Risolvi il problema;Un premio di 1.350 € va diviso tra due squadre in rapporto alle partite vinte: 4 e 5. Quanto riceve ciascuna squadra?
+PR4;2;pr4_32;45,6;4;2;Risolvi il problema;In una miscela di caffè, arabica e robusta stanno nel rapporto 7 : 3. In 5 kg di miscela, quanta arabica c'è?
+PR4;3;pr4_27;46,9;5;2;Risolvi il problema;Tre amici si spartiscono 96 € nel rapporto 3 : 4 : 5. Quanto spetta a ciascuno?
+PR4;3;pr4_30;50,3;5;2;Risolvi il problema;Il perimetro di un triangolo misura 120 cm e i lati stanno nel rapporto 3 : 4 : 5. Quanto misurano?
+PR4;3;pr4_31;67,4;6;3;Risolvi il problema;Il perimetro di un rettangolo misura 96 cm e i lati stanno nel rapporto 5 : 7. Calcola l'area.
+PR4;3;pr4_34;51,2;4;3;Risolvi il problema;Cinque operai in 6 giorni costruiscono 2 km di strada. Quanti operai servono per costruire 3 km in 9 giorni?
+PR4;3;pr4_39;49,6;4;3;Risolvi il problema;Quattro stampanti uguali in 3 ore producono 2.400 copie. Quante copie producono 6 stampanti in 5 ore?
+PX1;1;px1_4;32,0;5;5;Parte 1 · Percentuali nelle figure;"Aggiungi cerchi e quadrati, in modo che le frasi siano vere: «il 20% delle figure sono quadrati» e «il 40% sono cerchi». Quante figure bisogna aggiungere?<svg viewBox=""0 0 120 120"" role=""img"" aria-label=""gruppo di figure"" style=""width:100%;max-width:120px;height:auto;color:var(--blu);display:block;margin:8px auto""><rect x=""3"" y=""3"" width=""114"" height=""114"" rx=""10"" fill=""none"" stroke=""currentColor"" stroke-width=""2"" opacity="".45""/><path d=""M33.0,16.0 L50.0,50.0 L16.0,50.0 Z"" fill=""none"" stroke=""currentColor"" stroke-width=""2.4""/><path d=""M87.0,16.0 L104.0,50.0 L70.0,50.0 Z"" fill=""none"" stroke=""currentColor"" stroke-width=""2.4""/><circle cx=""33.0"" cy=""87.0"" r=""17.0"" fill=""none"" stroke=""currentColor"" stroke-width=""2.4""/><circle cx=""87.0"" cy=""87.0"" r=""17.0"" fill=""none"" stroke=""currentColor"" stroke-width=""2.4""/></svg>"
+PX1;1;px1_10;28,6;6;3;Parte 2 · Ragionare con le percentuali;"L'interesse annuo applicato sui prestiti è del 10%. Prendendo in prestito 4800 €, quanti euro di interesse si devono pagare dopo a) un anno; b) tre mesi; c) sei mesi; d) un mese?"
+PX1;1;px1_11;32,3;6;3;Parte 2 · Ragionare con le percentuali;A un pranzo c'erano 10 invitati. Dopo mangiato tutti hanno preso il caffè: il 60% degli invitati ha aggiunto lo zucchero e il 30% ha aggiunto un goccio di latte. a) Qual è il numero minimo di invitati che non hanno messo né zucchero né latte? E il massimo? b) Se due invitati hanno preso il caffè senza zucchero e senza latte, quanti hanno messo sia lo zucchero sia il latte?
+PX1;2;px1_5;54,8;7;5;Parte 1 · Percentuali nelle figure;"Aggiungi cerchi e quadrati, in modo che le frasi siano vere: «il 20% delle figure sono quadrati» e «il 60% sono cerchi». Quante figure bisogna aggiungere?<svg viewBox=""0 0 228 174"" role=""img"" aria-label=""gruppo di figure"" style=""width:100%;max-width:228px;height:auto;color:var(--blu);display:block;margin:8px auto""><rect x=""3"" y=""3"" width=""222"" height=""168"" rx=""10"" fill=""none"" stroke=""currentColor"" stroke-width=""2"" opacity="".45""/><rect x=""16.0"" y=""16.0"" width=""34"" height=""34"" rx=""3"" fill=""none"" stroke=""currentColor"" stroke-width=""2.4""/><rect x=""70.0"" y=""16.0"" width=""34"" height=""34"" rx=""3"" fill=""none"" stroke=""currentColor"" stroke-width=""2.4""/><circle cx=""33.0"" cy=""87.0"" r=""17.0"" fill=""none"" stroke=""currentColor"" stroke-width=""2.4""/><circle cx=""87.0"" cy=""87.0"" r=""17.0"" fill=""none"" stroke=""currentColor"" stroke-width=""2.4""/><circle cx=""141.0"" cy=""87.0"" r=""17.0"" fill=""none"" stroke=""currentColor"" stroke-width=""2.4""/><circle cx=""195.0"" cy=""87.0"" r=""17.0"" fill=""none"" stroke=""currentColor"" stroke-width=""2.4""/><path d=""M33.0,124.0 L50.0,158.0 L16.0,158.0 Z"" fill=""none"" stroke=""currentColor"" stroke-width=""2.4""/><path d=""M87.0,124.0 L104.0,158.0 L70.0,158.0 Z"" fill=""none"" stroke=""currentColor"" stroke-width=""2.4""/><path d=""M141.0,124.0 L158.0,158.0 L124.0,158.0 Z"" fill=""none"" stroke=""currentColor"" stroke-width=""2.4""/></svg>"
+PX1;2;px1_6;49,3;7;4;Parte 1 · Percentuali nelle figure;"Aggiungi cerchi e quadrati, in modo che la frase sia vera: «il 60% delle figure sono quadrati». Le soluzioni sono più d'una: trova quella con meno figure possibili.<svg viewBox=""0 0 174 174"" role=""img"" aria-label=""gruppo di figure"" style=""width:100%;max-width:174px;height:auto;color:var(--blu);display:block;margin:8px auto""><rect x=""3"" y=""3"" width=""168"" height=""168"" rx=""10"" fill=""none"" stroke=""currentColor"" stroke-width=""2"" opacity="".45""/><circle cx=""33.0"" cy=""33.0"" r=""17.0"" fill=""none"" stroke=""currentColor"" stroke-width=""2.4""/><circle cx=""87.0"" cy=""33.0"" r=""17.0"" fill=""none"" stroke=""currentColor"" stroke-width=""2.4""/><rect x=""16.0"" y=""70.0"" width=""34"" height=""34"" rx=""3"" fill=""none"" stroke=""currentColor"" stroke-width=""2.4""/><rect x=""70.0"" y=""70.0"" width=""34"" height=""34"" rx=""3"" fill=""none"" stroke=""currentColor"" stroke-width=""2.4""/><rect x=""124.0"" y=""70.0"" width=""34"" height=""34"" rx=""3"" fill=""none"" stroke=""currentColor"" stroke-width=""2.4""/><rect x=""16.0"" y=""124.0"" width=""34"" height=""34"" rx=""3"" fill=""none"" stroke=""currentColor"" stroke-width=""2.4""/></svg>"
+PX1;2;px1_8;58,0;7;5;Parte 1 · Percentuali nelle figure;Disegna un gruppo di figure con queste regole: il 40% sono cerchi, il 15% sono quadrati, il 25% sono triangoli, e il 75% delle figure sono nere. Qual è il numero più piccolo di figure che il gruppo può avere?
+PX1;3;px1_1;67,5;8;5;Parte 1 · Percentuali nelle figure;"Aggiungi dei cerchi, in modo che la frase sia vera: «il 50% delle figure sono cerchi». Quanti cerchi bisogna aggiungere?<svg viewBox=""0 0 282 120"" role=""img"" aria-label=""gruppo di figure"" style=""width:100%;max-width:282px;height:auto;color:var(--blu);display:block;margin:8px auto""><rect x=""3"" y=""3"" width=""276"" height=""114"" rx=""10"" fill=""none"" stroke=""currentColor"" stroke-width=""2"" opacity="".45""/><circle cx=""33.0"" cy=""33.0"" r=""17.0"" fill=""none"" stroke=""currentColor"" stroke-width=""2.4""/><circle cx=""87.0"" cy=""33.0"" r=""17.0"" fill=""none"" stroke=""currentColor"" stroke-width=""2.4""/><circle cx=""141.0"" cy=""33.0"" r=""17.0"" fill=""none"" stroke=""currentColor"" stroke-width=""2.4""/><rect x=""178.0"" y=""16.0"" width=""34"" height=""34"" rx=""3"" fill=""none"" stroke=""currentColor"" stroke-width=""2.4""/><rect x=""232.0"" y=""16.0"" width=""34"" height=""34"" rx=""3"" fill=""none"" stroke=""currentColor"" stroke-width=""2.4""/><rect x=""16.0"" y=""70.0"" width=""34"" height=""34"" rx=""3"" fill=""none"" stroke=""currentColor"" stroke-width=""2.4""/><rect x=""70.0"" y=""70.0"" width=""34"" height=""34"" rx=""3"" fill=""none"" stroke=""currentColor"" stroke-width=""2.4""/><rect x=""124.0"" y=""70.0"" width=""34"" height=""34"" rx=""3"" fill=""none"" stroke=""currentColor"" stroke-width=""2.4""/><rect x=""178.0"" y=""70.0"" width=""34"" height=""34"" rx=""3"" fill=""none"" stroke=""currentColor"" stroke-width=""2.4""/><rect x=""232.0"" y=""70.0"" width=""34"" height=""34"" rx=""3"" fill=""none"" stroke=""currentColor"" stroke-width=""2.4""/></svg>"
+PX1;3;px1_2;67,5;8;5;Parte 1 · Percentuali nelle figure;"Aggiungi dei cerchi, in modo che la frase sia vera: «il 75% delle figure sono cerchi». Quanti cerchi bisogna aggiungere?<svg viewBox=""0 0 228 174"" role=""img"" aria-label=""gruppo di figure"" style=""width:100%;max-width:228px;height:auto;color:var(--blu);display:block;margin:8px auto""><rect x=""3"" y=""3"" width=""222"" height=""168"" rx=""10"" fill=""none"" stroke=""currentColor"" stroke-width=""2"" opacity="".45""/><circle cx=""33.0"" cy=""33.0"" r=""17.0"" fill=""none"" stroke=""currentColor"" stroke-width=""2.4""/><circle cx=""87.0"" cy=""33.0"" r=""17.0"" fill=""none"" stroke=""currentColor"" stroke-width=""2.4""/><circle cx=""141.0"" cy=""33.0"" r=""17.0"" fill=""none"" stroke=""currentColor"" stroke-width=""2.4""/><circle cx=""195.0"" cy=""33.0"" r=""17.0"" fill=""none"" stroke=""currentColor"" stroke-width=""2.4""/><circle cx=""33.0"" cy=""87.0"" r=""17.0"" fill=""none"" stroke=""currentColor"" stroke-width=""2.4""/><rect x=""16.0"" y=""124.0"" width=""34"" height=""34"" rx=""3"" fill=""none"" stroke=""currentColor"" stroke-width=""2.4""/><rect x=""70.0"" y=""124.0"" width=""34"" height=""34"" rx=""3"" fill=""none"" stroke=""currentColor"" stroke-width=""2.4""/><rect x=""124.0"" y=""124.0"" width=""34"" height=""34"" rx=""3"" fill=""none"" stroke=""currentColor"" stroke-width=""2.4""/></svg>"
+PX1;3;px1_9;65,7;7;6;Parte 1 · Percentuali nelle figure;In un parco crescono betulle, abeti e pini. La figura del libro mostra il 10% delle betulle, il 5% dei pini e il 60% degli abeti: nel disegno si contano 3 betulle, 1 pino e 3 abeti. Quanti sono in tutto le betulle, gli abeti e i pini?
 PX2;1;px2_17;32,8;4;2;Parte A · Percentuali con il numero decimale;Il würstel contiene l'1,8% di sale, il pane l'1,2% e il formaggio lo 0,4%. Giulia per pranzo ha mangiato 250 g di würstel, 2 fette di pane (60 g) e 50 g di formaggio. Quanto sale assume con questo pasto? La quantità consigliata è meno di 5 g al giorno.
-PX2;1;px2_22;36,2;4;3;Parte C · Una percentuale dopo l'altra;Sul prezzo di un oggetto c'è uno sconto del 25%. Applicando uno sconto ulteriore del 20% sul prezzo scontato, l'oggetto si può comprare per 294 €. Quale era il prezzo di partenza dell'oggetto?
-PX2;1;px2_31;33,2;4;3;Parte D · Che percentuale è?;"Calcola quale percentuale della superficie del giardino è occupata dalla piscina.<svg viewBox=""0 0 340 250"" role=""img"" aria-label=""giardino rettangolare con dentro una piscina"" style=""width:100%;max-width:340px;height:auto;color:var(--blu);display:block;margin:8px auto""><rect x=""20"" y=""24"" width=""300"" height=""205"" rx=""4"" fill=""none"" stroke=""currentColor"" stroke-width=""2.4""/><rect x=""150"" y=""124"" width=""118"" height=""47"" rx=""3"" fill=""none"" stroke=""currentColor"" stroke-width=""2.4""/><text x=""170"" y=""16"" fill=""currentColor"" font-size=""15"" text-anchor=""middle"">38 m</text><text transform=""translate(12,126) rotate(-90)"" fill=""currentColor"" font-size=""15"" text-anchor=""middle"">26 m</text><text x=""209"" y=""118"" fill=""currentColor"" font-size=""15"" text-anchor=""middle"">15 m</text><text transform=""translate(284,148) rotate(-90)"" fill=""currentColor"" font-size=""15"" text-anchor=""middle"">6 m</text><text x=""209"" y=""153"" fill=""currentColor"" font-size=""14"" text-anchor=""middle"">piscina</text></svg>"
-PX2;1;px2_43;19,8;4;1;Parte G · Sconti, rate e prezzi dichiarati;Una ditta di traslochi distribuisce un buono sconto dell'8%, che si ottiene presentando il volantino pubblicitario. Ubaldo lo usa per un trasporto mobili e risparmia sul preventivo 459,20 €. Calcola il costo del trasporto senza lo sconto.
-PX2;1;px2_48;35,4;4;3;Parte H · Prezzi che cambiano nel tempo;Il prezzo dell'oro il 6 settembre 2011 aveva raggiunto i 1921 dollari l'oncia. Il prezzo è salito del 750% rispetto allo stesso periodo del 2001. Calcola qual era il prezzo dell'oro nel 2001.
+PX2;1;px2_22;32,4;4;3;Parte C · Una percentuale dopo l'altra;Sul prezzo di un oggetto c'è uno sconto del 25%. Applicando uno sconto ulteriore del 20% sul prezzo scontato, l'oggetto si può comprare per 294 €. Quale era il prezzo di partenza dell'oggetto?
+PX2;1;px2_31;29,4;4;3;Parte D · Che percentuale è?;"Calcola quale percentuale della superficie del giardino è occupata dalla piscina.<svg viewBox=""0 0 340 250"" role=""img"" aria-label=""giardino rettangolare con dentro una piscina"" style=""width:100%;max-width:340px;height:auto;color:var(--blu);display:block;margin:8px auto""><rect x=""20"" y=""24"" width=""300"" height=""205"" rx=""4"" fill=""none"" stroke=""currentColor"" stroke-width=""2.4""/><rect x=""150"" y=""124"" width=""118"" height=""47"" rx=""3"" fill=""none"" stroke=""currentColor"" stroke-width=""2.4""/><text x=""170"" y=""16"" fill=""currentColor"" font-size=""15"" text-anchor=""middle"">38 m</text><text transform=""translate(12,126) rotate(-90)"" fill=""currentColor"" font-size=""15"" text-anchor=""middle"">26 m</text><text x=""209"" y=""118"" fill=""currentColor"" font-size=""15"" text-anchor=""middle"">15 m</text><text transform=""translate(284,148) rotate(-90)"" fill=""currentColor"" font-size=""15"" text-anchor=""middle"">6 m</text><text x=""209"" y=""153"" fill=""currentColor"" font-size=""14"" text-anchor=""middle"">piscina</text></svg>"
+PX2;1;px2_43;21,4;4;1;Parte G · Sconti, rate e prezzi dichiarati;Una ditta di traslochi distribuisce un buono sconto dell'8%, che si ottiene presentando il volantino pubblicitario. Ubaldo lo usa per un trasporto mobili e risparmia sul preventivo 459,20 €. Calcola il costo del trasporto senza lo sconto.
+PX2;1;px2_48;31,6;4;3;Parte H · Prezzi che cambiano nel tempo;Il prezzo dell'oro il 6 settembre 2011 aveva raggiunto i 1921 dollari l'oncia. Il prezzo è salito del 750% rispetto allo stesso periodo del 2001. Calcola qual era il prezzo dell'oro nel 2001.
 PX2;2;px2_2;49,6;6;3;Parte A · Percentuali con il numero decimale;Per preparare una torta bisogna mettere 3 parti di zucchero ogni 4 parti di farina. Se si impiegano 500 g di farina, quanto zucchero bisogna utilizzare?
-PX2;2;px2_7;47,1;5;3;Parte B · Sconti, aumenti e IVA;Un negoziante, durante il periodo di Natale, aumenta tutti i prezzi del 10%. Se il prezzo iniziale di un paio di scarpe era 70,00 €, qual è ora il suo prezzo? Dopo le feste, il negoziante abbassa i nuovi prezzi del 10%. Quanto costano ora le scarpe?
-PX2;2;px2_20;44,4;5;3;Parte C · Una percentuale dopo l'altra;Pietro ha speso il 20% dei suoi soldi per uno skateboard. Ha speso poi il 10% dei soldi rimasti per comprare un cappello con visiera. Gli rimangono ancora 216 €. Quanti soldi aveva all'inizio?
-PX2;2;px2_30;53,2;5;4;Parte D · Che percentuale è?;Su un vassoio ci sono 50 salatini, di cui il 60% sono pizzette. Se si aggiungono 14 pizzette, quanto diventa la percentuale di pizzette?
-PX2;2;px2_34;45,4;5;3;Parte E · Miscele e concentrazioni;In un contenitore si mescolano 1 kg di soluzione di acido solforico al 15 per cento con 1,5 kg di soluzione di acido solforico al 25 per cento. Qual è la concentrazione percentuale della soluzione acida risultante?
-PX2;3;px2_6;77,3;10;6;Parte B · Sconti, aumenti e IVA;Un paio di scarpe scontato del 20% costa 40 €. Quanto costava prima dello sconto?
-PX2;3;px2_13;65,8;7;4;Parte D · Che percentuale è?;Un oggetto costa 101,00 € IVA esclusa e 105,60 € IVA inclusa. Qual è la percentuale di IVA?
-PX2;3;px2_38;69,8;7;4;Parte E · Miscele e concentrazioni;Una soluzione salina ha una concentrazione di sale del 30%. Se si aggiungono alla soluzione 100 g di acqua e 100 g di sale, la concentrazione della soluzione aumenta, diminuisce o non cambia? Spiega perché.
-PX2;3;px2_40;69,4;13;3;Parte F · Al supermercato;"Su tre cartellini ci sono il prezzo di listino e la percentuale di sconto: 800 g a 2,39 € con il 16% di sconto; 4 x 75 g a 0,99 € con il 30%; 3 x 300 g a 2,99 € con il 16%. Calcola per ognuno il prezzo scontato, arrotondato al centesimo, e il prezzo al kg."
-PX2;3;px2_51;79,8;7;4;Parte I · Percentuali di tutti i giorni;Lo zio Bepi mette le olive raccolte in 68 cassette. Ogni cassetta pesa, olive comprese, 22,5 kg, e vuota pesa 90 g. Quanti quintali di olive ha raccolto, e che percentuale è il peso netto del peso lordo portato all'oleificio? (Un quintale è 100 kg.)
-SCO1;1;sco1_10;35,2;2;2;Scomponi in fattori il polinomio;m^{3}-m^{2}-6m
-SCO1;1;sco1_11;34,2;2;2;Scomponi in fattori il polinomio;2a^{2}-8b^{2}
-SCO1;1;sco1_12;37,7;2;2;Scomponi in fattori il polinomio;x^{4}+2x^{3}+x^{2}
-SCO1;1;sco1_13;37,7;2;2;Scomponi in fattori il polinomio;b^{2}+6b+9-c^{2}
-SCO1;1;sco1_16;33,6;2;2;Scomponi in fattori il polinomio;2x^{4}+2x
-SCO1;2;sco1_1;42,3;2;2;Scomponi in fattori il polinomio;a^{5}b^{2}+4ab^{4}+4a^{3}b^{3}
-SCO1;2;sco1_3;54,8;3;2;Scomponi in fattori il polinomio;x^{3}+x^{2}y-9x-9y
-SCO1;2;sco1_5;48,0;3;2;Scomponi in fattori il polinomio;x^{5}-x
-SCO1;2;sco1_7;56,7;3;2;Scomponi in fattori il polinomio;ax^{2}-ay^{2}+bx^{2}-by^{2}
-SCO1;2;sco1_17;40,8;2;2;Scomponi in fattori il polinomio;x^{3}+x^{2}y+xy^{2}+y^{3}
-SCO1;3;sco1_2;83,8;4;4;Scomponi in fattori il polinomio;x^{7}+16x^{3}-8x^{5}
-SCO1;3;sco1_4;61,4;4;2;Scomponi in fattori il polinomio;b^{5}+2b^{4}-b-2
+PX2;2;px2_7;45,4;5;3;Parte B · Sconti, aumenti e IVA;Un negoziante, durante il periodo di Natale, aumenta tutti i prezzi del 10%. Se il prezzo iniziale di un paio di scarpe era 70,00 €, qual è ora il suo prezzo? Dopo le feste, il negoziante abbassa i nuovi prezzi del 10%. Quanto costano ora le scarpe?
+PX2;2;px2_20;42,7;5;3;Parte C · Una percentuale dopo l'altra;Pietro ha speso il 20% dei suoi soldi per uno skateboard. Ha speso poi il 10% dei soldi rimasti per comprare un cappello con visiera. Gli rimangono ancora 216 €. Quanti soldi aveva all'inizio?
+PX2;2;px2_30;48,3;5;4;Parte D · Che percentuale è?;Su un vassoio ci sono 50 salatini, di cui il 60% sono pizzette. Se si aggiungono 14 pizzette, quanto diventa la percentuale di pizzette?
+PX2;2;px2_47;52,0;6;3;Parte H · Prezzi che cambiano nel tempo;«L'evaso», un fumetto Diabolik del 24 agosto 1987, costava mille lire, cioè 52 centesimi di euro. I Diabolik del 2010 costavano 1,48 € in più rispetto al 1987. Che aumento percentuale ha subito questo fumetto dal 1987 al 2010?
+PX2;3;px2_6;76,0;10;6;Parte B · Sconti, aumenti e IVA;Un paio di scarpe scontato del 20% costa 40 €. Quanto costava prima dello sconto?
+PX2;3;px2_27;65,8;12;2;Parte C · Una percentuale dopo l'altra;"Quale aumento di stipendio conviene di più, guardando quanto si guadagna in tutto nell'anno? a) un aumento del 10% all'inizio dell'anno; b) un aumento del 5% a inizio anno e del 7% all'inizio di settembre; c) un aumento del 7% a inizio anno e del 5% all'inizio di settembre. Come stipendio di partenza puoi scegliere il valore che vuoi: prova con 1000 € al mese."
+PX2;3;px2_13;64,3;7;4;Parte D · Che percentuale è?;Un oggetto costa 101,00 € IVA esclusa e 105,60 € IVA inclusa. Qual è la percentuale di IVA?
+PX2;3;px2_38;68,3;7;4;Parte E · Miscele e concentrazioni;Una soluzione salina ha una concentrazione di sale del 30%. Se si aggiungono alla soluzione 100 g di acqua e 100 g di sale, la concentrazione della soluzione aumenta, diminuisce o non cambia? Spiega perché.
+PX2;3;px2_51;78,3;7;4;Parte I · Percentuali di tutti i giorni;Lo zio Bepi mette le olive raccolte in 68 cassette. Ogni cassetta pesa, olive comprese, 22,5 kg, e vuota pesa 90 g. Quanti quintali di olive ha raccolto, e che percentuale è il peso netto del peso lordo portato all'oleificio? (Un quintale è 100 kg.)
+SCO1;1;sco1_10;33,9;2;2;Scomponi in fattori il polinomio;m^{3}-m^{2}-6m
+SCO1;1;sco1_11;33,0;2;2;Scomponi in fattori il polinomio;2a^{2}-8b^{2}
+SCO1;1;sco1_12;36,4;2;2;Scomponi in fattori il polinomio;x^{4}+2x^{3}+x^{2}
+SCO1;1;sco1_13;36,4;2;2;Scomponi in fattori il polinomio;b^{2}+6b+9-c^{2}
+SCO1;1;sco1_16;32,3;2;2;Scomponi in fattori il polinomio;2x^{4}+2x
+SCO1;2;sco1_1;41,1;2;2;Scomponi in fattori il polinomio;a^{5}b^{2}+4ab^{4}+4a^{3}b^{3}
+SCO1;2;sco1_3;57,3;3;2;Scomponi in fattori il polinomio;x^{3}+x^{2}y-9x-9y
+SCO1;2;sco1_5;50,5;3;2;Scomponi in fattori il polinomio;x^{5}-x
+SCO1;2;sco1_7;59,2;3;2;Scomponi in fattori il polinomio;ax^{2}-ay^{2}+bx^{2}-by^{2}
+SCO1;2;sco1_17;39,5;2;2;Scomponi in fattori il polinomio;x^{3}+x^{2}y+xy^{2}+y^{3}
+SCO1;3;sco1_2;82,5;4;4;Scomponi in fattori il polinomio;x^{7}+16x^{3}-8x^{5}
+SCO1;3;sco1_4;66,1;4;2;Scomponi in fattori il polinomio;b^{5}+2b^{4}-b-2
 SCO1;3;sco1_6;80,9;4;3;Scomponi in fattori il polinomio;m^{5}+2m^{4}-m^{3}-2m^{2}
-SCO1;3;sco1_8;88,1;5;3;Scomponi in fattori il polinomio;a^{5}+a^{4}b-a^{3}b^{2}-a^{2}b^{3}
-SCO1;3;sco1_15;66,6;3;3;Scomponi in fattori il polinomio;t^{4}-8t^{2}+16
+SCO1;3;sco1_15;64,4;3;3;Scomponi in fattori il polinomio;t^{4}-8t^{2}+16
