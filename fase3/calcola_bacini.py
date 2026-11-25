@@ -1,6 +1,7 @@
 """Fase 3 interattiva: punteggio di difficolta', livelli e bacini di esercizi.
 
 Legge soltanto: esercizi/*_contenuti.json, esercizi/*_fase3.json,
+schede_fase3/<codice>_fase3.json (solo per le attivita' da scheda),
 tassonomia.yaml e la copia del foglio Argomenti. Scrive solo in fase3/:
     bacini_proposta.csv    gli esercizi proposti, livello per livello
     punteggi_tutti.csv     tutti gli esercizi col loro punteggio e livello
@@ -19,6 +20,12 @@ BACINO: livello 3 senza esercizi-maratona (oltre il 90° percentile dei
 passaggi E oltre 12 passaggi), passaggi che crescono da un livello all'altro,
 nessun doppione fra attivita' (la consegna resta nell'attivita' che viene
 prima, salvo le eccezioni in TIENE_DOPPIONE).
+SCHEDE DI FASE 3: le attivita' le cui guide hanno origine "scheda fase 3"
+non passano da punteggio e filtri. Il bacino e' la scheda intera, ogni
+esercizio col livello scritto in schede_fase3/<codice>_fase3.json.
+
+Prova a secco di una scheda (non scrive niente, non servono le guide):
+    python fase3/calcola_bacini.py --prova schede_fase3/<codice>_fase3.json
 """
 
 import csv
@@ -26,6 +33,7 @@ import html
 import json
 import math
 import re
+import sys
 from collections import Counter, defaultdict
 from pathlib import Path
 
@@ -60,6 +68,56 @@ L1_SCRITTO = {
     "log8": ["log8_6", "log8_7", "log8_8"],
 }
 PARTE_L1_SCRITTO = "Fase 3 · livello 1 scritto apposta"
+
+# schede di fase 3 (dal progetto Claude): il livello lo decide la scheda
+SCHEDE = RADICE / "schede_fase3"
+ORIGINE_SCHEDA = "scheda fase 3"
+PARTE_SCHEDA = "Scheda fase 3 · livello {}"
+CAMPI_SCHEDA = ("n_scheda", "livello", "consegna_label", "consegna_tex", "consegna_sympy",
+                "risultato_tex", "risultato_sympy")
+
+
+def leggi_scheda(file):
+    """(codice in minuscolo, esercizi, problemi) di un file <codice>_fase3.json."""
+    dati = json.loads(Path(file).read_text(encoding="utf-8"))
+    cod = str(dati.get("codice", "")).lower()
+    esercizi = dati.get("esercizi") or []
+    problemi = []
+    if Path(file).name != f"{cod}_fase3.json":
+        problemi.append(f"il codice {dati.get('codice')!r} non corrisponde al nome del file")
+    numeri = []
+    for i, e in enumerate(esercizi, start=1):
+        manca = [k for k in CAMPI_SCHEDA if k not in e]
+        if manca:
+            problemi.append(f"esercizio {i}: mancano {', '.join(manca)}")
+        if not isinstance(e.get("n_scheda"), int) or not 1 <= e["n_scheda"] <= 21:
+            problemi.append(f"esercizio {i}: n_scheda deve essere un numero da 1 a 21")
+        if e.get("livello") not in (1, 2, 3):
+            problemi.append(f"esercizio {i}: livello deve essere 1, 2 o 3")
+        numeri.append(e.get("n_scheda"))
+    doppi = sorted({n for n in numeri if numeri.count(n) > 1 and n is not None})
+    if doppi:
+        problemi.append(f"n_scheda ripetuti: {doppi}")
+    per_livello = Counter(e.get("livello") for e in esercizi)
+    if len(esercizi) != 21 or any(per_livello[L] != 7 for L in (1, 2, 3)):
+        problemi.append(f"{len(esercizi)} esercizi, per livello "
+                        f"{per_livello[1]} / {per_livello[2]} / {per_livello[3]}: "
+                        "una scheda completa ne ha 21, sette per livello")
+    return cod, esercizi, problemi
+
+
+def livelli_scheda(cod):
+    """{id guida: livello} dalla scheda dell'attivita', o None se manca."""
+    f = SCHEDE / f"{cod}_fase3.json"
+    if not f.exists():
+        return None
+    _, esercizi, _ = leggi_scheda(f)
+    return {f"{cod}_{e['n_scheda']}": e["livello"] for e in esercizi}
+
+
+def punti(p):
+    """Il punteggio come lo scrive il CSV: vuoto per gli esercizi di una scheda."""
+    return "" if p is None else str(p).replace(".", ",")
 
 
 # ------------------------------------------------- progressione per tipo
@@ -432,7 +490,7 @@ def main():
                 f"{i} sta in {e['_attivita']}_fase3.json ma non ha la guida nei contenuti: escluso")
 
     # --- 1. ingredienti e punteggio, attivita' per attivita'
-    escluse_build, tutti = [], {}
+    escluse_build, tutti, schede = [], {}, set()
     for cod, guide in attivita.items():
         if cod in ESCLUSE:
             continue
@@ -459,6 +517,24 @@ def main():
                 "figura": "<svg" in g["consegna_tex"],
                 "fase3": g["id"] in fase3, "doppione": None,
             })
+        if any(g.get("origine") == ORIGINE_SCHEDA for g in pronte):
+            # scheda di fase 3: livello dalla scheda, niente punteggio
+            livelli = livelli_scheda(cod)
+            if livelli is None:
+                print(f"  ! {cod.upper()}: guide da scheda di fase 3, ma manca "
+                      f"schede_fase3/{cod}_fase3.json: attivita' esclusa")
+                continue
+            fuori = [e["id"] for e in ex if e["id"] not in livelli]
+            if fuori:
+                print(f"  ! {cod.upper()}: guide che non sono nella scheda, escluse: "
+                      + ", ".join(fuori))
+            ex = [e for e in ex if e["id"] in livelli]
+            for e in ex:
+                e["punteggio"], e["livello"] = None, livelli[e["id"]]
+                e["ammessi"], e["parte"] = (e["livello"],), PARTE_SCHEDA.format(e["livello"])
+            schede.add(cod)
+            tutti[cod] = ex
+            continue
         pos = {k: posizioni([e[k] for e in ex]) for k in PESI}
         for i, e in enumerate(ex):
             e["punteggio"] = round(100 * sum(PESI[k] * pos[k][i] for k in PESI), 1)
@@ -477,8 +553,12 @@ def main():
         tutti[cod] = ex
 
     # --- 2. doppioni: la consegna resta nell'attivita' che viene prima nel percorso
+    # (le schede di fase 3 ne restano fuori: niente filtri, e non tolgono
+    # niente alle altre attivita')
     per_firma = defaultdict(list)
     for cod, ex in tutti.items():
+        if cod in schede:
+            continue
         for e in ex:
             per_firma[firma(e["label"], e["tex"])].append(e)
     doppioni = []
@@ -500,6 +580,17 @@ def main():
         dubbi = note.setdefault(cod, [])
         n = len(ex)
         per_livello = {L: [e for e in ex if e["livello"] == L] for L in (1, 2, 3)}
+        if cod in schede:
+            # il bacino e' la scheda intera, livello per livello
+            bacini[cod] = per_livello
+            conteggi[cod] = {"n": n, "k": None, "livelli": {L: len(per_livello[L]) for L in (1, 2, 3)},
+                             "parti": Counter(e["parte"] for e in ex), "maratona": None,
+                             "mediane": {L: mediana([e["passaggi"] for e in per_livello[L]])
+                                         for L in (1, 2, 3)},
+                             "doppioni": 0,
+                             "l1": mediana([e["passaggi"] for e in per_livello[1]])}
+            righe_tutte.extend((cod.upper(), e) for e in ex)
+            continue
         k = 5 if n >= 15 else 3
         p90 = percentile([e["passaggi"] for e in ex], PERCENTILE_MARATONA)
         maratona = max(p90, PASSAGGI_MARATONA)
@@ -584,7 +675,8 @@ def main():
 
     scrivi_csv(bacini)
     scrivi_tutti(righe_tutte)
-    scrivi_riepilogo(attivita, bacini, conteggi, note, titoli, escluse_build, fase3, doppioni)
+    scrivi_riepilogo(attivita, bacini, conteggi, note, titoli, escluse_build, fase3, doppioni,
+                     schede)
     scrivi_anteprima(bacini, conteggi, titoli, sito)
     print(f"Attivita' con bacino: {len(bacini)}")
     for cod in bacini:
@@ -607,7 +699,7 @@ def scrivi_csv(bacini):
         for cod, scelta in bacini.items():
             for L in (1, 2, 3):
                 for e in scelta[L]:
-                    w.writerow([cod.upper(), L, e["id"], str(e["punteggio"]).replace(".", ","),
+                    w.writerow([cod.upper(), L, e["id"], punti(e["punteggio"]),
                                 e["passaggi"], e["regole"], e["parte"], e["tex"]])
 
 
@@ -618,7 +710,7 @@ def scrivi_tutti(righe):
                     "regole", "annidamento", "lunghezza", "parte", "nomi delle regole",
                     "consegna in LaTeX"])
         for cod, e in sorted(righe, key=lambda r: (r[0], r[1]["ordine"])):
-            w.writerow([cod, e["id"], e["livello"], str(e["punteggio"]).replace(".", ","),
+            w.writerow([cod, e["id"], e["livello"], punti(e["punteggio"]),
                         e["passaggi"], e["regole"], e["annidamento"], e["lunghezza"],
                         e["parte"], " | ".join(e["nomi"]), e["tex"]])
 
@@ -631,7 +723,8 @@ def foglio_argomenti():
     return {row[1].strip(): (row[0].strip(), row[2].strip()) for row in r[1:] if len(row) > 2}
 
 
-def scrivi_riepilogo(attivita, bacini, conteggi, note, titoli, escluse_build, fase3, doppioni):
+def scrivi_riepilogo(attivita, bacini, conteggi, note, titoli, escluse_build, fase3, doppioni,
+                     schede=()):
     out = ["# Fase 3 — proposta dei bacini", "",
            "Proposta da controllare: nessuna guida, nessun file di contenuto, nessun prompt "
            "è stato modificato. I file sono in `fase3/`:", "",
@@ -673,6 +766,11 @@ def scrivi_riepilogo(attivita, bacini, conteggi, note, titoli, escluse_build, fa
            "- **OF2**: i prodotti che si semplificano subito (of2_3, of2_4) → 1; completare "
            "l'uguaglianza → 2; i prodotti con un intero da trasformare o con quattro fattori "
            "(of2_1, of2_2, of2_5) → 3 (confermato da Simone il 22/11).",
+           ] + ([
+           "- **" + ", ".join(c.upper() for c in sorted(schede)) + "**: schede di fase 3. "
+           "Il bacino è la scheda intera, ogni esercizio con il livello della scheda "
+           "(`schede_fase3/<codice>_fase3.json`): niente punteggio, niente filtri, niente "
+           "controllo dei doppioni."] if schede else []) + [
            "", "**Bacino**: 5 esercizi per livello (3 se l'attività ha meno di 15 esercizi). "
            "Lo script sceglie prima esercizi di parti diverse dell'attività, poi esercizi che "
            "portano regole nuove, poi tipi di consegna diversi; a parità, quelli vicini al centro "
@@ -718,7 +816,8 @@ def scrivi_riepilogo(attivita, bacini, conteggi, note, titoli, escluse_build, fa
         med = " / ".join(f"{m[L]:g}" if s[L] else "—" for L in (1, 2, 3))
         out.append(f"| {cod.upper()} — {titoli.get(cod, '')} | {c['n']} | "
                    f"{lv[1]} / {lv[2]} / {lv[3]} | "
-                   f"{len(s[1])} / {len(s[2])} / {len(s[3])} | {med} | {c['maratona']} | "
+                   f"{len(s[1])} / {len(s[2])} / {len(s[3])} | {med} | "
+                   f"{'—' if c['maratona'] is None else c['maratona']} | "
                    f"{len(c['parti'])} |")
 
     # --- doppioni
@@ -752,7 +851,8 @@ def scrivi_riepilogo(attivita, bacini, conteggi, note, titoli, escluse_build, fa
         for e in bacini[cod][1]:
             out.append(f"- {e['id']}: ${e['tex']}$ → ${e['ris']}$ ({e['passaggi']} passaggi)")
         out.append("")
-    lunghe = [cod for cod in bacini if conteggi[cod]["l1"] > 6 and cod not in L1_SCRITTO]
+    lunghe = [cod for cod in bacini if conteggi[cod]["l1"] > 6 and cod not in L1_SCRITTO
+              and cod not in schede]
     if lunghe:
         out += ["## Livello 1 non basico", "",
                 "Attività in cui il livello 1 supera ancora i 6 passaggi: "
@@ -833,7 +933,7 @@ def scrivi_anteprima(bacini, conteggi, titoli, sito):
                 schede.append(f"""
       <article class="scheda">
         <header><a href="{url}" target="_blank" rel="noopener">{e['id']}</a>
-          <span class="dati" title="punteggio · passaggi · regole">{str(e['punteggio']).replace('.', ',')} · {e['passaggi']} pass. · {e['regole']} reg.</span></header>
+          <span class="dati" title="punteggio · passaggi · regole">{punti(e['punteggio']) or 'scheda'} · {e['passaggi']} pass. · {e['regole']} reg.</span></header>
         {parte}
         <div class="consegna">
           <div class="t">📌 {e['label']}</div>
@@ -963,5 +1063,26 @@ var attesa; window.addEventListener('resize', function(){{ clearTimeout(attesa);
     (USCITA / "anteprima_bacini.html").write_text(pagina, encoding="utf-8")
 
 
+def prova(file):
+    """Prova a secco di una scheda: id, livelli e le righe che finirebbero in
+    bacini_proposta.csv. Non scrive niente. Passaggi e regole si contano sulle
+    guide, che qui non ci sono ancora: restano vuoti."""
+    cod, esercizi, problemi = leggi_scheda(file)
+    print(f"Scheda {cod.upper()} ({Path(file).name}): {len(esercizi)} esercizi")
+    for p in problemi:
+        print(f"  ! {p}")
+    print("\nid e livelli:")
+    for e in sorted(esercizi, key=lambda e: (e["livello"], e["n_scheda"])):
+        print(f"  {cod}_{e['n_scheda']:<4} livello {e['livello']}   {e['risultato_tex']}")
+    print("\nrighe per bacini_proposta.csv (passaggi e regole dalle guide, quando ci saranno):")
+    print(";".join(COLONNE))
+    for e in sorted(esercizi, key=lambda e: (e["livello"], e["n_scheda"])):
+        print(";".join([cod.upper(), str(e["livello"]), f"{cod}_{e['n_scheda']}", "", "", "",
+                        PARTE_SCHEDA.format(e["livello"]), e["consegna_tex"]]))
+
+
 if __name__ == "__main__":
-    main()
+    if len(sys.argv) == 3 and sys.argv[1] == "--prova":
+        prova(sys.argv[2])
+    else:
+        main()
