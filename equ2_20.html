@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EQU2_20 — I principi delle equazioni</title>
+
+<script type="application/json" id="meta">
+{
+  "id": "equ2_20",
+  "titolo": "I principi delle equazioni",
+  "tipo": "incognita",
+  "consegna_label": "Risolvi l'equazione",
+  "consegna_tex": "x-\\frac{1}{2}\\left[x-\\left(3-x\\right)\\right]=\\frac{1}{3}\\left(x+6\\right)",
+  "consegna_sympy": "soluzioni(x-Rational(1,2)*(x-(3-x)), Rational(1,3)*(x+6))",
+  "risultato_tex": "x=-\\frac{3}{2}",
+  "risultato_sympy": "FiniteSet(Rational(-3,2))",
+  "righe_sympy": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ]
+}
+</script>
+
+<!-- Output SVG, non CHTML: glifi vettoriali, allineamento identico su ogni
+     dispositivo, nessun rischio di webfont non caricato dentro un iframe.
+     Ogni formula e' scritta con \displaystyle: senza, MathJax rende le frazioni
+     in textstyle e le parentesi non abbracciano la frazione. -->
+<script>
+MathJax = {
+  loader: { load: ['[tex]/cancel'] },
+  tex: {
+    packages: { '[+]': ['cancel'] },
+    inlineMath: [['$','$']],
+    displayMath: [['$$','$$']],
+    processEscapes: true
+  },
+  svg: { fontCache: 'global', scale: 1.06, exFactor: .5 },
+  options: { enableMenu: false }
+};
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-svg.js"></script>
+
+<style>
+:root{
+  --ink:#0f172a; --body:#334155; --muted:#475569; --faint:#94a3b8;
+  --line:#e2e8f0; --paper:#f8fafc;
+  --blu:#12519e; --blubg:#e8f1fb; --blubd:#a8c9ea;
+  --amb:#b45309; --ambbg:#fffbeb; --ambbd:#fcd34d; --sol:#fef08a;
+  --teo:#14532d; --teobg:#f0fdf4; --teobd:#86efac;
+  /* errori nel grigio-azzurro di OH #aabfd5 (come i ▲ della dashboard), mai in rosso */
+  --err:#36516d; --errbg:#f5f7fa; --errbd:#aabfd5;
+  --ko:#36516d;  --kobg:#e4eaf2;  --kobd:#aabfd5;
+  --ok:#15803d;  --okbg:#dcfce7;  --okbd:#22c55e;
+  --sxbg:#ffffff;
+}
+*{box-sizing:border-box}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  background:var(--paper);color:var(--body);line-height:1.5;
+  margin:0;padding:20px 14px 60px;max-width:900px;margin-inline:auto;font-size:16px;
+}
+mjx-container{outline:none}
+mjx-container[display]{margin:0!important}
+
+/* formule scorrevoli, con sfumatura ai bordi quando escono dallo schermo */
+.sx{
+  overflow-x:auto;overflow-y:hidden;scrollbar-width:thin;-webkit-overflow-scrolling:touch;
+  background-image:
+    linear-gradient(to right,var(--sxbg),var(--sxbg)),
+    linear-gradient(to left,var(--sxbg),var(--sxbg)),
+    linear-gradient(to right,rgba(15,23,42,.16),rgba(15,23,42,0)),
+    linear-gradient(to left,rgba(15,23,42,.16),rgba(15,23,42,0));
+  background-position:left center,right center,left center,right center;
+  background-repeat:no-repeat;
+  background-size:22px 100%,22px 100%,13px 100%,13px 100%;
+  background-attachment:local,local,scroll,scroll;
+}
+
+/* ---------------- CONSEGNA ---------------- */
+.consegna{background:var(--blubg);border:2px solid var(--blubd);border-radius:12px;
+  padding:12px 16px;color:#0d47a1;--sxbg:var(--blubg)}
+.consegna .t{font-weight:700;font-size:.9rem}
+.consegna .m{text-align:center;margin-top:4px;padding:4px 0}
+
+/* ---------------- CATENA ---------------- */
+.catena{background:#fff;border:1px solid var(--line);border-radius:14px;
+  padding:14px 16px 10px;margin-top:16px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.catena>.k{font-weight:800;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.catena>.sub{font-size:.85rem;color:var(--faint);margin:2px 0 8px}
+
+.riga{border-top:1px dotted var(--line)}
+.riga:first-of-type{border-top:none}
+.riga>summary,.riga>.fissa{
+  display:grid;grid-template-columns:26px 1fr auto;gap:10px;align-items:center;
+  padding:11px 0;
+}
+.riga>summary{list-style:none;cursor:pointer}
+.riga>summary::-webkit-details-marker{display:none}
+.riga>summary:hover .f,.riga>summary:focus-visible .f{background-color:#f8fafc}
+
+.n{font-size:.72rem;font-weight:800;color:var(--faint);text-align:center;
+  background:#f1f5f9;border-radius:6px;padding:4px 0;align-self:start;margin-top:4px}
+.cont{min-width:0}
+.nota{font-size:.8rem;color:var(--muted);margin-bottom:1px}
+.f{padding:3px 0;border-radius:6px;color:var(--blu)}
+.riga.res>summary .f,.riga.res>.fissa .f{color:var(--ink)}
+/* solo la formula della riga, mai quelle dentro il pannello della tendina */
+.riga.res>summary .f mjx-container,
+.riga.res>.fissa .f mjx-container{background:var(--sol);padding:4px 12px;border-radius:6px}
+
+/* linguetta della tendina */
+.tab{display:inline-flex;align-items:center;gap:5px;align-self:start;margin-top:5px;
+  font-size:.72rem;font-weight:700;letter-spacing:.02em;color:var(--muted);
+  background:#fff;border:1.5px solid var(--line);border-radius:999px;padding:4px 10px;
+  white-space:nowrap}
+.tab .chev{display:inline-block;font-size:.6rem;transition:transform .18s}
+.riga[open]>summary .tab{background:var(--ink);border-color:var(--ink);color:#fff}
+.riga[open]>summary .tab .chev{transform:rotate(180deg)}
+@media(prefers-reduced-motion:reduce){.tab .chev{transition:none}}
+
+/* pannello aperto */
+.pannello{padding:2px 0 16px 36px;display:grid;grid-template-columns:minmax(0,1fr);gap:10px}
+.mossa{font-size:.9rem;margin:0}
+
+.teoria{background:var(--teobg);border:1.5px solid var(--teobd);border-radius:10px;
+  padding:10px 14px;color:var(--teo);--sxbg:var(--teobg)}
+.teoria .nome{font-weight:800;font-size:.88rem;margin-bottom:2px}
+.teoria .frase{font-size:.87rem;line-height:1.45}
+.teoria .f{text-align:center;margin:8px 0 3px;background:rgba(255,255,255,.75);
+  border-radius:6px;padding:6px 8px;color:var(--teo);--sxbg:#f4fdf6}
+.teoria .ex{font-size:.78rem;opacity:.9;text-align:center;overflow-x:auto;overflow-y:hidden}
+
+.errore{background:var(--errbg);border:1.5px solid var(--errbd);border-radius:10px;padding:11px 14px}
+.errore .k{font-weight:800;font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;
+  color:var(--err);margin-bottom:5px}
+.errore .nome{font-weight:700;font-size:.9rem;color:var(--err);margin-bottom:8px}
+.compare{display:flex;flex-flow:row-reverse wrap-reverse;align-items:stretch;row-gap:6px}
+.compare .card{flex:1 1 0;max-width:100%}
+.compare .card.ok{order:1}
+.compare .arrow{order:2;flex:0 0 34px}
+.compare .card.ko{order:3}
+.card{border:2px solid;border-radius:10px;padding:8px 12px;text-align:center}
+.card .tag{font-size:.7rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;margin-bottom:2px}
+.card .f{padding:2px 0;color:inherit}
+.card.ko{background:var(--kobg);border-color:var(--kobd);color:var(--ko);--sxbg:var(--kobg)}
+.card.ok{background:var(--okbg);border-color:var(--okbd);color:var(--ok);--sxbg:var(--okbg)}
+.arrow{display:flex;align-items:center;justify-content:center;font-size:1.2rem;color:var(--faint);font-weight:800}
+.why-txt{font-size:.82rem;color:#3b5977;margin-top:6px;text-align:center}
+
+/* fermata di controllo */
+.check{display:flex;flex-wrap:wrap;align-items:center;gap:4px 10px;
+  background:var(--ambbg);border:1.5px dashed var(--ambbd);border-radius:10px;
+  padding:8px 14px;margin:8px 0;font-size:.85rem;color:var(--amb);--sxbg:var(--ambbg)}
+.check b{font-weight:800}
+.check .v{color:var(--ink)}
+
+/* dicitura in fondo alla pagina, sotto la catena */
+.dicitura{margin-top:14px;text-align:center;font-size:.8rem;color:#444}
+
+/* ---------------- MOBILE ---------------- */
+@media(max-width:720px){
+  body{padding:16px 10px 50px;font-size:16px}
+  .catena{padding:12px 12px 8px}
+  .riga>summary,.riga>.fissa{grid-template-columns:24px 1fr;gap:8px}
+  .cont{grid-column:2}
+  .tab{grid-column:2;justify-self:start;margin-top:6px}
+  .pannello{padding-left:0}
+  .compare{display:grid;grid-template-columns:minmax(0,1fr);gap:6px}
+  .compare .card.ok,.compare .arrow,.compare .card.ko{order:0}
+  .arrow{transform:rotate(90deg);height:22px}
+}
+</style>
+</head>
+<body>
+
+<!-- ===================== CONSEGNA ===================== -->
+<div class="consegna">
+  <div class="t">📌 Risolvi l'equazione</div>
+  <div class="m sx">$\displaystyle x-\frac{1}{2}\left[x-\left(3-x\right)\right]=\frac{1}{3}\left(x+6\right)$</div>
+</div>
+
+<!-- ===================== CATENA ====================== -->
+<div class="catena">
+  <div class="k">Confronta con il tuo foglio</div>
+  <div class="sub">Scorri le righe fino alla prima che non coincide con la tua. Lì apri <b>Regola</b>.</div>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">1</div>
+      <div class="cont"><div class="f sx">$\displaystyle x-\frac{1}{2}\left[x-\left(3-x\right)\right]=\frac{1}{3}\left(x+6\right)$</div></div>
+      <div></div>
+    </div>
+  </div>
+
+  <details class="riga">
+    <summary>
+      <div class="n">2</div>
+      <div class="cont">
+        <div class="nota">Parto dalla tonda dentro la quadra: il meno davanti cambia segno a tutti e due i termini.</div>
+        <div class="f sx">$\displaystyle x-\frac{1}{2}\left[x-3+x\right]=\frac{1}{3}\left(x+6\right)$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">Dentro la quadra c'è una tonda: si comincia da lì. Conviene, perché si lavora su pochi termini alla volta; si poteva anche distribuire subito $-\frac{1}{2}$ sulla quadra, o moltiplicare tutto per $6$, e il risultato sarebbe lo stesso, con più frazioni o più parentesi. Davanti c'è il meno, quindi $3$ diventa $-3$ e $-x$ diventa $+x$.</p>
+      <div class="teoria">
+        <div class="nome">Il meno davanti alla parentesi</div>
+        <div class="frase">Quando davanti a una parentesi c'è il segno meno, togliendo la parentesi <strong>tutti</strong> i termini che stanno dentro cambiano segno: il più diventa meno e il meno diventa più. Con il più davanti, invece, non cambia niente.</div>
+        <div class="f sx">$\displaystyle -\left(P+Q\right)=-P-Q\qquad -\left(P-Q\right)=-P+Q\qquad -\left(-P\right)=+P$</div>
+        <div class="ex">esempio: $-\left(y-8\right)=-y+8$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ Errore da non fare</div>
+        <div class="nome">Cambiare segno solo al primo termine</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">▲ Così NO</div><div class="f sx">$\displaystyle -\left(P-Q\right)=-P-Q$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle -\left(P-Q\right)=-P+Q$</div></div>
+        </div>
+        <div class="why-txt">Con $-Q$ il termine si toglie invece di aggiungersi.</div>
+      </div>
+    </div>
+  </details>
+
+  <details class="riga">
+    <summary>
+      <div class="n">3</div>
+      <div class="cont">
+        <div class="nota">Nella quadra sommo i termini simili: $x+x=2x$.</div>
+        <div class="f sx">$\displaystyle x-\frac{1}{2}\left[2x-3\right]=\frac{1}{3}\left(x+6\right)$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">Ogni $x$ da sola vale $1x$: $1+1=2$. Il $-3$ non ha la $x$ e resta com'è.</p>
+      <div class="teoria">
+        <div class="nome">Somma di monomi simili</div>
+        <div class="frase">Due monomi sono <strong>simili</strong> quando hanno la stessa parte letterale, con gli stessi esponenti. Per sommarli si sommano solo i <strong>coefficienti</strong>, e la parte letterale si riscrive uguale: non cambia e non si somma.</div>
+        <div class="f sx">$\displaystyle 8a^{m}+5a^{m}=\left(8+5\right)a^{m}=13a^{m}$</div>
+        <div class="ex">esempio: $7y+8y=15y$</div>
+      </div>
+      <div class="teoria">
+        <div class="nome">Il coefficiente 1 non si scrive</div>
+        <div class="frase">Un monomio senza numero davanti ha coefficiente $1$: $ab$ vale $1ab$, e se davanti c'è solo il meno vale $-1ab$. Quell'$1$ va messo nel conto quando si sommano o si moltiplicano i coefficienti.</div>
+        <div class="f sx">$\displaystyle a=1\cdot a,\quad -a=-1\cdot a$</div>
+        <div class="ex">esempio: $y+7y=1y+7y=8y$</div>
+      </div>
+    </div>
+  </details>
+
+  <details class="riga">
+    <summary>
+      <div class="n">4</div>
+      <div class="cont">
+        <div class="nota">Tolgo le parentesi: $-\frac{1}{2}$ e $\frac{1}{3}$ moltiplicano ogni termine, con i segni.</div>
+        <div class="f sx">$\displaystyle x-\frac{1}{2}\cdot 2x+\frac{1}{2}\cdot 3=\frac{1}{3}\cdot x+\frac{1}{3}\cdot 6$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">A sinistra il fattore è $-\frac{1}{2}$: per $2x$ dà $-\frac{1}{2}\cdot 2x$, per $-3$ dà $+\frac{1}{2}\cdot 3$, perché due meno danno più. A destra $\frac{1}{3}$ moltiplica $x$ e $6$.</p>
+      <div class="teoria">
+        <div class="nome">Moltiplicare un monomio per un polinomio</div>
+        <div class="frase">Il monomio moltiplica <strong>tutti</strong> i termini del polinomio, uno per uno, e ogni termine entra nel prodotto con il suo segno; un termine negativo si può scrivere fra parentesi. È la proprietà distributiva, e vale anche con il monomio scritto dopo la parentesi.</div>
+        <div class="f sx">$\displaystyle A\left(B+C-D\right)=AB+AC-AD\qquad\left(B+C-D\right)A=BA+CA-DA$</div>
+        <div class="ex">esempio: $4\left(y-7\right)=4y-28$</div>
+      </div>
+      <div class="teoria">
+        <div class="nome">La regola dei segni</div>
+        <div class="frase">Nel prodotto e nella divisione due segni uguali danno <strong>più</strong>, due segni diversi danno <strong>meno</strong>. Con più di due fattori si contano i meno: se sono in numero dispari il risultato è negativo, se sono pari è positivo.</div>
+        <div class="f sx">$\displaystyle \left(-a\right)\cdot\left(-b\right)=+ab\qquad a\cdot\left(-b\right)=-ab\qquad \frac{-a}{-b}=+\frac{a}{b}\qquad \frac{-a}{b}=\frac{a}{-b}=-\frac{a}{b}\qquad \left(b\neq 0\right)$</div>
+        <div class="ex">esempio: $\frac{-55}{11}=-5\qquad \left(-7\right)\cdot\left(-8\right)=+56$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ Errore da non fare</div>
+        <div class="nome">Perdere il meno del fattore sul secondo termine</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">▲ Così NO</div><div class="f sx">$\displaystyle -a\left(b-c\right)=-ab-ac$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle -a\left(b-c\right)=-ab+ac$</div></div>
+        </div>
+        <div class="why-txt">Così l'ultimo termine resta negativo, e il risultato cambia segno proprio lì.</div>
+      </div>
+    </div>
+  </details>
+
+  <details class="riga">
+    <summary>
+      <div class="n">5</div>
+      <div class="cont">
+        <div class="nota">Semplifico i prodotti dove si può.</div>
+        <div class="f sx">$\displaystyle x-\frac{1}{\cancel{2}}\cdot\cancel{2}x+\frac{1}{2}\cdot 3=\frac{1}{3}\cdot x+\frac{1}{\cancel{3}}\cdot\overset{2}{\cancel{6}}$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">$2x$ e il denominatore $2$ si semplificano e resta $x$. $6$ e $3$ si dividono tutti e due per $3$: sopra resta $2$, sotto $1$. In $\frac{1}{2}\cdot 3$ non c'è niente da semplificare.</p>
+      <div class="teoria">
+        <div class="nome">Semplificare prima di moltiplicare</div>
+        <div class="frase">Quando un numero intero e una frazione si moltiplicano, si semplifica il numero con il <strong>denominatore</strong> prima di fare il prodotto: si dividono tutti e due per un divisore comune. Farlo dopo porta allo stesso risultato, ma passando da numeri molto più grandi.</div>
+        <div class="f sx">$\displaystyle \frac{a}{b\cdot k}\cdot\left(n\cdot k\right)=\frac{a\cdot n}{b}\qquad \left(b\neq 0,\ k\neq 0\right)$</div>
+        <div class="ex">esempio: $\frac{8}{11}\cdot 55=8\cdot 5=40$</div>
+      </div>
+    </div>
+  </details>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">6</div>
+      <div class="cont">
+        <div class="nota">Eseguo i prodotti rimasti.</div>
+        <div class="f sx">$\displaystyle x-x+\frac{3}{2}=\frac{1}{3}x+2$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <details class="riga">
+    <summary>
+      <div class="n">7</div>
+      <div class="cont">
+        <div class="nota">A sinistra $x-x$ si annulla.</div>
+        <div class="f sx">$\displaystyle \frac{3}{2}=\frac{1}{3}x+2$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">$x-x=0$, e lo zero in una somma non si scrive: a sinistra resta solo $\frac{3}{2}$.</p>
+      <div class="teoria">
+        <div class="nome">Due termini opposti si annullano</div>
+        <div class="frase">Un termine e il suo <strong>opposto</strong>, come $y$ e $-y$, insieme fanno zero. E lo zero in una somma non si scrive: restano solo gli altri termini.</div>
+        <div class="f sx">$\displaystyle A-A=0\qquad 0+B=B$</div>
+        <div class="ex">esempio: $8y-8y+5=0+5=5$</div>
+      </div>
+    </div>
+  </details>
+
+  <div class="check">
+    <span>🚩 <b>Fermata di controllo.</b> Se qui hai</span>
+    <span class="v">$\displaystyle \frac{3}{2}=\frac{1}{3}x+2$</span>
+    <span>le parentesi non ci sono più: restano le frazioni da togliere.</span>
+  </div>
+
+  <details class="riga">
+    <summary>
+      <div class="n">8</div>
+      <div class="cont">
+        <div class="nota">Moltiplico ogni termine per $6$, il mcm di $2$ e $3$. Tenendo le frazioni si arriva allo stesso risultato.</div>
+        <div class="f sx">$\displaystyle 6\cdot\frac{3}{2}=6\cdot\frac{1}{3}x+6\cdot 2$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">I denominatori sono $2$ e $3$: il mcm è $6$. Il $6$ moltiplica tutti i termini, anche il $2$ che non ha frazione. Con un altro multiplo comune, come il doppio, il risultato sarebbe lo stesso, con numeri più grandi. Si potevano anche tenere le frazioni e isolare subito la $x$: $\frac{1}{3}x=\frac{3}{2}-2=-\frac{1}{2}$, poi $x=-\frac{3}{2}$, lo stesso risultato.</p>
+      <div class="teoria">
+        <div class="nome">Togliere i denominatori</div>
+        <div class="frase">Le soluzioni non cambiano se si moltiplicano <strong>tutti e due i membri</strong> per lo stesso numero, purché non sia zero. Scegliendo il mcm dei denominatori ogni frazione si semplifica e i denominatori spariscono. Va moltiplicato <strong>ogni</strong> termine, anche quelli senza frazione.</div>
+        <div class="f sx">$\displaystyle \frac{a}{m}=\frac{b}{n}x+c\ \to\ M\cdot\frac{a}{m}=M\cdot\frac{b}{n}x+M\cdot c\qquad \left(M=\text{mcm}(m;n)\right)$</div>
+        <div class="ex">esempio: $\frac{7}{4}=\frac{y}{10}+5\ \to\ 20\cdot\frac{7}{4}=20\cdot\frac{y}{10}+20\cdot 5$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ Errore da non fare</div>
+        <div class="nome">Moltiplicare solo i termini con la frazione</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">▲ Così NO</div><div class="f sx">$\displaystyle \frac{a}{m}x+b=c\ \to\ m\cdot\frac{a}{m}x+b=m\cdot c$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{a}{m}x+b=c\ \to\ m\cdot\frac{a}{m}x+m\cdot b=m\cdot c$</div></div>
+        </div>
+        <div class="why-txt">Così $b$ resta com'era mentre tutto il resto cresce: i membri non sono più uguali.</div>
+      </div>
+    </div>
+  </details>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">9</div>
+      <div class="cont">
+        <div class="nota">Semplifico ogni $6$ con il suo denominatore: le frazioni spariscono.</div>
+        <div class="f sx">$\displaystyle \overset{3}{\cancel{6}}\cdot\frac{3}{\cancel{2}}=\overset{2}{\cancel{6}}\cdot\frac{1}{\cancel{3}}x+6\cdot 2$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">10</div>
+      <div class="cont">
+        <div class="nota">Eseguo i prodotti.</div>
+        <div class="f sx">$\displaystyle 9=2x+12$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+  <details class="riga">
+    <summary>
+      <div class="n">11</div>
+      <div class="cont">
+        <div class="nota">Le $x$ a sinistra, i numeri a destra: chi cambia membro cambia segno.</div>
+        <div class="f sx">$\displaystyle -2x=12-9$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">$2x$ passa a sinistra e diventa $-2x$; $9$ passa a destra e diventa $-9$. Il $12$ resta dov'è.</p>
+      <div class="teoria">
+        <div class="nome">Spostare un termine nell'altro membro</div>
+        <div class="frase">Un termine si può spostare da un membro all'altro <strong>cambiandogli il segno</strong>: è come toglierlo da tutti e due i membri. Vale nelle equazioni e nelle disequazioni, dove il verso resta com'è. Così si isola l'incognita, oppure si porta tutto da una parte e si lascia zero dall'altra.</div>
+        <div class="f sx">$\displaystyle A+c=B\quad\Longleftrightarrow\quad A=B-c,\qquad A+c>B\quad\Longleftrightarrow\quad A>B-c$</div>
+        <div class="ex">esempio: $y+8=5\ \to\ y=5-8$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ Errore da non fare</div>
+        <div class="nome">Spostare senza cambiare segno</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">▲ Così NO</div><div class="f sx">$\displaystyle x+a=b\ \to\ x=b+a$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle x+a=b\ \to\ x=b-a$</div></div>
+        </div>
+        <div class="why-txt">Così a destra $a$ si aggiunge invece di togliersi: i due membri non sono più uguali.</div>
+      </div>
+    </div>
+  </details>
+
+  <div class="riga">
+    <div class="fissa">
+      <div class="n">12</div>
+      <div class="cont"><div class="f sx">$\displaystyle -2x=3$</div></div>
+      <div></div>
+    </div>
+  </div>
+
+  <details class="riga">
+    <summary>
+      <div class="n">13</div>
+      <div class="cont">
+        <div class="nota">Divido tutti e due i membri per $-2$, segno compreso.</div>
+        <div class="f sx">$\displaystyle x=\frac{3}{-2}$</div>
+      </div>
+      <span class="tab">Regola <span class="chev">▼</span></span>
+    </summary>
+    <div class="pannello">
+      <p class="mossa">La $x$ è moltiplicata per $-2$: si divide per $-2$, meno compreso, a sinistra e a destra.</p>
+      <div class="teoria">
+        <div class="nome">Dividere tutti e due i membri</div>
+        <div class="frase">Se l'incognita è moltiplicata per un numero, si dividono tutti e due i membri per quel numero: l'uguaglianza resta vera e l'incognita resta sola.</div>
+        <div class="f sx">$\displaystyle a\cdot x=b\quad\Longleftrightarrow\quad x=\frac{b}{a}\qquad \text{con}\ a\neq 0$</div>
+        <div class="ex">esempio: $-5y=8\ \to\ y=\frac{8}{-5}$</div>
+      </div>
+      <div class="errore">
+        <div class="k">⚠️ Errore da non fare</div>
+        <div class="nome">Dividere senza il segno del coefficiente</div>
+        <div class="compare">
+          <div class="card ko"><div class="tag">▲ Così NO</div><div class="f sx">$\displaystyle -ax=b\ \to\ x=\frac{b}{a}$</div></div>
+          <div class="arrow">➜</div>
+          <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle -ax=b\ \to\ x=\frac{b}{-a}$</div></div>
+        </div>
+        <div class="why-txt">Senza il meno la soluzione esce con il segno sbagliato.</div>
+      </div>
+    </div>
+  </details>
+
+  <div class="riga res">
+    <div class="fissa">
+      <div class="n">14</div>
+      <div class="cont">
+        <div class="nota">Più diviso meno dà meno: il meno si scrive davanti alla frazione.</div>
+        <div class="f sx">$\displaystyle x=-\frac{3}{2}$</div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+
+</div>
+
+<div class="dicitura">Materiale creato con il supporto dell'Intelligenza Artificiale</div>
+
+</body>
+</html>

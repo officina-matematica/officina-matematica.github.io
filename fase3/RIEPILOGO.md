@@ -24,6 +24,7 @@ Dentro ogni attività ciascuna quantità diventa una posizione in classifica da 
 - **FMDC2, FMDC3**: due numeri piccoli → 1; due numeri più grandi → 2; tre numeri → 3.
 - **NEG5, ODX1, ODX2, OF4, P4, LOG7, LOG8**: il livello 1 sono le tre guide scritte per la fase 3; il livello 1 di prima è il 2; il 2 e il 3 di prima sono il 3.
 - **OF2**: i prodotti che si semplificano subito (of2_3, of2_4) → 1; completare l'uguaglianza → 2; i prodotti con un intero da trasformare o con quattro fattori (of2_1, of2_2, of2_5) → 3 (confermato da Simone il 22/11).
+- **EQU2**: schede di fase 3. Il bacino è la scheda intera, ogni esercizio con il livello della scheda (`schede_fase3/<codice>_fase3.json`): niente punteggio, niente filtri, niente controllo dei doppioni.
 
 **Bacino**: 5 esercizi per livello (3 se l'attività ha meno di 15 esercizi). Lo script sceglie prima esercizi di parti diverse dell'attività, poi esercizi che portano regole nuove, poi tipi di consegna diversi; a parità, quelli vicini al centro del livello. Poi tre filtri:
 
@@ -46,6 +47,7 @@ Passaggi: la mediana dei passaggi degli esercizi del bacino, livello per livello
 | Attività | Esercizi | Liv. 1 / 2 / 3 | Bacino 1 / 2 / 3 | Passaggi 1 / 2 / 3 | Soglia | Parti |
 |---|---:|---|---|---|---:|---:|
 | DX3 — Numeri decimali e frazioni | 34 | 12 / 11 / 11 | 5 / 5 / 5 | 3 / 4 / 5 | 12 | 5 |
+| EQU2 — I principi delle equazioni | 19 | 6 / 7 / 6 | 6 / 7 / 6 | 4 / 5 / 7.5 | — | 3 |
 | F1 — Introduzione alle frazioni | 8 | 3 / 3 / 2 | 3 / 3 / 2 | 3 / 4 / 5 | 12 | 1 |
 | F2 — Frazioni e numeri misti | 88 | 30 / 29 / 29 | 5 / 5 / 5 | 2 / 3 / 5 | 12 | 8 |
 | FMDC1 — Fattorizzazione | 14 | 5 / 5 / 4 | 3 / 3 / 3 | 3 / 5 / 6 | 12 | 1 |
@@ -266,6 +268,7 @@ Confronto fatto con la copia del foglio usata dalla dashboard (`OM_DASHBOARD/tes
 
 | Codice guide | Nel foglio Argomenti | Cosa non torna |
 |---|---|---|
+| EQU2 — I principi delle equazioni | — | codice assente; nel foglio ci sono: nessun codice simile |
 | F1 — Introduzione alle frazioni | F1 — Introduzione alle frazioni e primi problemai (F | Frazioni) | titolo diverso |
 | GON — Eserciziario | — | codice assente; nel foglio ci sono: GON1, GON2 |
 | LOG1 — Calcolo logaritmi | LOG1 — Crescita esponenziale (LOG | Logaritmi) | titolo diverso |
