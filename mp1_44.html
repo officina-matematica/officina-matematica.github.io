@@ -68,8 +68,9 @@ MathJax = {
   --blu:#12519e; --blubg:#e8f1fb; --blubd:#a8c9ea;
   --amb:#b45309; --ambbg:#fffbeb; --ambbd:#fcd34d; --sol:#fef08a;
   --teo:#14532d; --teobg:#f0fdf4; --teobd:#86efac;
-  --err:#9f1239; --errbg:#fff1f2; --errbd:#fda4af;
-  --ko:#b91c1c;  --kobg:#fee2e2;  --kobd:#ef4444;
+  /* errori nel grigio-azzurro di OH #aabfd5 (come i ▲ della dashboard), mai in rosso */
+  --err:#36516d; --errbg:#f5f7fa; --errbd:#aabfd5;
+  --ko:#36516d;  --kobg:#e4eaf2;  --kobd:#aabfd5;
   --ok:#15803d;  --okbg:#dcfce7;  --okbd:#22c55e;
   --sxbg:#ffffff;
 }
@@ -165,7 +166,7 @@ mjx-container[display]{margin:0!important}
 .card.ko{background:var(--kobg);border-color:var(--kobd);color:var(--ko);--sxbg:var(--kobg)}
 .card.ok{background:var(--okbg);border-color:var(--okbd);color:var(--ok);--sxbg:var(--okbg)}
 .arrow{display:flex;align-items:center;justify-content:center;font-size:1.2rem;color:var(--faint);font-weight:800}
-.why-txt{font-size:.82rem;color:#7f1d1d;margin-top:6px;text-align:center}
+.why-txt{font-size:.82rem;color:#3b5977;margin-top:6px;text-align:center}
 
 /* fermata di controllo */
 .check{display:flex;flex-wrap:wrap;align-items:center;gap:4px 10px;
@@ -225,7 +226,7 @@ mjx-container[display]{margin:0!important}
         <div class="k">⚠️ Errore da non fare</div>
         <div class="nome">Sostituire un valore negativo senza parentesi</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle t^{2}\ \text{con}\ t=-5\ \to\ -5^{2}=-25$</div></div>
+          <div class="card ko"><div class="tag">▲ Così NO</div><div class="f sx">$\displaystyle t^{2}\ \text{con}\ t=-5\ \to\ -5^{2}=-25$</div></div>
           <div class="arrow">➜</div>
           <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle t^{2}\ \text{con}\ t=-5\ \to\ \left(-5\right)^{2}=25$</div></div>
         </div>
@@ -255,7 +256,7 @@ mjx-container[display]{margin:0!important}
         <div class="k">⚠️ Errore da non fare</div>
         <div class="nome">Sommare anche i denominatori</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{a}{b}+\frac{c}{d}=\frac{a+c}{b+d}$</div></div>
+          <div class="card ko"><div class="tag">▲ Così NO</div><div class="f sx">$\displaystyle \frac{a}{b}+\frac{c}{d}=\frac{a+c}{b+d}$</div></div>
           <div class="arrow">➜</div>
           <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{a}{b}+\frac{c}{d}=\frac{a\cdot\left(m:b\right)+ c\cdot\left(m:d\right)}{m}$</div></div>
         </div>
@@ -285,7 +286,7 @@ mjx-container[display]{margin:0!important}
         <div class="k">⚠️ Errore da non fare</div>
         <div class="nome">Credere che l'esponente negativo dia un risultato negativo</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a^{-n}=-a^{n}$</div></div>
+          <div class="card ko"><div class="tag">▲ Così NO</div><div class="f sx">$\displaystyle a^{-n}=-a^{n}$</div></div>
           <div class="arrow">➜</div>
           <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a^{-n}=\frac{1}{a^{n}}$</div></div>
         </div>
@@ -315,7 +316,7 @@ mjx-container[display]{margin:0!important}
         <div class="k">⚠️ Errore da non fare</div>
         <div class="nome">Elevare anche il fattore accanto</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a\cdot b^{n}=\left(a\cdot b\right)^{n}$</div></div>
+          <div class="card ko"><div class="tag">▲ Così NO</div><div class="f sx">$\displaystyle a\cdot b^{n}=\left(a\cdot b\right)^{n}$</div></div>
           <div class="arrow">➜</div>
           <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a\cdot b^{n}=a\cdot\left(b^{n}\right)$</div></div>
         </div>
@@ -345,7 +346,7 @@ mjx-container[display]{margin:0!important}
         <div class="k">⚠️ Errore da non fare</div>
         <div class="nome">Semplificare due numeratori fra loro</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{a\cdot k}{b}\cdot\frac{c\cdot k}{d}=\frac{a}{b}\cdot\frac{c}{d}$</div></div>
+          <div class="card ko"><div class="tag">▲ Così NO</div><div class="f sx">$\displaystyle \frac{a\cdot k}{b}\cdot\frac{c\cdot k}{d}=\frac{a}{b}\cdot\frac{c}{d}$</div></div>
           <div class="arrow">➜</div>
           <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{a\cdot k}{b}\cdot\frac{c}{d\cdot k}=\frac{a}{b}\cdot\frac{c}{d}$</div></div>
         </div>
@@ -375,7 +376,7 @@ mjx-container[display]{margin:0!important}
         <div class="k">⚠️ Errore da non fare</div>
         <div class="nome">Perdere il segno dell'unico fattore negativo</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \left(+a\right)\cdot\left(-b\right)=ab$</div></div>
+          <div class="card ko"><div class="tag">▲ Così NO</div><div class="f sx">$\displaystyle \left(+a\right)\cdot\left(-b\right)=ab$</div></div>
           <div class="arrow">➜</div>
           <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \left(+a\right)\cdot\left(-b\right)=-ab$</div></div>
         </div>
@@ -405,7 +406,7 @@ mjx-container[display]{margin:0!important}
         <div class="k">⚠️ Errore da non fare</div>
         <div class="nome">Lasciare il meno quando i meno sono due</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle -\left(-a\right)=-a$</div></div>
+          <div class="card ko"><div class="tag">▲ Così NO</div><div class="f sx">$\displaystyle -\left(-a\right)=-a$</div></div>
           <div class="arrow">➜</div>
           <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle -\left(-a\right)=+a$</div></div>
         </div>
@@ -446,7 +447,7 @@ mjx-container[display]{margin:0!important}
         <div class="k">⚠️ Errore da non fare</div>
         <div class="nome">Dividere il denominatore per il numeratore</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{a}{b}=b:a$</div></div>
+          <div class="card ko"><div class="tag">▲ Così NO</div><div class="f sx">$\displaystyle \frac{a}{b}=b:a$</div></div>
           <div class="arrow">➜</div>
           <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{a}{b}=a:b$</div></div>
         </div>
@@ -476,7 +477,7 @@ mjx-container[display]{margin:0!important}
         <div class="k">⚠️ Errore da non fare</div>
         <div class="nome">Moltiplicare senza capovolgere</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle n:\frac{a}{b}=n\cdot\frac{a}{b}$</div></div>
+          <div class="card ko"><div class="tag">▲ Così NO</div><div class="f sx">$\displaystyle n:\frac{a}{b}=n\cdot\frac{a}{b}$</div></div>
           <div class="arrow">➜</div>
           <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle n:\frac{a}{b}=n\cdot\frac{b}{a}$</div></div>
         </div>
@@ -528,7 +529,7 @@ mjx-container[display]{margin:0!important}
         <div class="k">⚠️ Errore da non fare</div>
         <div class="nome">Mettere l'intero solo al numeratore</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a+\frac{c}{b}=\frac{a+c}{b}$</div></div>
+          <div class="card ko"><div class="tag">▲ Così NO</div><div class="f sx">$\displaystyle a+\frac{c}{b}=\frac{a+c}{b}$</div></div>
           <div class="arrow">➜</div>
           <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a+\frac{c}{b}=\frac{a\cdot b+c}{b}$</div></div>
         </div>
@@ -613,7 +614,7 @@ mjx-container[display]{margin:0!important}
         <div class="k">⚠️ Errore da non fare</div>
         <div class="nome">Moltiplicare in croce</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{a}{b}\cdot\frac{c}{d}=\frac{a\cdot d}{b\cdot c}$</div></div>
+          <div class="card ko"><div class="tag">▲ Così NO</div><div class="f sx">$\displaystyle \frac{a}{b}\cdot\frac{c}{d}=\frac{a\cdot d}{b\cdot c}$</div></div>
           <div class="arrow">➜</div>
           <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{a}{b}\cdot\frac{c}{d}=\frac{a\cdot c}{b\cdot d}$</div></div>
         </div>
@@ -643,7 +644,7 @@ mjx-container[display]{margin:0!important}
         <div class="k">⚠️ Errore da non fare</div>
         <div class="nome">Moltiplicare invece di dividere</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle \frac{a}{b}:n=\frac{a\cdot n}{b}$</div></div>
+          <div class="card ko"><div class="tag">▲ Così NO</div><div class="f sx">$\displaystyle \frac{a}{b}:n=\frac{a\cdot n}{b}$</div></div>
           <div class="arrow">➜</div>
           <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle \frac{a}{b}:n=\frac{a}{b\cdot n}$</div></div>
         </div>

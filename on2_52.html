@@ -50,8 +50,9 @@ MathJax = {
   --blu:#12519e; --blubg:#e8f1fb; --blubd:#a8c9ea;
   --amb:#b45309; --ambbg:#fffbeb; --ambbd:#fcd34d; --sol:#fef08a;
   --teo:#14532d; --teobg:#f0fdf4; --teobd:#86efac;
-  --err:#9f1239; --errbg:#fff1f2; --errbd:#fda4af;
-  --ko:#b91c1c;  --kobg:#fee2e2;  --kobd:#ef4444;
+  /* errori nel grigio-azzurro di OH #aabfd5 (come i ▲ della dashboard), mai in rosso */
+  --err:#36516d; --errbg:#f5f7fa; --errbd:#aabfd5;
+  --ko:#36516d;  --kobg:#e4eaf2;  --kobd:#aabfd5;
   --ok:#15803d;  --okbg:#dcfce7;  --okbd:#22c55e;
   --sxbg:#ffffff;
 }
@@ -147,7 +148,7 @@ mjx-container[display]{margin:0!important}
 .card.ko{background:var(--kobg);border-color:var(--kobd);color:var(--ko);--sxbg:var(--kobg)}
 .card.ok{background:var(--okbg);border-color:var(--okbd);color:var(--ok);--sxbg:var(--okbg)}
 .arrow{display:flex;align-items:center;justify-content:center;font-size:1.2rem;color:var(--faint);font-weight:800}
-.why-txt{font-size:.82rem;color:#7f1d1d;margin-top:6px;text-align:center}
+.why-txt{font-size:.82rem;color:#3b5977;margin-top:6px;text-align:center}
 
 /* fermata di controllo */
 .check{display:flex;flex-wrap:wrap;align-items:center;gap:4px 10px;
@@ -218,7 +219,7 @@ mjx-container[display]{margin:0!important}
         <div class="k">⚠️ Errore da non fare</div>
         <div class="nome">Sommare invece di moltiplicare</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a:b=\left(a+n\right):\left(b+n\right)$</div></div>
+          <div class="card ko"><div class="tag">▲ Così NO</div><div class="f sx">$\displaystyle a:b=\left(a+n\right):\left(b+n\right)$</div></div>
           <div class="arrow">➜</div>
           <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a:b=\left(a\cdot n\right):\left(b\cdot n\right)$</div></div>
         </div>
@@ -228,7 +229,7 @@ mjx-container[display]{margin:0!important}
         <div class="k">⚠️ E nemmeno questo</div>
         <div class="nome">Mettere al posto dell'incognita il numero usato</div>
         <div class="compare">
-          <div class="card ko"><div class="tag">❌ Così NO</div><div class="f sx">$\displaystyle a:b=\left(a\cdot n\right):n$</div></div>
+          <div class="card ko"><div class="tag">▲ Così NO</div><div class="f sx">$\displaystyle a:b=\left(a\cdot n\right):n$</div></div>
           <div class="arrow">➜</div>
           <div class="card ok"><div class="tag">✅ Così SÌ</div><div class="f sx">$\displaystyle a:b=\left(a\cdot n\right):\left(b\cdot n\right)$</div></div>
         </div>
